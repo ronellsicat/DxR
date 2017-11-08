@@ -28,3 +28,21 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 3. Create a specification file, e.g., vis_spec.json, inside Assets/StreamingAssets folder.
 4. Modify the contents of specification file to create your visualization as desired. The grammar for specifying visualizations is described here [TODO]. 
 5. Your specified visualization will get created automatically at run time.
+
+## Device Deployment
+
+These are some guidelines for deploying your application to device. More information can be found [here](https://developer.microsoft.com/en-us/windows/mixed-reality/using_visual_studio).
+
+<!--
+### VR Deployment (Mixed Reality Headsets)
+1. Build the solution (File -> Build Settings -> Build). 
+2. Open the generated/updated MS Visual Studio solution (using VS 2017). 
+3. In Visual Studio, set the build settings to x86 and Local Machine. 
+4. Deploy.
+-->
+
+### MR Deployment (Hololens)
+1. Build the solution (File -> Build Settings -> Build). 
+2. Open the generated/updated MS Visual Studio solution (using VS 2017). 
+3. In Visual Studio, set the build settings to x86 and Remote Machine. Go to Debug -> Test Properties -> Configuration Properties -> Debugging and set "Machine Name" to your HoloLens IP address. Also make sure "Authentication Type" is set to Universal.
+4. Deploy.
