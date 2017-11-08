@@ -1,15 +1,15 @@
 # DxR
-This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version 2017.2.0f3.
+This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version [2017.2.0f3-MRTP](http://beta.unity3d.com/download/b1565bfe4a0c/download.html) and [Mixed Reality Toolkit v1.2017.1.2](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0).
 
 ## Set-up
 
 First, import the DxR package (DxR.unitypackage found in the top-level directory) into your Unity3D project. Then follow Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. 
 
-### VR Debugging (Mixed Reality Headsets)
+### VR Debugging (Immersive Headsets or IHMD)
 1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
-2. Connect your VR headset to your computer. Open your Mixed Reality Portal.
+2. Connect your IHMD to your computer. Open your Mixed Reality Portal.
 3. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
-4. Press play - your Unity editor should run your application but should also show up on your headset in VR.
+4. Press play - your Unity editor should run your application but should also show up on your IHMD in VR.
 
 ### MR Debugging (Hololens)
 1. Make sure your Target Device (under File -> Build Settings) is set to "HoloLens".
@@ -20,7 +20,7 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 6. Press play - your Unity editor should run your application but should also show up on your HoloLens.
 
 ### Developer notes
-1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target VR headsets or HoloLens, respectively.
+1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target IHMDs or HoloLens, respectively.
 
 [More developer notes can be found here.](Development.md)
 
@@ -36,7 +36,7 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 These are some guidelines for deploying your application to device. More information can be found [here](https://developer.microsoft.com/en-us/windows/mixed-reality/using_visual_studio).
 
 <!--
-### VR Deployment (Mixed Reality Headsets)
+### VR Deployment (Immersive Headsets or IHMD)
 1. Build the solution (File -> Build Settings -> Build). 
 2. Open the generated/updated MS Visual Studio solution (using VS 2017). 
 3. In Visual Studio, set the build settings to x86 and Local Machine. 
