@@ -11,7 +11,7 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 3. Add a DxRView object into your scene using the steps below (DxR-specific Instructions).
 4. Press play - your Unity editor should run your application but should also show up on your headset in VR.
 
-### MR Debuggin (Hololens)
+### MR Debugging (Hololens)
 1. Make sure your Target Device (under File -> Build Settings) is set to "HoloLens".
 2. Put on your HoloLens and run the Holographic Remoting application (install if not yet installed). 
 3. In Unity, go to Window -> Holographic Emulation. In the window that pops up, set Emulation Mode to "Remote to Device". Set Remote Machine to your HoloLens IP address (this should show up when you run the Holographic Remoting app). After typing in the IP address, with your cursor still in the Remote Machine form, make sure you press Enter key to submit the IP.
