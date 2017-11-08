@@ -1,21 +1,22 @@
 # Development
 
 ## Folder Structure
-DxR/
-  Prefabs/    - contains prefabs that users can instantiate in their scene.
-  Resources/  - contains graphics objects (e.g., prefabs, models, textures) and scripts used by toolkit.
-      Axis/   
-      Marks/  - contains objects and scripts for core marks.
-  Scripts/    - contains core scripts used by toolkit.
+    
+    DxR/
+      Prefabs/    - contains prefabs that users can instantiate in their scene.
+      Resources/  - contains graphics objects (e.g., prefabs, models, textures) and scripts used by toolkit.
+        Axis/   
+        Marks/  - contains objects and scripts for core marks.
+      Scripts/    - contains core scripts used by toolkit.
   
-DxRExamples/  - contains examples of scenes with DxR components.
+    DxRExamples/  - contains examples of scenes with DxR components.
 
-External/     - contains external dependencies such as Mixed Reality Toolkit.
+    External/     - contains external dependencies such as Mixed Reality Toolkit.
 
-StreamingAssets/ 
-  DxRData/    - contains data files.
-  DxRMarks/   - contains user created marks.
-  DxRSpecs/   - contains JSON specification files.
+    StreamingAssets/ 
+      DxRData/    - contains data files.
+      DxRMarks/   - contains user created marks.
+      DxRSpecs/   - contains JSON specification files.
   
 ## For developers
 
