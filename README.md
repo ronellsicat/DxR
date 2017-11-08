@@ -22,7 +22,7 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 ### Developer notes
 1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target VR headsets or HoloLens, respectively.
 
-[More developer notes can be found here.](DxR/Development.md)
+[More developer notes can be found here.](Development.md)
 
 ## Creating a DxR Visualization
 1. Add a DxRView object into your scene by dragging and dropping the DxRView prefab (found in Assets/DxR/) into your Unity Hierarchy.
