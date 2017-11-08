@@ -8,7 +8,7 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 ### VR Debugging (Mixed Reality Headsets)
 1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
 2. Connect your VR headset to your computer. Open your Mixed Reality Portal.
-3. Add a DxRView object into your scene using the steps below (DxR-specific Instructions).
+3. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
 4. Press play - your Unity editor should run your application but should also show up on your headset in VR.
 
 ### MR Debugging (Hololens)
