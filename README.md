@@ -1,9 +1,9 @@
 # DxR
-This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR.
+This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version 2017.2.0f3.
 
 ## Set-up
 
-First, import the DxR package (DxR.unitypackage found in the top-level directory) into your Unity3D project. Then follow Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version 2017.2.0f3.
+First, import the DxR package (DxR.unitypackage found in the top-level directory) into your Unity3D project. Then follow Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. 
 
 ### VR Debugging (Mixed Reality Devices)
 1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
