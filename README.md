@@ -16,15 +16,15 @@ First, import the DxR package (DxR.unitypackage found in the top-level directory
 2. Put on your HoloLens and run the Holographic Remoting application (install if not yet installed). 
 3. In Unity, go to Window -> Holographic Emulation. In the window that pops up, set Emulation Mode to "Remote to Device". Set Remote Machine to your HoloLens IP address (this should show up when you run the Holographic Remoting app). After typing in the IP address, with your cursor still in the Remote Machine form, make sure you press Enter key to submit the IP.
 4. Press "Connect" button. If successful, the window should indicate so. If not, check your connection, e.g., make sure that your computer is on the same network as the HoloLens.
-5. Add a DxRView object into your scene using the steps below (DxR-specific Instructions).
+5. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
 6. Press play - your Unity editor should run your application but should also show up on your HoloLens.
 
-### DxR-specific Instructions
+### Developer notes
+1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target VR headsets or HoloLens, respectively.
+
+## Creating a DxR Visualization
 1. Add a DxRView object into your scene by dragging and dropping the DxRView prefab (found in Assets/DxR/) into your Unity Hierarchy.
 2. Select your instance to set parameters as needed, particularly the filename for the specification, e.g., vis_spec.json.
 3. Create a specification file, e.g., vis_spec.json, inside Assets/StreamingAssets folder.
 4. Modify the contents of specification file to create your visualization as desired. The grammar for specifying visualizations is described here [TODO]. 
 5. Your specified visualization will get created automatically at run time.
-
-### Developer notes
-1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target VR headsets or HoloLens, respectively.
