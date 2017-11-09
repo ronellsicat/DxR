@@ -1,5 +1,5 @@
 # DxR
-This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version [2017.2.0f3-MRTP](http://beta.unity3d.com/download/b1565bfe4a0c/download.html) and [Mixed Reality Toolkit v1.2017.1.2](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0).
+This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version [2017.2.0p1-MRTP4](http://beta.unity3d.com/download/b1565bfe4a0c/UnityDownloadAssistant.exe) and [Mixed Reality Toolkit v1.2017.1.2](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0).
 
 ## Set-up
 
