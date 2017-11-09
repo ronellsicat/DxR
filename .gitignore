@@ -1,3 +1,5 @@
+/Assets/HoloToolkit-Examples/
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -32,3 +34,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/HoloToolkit-Examples.meta
