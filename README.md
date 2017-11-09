@@ -3,7 +3,7 @@ This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i
 
 ## Set-up
 
-First, import the DxR package (DxR.unitypackage found in the top-level directory) into your Unity3D project. Then follow Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. 
+First, import the DxR package (DxR.unitypackage found in the top-level directory) into your Unity3D project. Then follow Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. Instead of starting from scratch, you can opt to use a template scene (template.unity) that you can find in the DxRExamples folder.
 
 ### VR Debugging (Immersive Headsets or IHMD)
 1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
