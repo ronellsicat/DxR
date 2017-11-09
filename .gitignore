@@ -35,3 +35,6 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/HoloToolkit-Examples.meta
+Assets/StreamingAssets/.vs/config/applicationhost.config
+Assets/StreamingAssets/.vs/ProjectSettings.json
+Assets/StreamingAssets/.vs/slnx.sqlite

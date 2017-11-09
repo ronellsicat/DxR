@@ -1,0 +1,80 @@
+{
+  "title": "Bar chart of keywords count in a book shelf",
+  "description": "This displays a bar chart using custom mark book.",
+  "width": 500,
+  "height": 200,
+  "depth": 500,
+  "data": {
+    "values": [
+      {
+        "keyword": "A",
+        "count": 28
+      },
+      {
+        "keyword": "B",
+        "count": 55
+      },
+      {
+        "keyword": "C",
+        "count": 43
+      },
+      {
+        "keyword": "D",
+        "count": 91
+      },
+      {
+        "keyword": "E",
+        "count": 81
+      },
+      {
+        "keyword": "F",
+        "count": 53
+      },
+      {
+        "keyword": "G",
+        "count": 19
+      },
+      {
+        "keyword": "H",
+        "count": 87
+      },
+      {
+        "keyword": "I",
+        "count": 52
+      }
+    ]
+  },
+  "mark": "book",
+  "encoding": {
+    "x": {
+      "field": "keyword",
+      "type": "nominal",
+      "scale": {
+        "type": "band",
+        "range": [0,500]
+      },
+      "axis": {
+        "orient": "bottom",
+        "title": "Keywords",
+        "grid": false,
+        "ticks": false
+      }
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 100 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "orient": "left",
+        "title": "Count",
+        "grid": false,
+        "ticks": false,
+        "tickCount": 6
+      }
+    }
+  }
+}
