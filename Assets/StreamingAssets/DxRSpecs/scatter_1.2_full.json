@@ -1,6 +1,6 @@
 {
   "title": "Cars Data",
-  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
+  "description":  "This displays a 3D scatterplot.",
   "width": 500,
   "height": 500,
   "depth": 500,
@@ -39,19 +39,24 @@
         "tickCount": 6
       }
     },
-    "color": {
-      "field": "Origin",
-      "type": "nominal",
+    "z": {
+      "field": "Acceleration",
+      "type": "quantitative",
       "scale": {
-        "type": "ordinal",
-        "range": "category",
-        "scheme": "tableau10"
+        "type": "linear",
+        "domain": [ 0, 30 ],
+        "range": [ 0, 500 ]
       },
-      "legend": {
-        "type":  "symbol",
-        "orient": "right",
-        "title": "Origin Legend"
+      "axis": {
+        "orient": "bottom",
+        "title": "Acceleration",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 6
       }
+    },
+    "color": {
+      "value": "#ff9900"
     }
   }
 }

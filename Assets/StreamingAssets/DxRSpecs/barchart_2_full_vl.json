@@ -1,7 +1,6 @@
 {
   "title": "Bar chart of keywords count in a book shelf",
-  "description": "This displays a bar chart using standard bar mark.",
-  "width": 500,
+  "description": "This displays a bar chart using standard bar mark using rangeStep to specify width.",
   "height": 500,
   "data": {
     "values": [
@@ -23,9 +22,9 @@
       "type": "nominal",
       "scale": {
         "type": "band",
-        "range": [ 0, 500 ],
         "paddingInner": 0.1,
-        "paddingOuter": 0.1
+        "paddingOuter": 0.1,
+        "rangeStep": 40
       },
       "axis": {
         "orient": "bottom",

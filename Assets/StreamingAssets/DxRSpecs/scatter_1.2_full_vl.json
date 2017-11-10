@@ -1,10 +1,9 @@
 {
   "title": "Cars Data",
-  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
+  "description": "This displays a 3D scatterplot.",
   "width": 500,
   "height": 500,
-  "depth": 500,
-  "data": { "url": "DxRData/cars.json" },
+  "data": { "url": "data/cars.json" },
   "mark": "point",
   "encoding": {
     "x": {
@@ -29,7 +28,7 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 50 ],
-        "range": [ 0, 500 ]
+        "range": [ 500, 0 ]
       },
       "axis": {
         "orient": "left",
@@ -40,18 +39,7 @@
       }
     },
     "color": {
-      "field": "Origin",
-      "type": "nominal",
-      "scale": {
-        "type": "ordinal",
-        "range": "category",
-        "scheme": "tableau10"
-      },
-      "legend": {
-        "type":  "symbol",
-        "orient": "right",
-        "title": "Origin Legend"
-      }
+      "value": "#ff9900"
     }
   }
 }

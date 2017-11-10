@@ -43,7 +43,8 @@
       "type": "nominal",
       "scale": {
         "type": "ordinal",
-        "range": "category"
+        "range": "category",
+        "scheme":  "tableau10"
       },
       "legend": {
         "type": "symbol",
