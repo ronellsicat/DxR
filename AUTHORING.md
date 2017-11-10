@@ -1,5 +1,11 @@
 # Authoring
 
+## Overview
+
+[TODO]
+
+DxR uses JSON specs to describe a visualization. It is based on a similar syntax inpired by the well-designed [Vega-Lite](https://vega.github.io/vega-lite/) - a high-level grammar of interactive graphics for SVG or Canvas -based data visualizations.
+
 This document provides instructions on how to create data-driven graphics using DxR on different "authoring layers" (user and author are used interchangeably):
 
 1. Minimum high-level specs - author just needs to provide bare minimum specs, e.g., data, mark, channel, field, data-type. DxR infers and generates the best options for the full high-level specs to create the visualization.
