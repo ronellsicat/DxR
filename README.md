@@ -1,5 +1,5 @@
 # DxR
-This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR, using Microsoft's Mixed Reality ecosystem and Unity3D. You will find helpful instructions using the following links:
+DxR makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR, using Microsoft's Mixed Reality ecosystem and Unity3D. You will find helpful instructions using the following links:
 
 1. [Setup](SETUP.md)
 2. [Authoring](AUTHORING.md)
