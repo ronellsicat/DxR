@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/HoloToolkit-Examples/UX/Scenes/TextPrefabSamplesTest.unity
-    guid: 46e5a7f78dc41fb4fa39691cc18cdc20
   - enabled: 1
-    path: Assets/DxRExamples/scatterplot.unity
-    guid: d0b48990ea186554aac8e376980b8fd6
+    path: Assets/DxRExamples/template.unity
+    guid: 39042e7a7f24e1b4f94737a5d70fbb63

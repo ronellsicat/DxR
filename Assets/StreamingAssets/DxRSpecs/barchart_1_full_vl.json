@@ -3,10 +3,9 @@
   "description": "This displays a bar chart using standard bar mark.",
   "width": 500,
   "height": 500,
-  "depth": 500,
   "data": {
     "values": [
-     {"keyword": "A", "count": 28},
+      {"keyword": "A", "count": 28},
       {"keyword": "B", "count": 55},
       {"keyword": "C", "count": 43},
       {"keyword": "D", "count": 91},
@@ -39,7 +38,7 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 100 ],
-        "range": [ 0, 500 ]
+        "range": [ 500, 0 ]
       },
       "axis": {
         "orient": "left",

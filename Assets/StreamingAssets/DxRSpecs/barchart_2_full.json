@@ -6,42 +6,15 @@
   "depth": 500,
   "data": {
     "values": [
-      {
-        "keyword": "A",
-        "count": 28
-      },
-      {
-        "keyword": "B",
-        "count": 55
-      },
-      {
-        "keyword": "C",
-        "count": 43
-      },
-      {
-        "keyword": "D",
-        "count": 91
-      },
-      {
-        "keyword": "E",
-        "count": 81
-      },
-      {
-        "keyword": "F",
-        "count": 53
-      },
-      {
-        "keyword": "G",
-        "count": 19
-      },
-      {
-        "keyword": "H",
-        "count": 87
-      },
-      {
-        "keyword": "I",
-        "count": 52
-      }
+     {"keyword": "A", "count": 28},
+      {"keyword": "B", "count": 55},
+      {"keyword": "C", "count": 43},
+      {"keyword": "D", "count": 91},
+      {"keyword": "E", "count": 81},
+      {"keyword": "F", "count": 53},
+      {"keyword": "G", "count": 19},
+      {"keyword": "H", "count": 87},
+      {"keyword": "I", "count": 52}
     ]
   },
   "mark": "book",
@@ -57,7 +30,7 @@
         "orient": "bottom",
         "title": "Keywords",
         "grid": false,
-        "ticks": false
+        "ticks": true
       }
     },
     "y": {
@@ -71,8 +44,8 @@
       "axis": {
         "orient": "left",
         "title": "Count",
-        "grid": false,
-        "ticks": false,
+        "grid": true,
+        "ticks": true,
         "tickCount": 6
       }
     }

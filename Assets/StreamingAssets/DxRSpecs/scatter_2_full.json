@@ -1,6 +1,6 @@
 {
   "title": "Cars Data",
-  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type."
+  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
   "width": 500,
   "height": 500,
   "depth": 500,
@@ -18,8 +18,8 @@
       "axis": {
         "orient": "bottom",
         "title": "HP",
-        "grid": false,
-        "ticks": false,
+        "grid": true,
+        "ticks": true,
         "tickCount": 5
       }
     },
@@ -34,8 +34,8 @@
       "axis": {
         "orient": "left",
         "title": "MPG",
-        "grid": false,
-        "ticks": false,
+        "grid": true,
+        "ticks": true,
         "tickCount": 6
       }
     },

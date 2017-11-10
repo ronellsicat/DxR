@@ -18,8 +18,8 @@
       "axis": {
         "orient": "bottom",
         "title": "HP",
-        "grid": false,
-        "ticks": false,
+        "grid": true,
+        "ticks": true,
         "tickCount": 5
       }
     },
@@ -34,8 +34,8 @@
       "axis": {
         "orient": "left",
         "title": "MPG",
-        "grid": false,
-        "ticks": false,
+        "grid": true,
+        "ticks": true,
         "tickCount": 6
       }
     },
