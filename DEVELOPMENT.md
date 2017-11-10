@@ -1,6 +1,12 @@
 # Development
 
+This document describes the development structure of DxR which could help developers add features.
+
+## Overview [TODO]
+
 ## Folder Structure
+
+Once the DxR.unitypackage is imported in a project, the following folder structure will be added.
     
     DxR/
       Prefabs/    - contains prefabs that users can instantiate in their scene.
@@ -18,15 +24,6 @@
       DxRMarks/   - contains user created marks.
       DxRSpecs/   - contains JSON specification files.
   
-## For developers
+## DxR.unitypackage
 
 Whenever a stable version is reached, a unitypackage (DxR.unitypackage) file is generated and placed in the root directory of the GitHub repository. This makes it easy to download and import into any existing Unity project. This is also the reason why some folder names have DxR prepended to them - to make it easier to distinguish from folders in existing projects.
-
-To allow other users to use your custom marks and channels, simply create a package (Assets -> Export Package) with ONLY your mark directory checked, e.g., DxR/Resources/Marks/mycustommark. Once another user imports your package, your custom mark will show up in their DxR/Resources/Marks folder.
-
-## For users
-
-Users will typically just have to use prefabs found in DxR/Prefabs and create a specification in StreamingAssets/DxRSpecs to create basic visualizations (optionally put data files in StreamingAssets/DxRData). To create their own marks and channels, they will have to add their marks objects in StreamingAssets/DxRMarks.
-
-Users can also build from the example scenes in DxRExamples folder.
-  
