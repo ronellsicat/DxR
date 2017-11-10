@@ -10,5 +10,5 @@ DxR makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/V
 1. Install Unity3D editor [version 2017.2.0p1-MRTP4](http://beta.unity3d.com/download/b1565bfe4a0c/UnityDownloadAssistant.exe).
 2. Import [DxR.unitypackage]() [TODO] into your project.
 3. Open DxRExamples/template.unity.
-4. Press play - you should see a simple DxR data visualization in your scene. If you connected and setup your HoloLens or Immersive Head-Mounted-Display (IHMD) for debugging, you should be able to view the visualization in an immersive environment. Detailed setup instructions can be found [here](SETUP.md).
+4. If your Immersive Head-Mounted-Display (IHMD) or HoloLens is connected and setup, press play - you should see a simple DxR data visualization in your immersive environment. If no device is connected, turn off VR Support (File -> Build Settings -> Player Settings -> UWP tab -> XR Settings -> uncheck VR Supported) and press play to view scene in the editor. Detailed setup instructions can be found [here](SETUP.md).
 5. To customize the visualization, edit StreamingAssets/DxRSpecs/template.json. Detailed instructions can be found [here](AUTHORING.md).
