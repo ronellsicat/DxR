@@ -10,7 +10,13 @@ This document provides instructions on how to create data-driven graphics using 
 
 Users will typically just have to use prefabs found in DxR/Prefabs and create a specification in StreamingAssets/DxRSpecs to create basic visualizations (optionally put data files in StreamingAssets/DxRData).
 
-[TODO]
+### Steps:
+
+1. Add a DxRView object into your scene by dragging and dropping the DxRView prefab (found in Assets/DxR/) into your Unity Hierarchy.
+2. Select your instance to set parameters as needed, particularly the filename for the specification, e.g., vis_spec.json.
+3. Create a specification file, e.g., vis_spec.json, inside Assets/StreamingAssets folder.
+4. Modify the contents of specification file to create your visualization as desired. The grammar for specifying visualizations is described here [TODO]. 
+5. Your specified visualization will get created automatically at run time.
 
 ## Full high-level specs:
 
