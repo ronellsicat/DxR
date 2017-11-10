@@ -1,50 +1,14 @@
 # DxR
-This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR. The following instructions are based on the Microsoft Mixed Reality ecosystem with Unity3D version [2017.2.0p1-MRTP4](http://beta.unity3d.com/download/b1565bfe4a0c/UnityDownloadAssistant.exe) and [Mixed Reality Toolkit v1.2017.1.2](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0) with set-up instructions [here](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/master/GettingStarted.md).
+This toolkit makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR, using Microsoft's Mixed Reality ecosystem and Unity3D. You will find helpful instructions using the following links:
 
-## Set-up
+1. [Setup](SETUP.md)
+2. [Authoring](AUTHORING.md)
+3. [Development](DEVELOPMENT.md)
 
-First, import the DxR package (DxR.unitypackage found in the top-level directory) into your Unity3D project. Then follow Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. Instead of starting from scratch, you can opt to use a template scene (template.unity) that you can find in the DxRExamples folder.
+## Quick Guide
 
-### VR Debugging (Immersive Headsets or IHMD)
-1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
-2. Connect your IHMD to your computer. Open your Mixed Reality Portal.
-3. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
-4. Press play - your Unity editor should run your application but should also show up on your IHMD in VR.
-
-### MR Debugging (Hololens)
-1. Make sure your Target Device (under File -> Build Settings) is set to "HoloLens".
-2. Put on your HoloLens and run the Holographic Remoting application (install if not yet installed). 
-3. In Unity, go to Window -> Holographic Emulation. In the window that pops up, set Emulation Mode to "Remote to Device". Set Remote Machine to your HoloLens IP address (this should show up when you run the Holographic Remoting app). After typing in the IP address, with your cursor still in the Remote Machine form, make sure you press Enter key to submit the IP.
-4. Press "Connect" button. If successful, the window should indicate so. If not, check your connection, e.g., make sure that your computer is on the same network as the HoloLens.
-5. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
-6. Press play - your Unity editor should run your application but should also show up on your HoloLens.
-
-### Developer notes
-1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target IHMDs or HoloLens, respectively.
-
-[More developer notes can be found here.](Development.md)
-
-## Creating a DxR Visualization
-1. Add a DxRView object into your scene by dragging and dropping the DxRView prefab (found in Assets/DxR/) into your Unity Hierarchy.
-2. Select your instance to set parameters as needed, particularly the filename for the specification, e.g., vis_spec.json.
-3. Create a specification file, e.g., vis_spec.json, inside Assets/StreamingAssets folder.
-4. Modify the contents of specification file to create your visualization as desired. The grammar for specifying visualizations is described here [TODO]. 
-5. Your specified visualization will get created automatically at run time.
-
-## Device Deployment
-
-These are some guidelines for deploying your application to device. More information can be found [here](https://developer.microsoft.com/en-us/windows/mixed-reality/using_visual_studio).
-
-<!--
-### VR Deployment (Immersive Headsets or IHMD)
-1. Build the solution (File -> Build Settings -> Build). 
-2. Open the generated/updated MS Visual Studio solution (using VS 2017). 
-3. In Visual Studio, set the build settings to x86 and Local Machine. 
-4. Deploy.
--->
-
-### MR Deployment (Hololens)
-1. Build the solution (File -> Build Settings -> Build). 
-2. Open the generated/updated MS Visual Studio solution (using VS 2017). 
-3. In Visual Studio, set the build settings to x86 and Remote Machine. Go to Debug -> Test Properties -> Configuration Properties -> Debugging and set "Machine Name" to your HoloLens IP address. Also make sure "Authentication Type" is set to Universal.
-4. Deploy.
+1. Install Unity3D editor [version 2017.2.0p1-MRTP4](http://beta.unity3d.com/download/b1565bfe4a0c/UnityDownloadAssistant.exe).
+2. Import [DxR.unitypackage]() [TODO].
+3. Open DxRExamples/template.unity.
+4. Press play - you should see a simple DxR data visualization in your scene. If you connected and setup your HoloLens or Immersive Head-Mounted-Display (IHMD), you should be able to view the visualization in an immersive environment.
+5. To customize the visualization, edit StreamingAssets/DxRSpecs/template.json. Detailed instructions can be found [here](AUTHORING.md).
