@@ -16,7 +16,7 @@ namespace DxR
      /// </summary>
     public class SceneObject : MonoBehaviour
     {
-        public string specsFilename = "example.json";
+        public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;
 
         public string sceneName;    // Name of scene used to name parent GameObject.
@@ -44,6 +44,7 @@ namespace DxR
 
         // Parse (JSON spec file (data file info in specs) -> expanded raw JSON specs): 
         // Read in the specs and data files to create expanded raw JSON specs.
+        // Filenames should be relative to Assets/StreamingAssets/ directory.
         public void Parse(string specsFilename, ref JSONNode sceneSpecs)
         {
             Parser parser = new Parser();
