@@ -1,0 +1,71 @@
+{
+  "title": "Cars Data",
+  "description": "This displays a 3D scatterplot.",
+  "width": 500,
+  "height": 500,
+  "depth":  500,
+  "data": { "url": "DxRData/cars.json" },
+  "mark": "arrow",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 5 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "orient": "bottom",
+        "title": "x",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 5
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 5 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "orient": "left",
+        "title": "y",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 5
+      }
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 5 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "orient": "bottom",
+        "title": "z",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 5
+      }
+    },
+    "vecx": {
+      "field": "u",
+      "type": "float"
+    },
+    "vecy": {
+      "field": "v",
+      "type": "float"
+    },
+    "vecz": {
+      "field": "w",
+      "type": "float"
+    }
+  }
+}
