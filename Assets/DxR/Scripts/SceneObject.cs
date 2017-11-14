@@ -350,7 +350,13 @@ namespace DxR
                     channelEncoding.axis.GetComponent<Axis>().SetLength(axisLength);
                 }
 
-                channelEncoding.axis.GetComponent<Axis>().SetOrientation(axisSpecs["orient"].Value, axisSpecs["face"].Value);
+                if(axisSpecs["orient"] != null && axisSpecs["face"] != null)
+                {
+                    channelEncoding.axis.GetComponent<Axis>().SetOrientation(axisSpecs["orient"].Value, axisSpecs["face"].Value);
+                } else
+                {
+                    throw new Exception("Axis of channel " + channelEncoding.channel + " requires both orient and face specs.");
+                }
 
                 // TODO: Do the axis color coding more elegantly.  
                 // Experimental: Set color of axis based on channel type.
