@@ -63,20 +63,6 @@ namespace DxR
 
         }
 
-        private void CreateMarkObject(string markType, out GameObject markPrefab)
-        {
-            string markNameLowerCase = markType.ToLower();
-            markPrefab = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
-
-            if(markPrefab == null)
-            {
-                throw new Exception("Cannot load mark " + markNameLowerCase);
-            } else if(verbose)
-            {
-                Debug.Log("Loaded mark " + markNameLowerCase);
-            }
-        }
-
         // Construct (full JSON specs -> working SceneObject): 
         private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
         {
@@ -121,72 +107,140 @@ namespace DxR
             }
         }
 
-        private void ConstructAxes(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
+        private void CreateDataObjectFromValues(JSONNode valuesSpecs, out Data data)
         {
-            // Go through each channel and create axis for each:
-            for(int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
+            data = new Data();
+
+            CreateDataFields(valuesSpecs, ref data);
+
+            data.values = new List<Dictionary<string, string>>();
+
+            int numDataFields = data.fieldNames.Count;
+            if (verbose)
             {
-                ChannelEncoding channelEncoding = channelEncodings[channelIndex];
-                JSONNode axisSpecs = sceneSpecs["encoding"][channelEncoding.channel]["axis"];
-                if (axisSpecs != null && ( channelEncoding.channel == "x" ||
-                    channelEncoding.channel == "y" || channelEncoding.channel == "z"))
+                Debug.Log("Counted " + numDataFields.ToString() + " fields in data.");
+            }
+
+            // Loop through the values in the specification
+            // and insert one Dictionary entry in the values list for each.
+            foreach (JSONNode value in valuesSpecs.Children)
+            {
+                Dictionary<string, string> d = new Dictionary<string, string>();
+
+                bool valueHasNullField = false;
+                for (int fieldIndex = 0; fieldIndex < numDataFields; fieldIndex++)
                 {
-                    if(verbose)
+                    string curFieldName = data.fieldNames[fieldIndex];
+
+                    // TODO: Handle null / missing values properly.
+                    if (value[curFieldName].IsNull)
                     {
-                        Debug.Log("Constructing axis for channel " + channelEncoding.channel);
+                        valueHasNullField = true;
+                        Debug.Log("value null found: ");
+                        break;
                     }
-                    
-                    ConstructAxisObject(axisSpecs, ref channelEncoding, ref sceneRoot);
+
+                    d.Add(curFieldName, value[curFieldName]);
+                }
+
+                if (!valueHasNullField)
+                {
+                    data.values.Add(d);
                 }
             }
         }
 
-        private void ConstructAxisObject(JSONNode axisSpecs, ref ChannelEncoding channelEncoding, ref GameObject sceneRoot)
+        private void CreateDataFields(JSONNode valuesSpecs, ref Data data)
         {
-            GameObject axisPrefab = Resources.Load("Axis/Axis", typeof(GameObject)) as GameObject;
-            if (axisPrefab != null)
+            data.fieldNames = new List<string>();
+            foreach (KeyValuePair<string, JSONNode> kvp in valuesSpecs[0].AsObject)
             {
-                channelEncoding.axis = Instantiate(axisPrefab, sceneRoot.transform);
+                data.fieldNames.Add(kvp.Key);
 
-                // TODO: Move all the following update code to the Axis object class.
-
-                if (axisSpecs["title"] != null)
+                if (verbose)
                 {
-                    channelEncoding.axis.GetComponent<Axis>().SetTitle(axisSpecs["title"].Value);
+                    Debug.Log("Reading data field: " + kvp.Key);
                 }
+            }
+        }
 
-                float axisLength = 0.0f;
-                if(axisSpecs["length"] != null)
+        private void CreateMarkObject(string markType, out GameObject markPrefab)
+        {
+            string markNameLowerCase = markType.ToLower();
+            markPrefab = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+
+            if (markPrefab == null)
+            {
+                throw new Exception("Cannot load mark " + markNameLowerCase);
+            }
+            else if (verbose)
+            {
+                Debug.Log("Loaded mark " + markNameLowerCase);
+            }
+        }
+
+        private void CreateChannelEncodingObjects(JSONNode sceneSpecs, out List<ChannelEncoding> channelEncodings)
+        {
+            channelEncodings = new List<ChannelEncoding>();
+
+            // Go through each channel and create ChannelEncoding for each:
+            foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
+            {
+                ChannelEncoding channelEncoding = new ChannelEncoding();
+
+                channelEncoding.channel = kvp.Key;
+                JSONNode channelSpecs = kvp.Value;
+                if (channelSpecs["value"] != null)
                 {
-                    axisLength = axisSpecs["length"].AsFloat;
-                } else
-                {
-                    switch(channelEncoding.channel)
+                    channelEncoding.value = channelSpecs["value"].Value.ToString();
+
+                    if (channelSpecs["type"] != null)
                     {
-                        case "x":
-                            axisLength = width;
-                            break;
-                        case "y":
-                            axisLength = height;
-                            break;
-                        case "z":
-                            axisLength = depth;
-                            break;
-                        default:
-                            axisLength = 0.0f;
-                            break;
+                        channelEncoding.valueDataType = channelSpecs["type"].Value.ToString();
                     }
-                    channelEncoding.axis.GetComponent<Axis>().SetLength(axisLength);
+                    else
+                    {
+                        throw new Exception("Missing type for value in channel " + channelEncoding.channel);
+                    }
                 }
-                
-                channelEncoding.axis.GetComponent<Axis>().SetOrientation(axisSpecs["orient"].Value, axisSpecs["face"].Value);
+                else
+                {
+                    channelEncoding.field = channelSpecs["field"];
 
-                // TODO: Do the axis color coding more elegantly.  
-                // Experimental: Set color of axis based on channel type.
-                channelEncoding.axis.GetComponent<Axis>().EnableAxisColorCoding(channelEncoding.channel);
-            } else
+                    if (channelSpecs["type"] != null)
+                    {
+                        channelEncoding.fieldDataType = channelSpecs["type"];
+                    }
+                    else
+                    {
+                        throw new Exception("Missing type for field in channel " + channelEncoding.channel);
+                    }
+                }
+
+                JSONNode scaleSpecs = channelSpecs["scale"];
+                if (scaleSpecs != null)
+                {
+                    CreateScaleObject(scaleSpecs, ref channelEncoding.scale);
+                }
+
+                channelEncodings.Add(channelEncoding);
+            }
+        }
+
+        private void CreateScaleObject(JSONNode scaleSpecs, ref Scale scale)
+        {
+            switch (scaleSpecs["type"].Value.ToString())
             {
-                throw new Exception("Cannot find axis prefab.");
+                case "linear":
+                    scale = new ScaleLinear(scaleSpecs);
+                    break;
+
+                case "band":
+                    //scale = new ScaleBand(scaleSpecs);
+                    break;
+                default:
+                    scale = null;
+                    break;
             }
         }
 
@@ -237,140 +291,76 @@ namespace DxR
             }
         }
 
-        private void CreateChannelEncodingObjects(JSONNode sceneSpecs, out List<ChannelEncoding> channelEncodings)
+        private void ConstructAxes(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
         {
-            channelEncodings = new List<ChannelEncoding>();
-
-            // Go through each channel and create ChannelEncoding for each:
-            foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
+            // Go through each channel and create axis for each:
+            for (int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
             {
-                ChannelEncoding channelEncoding = new ChannelEncoding();
-
-                channelEncoding.channel = kvp.Key;
-                JSONNode channelSpecs = kvp.Value;
-                if (channelSpecs["value"] != null)
+                ChannelEncoding channelEncoding = channelEncodings[channelIndex];
+                JSONNode axisSpecs = sceneSpecs["encoding"][channelEncoding.channel]["axis"];
+                if (axisSpecs != null && (channelEncoding.channel == "x" ||
+                    channelEncoding.channel == "y" || channelEncoding.channel == "z"))
                 {
-                    channelEncoding.value = channelSpecs["value"].Value.ToString();
-
-                    if(channelSpecs["type"] != null)
+                    if (verbose)
                     {
-                        channelEncoding.valueDataType = channelSpecs["type"].Value.ToString();
-                    } else
-                    {
-                        throw new Exception("Missing type for value in channel " + channelEncoding.channel);
+                        Debug.Log("Constructing axis for channel " + channelEncoding.channel);
                     }
+
+                    ConstructAxisObject(axisSpecs, ref channelEncoding, ref sceneRoot);
+                }
+            }
+        }
+
+        private void ConstructAxisObject(JSONNode axisSpecs, ref ChannelEncoding channelEncoding, ref GameObject sceneRoot)
+        {
+            GameObject axisPrefab = Resources.Load("Axis/Axis", typeof(GameObject)) as GameObject;
+            if (axisPrefab != null)
+            {
+                channelEncoding.axis = Instantiate(axisPrefab, sceneRoot.transform);
+
+                // TODO: Move all the following update code to the Axis object class.
+
+                if (axisSpecs["title"] != null)
+                {
+                    channelEncoding.axis.GetComponent<Axis>().SetTitle(axisSpecs["title"].Value);
+                }
+
+                float axisLength = 0.0f;
+                if (axisSpecs["length"] != null)
+                {
+                    axisLength = axisSpecs["length"].AsFloat;
                 }
                 else
                 {
-                    channelEncoding.field = channelSpecs["field"];
-
-                    if (channelSpecs["type"] != null)
+                    switch (channelEncoding.channel)
                     {
-                        channelEncoding.fieldDataType = channelSpecs["type"];
+                        case "x":
+                            axisLength = width;
+                            break;
+                        case "y":
+                            axisLength = height;
+                            break;
+                        case "z":
+                            axisLength = depth;
+                            break;
+                        default:
+                            axisLength = 0.0f;
+                            break;
                     }
-                    else
-                    {
-                        throw new Exception("Missing type for field in channel " + channelEncoding.channel);
-                    }  
+                    channelEncoding.axis.GetComponent<Axis>().SetLength(axisLength);
                 }
 
-                JSONNode scaleSpecs = channelSpecs["scale"];
-                if (scaleSpecs != null)
-                {
-                    CreateScaleObject(scaleSpecs, ref channelEncoding.scale);
-                }
+                channelEncoding.axis.GetComponent<Axis>().SetOrientation(axisSpecs["orient"].Value, axisSpecs["face"].Value);
 
-                JSONNode axisSpecs = channelSpecs["axis"];
-                if (axisSpecs != null)
-                {
-                    //CreateAxisObject(axisSpecs, ref channelEncoding.axis);
-                }
-
-                // TODO: Add legend object.
-                JSONNode legendSpecs = channelSpecs["legend"];
-                if (legendSpecs != null)
-                {
-                    //CreateLegendObject(axisSpecs, ref channelEncoding.legend);
-                }
-
-                channelEncodings.Add(channelEncoding);
+                // TODO: Do the axis color coding more elegantly.  
+                // Experimental: Set color of axis based on channel type.
+                channelEncoding.axis.GetComponent<Axis>().EnableAxisColorCoding(channelEncoding.channel);
+            }
+            else
+            {
+                throw new Exception("Cannot find axis prefab.");
             }
         }
-
-        private void CreateScaleObject(JSONNode scaleSpecs, ref Scale scale)
-        {
-            switch (scaleSpecs["type"].Value.ToString())
-            {
-                case "linear":
-                    scale = new ScaleLinear(scaleSpecs);
-                    break;
-
-                case "band":
-                    //scale = new ScaleBand(scaleSpecs);
-                    break;
-                default:
-                    scale = null;
-                    break;
-            }
-        }
-
-        private void CreateDataObjectFromValues(JSONNode valuesSpecs, out Data data)
-        {
-            data = new Data();
-
-            CreateDataFields(valuesSpecs, ref data);
-
-            data.values = new List<Dictionary<string, string>>();
-
-            int numDataFields = data.fieldNames.Count;
-            if(verbose)
-            {
-                Debug.Log("Counted " + numDataFields.ToString() + " fields in data.");
-            }
-
-            // Loop through the values in the specification
-            // and insert one Dictionary entry in the values list for each.
-            foreach (JSONNode value in valuesSpecs.Children)
-            {
-                Dictionary<string, string> d = new Dictionary<string, string>();
-
-                bool valueHasNullField = false;
-                for (int fieldIndex = 0; fieldIndex < numDataFields; fieldIndex++)
-                {
-                    string curFieldName = data.fieldNames[fieldIndex];
-
-                    // TODO: Handle null / missing values properly.
-                    if (value[curFieldName].IsNull)
-                    {
-                        valueHasNullField = true;
-                        Debug.Log("value null found: ");
-                        break;
-                    }
-
-                    d.Add(curFieldName, value[curFieldName]);
-                }
-
-                if (!valueHasNullField)
-                {
-                    data.values.Add(d);
-                }
-            }
-        }
-
-        private void CreateDataFields(JSONNode valuesSpecs, ref Data data)
-        {
-            data.fieldNames = new List<string>();
-            foreach (KeyValuePair<string, JSONNode> kvp in valuesSpecs[0].AsObject)
-            {
-                data.fieldNames.Add(kvp.Key);
-
-                if(verbose)
-                {
-                    Debug.Log("Reading data field: " + kvp.Key);
-                }
-            }
-        }
-
     }
 }
 
