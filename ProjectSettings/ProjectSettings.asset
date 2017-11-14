@@ -246,7 +246,7 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:
   - m_BuildTarget: Metro
-    m_Enabled: 1
+    m_Enabled: 0
     m_Devices:
     - WindowsMR
   m_BuildTargetEnableVuforiaSettings: []
@@ -548,7 +548,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: DxR-Unity
   metroPackageVersion: 
-  metroCertificatePath: C:\Users\rsicat\GitHub\DxR\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets/WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
