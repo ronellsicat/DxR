@@ -23,7 +23,7 @@ namespace DxR
         public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;
 
-        public string sceneName;    // Name of scene used to name parent GameObject.
+        public string sceneName;    // Name of scene.
         public string title;        // Title of scene displayed.
         public float width;         // Width of scene in millimeters.
         public float height;        // Heigh of scene in millimeters.
@@ -80,6 +80,8 @@ namespace DxR
         // Construct (full JSON specs -> working SceneObject): 
         private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
         {
+            InitSceneObjectProperties(sceneSpecs, ref sceneRoot);
+
             CreateDataObjectFromValues(sceneSpecs["data"]["values"], out data);
 
             CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
@@ -87,6 +89,105 @@ namespace DxR
             CreateChannelEncodingObjects(sceneSpecs, out channelEncodings);
 
             ConstructMarks(sceneRoot);
+
+            ConstructAxes(sceneSpecs, ref channelEncodings, ref sceneRoot);
+        }
+
+        private void InitSceneObjectProperties(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        {
+            if (sceneSpecs["name"] != null)
+            {
+                sceneName = sceneSpecs["name"].Value;
+            }
+
+            if (sceneSpecs["title"] != null)
+            {
+                title = sceneSpecs["title"].Value;
+            }
+
+            if(sceneSpecs["width"] != null)
+            {
+                width = sceneSpecs["width"].AsFloat;
+            }
+
+            if (sceneSpecs["height"] != null)
+            {
+                height = sceneSpecs["height"].AsFloat;
+            }
+
+            if (sceneSpecs["depth"] != null)
+            {
+                depth = sceneSpecs["depth"].AsFloat;
+            }
+        }
+
+        private void ConstructAxes(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
+        {
+            // Go through each channel and create axis for each:
+            for(int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
+            {
+                ChannelEncoding channelEncoding = channelEncodings[channelIndex];
+                JSONNode axisSpecs = sceneSpecs["encoding"][channelEncoding.channel]["axis"];
+                if (axisSpecs != null && ( channelEncoding.channel == "x" ||
+                    channelEncoding.channel == "y" || channelEncoding.channel == "z"))
+                {
+                    if(verbose)
+                    {
+                        Debug.Log("Constructing axis for channel " + channelEncoding.channel);
+                    }
+                    
+                    ConstructAxisObject(axisSpecs, ref channelEncoding, ref sceneRoot);
+                }
+            }
+        }
+
+        private void ConstructAxisObject(JSONNode axisSpecs, ref ChannelEncoding channelEncoding, ref GameObject sceneRoot)
+        {
+            GameObject axisPrefab = Resources.Load("Axis/Axis", typeof(GameObject)) as GameObject;
+            if (axisPrefab != null)
+            {
+                channelEncoding.axis = Instantiate(axisPrefab, sceneRoot.transform);
+
+                // TODO: Move all the following update code to the Axis object class.
+
+                if (axisSpecs["title"] != null)
+                {
+                    channelEncoding.axis.GetComponent<Axis>().SetTitle(axisSpecs["title"].Value);
+                }
+
+                float axisLength = 0.0f;
+                if(axisSpecs["length"] != null)
+                {
+                    axisLength = axisSpecs["length"].AsFloat;
+                } else
+                {
+                    switch(channelEncoding.channel)
+                    {
+                        case "x":
+                            axisLength = width;
+                            break;
+                        case "y":
+                            axisLength = height;
+                            break;
+                        case "z":
+                            axisLength = depth;
+                            break;
+                        default:
+                            axisLength = 0.0f;
+                            break;
+                    }
+                    channelEncoding.axis.GetComponent<Axis>().SetLength(axisLength);
+                }
+                
+                channelEncoding.axis.GetComponent<Axis>().SetOrientation(axisSpecs["orient"].Value, axisSpecs["face"].Value);
+
+                // TODO: Do the axis color coding more elegantly.  
+                // Experimental: Set color of axis based on channel type.
+                channelEncoding.axis.GetComponent<Axis>().EnableAxisColorCoding(channelEncoding.channel);
+            } else
+            {
+                throw new Exception("Cannot find axis prefab.");
+            }
         }
 
         private void ConstructMarks(GameObject sceneRoot)

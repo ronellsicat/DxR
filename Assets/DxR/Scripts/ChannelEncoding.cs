@@ -15,7 +15,7 @@ namespace DxR
         public string fieldDataType;    // Type of data field can be "quantitative", "temporal", "oridinal", or "nominal".
 
         public Scale scale;
-        public Axis axis;
+        public GameObject axis;
 
         public ChannelEncoding()
         {

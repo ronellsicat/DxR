@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using SimpleJSON;
 using UnityEngine;
 
 public class Axis : MonoBehaviour {
@@ -136,6 +137,8 @@ public class Axis : MonoBehaviour {
 
     internal void SetLength(float length)
     {
+        length = length * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+
         Transform lineTransform = gameObject.transform.Find("AxisLine");
 
         if(lineTransform != null)
@@ -158,7 +161,7 @@ public class Axis : MonoBehaviour {
         return Math.Max(renderSize.x, Math.Max(renderSize.y, renderSize.z));
     }
 
-    internal void SetAxisColor(string channelType)
+    internal void EnableAxisColorCoding(string channelType)
     {
         Transform lineTransform = gameObject.transform.Find("AxisLine");
 
@@ -173,5 +176,10 @@ public class Axis : MonoBehaviour {
             lineTransform.GetComponent<Renderer>().material.color = Color.blue;
         }
         
+    }
+
+    internal void UpdateSpecs(JSONNode axisSpecs)
+    {
+        throw new NotImplementedException();
     }
 }
