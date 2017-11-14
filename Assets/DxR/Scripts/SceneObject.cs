@@ -17,6 +17,9 @@ namespace DxR
     public class SceneObject : MonoBehaviour
     {
         private bool verbose = true;
+        public static string UNDEFINED = "undefined";
+        public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Each unit in the specs is 1 mm.
+
         public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;
 
@@ -30,7 +33,8 @@ namespace DxR
         public string markType;     // Type or name of mark used in scene.
         
         private GameObject sceneRoot = null;
-        
+        private GameObject markPrefab = null;
+        private List<ChannelEncoding> channelEncodings = null;
 
         void Start()
         {
@@ -58,12 +62,155 @@ namespace DxR
         {
 
         }
-        
+
+        private void CreateMarkObject(string markType, out GameObject markPrefab)
+        {
+            string markNameLowerCase = markType.ToLower();
+            markPrefab = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+
+            if(markPrefab == null)
+            {
+                throw new Exception("Cannot load mark " + markNameLowerCase);
+            } else if(verbose)
+            {
+                Debug.Log("Loaded mark " + markNameLowerCase);
+            }
+        }
+
         // Construct (full JSON specs -> working SceneObject): 
         private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
         {
             CreateDataObjectFromValues(sceneSpecs["data"]["values"], out data);
 
+            CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
+
+            CreateChannelEncodingObjects(sceneSpecs, out channelEncodings);
+
+            ConstructMarks(sceneRoot);
+        }
+
+        private void ConstructMarks(GameObject sceneRoot)
+        {
+            if(markPrefab != null)
+            {
+                // Create one mark prefab instance for each data point:
+                foreach (Dictionary<string, string> dataValue in data.values)
+                {
+                    // Instantiate mark prefab
+                    GameObject markInstance = InstantiateMark(markPrefab, sceneRoot.transform);
+
+                    // Apply channel encodings:
+                    ApplyChannelEncoding(channelEncodings, dataValue, ref markInstance);
+                }
+            } else
+            {
+                throw new Exception("Error constructing marks with mark prefab not loaded.");
+            }
+        }
+
+        private GameObject InstantiateMark(GameObject markPrefab, Transform parentTransform)
+        {
+            return Instantiate(markPrefab, parentTransform.position,
+                        Quaternion.identity, parentTransform);
+        }
+
+        private void ApplyChannelEncoding(List<ChannelEncoding> channelEncodings, 
+            Dictionary<string, string> dataValue, ref GameObject markInstance)
+        {
+            Mark markComponent = markInstance.GetComponent<Mark>();
+
+            foreach (ChannelEncoding channelEncoding in channelEncodings)
+            {
+                if (channelEncoding.value != DxR.SceneObject.UNDEFINED)
+                {
+                    markComponent.SetChannelValue(channelEncoding.channel, channelEncoding.value);
+                }
+                else
+                {
+                    //Debug.Log("Mapping channel: " + channelParam.channelType +
+                    //    ", value: " + dataValue[channelParam.fieldName]); 
+
+                    string channelValue = channelEncoding.scale.ApplyScale(dataValue[channelEncoding.field]);
+                    markComponent.SetChannelValue(channelEncoding.channel, channelValue);
+                }
+            }
+        }
+
+        private void CreateChannelEncodingObjects(JSONNode sceneSpecs, out List<ChannelEncoding> channelEncodings)
+        {
+            channelEncodings = new List<ChannelEncoding>();
+
+            // Go through each channel and create ChannelEncoding for each:
+            foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
+            {
+                ChannelEncoding channelEncoding = new ChannelEncoding();
+
+                channelEncoding.channel = kvp.Key;
+                JSONNode channelSpecs = kvp.Value;
+                if (channelSpecs["value"] != null)
+                {
+                    channelEncoding.value = channelSpecs["value"].Value.ToString();
+
+                    if(channelSpecs["type"] != null)
+                    {
+                        channelEncoding.valueDataType = channelSpecs["type"].Value.ToString();
+                    } else
+                    {
+                        throw new Exception("Missing type for value in channel " + channelEncoding.channel);
+                    }
+                }
+                else
+                {
+                    channelEncoding.field = channelSpecs["field"];
+
+                    if (channelSpecs["type"] != null)
+                    {
+                        channelEncoding.fieldDataType = channelSpecs["type"];
+                    }
+                    else
+                    {
+                        throw new Exception("Missing type for field in channel " + channelEncoding.channel);
+                    }  
+                }
+
+                JSONNode scaleSpecs = channelSpecs["scale"];
+                if (scaleSpecs != null)
+                {
+                    CreateScaleObject(scaleSpecs, ref channelEncoding.scale);
+                }
+
+                JSONNode axisSpecs = channelSpecs["axis"];
+                if (axisSpecs != null)
+                {
+                    //CreateAxisObject(axisSpecs, ref channelEncoding.axis);
+                }
+
+                // TODO: Add legend object.
+                JSONNode legendSpecs = channelSpecs["legend"];
+                if (legendSpecs != null)
+                {
+                    //CreateLegendObject(axisSpecs, ref channelEncoding.legend);
+                }
+
+                channelEncodings.Add(channelEncoding);
+            }
+        }
+
+        private void CreateScaleObject(JSONNode scaleSpecs, ref Scale scale)
+        {
+            switch (scaleSpecs["type"].Value.ToString())
+            {
+                case "linear":
+                    scale = new ScaleLinear(scaleSpecs);
+                    break;
+
+                case "band":
+                    //scale = new ScaleBand(scaleSpecs);
+                    break;
+                default:
+                    scale = null;
+                    break;
+            }
         }
 
         private void CreateDataObjectFromValues(JSONNode valuesSpecs, out Data data)
