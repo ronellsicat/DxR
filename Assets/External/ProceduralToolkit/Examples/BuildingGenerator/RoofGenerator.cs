@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using System.Linq;
 
 namespace ProceduralToolkit.Examples
 {
@@ -43,17 +44,17 @@ namespace ProceduralToolkit.Examples
                 roofDraft.Add(GenerateOverhang(foundationPolygon, roofPolygon));
             }
 
-            roofDraft.Move(Vector3.up*roofHeight);
+            roofDraft.Move(Vector3.up * roofHeight);
             roofDraft.uv.Clear();
             return roofDraft;
         }
 
         private static MeshDraft GenerateFlat(List<Vector2> roofPolygon, RoofConfig roofConfig)
         {
-            Vector3 a = roofPolygon[0].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 b = roofPolygon[1].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 c = roofPolygon[2].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 d = roofPolygon[3].ToVector3XZ() + Vector3.up*roofConfig.thickness;
+            Vector3 a = roofPolygon[0].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 b = roofPolygon[1].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 c = roofPolygon[2].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 d = roofPolygon[3].ToVector3XZ() + Vector3.up * roofConfig.thickness;
 
             var roofDraft = MeshDraft.Quad(a, d, c, b);
             return roofDraft;
@@ -61,14 +62,14 @@ namespace ProceduralToolkit.Examples
 
         public static MeshDraft GenerateGabled(List<Vector2> roofPolygon, RoofConfig roofConfig)
         {
-            Vector3 a = roofPolygon[0].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 b = roofPolygon[1].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 c = roofPolygon[2].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 d = roofPolygon[3].ToVector3XZ() + Vector3.up*roofConfig.thickness;
+            Vector3 a = roofPolygon[0].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 b = roofPolygon[1].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 c = roofPolygon[2].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 d = roofPolygon[3].ToVector3XZ() + Vector3.up * roofConfig.thickness;
 
-            Vector3 ridgeHeight = Vector3.up*GabledRoofHeight;
-            Vector3 ridge0 = (a + d)/2 + ridgeHeight;
-            Vector3 ridge1 = (b + c)/2 + ridgeHeight;
+            Vector3 ridgeHeight = Vector3.up * GabledRoofHeight;
+            Vector3 ridge0 = (a + d) / 2 + ridgeHeight;
+            Vector3 ridge1 = (b + c) / 2 + ridgeHeight;
 
             var roofDraft = MeshDraft.Quad(a, ridge0, ridge1, b);
             roofDraft.Add(MeshDraft.Triangle(b, ridge1, c));
@@ -79,15 +80,15 @@ namespace ProceduralToolkit.Examples
 
         public static MeshDraft GenerateHipped(List<Vector2> roofPolygon, RoofConfig roofConfig)
         {
-            Vector3 a = roofPolygon[0].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 b = roofPolygon[1].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 c = roofPolygon[2].ToVector3XZ() + Vector3.up*roofConfig.thickness;
-            Vector3 d = roofPolygon[3].ToVector3XZ() + Vector3.up*roofConfig.thickness;
+            Vector3 a = roofPolygon[0].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 b = roofPolygon[1].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 c = roofPolygon[2].ToVector3XZ() + Vector3.up * roofConfig.thickness;
+            Vector3 d = roofPolygon[3].ToVector3XZ() + Vector3.up * roofConfig.thickness;
 
-            Vector3 ridgeHeight = Vector3.up*HippedRoofHeight;
-            Vector3 ridgeOffset = (b - a).normalized*2;
-            Vector3 ridge0 = (a + d)/2 + ridgeHeight + ridgeOffset;
-            Vector3 ridge1 = (b + c)/2 + ridgeHeight - ridgeOffset;
+            Vector3 ridgeHeight = Vector3.up * HippedRoofHeight;
+            Vector3 ridgeOffset = (b - a).normalized * 2;
+            Vector3 ridge0 = (a + d) / 2 + ridgeHeight + ridgeOffset;
+            Vector3 ridge1 = (b + c) / 2 + ridgeHeight - ridgeOffset;
             var roofDraft = MeshDraft.Quad(a, ridge0, ridge1, b);
             roofDraft.Add(MeshDraft.Triangle(b, ridge1, c));
             roofDraft.Add(MeshDraft.Quad(c, ridge1, ridge0, d));
@@ -97,16 +98,16 @@ namespace ProceduralToolkit.Examples
 
         private static MeshDraft GenerateBorder(List<Vector2> roofPolygon, RoofConfig roofConfig)
         {
-            List<Vector3> lowerRing = roofPolygon.ConvertAll(v => v.ToVector3XZ());
-            List<Vector3> upperRing = roofPolygon.ConvertAll(v => v.ToVector3XZ() + Vector3.up*roofConfig.thickness);
+            List<Vector3> lowerRing = roofPolygon.Select(v => v.ToVector3XZ()).ToList();
+            List<Vector3> upperRing = roofPolygon.Select(v => v.ToVector3XZ() + Vector3.up * roofConfig.thickness).ToList();
             var border = MeshDraft.FlatBand(lowerRing, upperRing);
             return border;
         }
 
         private static MeshDraft GenerateOverhang(List<Vector2> foundationPolygon, List<Vector2> roofPolygon)
         {
-            List<Vector3> lowerRing = foundationPolygon.ConvertAll(v => v.ToVector3XZ());
-            List<Vector3> upperRing = roofPolygon.ConvertAll(v => v.ToVector3XZ());
+            List<Vector3> lowerRing = foundationPolygon.Select(v => v.ToVector3XZ()).ToList();
+            List<Vector3> upperRing = roofPolygon.Select(v => v.ToVector3XZ()).ToList();
             var overhang = MeshDraft.FlatBand(lowerRing, upperRing);
             return overhang;
         }
@@ -121,9 +122,9 @@ namespace ProceduralToolkit.Examples
                 var next = polygon.GetLooped(i + 1);
                 float angle;
                 Vector2 bisector = GetBisector(previous, current, next, out angle);
-                float hypotenuse = distance/GetBisectorSin(angle);
+                float hypotenuse = distance / GetBisectorSin(angle);
 
-                newPolygon.Add(current + bisector*hypotenuse);
+                newPolygon.Add(current + bisector * hypotenuse);
             }
             return newPolygon;
         }
@@ -135,7 +136,7 @@ namespace ProceduralToolkit.Examples
 
             angle = PTUtils.Angle360(toPrevious, toNext);
             Assert.IsFalse(float.IsNaN(angle));
-            return toPrevious.RotateCW(angle/2);
+            return toPrevious.RotateCW(angle / 2);
         }
 
         private static float GetBisectorSin(float angle)
@@ -144,7 +145,7 @@ namespace ProceduralToolkit.Examples
             {
                 angle = 360 - angle;
             }
-            return Mathf.Sin(angle/2*Mathf.Deg2Rad);
+            return Mathf.Sin(angle / 2 * Mathf.Deg2Rad);
         }
     }
 
