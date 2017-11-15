@@ -40,3 +40,11 @@ Assets/HoloToolkit-Examples.meta
 Assets/StreamingAssets/.vs/config/applicationhost.config
 Assets/StreamingAssets/.vs/ProjectSettings.json
 Assets/StreamingAssets/.vs/slnx.sqlite
+Assets/HoloToolkit/SpatialUnderstanding/Plugins/WSA/x64/SpatialUnderstanding.pdb.meta
+Assets/HoloToolkit/SpatialUnderstanding/Plugins/WSA/x86/SpatialUnderstanding.pdb.meta
+Assets/HoloToolkit/SpatialUnderstanding/Plugins/x64/SpatialUnderstanding.pdb.meta
+Assets/HoloToolkit/SpatialUnderstanding/Plugins/x86/SpatialUnderstanding.pdb.meta
+Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/x64/GpuTiming.pdb.meta
+Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/x86/GpuTiming.pdb.meta
+Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/x64/GpuTiming.pdb.meta
+Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/x86/GpuTiming.pdb.meta
