@@ -17,13 +17,13 @@ namespace DxR
 
         public ScaleLinear(JSONNode scaleSpecs) : base(scaleSpecs) {
 
-            domainMin = scaleSpecs["domain"][0].AsFloat;
-            domainMax = scaleSpecs["domain"][1].AsFloat;
+            domainMin = float.Parse(base.domain[0]); 
+            domainMax = float.Parse(base.domain[1]);
 
-            rangeMin = scaleSpecs["range"][0].AsFloat;
-            rangeMax = scaleSpecs["range"][1].AsFloat;
+            rangeMin = float.Parse(base.range[0]);
+            rangeMax = float.Parse(base.range[1]);
 
-            if(verbose)
+            if (verbose)
             {
                 Debug.Log("Created ScaleLinear object with domain [" +
                     domainMin.ToString() + ", " + domainMax.ToString() +
