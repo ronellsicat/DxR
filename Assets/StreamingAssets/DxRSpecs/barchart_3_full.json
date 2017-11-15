@@ -27,6 +27,7 @@
         "range": [0,500]
       },
       "axis": {
+        "face": "front",
         "orient": "bottom",
         "title": "Keywords",
         "grid": false,
@@ -42,6 +43,7 @@
         "range": [ 0, 500 ]
       },
       "axis": {
+        "face": "front",
         "orient": "left",
         "title": "Count",
         "grid": true,

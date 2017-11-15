@@ -16,6 +16,7 @@
         "range": [ 0, 500 ]
       },
       "axis": {
+        "face": "front",
         "orient": "bottom",
         "title": "x",
         "grid": true,
@@ -32,6 +33,7 @@
         "range": [ 0, 500 ]
       },
       "axis": {
+        "face": "front",
         "orient": "left",
         "title": "y",
         "grid": true,
@@ -48,6 +50,7 @@
         "range": [ 0, 500 ]
       },
       "axis": {
+        "face": "left",
         "orient": "bottom",
         "title": "z",
         "grid": true,

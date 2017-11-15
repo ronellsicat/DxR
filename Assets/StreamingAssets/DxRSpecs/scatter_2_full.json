@@ -16,6 +16,7 @@
         "range": [ 0, 500 ]
       },
       "axis": {
+        "face": "front",
         "orient": "bottom",
         "title": "HP",
         "grid": true,
@@ -32,6 +33,7 @@
         "range": [ 0, 500 ]
       },
       "axis": {
+        "face": "front",
         "orient": "left",
         "title": "MPG",
         "grid": true,
@@ -48,7 +50,8 @@
         "scheme": "tableau10"
       },
       "legend": {
-        "type":  "symbol",
+        "type": "symbol",
+        "face": "front",
         "orient": "right",
         "title": "Origin Legend"
       }
