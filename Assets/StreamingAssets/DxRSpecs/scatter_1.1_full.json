@@ -57,6 +57,12 @@
         "ticks": true,
         "tickCount": 6
       }
+    },
+    "color": {
+      "value": "#ff9900"
+    },
+    "size": {
+      "value": 10
     }
   }
 }

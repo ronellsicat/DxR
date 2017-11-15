@@ -23,8 +23,11 @@ namespace DxR
         {
             switch (channel)
             {
-                case "radius":
-                    SetRadius(value);
+                case "size":
+                    SetSize(value);
+                    break;
+                case "color":
+                    SetColor(value);
                     break;
                 default:
                     base.SetChannelValue(channel, value);
@@ -32,14 +35,26 @@ namespace DxR
             }
         }
 
-        /// <summary>
-        /// This is an example of a method for setting channel values
-        /// that are specific to this mark (versus generic ones in Mark base class).
-        /// </summary>
-        private void SetRadius(string value)
+        // Sets the diameter of the point to the value.
+        private void SetSize(string value)
         {
-            float r = float.Parse(value);
-            gameObject.transform.localScale = new Vector3(r, r, r);
+            float d = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+
+            Vector3 renderSize = gameObject.transform.GetComponent<Renderer>().bounds.size;
+            Vector3 localScale = gameObject.transform.localScale;
+
+            float origSize = renderSize.x / localScale.x;
+            float newLocalScale = (d / origSize);
+
+            gameObject.transform.localScale = new Vector3(newLocalScale,
+                newLocalScale, newLocalScale);
+        }
+
+        private void SetColor(string value)
+        {
+            Color color;
+            bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+            transform.GetComponent<Renderer>().material.color = color;
         }
     }
 
