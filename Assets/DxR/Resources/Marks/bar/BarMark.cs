@@ -37,6 +37,7 @@ namespace DxR
                     // TODO:
                     throw new Exception("Channel y2 not implemented.");
                     break;
+                case "bandwidth":
                 case "width":
                     SetWidth(value);
                     break;
