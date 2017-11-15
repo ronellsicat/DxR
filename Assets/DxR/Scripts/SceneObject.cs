@@ -198,10 +198,6 @@ namespace DxR
                     {
                         channelEncoding.valueDataType = channelSpecs["type"].Value.ToString();
                     }
-                    else
-                    {
-                        throw new Exception("Missing type for value in channel " + channelEncoding.channel);
-                    }
                 }
                 else
                 {
@@ -236,7 +232,7 @@ namespace DxR
                     break;
 
                 case "band":
-                    //scale = new ScaleBand(scaleSpecs);
+                    scale = new ScaleBand(scaleSpecs);
                     break;
                 default:
                     scale = null;
