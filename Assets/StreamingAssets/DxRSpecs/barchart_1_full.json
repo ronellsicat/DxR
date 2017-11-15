@@ -53,6 +53,9 @@
         "ticks": true,
         "tickCount": 6
       }
+    },
+    "width": {
+      "value": 52.16
     }
   }
 }
