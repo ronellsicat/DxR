@@ -58,6 +58,15 @@
         "tickCount": 5
       }
     },
+    "height": {
+      "field": "mag",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 4 ],
+        "range": [ 0, 100 ]
+      }
+    },
     "xorient": {
       "field": "u",
       "type": "quantitative",
@@ -78,6 +87,9 @@
       "scale": {
         "type": "custom"
       }
+    },
+    "color": {
+      "value": "#c51b8a"
     }
   }
 }

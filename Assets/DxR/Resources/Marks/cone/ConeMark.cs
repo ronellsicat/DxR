@@ -66,18 +66,8 @@ namespace DxR
         // Sets the diameter of the point to the value.
         private void SetHeight(string value)
         {
-            /*
-            float d = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-
-            Vector3 renderSize = gameObject.transform.GetComponent<Renderer>().bounds.size;
-            Vector3 localScale = gameObject.transform.localScale;
-
-            float origSize = renderSize.x / localScale.x;
-            float newLocalScale = (d / origSize);
-
-            gameObject.transform.localScale = new Vector3(newLocalScale,
-                newLocalScale, newLocalScale);
-                */
+            float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshHeight(height);        
         }
 
         private void SetColor(string value)
