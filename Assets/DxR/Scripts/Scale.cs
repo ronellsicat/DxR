@@ -17,8 +17,22 @@ namespace DxR
             domain = new List<string>();
             range = new List<string>();
 
-            CopyNodeToList(scaleSpecs["domain"], ref domain);
-            CopyNodeToList(scaleSpecs["range"], ref range);
+            if(scaleSpecs["domain"] != null)
+            {
+                CopyNodeToList(scaleSpecs["domain"], ref domain);
+            } else
+            {
+                throw new Exception("Scale is missing domain.");
+            }
+
+            if (scaleSpecs["range"] != null)
+            {
+                CopyNodeToList(scaleSpecs["range"], ref range);
+            }
+            else
+            {
+                throw new Exception("Scale is missing range.");
+            }
         }
 
         private void CopyNodeToList(JSONNode node, ref List<string> list)

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
+using System;
 
 namespace DxR
 {
@@ -9,10 +10,13 @@ namespace DxR
     {
         private bool verbose = true;
 
-        public float paddingOuter = 0.05f;
-        public float paddingInner = 0.05f;
+        public static float PADDING_OUTER_DEFAULT = 0.05f;
+        public static float PADDING_INNER_DEFAULT = 0.05f;
 
-        public float stepSize = 100.0f;
+        public float paddingOuter = 0.0f;
+        public float paddingInner = 0.0f;
+
+        public float rangeStep = 100.0f;
         public float rangeMin = 0.0f;
         public float rangeMax = 100.0f;
 
@@ -26,6 +30,23 @@ namespace DxR
         public ScaleBand(JSONNode scaleSpecs) : base(scaleSpecs) {
 
             // TODO: Check validity of parameters.
+
+            if (scaleSpecs["paddingInner"] != null)
+            {
+                paddingInner = scaleSpecs["paddingInner"].AsFloat;
+            } else
+            {
+                paddingInner = PADDING_INNER_DEFAULT;
+            }
+
+            if (scaleSpecs["paddingOuter"] != null)
+            {
+                paddingOuter = scaleSpecs["paddingOuter"].AsFloat;
+            } else
+            {
+                paddingOuter = PADDING_OUTER_DEFAULT;
+            }
+            
             rangeMin = float.Parse(base.range[0]);
             rangeMax = float.Parse(base.range[1]);
 
@@ -35,14 +56,14 @@ namespace DxR
             paddingInnerSize = tempStepSize * paddingInner;
             paddingOuterSize = tempStepSize * paddingOuter;
 
-            stepSize = ((rangeMax - rangeMin) - (paddingOuterSize * 2.0f)) / (float)(numSteps);
+            rangeStep = ((rangeMax - rangeMin) - (paddingOuterSize * 2.0f)) / (float)(numSteps);
 
-            bandwidth = stepSize - paddingInnerSize;
+            bandwidth = rangeStep - paddingInnerSize;
 
             if(verbose)
             {
                 Debug.Log("ScaleBand created with " + numSteps.ToString() + " steps. " + 
-                    stepSize.ToString() + " stepSize, and " + bandwidth.ToString() +
+                    rangeStep.ToString() + " rangeStep, and " + bandwidth.ToString() +
                     " bandwidth.");
             }
         }
@@ -58,7 +79,7 @@ namespace DxR
                 throw new System.Exception("Invalid domain value " + domainValue);
             } else
             {
-                rangeValue = rangeValue + ((float)(domainValueIndex) * stepSize) + (bandwidth / 2.0f);
+                rangeValue = rangeValue + ((float)(domainValueIndex) * rangeStep) + (bandwidth / 2.0f);
             }
 
             Debug.Log("Scaling " + domainValue + " to " + rangeValue.ToString());
