@@ -24,6 +24,9 @@
       "type": "nominal",
       "scale": {
         "type": "band",
+        "domain": [ "A", "B", "C", "D", 
+                    "E", "F", "G", "H", "I"
+        ],
         "range": [ 0, 500 ]
       },
       "axis": {

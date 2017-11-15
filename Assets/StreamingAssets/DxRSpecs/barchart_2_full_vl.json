@@ -22,6 +22,9 @@
       "type": "nominal",
       "scale": {
         "type": "band",
+        "domain": [ "A", "B", "C", "D", 
+                    "E", "F", "G", "H", "I"
+        ],
         "paddingInner": 0.1,
         "paddingOuter": 0.1,
         "rangeStep": 40

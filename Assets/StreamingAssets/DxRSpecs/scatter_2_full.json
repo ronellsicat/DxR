@@ -46,6 +46,7 @@
       "type": "nominal",
       "scale": {
         "type": "ordinal",
+        "domain": ["Europe", "Japan", "USA"],
         "range": "category",
         "scheme": "tableau10"
       },

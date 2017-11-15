@@ -46,6 +46,7 @@
       "type": "ordinal",
       "scale": {
         "type": "ordinal",
+        "domain":  [3, 4, 5, 6, 8],
         "range": "ordinal",
         "scheme": "blues"
       },
