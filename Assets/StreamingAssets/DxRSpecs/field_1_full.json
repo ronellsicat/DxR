@@ -1,11 +1,11 @@
 {
-  "title": "Cars Data",
-  "description": "This displays a 3D scatterplot.",
+  "title": "Field Data",
+  "description": "This displays a 3D glyph plot.",
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/cars.json" },
-  "mark": "arrow",
+  "data": { "url": "DxRData/field.json" },
+  "mark": "cone",
   "encoding": {
     "x": {
       "field": "x",
@@ -58,17 +58,26 @@
         "tickCount": 5
       }
     },
-    "vecx": {
+    "xorient": {
       "field": "u",
-      "type": "float"
+      "type": "quantitative",
+      "scale": {
+        "type": "custom"
+      }
     },
-    "vecy": {
+    "yorient": {
       "field": "v",
-      "type": "float"
+      "type": "quantitative",
+      "scale": {
+        "type": "custom"
+      }
     },
-    "vecz": {
+    "zorient": {
       "field": "w",
-      "type": "float"
+      "type": "quantitative",
+      "scale": {
+        "type": "custom"
+      }
     }
   }
 }

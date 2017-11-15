@@ -227,6 +227,10 @@ namespace DxR
         {
             switch (scaleSpecs["type"].Value.ToString())
             {
+                case "custom":
+                    scale = new ScaleCustom(scaleSpecs);
+                    break;
+
                 case "linear":
                     scale = new ScaleLinear(scaleSpecs);
                     break;
@@ -234,6 +238,7 @@ namespace DxR
                 case "band":
                     scale = new ScaleBand(scaleSpecs);
                     break;
+                    
                 default:
                     scale = null;
                     break;
@@ -269,6 +274,10 @@ namespace DxR
             Dictionary<string, string> dataValue, ref GameObject markInstance)
         {
             Mark markComponent = markInstance.GetComponent<Mark>();
+            if(markComponent == null)
+            {
+                throw new Exception("Mark component not present in mark prefab.");
+            }
 
             foreach (ChannelEncoding channelEncoding in channelEncodings)
             {

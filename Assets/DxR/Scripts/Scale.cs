@@ -8,7 +8,6 @@ namespace DxR
 {
     public class Scale
     {
-        public string scaleType;       // Type or name of scale (e.g., "linear", "time").
         public List<string> domain;
         public List<string> range;
         
@@ -20,7 +19,7 @@ namespace DxR
             if(scaleSpecs["domain"] != null)
             {
                 CopyNodeToList(scaleSpecs["domain"], ref domain);
-            } else
+            } else if(scaleSpecs["type"] != "custom")
             {
                 throw new Exception("Scale is missing domain.");
             }
@@ -29,7 +28,7 @@ namespace DxR
             {
                 CopyNodeToList(scaleSpecs["range"], ref range);
             }
-            else
+            else if(scaleSpecs["type"] != "custom")
             {
                 throw new Exception("Scale is missing range.");
             }
