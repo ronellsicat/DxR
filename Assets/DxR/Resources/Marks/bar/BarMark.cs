@@ -40,6 +40,9 @@ namespace DxR
                 case "width":
                     SetWidth(value);
                     break;
+                case "color":
+                    SetColor(value);
+                    break;
                 default:
                     base.SetChannelValue(channel, value);
                     break;
@@ -73,6 +76,13 @@ namespace DxR
 
             float y = gameObject.transform.localPosition.y;
             transform.Translate(0, height / 2.0f - y, 0);
+        }
+
+        private void SetColor(string value)
+        {
+            Color color;
+            bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+            transform.GetComponent<Renderer>().material.color = color;
         }
     }
 

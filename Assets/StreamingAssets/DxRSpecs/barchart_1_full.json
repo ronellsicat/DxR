@@ -24,8 +24,16 @@
       "type": "nominal",
       "scale": {
         "type": "band",
-        "domain": [ "A", "B", "C", "D", 
-                    "E", "F", "G", "H", "I"
+        "domain": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
         ],
         "range": [ 0, 500 ]
       },
@@ -56,6 +64,9 @@
     },
     "width": {
       "value": 52.16
+    },
+    "color": {
+      "value": "#ff9900"
     }
   }
 }
