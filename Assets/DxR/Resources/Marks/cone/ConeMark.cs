@@ -14,9 +14,12 @@ namespace DxR
     /// </summary>
     public class ConeMark : Mark
     {
+        public Vector3 origOrientation;
+        public Vector3 curOrientation;
+
         public ConeMark() : base("cone")
         {
-            
+            origOrientation = curOrientation = Vector3.up;
         }
         
         public override void SetChannelValue(string channel, string value)
@@ -47,33 +50,17 @@ namespace DxR
         // vectorIndex = 0 for x, 1 for y, 2 for z
         private void SetOrient(string value, int vectorIndex)
         {
-            if (float.Parse(value) == 0) return;
-            
-            Vector3 initOrient = Vector3.up;
-
+            // Set target direction dim to normalized size.
             Vector3 targetOrient = Vector3.zero;
             targetOrient[vectorIndex] = float.Parse(value);
             targetOrient.Normalize();
 
-            Vector3 axis = Vector3.forward;
-            if(vectorIndex == 2)
-            {
-                axis = Vector3.right;
-            }
+            // Copy coordinate to current orientation and normalize.
+            curOrientation[vectorIndex] = targetOrient[vectorIndex];
+            curOrientation.Normalize();
 
-            float rot = -Vector3.SignedAngle(targetOrient, initOrient, axis);
-
-            Vector3 localRot = gameObject.transform.localEulerAngles;
-
-            if(vectorIndex == 2)
-            {
-                localRot.x = rot;
-            } else
-            {
-                localRot.z = rot;
-            }
-            
-            gameObject.transform.localEulerAngles = localRot;
+            Quaternion rotation = Quaternion.FromToRotation(origOrientation, curOrientation);
+            transform.rotation = rotation;
         }
 
         // Sets the diameter of the point to the value.
