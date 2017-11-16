@@ -238,6 +238,10 @@ namespace DxR
                 case "band":
                     scale = new ScaleBand(scaleSpecs);
                     break;
+
+                case "ordinal":
+                    scale = new ScaleOrdinal(scaleSpecs);
+                    break;
                     
                 default:
                     scale = null;

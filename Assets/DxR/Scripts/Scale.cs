@@ -34,7 +34,7 @@ namespace DxR
             }
         }
 
-        private void CopyNodeToList(JSONNode node, ref List<string> list)
+        protected void CopyNodeToList(JSONNode node, ref List<string> list)
         {
             if (node == null) return;
 
