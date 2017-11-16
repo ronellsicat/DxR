@@ -275,7 +275,7 @@ namespace DxR
         private GameObject InstantiateMark(GameObject markPrefab, Transform parentTransform)
         {
             return Instantiate(markPrefab, parentTransform.position,
-                        Quaternion.identity, parentTransform);
+                        parentTransform.rotation, parentTransform);
         }
 
         private void ApplyChannelEncoding(List<ChannelEncoding> channelEncodings, 
