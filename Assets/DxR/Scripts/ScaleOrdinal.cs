@@ -18,7 +18,7 @@ namespace DxR
                 switch(rangeType)
                 {
                     case "category":
-                        SetupCategoryScale(scaleSpecs);
+                        SetupScaleCategory(scaleSpecs);
                         break;
 
                     default:
@@ -33,7 +33,7 @@ namespace DxR
 
         }
 
-        private void SetupCategoryScale(JSONNode scaleSpecs)
+        private void SetupScaleCategory(JSONNode scaleSpecs)
         {
             if(scaleSpecs["scheme"] != null)
             {
