@@ -242,7 +242,11 @@ namespace DxR
                 case "ordinal":
                     scale = new ScaleOrdinal(scaleSpecs);
                     break;
-                    
+
+                case "sequential":
+                    scale = new ScaleSequential(scaleSpecs);
+                    break;
+
                 default:
                     scale = null;
                     break;

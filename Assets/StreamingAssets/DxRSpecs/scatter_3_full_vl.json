@@ -42,7 +42,7 @@
       "field": "Weight_in_lbs",
       "type": "quantitative",
       "scale": {
-        "type": "linear",
+        "type": "sequential",
         "domain": [ 1000, 2750, 4500 ],
         "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
       },
