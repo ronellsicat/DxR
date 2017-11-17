@@ -7,7 +7,7 @@ This document provides instructions for setting up DxR in Unity for xR applicati
 Note that DxR is based on the Microsoft Mixed Reality ecosystem with: 
 
 1. Unity3D Editor [version 2017.2.0p1-MRTP4](http://beta.unity3d.com/download/b1565bfe4a0c/UnityDownloadAssistant.exe) 
-2. Mixed Reality Toolkit [v1.2017.1.2](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0)
+2. Mixed Reality Toolkit [v1.2017.1.2](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0) - this is included in the package version of DxR for convenience.
 
 ## Getting Started
 
