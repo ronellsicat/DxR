@@ -312,8 +312,9 @@ namespace DxR
             {
                 ChannelEncoding channelEncoding = channelEncodings[channelIndex];
                 JSONNode axisSpecs = sceneSpecs["encoding"][channelEncoding.channel]["axis"];
-                if (axisSpecs != null && (channelEncoding.channel == "x" ||
-                    channelEncoding.channel == "y" || channelEncoding.channel == "z"))
+                if (axisSpecs != null && axisSpecs.Value.ToString() != "none" && 
+                    (channelEncoding.channel == "x" || channelEncoding.channel == "y" || 
+                    channelEncoding.channel == "z"))
                 {
                     if (verbose)
                     {
