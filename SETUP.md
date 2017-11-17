@@ -1,6 +1,6 @@
 # Setup
 
-This document provides instructions for setting up DxR in Unity for xR applications. If you are familiar with xR development and already have an xR application up and running, you only have to import [DxR.unitypackage]() [TODO] into your project and start following the [authoring instructions](AUTHORING.md). Otherwise, follow the instructions below. 
+This document provides instructions for setting up DxR in Unity for xR applications. If you are familiar with xR development and already have an xR application up and running, you only have to import [DxR.unitypackage](https://github.com/ronellsicat/DxR/raw/master/DxR.unitypackage) into your project and start following the [authoring instructions](AUTHORING.md). Otherwise, follow the instructions below. 
 
 ## Requirements
 
@@ -12,8 +12,8 @@ Note that DxR is based on the Microsoft Mixed Reality ecosystem with:
 ## Getting Started
 
 1. Create/Open your a project in Unity. 
-2. Import the DxR package [DxR.unitypackage]() [TODO] into your Unity project.
-3. You can build your scene from scratch, following instructions [here]() [TODO], or you can also use a DxR template scene [DxRExamples/template.unity]() [TODO] with a basic set-up and an example visualization.
+2. Import the DxR package [DxR.unitypackage](https://github.com/ronellsicat/DxR/raw/master/DxR.unitypackage) into your Unity project.
+3. You can build your scene from scratch, following instructions [here]() [TODO], or you can also use a DxR template scene DxRExamples/template.unity with a basic set-up and an example visualization.
 4. Depending on your target xR environment, follow the debugging instructions below.
 Microsoft's initial set-up instructions [here](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview). Then follow the steps below depending on your target xR system. 
 
