@@ -236,6 +236,7 @@ namespace DxR
                     break;
 
                 case "band":
+                case "point":
                     scale = new ScaleBand(scaleSpecs);
                     break;
 
