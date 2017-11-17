@@ -13,7 +13,8 @@ Note that DxR is based on the Microsoft Mixed Reality ecosystem with:
 
 1. Create/Open your project in Unity. 
 2. Import the DxR package [DxR.unitypackage](https://github.com/ronellsicat/DxR/raw/master/DxR.unitypackage) into your Unity project.
-3. You can build your scene from scratch, following instructions [here](AUTHORING.md), or you can also use a DxR template scene DxRExamples/template.unity with a basic set-up and some example visualizations.
+3. Apply default mixed reality project settings. In Unity3D editor menu, go to: Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Project Settings and click Apply.
+4. You can build your scene from scratch, following instructions [here](AUTHORING.md), or you can also use a DxR template scene DxRExamples/template.unity with a basic set-up and some example visualizations.
 4. Depending on your target xR environment, follow the debugging instructions below.
 
 <!--
@@ -40,8 +41,6 @@ The following instructions are based on the [Mixed Reality Toolkit getting strat
 
 ### Developer notes
 1. Once you've done the set-up for either VR or MR development as instructed above, you can easily switch between the two during debug mode by simply changing the Target Device option from "Any Device" to "HoloLens" in order to target IHMDs or HoloLens, respectively.
-
-[More developer notes can be found here.](Development.md)
 
 ## Creating a DxR Visualization
 
