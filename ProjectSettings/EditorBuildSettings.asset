@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/DxRExamples/template.unity
     guid: 39042e7a7f24e1b4f94737a5d70fbb63
+  - enabled: 1
+    path: Assets/DxRExamples/gallery.unity
+    guid: f7244de267f9a4640bcde55a8bff0b6f
