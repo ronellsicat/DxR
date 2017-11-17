@@ -18,11 +18,11 @@ Users will typically just have to use prefabs found in DxR/Prefabs and create a 
 
 ### Steps:
 
-1. Add a DxRView object into your scene by dragging and dropping the DxRView prefab (found in Assets/DxR/) into your Unity Hierarchy.
-2. Select your instance to set parameters as needed, particularly the filename for the specification, e.g., vis_spec.json.
-3. Create a specification file, e.g., vis_spec.json, inside Assets/StreamingAssets folder.
-4. Modify the contents of specification file to create your visualization as desired. The grammar for specifying visualizations is described here [TODO]. 
-5. Your specified visualization will get created automatically at run time.
+1. Add a DxRSceneObject into your scene by dragging and dropping the DxRSceneObject prefab (found in Assets/DxR/Prefabs/) into your Unity Hierarchy.
+2. Select the object in your hierarchy to show parameters in the inspector windos. Set parameters as needed - particularly the filename for the specification, e.g., DxRData/vis_spec.json. Note that this filename is relative to the Assets/StreamingAssets/ folder.
+3. Create a specification file, e.g., DxRData/vis_spec.json, inside Assets/StreamingAssets/ folder.
+4. Modify the contents of specification file to create your visualization as desired. The grammar for specifying visualizations is described here [TODO]. You can also look at [Vega-Lite](https://vega.github.io/vega-lite/)'s grammar for reference.
+5. Your specified visualization will get created automatically when you play the scene.
 
 ## Full high-level specs:
 
@@ -33,6 +33,8 @@ Users will typically just have to use prefabs found in DxR/Prefabs and create a 
 [TODO]
 
 ### Sharing 
+
+[TODO]
 
 To allow other users to use your custom marks and channels, simply create a package (Assets -> Export Package) with ONLY your mark directory checked, e.g., DxR/Resources/Marks/mycustommark. Once another user imports your package, your custom mark will show up in their DxR/Resources/Marks folder.
   
