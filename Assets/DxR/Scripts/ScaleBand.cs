@@ -10,8 +10,8 @@ namespace DxR
     {
         private bool verbose = true;
 
-        public static float PADDING_OUTER_DEFAULT = 0.05f;
-        public static float PADDING_INNER_DEFAULT = 0.05f;
+        public static float PADDING_OUTER_DEFAULT = 0.0f;
+        public static float PADDING_INNER_DEFAULT = 0.0f;
 
         public float paddingOuter = 0.0f;
         public float paddingInner = 0.0f;
@@ -20,7 +20,6 @@ namespace DxR
         public float rangeMin = 0.0f;
         public float rangeMax = 100.0f;
 
-        public bool isBandwidthSpecified = false;   // Set to true is manually specified in JSON specs.
         public float bandwidth = 1.0f;
 
         private float paddingOuterSize = 0.05f;
