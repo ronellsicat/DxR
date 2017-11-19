@@ -1,9 +1,9 @@
 {
   "title": "Field Data",
   "description": "This displays a 3D glyph plot.",
-  "width": 500,
-  "height": 500,
-  "depth":  500,
+  "width": 2000,
+  "height": 2000,
+  "depth":  2000,
   "data": { "url": "DxRData/streamline.json" },
   "mark": "paperplane",
   "encoding": {
