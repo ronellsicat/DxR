@@ -54,6 +54,9 @@
         "type": "gradient",
         "face": "front",
         "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
         "title": "Weight in lbs"
       }
     }
