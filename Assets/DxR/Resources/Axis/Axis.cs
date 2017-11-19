@@ -63,8 +63,8 @@ public class Axis : MonoBehaviour {
     {
         Transform titleTransform = gameObject.transform.Find("Title");
 
-        // TODO: Figure out how to center
-        float translateBy = 0.25f;
+        float translateBy = GetLength() / 2.0f;
+        // TODO: Shift by the height of the text.
         float shiftBy = 0.015f;
         titleTransform.localPosition = new Vector3(translateBy, -shiftBy, 0);
     }
@@ -96,8 +96,8 @@ public class Axis : MonoBehaviour {
             titleTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             titleTransform.Rotate(0.0f, 0.0f, 90.0f);
 
-            // TODO: Figure out how to center
-            float translateBy = 0.25f;
+            float translateBy = GetLength() / 2.0f;
+            // TODO: Shift by the height of the text.
             float shiftBy = 0.015f;
             titleTransform.localPosition = new Vector3(-shiftBy, translateBy, 0);
         }
@@ -129,7 +129,8 @@ public class Axis : MonoBehaviour {
             titleTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
             titleTransform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
 
-            float translateBy = 0.25f;
+            float translateBy = GetLength() / 2.0f;
+            // TODO: Shift by the height of the text.
             float shiftBy = 0.015f;
             titleTransform.localPosition = new Vector3(0, -shiftBy, translateBy);
         }
