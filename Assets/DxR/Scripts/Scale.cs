@@ -49,5 +49,10 @@ namespace DxR
             string rangeValue = "";
             return rangeValue;
         }
+
+        public virtual float GetDomainPct(string domainValue)
+        {
+            return 0.0f;
+        }
     }
 }

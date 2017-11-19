@@ -38,6 +38,18 @@ namespace DxR
             CopyNodeToList(colorSchemeSpec["colors"], ref range);
         }
 
+        public override float GetDomainPct(string domainValue)
+        {
+            float value = float.Parse(domainValue);
+            
+            float startValue = float.Parse(base.domain[0]);
+            float endValue = float.Parse(base.domain[base.domain.Count - 1]);
+
+            float pct = (value - startValue) / (endValue - startValue);
+
+            return pct;
+        }
+
         public override string ApplyScale(string domainValue)
         {
             int endIndex = 0;

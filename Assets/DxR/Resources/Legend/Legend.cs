@@ -6,7 +6,9 @@ using SimpleJSON;
 using UnityEngine;
 
 public class Legend : MonoBehaviour {
-    
+
+    LineRenderer colorLine = null;
+
 	// Use this for initialization
 	void Start () {
 
@@ -27,11 +29,11 @@ public class Legend : MonoBehaviour {
 
         if(legendSpecs["type"] == "symbol")
         {
-            // Create values:
-            ConstructValues(legendSpecs, ref channelEncoding, markPrefab);
+            // Create symbols:
+            ConstructSymbols(legendSpecs, ref channelEncoding, markPrefab);
         } else if(legendSpecs["type"] == "gradient")
         {
-            // TODO:
+            ConstructGradient(legendSpecs, ref channelEncoding);
         }
 
         // Orient legend:
@@ -54,7 +56,60 @@ public class Legend : MonoBehaviour {
         }
     }
 
-    private void ConstructValues(JSONNode legendSpecs, ref ChannelEncoding channelEncoding, GameObject markPrefab)
+    // TODO: Get rid of hard coded default values.
+    private void ConstructGradient(JSONNode legendSpecs, ref ChannelEncoding channelEncoding)
+    {
+        colorLine = gameObject.GetComponentInChildren<LineRenderer>(true);
+    
+        if(colorLine == null)
+        {
+            throw new Exception("Cannot find ColorLine LineRenderer object in legend.");
+        }
+
+        colorLine.gameObject.SetActive(true);
+        colorLine.material = new Material(Shader.Find("Sprites/Default"));
+
+        float width = 0.2f;
+        float height = 0.05f;
+        if (legendSpecs["gradientWidth"] == null || legendSpecs["gradientHeight"] == null)
+        {
+            width = legendSpecs["gradientWidth"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            height = legendSpecs["gradientHeight"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+        }
+
+        List<Vector3> positionsList = new List<Vector3>();
+        List<GradientColorKey> colorKeyList = new List<GradientColorKey>();
+        List<GradientAlphaKey> alphaKeyList = new List<GradientAlphaKey>();
+
+        float alpha = 1.0f;
+        int domainCount = channelEncoding.scale.domain.Count;
+        for (int i = 0; i < domainCount; i++)
+        {
+            float pct = channelEncoding.scale.GetDomainPct(channelEncoding.scale.domain[i]);
+            positionsList.Add(new Vector3(width * pct, 0.0f, 0.0f));
+            Color col;
+            ColorUtility.TryParseHtmlString(channelEncoding.scale.range[i], out col);
+            colorKeyList.Add(new GradientColorKey(col, pct));
+            alphaKeyList.Add(new GradientAlphaKey(alpha, pct));
+        }
+
+        colorLine.positionCount = positionsList.Count;
+        colorLine.SetPositions(positionsList.ToArray());
+        colorLine.startWidth = height;
+        colorLine.endWidth = height;
+
+        Gradient gradient = new Gradient();
+        gradient.SetKeys(colorKeyList.ToArray(), alphaKeyList.ToArray());    
+        colorLine.colorGradient = gradient;
+
+        colorLine.transform.parent = gameObject.transform;
+
+        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = 2;
+        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.08f;
+        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
+    }
+
+    private void ConstructSymbols(JSONNode legendSpecs, ref ChannelEncoding channelEncoding, GameObject markPrefab)
     {
         GameObject legendValuePrefab = Resources.Load("Legend/LegendValue", typeof(GameObject)) as GameObject;
         if (channelEncoding.channel == "color")
@@ -83,6 +138,7 @@ public class Legend : MonoBehaviour {
             }
 
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = channelEncoding.scale.domain.Count + 1;
+            gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.05f;   // TODO: Set to height of each legendValue.
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
         }
     }
