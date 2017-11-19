@@ -157,8 +157,8 @@ public class Axis : MonoBehaviour {
     private float GetLength()
     {
         Transform lineTransform = gameObject.transform.Find("AxisLine");
-        Vector3 renderSize = lineTransform.GetComponent<Renderer>().bounds.size;
-        return Math.Max(renderSize.x, Math.Max(renderSize.y, renderSize.z));
+        Vector3 scale = lineTransform.localScale;
+        return GetMeshLength() * Math.Max(scale.x, Math.Max(scale.y, scale.z));
     }
 
     internal void EnableAxisColorCoding(string channelType)
