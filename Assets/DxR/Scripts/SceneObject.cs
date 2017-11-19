@@ -77,6 +77,8 @@ namespace DxR
             ConstructMarks(sceneRoot);
 
             ConstructAxes(sceneSpecs, ref channelEncodings, ref sceneRoot);
+
+            ConstructLegends(sceneSpecs, ref channelEncodings, ref sceneRoot);
         }
 
         private void InitSceneObjectProperties(JSONNode sceneSpecs, ref GameObject sceneRoot)
@@ -307,7 +309,7 @@ namespace DxR
 
         private void ConstructAxes(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
         {
-            // Go through each channel and create axis for each:
+            // Go through each channel and create axis for each spatial / position channel:
             for (int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
             {
                 ChannelEncoding channelEncoding = channelEncodings[channelIndex];
@@ -380,6 +382,41 @@ namespace DxR
             else
             {
                 throw new Exception("Cannot find axis prefab.");
+            }
+        }
+        
+        private void ConstructLegends(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
+        {
+            // Go through each channel and create legend for color, shape, or size channels:
+            for (int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
+            {
+                ChannelEncoding channelEncoding = channelEncodings[channelIndex];
+                JSONNode legendSpecs = sceneSpecs["encoding"][channelEncoding.channel]["legend"];
+                if (legendSpecs != null && legendSpecs.Value.ToString() != "none" &&
+                    (channelEncoding.channel == "color" || channelEncoding.channel == "size" ||
+                    channelEncoding.channel == "shape"))
+                {
+                    if (verbose)
+                    {
+                        Debug.Log("Constructing legend for channel " + channelEncoding.channel);
+                    }
+
+                    ConstructLegendObject(legendSpecs, ref channelEncoding, ref sceneRoot);
+                }
+            }
+        }
+
+        private void ConstructLegendObject(JSONNode legendSpecs, ref ChannelEncoding channelEncoding, ref GameObject sceneRoot)
+        {
+            GameObject legendPrefab = Resources.Load("Legend/Legend", typeof(GameObject)) as GameObject;
+            if (legendPrefab != null && markPrefab != null)
+            {
+                channelEncoding.legend = Instantiate(legendPrefab, sceneRoot.transform);
+                channelEncoding.legend.GetComponent<Legend>().UpdateSpecs(legendSpecs, ref channelEncoding, markPrefab);
+            }
+            else
+            {
+                throw new Exception("Cannot find legend prefab.");
             }
         }
     }

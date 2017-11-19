@@ -16,12 +16,14 @@ namespace DxR
 
         public Scale scale;
         public GameObject axis;
+        public GameObject legend;
 
         public ChannelEncoding()
         {
             value = DxR.SceneObject.UNDEFINED;
             scale = null;
             axis = null;
+            legend = null;
         }
     }
 }
