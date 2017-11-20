@@ -51,9 +51,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346337909612740}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.58509725, z: -0, w: 0.81096315}
+  m_LocalPosition: {x: 2.8469539, y: -0.5, z: 0.9459672}
+  m_LocalScale: {x: 1.6782522, y: 1.678252, z: 1.678252}
   m_Children:
   - {fileID: 4689612425090252}
   m_Father: {fileID: 0}
@@ -67,7 +67,7 @@ Transform:
   m_GameObject: {fileID: 1320644963517722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 0.025}
   m_Children: []
   m_Father: {fileID: 4330225958459428}
   m_RootOrder: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2020ba104250654bb25fa1139ee48f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specsFilename: filename.json
+  specsFilename: DxRSpecs/field_2plane_full.json
   sceneName: 
   title: 
   width: 0
