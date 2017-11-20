@@ -23,7 +23,7 @@ Microsoft's initial set-up instructions [here](https://developer.microsoft.com/e
 
 ## Debugging DxR
 
-The following instructions are based on the [Mixed Reality Toolkit getting strated guide](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/master/GettingStarted.md) and [Microsoft's Unity development overview](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview).
+The following instructions are based on the [Mixed Reality Toolkit getting started guide](https://github.com/Microsoft/MixedRealityToolkit-Unity/blob/master/GettingStarted.md) and [Microsoft's Unity development overview](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview).
 
 ### VR Debugging (Immersive Headsets or IHMD)
 1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
