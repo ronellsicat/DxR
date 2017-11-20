@@ -16,13 +16,12 @@ namespace DxR
     {
         public BarMark() : base("bar")
         {
-            
+
         }
 
         public void Start()
         {
-            Vector3 origMeshSize = gameObject.GetComponent<Renderer>().bounds.extents;
-            Debug.Log("Mark orig render size " + origMeshSize);
+
         }
 
         public override void SetChannelValue(string channel, string value)
@@ -30,25 +29,50 @@ namespace DxR
             switch (channel)
             {
                 case "x":
-                    SetX(value);
+                    TranslateBy(value, 0);
                     break;
                 case "x2":
-                    // TODO:
-                    throw new Exception("Channel x2 not implemented.");
-                    break;
+                    throw new Exception("x2 is not a bar channel - use x, and width instead.");
                 case "y":
-                    SetY(value);
+                    TranslateBy(value, 1);
                     break;
                 case "y2":
-                    // TODO:
-                    throw new Exception("Channel y2 not implemented.");
+                    throw new Exception("y2 is not a bar channel - use y, and height instead.");
+                case "z":
+                    TranslateBy(value, 2);
                     break;
+                case "z2":
+                    throw new Exception("z2 is not a bar channel - use z, and depth instead.");
                 case "bandwidth":
                 case "width":
-                    SetWidth(value);
+                    SetSize(value, 0);
+                    break;
+                case "height":
+                    SetSize(value, 1);
+                    break;
+                case "depth":
+                    SetSize(value, 2);
+                    break;
+                case "xoffsetpct":
+                    SetOffsetPct(value, 0);
+                    break;
+                case "yoffsetpct":
+                    SetOffsetPct(value, 1);
+                    break;
+                case "zoffsetpct":
+                    SetOffsetPct(value, 2);
                     break;
                 case "color":
                     SetColor(value);
+                    break;
+                case "xrotation":
+                    SetRotation(value, 0);
+                    break;
+                case "yrotation":
+                    SetRotation(value, 1);
+                    break;
+                case "zrotation":
+                    SetRotation(value, 2);
                     break;
                 default:
                     base.SetChannelValue(channel, value);
@@ -56,39 +80,46 @@ namespace DxR
             }
         }
 
-        private void SetWidth(string value)
-        {
-            float width = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-
-            Vector3 curScale = transform.localScale;
-            GetComponent<MeshFilter>().mesh.RecalculateBounds();
-            Vector3 origMeshSize = GetComponent<MeshFilter>().mesh.bounds.size;
-            curScale.x = width / (origMeshSize.x);
-            transform.localScale = curScale;
-        }
-
-        private void SetX(string value)
+        private void TranslateBy(string value, int dim)
         {
             // TODO: Do this more robustly.
-            float xpos = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-            Debug.Log("Translating cube by " + xpos.ToString());
-
-            float x = gameObject.transform.localPosition.x;
-            transform.Translate(xpos - x, 0, 0);
+            float pos = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+          
+            Vector3 localPos = gameObject.transform.localPosition;
+            Vector3 translateBy = Vector3.zero;
+            translateBy[dim] = pos - localPos[dim];
+            gameObject.transform.Translate(translateBy);
         }
 
-        private void SetY(string value)
+        private void SetSize(string value, int dim)
         {
-            float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float size = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+
+            Vector3 initPos = transform.localPosition;
+
             Vector3 curScale = transform.localScale;
             GetComponent<MeshFilter>().mesh.RecalculateBounds();
             Vector3 origMeshSize = GetComponent<MeshFilter>().mesh.bounds.size;
-            curScale.y = height / (origMeshSize.y);
+            curScale[dim] = size / (origMeshSize[dim]);
             transform.localScale = curScale;
+            
+            transform.localPosition = initPos;  // This handles models that get translated with scaling.
+        }
 
-            //float y = gameObject.transform.localPosition.y;
-//            Vector3 center = GetComponent<MeshFilter>().mesh.bounds.center;
-            transform.Translate(0, height / 2.0f, 0);
+        private void SetOffsetPct(string value, int dim)
+        {
+            GetComponent<MeshFilter>().mesh.RecalculateBounds();
+            float offset = float.Parse(value) * GetComponent<MeshRenderer>().bounds.size[dim];
+            Vector3 translateBy = Vector3.zero;
+            translateBy[dim] = offset;
+            transform.Translate(translateBy);
+        }
+
+        private void SetRotation(string value, int dim)
+        {
+            Vector3 rot = transform.localEulerAngles;
+            rot[dim] = float.Parse(value);
+            transform.localEulerAngles = rot;
         }
 
         private void SetColor(string value)
@@ -97,6 +128,8 @@ namespace DxR
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
             transform.GetComponent<Renderer>().material.color = color;
         }
+
+
     }
 
 }
