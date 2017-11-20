@@ -1,9 +1,9 @@
 {
   "title": "Field Data",
   "description": "This displays a 3D glyph plot.",
-  "width": 2000,
-  "height": 2000,
-  "depth":  2000,
+  "width": 500,
+  "height": 500,
+  "depth":  500,
   "data": { "url": "DxRData/streamline.json" },
   "mark": "paperplane",
   "encoding": {
@@ -13,7 +13,7 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 5 ],
-        "range": [ 0, 2000 ]
+        "range": [ 0, 500 ]
       },
       "axis": {
         "face": "front",
@@ -30,7 +30,7 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 5 ],
-        "range": [ 0, 2000 ]
+        "range": [ 0, 500 ]
       },
       "axis": {
         "face": "front",
@@ -47,7 +47,7 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 5 ],
-        "range": [ 0, 2000 ]
+        "range": [ 0, 500 ]
       },
       "axis": {
         "face": "left",
@@ -90,6 +90,9 @@
     },
     "color": {
       "value": "#ffffbf"
+    },
+    "size": {
+      "value":  50
     }
   }
 }

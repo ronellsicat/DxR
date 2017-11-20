@@ -41,10 +41,19 @@ namespace DxR
                 case "zorient":
                     SetOrient(value, 2);
                     break;
+                case "size":
+                    SetSize(value);
+                    break;
                 default:
                     base.SetChannelValue(channel, value);
                     break;
             }
+        }
+
+        private void SetSize(string value)
+        {
+            float scale = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            gameObject.transform.localScale = new Vector3(scale, scale, scale);
         }
 
         // vectorIndex = 0 for x, 1 for y, 2 for z
