@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201283676}
   m_Layer: 0
-  m_Name: BarPointCombo1
+  m_Name: BarPointCombo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
