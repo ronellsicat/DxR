@@ -57,6 +57,8 @@
         "x": 500,
         "y": 500,
         "z": 0,
+        "gradientWidth": 200,
+        "gradientHeight": 50,
         "title": "Weight in lbs"
       }
     }

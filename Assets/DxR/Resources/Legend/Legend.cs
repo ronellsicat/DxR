@@ -60,8 +60,18 @@ public class Legend : MonoBehaviour {
     private void ConstructGradient(JSONNode legendSpecs, ref ChannelEncoding channelEncoding)
     {
         colorLine = gameObject.GetComponentInChildren<LineRenderer>(true);
-    
-        if(colorLine == null)
+
+        bool addTicks = false;
+        Transform ticks = gameObject.transform.Find("Ticks");
+        GameObject tickPrefab = null; 
+        if(ticks != null)
+        {
+            addTicks = true;
+            ticks.gameObject.SetActive(true);
+            tickPrefab = Resources.Load("Legend/LegendTick") as GameObject;
+        }
+
+        if (colorLine == null)
         {
             throw new Exception("Cannot find ColorLine LineRenderer object in legend.");
         }
@@ -91,6 +101,18 @@ public class Legend : MonoBehaviour {
             ColorUtility.TryParseHtmlString(channelEncoding.scale.range[i], out col);
             colorKeyList.Add(new GradientColorKey(col, pct));
             alphaKeyList.Add(new GradientAlphaKey(alpha, pct));
+
+            if(addTicks && tickPrefab != null)
+            {
+                GameObject tick = Instantiate(tickPrefab, ticks.transform.position, ticks.transform.rotation, ticks.transform);
+
+                Vector3 pos = Vector3.zero;
+                pos.x = width * pct;
+                pos.y = 0.04f;             // TODO: Get this from text size.
+                tick.transform.Translate(pos);
+
+                tick.GetComponent<TextMesh>().text = channelEncoding.scale.domain[i];
+            }
         }
 
         colorLine.positionCount = positionsList.Count;
@@ -104,7 +126,7 @@ public class Legend : MonoBehaviour {
 
         colorLine.transform.parent = gameObject.transform;
 
-        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = 2;
+        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = 3;             // TODO: Update this if no ticks are shown.
         gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.08f;
         gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
     }
