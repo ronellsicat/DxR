@@ -28,7 +28,7 @@ The following instructions are based on the [Mixed Reality Toolkit getting strat
 ### VR Debugging (Immersive Headsets or IHMD)
 1. Make sure your Target Device (under File -> Build Settings) is set to "Any Device".
 2. Connect your IHMD to your computer. Open your Mixed Reality Portal.
-3. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
+3. Add a DxRSceneObject into your scene using the steps below (Creating a DxR Visualization).
 4. Press play - your Unity editor should run your application but should also show up on your IHMD in VR.
 
 ### MR Debugging (Hololens)
@@ -36,7 +36,7 @@ The following instructions are based on the [Mixed Reality Toolkit getting strat
 2. Put on your HoloLens and run the Holographic Remoting application (install if not yet installed). 
 3. In Unity, go to Window -> Holographic Emulation. In the window that pops up, set Emulation Mode to "Remote to Device". Set Remote Machine to your HoloLens IP address (this should show up when you run the Holographic Remoting app). After typing in the IP address, with your cursor still in the Remote Machine form, make sure you press Enter key to submit the IP.
 4. Press "Connect" button. If successful, the window should indicate so. If not, check your connection, e.g., make sure that your computer is on the same network as the HoloLens.
-5. Add a DxRView object into your scene using the steps below (Creating a DxR Visualization).
+5. Add a DxRSceneObject into your scene using the steps below (Creating a DxR Visualization).
 6. Press play - your Unity editor should run your application but should also show up on your HoloLens.
 
 ### Developer notes
