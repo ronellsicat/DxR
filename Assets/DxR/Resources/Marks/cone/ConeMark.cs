@@ -26,20 +26,17 @@ namespace DxR
         {
             switch (channel)
             {
-                case "height":
-                    SetHeight(value);
+                case "length":
+                    SetLength(value);
                     break;
-                case "color":
-                    SetColor(value);
-                    break;
-                case "xorient":
-                    SetOrient(value, 0);
+                   case "xorient":
+                    SetOrientation(value, 0);
                     break;
                 case "yorient":
-                    SetOrient(value, 1);
+                    SetOrientation(value, 1);
                     break;
                 case "zorient":
-                    SetOrient(value, 2);
+                    SetOrientation(value, 2);
                     break;
                 default:
                     base.SetChannelValue(channel, value);
@@ -48,7 +45,7 @@ namespace DxR
         }
 
         // vectorIndex = 0 for x, 1 for y, 2 for z
-        private void SetOrient(string value, int vectorIndex)
+        private void SetOrientation(string value, int vectorIndex)
         {
             // Set target direction dim to normalized size.
             Vector3 targetOrient = Vector3.zero;
@@ -64,18 +61,10 @@ namespace DxR
         }
 
         // Sets the diameter of the point to the value.
-        private void SetHeight(string value)
+        private void SetLength(string value)
         {
             float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
             gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshHeight(height);        
         }
-
-        private void SetColor(string value)
-        {
-            Color color;
-            bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
-            transform.GetComponent<Renderer>().material.color = color;
-        }
     }
-
 }
