@@ -166,13 +166,13 @@ public class Axis : MonoBehaviour {
     {
         Transform lineTransform = gameObject.transform.Find("AxisLine");
 
-        if (channelType == "x")
+        if (channelType == "x" || channelType == "width")
         {
             lineTransform.GetComponent<Renderer>().material.color = Color.red;
-        } else if(channelType == "y")
+        } else if(channelType == "y" || channelType == "height")
         {
             lineTransform.GetComponent<Renderer>().material.color = Color.green;
-        } else if(channelType == "z")
+        } else if(channelType == "z" || channelType == "depth")
         {
             lineTransform.GetComponent<Renderer>().material.color = Color.blue;
         }

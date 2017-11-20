@@ -316,7 +316,9 @@ namespace DxR
                 JSONNode axisSpecs = sceneSpecs["encoding"][channelEncoding.channel]["axis"];
                 if (axisSpecs != null && axisSpecs.Value.ToString() != "none" && 
                     (channelEncoding.channel == "x" || channelEncoding.channel == "y" || 
-                    channelEncoding.channel == "z"))
+                    channelEncoding.channel == "z" || 
+                    channelEncoding.channel == "width" || channelEncoding.channel == "height" ||
+                    channelEncoding.channel == "depth"))
                 {
                     if (verbose)
                     {
@@ -352,12 +354,15 @@ namespace DxR
                     switch (channelEncoding.channel)
                     {
                         case "x":
+                        case "width":
                             axisLength = width;
                             break;
                         case "y":
+                        case "height":
                             axisLength = height;
                             break;
                         case "z":
+                        case "depth":
                             axisLength = depth;
                             break;
                         default:
