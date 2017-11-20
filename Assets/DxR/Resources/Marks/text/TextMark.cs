@@ -89,11 +89,12 @@ namespace DxR
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
             gameObject.GetComponent<TextMesh>().color = color;
         }
-        
+
         private void SetOffset(string value, int dim)
         {
+            float offset = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
             Vector3 translateBy = transform.localPosition;
-            translateBy[dim] = float.Parse(value) - translateBy[dim];
+            translateBy[dim] = offset - translateBy[dim];
             transform.localPosition = translateBy;
         }
     }
