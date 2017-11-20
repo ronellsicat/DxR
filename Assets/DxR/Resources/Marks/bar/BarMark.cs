@@ -109,10 +109,11 @@ namespace DxR
         private void SetOffsetPct(string value, int dim)
         {
             GetComponent<MeshFilter>().mesh.RecalculateBounds();
-            float offset = float.Parse(value) * GetComponent<MeshRenderer>().bounds.size[dim];
-            Vector3 translateBy = Vector3.zero;
-            translateBy[dim] = offset;
-            transform.Translate(translateBy);
+            float offset = float.Parse(value) * GetComponent<MeshFilter>().mesh.bounds.size[dim] * 
+                gameObject.transform.localScale[dim];
+            Vector3 translateBy = transform.localPosition;
+            translateBy[dim] = offset - translateBy[dim];
+            transform.localPosition = translateBy;
         }
 
         private void SetRotation(string value, int dim)
