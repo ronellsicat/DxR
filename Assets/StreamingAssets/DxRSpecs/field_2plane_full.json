@@ -89,7 +89,24 @@
       }
     },
     "color": {
-      "value": "#ffffbf"
+      "field": "time",
+      "type": "quantitative",
+      "scale": {
+        "type": "sequential",
+        "domain": [ 0, 4 ],
+        "range": [ "#fef0d9", "#b30000" ]
+      },
+      "legend": {
+        "type": "gradient",
+        "face": "front",
+        "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
+        "gradientWidth": 200,
+        "gradientHeight": 50,
+        "title": "Time"
+      }
     },
     "size": {
       "value":  50
