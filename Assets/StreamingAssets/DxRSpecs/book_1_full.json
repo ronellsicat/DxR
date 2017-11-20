@@ -67,6 +67,9 @@
     },
     "yrotation": {
       "value": 180
+    },
+    "zoffset": {
+      "value":  80
     }
   }
 }

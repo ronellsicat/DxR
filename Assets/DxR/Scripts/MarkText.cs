@@ -32,6 +32,9 @@ namespace DxR
                 case "color":
                     SetFontColor(value);
                     break;
+                case "anchor":
+                    SetAnchor(value);
+                    break;
                 default:
                     base.SetChannelValue(channel, value);
                     break;
@@ -53,6 +56,46 @@ namespace DxR
             Color color;
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
             gameObject.GetComponent<TextMesh>().color = color;
+        }
+
+        private void SetAnchor(string value)
+        {
+            TextAnchor anchor = TextAnchor.MiddleCenter;
+            switch(value)
+            {
+                case "upperleft":
+                    anchor = TextAnchor.UpperLeft;
+                    break;
+                case "uppercenter":
+                    anchor = TextAnchor.UpperCenter;
+                    break;
+                case "upperright":
+                    anchor = TextAnchor.UpperRight;
+                    break;
+                case "middleleft":
+                    anchor = TextAnchor.MiddleLeft;
+                    break;
+                case "middlecenter":
+                    anchor = TextAnchor.MiddleCenter;
+                    break;
+                case "middleright":
+                    anchor = TextAnchor.MiddleRight;
+                    break;
+                case "lowerleft":
+                    anchor = TextAnchor.LowerLeft;
+                    break;
+                case "lowercenter":
+                    anchor = TextAnchor.LowerCenter;
+                    break;
+                case "lowerright":
+                    anchor = TextAnchor.LowerRight;
+                    break;
+                default:
+                    anchor = TextAnchor.MiddleCenter;
+                    break;
+            }
+
+            gameObject.GetComponent<TextMesh>().anchor = anchor;
         }
     }
 }
