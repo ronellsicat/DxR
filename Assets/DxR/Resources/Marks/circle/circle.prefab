@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33079047891387678}
   - component: {fileID: 135800657002324512}
   - component: {fileID: 23387907641801040}
-  - component: {fileID: 114090225562920298}
+  - component: {fileID: 114827826871456142}
   m_Layer: 0
   m_Name: circle
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751410575043664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8645933, y: 0.39891133, z: 0.03952353}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1751410575043664}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114090225562920298
+--- !u!114 &114827826871456142
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -92,10 +92,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1751410575043664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f59829da56c944459baa85cd9e5ab2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 18387d24c564de14b8a69c8c27a10db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markName: point
+  markName: 
 --- !u!135 &135800657002324512
 SphereCollider:
   m_ObjectHideFlags: 1

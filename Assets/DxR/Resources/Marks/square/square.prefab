@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33161804498176162}
   - component: {fileID: 65637541744008280}
   - component: {fileID: 23897875827952286}
-  - component: {fileID: 114985099033975272}
+  - component: {fileID: 114927865098635832}
   m_Layer: 0
   m_Name: square
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1372898955875306}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7589477, y: -0.19689348, z: -0.31862798}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114985099033975272
+--- !u!114 &114927865098635832
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372898955875306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f59829da56c944459baa85cd9e5ab2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 18387d24c564de14b8a69c8c27a10db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markName: point
+  markName: 
