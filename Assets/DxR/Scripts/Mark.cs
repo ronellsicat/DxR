@@ -60,6 +60,9 @@ namespace DxR
                 case "color":
                     SetColor(value);
                     break;
+                case "opacity":
+                    SetOpacity(value);
+                    break;
                 case "size":
                     SetMaxSize(value);
                     break;
@@ -165,6 +168,12 @@ namespace DxR
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
             transform.GetComponent<Renderer>().material.color = color;
         }
-    }
 
+        private void SetOpacity(string value)
+        {
+            Color color = transform.GetComponent<Renderer>().material.color;
+            color.a = float.Parse(value);
+            transform.GetComponent<Renderer>().material.color = color;
+        }
+    }
 }
