@@ -1,0 +1,73 @@
+{
+  "title": "Cars Data",
+  "description": "Chart that uses rect marks.",
+  "width": 500,
+  "height": 500,
+  "depth":  500,
+  "data": { "url": "DxRData/cars.json" },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "Cylinders",
+      "type": "ordinal",
+      "scale": {
+        "type": "point",
+        "domain": [ 3, 4, 5, 6, 8 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "front",
+        "orient": "bottom",
+        "title": "Cylinders",
+        "grid": false,
+        "ticks": true
+      }
+    },
+    "y": {
+      "field": "Origin",
+      "type": "nominal",
+      "scale": {
+        "type": "point",
+        "domain": [
+          "Europe",
+          "Japan",
+          "USA"
+        ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "front",
+        "orient": "left",
+        "title": "Origin",
+        "grid": false,
+        "ticks": true
+      }
+    },
+    "color": {
+      "field": "Weight_in_lbs",
+      "type": "quantitative",
+      "scale": {
+        "type": "sequential",
+        "domain": [ 1000, 4500 ],
+        "range": [ "#ff7f0e", "#17becf" ]
+      },
+      "legend": {
+        "type": "gradient",
+        "face": "front",
+        "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
+        "gradientWidth": 200,
+        "gradientHeight": 50,
+        "title": "Average Weight"
+      }
+    },
+    "width": {
+      "value": 70
+    },
+    "height": {
+      "value": 70
+    }
+  }
+}
