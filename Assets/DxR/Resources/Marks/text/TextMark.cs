@@ -47,15 +47,6 @@ namespace DxR
                 case "color":
                     SetColor(value);
                     break;
-                case "xoffsetpct":
-                    SetOffsetPct(value, 0);
-                    break;
-                case "yoffsetpct":
-                    SetOffsetPct(value, 1);
-                    break;
-                case "zoffsetpct":
-                    SetOffsetPct(value, 2);
-                    break;
                 case "xoffset":
                     SetOffset(value, 0);
                     break;
@@ -98,17 +89,7 @@ namespace DxR
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
             gameObject.GetComponent<TextMesh>().color = color;
         }
-
-        private void SetOffsetPct(string value, int dim)
-        {
-            GetComponent<MeshFilter>().mesh.RecalculateBounds();
-            float offset = float.Parse(value) * GetComponent<MeshRenderer>().bounds.size[dim] *
-                gameObject.transform.localScale[dim];
-            Vector3 translateBy = transform.localPosition;
-            translateBy[dim] = offset - translateBy[dim];
-            transform.localPosition = translateBy;
-        }
-
+        
         private void SetOffset(string value, int dim)
         {
             Vector3 translateBy = transform.localPosition;
