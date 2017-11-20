@@ -10,7 +10,7 @@ You will find helpful instructions using the following links:
 2. [Authoring](AUTHORING.md)
 3. [Development](DEVELOPMENT.md)
 
-## Quick Guide
+## Quick Start Guide
 
 1. Install Unity3D editor [version 2017.2.0p1-MRTP4](http://beta.unity3d.com/download/b1565bfe4a0c/UnityDownloadAssistant.exe).
 2. Import [DxR.unitypackage](https://github.com/ronellsicat/DxR/raw/master/DxR.unitypackage) into your project.
