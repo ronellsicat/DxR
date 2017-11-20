@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4582437598118794}
   - component: {fileID: 33481359411111796}
   - component: {fileID: 23682967704703190}
-  - component: {fileID: 114159699658416868}
+  - component: {fileID: 114705668728078232}
   m_Layer: 0
   m_Name: book
   m_TagString: Untagged
@@ -83,7 +83,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1958504078123304}
   m_Mesh: {fileID: 4300002, guid: 08e091500e68ded43b4abfb1b3f718d0, type: 3}
---- !u!114 &114159699658416868
+--- !u!114 &114705668728078232
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1958504078123304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2097dfd4950185d4d8e78edc0cd04e1c, type: 3}
+  m_Script: {fileID: 11500000, guid: a7bbd021eb3e35c4bad816e1819148a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markName: book
+  markName: bar
