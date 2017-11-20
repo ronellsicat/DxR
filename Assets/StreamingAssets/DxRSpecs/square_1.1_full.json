@@ -1,0 +1,68 @@
+{
+  "title": "Cars Data",
+  "description":  "This displays a 3D scatterplot.",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": { "url": "DxRData/cars.json" },
+  "mark": "square",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 250 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face":  "front",
+        "orient": "bottom",
+        "title": "HP",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 5
+      }
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 50 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "front",
+        "orient": "left",
+        "title": "MPG",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 6
+      }
+    },
+    "z": {
+      "field": "Acceleration",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 30 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "left",
+        "orient": "bottom",
+        "title": "Acceleration",
+        "grid": true,
+        "ticks": true,
+        "tickCount": 6
+      }
+    },
+    "color": {
+      "value": "#ce6dbd"
+    },
+    "size": {
+      "value": 10
+    }
+  }
+}
