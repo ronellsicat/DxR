@@ -61,6 +61,26 @@
     "color": {
       "value": "#7fcdbb"
     },
+    "opacity": {
+      "field": "Displacement",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 68, 455 ],
+        "range": [ 0, 1.0 ]
+      },
+      "legend": {
+        "type": "symbol",
+        "face": "front",
+        "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
+        "gradientWidth": 200,
+        "gradientHeight": 50,
+        "title": "Displacement"
+      }
+    },
     "size": {
       "value": 10
     }
