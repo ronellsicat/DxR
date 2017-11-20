@@ -12,16 +12,17 @@ Once the DxR.unitypackage is imported in a project, the following folder structu
       Prefabs/    - contains prefabs that users can instantiate in their scene.
       Resources/  - contains graphics objects (e.g., prefabs, models, textures) and scripts used by toolkit.
         Axis/   
-        Marks/  - contains objects and scripts for core marks.
+        Marks/    - contains objects and scripts for all marks.
       Scripts/    - contains core scripts used by toolkit.
   
     DxRExamples/  - contains examples of scenes with DxR components.
 
-    External/     - contains external dependencies such as Mixed Reality Toolkit.
+    External/     - contains external dependencies.
+    
+    HoloToolkit/  - Microsoft's Mixed Reality Toolkit; provided for convenience.
 
     StreamingAssets/ 
       DxRData/    - contains data files.
-      DxRMarks/   - contains user created marks.
       DxRSpecs/   - contains JSON specification files.
   
 ## DxR.unitypackage
