@@ -45,7 +45,7 @@
         "ticks": true
       }
     },
-    "y": {
+    "height": {
       "field": "count",
       "type": "quantitative",
       "scale": {
@@ -67,9 +67,6 @@
     },
     "depth": {
       "value": 52.16
-    },
-    "yoffset": {
-      "value": -0.5
     }
   }
 }

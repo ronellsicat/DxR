@@ -38,7 +38,7 @@
         "paddingInner": 0.1,
         "paddingOuter": 0.1,
         "rangeStep": 40,
-        "range": [0,368]
+        "range": [ 0, 368 ]
       },
       "axis": {
         "face": "front",
@@ -48,7 +48,7 @@
         "ticks": true
       }
     },
-    "y": {
+    "height": {
       "field": "count",
       "type": "quantitative",
       "scale": {
@@ -70,6 +70,9 @@
     },
     "color": {
       "value": "#ff9900"
+    },
+    "yoffsetpct": {
+      "value": 0.5
     }
   }
 }
