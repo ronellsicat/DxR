@@ -18,7 +18,13 @@ namespace DxR
         {
             
         }
-        
+
+        public void Start()
+        {
+            Vector3 origMeshSize = gameObject.GetComponent<Renderer>().bounds.extents;
+            Debug.Log("Mark orig render size " + origMeshSize);
+        }
+
         public override void SetChannelValue(string channel, string value)
         {
             switch (channel)
@@ -52,10 +58,13 @@ namespace DxR
 
         private void SetWidth(string value)
         {
-            // TODO: Fix this.
             float width = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+
             Vector3 curScale = transform.localScale;
-            transform.localScale = new Vector3(width, curScale.y, curScale.z);
+            GetComponent<MeshFilter>().mesh.RecalculateBounds();
+            Vector3 origMeshSize = GetComponent<MeshFilter>().mesh.bounds.size;
+            curScale.x = width / (origMeshSize.x);
+            transform.localScale = curScale;
         }
 
         private void SetX(string value)
@@ -70,13 +79,16 @@ namespace DxR
 
         private void SetY(string value)
         {
-            // TODO: Do this more robustly.
             float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
             Vector3 curScale = transform.localScale;
-            transform.localScale = new Vector3(curScale.x, height, curScale.z);
+            GetComponent<MeshFilter>().mesh.RecalculateBounds();
+            Vector3 origMeshSize = GetComponent<MeshFilter>().mesh.bounds.size;
+            curScale.y = height / (origMeshSize.y);
+            transform.localScale = curScale;
 
-            float y = gameObject.transform.localPosition.y;
-            transform.Translate(0, height / 2.0f - y, 0);
+            //float y = gameObject.transform.localPosition.y;
+//            Vector3 center = GetComponent<MeshFilter>().mesh.bounds.center;
+            transform.Translate(0, height / 2.0f, 0);
         }
 
         private void SetColor(string value)
