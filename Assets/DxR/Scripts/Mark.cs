@@ -5,12 +5,12 @@ using UnityEngine;
 namespace DxR
 {
     /// <summary>
-    /// Base class for Mark classes (e.g., PointMark for point mark).
+    /// Base class for Mark classes (e.g., MarkPoint for point mark).
     /// Contains methods for setting common mark channels such as position and size.
     /// </summary>
     public class Mark : MonoBehaviour
     {
-        public string markName; 
+        public string markName = "base"; 
  
         public Mark(string markName)
         {

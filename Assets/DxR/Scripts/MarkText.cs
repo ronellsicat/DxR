@@ -12,9 +12,9 @@ namespace DxR
     /// a function that takes in the "channel" name and value in string format
     /// and performs the necessary changes under the SetChannelValue function.
     /// </summary>
-    public class PointMark : Mark
+    public class MarkText : Mark
     {
-        public PointMark() : base("point")
+        public MarkText() : base("text")
         {
             
         }
@@ -23,11 +23,14 @@ namespace DxR
         {
             switch (channel)
             {
+                case "text":
+                    SetText(value);
+                    break;
                 case "size":
-                    SetSize(value);
+                    SetFontSize(value);
                     break;
                 case "color":
-                    SetColor(value);
+                    SetFontColor(value);
                     break;
                 default:
                     base.SetChannelValue(channel, value);
@@ -35,27 +38,21 @@ namespace DxR
             }
         }
 
-        // Sets the diameter of the point to the value.
-        private void SetSize(string value)
+        private void SetText(string value)
         {
-            float d = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-
-            Vector3 renderSize = gameObject.transform.GetComponent<Renderer>().bounds.size;
-            Vector3 localScale = gameObject.transform.localScale;
-
-            float origSize = renderSize.x / localScale.x;
-            float newLocalScale = (d / origSize);
-
-            gameObject.transform.localScale = new Vector3(newLocalScale,
-                newLocalScale, newLocalScale);
+            gameObject.GetComponent<TextMesh>().text = value;
+        }
+        
+        private void SetFontSize(string value)
+        {       
+            gameObject.GetComponent<TextMesh>().fontSize = int.Parse(value);
         }
 
-        private void SetColor(string value)
+        private void SetFontColor(string value)
         {
             Color color;
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
-            transform.GetComponent<Renderer>().material.color = color;
+            gameObject.GetComponent<TextMesh>().color = color;
         }
     }
-
 }
