@@ -1,11 +1,7 @@
 # DxR
 DxR makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR, using Microsoft's Mixed Reality ecosystem and Unity3D. Some examples are shown below.
 
-![Gallery](gallery_overview.PNG)
-
-![Examples 1](gallery_1.PNG)
-![Examples 2](gallery_2.PNG)
-![Examples 3](gallery_3.PNG)
+![Examples gallery](gallery_overview.PNG)
 
 You will find helpful instructions using the following links:
 
