@@ -330,6 +330,7 @@ namespace DxR
             }
         }
 
+        // TODO: Move all this in axis object.
         private void ConstructAxisObject(JSONNode axisSpecs, ref ChannelEncoding channelEncoding, ref GameObject sceneRoot)
         {
             GameObject axisPrefab = Resources.Load("Axis/Axis", typeof(GameObject)) as GameObject;
@@ -383,9 +384,8 @@ namespace DxR
 
                 if(axisSpecs["ticks"].AsBool && axisSpecs["values"] != null)
                 {
-                    channelEncoding.axis.GetComponent<Axis>().ConstructTicks(axisSpecs["values"], channelEncoding.scale);
+                    channelEncoding.axis.GetComponent<Axis>().ConstructTicks(axisSpecs, channelEncoding.scale);
                 }
-
 
                 // TODO: Do the axis color coding more elegantly.  
                 // Experimental: Set color of axis based on channel type.

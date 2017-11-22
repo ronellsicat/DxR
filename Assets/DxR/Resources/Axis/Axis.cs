@@ -8,6 +8,7 @@ public class Axis : MonoBehaviour {
 
     private float meshLength = 2.0f;    // This is the initial length of the cylinder used for the axis.
     private float titleOffset = 0.05f;
+    private float tickLabelOffset = 0.025f;
     
 	// Use this for initialization
 	void Start () {
@@ -102,28 +103,69 @@ public class Axis : MonoBehaviour {
         
     }
 
-    public void ConstructTicks(JSONNode valuesSpecs, DxR.Scale scale)
+    public void ConstructTicks(JSONNode axisSpecs, DxR.Scale scale)
     {
+        bool showTickLabels = false;
+
+        if (axisSpecs["labels"] != null)
+        {
+            showTickLabels = axisSpecs["labels"].AsBool;
+        }
+
         Transform parent = gameObject.transform.Find("Ticks");
         GameObject tickPrefab = Resources.Load("Axis/Tick") as GameObject;
-        if(tickPrefab == null)
+        GameObject labelPrefab = Resources.Load("Axis/Label") as GameObject;
+        
+        if (tickPrefab == null)
         {
             throw new Exception("Cannot find tick prefab.");
         }
 
-        for(int i = 0; i < valuesSpecs.Count; i++)
+        for(int i = 0; i < axisSpecs["values"].Count; i++)
         {
-            string domainValue = valuesSpecs[i].Value;
+            string domainValue = axisSpecs["values"][i].Value;
 
             float pos = float.Parse(scale.ApplyScale(domainValue)) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
 
-            AddTick(pos, tickPrefab, parent);
+            string label = showTickLabels ? domainValue : "";
+            AddTick(axisSpecs["face"], axisSpecs["orient"], pos, label, tickPrefab, parent);
         }
     }
 
-    private void AddTick(float pos, GameObject prefab, Transform parent)
+    private void AddTickLabel(float pos, string label, GameObject prefab, Transform parent)
+    {
+        GameObject instance = Instantiate(prefab, parent.position, Quaternion.identity, parent);
+        instance.transform.Translate(0, pos - GetLength() / 2.0f, 0);
+        instance.GetComponent<TextMesh>().text = label;
+    }
+
+    private void AddTick(string face, string orient, float pos, string label, GameObject prefab, Transform parent)
     {
         GameObject instance = Instantiate(prefab, parent.position, parent.rotation, parent);
-       instance.transform.Translate(0, pos - GetLength() / 2.0f, 0);
+        
+        instance.transform.Translate(0, pos - GetLength() / 2.0f, 0);
+        instance.transform.localRotation = Quaternion.Euler(0, 0, 90);
+
+        // Adjust label
+        float offset = tickLabelOffset;
+        float yrot = 0.0f;
+        if (face == "front" && orient == "bottom")
+        {
+            offset = -tickLabelOffset;
+        }
+        else if (face == "front" && orient == "left")
+        {
+            offset = tickLabelOffset;
+        }
+        else if (face == "left" && orient == "bottom")
+        {
+            offset = -tickLabelOffset;
+            yrot = 180.0f;
+        }
+
+        Transform tickLabelTransform = instance.transform.Find("TickLabel");
+        tickLabelTransform.localPosition = new Vector3(0, offset, 0);
+        tickLabelTransform.localEulerAngles = new Vector3(0, yrot, 0);
+        tickLabelTransform.GetComponent<TextMesh>().text = label;
     }
 }

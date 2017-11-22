@@ -22,7 +22,8 @@
         "grid": true,
         "ticks": true,
         "tickCount": 6,
-        "values": [ 0, 50, 100, 150, 200, 250 ]
+        "values": [ 0, 50, 100, 150, 200, 250 ],
+        "labels": true
       }
     },
     "y": {
@@ -40,7 +41,8 @@
         "grid": true,
         "ticks": true,
         "tickCount": 5,
-        "values": [ 0, 10, 20, 30, 40, 50 ]
+        "values": [ 0, 10, 20, 30, 40, 50 ],
+        "labels": true
       }
     },
     "z": {
@@ -58,7 +60,8 @@
         "grid": true,
         "ticks": true,
         "tickCount": 4,
-        "values": [ 0, 10, 20, 30 ]
+        "values": [ 0, 10, 20, 30 ],
+        "labels": true
       }
     },
     "color": {
