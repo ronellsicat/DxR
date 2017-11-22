@@ -351,6 +351,7 @@ namespace DxR
                 }
                 else
                 {
+                    // TODO: Move this to infer stage.
                     switch (channelEncoding.channel)
                     {
                         case "x":
@@ -379,6 +380,12 @@ namespace DxR
                 {
                     throw new Exception("Axis of channel " + channelEncoding.channel + " requires both orient and face specs.");
                 }
+
+                if(axisSpecs["ticks"].AsBool && axisSpecs["values"] != null)
+                {
+                    channelEncoding.axis.GetComponent<Axis>().ConstructTicks(axisSpecs["values"], channelEncoding.scale);
+                }
+
 
                 // TODO: Do the axis color coding more elegantly.  
                 // Experimental: Set color of axis based on channel type.

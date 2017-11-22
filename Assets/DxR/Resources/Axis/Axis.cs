@@ -7,6 +7,7 @@ using UnityEngine;
 public class Axis : MonoBehaviour {
 
     private float meshLength = 2.0f;    // This is the initial length of the cylinder used for the axis.
+    private float titleOffset = 0.05f;
     
 	// Use this for initialization
 	void Start () {
@@ -40,17 +41,21 @@ public class Axis : MonoBehaviour {
     private void OrientAlongPositiveX()
     {
         gameObject.transform.localPosition = new Vector3(GetLength() / 2.0f, 0.0f, 0.0f);
+        gameObject.transform.Find("Title").Translate(0, -titleOffset, 0);
     }
     
     private void OrientAlongPositiveY()
     {
-        gameObject.transform.Rotate(0, 0, -90.0f);
+        gameObject.transform.Rotate(0, 0, 90.0f);
+        gameObject.transform.Find("Title").Translate(0, titleOffset, 0);
         gameObject.transform.localPosition = new Vector3(0.0f, GetLength() / 2.0f, 0.0f);
     }
 
     private void OrientAlongPositiveZ()
     {
-        gameObject.transform.Rotate(0, 90.0f, 0);
+        gameObject.transform.Rotate(0, -90.0f, 0);
+        gameObject.transform.Find("Title").Translate(0, -titleOffset, 0);
+        gameObject.transform.Find("Title").Rotate(0, 180, 0);
         gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, GetLength() / 2.0f);
     }
     
@@ -95,5 +100,30 @@ public class Axis : MonoBehaviour {
             lineTransform.GetComponent<Renderer>().material.color = Color.blue;
         }
         
+    }
+
+    public void ConstructTicks(JSONNode valuesSpecs, DxR.Scale scale)
+    {
+        Transform parent = gameObject.transform.Find("Ticks");
+        GameObject tickPrefab = Resources.Load("Axis/Tick") as GameObject;
+        if(tickPrefab == null)
+        {
+            throw new Exception("Cannot find tick prefab.");
+        }
+
+        for(int i = 0; i < valuesSpecs.Count; i++)
+        {
+            string domainValue = valuesSpecs[i].Value;
+
+            float pos = float.Parse(scale.ApplyScale(domainValue)) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+
+            AddTick(pos, tickPrefab, parent);
+        }
+    }
+
+    private void AddTick(float pos, GameObject prefab, Transform parent)
+    {
+        GameObject instance = Instantiate(prefab, parent.position, parent.rotation, parent);
+       instance.transform.Translate(0, pos - GetLength() / 2.0f, 0);
     }
 }
