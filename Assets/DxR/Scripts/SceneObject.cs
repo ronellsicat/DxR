@@ -266,6 +266,9 @@ namespace DxR
                     // Instantiate mark prefab
                     GameObject markInstance = InstantiateMark(markPrefab, sceneRoot.transform);
 
+                    // Copy data in mark:
+                    markInstance.GetComponent<Mark>().datum = dataValue;
+
                     // Apply channel encodings:
                     ApplyChannelEncoding(channelEncodings, dataValue, ref markInstance);
                 }

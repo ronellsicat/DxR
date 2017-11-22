@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +11,17 @@ namespace DxR
     /// </summary>
     public class Mark : MonoBehaviour
     {
-        public string markName = "base"; 
- 
+        public string markName = "base";
+        public Dictionary<string, string> datum = null;
+
         public Mark(string markName)
         {
-            this.markName = markName;
+            this.markName = markName;           
+        }
+
+        public void Start()
+        {
+            DxR.GazeResponder sc = gameObject.AddComponent(typeof(DxR.GazeResponder)) as DxR.GazeResponder;
         }
 
         public virtual void SetChannelValue(string channel, string value)
@@ -187,6 +194,16 @@ namespace DxR
             m.EnableKeyword("_ALPHABLEND_ON");
             m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
             m.renderQueue = 3000;
+        }
+
+        public void OnFocusEnter()
+        {
+            Debug.Log("Mark focus entered.");
+        }
+
+        public void OnFocusExit()
+        {
+            Debug.Log("Mark focus exited.");
         }
     }
 }
