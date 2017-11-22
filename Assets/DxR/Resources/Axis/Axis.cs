@@ -11,7 +11,6 @@ public class Axis : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        //SetTitle("override");
 	}
 	
 	// Update is called once per frame
@@ -40,102 +39,21 @@ public class Axis : MonoBehaviour {
 
     private void OrientAlongPositiveX()
     {
-
-        OrientTitleAlongPositiveX();
-        OrientAxisLineAlongPositiveX();
+        gameObject.transform.localPosition = new Vector3(GetLength() / 2.0f, 0.0f, 0.0f);
     }
-
-    private void OrientAxisLineAlongPositiveX()
-    {
-        Transform lineTransform = gameObject.transform.Find("AxisLine");
-
-        if (lineTransform != null)
-        {
-            lineTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            lineTransform.Rotate(0.0f, 0.0f, -90.0f);
-
-            Debug.Log("Move x axis by " + GetLength().ToString());
-            lineTransform.localPosition = new Vector3(GetLength() / 2.0f, 0.0f, 0.0f);
-        }
-    }
-
-    private void OrientTitleAlongPositiveX()
-    {
-        Transform titleTransform = gameObject.transform.Find("Title");
-
-        float translateBy = GetLength() / 2.0f;
-        // TODO: Shift by the height of the text.
-        float shiftBy = 0.015f;
-        titleTransform.localPosition = new Vector3(translateBy, -shiftBy, 0);
-    }
-
+    
     private void OrientAlongPositiveY()
     {
-        OrientTitleAlongPositiveY();
-        OrientAxisLineAlongPositiveY();
-    }
-
-    private void OrientAxisLineAlongPositiveY()
-    {
-        Transform lineTransform = gameObject.transform.Find("AxisLine");
-
-        if (lineTransform != null)
-        {
-            lineTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            lineTransform.localPosition = new Vector3(0.0f, GetLength() / 2.0f, 0.0f);
-        }
-    }
-
-    private void OrientTitleAlongPositiveY()
-    {
-        Transform titleTransform = gameObject.transform.Find("Title");
-        //Transform textTransform = titleTransform.Find("Text");
-        if (titleTransform != null)
-        {
-            //Vector3 curTextSize = textTransform.GetComponent<MeshRenderer>().bounds.size;
-            titleTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            titleTransform.Rotate(0.0f, 0.0f, 90.0f);
-
-            float translateBy = GetLength() / 2.0f;
-            // TODO: Shift by the height of the text.
-            float shiftBy = 0.015f;
-            titleTransform.localPosition = new Vector3(-shiftBy, translateBy, 0);
-        }
+        gameObject.transform.Rotate(0, 0, -90.0f);
+        gameObject.transform.localPosition = new Vector3(0.0f, GetLength() / 2.0f, 0.0f);
     }
 
     private void OrientAlongPositiveZ()
     {
-        OrientTitleAlongPositiveZ();
-        OrientAxisLineAlongPositiveZ();
+        gameObject.transform.Rotate(0, 90.0f, 0);
+        gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, GetLength() / 2.0f);
     }
-
-    private void OrientAxisLineAlongPositiveZ()
-    {
-        Transform lineTransform = gameObject.transform.Find("AxisLine");
-
-        if (lineTransform != null)
-        {
-            lineTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            lineTransform.Rotate(90.0f, 0.0f, 0.0f);
-            lineTransform.localPosition = new Vector3(0.0f, 0.0f, GetLength() / 2.0f);
-        }
-    }
-
-    private void OrientTitleAlongPositiveZ()
-    {
-        Transform titleTransform = gameObject.transform.Find("Title");
-        if (titleTransform != null)
-        {
-            titleTransform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
-            titleTransform.localRotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-
-            float translateBy = GetLength() / 2.0f;
-            // TODO: Shift by the height of the text.
-            float shiftBy = 0.015f;
-            titleTransform.localPosition = new Vector3(0, -shiftBy, translateBy);
-        }
-    }
-
+    
     internal void SetLength(float length)
     {
         length = length * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
@@ -177,10 +95,5 @@ public class Axis : MonoBehaviour {
             lineTransform.GetComponent<Renderer>().material.color = Color.blue;
         }
         
-    }
-
-    internal void UpdateSpecs(JSONNode axisSpecs)
-    {
-        throw new NotImplementedException();
     }
 }
