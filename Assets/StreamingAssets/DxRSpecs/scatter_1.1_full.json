@@ -69,6 +69,13 @@
     },
     "size": {
       "value": 10
+    },
+    "tooltip": {
+      "field": "Name",
+      "type": "nominal",
+      "scale": {
+        "type": "custom"
+      }
     }
   }
 }

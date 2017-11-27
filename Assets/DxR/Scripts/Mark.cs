@@ -13,6 +13,8 @@ namespace DxR
     {
         public string markName = "base";
         public Dictionary<string, string> datum = null;
+        public GameObject tooltip = null;
+        private string tooltipString = DxR.SceneObject.UNDEFINED;
 
         public Mark(string markName)
         {
@@ -34,7 +36,7 @@ namespace DxR
                 case "y":
                     TranslateBy(value, 1);
                     break;
-                   case "z":
+                case "z":
                     TranslateBy(value, 2);
                     break;
                  case "width":
@@ -82,6 +84,9 @@ namespace DxR
                 case "zrotation":
                     SetRotation(value, 2);
                     break;
+                case "tooltip":
+                    SetTooltip(value);
+                    break;
                 case "x2":
                     throw new System.Exception("x2 is not a valid channel - use x, and width instead.");
                 case "y2":
@@ -91,6 +96,16 @@ namespace DxR
                 default:
                     throw new System.Exception("Cannot find channel: " + channel);
             }
+        }
+
+        public void SetTooltipObject(ref GameObject tooltipObject)
+        {
+            tooltip = tooltipObject;
+        }
+
+        private void SetTooltip(string value)
+        {
+            tooltipString = value;
         }
 
         private void TranslateBy(string value, int dim)
@@ -199,11 +214,33 @@ namespace DxR
         public void OnFocusEnter()
         {
             Debug.Log("Mark focus entered.");
+            // TODO: Get tooltip pointer somehow. 
+
+            tooltip = gameObject.transform.parent.Find("tooltip").gameObject;
+
+            if(tooltip != null)
+            {
+                tooltip.SetActive(true);
+
+                Vector3 markPos = gameObject.transform.localPosition;
+
+                tooltip.GetComponent<Tooltip>().SetChannelValue("text", tooltipString);
+                tooltip.GetComponent<Tooltip>().SetChannelValue("x", markPos.x.ToString());
+                tooltip.GetComponent<Tooltip>().SetChannelValue("y", markPos.y.ToString());
+                tooltip.GetComponent<Tooltip>().SetChannelValue("z", markPos.z.ToString());
+
+                Debug.Log("Displaying tooltip " + tooltipString);
+            }
         }
 
         public void OnFocusExit()
         {
             Debug.Log("Mark focus exited.");
+
+            if (tooltip != null)
+            {
+ //               tooltip.SetActive(false);
+            }
         }
     }
 }

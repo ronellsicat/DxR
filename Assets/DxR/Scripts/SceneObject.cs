@@ -36,6 +36,8 @@ namespace DxR
         private GameObject markPrefab = null;
         private List<ChannelEncoding> channelEncodings = null;
 
+        private GameObject tooltipInstance = null;
+
         void Start()
         {
             sceneRoot = gameObject;
@@ -70,6 +72,8 @@ namespace DxR
 
             CreateDataObjectFromValues(sceneSpecs["data"]["values"], out data);
 
+            CreateTooltipObject(out tooltipInstance, ref sceneRoot);
+
             CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
 
             CreateChannelEncodingObjects(sceneSpecs, out channelEncodings);
@@ -79,6 +83,26 @@ namespace DxR
             ConstructAxes(sceneSpecs, ref channelEncodings, ref sceneRoot);
 
             ConstructLegends(sceneSpecs, ref channelEncodings, ref sceneRoot);
+        }
+
+        private void CreateTooltipObject(out GameObject tooltipInstance, ref GameObject parent)
+        {
+            GameObject tooltipPrefab = Resources.Load("Marks/tooltip/tooltip") as GameObject;
+            tooltipInstance = Instantiate(tooltipPrefab, parent.transform.position,
+                        parent.transform.rotation, parent.transform);
+
+            if (tooltipInstance == null)
+            {
+                throw new Exception("Cannot load tooltip");
+            }
+            else if (verbose)
+            {
+                Debug.Log("Loaded tooltip");
+            }
+
+            tooltipInstance.name = "tooltip";
+
+ //           tooltipInstance.SetActive(false);            
         }
 
         private void InitSceneObjectProperties(JSONNode sceneSpecs, ref GameObject sceneRoot)
@@ -306,7 +330,17 @@ namespace DxR
 
                     string channelValue = channelEncoding.scale.ApplyScale(dataValue[channelEncoding.field]);
                     markComponent.SetChannelValue(channelEncoding.channel, channelValue);
+
+                    SetupTooltip(channelEncoding, markComponent);
                 }
+            }
+        }
+
+        private void SetupTooltip(ChannelEncoding channelEncoding, Mark markComponent)
+        {
+            if (channelEncoding.channel == "tooltip" && tooltipInstance != null)
+            {
+                markComponent.SetTooltipObject(ref tooltipInstance);
             }
         }
 
