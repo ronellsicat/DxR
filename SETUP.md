@@ -59,7 +59,10 @@ These are some guidelines for deploying your application to device. More informa
 -->
 
 ### MR Deployment (Hololens)
-1. Build the solution (File -> Build Settings -> Build). 
+
+Follow Mixed Reality Toolkit's [requirements](https://github.com/Microsoft/MixedRealityToolkit-Unity/releases/tag/v1.2017.2.0), i.e., use Unity Editor 2017.1.2 and be sure to target the 10.0.15063 SDK.
+
+1. Build the solution (File -> Build Settings (set SDK to 10.0.15063) -> Build). 
 2. Open the generated/updated MS Visual Studio solution (using VS 2017). 
 3. In Visual Studio, set the build settings to x86 and Remote Machine. Go to Debug -> Test Properties -> Configuration Properties -> Debugging and set "Machine Name" to your HoloLens IP address. Also make sure "Authentication Type" is set to Universal.
-4. Deploy.
+4. Deploy (Debug -> Start without debugging).
