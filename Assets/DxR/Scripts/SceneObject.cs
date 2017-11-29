@@ -87,7 +87,7 @@ namespace DxR
 
         private void CreateTooltipObject(out GameObject tooltipInstance, ref GameObject parent)
         {
-            GameObject tooltipPrefab = Resources.Load("Marks/tooltip/tooltip") as GameObject;
+            GameObject tooltipPrefab = Resources.Load("Tooltip/tooltip") as GameObject;
             tooltipInstance = Instantiate(tooltipPrefab, parent.transform.position,
                         parent.transform.rotation, parent.transform);
 
@@ -101,8 +101,8 @@ namespace DxR
             }
 
             tooltipInstance.name = "tooltip";
-
- //           tooltipInstance.SetActive(false);            
+            tooltipInstance.GetComponent<Tooltip>().SetAnchor("upperleft");
+            tooltipInstance.SetActive(false);            
         }
 
         private void InitSceneObjectProperties(JSONNode sceneSpecs, ref GameObject sceneRoot)

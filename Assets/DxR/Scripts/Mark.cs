@@ -114,11 +114,6 @@ namespace DxR
             float pos = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
 
             Vector3 localPos = gameObject.transform.localPosition;
-            /*
-            Vector3 translateBy = Vector3.zero;
-            translateBy[dim] = pos - localPos[dim];
-            gameObject.transform.Translate(translateBy);
-            */
             localPos[dim] = pos;
             gameObject.transform.localPosition = localPos;
         }
@@ -217,34 +212,25 @@ namespace DxR
         }
 
         public void OnFocusEnter()
-        {
-            Debug.Log("Mark focus entered.");
-            // TODO: Get tooltip pointer somehow. 
-
-            tooltip = gameObject.transform.parent.Find("tooltip").gameObject;
-
+        {            
             if(tooltip != null)
             {
                 tooltip.SetActive(true);
 
                 Vector3 markPos = gameObject.transform.localPosition;
 
-                tooltip.GetComponent<Tooltip>().SetChannelValue("text", tooltipString);
-                tooltip.GetComponent<Tooltip>().SetChannelValue("x", markPos.x.ToString());
-                tooltip.GetComponent<Tooltip>().SetChannelValue("y", markPos.y.ToString());
-                tooltip.GetComponent<Tooltip>().SetChannelValue("z", markPos.z.ToString());
-
-                Debug.Log("Displaying tooltip " + tooltipString);
+                tooltip.GetComponent<Tooltip>().SetText(tooltipString);
+                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.x, 0);
+                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.y, 1);
+                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.z, 2);
             }
         }
 
         public void OnFocusExit()
         {
-            Debug.Log("Mark focus exited.");
-
             if (tooltip != null)
             {
- //               tooltip.SetActive(false);
+               tooltip.SetActive(false);
             }
         }
     }

@@ -19,67 +19,31 @@ namespace DxR
             
         }
         
-        public void SetChannelValue(string channel, string value)
-        {
-            switch (channel)
-            {
-                case "text":
-                    SetText(value);
-                    break;
-                case "x":
-                    TranslateBy(value, 0);
-                    break;
-                case "y":
-                    TranslateBy(value, 1);
-                    break;
-                case "z":
-                    TranslateBy(value, 2);
-                    break;
-                case "size":
-                    SetFontSize(value);
-                    break;
-                case "color":
-                    SetFontColor(value);
-                    break;
-                case "anchor":
-                    SetAnchor(value);
-                    break;
-                default:
-                    throw new Exception("Invalid tooltip channel.");
-            }
-        }
-
-        private void SetText(string value)
+        public void SetText(string value)
         {
             gameObject.GetComponent<TextMesh>().text = value;
-
-            Debug.Log("setting tooltip to " + value);
         }
 
-        private void TranslateBy(string value, int dim)
+        public void SetLocalPos(float pos, int dim)
         {
-            // TODO: Do this more robustly.
-            float pos = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-
             Vector3 localPos = gameObject.transform.localPosition;
-            Vector3 translateBy = Vector3.zero;
-            translateBy[dim] = pos - localPos[dim];
-            gameObject.transform.Translate(translateBy);
+            localPos[dim] = pos;
+            gameObject.transform.localPosition = localPos;
         }
 
-        private void SetFontSize(string value)
+        public void SetFontSize(string value)
         {       
             gameObject.GetComponent<TextMesh>().fontSize = int.Parse(value);
         }
 
-        private void SetFontColor(string value)
+        public void SetFontColor(string value)
         {
             Color color;
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
             gameObject.GetComponent<TextMesh>().color = color;
         }
 
-        private void SetAnchor(string value)
+        public void SetAnchor(string value)
         {
             TextAnchor anchor = TextAnchor.MiddleCenter;
             switch(value)
