@@ -19,9 +19,11 @@
         "face": "front",
         "orient": "bottom",
         "title": "HP",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 5
+        "tickCount": 6,
+        "values": [ 0, 50, 100, 150, 200, 250 ],
+        "labels": true
       }
     },
     "y": {
@@ -36,9 +38,11 @@
         "face": "front",
         "orient": "left",
         "title": "MPG",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 6
+        "tickCount": 5,
+        "values": [ 0, 10, 20, 30, 40, 50 ],
+        "labels": true
       }
     },
     "color": {
@@ -46,7 +50,7 @@
       "type": "nominal",
       "scale": {
         "type": "ordinal",
-        "domain": ["Europe", "Japan", "USA"],
+        "domain": [ "Europe", "Japan", "USA" ],
         "range": "category",
         "scheme": "tableau10"
       },
@@ -59,6 +63,16 @@
         "z": 0,
         "title": "Origin Legend"
       }
+    },
+    "tooltip": {
+      "field": "Name",
+      "type": "nominal",
+      "scale": {
+        "type": "custom"
+      }
+    },
+    "size": {
+      "value": 10
     }
   }
 }
