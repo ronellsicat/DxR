@@ -37,27 +37,7 @@
         ],
         "range": [ 0, 500 ]
       },
-      "axis": {
-        "face": "front",
-        "orient": "bottom",
-        "title": "Keywords",
-        "titlePadding": 100,
-        "grid": false,
-        "ticks": true,
-        "tickCount": 9,
-        "values": [
-          "Algorithms",
-          "Data",
-          "Visualization",
-          "Compilers",
-          "Graphics",
-          "Computers",
-          "Software",
-          "Mathematics",
-          "Programming"
-        ],
-        "labels": true,
-      }
+      "axis": "none"
     },
     "height": {
       "field": "count",
