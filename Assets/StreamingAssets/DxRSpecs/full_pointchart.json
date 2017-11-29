@@ -1,6 +1,4 @@
 {
-  "title": "Bar chart of keywords count in a book shelf",
-  "description": "This displays a bar chart using standard bar mark.",
   "width": 500,
   "height": 500,
   "depth": 500,
@@ -42,7 +40,20 @@
         "orient": "bottom",
         "title": "Keywords",
         "grid": false,
-        "ticks": true
+        "ticks": true,
+        "tickCount": 9,
+        "values": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "labels": true
       }
     },
     "y": {
@@ -57,9 +68,18 @@
         "face": "front",
         "orient": "left",
         "title": "Count",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 6
+        "tickCount": 6,
+        "values": [
+          "0",
+          "20",
+          "40",
+          "60",
+          "80",
+          "100"
+        ],
+        "labels": true
       }
     },
     "size": {
