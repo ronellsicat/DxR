@@ -1,0 +1,101 @@
+{
+  "title": "Cars Data",
+  "description":  "This displays a 3D scatterplot using square mark, with opacity channel.",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": { "url": "DxRData/cars.json" },
+  "mark": "square",
+  "encoding": {
+    "x": {
+      "field": "Acceleration",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 30 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "front",
+        "orient": "bottom",
+        "title": "Acceleration",
+        "grid": false,
+        "ticks": true,
+        "tickCount": 4,
+        "values": [ 0, 10, 20, 30 ],
+        "labels": true
+      }
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 50 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "front",
+        "orient": "left",
+        "title": "MPG",
+        "grid": false,
+        "ticks": true,
+        "tickCount": 5,
+        "values": [ 0, 10, 20, 30, 40, 50 ],
+        "labels": true
+      }
+    },
+    "z": {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 250 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "face": "left",
+        "orient": "bottom",
+        "title": "HP",
+        "grid": false,
+        "ticks": true,
+        "tickCount": 6,
+        "values": [ 0, 50, 100, 150, 200, 250 ],
+        "labels": true
+      }
+    },
+    "color": {
+      "value": "#7fcdbb"
+    },
+    "opacity": {
+      "field": "Displacement",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 68, 455 ],
+        "range": [ 0, 1.0 ]
+      },
+      "legend": {
+        "type": "symbol",
+        "face": "front",
+        "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
+        "gradientWidth": 200,
+        "gradientHeight": 50,
+        "title": "Displacement"
+      }
+    },
+    "size": {
+      "value": 10
+    },
+    "tooltip": {
+      "field": "Name",
+      "type": "nominal",
+      "scale": {
+        "type": "custom"
+      }
+    }
+  }
+}
