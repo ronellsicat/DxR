@@ -25,6 +25,14 @@ public class Axis : MonoBehaviour {
         gameObject.GetComponentInChildren<TextMesh>().text = title;
     }
 
+    public void SetTitlePadding(string titlePadding)
+    {
+        titleOffset = titleOffset + (float.Parse(titlePadding) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR);
+    }
+
+    // TODO: Create ticks marks and tick labels using mark and channel metaphor, 
+    // i.e., create them using the tick values as data and set orientation channels
+    // according to orient and face params.
     internal void SetOrientation(string orient, string face)
     {
         if(orient == "bottom" && face == "front")

@@ -382,6 +382,11 @@ namespace DxR
                     channelEncoding.axis.GetComponent<Axis>().SetTitle(axisSpecs["title"].Value);
                 }
 
+                if(axisSpecs["titlePadding"] != null)
+                {
+                    channelEncoding.axis.GetComponent<Axis>().SetTitlePadding(axisSpecs["titlePadding"].Value);
+                }
+
                 float axisLength = 0.0f;
                 if (axisSpecs["length"] != null)
                 {
