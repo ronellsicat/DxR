@@ -188,15 +188,30 @@ namespace DxR
         {
             Color color;
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
-            transform.GetComponent<Renderer>().material.color = color;
+            Renderer renderer = transform.GetComponent<Renderer>();
+            if(renderer != null)
+            {
+                renderer.material.color = color;
+            } else
+            {
+                Debug.Log("Cannot set color of mark without renderer object.");
+            }
         }
 
         private void SetOpacity(string value)
         {
-            SetRenderModeToTransparent(transform.GetComponent<Renderer>().material);
-            Color color = transform.GetComponent<Renderer>().material.color;
-            color.a = float.Parse(value);
-            transform.GetComponent<Renderer>().material.color = color;
+            Renderer renderer = transform.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                SetRenderModeToTransparent(renderer.material);
+                Color color = renderer.material.color;
+                color.a = float.Parse(value);
+                renderer.material.color = color;
+            }
+            else
+            {
+                Debug.Log("Cannot set opacity of mark without renderer object.");
+            }
         }
 
         private void SetRenderModeToTransparent(Material m)
