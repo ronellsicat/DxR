@@ -31,13 +31,13 @@ namespace DxR
             switch(channel)
             {
                 case "x":
-                    TranslateBy(value, 0);
+                    SetLocalPos(value, 0);
                     break;
                 case "y":
-                    TranslateBy(value, 1);
+                    SetLocalPos(value, 1);
                     break;
                 case "z":
-                    TranslateBy(value, 2);
+                    SetLocalPos(value, 2);
                     break;
                  case "width":
                     SetSize(value, 0);
@@ -108,15 +108,19 @@ namespace DxR
             tooltipString = value;
         }
 
-        private void TranslateBy(string value, int dim)
+        private void SetLocalPos(string value, int dim)
         {
             // TODO: Do this more robustly.
             float pos = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
 
             Vector3 localPos = gameObject.transform.localPosition;
+            /*
             Vector3 translateBy = Vector3.zero;
             translateBy[dim] = pos - localPos[dim];
             gameObject.transform.Translate(translateBy);
+            */
+            localPos[dim] = pos;
+            gameObject.transform.localPosition = localPos;
         }
 
         private void SetSize(string value, int dim)
@@ -126,6 +130,7 @@ namespace DxR
             Vector3 initPos = transform.localPosition;
 
             Vector3 curScale = transform.localScale;
+
             GetComponent<MeshFilter>().mesh.RecalculateBounds();
             Vector3 origMeshSize = GetComponent<MeshFilter>().mesh.bounds.size;
             curScale[dim] = size / (origMeshSize[dim]);

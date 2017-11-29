@@ -1,6 +1,6 @@
 /Assets/HoloToolkit-Examples/
 UWP/
-
+HoloLens/
 
 /[Ll]ibrary/
 /[Tt]emp/
@@ -48,3 +48,4 @@ Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/x64/GpuTiming.pdb.met
 Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/WSA/x86/GpuTiming.pdb.meta
 Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/x64/GpuTiming.pdb.meta
 Assets/HoloToolkit/Utilities/Scripts/GpuTiming/Plugins/x86/GpuTiming.pdb.meta
+HoloLens/.vs/DxR-Unity/v15/sqlite3/storage.ide
