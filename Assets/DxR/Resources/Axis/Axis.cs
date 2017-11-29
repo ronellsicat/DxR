@@ -7,8 +7,8 @@ using UnityEngine;
 public class Axis : MonoBehaviour {
 
     private float meshLength = 2.0f;    // This is the initial length of the cylinder used for the axis.
-    private float titleOffset = 0.05f;
-    private float tickLabelOffset = 0.025f;
+    private float titleOffset = 0.075f;
+    private float tickLabelOffset = 0.03f;
     
 	// Use this for initialization
 	void Start () {
@@ -143,29 +143,39 @@ public class Axis : MonoBehaviour {
     {
         GameObject instance = Instantiate(prefab, parent.position, parent.rotation, parent);
         
-        instance.transform.Translate(0, pos - GetLength() / 2.0f, 0);
-        instance.transform.localRotation = Quaternion.Euler(0, 0, 90);
-
+        instance.transform.Translate(pos - GetLength() / 2.0f, 0, 0);
+        
         // Adjust label
-        float offset = tickLabelOffset;
-        float yrot = 0.0f;
+        // TODO: Adjust label angle.
+        Transform tickLabelTransform = instance.transform.Find("TickLabel");
+        float yoffset = 0.0f;
+        float xoffset = 0.0f;
+        float zrot = tickLabelTransform.localEulerAngles.z;
+        float yrot = tickLabelTransform.localEulerAngles.y;
+        float xrot = tickLabelTransform.localEulerAngles.x;
         if (face == "front" && orient == "bottom")
         {
-            offset = -tickLabelOffset;
+            float labelAngle = 0.0f;
+            zrot = zrot + labelAngle + 90;
+            yoffset = -tickLabelOffset;
         }
         else if (face == "front" && orient == "left")
         {
-            offset = tickLabelOffset;
+            instance.transform.localRotation = Quaternion.Euler(0, 0, 180.0f);
+            float labelAngle = 0.0f;
+            yoffset = -tickLabelOffset;
+            zrot = zrot + labelAngle + 90.0f;
         }
         else if (face == "left" && orient == "bottom")
         {
-            offset = -tickLabelOffset;
-            yrot = 180.0f;
+            float labelAngle = 0.0f;
+            yoffset = -tickLabelOffset;
+            zrot = zrot + labelAngle - 90.0f;
+            xrot = xrot + 180.0f;
         }
-
-        Transform tickLabelTransform = instance.transform.Find("TickLabel");
-        tickLabelTransform.localPosition = new Vector3(0, offset, 0);
-        tickLabelTransform.localEulerAngles = new Vector3(0, yrot, 0);
+                
+        tickLabelTransform.localPosition = new Vector3(xoffset, yoffset, 0);
+        tickLabelTransform.localEulerAngles = new Vector3(xrot, yrot, zrot);
         tickLabelTransform.GetComponent<TextMesh>().text = label;
     }
 }
