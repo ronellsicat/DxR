@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
-
+using System.IO;
 namespace DxR
 {
     /// <summary>
@@ -174,6 +174,26 @@ namespace DxR
                     data.values.Add(d);
                 }
             }
+
+            //SubsampleData(valuesSpecs, 8, "Assets/DxR/Resources/test.json");
+        }
+
+        private void SubsampleData(JSONNode data, int samplingRate, string outputName)
+        {
+            JSONArray output = new JSONArray();
+            int counter = 0;
+            foreach (JSONNode value in data.Children)
+            {
+                if (counter % 8 == 0)
+                {
+                    output.Add(value);
+                }
+                counter++;
+            }
+
+            StreamWriter writer = new StreamWriter(outputName);
+            writer.Write(output.ToString());
+            writer.Close();
         }
 
         private void CreateDataFields(JSONNode valuesSpecs, ref Data data)

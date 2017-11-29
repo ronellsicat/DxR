@@ -4,7 +4,7 @@
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/streamline.json" },
+  "data": { "url": "DxRData/streamline_cropped.json" },
   "mark": "paperplane",
   "encoding": {
     "x": {
@@ -18,10 +18,12 @@
       "axis": {
         "face": "front",
         "orient": "bottom",
-        "title": "x",
-        "grid": true,
+        "title": "x position",
+        "grid": false,
         "ticks": true,
-        "tickCount": 5
+        "tickCount": 6,
+        "values": [0, 1, 2, 3, 4, 5],
+        "labels":  true
       }
     },
     "y": {
@@ -35,10 +37,12 @@
       "axis": {
         "face": "front",
         "orient": "left",
-        "title": "y",
-        "grid": true,
+        "title": "y position",
+        "grid": false,
         "ticks": true,
-        "tickCount": 5
+        "tickCount": 6,
+        "values": [ 0, 1, 2, 3, 4, 5 ],
+        "labels": true
       }
     },
     "z": {
@@ -52,19 +56,12 @@
       "axis": {
         "face": "left",
         "orient": "bottom",
-        "title": "z",
-        "grid": true,
+        "title": "z position",
+        "grid": false,
         "ticks": true,
-        "tickCount": 5
-      }
-    },
-    "height": {
-      "field": "time",
-      "type": "quantitative",
-      "scale": {
-        "type": "linear",
-        "domain": [ 0, 4 ],
-        "range": [ 0, 100 ]
+        "tickCount": 6,
+        "values": [ 0, 1, 2, 3, 4, 5 ],
+        "labels": true
       }
     },
     "xorient": {
@@ -109,7 +106,7 @@
       }
     },
     "size": {
-      "value":  50
+      "value":  15
     }
   }
 }
