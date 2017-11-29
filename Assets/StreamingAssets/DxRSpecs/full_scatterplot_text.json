@@ -1,6 +1,6 @@
 {
   "title": "Cars Data",
-  "description": "This displays a scatterplot with the color channel mapped to Weight_in_lbs - a quantitative data type.",
+  "description": "This displays a 3D scatterplot.",
   "width": 500,
   "height": 500,
   "depth": 500,
@@ -13,15 +13,17 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 250 ],
-        "range": [ 0, 900 ]
+        "range": [ 0, 500 ]
       },
       "axis": {
         "face": "front",
         "orient": "bottom",
         "title": "HP",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 5
+        "tickCount": 6,
+        "values": [ 0, 50, 100, 150, 200, 250 ],
+        "labels": true
       }
     },
     "y": {
@@ -30,15 +32,17 @@
       "scale": {
         "type": "linear",
         "domain": [ 0, 50 ],
-        "range": [ 0, 900 ]
+        "range": [ 0, 500 ]
       },
       "axis": {
         "face": "front",
         "orient": "left",
         "title": "MPG",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 6
+        "tickCount": 5,
+        "values": [ 0, 10, 20, 30, 40, 50 ],
+        "labels": true
       }
     },
     "z": {
@@ -53,9 +57,11 @@
         "face": "left",
         "orient": "bottom",
         "title": "Acceleration",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 6
+        "tickCount": 4,
+        "values": [ 0, 10, 20, 30 ],
+        "labels": true
       }
     },
     "color": {

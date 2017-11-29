@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 23727615008590478}
   - component: {fileID: 102474979244571812}
   - component: {fileID: 114865699416027606}
+  - component: {fileID: 114891197971144332}
   m_Layer: 0
   m_Name: text
   m_TagString: Untagged
@@ -109,3 +110,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markName: text
+  tooltip: {fileID: 0}
+--- !u!114 &114891197971144332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1357899638083170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PivotAxis: 0
+  TargetTransform: {fileID: 0}
