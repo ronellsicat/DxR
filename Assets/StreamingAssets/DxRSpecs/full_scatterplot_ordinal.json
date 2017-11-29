@@ -3,11 +3,11 @@
   "description": "This displays a scatterplot with the color channel mapped to Weight_in_lbs - a quantitative data type.",
   "width": 500,
   "height": 500,
-  "depth": 500,
+  "depth":  500,
   "data": { "url": "DxRData/cars.json" },
   "mark": "point",
   "encoding": {
-    "x": {
+     "x": {
       "field": "Horsepower",
       "type": "quantitative",
       "scale": {
@@ -19,9 +19,11 @@
         "face": "front",
         "orient": "bottom",
         "title": "HP",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 5
+        "tickCount": 6,
+        "values": [ 0, 50, 100, 150, 200, 250 ],
+        "labels": true
       }
     },
     "y": {
@@ -36,29 +38,30 @@
         "face": "front",
         "orient": "left",
         "title": "MPG",
-        "grid": true,
+        "grid": false,
         "ticks": true,
-        "tickCount": 6
+        "tickCount": 5,
+        "values": [ 0, 10, 20, 30, 40, 50 ],
+        "labels": true
       }
     },
     "color": {
-      "field": "Weight_in_lbs",
-      "type": "quantitative",
+      "field": "Cylinders",
+      "type": "ordinal",
       "scale": {
-        "type": "sequential",
-        "domain": [ 1000, 2750, 4500 ],
-        "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
+        "type": "ordinal",
+        "domain":  [3, 4, 5, 6, 8],
+        "range": "ordinal",
+        "scheme": "blues"
       },
       "legend": {
-        "type": "gradient",
+        "type": "symbol",
         "face": "front",
         "orient": "right",
         "x": 500,
         "y": 500,
         "z": 0,
-        "gradientWidth": 200,
-        "gradientHeight": 50,
-        "title": "Weight in lbs"
+        "title": "Cylinders Legend"
       }
     }
   }
