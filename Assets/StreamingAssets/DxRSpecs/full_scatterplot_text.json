@@ -93,6 +93,9 @@
       "scale": {
         "type": "custom"
       }
+    },
+    "following": {
+      "value":  true
     }
   }
 }

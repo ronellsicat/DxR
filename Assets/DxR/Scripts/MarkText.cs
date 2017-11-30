@@ -35,9 +35,23 @@ namespace DxR
                 case "anchor":
                     SetAnchor(value);
                     break;
+                case "following":
+                    SetFollowing(value);
+                    break;
                 default:
                     base.SetChannelValue(channel, value);
                     break;
+            }
+        }
+
+        private void SetFollowing(string value)
+        {
+            if(value == "True")
+            {
+                gameObject.GetComponent<HoloToolkit.Unity.Billboard>().enabled = true;
+            } else
+            {
+                gameObject.GetComponent<HoloToolkit.Unity.Billboard>().enabled = false;
             }
         }
 
