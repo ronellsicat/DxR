@@ -4,7 +4,7 @@
 
 [TODO]
 
-DxR uses JSON specs to describe a visualization. It is based on a similar syntax inpired by the well-designed [Vega-Lite](https://vega.github.io/vega-lite/) - a high-level grammar of interactive graphics for SVG or Canvas -based data visualizations.
+DxR uses JSON specs [temporarily documented here](https://docs.google.com/spreadsheets/d/1MykCFZxE1f-NnCWADAPwEab72OFV3FdGYndidCshSpI/edit?usp=sharing) to describe a visualization. It is based on a similar syntax inpired by the well-designed [Vega-Lite](https://vega.github.io/vega-lite/) - a high-level grammar of interactive graphics for SVG or Canvas -based data visualizations.
 
 This document provides instructions on how to create data-driven graphics using DxR on different "authoring layers" (user and author are used interchangeably):
 
