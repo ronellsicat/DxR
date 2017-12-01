@@ -28,8 +28,21 @@ namespace DxR
             if (sceneSpecs["data"]["url"] != null)
             {
                 string dataFilename = sceneSpecs["data"]["url"];
-                JSONNode valuesJSONNode = JSON.Parse(GetStringFromFile(dataFilename));
-                sceneSpecs["data"].AsObject.Add("values", valuesJSONNode);
+
+                string ext = Path.GetExtension(dataFilename);
+                if (ext == ".json")
+                {
+                    JSONNode valuesJSONNode = JSON.Parse(GetStringFromFile(dataFilename));
+                    sceneSpecs["data"].AsObject.Add("values", valuesJSONNode);
+                } else if(ext == ".csv")
+                {
+                    JSONNode valuesJSONNode = JSON.ParseCSV(GetStringFromFile(dataFilename));
+                    sceneSpecs["data"].AsObject.Add("values", valuesJSONNode);
+;               } else
+                {
+                    throw new Exception("Cannot load file type" + ext);
+                }
+                
             }
 
             // TODO: Do some checks.
