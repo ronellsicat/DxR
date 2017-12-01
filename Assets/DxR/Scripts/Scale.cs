@@ -19,7 +19,7 @@ namespace DxR
             if(scaleSpecs["domain"] != null)
             {
                 CopyNodeToList(scaleSpecs["domain"], ref domain);
-            } else if(scaleSpecs["type"] != "custom")
+            } else if(scaleSpecs["type"] != "custom" && scaleSpecs["type"] != "none")
             {
                 throw new Exception("Scale is missing domain.");
             }
@@ -28,7 +28,7 @@ namespace DxR
             {
                 CopyNodeToList(scaleSpecs["range"], ref range);
             }
-            else if(scaleSpecs["type"] != "custom")
+            else if(scaleSpecs["type"] != "custom" && scaleSpecs["type"] != "none")
             {
                 throw new Exception("Scale is missing range.");
             }

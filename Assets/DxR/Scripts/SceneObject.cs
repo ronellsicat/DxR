@@ -265,7 +265,7 @@ namespace DxR
                 JSONNode scaleSpecs = channelSpecs["scale"];
                 if (scaleSpecs != null)
                 {
-                    CreateScaleObject(scaleSpecs, ref channelEncoding.scale);
+                   CreateScaleObject(scaleSpecs, ref channelEncoding.scale);
                 }
 
                 channelEncodings.Add(channelEncoding);
@@ -276,6 +276,7 @@ namespace DxR
         {
             switch (scaleSpecs["type"].Value.ToString())
             {
+                case "none":
                 case "custom":
                     scale = new ScaleCustom(scaleSpecs);
                     break;
