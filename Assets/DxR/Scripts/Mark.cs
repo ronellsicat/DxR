@@ -23,7 +23,11 @@ namespace DxR
 
         public void Start()
         {
-            DxR.GazeResponder sc = gameObject.AddComponent(typeof(DxR.GazeResponder)) as DxR.GazeResponder;
+            Renderer renderer = transform.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                DxR.GazeResponder sc = gameObject.AddComponent(typeof(DxR.GazeResponder)) as DxR.GazeResponder;
+            }
         }
 
         public virtual void SetChannelValue(string channel, string value)
