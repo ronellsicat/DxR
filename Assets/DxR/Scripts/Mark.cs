@@ -135,11 +135,21 @@ namespace DxR
                 }
 
                 InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                
                 //InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs);
                 //InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
-                string inferResults = sceneSpecs.ToString();
-                WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
+                
             }
+
+            InferMarkSpecificSpecs(ref sceneSpecs);
+
+            string inferResults = sceneSpecs.ToString();
+            WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
+        }
+
+        private void InferMarkSpecificSpecs(ref JSONNode sceneSpecs)
+        {
+            
         }
 
         private void InferScaleSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
@@ -162,7 +172,100 @@ namespace DxR
                 InferDomain(channelEncoding.field, channelEncoding.fieldDataType, sceneSpecs, ref scaleSpecsObj, data);
             }
 
+            if(scaleSpecs["padding"] != null)
+            {
+                scaleSpecsObj.Add("paddingInner", scaleSpecs["padding"]);
+                scaleSpecsObj.Add("paddingOuter", scaleSpecs["padding"]);
+            } else
+            {
+                if(scaleSpecs["paddingInner"] == null)
+                {
+                    scaleSpecsObj.Add("paddingInner", new JSONString(ScaleBand.PADDING_INNER_DEFAULT.ToString()));
+                }
+
+                if (scaleSpecs["paddingOuter"] == null)
+                {
+                    scaleSpecsObj.Add("paddingOuter", new JSONString(ScaleBand.PADDING_OUTER_DEFAULT.ToString()));
+                }
+            }
+            
+            if(scaleSpecs["range"] == null)
+            {
+                InferRange(channelEncoding, sceneSpecs, ref scaleSpecsObj);
+            }
+
+
+
             sceneSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
+        }
+
+        private void InferRange(ChannelEncoding channelEncoding, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj)
+        {
+            JSONArray range = new JSONArray();
+
+            string channel = channelEncoding.channel;
+            if (channel == "x" || channel == "width")
+            {
+                range.Add(new JSONString("0"));
+
+                if(scaleSpecsObj["rangeStep"] == null)
+                {
+                    range.Add(new JSONString(sceneSpecs["width"]));
+                    float rangeStep = float.Parse(sceneSpecs["width"]) / (float)scaleSpecsObj["domain"].Count;
+                    scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                } else
+                {
+                    float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
+                    range.Add(new JSONString(rangeSize.ToString()));
+                    sceneSpecs["width"] = rangeSize.ToString();
+                }
+                
+            } else if(channel == "y" || channel == "height")
+            {
+                range.Add(new JSONString("0"));
+                if (scaleSpecsObj["rangeStep"] == null)
+                {
+                    range.Add(new JSONString(sceneSpecs["height"]));
+                    float rangeStep = float.Parse(sceneSpecs["height"]) / (float)scaleSpecsObj["domain"].Count;
+                    scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                }
+                else
+                {
+                    float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
+                    range.Add(new JSONString(rangeSize.ToString()));
+                    sceneSpecs["height"] = rangeSize.ToString();
+                }
+            } else if(channel == "z" || channel == "depth")
+            {
+                range.Add(new JSONString("0"));
+                if (scaleSpecsObj["rangeStep"] == null)
+                {
+                    range.Add(new JSONString(sceneSpecs["depth"]));
+                    float rangeStep = float.Parse(sceneSpecs["depth"]) / (float)scaleSpecsObj["domain"].Count;
+                    scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+
+                }
+                else
+                {
+                    float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
+                    range.Add(new JSONString(rangeSize.ToString()));
+                    sceneSpecs["depth"] = rangeSize.ToString();
+                }
+            } else if(channel == "opacity")
+            {
+                range.Add(new JSONString("0"));
+                range.Add(new JSONString("1"));
+            } else if(channel == "size")
+            {
+                // TODO: Get min and max size of mark.
+                throw new Exception("Not implemented yet.");
+            } else if(channel == "color")
+            {
+                // TODO: Set default colors.
+                throw new Exception("Not implemented yet.");
+            }
+
+            scaleSpecsObj.Add("range", range);
         }
 
         private void InferDomain(string field, string fieldDataType, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj, Data data)
