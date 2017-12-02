@@ -10,8 +10,8 @@ namespace DxR
     {
         private bool verbose = true;
 
-        public static float PADDING_OUTER_DEFAULT = 0.0f;
-        public static float PADDING_INNER_DEFAULT = 0.0f;
+        public static float PADDING_OUTER_DEFAULT = 0.05f;
+        public static float PADDING_INNER_DEFAULT = 0.05f;
 
         public float paddingOuter = 0.0f;
         public float paddingInner = 0.0f;
@@ -67,6 +67,24 @@ namespace DxR
             }
         }
         
+        public static float ComputeBandSize(JSONNode scaleSpecs)
+        {
+            float rangeMin = float.Parse(scaleSpecs["range"][0]);
+            float rangeMax = float.Parse(scaleSpecs["range"][1]);
+
+            int numSteps = scaleSpecs["domain"].Count;
+            float tempStepSize = (rangeMax - rangeMin) / (float)(numSteps);
+
+            float paddingInnerSize = tempStepSize * float.Parse(scaleSpecs["paddingInner"]);
+            float paddingOuterSize = tempStepSize * float.Parse(scaleSpecs["paddingOuter"]);
+
+            float rangeStep = ((rangeMax - rangeMin) - (paddingOuterSize * 2.0f)) / (float)(numSteps);
+
+            float bandwidth = rangeStep - paddingInnerSize;
+
+            return bandwidth;
+        }
+
         public override string ApplyScale(string domainValue)
         {
             float rangeValue = paddingOuterSize;
@@ -84,6 +102,22 @@ namespace DxR
             Debug.Log("Scaling " + domainValue + " to " + rangeValue.ToString());
 
             return rangeValue.ToString();
+        }
+
+        public static float ComputeRangeStep(JSONNode scaleSpecs)
+        {
+            float rangeMin = float.Parse(scaleSpecs["range"][0]);
+            float rangeMax = float.Parse(scaleSpecs["range"][1]);
+
+            int numSteps = scaleSpecs["domain"].Count;
+            float tempStepSize = (rangeMax - rangeMin) / (float)(numSteps);
+
+            float paddingInnerSize = tempStepSize * float.Parse(scaleSpecs["paddingInner"]);
+            float paddingOuterSize = tempStepSize * float.Parse(scaleSpecs["paddingOuter"]);
+
+            float rangeStep = ((rangeMax - rangeMin) - (paddingOuterSize * 2.0f)) / (float)(numSteps);
+
+            return rangeStep;
         }
     }
 }

@@ -134,11 +134,16 @@ namespace DxR
                     }
                 }
 
-                InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);  
                 
-                //InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                if(channelEncoding.channel == "x" || channelEncoding.channel == "y" ||
+                    channelEncoding.channel == "z" || channelEncoding.channel == "width" ||
+                    channelEncoding.channel == "height" || channelEncoding.channel == "depth")
+                {
+                    InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                }
                 //InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
-                
+
             }
 
             InferMarkSpecificSpecs(ref sceneSpecs);
@@ -147,9 +152,130 @@ namespace DxR
             WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
         }
 
+        private void InferAxisSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
+        {
+            string channel = channelEncoding.channel;
+            JSONNode channelSpecs = sceneSpecs["encoding"][channel];
+            JSONNode axisSpecs = channelSpecs["axis"];
+            JSONObject axisSpecsObj = (axisSpecs == null) ? new JSONObject() : axisSpecs.AsObject;
+            
+            if(axisSpecsObj["face"] == null)
+            {
+                if(channel == "x" || channel == "y" || channel == "width" || channel == "height")
+                {
+                    axisSpecsObj.Add("face", new JSONString("front"));
+                } else if(channel == "z" || channel == "depth")
+                {
+                    axisSpecsObj.Add("face", new JSONString("left"));
+                }
+            }
+
+            if (axisSpecsObj["orient"] == null)
+            {
+                if (channel == "x" || channel == "z" || channel == "width" || channel == "depth")
+                {
+                    axisSpecsObj.Add("orient", new JSONString("bottom"));
+                }
+                else if (channel == "y" || channel == "height")
+                {
+                    axisSpecsObj.Add("orient", new JSONString("left"));
+                }
+            }
+
+            if(axisSpecsObj["title"] == null)
+            {
+                axisSpecsObj.Add("title", new JSONString(channelEncoding.field));
+            }
+
+            if(axisSpecsObj["grid"] == null)
+            {
+                axisSpecsObj.Add("grid", new JSONBool(false));
+            }
+
+            if(axisSpecs["ticks"] == null)
+            {
+                axisSpecsObj.Add("ticks", new JSONBool(true));
+            }
+
+            if(axisSpecsObj["values"] == null)
+            {
+                JSONArray tickValues = new JSONArray();
+                JSONNode domain = sceneSpecs["encoding"][channelEncoding.channel]["scale"]["domain"];
+                axisSpecsObj.Add("values", domain.AsArray);
+            }
+
+            if (axisSpecsObj["tickCount"] == null)
+            {
+                axisSpecsObj.Add("tickCount", new JSONNumber(axisSpecsObj["values"].Count));
+            }
+
+            if(axisSpecsObj["labels"] == null)
+            {
+                axisSpecsObj.Add("labels", new JSONBool(true));
+            }
+
+            sceneSpecs["encoding"][channelEncoding.channel].Add("axis", axisSpecsObj);
+        }
+
+        // TODO: Expose this so it is very easy to add mark-specific rules.
         private void InferMarkSpecificSpecs(ref JSONNode sceneSpecs)
         {
-            
+            if(markName == "bar" || markName == "rect")
+            {
+                // Set size of bar or rect along dimension for type band or point.
+                
+                
+                if (sceneSpecs["encoding"]["x"] != null && sceneSpecs["encoding"]["width"] == null &&
+                    sceneSpecs["encoding"]["x"]["scale"]["type"] == "band")
+                {
+                    float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["x"]["scale"]);
+                    JSONObject forceSizeValueObj = new JSONObject();
+                    forceSizeValueObj.Add("value", new JSONNumber(bandwidth.ToString()));
+                    sceneSpecs["encoding"].Add("width", forceSizeValueObj);
+                }
+
+                if (sceneSpecs["encoding"]["y"] != null && sceneSpecs["encoding"]["height"] == null &&
+                    sceneSpecs["encoding"]["x"]["scale"]["type"] == "band")
+                {
+                    float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["y"]["scale"]);
+                    JSONObject forceSizeValueObj = new JSONObject();
+                    forceSizeValueObj.Add("value", new JSONNumber(bandwidth.ToString()));
+                    sceneSpecs["encoding"].Add("height", forceSizeValueObj);
+                }
+
+                if (sceneSpecs["encoding"]["z"] != null && sceneSpecs["encoding"]["depth"] == null &&
+                    sceneSpecs["encoding"]["x"]["scale"]["type"] == "band")
+                {
+                    float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["z"]["scale"]);
+                    JSONObject forceSizeValueObj = new JSONObject();
+                    forceSizeValueObj.Add("value", new JSONNumber(bandwidth.ToString()));
+                    sceneSpecs["encoding"].Add("depth", forceSizeValueObj);
+                }
+
+                if (sceneSpecs["encoding"]["width"] != null && sceneSpecs["encoding"]["width"]["value"] == null &&
+                    sceneSpecs["encoding"]["width"]["type"] == "quantitative" && sceneSpecs["encoding"]["xoffsetpct"] == null)
+                {
+                    JSONObject forceSizeValueObj = new JSONObject();
+                    forceSizeValueObj.Add("value", new JSONNumber("0.5"));
+                    sceneSpecs["encoding"].Add("xoffsetpct", forceSizeValueObj);
+                }
+
+                if (sceneSpecs["encoding"]["height"] != null && sceneSpecs["encoding"]["height"]["value"] == null &&
+                    sceneSpecs["encoding"]["height"]["type"] == "quantitative" && sceneSpecs["encoding"]["yoffsetpct"] == null)
+                {
+                    JSONObject forceSizeValueObj = new JSONObject();
+                    forceSizeValueObj.Add("value", new JSONNumber("0.5"));
+                    sceneSpecs["encoding"].Add("yoffsetpct", forceSizeValueObj);
+                }
+
+                if (sceneSpecs["encoding"]["depth"] != null && sceneSpecs["encoding"]["depth"]["value"] == null &&
+                   sceneSpecs["encoding"]["depth"]["type"] == "quantitative" && sceneSpecs["encoding"]["zoffsetpct"] == null)
+                {
+                    JSONObject forceSizeValueObj = new JSONObject();
+                    forceSizeValueObj.Add("value", new JSONNumber("0.5"));
+                    sceneSpecs["encoding"].Add("zoffsetpct", forceSizeValueObj);
+                }
+            }
         }
 
         private void InferScaleSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
@@ -193,12 +319,11 @@ namespace DxR
             {
                 InferRange(channelEncoding, sceneSpecs, ref scaleSpecsObj);
             }
-
-
-
+            
             sceneSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
         }
 
+        // TODO: Fix range computation to consider paddingOUter!!!
         private void InferRange(ChannelEncoding channelEncoding, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj)
         {
             JSONArray range = new JSONArray();
@@ -211,8 +336,13 @@ namespace DxR
                 if(scaleSpecsObj["rangeStep"] == null)
                 {
                     range.Add(new JSONString(sceneSpecs["width"]));
-                    float rangeStep = float.Parse(sceneSpecs["width"]) / (float)scaleSpecsObj["domain"].Count;
-                    scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                    /*
+                    if(channel == "x")
+                    {
+                        float rangeStep = ScaleBand.ComputeRangeStep(sceneSpecs["encoding"]["x"]["scale"]);
+                        scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                    }
+                    */
                 } else
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
@@ -226,8 +356,13 @@ namespace DxR
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
                     range.Add(new JSONString(sceneSpecs["height"]));
-                    float rangeStep = float.Parse(sceneSpecs["height"]) / (float)scaleSpecsObj["domain"].Count;
-                    scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                    /*
+                    if (channel == "y")
+                    {
+                        float rangeStep = ScaleBand.ComputeRangeStep(sceneSpecs["encoding"]["y"]["scale"]);
+                        scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                    }
+                    */
                 }
                 else
                 {
@@ -241,9 +376,13 @@ namespace DxR
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
                     range.Add(new JSONString(sceneSpecs["depth"]));
-                    float rangeStep = float.Parse(sceneSpecs["depth"]) / (float)scaleSpecsObj["domain"].Count;
-                    scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
-
+                    /*
+                    if (channel == "z")
+                    {
+                        float rangeStep = ScaleBand.ComputeRangeStep(sceneSpecs["encoding"]["z"]["scale"]);
+                        scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
+                    }
+                    */
                 }
                 else
                 {
@@ -339,7 +478,7 @@ namespace DxR
             {
                 if(fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
-                    type = "point";
+                    type = "band";
                 } else if(fieldDataType == "quantitative")
                 {
                     type = "linear";
