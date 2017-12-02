@@ -235,7 +235,7 @@ namespace DxR
                 }
 
                 if (sceneSpecs["encoding"]["y"] != null && sceneSpecs["encoding"]["height"] == null &&
-                    sceneSpecs["encoding"]["x"]["scale"]["type"] == "band")
+                    sceneSpecs["encoding"]["y"]["scale"]["type"] == "band")
                 {
                     float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["y"]["scale"]);
                     JSONObject forceSizeValueObj = new JSONObject();
@@ -244,7 +244,7 @@ namespace DxR
                 }
 
                 if (sceneSpecs["encoding"]["z"] != null && sceneSpecs["encoding"]["depth"] == null &&
-                    sceneSpecs["encoding"]["x"]["scale"]["type"] == "band")
+                    sceneSpecs["encoding"]["z"]["scale"]["type"] == "band")
                 {
                     float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["z"]["scale"]);
                     JSONObject forceSizeValueObj = new JSONObject();
