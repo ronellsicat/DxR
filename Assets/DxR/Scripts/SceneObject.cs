@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
-//using System.IO;
 
 namespace DxR
 {
@@ -45,7 +44,9 @@ namespace DxR
 
             Parse(specsFilename, out sceneSpecs);
 
-            Infer(ref sceneSpecs);
+            Initialize(sceneSpecs);
+
+            Infer(data, ref sceneSpecs);
             
             Construct(sceneSpecs, ref sceneRoot);
         }
@@ -59,15 +60,9 @@ namespace DxR
             parser.Parse(specsFilename, out sceneSpecs);
         }
 
-        // Infer (raw JSON specs -> full JSON specs): 
-        // automatically fill in missing specs by inferrence (informed by marks and data type).
-        private void Infer(ref JSONNode sceneSpecs)
-        {
-
-        }
-
-        // Construct (full JSON specs -> working SceneObject): 
-        private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        // Create initial objects that are required for inferrence.
+        // The sceneSpecs should provide minimum required specs.
+        private void Initialize(JSONNode sceneSpecs)
         {
             InitSceneObjectProperties(sceneSpecs, ref sceneRoot);
 
@@ -76,7 +71,25 @@ namespace DxR
             CreateTooltipObject(out tooltipInstance, ref sceneRoot);
 
             CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
+        }
 
+        // Infer (raw JSON specs -> full JSON specs): 
+        // automatically fill in missing specs by inferrence (informed by marks and data type).
+        private void Infer(Data data, ref JSONNode sceneSpecs)
+        {
+
+            if(markPrefab != null)
+            {
+                markPrefab.GetComponent<Mark>().Infer(data, ref sceneSpecs);
+            } else
+            {
+                throw new Exception("Cannot perform inferrence without mark prefab loaded.");
+            }
+        }
+
+        // Construct (full JSON specs -> working SceneObject): 
+        private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        {
             CreateChannelEncodingObjects(sceneSpecs, out channelEncodings);
 
             ConstructMarks(sceneRoot);
@@ -226,6 +239,8 @@ namespace DxR
             {
                 Debug.Log("Loaded mark " + markNameLowerCase);
             }
+
+            markPrefab.GetComponent<Mark>().markName = markNameLowerCase;
         }
 
         private void CreateChannelEncodingObjects(JSONNode sceneSpecs, out List<ChannelEncoding> channelEncodings)

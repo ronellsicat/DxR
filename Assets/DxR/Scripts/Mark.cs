@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using SimpleJSON;
 using UnityEngine;
+using System.IO;
 
 namespace DxR
 {
@@ -99,6 +101,207 @@ namespace DxR
                 default:
                     throw new System.Exception("Cannot find channel: " + channel);
             }
+        }
+
+        public void Infer(Data data, ref JSONNode sceneSpecs)
+        {
+            // Go through each channel and infer the missing specs.
+            foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
+            {
+                ChannelEncoding channelEncoding = new ChannelEncoding();
+
+                // Get minimum required values:
+                channelEncoding.channel = kvp.Key;
+                JSONNode channelSpecs = kvp.Value;
+                if (channelSpecs["value"] == null)
+                {
+                    if (channelSpecs["field"] == null)
+                    {
+                        throw new Exception("Missing field in channel " + channelEncoding.channel);
+                    }
+                    else
+                    {
+                        channelEncoding.field = channelSpecs["field"];
+
+                        if (channelSpecs["type"] != null)
+                        {
+                            channelEncoding.fieldDataType = channelSpecs["type"];
+                        }
+                        else
+                        {
+                            throw new Exception("Missing field data type in channel " + channelEncoding.channel);
+                        }
+                    }
+                }
+
+                InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                //InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                //InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                string inferResults = sceneSpecs.ToString();
+                WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
+            }
+        }
+
+        private void InferScaleSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
+        {
+            JSONNode channelSpecs = sceneSpecs["encoding"][channelEncoding.channel];
+            JSONNode scaleSpecs = channelSpecs["scale"];
+            JSONObject scaleSpecsObj = null;
+
+            if (scaleSpecs == null)
+            {
+                scaleSpecsObj = new JSONObject();
+                InferScaleType(channelEncoding.channel, channelEncoding.fieldDataType, ref scaleSpecsObj);
+            } else
+            {
+                scaleSpecsObj = scaleSpecs.AsObject;
+            }
+
+            if(scaleSpecs["domain"] == null)
+            {
+                InferDomain(channelEncoding.field, channelEncoding.fieldDataType, sceneSpecs, ref scaleSpecsObj, data);
+            }
+
+            sceneSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
+        }
+
+        private void InferDomain(string field, string fieldDataType, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj, Data data)
+        {
+            JSONArray domain = new JSONArray();
+            if (fieldDataType == "quantitative")
+            {
+                List<float> minMax = new List<float>();
+                GetExtent(data, field, ref minMax);
+                // For positive minimum values, set the baseline to zero.
+                // TODO: Handle logarithmic scale with undefined 0 value.
+                if(minMax[0] >= 0)
+                {
+                    minMax[0] = 0;
+                }
+                domain.Add(new JSONString(minMax[0].ToString()));
+                domain.Add(new JSONString(minMax[1].ToString()));
+            } else
+            {
+                List<string> uniqueValues = new List<string>(); 
+                GetUniqueValues(data, field, ref uniqueValues);
+
+                foreach(string val in uniqueValues)
+                {
+                    domain.Add(val);
+                }
+            }
+
+            scaleSpecsObj.Add("domain", domain);
+        }
+
+        private void GetUniqueValues(Data data, string field, ref List<string> uniqueValues)
+        {
+            foreach (Dictionary<string, string> dataValue in data.values)
+            {
+                string val = dataValue[field];
+                if (!uniqueValues.Contains(val))
+                {
+                    uniqueValues.Add(val);
+                }
+            }
+        }
+
+        private void GetExtent(Data data, string field, ref List<float> extent)
+        {
+            float min = float.Parse(data.values[0][field]);
+            float max = min;
+            foreach (Dictionary<string, string> dataValue in data.values)
+            {
+                float val = float.Parse(dataValue[field]);
+                if(val < min)
+                {
+                    min = val;
+                }
+
+                if(val > max)
+                {
+                    max = val;
+                }
+            }
+
+            extent.Add(min);
+            extent.Add(max);
+        }
+
+        private void InferScaleType(string channel, string fieldDataType, ref JSONObject scaleSpecsObj)
+        {
+            string type = "";
+            if(channel == "x" || channel == "y" || channel == "z" ||
+                channel == "size" || channel == "opacity")
+            {
+                if(fieldDataType == "nominal" || fieldDataType == "ordinal")
+                {
+                    type = "point";
+                } else if(fieldDataType == "quantitative")
+                {
+                    type = "linear";
+                } else if(fieldDataType == "temporal")
+                {
+                    type = "time";
+                } else
+                {
+                    throw new Exception("Invalid field data type: " + fieldDataType);
+                }
+            } else if(channel == "width" || channel == "height" || channel == "depth")
+            {
+                if (fieldDataType == "nominal" || fieldDataType == "ordinal")
+                {
+                    type = "band";
+                }
+                else if (fieldDataType == "quantitative")
+                {
+                    type = "linear";
+                }
+                else if (fieldDataType == "temporal")
+                {
+                    type = "time";
+                }
+                else
+                {
+                    throw new Exception("Invalid field data type: " + fieldDataType);
+                }
+            } else if(channel == "color")
+            {
+                if (fieldDataType == "nominal" || fieldDataType == "ordinal")
+                {
+                    type = "ordinal";
+                }
+                else if (fieldDataType == "quantitative" || fieldDataType == "temporal")
+                {
+                    type = "sequential";
+                }
+                else
+                {
+                    throw new Exception("Invalid field data type: " + fieldDataType);
+                }
+            } else if(channel == "shape")
+            {
+                if (fieldDataType == "nominal" || fieldDataType == "ordinal")
+                {
+                    type = "ordinal";
+                }
+                else
+                {
+                    throw new Exception("Invalid field data type: " + fieldDataType + " for shape channel.");
+                }
+            } else
+            {
+                throw new Exception("Invalid channel " + channel);
+            }
+
+            scaleSpecsObj.Add("type", new JSONString(type));
+        }
+
+        private void WriteStringToFile(string str, string outputName)
+        {
+            StreamWriter writer = new StreamWriter(outputName);
+            writer.Write(str);
+            writer.Close();
         }
 
         public void SetTooltipObject(ref GameObject tooltipObject)
