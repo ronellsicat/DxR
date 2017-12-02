@@ -11,14 +11,14 @@ namespace DxR
     /// </summary>
     public class Mark : MonoBehaviour
     {
-        public string markName = "base";
+        public string markName = DxR.SceneObject.UNDEFINED;
         public Dictionary<string, string> datum = null;
         public GameObject tooltip = null;
         private string tooltipDataField = DxR.SceneObject.UNDEFINED;
 
-        public Mark(string markName)
+        public Mark()
         {
-            this.markName = markName;           
+
         }
 
         public void Start()

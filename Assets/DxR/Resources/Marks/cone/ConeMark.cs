@@ -17,7 +17,7 @@ namespace DxR
         public Vector3 origOrientation;
         public Vector3 curOrientation;
 
-        public ConeMark() : base("cone")
+        public ConeMark() : base()
         {
             origOrientation = curOrientation = Vector3.up;
         }

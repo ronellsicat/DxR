@@ -17,7 +17,7 @@ namespace DxR
         public Vector3 origOrientation;
         public Vector3 curOrientation;
 
-        public HorseMark() : base("horse")
+        public HorseMark() : base()
         {
             origOrientation = curOrientation = Vector3.left;
         }

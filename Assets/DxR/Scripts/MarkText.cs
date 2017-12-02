@@ -14,7 +14,7 @@ namespace DxR
     /// </summary>
     public class MarkText : Mark
     {
-        public MarkText() : base("text")
+        public MarkText() : base()
         {
             
         }

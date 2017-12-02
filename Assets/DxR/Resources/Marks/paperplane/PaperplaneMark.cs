@@ -17,7 +17,7 @@ namespace DxR
         public Vector3 origOrientation;
         public Vector3 curOrientation;
 
-        public PaperplaneMark() : base("paperplane")
+        public PaperplaneMark() : base()
         {
             origOrientation = curOrientation = Vector3.left;
         }

@@ -14,7 +14,7 @@ namespace DxR
     /// </summary>
     public class MarkPoint : Mark
     {
-        public MarkPoint() : base("point")
+        public MarkPoint() : base()
         {
             
         }
