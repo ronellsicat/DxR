@@ -349,22 +349,24 @@ namespace DxR
                 }
                 else
                 {
-                    //Debug.Log("Mapping channel: " + channelParam.channelType +
-                    //    ", value: " + dataValue[channelParam.fieldName]); 
-
-                    string channelValue = channelEncoding.scale.ApplyScale(dataValue[channelEncoding.field]);
-                    markComponent.SetChannelValue(channelEncoding.channel, channelValue);
-
-                    SetupTooltip(channelEncoding, markComponent);
+                    if(channelEncoding.channel == "tooltip")
+                    {
+                        SetupTooltip(channelEncoding, markComponent);
+                    } else
+                    {
+                        string channelValue = channelEncoding.scale.ApplyScale(dataValue[channelEncoding.field]);
+                        markComponent.SetChannelValue(channelEncoding.channel, channelValue);
+                    }
                 }
             }
         }
 
         private void SetupTooltip(ChannelEncoding channelEncoding, Mark markComponent)
         {
-            if (channelEncoding.channel == "tooltip" && tooltipInstance != null)
+            if (tooltipInstance != null)
             {
                 markComponent.SetTooltipObject(ref tooltipInstance);
+                markComponent.SetTooltipField(channelEncoding.field);
             }
         }
 

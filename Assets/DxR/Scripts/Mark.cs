@@ -14,7 +14,7 @@ namespace DxR
         public string markName = "base";
         public Dictionary<string, string> datum = null;
         public GameObject tooltip = null;
-        private string tooltipString = DxR.SceneObject.UNDEFINED;
+        private string tooltipDataField = DxR.SceneObject.UNDEFINED;
 
         public Mark(string markName)
         {
@@ -89,8 +89,7 @@ namespace DxR
                     SetRotation(value, 2);
                     break;
                 case "tooltip":
-                    SetTooltip(value);
-                    break;
+                    throw new System.Exception("tooltip is not a valid channel.");
                 case "x2":
                     throw new System.Exception("x2 is not a valid channel - use x, and width instead.");
                 case "y2":
@@ -107,9 +106,9 @@ namespace DxR
             tooltip = tooltipObject;
         }
 
-        private void SetTooltip(string value)
+        public void SetTooltipField(string dataField)
         {
-            tooltipString = value;
+            tooltipDataField = dataField;
         }
 
         private void SetLocalPos(string value, int dim)
@@ -238,7 +237,7 @@ namespace DxR
 
                 Vector3 markPos = gameObject.transform.localPosition;
 
-                tooltip.GetComponent<Tooltip>().SetText(tooltipString);
+                tooltip.GetComponent<Tooltip>().SetText(tooltipDataField + ": " + datum[tooltipDataField]);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.x, 0);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.y, 1);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.z, 2);
