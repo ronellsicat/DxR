@@ -132,9 +132,9 @@ namespace DxR
                             throw new Exception("Missing field data type in channel " + channelEncoding.channel);
                         }
                     }
-
+                    
                     InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
-
+                    
                     if (channelEncoding.channel == "x" || channelEncoding.channel == "y" ||
                         channelEncoding.channel == "z" || channelEncoding.channel == "width" ||
                         channelEncoding.channel == "height" || channelEncoding.channel == "depth")
@@ -155,7 +155,7 @@ namespace DxR
             string inferResults = sceneSpecs.ToString();
             WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
         }
-
+        
         private void InferLegendSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs)
         {
             string channel = channelEncoding.channel;
@@ -178,8 +178,18 @@ namespace DxR
             }
 
             // TODO: Add proper inference. 
-            // HACK: For now, always display legend in front face.
-            if(legendSpecsObj["face"] == null)
+            // HACK: For now, always use hard coded options.
+            if(legendSpecsObj["gradientWidth"] == null)
+            {
+                legendSpecsObj.Add("gradientWidth", new JSONNumber(200));
+            }
+
+            if (legendSpecsObj["gradientHeight"] == null)
+            {
+                legendSpecsObj.Add("gradientHeight", new JSONNumber(50));
+            }
+
+            if (legendSpecsObj["face"] == null)
             {
                 legendSpecsObj.Add("face", new JSONString("front"));
             }
@@ -211,9 +221,9 @@ namespace DxR
 
             if (legendSpecsObj["title"] == null)
             {
-                legendSpecsObj.Add("title", new JSONString("Legend: " + channel));
+                legendSpecsObj.Add("title", new JSONString("Legend: " + channelSpecs["field"]));
             }
-
+            
             sceneSpecs["encoding"][channelEncoding.channel].Add("legend", legendSpecsObj);
         }
 
@@ -360,7 +370,7 @@ namespace DxR
             {
                 if (scaleSpecs["domain"] == null)
                 {
-                    InferDomain(channelEncoding.field, channelEncoding.fieldDataType, sceneSpecs, ref scaleSpecsObj, data);
+                    InferDomain(channelEncoding, sceneSpecs, ref scaleSpecsObj, data);
                 }
 
                 if (scaleSpecs["padding"] != null)
@@ -509,27 +519,51 @@ namespace DxR
             }
         }
 
-        private void InferDomain(string field, string fieldDataType, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj, Data data)
+        private void InferDomain(ChannelEncoding channelEncoding, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj, Data data)
         {
+            string sortType = "ascending";
+            if(sceneSpecs["encoding"][channelEncoding.channel]["sort"] != null)
+            {
+                sortType = sceneSpecs["encoding"][channelEncoding.channel]["sort"].Value.ToString();
+            }
+
             JSONArray domain = new JSONArray();
-            if (fieldDataType == "quantitative")
+            if (channelEncoding.fieldDataType == "quantitative")
             {
                 List<float> minMax = new List<float>();
-                GetExtent(data, field, ref minMax);
+                GetExtent(data, channelEncoding.field, ref minMax);
                 // For positive minimum values, set the baseline to zero.
                 // TODO: Handle logarithmic scale with undefined 0 value.
                 if(minMax[0] >= 0)
                 {
                     minMax[0] = 0;
                 }
-                domain.Add(new JSONString(minMax[0].ToString()));
-                domain.Add(new JSONString(minMax[1].ToString()));
+
+                if(sortType == "none" || sortType == "ascending")
+                {
+                    domain.Add(new JSONString(minMax[0].ToString()));
+                    domain.Add(new JSONString(minMax[1].ToString()));
+                } else
+                {
+                    domain.Add(new JSONString(minMax[1].ToString()));
+                    domain.Add(new JSONString(minMax[0].ToString()));
+                }
             } else
             {
                 List<string> uniqueValues = new List<string>(); 
-                GetUniqueValues(data, field, ref uniqueValues);
+                GetUniqueValues(data, channelEncoding.field, ref uniqueValues);
 
-                foreach(string val in uniqueValues)
+                if (sortType == "ascending")
+                {
+                    uniqueValues.Sort();
+                }
+                else if(sortType == "descending")
+                {
+                    uniqueValues.Sort();
+                    uniqueValues.Reverse();
+                }
+
+                foreach (string val in uniqueValues)
                 {
                     domain.Add(val);
                 }
