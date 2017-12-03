@@ -283,17 +283,11 @@ namespace DxR
         {
             JSONNode channelSpecs = sceneSpecs["encoding"][channelEncoding.channel];
             JSONNode scaleSpecs = channelSpecs["scale"];
-            JSONObject scaleSpecsObj = null;
-
-            if (channelSpecs["value"] != null) return;
-
-            if (scaleSpecs == null)
+            JSONObject scaleSpecsObj = (scaleSpecs == null) ? new JSONObject() : scaleSpecs.AsObject;
+            
+            if(scaleSpecs["type"] == null)
             {
-                scaleSpecsObj = new JSONObject();
                 InferScaleType(channelEncoding.channel, channelEncoding.fieldDataType, ref scaleSpecsObj);
-            } else
-            {
-                scaleSpecsObj = scaleSpecs.AsObject;
             }
 
             if(scaleSpecs["domain"] == null)
@@ -350,7 +344,7 @@ namespace DxR
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
-                    sceneSpecs["width"] = rangeSize.ToString();
+                    sceneSpecs["width"] = rangeSize;
                 }
                 
             } else if(channel == "y" || channel == "height")
@@ -371,7 +365,7 @@ namespace DxR
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
-                    sceneSpecs["height"] = rangeSize.ToString();
+                    sceneSpecs["height"] = rangeSize;
                 }
             } else if(channel == "z" || channel == "depth")
             {
@@ -391,7 +385,7 @@ namespace DxR
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
-                    sceneSpecs["depth"] = rangeSize.ToString();
+                    sceneSpecs["depth"] = rangeSize;
                 }
             } else if(channel == "opacity")
             {
@@ -476,23 +470,23 @@ namespace DxR
         private void InferScaleType(string channel, string fieldDataType, ref JSONObject scaleSpecsObj)
         {
             string type = "";
-            if(channel == "x" || channel == "y" || channel == "z" ||
+            if (channel == "x" || channel == "y" || channel == "z" ||
                 channel == "size" || channel == "opacity")
             {
-                if(fieldDataType == "nominal" || fieldDataType == "ordinal")
+                if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
                     type = "band";
-                } else if(fieldDataType == "quantitative")
+                } else if (fieldDataType == "quantitative")
                 {
                     type = "linear";
-                } else if(fieldDataType == "temporal")
+                } else if (fieldDataType == "temporal")
                 {
                     type = "time";
                 } else
                 {
                     throw new Exception("Invalid field data type: " + fieldDataType);
                 }
-            } else if(channel == "width" || channel == "height" || channel == "depth")
+            } else if (channel == "width" || channel == "height" || channel == "depth")
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
@@ -510,7 +504,7 @@ namespace DxR
                 {
                     throw new Exception("Invalid field data type: " + fieldDataType);
                 }
-            } else if(channel == "color")
+            } else if (channel == "color")
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
@@ -524,7 +518,7 @@ namespace DxR
                 {
                     throw new Exception("Invalid field data type: " + fieldDataType);
                 }
-            } else if(channel == "shape")
+            } else if (channel == "shape")
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
@@ -534,6 +528,9 @@ namespace DxR
                 {
                     throw new Exception("Invalid field data type: " + fieldDataType + " for shape channel.");
                 }
+            } else if (channel == "text") {
+
+                type = "none";
             } else
             {
                 throw new Exception("Invalid channel " + channel);
