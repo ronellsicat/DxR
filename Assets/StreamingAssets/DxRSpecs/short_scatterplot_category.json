@@ -1,0 +1,39 @@
+{
+  "title": "Cars Data",
+  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": { "url": "DxRData/cars.json" },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal",
+      "legend": {
+        "type": "symbol",
+        "face": "front",
+        "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
+        "title": "Origin Legend"
+      }
+    },
+    "tooltip": {
+      "field": "Name",
+      "type": "nominal"
+    },
+    "size": {
+      "value": 10
+    }
+  }
+}

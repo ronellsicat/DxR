@@ -50,7 +50,7 @@
       "type": "nominal",
       "scale": {
         "type": "ordinal",
-        "domain": [ "Europe", "Japan", "USA" ],
+        "domain": [ "USA", "Japan", "Europe" ],
         "range": "category",
         "scheme": "tableau10"
       },
