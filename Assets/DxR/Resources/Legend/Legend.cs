@@ -162,6 +162,20 @@ public class Legend : MonoBehaviour {
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = channelEncoding.scale.domain.Count + 1;
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.05f;   // TODO: Set to height of each legendValue.
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
+        } else if(channelEncoding.channel == "opacity")
+        {
+            // TODO:
+        } else if(channelEncoding.channel == "size")
+        {
+            // TODO:
+        }
+        else if(channelEncoding.channel == "shape")
+        {
+            // TODO:
+        }
+        else
+        {
+            throw new Exception("Legend constructor does not know how to construct legend for " + channelEncoding.channel);
         }
     }
 
