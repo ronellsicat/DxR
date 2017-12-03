@@ -290,34 +290,70 @@ namespace DxR
                 InferScaleType(channelEncoding.channel, channelEncoding.fieldDataType, ref scaleSpecsObj);
             }
 
-            if(scaleSpecs["domain"] == null)
+            if(!(scaleSpecsObj["type"].Value.ToString() == "none" || scaleSpecsObj["type"].Value.ToString() == "custom"))
             {
-                InferDomain(channelEncoding.field, channelEncoding.fieldDataType, sceneSpecs, ref scaleSpecsObj, data);
+                if (scaleSpecs["domain"] == null)
+                {
+                    InferDomain(channelEncoding.field, channelEncoding.fieldDataType, sceneSpecs, ref scaleSpecsObj, data);
+                }
+
+                if (scaleSpecs["padding"] != null)
+                {
+                    scaleSpecsObj.Add("paddingInner", scaleSpecs["padding"]);
+                    scaleSpecsObj.Add("paddingOuter", scaleSpecs["padding"]);
+                }
+                else
+                {
+                    if (scaleSpecs["paddingInner"] == null)
+                    {
+                        scaleSpecsObj.Add("paddingInner", new JSONString(ScaleBand.PADDING_INNER_DEFAULT.ToString()));
+                    }
+
+                    if (scaleSpecs["paddingOuter"] == null)
+                    {
+                        scaleSpecsObj.Add("paddingOuter", new JSONString(ScaleBand.PADDING_OUTER_DEFAULT.ToString()));
+                    }
+                }
+
+                if (scaleSpecs["range"] == null)
+                {
+                    InferRange(channelEncoding, sceneSpecs, ref scaleSpecsObj);
+                }
+
+                if (channelEncoding.channel == "color" && !scaleSpecsObj["range"].IsArray && scaleSpecsObj["scheme"] == null)
+                {
+                    InferColorScheme(channelEncoding, ref scaleSpecsObj);
+                }
             }
 
-            if(scaleSpecs["padding"] != null)
+            sceneSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
+        }
+
+        private void InferColorScheme(ChannelEncoding channelEncoding, ref JSONObject scaleSpecsObj)
+        {
+            string range = scaleSpecsObj["range"].Value.ToString();
+            string scheme = "";
+            if (range == "category")
             {
-                scaleSpecsObj.Add("paddingInner", scaleSpecs["padding"]);
-                scaleSpecsObj.Add("paddingOuter", scaleSpecs["padding"]);
+                if(scaleSpecsObj["domain"].AsArray.Count <= 10)
+                {
+                    scheme = "tableau10";
+                } else
+                {
+                    scheme = "tableau20";
+                }
+            } else if(range == "ordinal" || range == "ramp")
+            {
+                scheme = "blues";
+            } else if(range == "heatmap")
+            {
+                scheme = "viridis";
             } else
             {
-                if(scaleSpecs["paddingInner"] == null)
-                {
-                    scaleSpecsObj.Add("paddingInner", new JSONString(ScaleBand.PADDING_INNER_DEFAULT.ToString()));
-                }
+                throw new Exception("Cannot infer color scheme for range " + range);
+            }
 
-                if (scaleSpecs["paddingOuter"] == null)
-                {
-                    scaleSpecsObj.Add("paddingOuter", new JSONString(ScaleBand.PADDING_OUTER_DEFAULT.ToString()));
-                }
-            }
-            
-            if(scaleSpecs["range"] == null)
-            {
-                InferRange(channelEncoding, sceneSpecs, ref scaleSpecsObj);
-            }
-            
-            sceneSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
+            scaleSpecsObj.Add("scheme", new JSONString(scheme));
         }
 
         // TODO: Fix range computation to consider paddingOUter!!!
@@ -332,14 +368,7 @@ namespace DxR
 
                 if(scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(sceneSpecs["width"]));
-                    /*
-                    if(channel == "x")
-                    {
-                        float rangeStep = ScaleBand.ComputeRangeStep(sceneSpecs["encoding"]["x"]["scale"]);
-                        scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
-                    }
-                    */
+                    range.Add(new JSONString(sceneSpecs["width"]));                    
                 } else
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
@@ -352,14 +381,7 @@ namespace DxR
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(sceneSpecs["height"]));
-                    /*
-                    if (channel == "y")
-                    {
-                        float rangeStep = ScaleBand.ComputeRangeStep(sceneSpecs["encoding"]["y"]["scale"]);
-                        scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
-                    }
-                    */
+                    range.Add(new JSONString(sceneSpecs["height"]));                   
                 }
                 else
                 {
@@ -372,14 +394,7 @@ namespace DxR
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(sceneSpecs["depth"]));
-                    /*
-                    if (channel == "z")
-                    {
-                        float rangeStep = ScaleBand.ComputeRangeStep(sceneSpecs["encoding"]["z"]["scale"]);
-                        scaleSpecsObj.Add("rangeStep", new JSONString(rangeStep.ToString()));
-                    }
-                    */
+                    range.Add(new JSONString(sceneSpecs["depth"]));                   
                 }
                 else
                 {
@@ -397,11 +412,35 @@ namespace DxR
                 throw new Exception("Not implemented yet.");
             } else if(channel == "color")
             {
-                // TODO: Set default colors.
-                throw new Exception("Not implemented yet.");
+                if(channelEncoding.fieldDataType == "nominal")
+                {
+                    scaleSpecsObj.Add("range", new JSONString("category"));
+                }
+                else if (channelEncoding.fieldDataType == "ordinal")
+                {
+                    scaleSpecsObj.Add("range", new JSONString("ordinal"));
+                }
+                else if (channelEncoding.fieldDataType == "quantitative" ||
+                    channelEncoding.fieldDataType == "temporal")
+                {
+                    if(markName == "rect")
+                    {
+                        scaleSpecsObj.Add("range", new JSONString("heatmap"));
+                    } else
+                    {
+                        scaleSpecsObj.Add("range", new JSONString("ramp"));
+                    }
+                }
+                
+            } else if(channel == "shape")
+            {
+                range.Add(new JSONString("symbol"));
             }
 
-            scaleSpecsObj.Add("range", range);
+            if(range.Count > 0)
+            {
+                scaleSpecsObj.Add("range", range);
+            }
         }
 
         private void InferDomain(string field, string fieldDataType, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj, Data data)
@@ -528,7 +567,7 @@ namespace DxR
                 {
                     throw new Exception("Invalid field data type: " + fieldDataType + " for shape channel.");
                 }
-            } else if (channel == "text") {
+            } else if (channel == "text" || channel == "tooltip") {
 
                 type = "none";
             } else
