@@ -34,70 +34,35 @@
       "field": "day",
       "type": "ordinal",
       "scale": {
-        "type": "point",
         "domain": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
-        "range": [ 0, 500 ]
       },
       "axis": {
-        "face": "front",
-        "orient": "bottom",
         "title": "Day of the Week",
-        "titlePadding": 85,
-        "grid": false,
-        "ticks": true,
-        "tickCount": 7,
-        "values": [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" ],
-        "labels": true
+        "titlePadding": 85
       }
     },
     "y": {
       "field": "meal",
       "type": "ordinal",
+      "sort": "none",
       "scale": {
-        "type": "point",
         "domain": [
-         "breakfast", "lunch", "dinner"
-        ],
-        "range": [ 0, 500 ]
+          "breakfast",
+          "lunch",
+          "dinner"
+        ]
       },
       "axis": {
-        "face": "front",
-        "orient": "left",
         "title": "Meal",
-        "titlePadding":  70,
-        "grid": false,
-        "ticks": true,
-        "tickCount": 3,
-        "values": [ "breakfast", "lunch", "dinner"],
-        "labels": true
+        "titlePadding": 70
       }
     },
     "color": {
       "field": "headcount",
       "type": "quantitative",
-      "scale": {
-        "type": "sequential",
-        "domain": [ 0, 6 ],
-        "range": "ramp",
-        "scheme": "viridis"
-      },
       "legend": {
-        "type": "gradient",
-        "face": "front",
-        "orient": "right",
-        "x": 500,
-        "y": 500,
-        "z": 0,
-        "gradientWidth": 200,
-        "gradientHeight": 50,
         "title": "Head Count"
       }
-    },
-    "width": {
-      "value": 60
-    },
-    "height": {
-      "value": 60
     }
   }
 }
