@@ -490,9 +490,7 @@ namespace DxR
             {
                 ChannelEncoding channelEncoding = channelEncodings[channelIndex];
                 JSONNode legendSpecs = sceneSpecs["encoding"][channelEncoding.channel]["legend"];
-                if (legendSpecs != null && legendSpecs.Value.ToString() != "none" &&
-                    (channelEncoding.channel == "color" || channelEncoding.channel == "size" ||
-                    channelEncoding.channel == "shape"))
+                if (legendSpecs != null && legendSpecs.Value.ToString() != "none")
                 {
                     if (verbose)
                     {
