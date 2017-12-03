@@ -1,0 +1,41 @@
+{
+  "title": "Bar chart of keywords count in a book shelf",
+  "description": "This displays a bar chart using standard bar mark.",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": {
+     "values": [
+        {"keyword": "Algorithms", "count": 28},
+        {"keyword": "Data", "count": 55},
+        {"keyword": "Visualization", "count": 43},
+        {"keyword": "Compilers", "count": 91},
+        {"keyword": "Graphics", "count": 81},
+        {"keyword": "Computers", "count": 53},
+        {"keyword": "Software", "count": 28},
+        {"keyword": "Mathematics", "count": 87},
+        {"keyword": "Programming", "count": 52}
+    ]
+  },
+  "mark": "book",
+  "encoding": {
+    "x": {
+      "field": "keyword",
+      "type": "nominal",
+      "axis": {
+        "ticks": false
+      }
+    },
+    "height": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "yrotation": {
+      "value": 180
+    },
+    "zoffset": {
+      "value":  80
+    }
+  }
+}
+

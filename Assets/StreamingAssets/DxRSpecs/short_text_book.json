@@ -1,0 +1,46 @@
+{
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": {
+    "values": [
+     {"keyword": "Algorithms", "count": 28},
+      {"keyword": "Data", "count": 55},
+      {"keyword": "Visualization", "count": 43},
+      {"keyword": "Compilers", "count": 91},
+      {"keyword": "Graphics", "count": 81},
+      {"keyword": "Computers", "count": 53},
+      {"keyword": "Software", "count": 28},
+      {"keyword": "Mathematics", "count": 87},
+      {"keyword": "Programming", "count": 52}
+    ]
+  },
+  "mark": "text",
+  "encoding": {
+    "x": {
+      "field": "keyword",
+      "type": "nominal",
+      "axis":  "none"
+    },
+    "text": {
+      "field": "keyword",
+      "type": "nominal"
+    },
+    "color": {
+      "value": "#f7f7f7"
+    },
+    "zrotation": {
+      "value": 90
+    },
+    "anchor": {
+      "value": "middleleft"
+    },
+    "size": {
+      "value": 50
+    },
+    "yoffset": {
+      "value":  10
+    }
+  }
+}
+

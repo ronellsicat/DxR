@@ -64,7 +64,7 @@ namespace DxR
         // The sceneSpecs should provide minimum required specs.
         private void Initialize(JSONNode sceneSpecs)
         {
-            InitSceneObjectProperties(sceneSpecs, ref sceneRoot);
+            UpdateSceneObjectProperties(sceneSpecs);
 
             CreateDataObjectFromValues(sceneSpecs["data"]["values"], out data);
 
@@ -77,7 +77,6 @@ namespace DxR
         // automatically fill in missing specs by inferrence (informed by marks and data type).
         private void Infer(Data data, ref JSONNode sceneSpecs)
         {
-
             if(markPrefab != null)
             {
                 markPrefab.GetComponent<Mark>().Infer(data, ref sceneSpecs);
@@ -85,6 +84,10 @@ namespace DxR
             {
                 throw new Exception("Cannot perform inferrence without mark prefab loaded.");
             }
+
+            // Update properties if needed - some properties, e.g., width, height, depth
+            // may get changed based on inferrence.
+            UpdateSceneObjectProperties(sceneSpecs);
         }
 
         // Construct (full JSON specs -> working SceneObject): 
@@ -119,7 +122,7 @@ namespace DxR
             tooltipInstance.SetActive(false);            
         }
 
-        private void InitSceneObjectProperties(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        private void UpdateSceneObjectProperties(JSONNode sceneSpecs)
         {
             if (sceneSpecs["name"] != null)
             {
