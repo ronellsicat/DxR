@@ -141,7 +141,12 @@ namespace DxR
                     {
                         InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
                     }
-                    //InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+
+                    if(channelEncoding.channel == "color" || channelEncoding.channel == "size" ||
+                        channelEncoding.channel == "shape" || channelEncoding.channel == "opacity")
+                    {
+                        InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                    }
                 }
             }
 
@@ -149,6 +154,67 @@ namespace DxR
 
             string inferResults = sceneSpecs.ToString();
             WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
+        }
+
+        private void InferLegendSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs)
+        {
+            string channel = channelEncoding.channel;
+            JSONNode channelSpecs = sceneSpecs["encoding"][channel];
+            JSONNode legendSpecs = channelSpecs["legend"];
+            if (legendSpecs != null && legendSpecs.Value.ToString() == "none") return;
+
+            JSONObject legendSpecsObj = (legendSpecs == null) ? new JSONObject() : legendSpecs.AsObject;
+
+            if(legendSpecsObj["type"] == null)
+            {
+                string fieldDataType = channelSpecs["type"].Value.ToString();
+                if (fieldDataType == "quantitative" || fieldDataType == "temporal")
+                {
+                    legendSpecsObj.Add("type", new JSONString("gradient"));
+                } else
+                {
+                    legendSpecsObj.Add("type", new JSONString("symbol"));
+                }
+            }
+
+            // TODO: Add proper inference. 
+            // HACK: For now, always display legend in front face.
+            if(legendSpecsObj["face"] == null)
+            {
+                legendSpecsObj.Add("face", new JSONString("front"));
+            }
+
+            if (legendSpecsObj["orient"] == null)
+            {
+                legendSpecsObj.Add("orient", new JSONString("right"));
+            }
+
+            if (legendSpecsObj["face"] == null)
+            {
+                legendSpecsObj.Add("face", new JSONString("front"));
+            }
+
+            if (legendSpecsObj["x"] == null)
+            {
+                legendSpecsObj.Add("x", new JSONNumber(float.Parse(sceneSpecs["width"].Value.ToString())));
+            }
+
+            if (legendSpecsObj["y"] == null)
+            {
+                legendSpecsObj.Add("y", new JSONNumber(float.Parse(sceneSpecs["height"].Value.ToString())));
+            }
+
+            if (legendSpecsObj["z"] == null)
+            {
+                legendSpecsObj.Add("z", new JSONNumber(0));
+            }
+
+            if (legendSpecsObj["title"] == null)
+            {
+                legendSpecsObj.Add("title", new JSONString("Legend: " + channel));
+            }
+
+            sceneSpecs["encoding"][channelEncoding.channel].Add("legend", legendSpecsObj);
         }
 
         private void InferAxisSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
