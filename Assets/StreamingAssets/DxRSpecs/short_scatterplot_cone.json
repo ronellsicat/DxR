@@ -1,0 +1,55 @@
+{
+  "title": "Field Data",
+  "description": "This displays a 3D glyph plot.",
+  "width": 500,
+  "height": 500,
+  "depth":  500,
+  "data": { "url": "DxRData/field.json" },
+  "mark": "cone",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative"
+    },
+    "length": {
+      "field": "mag",
+      "type": "quantitative",
+      "scale": {
+        "type":  "linear",
+        "range": [ 0, 100 ]
+      }
+    },
+    "xorient": {
+      "field": "u",
+      "type": "quantitative",
+      "scale": {
+        "type": "none"
+      }
+    },
+    "yorient": {
+      "field": "v",
+      "type": "quantitative",
+      "scale": {
+        "type": "none"
+      }
+    },
+    "zorient": {
+      "field": "w",
+      "type": "quantitative",
+      "scale": {
+        "type": "none"
+      }
+    },
+    "color": {
+      "value": "#c51b8a"
+    }
+  }
+}

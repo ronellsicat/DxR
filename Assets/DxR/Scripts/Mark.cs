@@ -672,7 +672,8 @@ namespace DxR
                 type = "none";
             } else
             {
-                throw new Exception("Invalid channel " + channel);
+                Debug.Log("Cannot infer scale type of channel " + channel);
+                return;
             }
 
             scaleSpecsObj.Add("type", new JSONString(type));

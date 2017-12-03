@@ -1,0 +1,44 @@
+{
+  "title": "Cars Data",
+  "description": "This displays a 3D scatterplot.",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": { "url": "DxRData/cars.json" },
+  "mark": "text",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "Acceleration",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Weight_in_lbs",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 1000, 2750, 4500 ],
+        "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
+      },
+      "legend": {
+        "title": "Weight in lbs"
+      }
+    },
+    "size": {
+      "value": 20
+    },
+    "text": {
+      "field": "Name",
+      "type": "nominal"
+    },
+    "following": {
+      "value":  true
+    }
+  }
+}
