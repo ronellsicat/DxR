@@ -132,18 +132,17 @@ namespace DxR
                             throw new Exception("Missing field data type in channel " + channelEncoding.channel);
                         }
                     }
-                }
 
-                InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);  
-                
-                if(channelEncoding.channel == "x" || channelEncoding.channel == "y" ||
-                    channelEncoding.channel == "z" || channelEncoding.channel == "width" ||
-                    channelEncoding.channel == "height" || channelEncoding.channel == "depth")
-                {
-                    InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
-                }
-                //InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                    InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
 
+                    if (channelEncoding.channel == "x" || channelEncoding.channel == "y" ||
+                        channelEncoding.channel == "z" || channelEncoding.channel == "width" ||
+                        channelEncoding.channel == "height" || channelEncoding.channel == "depth")
+                    {
+                        InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                    }
+                    //InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                }
             }
 
             InferMarkSpecificSpecs(ref sceneSpecs);
@@ -157,6 +156,8 @@ namespace DxR
             string channel = channelEncoding.channel;
             JSONNode channelSpecs = sceneSpecs["encoding"][channel];
             JSONNode axisSpecs = channelSpecs["axis"];
+            if (axisSpecs != null && axisSpecs.Value.ToString() == "none") return;
+
             JSONObject axisSpecsObj = (axisSpecs == null) ? new JSONObject() : axisSpecs.AsObject;
             
             if(axisSpecsObj["face"] == null)
@@ -283,6 +284,8 @@ namespace DxR
             JSONNode channelSpecs = sceneSpecs["encoding"][channelEncoding.channel];
             JSONNode scaleSpecs = channelSpecs["scale"];
             JSONObject scaleSpecsObj = null;
+
+            if (channelSpecs["value"] != null) return;
 
             if (scaleSpecs == null)
             {
