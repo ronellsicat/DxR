@@ -278,7 +278,29 @@ namespace DxR
             {
                 JSONArray tickValues = new JSONArray();
                 JSONNode domain = sceneSpecs["encoding"][channelEncoding.channel]["scale"]["domain"];
-                axisSpecsObj.Add("values", domain.AsArray);
+                JSONNode values = channelEncoding.fieldDataType == "quantitative" ? new JSONArray() : domain;
+
+                if (channelEncoding.fieldDataType == "quantitative")
+                {
+                    // Round domain into a nice number.
+                    // TODO: make robust rounding.
+                    // HACK:
+                    float maxDomain = RoundNice(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat);
+
+                    // Add number of ticks.
+                    int defaultNumTicks = 6;
+                    int numTicks = axisSpecsObj["tickCount"] == null ? defaultNumTicks : axisSpecsObj["tickCount"].AsInt;
+                    float intervals = maxDomain / (numTicks - 1.0f);
+
+
+                    for (int i = 0; i < numTicks; i++)
+                    {
+                        float tickVal = domain.AsArray[0].AsFloat + (intervals * (float)(i));
+                        values.Add(new JSONNumber(tickVal));
+                    }
+                }
+                
+                axisSpecsObj.Add("values", values.AsArray);
             }
 
             if (axisSpecsObj["tickCount"] == null)
@@ -292,6 +314,27 @@ namespace DxR
             }
 
             sceneSpecs["encoding"][channelEncoding.channel].Add("axis", axisSpecsObj);
+        }
+
+        private float RoundNice(float num)
+        {
+            float[] roundNumbersArray = { 0.5f, 5.0f, 50.0f };
+            List<float> roundNumbers = new List<float>(roundNumbersArray);
+
+            float multiplier = 1.0f;
+
+            while(true)
+            {
+                for (int i = 0; i < roundNumbers.Count; i++)
+                {
+                    if (roundNumbers[i] * multiplier >= num)
+                    {
+                        return roundNumbers[i] * multiplier;
+                    }
+                }
+
+                multiplier = multiplier + 1.0f;
+            }
         }
 
         // TODO: Expose this so it is very easy to add mark-specific rules.
@@ -539,13 +582,15 @@ namespace DxR
                     minMax[0] = 0;
                 }
 
-                if(sortType == "none" || sortType == "ascending")
+                float roundedMaxDomain = RoundNice(minMax[1] - minMax[0]);
+
+                if (sortType == "none" || sortType == "ascending")
                 {
                     domain.Add(new JSONString(minMax[0].ToString()));
-                    domain.Add(new JSONString(minMax[1].ToString()));
+                    domain.Add(new JSONString(roundedMaxDomain.ToString()));
                 } else
                 {
-                    domain.Add(new JSONString(minMax[1].ToString()));
+                    domain.Add(new JSONString(roundedMaxDomain.ToString()));
                     domain.Add(new JSONString(minMax[0].ToString()));
                 }
             } else
