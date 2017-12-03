@@ -1,13 +1,13 @@
 {
   "title": "Cars Data",
-  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
+  "description": "This displays a scatterplot with the color channel mapped to Weight_in_lbs - a quantitative data type.",
   "width": 500,
   "height": 500,
-  "depth": 500,
+  "depth":  500,
   "data": { "url": "DxRData/cars.json" },
   "mark": "point",
   "encoding": {
-    "x": {
+     "x": {
       "field": "Horsepower",
       "type": "quantitative"
     },
@@ -16,15 +16,8 @@
       "type": "quantitative"
     },
     "color": {
-      "field": "Origin",
-      "type": "nominal"
-    },
-    "tooltip": {
-      "field": "Name",
-      "type": "nominal"
-    },
-    "size": {
-      "value": 10
+      "field": "Cylinders",
+      "type": "ordinal"
     }
   }
 }

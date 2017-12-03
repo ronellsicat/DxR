@@ -1,6 +1,6 @@
 {
   "title": "Cars Data",
-  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
+  "description": "This displays a scatterplot with the color channel mapped to Weight_in_lbs - a quantitative data type.",
   "width": 500,
   "height": 500,
   "depth": 500,
@@ -16,15 +16,12 @@
       "type": "quantitative"
     },
     "color": {
-      "field": "Origin",
-      "type": "nominal"
-    },
-    "tooltip": {
-      "field": "Name",
-      "type": "nominal"
-    },
-    "size": {
-      "value": 10
+      "field": "Weight_in_lbs",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 1000, 2750, 4500 ],
+        "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
+      }
     }
   }
 }
