@@ -2,7 +2,7 @@
 DxR makes it easy to create Data-driven graphics in xR (Virtual/Augmented Reality) using the Unity game engine and Microsoft's Mixed Reality ecosystem. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses concise declarative JSON syntax to generate interactive visualizations in immersive environments.
 
 ## Example
-![Example](Docs/example.PNG)
+![Example](Docs/example.png)
 
 ## Quick Start Guide
 
