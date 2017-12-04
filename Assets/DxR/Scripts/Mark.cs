@@ -281,7 +281,8 @@ namespace DxR
                 JSONNode values = channelEncoding.fieldDataType == "quantitative" ? new JSONArray() : domain;
 
                 if (channelEncoding.fieldDataType == "quantitative" && 
-                    (channel == "x" || channel == "y" || channel == "z"))
+                    (channel == "x" || channel == "y" || channel == "z" ||
+                    channel == "width" || channel == "height" || channel == "depth"))
                 {
                     // Round domain into a nice number.
                     // TODO: make robust rounding.
@@ -576,10 +577,11 @@ namespace DxR
                 sortType = sceneSpecs["encoding"][channelEncoding.channel]["sort"].Value.ToString();
             }
 
+            string channel = channelEncoding.channel;
             JSONArray domain = new JSONArray();
             if (channelEncoding.fieldDataType == "quantitative" &&
-                (channelEncoding.channel == "x" || channelEncoding.channel == "y" ||
-                channelEncoding.channel == "z"))
+                (channel == "x" || channel == "y" || channel == "z" ||
+                channel == "width" || channel == "height" || channel == "depth") )
             {
                 List<float> minMax = new List<float>();
                 GetExtent(data, channelEncoding.field, ref minMax);
