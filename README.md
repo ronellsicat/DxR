@@ -1,5 +1,5 @@
 # DxR
-DxR makes it easy to create <b>D</b>ata-driven graphics in <b>xR</b>, i.e., MR/VR/AR, using Microsoft's Mixed Reality ecosystem and Unity3D. Some examples are shown below. You will find [more examples in the gallery](GALLERY.md).
+DxR makes it easy to create Data-driven graphics for applications in xR (Mixed/Virtual/Augmented Reality), using the Unity game engine and Microsoft's Mixed Reality ecosystem. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses declarative JSON syntax to generate visualizations. Some examples are shown below. You will find [more examples in the gallery](GALLERY.md).
 
 ![Gallery Overview](gallery_overview.PNG)
 
