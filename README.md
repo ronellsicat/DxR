@@ -1,7 +1,7 @@
 # DxR
 DxR makes it easy to create Data-driven graphics in xR (Virtual/Augmented Reality) using the Unity game engine and Microsoft's Mixed Reality ecosystem. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses concise declarative JSON syntax to generate interactive visualizations in immersive environments.
 
-# Example
+## Example
 
 
 ## Quick Start Guide
@@ -13,7 +13,7 @@ DxR makes it easy to create Data-driven graphics in xR (Virtual/Augmented Realit
 5. If your Immersive Head-Mounted-Display (IHMD) or HoloLens is connected and setup, press play - you should see a simple DxR data visualization in your immersive environment. If no device is connected, turn off VR Support (File -> Build Settings -> Player Settings -> UWP tab -> XR Settings -> uncheck VR Supported) and press play to view scene in the editor.
 6. To modify a visualization, edit its JSON specification (the filename is shown in the Inspector when the DxRSceneObject is selected from the Hierarchy).
 
-# Additional Links
+## Additional Links
 
 1. [Setup](SETUP.md)
 2. [Tutorial](TUTORIAL.md)
