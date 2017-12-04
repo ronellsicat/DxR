@@ -528,7 +528,11 @@ namespace DxR
             } else if(channel == "size")
             {
                 // TODO: Get min and max size of mark.
-                throw new Exception("Not implemented yet.");
+                
+                // HACK: Hard code range
+                range.Add(new JSONString("0"));
+                range.Add(new JSONString("200"));
+
             } else if(channel == "color")
             {
                 if(channelEncoding.fieldDataType == "nominal")
@@ -554,6 +558,7 @@ namespace DxR
             } else if(channel == "shape")
             {
                 range.Add(new JSONString("symbol"));
+                throw new Exception("Not implemented yet.");
             }
 
             if(range.Count > 0)
