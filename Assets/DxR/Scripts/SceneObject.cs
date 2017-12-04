@@ -19,6 +19,7 @@ namespace DxR
         private bool verbose = true;
         public static string UNDEFINED = "undefined";
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Each unit in the specs is 1 mm.
+        public static float DEFAULT_VIS_DIMS = 500.0f;
 
         public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;
@@ -43,8 +44,8 @@ namespace DxR
             sceneRoot = gameObject;
 
             Parse(specsFilename, out sceneSpecs);
-
-            Initialize(sceneSpecs);
+            
+            Initialize(ref sceneSpecs);
 
             Infer(data, ref sceneSpecs);
             
@@ -62,8 +63,10 @@ namespace DxR
 
         // Create initial objects that are required for inferrence.
         // The sceneSpecs should provide minimum required specs.
-        private void Initialize(JSONNode sceneSpecs)
+        private void Initialize(ref JSONNode sceneSpecs)
         {
+            InferSceneObjectProperties(ref sceneSpecs);
+
             UpdateSceneObjectProperties(sceneSpecs);
 
             CreateDataObjectFromValues(sceneSpecs["data"]["values"], out data);
@@ -71,6 +74,24 @@ namespace DxR
             CreateTooltipObject(out tooltipInstance, ref sceneRoot);
 
             CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
+        }
+
+        private void InferSceneObjectProperties(ref JSONNode sceneSpecs)
+        {
+            if (sceneSpecs["width"] == null)
+            {
+                sceneSpecs.Add("width", new JSONNumber(DEFAULT_VIS_DIMS));
+            }
+
+            if (sceneSpecs["height"] == null)
+            {
+                sceneSpecs.Add("height", new JSONNumber(DEFAULT_VIS_DIMS));
+            }
+
+            if (sceneSpecs["depth"] == null)
+            {
+                sceneSpecs.Add("depth", new JSONNumber(DEFAULT_VIS_DIMS));
+            }
         }
 
         // Infer (raw JSON specs -> full JSON specs): 
@@ -134,10 +155,10 @@ namespace DxR
                 title = sceneSpecs["title"].Value;
             }
 
-            if(sceneSpecs["width"] != null)
+            if (sceneSpecs["width"] != null)
             {
                 width = sceneSpecs["width"].AsFloat;
-            }
+            } 
 
             if (sceneSpecs["height"] != null)
             {
