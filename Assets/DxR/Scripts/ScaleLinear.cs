@@ -34,7 +34,7 @@ namespace DxR
         public override string ApplyScale(string domainValue)
         {
             float rangeValue = rangeMin;
-            float pct = float.Parse(domainValue) / (domainMax - domainMin);
+            float pct = (float.Parse(domainValue) - domainMin) / (domainMax - domainMin);
             return (rangeValue + (pct * (rangeMax - rangeMin))).ToString();
         }
     }
