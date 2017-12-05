@@ -1,0 +1,77 @@
+[
+  {
+    "day": "Mon",
+    "meal": "bfast",
+    "headcount": 1
+  },
+  {
+    "day": "Mon",
+    "meal": "lunch",
+    "headcount": 1
+  },
+  {
+    "day": "Mon",
+    "meal": "dinner",
+    "headcount": 4
+  },
+  {
+    "day": "Tue",
+    "meal": "bfast",
+    "headcount": 1
+  },
+  {
+    "day": "Tue",
+    "meal": "dinner",
+    "headcount": 4
+  },
+  {
+    "day": "Wed",
+    "meal": "bfast",
+    "headcount": 1
+  },
+  {
+    "day": "Wed",
+    "meal": "dinner",
+    "headcount": 4
+  },
+  {
+    "day": "Thu",
+    "meal": "bfast",
+    "headcount": 1
+  },
+  {
+    "day": "Thu",
+    "meal": "dinner",
+    "headcount": 4
+  },
+  {
+    "day": "Fri",
+    "meal": "bfast",
+    "headcount": 1
+  },
+  {
+    "day": "Sat",
+    "meal": "lunch",
+    "headcount": 4
+  },
+  {
+    "day": "Sat",
+    "meal": "dinner",
+    "headcount": 6
+  },
+  {
+    "day": "Sun",
+    "meal": "bfast",
+    "headcount": 2
+  },
+  {
+    "day": "Sun",
+    "meal": "lunch",
+    "headcount": 6
+  },
+  {
+    "day": "Sun",
+    "meal": "dinner",
+    "headcount": 6
+  }
+]

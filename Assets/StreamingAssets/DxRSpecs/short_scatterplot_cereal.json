@@ -1,0 +1,26 @@
+{
+  "title": "Cars Data",
+  "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
+  "data": { "url": "DxRData/cereals.csv" },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Calories",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Protein (g)",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ "0", "8" ],
+        "axis": {
+          "values": [0, 2, 4, 6, 8]
+        }
+      }
+    },
+    "color": {
+      "field": "Cereal Name",
+      "type": "nominal"
+    }
+  }
+}

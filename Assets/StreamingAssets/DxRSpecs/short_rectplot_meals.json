@@ -1,0 +1,28 @@
+{
+  "title": "Cars Data",
+  "description": "Chart that uses rect marks.",
+  "data": { "url": "DxRData/headcount.json" },
+  "mark": "rect",
+  "encoding": {
+    "x": {
+      "field": "day",
+      "type": "ordinal"
+    },
+    "y": {
+      "field": "meal",
+      "type": "ordinal"
+    },
+    "color": {
+      "field": "headcount",
+      "type": "quantitative",
+      "scale": {
+        "range": "ramp",
+        "scheme": "blues"
+      }
+    },
+    "tooltip": {
+      "field": "headcount",
+      "type": "quantitative"
+    }
+  }
+}
