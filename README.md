@@ -16,10 +16,10 @@ Given the succint JSON specification on the left (from [Vega-Lite](https://vega.
 
 ## Additional Links
 
-1. [Setup](SETUP.md)
-2. [Tutorial](TUTORIAL.md)
-3. [Development](DEVELOPMENT.md)
-4. [Examples Gallery](GALLERY.md)
+1. [Setup](Docs/SETUP.md)
+2. [Tutorial](Docs/TUTORIAL.md)
+3. [Development](Docs/DEVELOPMENT.md)
+4. [Examples Gallery](Docs/GALLERY.md)
 
 Below is a screenshot of some visualization examples generated using DxR.
-![Gallery Overview](gallery_overview.PNG)
+![Gallery Overview](Docs/gallery_overview.PNG)
