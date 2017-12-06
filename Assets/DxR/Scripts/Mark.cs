@@ -733,14 +733,12 @@ namespace DxR
 
             scaleSpecsObj.Add("type", new JSONString(type));
         }
-
+        
         private void WriteStringToFile(string str, string outputName)
         {
-            StreamWriter writer = new StreamWriter(outputName);
-            writer.Write(str);
-            writer.Close();
+            System.IO.File.WriteAllText(outputName, str);
         }
-
+        
         public void SetTooltipObject(ref GameObject tooltipObject)
         {
             tooltip = tooltipObject;
