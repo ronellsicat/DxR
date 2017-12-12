@@ -13,6 +13,7 @@ To learn more, check out the [tutorials](tutorials.html), [documentation](docume
 
 For feedback, please comment below or contact @HarvardVCG on twitter. For issues and feature requests, please [click here](https://github.com/ronellsicat/DxR/issues?state=open).
 
+<!--
 # Examples
 
 From a few lines of declarative JSON specification (left), DxR generates an interactive visualization in Unity (right) that can be used in AR/VR applications.
@@ -22,6 +23,7 @@ From a few lines of declarative JSON specification (left), DxR generates an inte
 DxR makes it easy to add custom marks and channels to enable engaging visualization designs. In this example, a 3D paper plane is used as mark to visualize air flow.
 
 <img src="assets/img/example_paperplane.png" width="800">
+-->
 
 ## Contributors
 
