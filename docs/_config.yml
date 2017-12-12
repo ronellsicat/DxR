@@ -1,5 +1,7 @@
 name: DxR
 
+baseurl: "/dxr"
+
 project:
     version: 1.0
     download_url: https://github.com/ronellsicat/DxR/raw/master/DxR.unitypackage
