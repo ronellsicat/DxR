@@ -38,7 +38,7 @@ social:
         profileUrl:
 
 analytics:
-    google:
+    google: UA-111149380-1
 
 disqus:
     shortname: dxr
