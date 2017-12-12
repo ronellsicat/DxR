@@ -1,6 +1,5 @@
 ---
-layout: page
-homepage: true
+layout: home
 ---
 
 ## DxR Toolkit for Fast Authoring of Immersive Visualizations
