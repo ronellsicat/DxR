@@ -6,9 +6,12 @@
 
     <body>
         {% include navigation.html %}
-        {% include jumbotron.html %}
 
         {{ content }}
+
+        {% if site.analytics.google %}
+            {% include google-analytics.html %}
+        {% endif %}
 
         {% include footer.html %}
     </body>

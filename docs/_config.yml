@@ -2,7 +2,7 @@ name: DxR
 
 project:
     version: 1.0
-    download_url: https://github.com/ronellsicat/DxR/blob/master/DxR.unitypackage
+    download_url: https://github.com/ronellsicat/DxR/raw/master/DxR.unitypackage
 
 license:
     software: MIT License
