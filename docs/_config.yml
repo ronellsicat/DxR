@@ -1,0 +1,48 @@
+name: DxR
+
+project:
+    version: 1.0
+    download_url: https://github.com/ronellsicat/DxR/blob/master/DxR.unitypackage
+
+license:
+    software: MIT License
+    software_url: http://opensource.org/licenses/MIT
+
+links:
+    header:
+      - title: GitHub
+        url: https://github.com/ronellsicat/DxR
+    footer:
+      - title: GitHub
+        url: https://github.com/ronellsicat/DxR
+      - title: Issues
+        url: https://github.com/ronellsicat/DxR/issues?state=open
+
+ui:
+    header:
+        color1: "#080331"
+        color2: "#673051"
+        trianglify: true
+
+social:
+    github:
+        user: ronellsicat
+        repo: DxR
+    twitter:
+        enabled: false
+        via:
+        hash:
+        account:
+    facebook:
+        enabled: false
+        profileUrl:
+
+analytics:
+    google: UA-123456-1
+
+disqus:
+    shortname: dxr
+
+markdown: kramdown
+
+# Jekyll theme adapted from https://github.com/allejo/jekyll-docs-theme
