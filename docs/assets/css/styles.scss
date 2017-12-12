@@ -34,16 +34,6 @@
     position: relative;
 }
 
-#jumbotron-header {
-    position:relative;
-
-    &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 50px;
-        width: 30%;
-        background: linear-gradient(135deg, transparent 50px, white 50px);
-    }
+.bs-docs-nav {
+  background-color: #673051;
 }
