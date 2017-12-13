@@ -18,12 +18,6 @@ links:
       - title: Issues
         url: https://github.com/ronellsicat/DxR/issues?state=open
 
-ui:
-    header:
-        color1: "#080331"
-        color2: "#673051"
-        trianglify: true
-
 social:
     github:
         user: ronellsicat

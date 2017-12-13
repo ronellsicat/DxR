@@ -13,7 +13,7 @@ To learn more, check out the [tutorials](tutorials.html), [documentation](docume
 
 For feedback, please comment below or contact @HarvardVCG on twitter. For issues and feature requests, please [click here](https://github.com/ronellsicat/DxR/issues?state=open).
 
-# Examples
+### Examples
 
 From a few lines of declarative JSON specification (left), DxR generates an interactive visualization in Unity (right) that can be used in AR/VR applications.
 
@@ -23,8 +23,8 @@ DxR makes it easy to add custom marks and channels to enable engaging visualizat
 
 <img src="assets/img/example_paperplane.png">
 
-## Contributors
+### Contributors
 
 DxR is mainly developed by [Ronell Sicat](www.ronellsicat.com), and [Jiabao Li](https://www.jiabaoli.org/), in collaboration with Hanspeter Pfister, Benjamin Bach, and Maxime Cordeil.
 
-## Comments
+### Comments
