@@ -320,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 1850730992894404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6025952, y: 0.9401589, z: 0.99}
   m_Children:
   - {fileID: 4587520633816736}
   - {fileID: 4931155170010354}
@@ -504,7 +504,7 @@ Camera:
   m_GameObject: {fileID: 1372541880982678}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -526,12 +526,11 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
 --- !u!23 &23322403167181422
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -541,6 +540,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -556,6 +556,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -665,6 +666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FloorQuad: {fileID: 1520281459093612, guid: 08d25ccfbbc595b4a820c7edd551d095, type: 2}
+  boundaryHeight: 10
 --- !u!114 &114225625019075894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -729,7 +731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NearClipPlane_OpaqueDisplay: 0.1
-  CameraClearFlags_OpaqueDisplay: 1
+  CameraClearFlags_OpaqueDisplay: 2
   BackgroundColor_OpaqueDisplay: {r: 0, g: 0, b: 0, a: 1}
   OpaqueQualityLevel: 5
   NearClipPlane_TransparentDisplay: 0.85
