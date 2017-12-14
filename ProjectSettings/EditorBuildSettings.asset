@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DxRExamples/gallery_full.unity
-    guid: b4a02164be1e90a498c9350cab92371e
+    path: Assets/DxRExamples/template.unity
+    guid: 39042e7a7f24e1b4f94737a5d70fbb63

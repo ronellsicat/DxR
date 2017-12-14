@@ -203,13 +203,14 @@ namespace DxR
                         Debug.Log("value null found: ");
                         break;
                     }
-
+                    /*
                     if(curFieldName == "vmeg" && value["vmeg"] == 0)
                     {
                         valueHasNullField = true;
                         Debug.Log("value null found: ");
                         break;
                     }
+                    */
 
                     d.Add(curFieldName, value[curFieldName]);
                 }
@@ -220,7 +221,7 @@ namespace DxR
                 }
             }
 
-            SubsampleData(valuesSpecs, 8, "Assets/DxR/Resources/test.json");
+//            SubsampleData(valuesSpecs, 8, "Assets/DxR/Resources/test.json");
         }
 
         

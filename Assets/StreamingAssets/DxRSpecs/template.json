@@ -11,16 +11,14 @@
       "field": "Miles_per_Gallon",
       "type": "quantitative"
     },
+
     "z": {
-      "field": "Acceleration",
+      "field": "Displacement",
       "type": "quantitative"
     },
+
     "color": {
       "field": "Origin",
-      "type": "nominal"
-    },
-    "tooltip": {
-      "field": "Name",
       "type": "nominal"
     }
   }

@@ -82,9 +82,6 @@
         "type": "custom"
       }
     },
-    "color": {
-      "value": "#ffffbf"
-    },
     "size": {
       "value":  10
     }

@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbad991a9894486418e4988222483ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultGazeDistance: 2
+  DefaultGazeDistance: 1
   PlaceParentOnTap: 1
   ParentGameObjectToPlace: {fileID: 0}
   IsBeingPlaced: 0
