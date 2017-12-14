@@ -35,6 +35,6 @@ A visualization in DxR, is a collection of Unity game objects whose visual prope
     }
 ```
 
-3. Save the JSON file then re-play your application. You should now see a colored 3D scatter plot like below.
+3. Save the JSON file, which should now look like below (left), then re-play your application. You should now see a colored 3D scatter plot like below (right).
 
-<img src="../../assets/img/template3D.png" width="600">
+<img src="../../assets/img/example_template3D.png" width="600">
