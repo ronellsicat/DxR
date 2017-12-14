@@ -11,11 +11,11 @@ license:
 links:
     navigation:
       - title: Tutorials
-        url: https://github.com/ronellsicat/DxR/site/tutorials.html
+        url: https://ronellsicat.github.io/DxR/site/tutorials.html
       - title: Documentation
-        url: https://github.com/ronellsicat/DxR/site/documentation.html
+        url: https://ronellsicat.github.io/DxR/site/documentation.html
       - title: Examples
-        url: https://github.com/ronellsicat/DxR/site/examples.html
+        url: https://ronellsicat.github.io/DxR/site/examples.html
     header:
       - title: GitHub
         url: https://github.com/ronellsicat/DxR
