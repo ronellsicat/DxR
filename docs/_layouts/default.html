@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-    <head>
-        {% include header.html %}
-    </head>
+---
+layout: base
+---
 
-    <body>
-        {% include navigation.html %}
+<div class="container bs-docs-container">
+    <div class="bs-docs-section" role="main">{{ content }}</div>
 
-        {{ content }}
-
-        {% if site.analytics.google %}
-            {% include google-analytics.html %}
-        {% endif %}
-
-        {% include footer.html %}
-    </body>
-</html>
+    {% include disqus.html %}
+</div>

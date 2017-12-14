@@ -1,17 +1,19 @@
 ---
-layout: home
+layout: default
 ---
 
 ## DxR Toolkit for Fast Authoring of Immersive Visualizations
 
 <img src="assets/img/gallery_overview.png" width="1000">
 
-DxR is a Unity package that makes it easy and fast to create immersive visualizations, i.e., interactive data-driven graphics in augmented and virtual reality environments. Inspired by Vega-Lite, DxR uses a concise declarative JSON syntax to rapidly generate visualizations to support immersive analytics. In addition to supporting the core grammar of graphics, DxR provides a grammar of immersive interactions. DxR builds around Microsoft’s mixed reality ecosystem, mainly supporting HoloLens and IHMD (immersive head-mounted device) application development.
+**DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create interactive data-driven graphics in augmented reality (AR) and virtual reality (VR) environments**, i.e., immersive visualizations. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses a concise declarative JSON syntax to rapidly generate immersive visualizations. 
 
-To learn more, check out the [tutorials](tutorials.html), [documentation](documentation.html), and [examples gallery](examples.html). 
+DxR aims to bridge the development gap between data visualizations and immersive applications by combining [Vega-Lite](https://vega.github.io/vega-lite/)'s easy-to-learn/use syntax with [Unity](https://unity3d.com/unity)'s  powerful AR/VR development platform (with [Microsoft's mixed reality ecosystem](https://developer.microsoft.com/en-us/windows/mixed-reality/academy)). While Vega-Lite focuses on supporting data analysis (by providing data and visual transformations) on a 2D display/browser, DxR focuses on supporting immersive analytics in 3D environments (embedded vis in AR, data-driven scenes in VR) with immersive interactions (gaze, gesture) beyond the desktop.
+
+To learn more, check out the [quick start guide](site/quickstart.html), [tutorials](site/tutorials.html), [documentation](site/documentation.html), and [examples gallery](site/examples.html). 
 <!-- You can also read our pre-publication paper for more detail. -->
 
-For feedback, please comment below or contact @HarvardVCG on twitter. For issues and feature requests, please [click here](https://github.com/ronellsicat/DxR/issues?state=open).
+For feedback, please comment below or contact [@HarvardVCG](https://twitter.com/HarvardVCG) on twitter. For issues and feature requests, please [click here](https://github.com/ronellsicat/DxR/issues?state=open).
 
 <!--
 # Examples
@@ -28,5 +30,3 @@ DxR makes it easy to add custom marks and channels to enable engaging visualizat
 ### Contributors
 
 DxR is mainly developed by [Ronell Sicat](www.ronellsicat.com), and [Jiabao Li](https://www.jiabaoli.org/), in collaboration with Hanspeter Pfister, Benjamin Bach, and Maxime Cordeil.
-
-### Comments
