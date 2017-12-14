@@ -9,6 +9,13 @@ license:
     software_url: http://opensource.org/licenses/MIT
 
 links:
+    nvigation:
+      - title: Tutorials
+        url: https://github.com/ronellsicat/DxR/site/tutorials.html
+      - title: Documentation
+        url: https://github.com/ronellsicat/DxR/site/documentation.html
+      - title: Examples
+        url: {{ site.baseurl }}/site/examples.html
     header:
       - title: GitHub
         url: https://github.com/ronellsicat/DxR
