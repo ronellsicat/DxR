@@ -4,4 +4,4 @@ DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create
 To learn more, check out the [project website](https://ronellsicat.github.io/DxR) or go directly to the [quick start guide](https://ronellsicat.github.io/DxR/site/tutorials/quickstart.html), [tutorials](https://ronellsicat.github.io/DxR/site/tutorials.html), [documentation](https://ronellsicat.github.io/DxR/site/documentation.html), and [examples gallery](https://ronellsicat.github.io/DxR/site/examples.html).
 
 Below are some visualization examples generated using DxR.
-![Gallery Overview](docs/assets/img/gallery_overview.PNG)
+<img src="docs/assets/img/gallery_overview.png" width="600">
