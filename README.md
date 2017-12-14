@@ -1,5 +1,9 @@
 ### DxR Toolkit for Fast Authoring of Immersive Visualizations
-DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create interactive data-driven graphics in augmented reality (AR) and virtual reality (VR) environments, i.e., immersive visualizations. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses a concise declarative JSON syntax to rapidly generate immersive visualizations.
+DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create interactive data-driven graphics in augmented reality (AR) and virtual reality (VR) environments, i.e., immersive visualizations. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses a concise declarative JSON specification to rapidly generate immersive visualizations.
+
+For example, below, given a concise specification (left) from the user, DxR generates an interactive visualization (right) in Unity. 
+
+<img src="docs/assets/img/example_template3D.png">
 
 To learn more, check out the following links:
 
