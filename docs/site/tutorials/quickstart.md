@@ -16,7 +16,7 @@ DxR is a Unity package that builds around Microsoft’s mixed reality ecosystem,
 4. Apply default mixed reality project settings. In Unity editor menu, go to: Mixed Reality Toolkit -> Configure -> Apply Mixed Reality Project Settings, then click Apply.
 5. If your Immersive Head-Mounted-Display (IHMD) or HoloLens is connected and ready, press play (or Ctrl+P). You should see a scatter plot visualization in front of you. If no device is connected, turn off VR Support (File -> Build Settings -> Player Settings -> UWP tab -> XR Settings -> uncheck VR Supported) and press play to view the scene in the Unity editor. You should see a 2D scatter plot like below.
 
-<img src="../assets/img/template2D.png" width="600">
+<img src="../../assets/img/template2D.png" width="600">
 
 ### Creating Your First Visualization
 
@@ -37,4 +37,4 @@ A visualization in DxR, is a collection of Unity game objects whose visual prope
 
 3. Save the JSON file then re-play your application. You should now see a colored 3D scatter plot like below.
 
-<img src="../assets/img/template3D.png" width="600">
+<img src="../../assets/img/template3D.png" width="600">
