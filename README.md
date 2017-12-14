@@ -7,7 +7,7 @@ To learn more, check out the following links:
 * [Quick Start Guide](https://ronellsicat.github.io/DxR/site/tutorials/quickstart.html)
 * [Tutorials](https://ronellsicat.github.io/DxR/site/tutorials.html)
 * [Documentation](https://ronellsicat.github.io/DxR/site/documentation.html)
-* [Examples Gallery](https://ronellsicat.github.io/DxR/site/examples.html).
+* [Examples Gallery](https://ronellsicat.github.io/DxR/site/examples.html)
 
 Below are some visualization examples generated using DxR.
 
