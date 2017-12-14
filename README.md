@@ -6,3 +6,5 @@ To learn more, check out the [project website](https://ronellsicat.github.io/DxR
 Below are some visualization examples generated using DxR.
 
 <img src="docs/assets/img/gallery_overview.png">
+
+DxR is mainly developed by [Ronell Sicat](www.ronellsicat.com), and [Jiabao Li](https://www.jiabaoli.org/), in collaboration with Hanspeter Pfister, Benjamin Bach, and Maxime Cordeil.
