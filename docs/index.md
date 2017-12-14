@@ -10,7 +10,7 @@ layout: default
 
 DxR aims to bridge the development gap between data visualizations and immersive applications by combining [Vega-Lite](https://vega.github.io/vega-lite/)'s easy-to-learn/use syntax with [Unity](https://unity3d.com/unity)'s  powerful AR/VR development platform (with [Microsoft's mixed reality ecosystem](https://developer.microsoft.com/en-us/windows/mixed-reality/academy)). Like Vega-Lite, DxR constructs a visualization given a specification based on a high-level grammar of graphics describing the mapping from data attributes to visual channels of graphical marks. While Vega-Lite focuses on supporting data analysis (by providing data and visual transformations) on a 2D display/browser, DxR focuses on supporting immersive analytics in 3D environments (embedded vis in AR, data-driven scenes in VR) with immersive interactions beyond the desktop.
 
-To learn more, check out the examples below, or the [quick start guide](site/quickstart.html), [tutorials](site/tutorials.html), [documentation](site/documentation.html), and [examples gallery](site/examples.html).
+To learn more, check out the examples below, or the [quick start guide](site/tutorials/quickstart.html), [tutorials](site/tutorials.html), [documentation](site/documentation.html), and [examples gallery](site/examples.html).
 <!-- You can also read our pre-publication paper for more detail. -->
 
 For feedback, please comment below or contact [@HarvardVCG](https://twitter.com/HarvardVCG) on twitter. For issues and feature requests, please [click here](https://github.com/ronellsicat/DxR/issues?state=open).
