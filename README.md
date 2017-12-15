@@ -3,7 +3,7 @@ DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create
 
 To learn more, check out the example and gallery previews below, as well as the following links:
 
-* [Project Website](https://sites.google.com/view/dxr-vis) (has all other links below)
+### [Project Website](https://sites.google.com/view/dxr-vis) (has all other links below)
 * [Quick Start Guide](https://sites.google.com/view/dxr-vis/tutorials/quick-start-guide)
 * [Tutorials](https://sites.google.com/view/dxr-vis/tutorials)
 * [Grammar Documentation](https://sites.google.com/view/dxr-vis/grammar-docs)
