@@ -100,7 +100,7 @@ namespace DxR
         {
             if(markPrefab != null)
             {
-                markPrefab.GetComponent<Mark>().Infer(data, ref sceneSpecs);
+                markPrefab.GetComponent<Mark>().Infer(data, ref sceneSpecs, specsFilename);
             } else
             {
                 throw new Exception("Cannot perform inferrence without mark prefab loaded.");
@@ -221,7 +221,7 @@ namespace DxR
                 }
             }
 
-//            SubsampleData(valuesSpecs, 8, "Assets/DxR/Resources/test.json");
+//            SubsampleData(valuesSpecs, 8, "Assets/DxR/Resources/cars_subsampled.json");
         }
 
         

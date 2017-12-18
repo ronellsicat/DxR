@@ -4,7 +4,7 @@
   "height": 500,
   "depth":  500,
   "data": { "url": "DxRData/streamline.json" },
-  "mark": "cone",
+  "mark": "arrow",
   "encoding": {
     "x": {
       "field": "x",
@@ -18,34 +18,39 @@
       "field": "z",
       "type": "quantitative"
     },
-    "length": {
-      "field": "length",
-      "type": "quantitative",
-      "scale": {
-        "type":  "linear",
-        "range": [ 0, 100 ]
-      }
-    },
     "xorient": {
-      "field": "u",
+      "field": "vx",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
     },
     "yorient": {
-      "field": "v",
+      "field": "vy",
+      "type": "quantitative",
+      "scale": {
+        "type":  "none"
+      }
+    },
+    "zorient": {
+      "field": "vz",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
     },
-    "zorient": {
-      "field": "w",
+    "color": {
+      "field": "time",
       "type": "quantitative",
       "scale": {
-        "type": "none"
+        "domain": [ "0", "5" ]
       }
+    },
+    "radius": {
+      "value": 15
+    },
+    "length": {
+      "value": 30
     }
   }
 }

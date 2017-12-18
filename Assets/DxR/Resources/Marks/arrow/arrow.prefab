@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 23336346310644860}
   - component: {fileID: 33979131338004602}
   - component: {fileID: 114428274257690814}
-  - component: {fileID: 114174328795163254}
+  - component: {fileID: 114227248347874414}
   m_Layer: 0
-  m_Name: cone
+  m_Name: arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1169245176921748}
   m_Mesh: {fileID: 0}
---- !u!114 &114174328795163254
+--- !u!114 &114227248347874414
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7c02256d7ff6e4dab8e3528d4fe2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markName: cone
+  markName: arrow
+  tooltip: {fileID: 0}
   origOrientation: {x: 0, y: 1, z: 0}
   curOrientation: {x: 0, y: 1, z: 0}
 --- !u!114 &114428274257690814

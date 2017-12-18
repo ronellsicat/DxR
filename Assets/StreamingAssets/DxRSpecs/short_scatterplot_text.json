@@ -1,10 +1,9 @@
 {
   "title": "Cars Data",
-  "description": "This displays a 3D scatterplot.",
   "width": 500,
   "height": 500,
   "depth": 500,
-  "data": { "url": "DxRData/cars.json" },
+  "data": { "url": "DxRData/cars_subsampled.json" },
   "mark": "text",
   "encoding": {
     "x": {
@@ -25,13 +24,10 @@
       "scale": {
         "domain": [ 1000, 2750, 4500 ],
         "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
-      },
-      "legend": {
-        "title": "Weight in lbs"
       }
     },
     "size": {
-      "value": 20
+      "value": 30
     },
     "text": {
       "field": "Name",

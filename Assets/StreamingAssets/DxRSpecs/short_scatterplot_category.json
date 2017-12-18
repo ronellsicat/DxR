@@ -1,6 +1,11 @@
 {
   "title": "Cars Data",
-  "data": { "url": "DxRData/cars.json" },
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": {
+    "url": "DxRData/cars.json" 
+  },
   "mark": "point",
   "encoding": {
     "x": {
@@ -9,10 +14,6 @@
     },
     "y": {
       "field": "Miles_per_Gallon",
-      "type": "quantitative"
-    },
-    "z": {
-      "field": "Acceleration",
       "type": "quantitative"
     },
     "color": {

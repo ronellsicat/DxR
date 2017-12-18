@@ -1,10 +1,9 @@
 {
   "title": "Field Data",
-  "description": "This displays a 3D glyph plot.",
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/field.json" },
+  "data": { "url": "DxRData/streamline.json" },
   "mark": "arrow",
   "encoding": {
     "x": {
@@ -12,8 +11,7 @@
       "type": "quantitative",
       "scale": {
         "type": "linear",
-        "domain": [ 0, 5 ],
-        "range": [ 0, 500 ]
+        "domain":  ["20", "25"]
       },
       "axis": {
         "face": "front",
@@ -22,7 +20,7 @@
         "grid": false,
         "ticks": true,
         "tickCount": 6,
-        "values": [0, 1, 2, 3, 4, 5],
+        "values": [20, 21, 22, 23, 24, 25],
         "labels":  true
       }
     },
@@ -31,8 +29,7 @@
       "type": "quantitative",
       "scale": {
         "type": "linear",
-        "domain": [ 0, 5 ],
-        "range": [ 0, 500 ]
+        "domain": [ "20", "25" ]
       },
       "axis": {
         "face": "front",
@@ -41,7 +38,7 @@
         "grid": false,
         "ticks": true,
         "tickCount": 6,
-        "values": [ 0, 1, 2, 3, 4, 5 ],
+        "values": [ 20, 21, 22, 23, 24, 25 ],
         "labels": true
       }
     },
@@ -50,8 +47,7 @@
       "type": "quantitative",
       "scale": {
         "type": "linear",
-        "domain": [ 0, 5 ],
-        "range": [ 0, 500 ]
+        "domain": [ "0", "5" ]
       },
       "axis": {
         "face": "left",
@@ -64,38 +60,29 @@
         "labels": true
       }
     },
-    "length": {
-      "field": "mag",
-      "type": "quantitative",
-      "scale": {
-        "type": "linear",
-        "domain": [ 0, 4 ],
-        "range": [ 0, 100 ]
-      }
-    },
     "xorient": {
-      "field": "u",
+      "field": "vx",
       "type": "quantitative",
       "scale": {
         "type": "custom"
       }
     },
     "yorient": {
-      "field": "v",
+      "field": "vy",
       "type": "quantitative",
       "scale": {
         "type": "custom"
       }
     },
     "zorient": {
-      "field": "w",
+      "field": "vz",
       "type": "quantitative",
       "scale": {
         "type": "custom"
       }
     },
-    "color": {
-      "value": "#c51b8a"
+    "radius": {
+      "value":  15
     }
   }
 }

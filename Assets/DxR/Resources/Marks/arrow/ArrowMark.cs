@@ -12,12 +12,12 @@ namespace DxR
     /// a function that takes in the "channel" name and value in string format
     /// and performs the necessary changes under the SetChannelValue function.
     /// </summary>
-    public class ConeMark : Mark
+    public class ArrowMark : Mark
     {
         public Vector3 origOrientation;
         public Vector3 curOrientation;
 
-        public ConeMark() : base()
+        public ArrowMark() : base()
         {
             origOrientation = curOrientation = Vector3.up;
         }
@@ -29,7 +29,10 @@ namespace DxR
                 case "length":
                     SetLength(value);
                     break;
-                   case "xorient":
+                case "radius":
+                    SetRadius(value);
+                    break;
+                case "xorient":
                     SetOrientation(value, 0);
                     break;
                 case "yorient":
@@ -60,11 +63,16 @@ namespace DxR
             transform.rotation = rotation;
         }
 
-        // Sets the diameter of the point to the value.
         private void SetLength(string value)
         {
             float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
             gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshHeight(height);        
+        }
+
+        private void SetRadius(string value)
+        {
+            float radius = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshRadius(radius);
         }
     }
 }

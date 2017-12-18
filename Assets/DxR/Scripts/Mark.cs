@@ -103,7 +103,7 @@ namespace DxR
             }
         }
 
-        public void Infer(Data data, ref JSONNode sceneSpecs)
+        public void Infer(Data data, ref JSONNode sceneSpecs, string sceneSpecsFilename)
         {
             // Go through each channel and infer the missing specs.
             foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
@@ -153,7 +153,8 @@ namespace DxR
             InferMarkSpecificSpecs(ref sceneSpecs);
 
             string inferResults = sceneSpecs.ToString();
-            WriteStringToFile(inferResults, "Assets/StreamingAssets/DxRSpecs/inferred.json");
+            string filename = "Assets/StreamingAssets/" + sceneSpecsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
+            WriteStringToFile(inferResults, filename);
         }
         
         private void InferLegendSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs)
@@ -581,7 +582,9 @@ namespace DxR
             JSONArray domain = new JSONArray();
             if (channelEncoding.fieldDataType == "quantitative" &&
                 (channel == "x" || channel == "y" || channel == "z" ||
-                channel == "width" || channel == "height" || channel == "depth") )
+                channel == "width" || channel == "height" || channel == "depth" || 
+                channel == "color" || channel == "xorient" || channel == "yorient" 
+                || channel == "zorient") )
             {
                 List<float> minMax = new List<float>();
                 GetExtent(data, channelEncoding.field, ref minMax);

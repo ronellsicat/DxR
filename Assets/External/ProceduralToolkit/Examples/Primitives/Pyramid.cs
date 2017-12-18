@@ -19,5 +19,11 @@ namespace ProceduralToolkit.Examples.Primitives
             height = h;
             GetComponent<MeshFilter>().mesh = MeshE.Pyramid(radius, segments, height);
         }
+
+        public void UpdateMeshRadius(float r)
+        {
+            radius = r;
+            GetComponent<MeshFilter>().mesh = MeshE.Pyramid(radius, segments, height);
+        }
     }
 }
