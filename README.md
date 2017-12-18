@@ -11,7 +11,7 @@ As a simple example, below, given a concise JSON specification (left) from the u
 
 <img src="docs/assets/img/example_template3D.png">
 
-Below are some visualization examples generated using DxR.
+Below are some 2D and 3D visualization examples generated using DxR, which can be placed in both AR and VR applications.
 
 <img src="docs/assets/img/gallery_overview.png">
 
