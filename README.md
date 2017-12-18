@@ -6,6 +6,7 @@ DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create
 * [Tutorials](https://sites.google.com/view/dxr-vis/tutorials)
 * [Grammar Documentation](https://sites.google.com/view/dxr-vis/grammar-docs)
 * [Examples Gallery](https://sites.google.com/view/dxr-vis/examples)
+* [Downloads](https://sites.google.com/view/dxr-vis/download)
 
 As a simple example, below, given a concise JSON specification (left) from the user, DxR generates an interactive visualization (right) in Unity. 
 
