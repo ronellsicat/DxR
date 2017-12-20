@@ -1,7 +1,8 @@
 /Assets/HoloToolkit-Examples/
 UWP/
 HoloLens/
-
+*_inferred.json
+*_inferred.json.meta
 .idea
 
 /[Ll]ibrary/

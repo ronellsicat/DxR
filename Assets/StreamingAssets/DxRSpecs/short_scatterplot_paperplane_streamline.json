@@ -4,7 +4,7 @@
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/streamline_cropped.json" },
+  "data": { "url": "DxRData/streamline.json" },
   "mark": "paperplane",
   "encoding": {
     "x": {
