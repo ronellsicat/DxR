@@ -3,86 +3,60 @@
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/streamline.json" },
-  "mark": "arrow",
+  "data": { "url": "DxRData/cfd.json" },
+  "mark": "paperplane",
   "encoding": {
     "x": {
       "field": "x",
       "type": "quantitative",
       "scale": {
-        "type": "linear",
-        "domain":  ["20", "25"]
-      },
-      "axis": {
-        "face": "front",
-        "orient": "bottom",
-        "title": "x position",
-        "grid": false,
-        "ticks": true,
-        "tickCount": 6,
-        "values": [20, 21, 22, 23, 24, 25],
-        "labels":  true
+        "domain": [ "20", "25" ]
       }
     },
     "y": {
       "field": "y",
       "type": "quantitative",
       "scale": {
-        "type": "linear",
         "domain": [ "20", "25" ]
-      },
-      "axis": {
-        "face": "front",
-        "orient": "left",
-        "title": "y position",
-        "grid": false,
-        "ticks": true,
-        "tickCount": 6,
-        "values": [ 20, 21, 22, 23, 24, 25 ],
-        "labels": true
       }
     },
     "z": {
       "field": "z",
-      "type": "quantitative",
-      "scale": {
-        "type": "linear",
-        "domain": [ "0", "5" ]
-      },
-      "axis": {
-        "face": "left",
-        "orient": "bottom",
-        "title": "z position",
-        "grid": false,
-        "ticks": true,
-        "tickCount": 6,
-        "values": [ 0, 1, 2, 3, 4, 5 ],
-        "labels": true
-      }
+      "type": "quantitative"
     },
     "xorient": {
       "field": "vx",
       "type": "quantitative",
       "scale": {
-        "type": "custom"
+        "type": "none"
       }
     },
     "yorient": {
       "field": "vy",
       "type": "quantitative",
       "scale": {
-        "type": "custom"
+        "type": "none"
       }
     },
     "zorient": {
       "field": "vz",
       "type": "quantitative",
       "scale": {
-        "type": "custom"
+        "type": "none"
       }
     },
-    "radius": {
-      "value":  15
+    "size": {
+      "field": "vmag",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ "0", "1" ],
+        "range": [ "0", "30" ]
+      }
+    },
+    "color": {
+      "field": "vmag",
+      "type": "quantitative"
     }
   }
 }

@@ -803,7 +803,7 @@ namespace DxR
             transform.localEulerAngles = rot;
         }
 
-        private void SetMaxSize(string value)
+        public void SetMaxSize(string value)
         {
             float size = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
 

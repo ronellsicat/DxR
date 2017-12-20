@@ -1,6 +1,4 @@
 {
-  "title": "Field Data",
-  "description": "This displays a 3D glyph plot.",
   "width": 500,
   "height": 500,
   "depth":  500,
@@ -65,21 +63,21 @@
       "field": "vx",
       "type": "quantitative",
       "scale": {
-        "type": "custom"
+        "type": "none"
       }
     },
     "yorient": {
       "field": "vy",
       "type": "quantitative",
       "scale": {
-        "type": "custom"
+        "type": "none"
       }
     },
     "zorient": {
       "field": "vz",
       "type": "quantitative",
       "scale": {
-        "type": "custom"
+        "type": "none"
       }
     },
     "size": {

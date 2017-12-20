@@ -27,7 +27,7 @@ namespace DxR
             switch (channel)
             {
                 case "length":
-                    SetLength(value);
+                    base.SetMaxSize(value);
                     break;
                  case "xorient":
                     SetOrientation(value, 0);
@@ -58,13 +58,6 @@ namespace DxR
 
             Quaternion rotation = Quaternion.FromToRotation(origOrientation, curOrientation);
             transform.rotation = rotation;
-        }
-
-        // Sets the diameter of the point to the value.
-        private void SetLength(string value)
-        {
-            float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-            //gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshHeight(height);        
         }
     }
 }
