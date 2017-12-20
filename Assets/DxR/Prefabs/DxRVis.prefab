@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2020ba104250654bb25fa1139ee48f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  specsFilename: template.json
+  specsFilename: DxRSpecs/template.json
   sceneName: 
   title: 
   width: 0
