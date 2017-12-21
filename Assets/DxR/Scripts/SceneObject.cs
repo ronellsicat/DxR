@@ -39,6 +39,10 @@ namespace DxR
 
         private GameObject tooltipInstance = null;
 
+        private bool distanceVisibility = true;
+        private bool gazeVisibility = true;
+        private bool currentVisibility = true;
+
         void Start()
         {
             sceneRoot = gameObject;
@@ -51,7 +55,7 @@ namespace DxR
             
             Construct(sceneSpecs, ref sceneRoot);
         }
-
+        
         // Parse (JSON spec file (data file info in specs) -> expanded raw JSON specs): 
         // Read in the specs and data files to create expanded raw JSON specs.
         // Filenames should be relative to Assets/StreamingAssets/ directory.
@@ -98,7 +102,9 @@ namespace DxR
         // automatically fill in missing specs by inferrence (informed by marks and data type).
         private void Infer(Data data, ref JSONNode sceneSpecs)
         {
-            if(markPrefab != null)
+            InferAnchorProperties(ref sceneSpecs);
+
+            if (markPrefab != null)
             {
                 markPrefab.GetComponent<Mark>().Infer(data, ref sceneSpecs, specsFilename);
             } else
@@ -111,6 +117,25 @@ namespace DxR
             UpdateSceneObjectProperties(sceneSpecs);
         }
 
+        private void InferAnchorProperties(ref JSONNode sceneSpecs)
+        {
+            JSONNode anchorSpecs = sceneSpecs["anchor"];
+            if (anchorSpecs != null && anchorSpecs.Value.ToString() == "none") return;
+            JSONObject anchorSpecsObj = (anchorSpecs == null) ? new JSONObject() : anchorSpecs.AsObject;
+            
+            if (anchorSpecsObj["placement"] == null)
+            {
+                anchorSpecsObj.Add("placement", new JSONString("tapToPlace"));
+            }
+
+            if(anchorSpecsObj["visibility"] == null)
+            {
+                anchorSpecsObj.Add("visibility", new JSONString("always"));
+            }
+
+            sceneSpecs.Add("anchor", anchorSpecsObj);
+        }
+
         // Construct (full JSON specs -> working SceneObject): 
         private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
         {
@@ -121,6 +146,19 @@ namespace DxR
             ConstructAxes(sceneSpecs, ref channelEncodings, ref sceneRoot);
 
             ConstructLegends(sceneSpecs, ref channelEncodings, ref sceneRoot);
+
+            ConstructAnchor(sceneSpecs, ref sceneRoot);
+        }
+
+        private void ConstructAnchor(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        {
+            if (sceneSpecs["anchor"] == null) return;
+
+            Anchor anchor = sceneRoot.transform.GetComponentInChildren<Anchor>();
+            if(anchor != null)
+            {
+                anchor.UpdateSpecs(sceneSpecs["anchor"]);
+            }
         }
 
         private void CreateTooltipObject(out GameObject tooltipInstance, ref GameObject parent)
@@ -540,6 +578,38 @@ namespace DxR
             else
             {
                 throw new Exception("Cannot find legend prefab.");
+            }
+        }
+
+        public void SetVisibility(bool val)
+        {
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+            {
+                var child = gameObject.transform.GetChild(i).gameObject;
+                if (child != null && child.name != "Anchor")
+                {
+                    child.SetActive(val);
+                }
+            }
+        }
+
+        public void SetDistanceVisibility(bool val)
+        {
+            distanceVisibility = val;
+            if((distanceVisibility && gazeVisibility) != currentVisibility)
+            {
+                currentVisibility = distanceVisibility && gazeVisibility;
+                SetVisibility(currentVisibility);
+            }
+        }
+
+        public void SetGazeVisibility(bool val)
+        {
+            gazeVisibility = val;
+            if ((distanceVisibility && gazeVisibility) != currentVisibility)
+            {
+                currentVisibility = distanceVisibility && gazeVisibility;
+                SetVisibility(currentVisibility);
             }
         }
     }

@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65696092219258590}
   - component: {fileID: 23174429617876782}
   - component: {fileID: 114309421020136066}
-  - component: {fileID: 114459358348252498}
+  - component: {fileID: 114449437781120624}
   m_Layer: 0
   m_Name: Anchor
   m_TagString: Untagged
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1346337909612740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.2, y: -0.2, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4641261421857750}
@@ -147,7 +147,7 @@ MonoBehaviour:
   SmoothPositionLerpRatio: 0.5
   SmoothRotationLerpRatio: 0.5
   SmoothScaleLerpRatio: 0.5
---- !u!114 &114459358348252498
+--- !u!114 &114449437781120624
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -155,15 +155,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1818598920651874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbad991a9894486418e4988222483ef8, type: 3}
+  m_Script: {fileID: 11500000, guid: 16003f8fe59d6e34ba75aa35b6a3496a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DefaultGazeDistance: 1
-  PlaceParentOnTap: 1
-  ParentGameObjectToPlace: {fileID: 0}
-  IsBeingPlaced: 0
-  AllowMeshVisualizationControl: 1
-  UseColliderCenter: 0
 --- !u!114 &114714953331229554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -176,9 +170,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   specsFilename: DxRSpecs/template.json
-  sceneName: 
-  title: 
-  width: 0
-  height: 0
-  depth: 0
-  markType: 
