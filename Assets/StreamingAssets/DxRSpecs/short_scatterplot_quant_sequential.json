@@ -1,6 +1,4 @@
 {
-  "title": "Cars Data",
-  "description": "This displays a scatterplot with the color channel mapped to Weight_in_lbs - a quantitative data type.",
   "width": 500,
   "height": 500,
   "depth": 500,

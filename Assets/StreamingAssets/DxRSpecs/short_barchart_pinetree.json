@@ -4,54 +4,38 @@
   "depth": 500,
   "data": {
     "values": [
-     {"keyword": "A", "count": 28},
-      {"keyword": "B", "count": 55},
-      {"keyword": "C", "count": 43},
-      {"keyword": "D", "count": 91},
-      {"keyword": "E", "count": 81},
-      {"keyword": "F", "count": 53},
-      {"keyword": "G", "count": 19},
-      {"keyword": "H", "count": 87},
-      {"keyword": "I", "count": 52}
+     {"treetype": "A", "height": 28},
+      {"treetype": "B", "height": 55},
+      {"treetype": "C", "height": 43},
+      {"treetype": "D", "height": 91},
+      {"treetype": "E", "height": 81},
+      {"treetype": "F", "height": 53},
+      {"treetype": "G", "height": 19},
+      {"treetype": "H", "height": 87},
+      {"treetype": "I", "height": 52}
     ]
   },
   "mark": "pinetree",
   "encoding": {
     "x": {
-      "field": "keyword",
+      "field": "treetype",
       "type": "nominal",
       "axis": {
         "title": "Tree Type"
       }
     },
     "height": {
-      "field": "count",
+      "field": "height",
       "type": "quantitative",
-      "scale": {
-        "domain": [ 0, 100 ]
-      },
       "axis": {
-        "face": "front",
-        "orient": "left",
-        "title": "Tree Height (feet)",
-        "ticks": true,
-        "tickCount": 6,
-        "values": [
-          "0",
-          "20",
-          "40",
-          "60",
-          "80",
-          "100"
-        ],
-        "labels": true
+        "title": "Tree Height (feet)"
       }
     },
     "width": {
-      "value": 52.16
+      "value": 50
     },
     "depth": {
-      "value": 52.16
+      "value": 50
     }
   }
 }

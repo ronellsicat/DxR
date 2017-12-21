@@ -1,6 +1,4 @@
 {
-  "title": "Bar chart of keywords count in a book shelf",
-  "description": "This displays a bar chart using standard bar mark.",
   "width": 500,
   "height": 500,
   "depth": 500,

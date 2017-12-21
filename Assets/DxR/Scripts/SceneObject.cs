@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,14 +24,14 @@ namespace DxR
         public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;
 
-        public string sceneName;    // Name of scene.
-        public string title;        // Title of scene displayed.
-        public float width;         // Width of scene in millimeters.
-        public float height;        // Heigh of scene in millimeters.
-        public float depth;         // Depth of scene in millimeters.
+        string sceneName;    // Name of scene.
+        string title;        // Title of scene displayed.
+        float width;         // Width of scene in millimeters.
+        float height;        // Heigh of scene in millimeters.
+        float depth;         // Depth of scene in millimeters.
 
         public Data data;           // Data object.
-        public string markType;     // Type or name of mark used in scene.
+        string markType;     // Type or name of mark used in scene.
         
         private GameObject sceneRoot = null;
         private GameObject markPrefab = null;

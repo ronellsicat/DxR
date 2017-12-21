@@ -1,6 +1,4 @@
 {
-  "title": "Field Data",
-  "description": "This displays a 3D glyph plot.",
   "width": 500,
   "height": 500,
   "depth":  500,
@@ -45,6 +43,7 @@
       "type": "quantitative",
       "scale": {
         "type": "sequential",
+        "domain": ["0", "5"],
         "range": [ "#fef0d9", "#b30000" ]
       },
       "legend": {
