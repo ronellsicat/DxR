@@ -148,6 +148,79 @@ namespace DxR
             ConstructLegends(sceneSpecs, ref channelEncodings, ref sceneRoot);
 
             ConstructAnchor(sceneSpecs, ref sceneRoot);
+
+            ConstructPortals(sceneSpecs, ref sceneRoot);
+        }
+
+        private void ConstructPortals(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        {
+            if (sceneSpecs["portals"] == null) return;
+
+            JSONArray values = (sceneSpecs["portals"]["values"] == null) ? new JSONArray() :
+                sceneSpecs["portals"]["values"].AsArray;
+
+            if(sceneSpecs["portals"]["scheme"] != null)
+            {
+                // TODO: Load scheme contents (in local file Assets/DxR/Resources/PortalSchemes/ into values array.
+            }
+
+            GameObject portalPrefab = Resources.Load("Portal/Portal", typeof(GameObject)) as GameObject;
+            if (portalPrefab == null)
+            {
+                throw new Exception("Cannot load Portal prefab from Assets/DxR/Resources/Portal/Portal.prefab");
+            }
+            else if (verbose)
+            {
+                Debug.Log("Loaded portal prefab");
+            }
+
+            foreach (JSONNode portalSpec in values)
+            {
+                Debug.Log("Portal spec: " + portalSpec.ToString());
+
+                ConstructPortal(portalSpec, portalPrefab, ref sceneRoot);
+            }
+        }
+
+        private void ConstructPortal(JSONNode portalSpec, GameObject portalPrefab, ref GameObject parent)
+        {
+            GameObject portalInstance = Instantiate(portalPrefab, parent.transform.position,
+                        parent.transform.rotation, parent.transform);
+
+            Vector3 localPos = Vector3.zero;
+            Vector3 localRot = Vector3.zero;
+
+            if(portalSpec["x"] != null)
+            {
+                localPos.x = portalSpec["x"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            }
+
+            if (portalSpec["y"] != null)
+            {
+                localPos.y = portalSpec["y"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            }
+
+            if (portalSpec["z"] != null)
+            {
+                localPos.z = portalSpec["z"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            }
+
+            if (portalSpec["xrot"] != null)
+            {
+                localRot.x = portalSpec["xrot"].AsFloat;
+            }
+
+            if (portalSpec["yrot"] != null)
+            {
+                localRot.y = portalSpec["yrot"].AsFloat;
+            }
+            if (portalSpec["zrot"] != null)
+            {
+                localRot.z = portalSpec["zrot"].AsFloat;
+            }
+
+            portalInstance.transform.localPosition = localPos;
+            portalInstance.transform.localEulerAngles = localRot;
         }
 
         private void ConstructAnchor(JSONNode sceneSpecs, ref GameObject sceneRoot)

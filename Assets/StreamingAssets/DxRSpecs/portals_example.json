@@ -1,0 +1,43 @@
+{
+  "title": "Cars Data",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": {
+    "url": "DxRData/cars.json" 
+  },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "Displacement",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    "tooltip": {
+      "field": "Name",
+      "type": "nominal"
+    }
+  },
+  "portals": {
+    "values": [
+      {
+        "x": 3000,
+        "yrot": -90
+      },
+      {
+        "z": -3000
+      }
+    ]
+  }
+}
