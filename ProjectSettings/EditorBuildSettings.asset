@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DxRExamples/template.unity
-    guid: 39042e7a7f24e1b4f94737a5d70fbb63
+    path: Assets/DxRExamples/barchart_book.unity
+    guid: e70a5cb7dd70cce4091a2e66e7aac558

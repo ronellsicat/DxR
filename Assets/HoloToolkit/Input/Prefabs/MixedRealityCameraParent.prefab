@@ -320,7 +320,7 @@ Transform:
   m_GameObject: {fileID: 1850730992894404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6025952, y: 0.9401589, z: 0.99}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4587520633816736}
   - {fileID: 4931155170010354}
@@ -504,7 +504,7 @@ Camera:
   m_GameObject: {fileID: 1372541880982678}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -526,7 +526,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -538,8 +538,8 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1586147040494190}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -667,6 +667,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FloorQuad: {fileID: 1520281459093612, guid: 08d25ccfbbc595b4a820c7edd551d095, type: 2}
   boundaryHeight: 10
+  opaqueTrackingSpaceType: 1
+  transparentTrackingSpaceType: 0
+  renderFloor: 1
+  renderBoundary: 1
 --- !u!114 &114225625019075894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -731,7 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NearClipPlane_OpaqueDisplay: 0.1
-  CameraClearFlags_OpaqueDisplay: 2
+  CameraClearFlags_OpaqueDisplay: 1
   BackgroundColor_OpaqueDisplay: {r: 0, g: 0, b: 0, a: 1}
   OpaqueQualityLevel: 5
   NearClipPlane_TransparentDisplay: 0.85
@@ -770,8 +774,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimateControllerModel: 1
-  LeftControllerOverride: {fileID: 0}
-  RightControllerOverride: {fileID: 0}
+  AlwaysUseAlternateLeftModel: 0
+  AlwaysUseAlternateRightModel: 0
+  AlternateLeftController: {fileID: 1097318689274706, guid: 869d340c69dbcef459070c1a159d38ac,
+    type: 2}
+  AlternateRightController: {fileID: 1097318689274706, guid: 869d340c69dbcef459070c1a159d38ac,
+    type: 2}
   TouchpadTouchedOverride: {fileID: 0}
   GLTFMaterial: {fileID: 2100000, guid: 2ac78523d661e954c83d799f582b22e8, type: 2}
 --- !u!114 &114755176645041546
@@ -805,6 +813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bc175d33f66e6647aabac1b65e7e632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HorizontalStrafe: 1
+  ForwardMovement: 2
+  HorizontalRotation: 3
+  VerticalRotation: 4
   LeftThumbstickX: CONTROLLER_LEFT_STICK_HORIZONTAL
   LeftThumbstickY: CONTROLLER_LEFT_STICK_VERTICAL
   RightThumbstickX: CONTROLLER_RIGHT_STICK_HORIZONTAL
@@ -816,6 +828,7 @@ MonoBehaviour:
   StrafeAmount: 0.5
   teleportMarker: {fileID: 1503526479864244, guid: 10d95b99055c6ad40b735cc8b3593745,
     type: 2}
+  useCustomMapping: 0
 --- !u!114 &114828096048444974
 MonoBehaviour:
   m_ObjectHideFlags: 1
