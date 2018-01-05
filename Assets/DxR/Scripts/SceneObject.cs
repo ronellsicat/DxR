@@ -19,7 +19,7 @@ namespace DxR
         private bool verbose = true;
         public static string UNDEFINED = "undefined";
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Each unit in the specs is 1 mm.
-        public static float DEFAULT_VIS_DIMS = 300.0f;
+        public static float DEFAULT_VIS_DIMS = 500.0f;
 
         public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;

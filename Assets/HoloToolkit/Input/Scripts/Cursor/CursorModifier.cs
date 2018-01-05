@@ -30,7 +30,7 @@ namespace HoloToolkit.Unity.InputModule
                  "instead of the targeted object's normal at point of contact.")]
         public bool UseGazeBasedNormal = false;
 
-        [Tooltip("Should the cursor be hidding when this object is focused.")]
+        [Tooltip("Should the cursor be hiding when this object is focused.")]
         public bool HideCursorOnFocus = false;
 
         [Tooltip("Cursor animation parameters to set when this object is focused. Leave empty for none.")]
@@ -78,7 +78,8 @@ namespace HoloToolkit.Unity.InputModule
         {
             Quaternion rotation;
 
-            Vector3 forward = UseGazeBasedNormal ? -cursor.Pointer.Ray.direction : HostTransform.rotation * CursorNormal;
+            RayStep lastStep = cursor.Pointer.Rays[cursor.Pointer.Rays.Length - 1];
+            Vector3 forward = UseGazeBasedNormal ? -lastStep.direction : HostTransform.rotation * CursorNormal;
 
             // Determine the cursor forward
             if (forward.magnitude > 0)

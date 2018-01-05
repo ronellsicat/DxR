@@ -154,7 +154,7 @@ namespace DxR
 
             string inferResults = sceneSpecs.ToString();
             string filename = "Assets/StreamingAssets/" + sceneSpecsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
-            WriteStringToFile(inferResults, filename);
+ //           WriteStringToFile(inferResults, filename);
         }
         
         private void InferLegendSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs)
