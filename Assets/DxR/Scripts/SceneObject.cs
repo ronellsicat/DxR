@@ -23,6 +23,7 @@ namespace DxR
 
         public string specsFilename = "DxRData/example.json";
         public JSONNode sceneSpecs;
+        public bool enableGUI = true;
 
         string sceneName;    // Name of scene.
         string title;        // Title of scene displayed.
