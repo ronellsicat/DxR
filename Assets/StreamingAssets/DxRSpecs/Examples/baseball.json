@@ -1,0 +1,34 @@
+{
+  "title": "Cars Data",
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": {
+    "url": "DxRData/cars.json" 
+  },
+  "mark": "baseball",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "axis": "none"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative",
+      "axis": "none"
+    },
+    "z": {
+      "field": "Displacement",
+      "type": "quantitative",
+      "axis": "none"
+    },
+    "size": {
+      "value": 20
+    },
+    "tooltip": {
+      "field": "Name",
+      "type": "nominal"
+    }
+  }
+}
