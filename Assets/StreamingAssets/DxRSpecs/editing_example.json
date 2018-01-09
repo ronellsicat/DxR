@@ -18,13 +18,5 @@
       "field": "Origin",
       "type": "nominal"
     }
-  },
-  "anchor": {
-    "placement": "tapToPlace",
-    "visibility": {
-      "gazeToggle": true,
-      "distanceToggleMin": 2000,
-      "distanceToggleMax": 3000
-    }
   }
 }

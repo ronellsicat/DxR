@@ -774,8 +774,12 @@ namespace SimpleJSON
                 {
                     string value = values[j];
                     value = value.TrimStart(TRIM_CHARS).TrimEnd(TRIM_CHARS).Replace("\\", "");
-                   
-                    obj.Add(header[j], new JSONString(value));
+                    float floatValue = 0.0f;
+                    if(float.TryParse(value, out floatValue)) {
+                        obj.Add(header[j], new JSONNumber(floatValue));
+                    } else {
+                        obj.Add(header[j], new JSONString(value));
+                    }
                 }
                
                 output.Add(obj);

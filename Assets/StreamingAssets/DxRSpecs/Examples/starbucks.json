@@ -1,0 +1,33 @@
+{
+  "title": "Starbuck Food",
+  "description":  "This displays glyphs that can be manually placed on physical referrents.",
+  "data": { "url": "DxRData/starbucks-example.csv" },
+  "mark": "point",
+  "encoding": {
+    "x": {
+      "field": "PosX",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "PosY",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Price",
+      "type": "quantitative"
+    },
+    "size": {
+      "field": "Calories",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ "290", "390" ],
+        "range": [ "10", "50" ]
+      }
+    },
+    "tooltip": {
+      "field": "Calories",
+      "type": "quantitative"
+    }
+  }
+ }
