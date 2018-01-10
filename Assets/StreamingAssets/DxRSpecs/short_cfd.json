@@ -1,10 +1,10 @@
 {
   "title": "Field Data",
-  "width": 500,
-  "height": 500,
-  "depth":  500,
+  "width": 800,
+  "height": 800,
+  "depth":  800,
   "data": { "url": "DxRData/cfd.json" },
-  "mark": "paperplane",
+  "mark": "arrow",
   "encoding": {
     "x": {
       "field": "x",
@@ -45,14 +45,17 @@
         "type": "none"
       }
     },
-    "size": {
+    "length": {
       "field": "vmag",
       "type": "quantitative",
       "scale": {
         "type": "linear",
         "domain": [ "0", "1" ],
-        "range": [ "0", "30" ]
+        "range": [ "0", "50" ]
       }
+    },
+    "radius": {
+      "value": 15
     },
     "color": {
       "field": "vmag",

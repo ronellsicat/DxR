@@ -10,10 +10,6 @@
       "field": "Miles_per_Gallon",
       "type": "quantitative"
     },
-    "z": {
-      "field": "Displacement",
-      "type": "quantitative"
-    },
     "color": {
       "field": "Origin",
       "type": "nominal"

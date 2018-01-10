@@ -25,15 +25,14 @@
         "range": [ "#1a9641", "#ffffbf", "#d7191c" ]
       }
     },
-    "size": {
+    "width": {
       "field": "Calories",
       "type": "quantitative",
       "scale": {
         "type": "linear",
         "domain": [ "120", "400" ],
         "range": [ "20", "50" ]
-      },
-      "legend": "none"
+      }
     },
     "tooltip": {
       "field": "Calories",
