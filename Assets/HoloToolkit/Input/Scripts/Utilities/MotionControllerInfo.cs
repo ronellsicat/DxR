@@ -2,13 +2,10 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using UnityEngine;
-
-#if UNITY_WSA
 #if UNITY_2017_2_OR_NEWER
 using UnityEngine.XR.WSA.Input;
 #else
 using UnityEngine.VR.WSA.Input;
-#endif
 #endif
 
 namespace HoloToolkit.Unity.InputModule
@@ -21,7 +18,7 @@ namespace HoloToolkit.Unity.InputModule
     {
         public readonly GameObject ControllerParent;
 
-#if UNITY_WSA && UNITY_2017_2_OR_NEWER
+#if UNITY_2017_2_OR_NEWER
         public readonly InteractionSourceHandedness Handedness;
 #endif
 
@@ -70,13 +67,13 @@ namespace HoloToolkit.Unity.InputModule
         private double lastSelectPressedAmount;
 
         public MotionControllerInfo(GameObject controllerParent
-#if UNITY_WSA && UNITY_2017_2_OR_NEWER
+#if UNITY_2017_2_OR_NEWER
             , InteractionSourceHandedness handedness
 #endif
             )
         {
             ControllerParent = controllerParent;
-#if UNITY_WSA && UNITY_2017_2_OR_NEWER
+#if UNITY_2017_2_OR_NEWER
             Handedness = handedness;
 #endif
         }
