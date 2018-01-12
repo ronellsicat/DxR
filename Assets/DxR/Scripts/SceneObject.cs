@@ -99,6 +99,11 @@ namespace DxR
             }
         }
 
+        public void TestUI()
+        {
+            Debug.Log("Test ui");
+        }
+
         // Infer (raw JSON specs -> full JSON specs): 
         // automatically fill in missing specs by inferrence (informed by marks and data type).
         private void Infer(Data data, ref JSONNode sceneSpecs)

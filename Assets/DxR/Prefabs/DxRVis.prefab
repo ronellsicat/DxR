@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4330225958459428}
-  - component: {fileID: 114714953331229554}
+  - component: {fileID: 114130376466153560}
   m_Layer: 0
   m_Name: DxRVis
-  m_TagString: Untagged
+  m_TagString: DxRVis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,6 +127,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114130376466153560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346337909612740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2020ba104250654bb25fa1139ee48f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  specsFilename: DxRSpecs/example.json
+  enableGUI: 1
 --- !u!114 &114309421020136066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,15 +171,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16003f8fe59d6e34ba75aa35b6a3496a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114714953331229554
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1346337909612740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2020ba104250654bb25fa1139ee48f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  specsFilename: DxRSpecs/template.json
