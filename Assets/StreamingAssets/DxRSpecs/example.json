@@ -1,13 +1,13 @@
 {
   "data": { "url": "DxRData/cars.json" },
-  "mark": "point",
+  "mark": "rect",
   "encoding": {
     "x": {
       "field": "Horsepower",
       "type": "quantitative"
     },
     "y": {
-      "field": "Miles_per_Gallon",
+      "field": "Displacement",
       "type": "quantitative"
     },
     "color": {

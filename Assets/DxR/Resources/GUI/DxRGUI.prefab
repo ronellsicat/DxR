@@ -4799,8 +4799,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114611815673000542}
   m_HandleRect: {fileID: 224989185838523354}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.5495666
+  m_Value: 0.99999976
+  m_Size: 0.54956657
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6303,7 +6303,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114813772261549308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: UpdateVisFromGUISpecs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114162602043070784
@@ -11494,7 +11505,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 224215612150559528}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.49016657
+  m_Size: 0.49016663
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18487,8 +18498,8 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400783857174994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children:
   - {fileID: 224659105640820018}
@@ -18510,7 +18521,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.64, y: 0}
+  m_AnchoredPosition: {x: -0.44, y: 0.2}
   m_SizeDelta: {x: 330, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224658536365849292

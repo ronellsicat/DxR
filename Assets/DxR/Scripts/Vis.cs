@@ -21,17 +21,17 @@ namespace DxR
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Each unit in the specs is 1 mm.
         public static float DEFAULT_VIS_DIMS = 500.0f;
 
-        public string specsFilename = "DxRSpecs/example.json";
-        public JSONNode visSpecs;
+        public string visSpecsURL = "DxRSpecs/example.json";
+        public JSONNode visSpecs;           // This is synced w/ GUI and text editor.
+        public JSONNode visSpecsInferred;   // This is synced w/ actual vis and used for construction.
         public bool enableGUI = true;
 
-        string sceneName;    // Name of scene.
         string title;        // Title of scene displayed.
         float width;         // Width of scene in millimeters.
         float height;        // Heigh of scene in millimeters.
         float depth;         // Depth of scene in millimeters.
 
-        public Data data;           // Data object.
+        public Data data;    // Data object.
         string markType;     // Type or name of mark used in scene.
         
         private GameObject sceneRoot = null;
@@ -46,90 +46,119 @@ namespace DxR
 
         void Start()
         {
-
             sceneRoot = gameObject;
 
-            Parse(specsFilename, out visSpecs);
+            UpdateSpecs();
+        }
+
+        private void UpdateSpecs()
+        {
+            DeleteAll();
+
+            Parse(visSpecsURL, out visSpecs);
 
             Initialize(ref visSpecs);
 
             Infer(data, ref visSpecs);
-            
+
             Construct(visSpecs, ref sceneRoot);
         }
-        
+
+        private void DeleteAll()
+        {
+            foreach (Transform child in sceneRoot.transform)
+            {
+                if(child.tag != "Anchor" && child.tag != "DxRGUI")
+                {
+                    GameObject.Destroy(child.gameObject);
+                }
+            }
+        }
+
         // Parse (JSON spec file (data file info in specs) -> expanded raw JSON specs): 
         // Read in the specs and data files to create expanded raw JSON specs.
         // Filenames should be relative to Assets/StreamingAssets/ directory.
-        private void Parse(string specsFilename, out JSONNode sceneSpecs)
+        private void Parse(string visSpecsURL, out JSONNode visSpecs)
         {
             Parser parser = new Parser();
-            parser.Parse(specsFilename, out sceneSpecs);
+            parser.Parse(visSpecsURL, out visSpecs);
         }
 
         // Create initial objects that are required for inferrence.
         // The visSpecs should provide minimum required specs.
-        private void Initialize(ref JSONNode sceneSpecs)
+        private void Initialize(ref JSONNode visSpecs)
         {
             if (enableGUI)
             {
                 InitGUI();
             }
 
-            InferSceneObjectProperties(ref sceneSpecs);
+            InferSceneObjectProperties(ref visSpecs);
 
-            UpdateSceneObjectProperties(sceneSpecs);
+            UpdateSceneObjectProperties(visSpecs);
 
-            CreateDataObjectFromValues(sceneSpecs["data"]["values"], out data);
+            CreateDataObjectFromValues(visSpecs["data"]["values"], out data);
 
             CreateTooltipObject(out tooltipInstance, ref sceneRoot);
 
-            CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
+            CreateMarkObject(visSpecs["mark"].Value.ToString(), out markPrefab);
         }
 
         private void InitGUI()
         {
+            /*
             GameObject[] GUIInstances = GameObject.FindGameObjectsWithTag("DxRGUI");
-            if (GUIInstances != null)
+            if (GUIInstances.Length == 0)
             {
                 GameObject guiPrefab = Resources.Load("GUI/DxRGUI", typeof(GameObject)) as GameObject;
                 GameObject guiInstance = Instantiate(guiPrefab, sceneRoot.transform.position,
-                        sceneRoot.transform.rotation, sceneRoot.transform.parent);
+                        sceneRoot.transform.rotation, sceneRoot.transform);
+
+                guiInstance.GetComponent<GUI>().SetTargetVis(this);
+            }
+            */
+
+            // TODO: Update specs in GUI
+        }
+
+        private void InferSceneObjectProperties(ref JSONNode visSpecs)
+        {
+            if (visSpecs["width"] == null)
+            {
+                visSpecs.Add("width", new JSONNumber(DEFAULT_VIS_DIMS));
+            }
+
+            if (visSpecs["height"] == null)
+            {
+                visSpecs.Add("height", new JSONNumber(DEFAULT_VIS_DIMS));
+            }
+
+            if (visSpecs["depth"] == null)
+            {
+                visSpecs.Add("depth", new JSONNumber(DEFAULT_VIS_DIMS));
             }
         }
 
-        private void InferSceneObjectProperties(ref JSONNode sceneSpecs)
+        public void UpdateVisFromTextSpecs()
         {
-            if (sceneSpecs["width"] == null)
-            {
-                sceneSpecs.Add("width", new JSONNumber(DEFAULT_VIS_DIMS));
-            }
-
-            if (sceneSpecs["height"] == null)
-            {
-                sceneSpecs.Add("height", new JSONNumber(DEFAULT_VIS_DIMS));
-            }
-
-            if (sceneSpecs["depth"] == null)
-            {
-                sceneSpecs.Add("depth", new JSONNumber(DEFAULT_VIS_DIMS));
-            }
+            UpdateSpecs();
         }
 
-        public void TestUI()
+        public void UpdateVisFromGUISpecs()
         {
-            Debug.Log("Test ui");
+            Debug.Log("Update vis from GUI");
+            UpdateSpecs();
         }
 
         // Infer (raw JSON specs -> full JSON specs): 
         // automatically fill in missing specs by inferrence (informed by marks and data type).
-        private void Infer(Data data, ref JSONNode sceneSpecs)
+        private void Infer(Data data, ref JSONNode visSpecs)
         {
-            InferAnchorProperties(ref sceneSpecs);
+            InferAnchorProperties(ref visSpecs);
 
             if (markPrefab != null)
             {
-                markPrefab.GetComponent<Mark>().Infer(data, ref sceneSpecs, specsFilename);
+                markPrefab.GetComponent<Mark>().Infer(data, ref visSpecs, visSpecsURL);
             } else
             {
                 throw new Exception("Cannot perform inferrence without mark prefab loaded.");
@@ -137,12 +166,12 @@ namespace DxR
 
             // Update properties if needed - some properties, e.g., width, height, depth
             // may get changed based on inferrence.
-            UpdateSceneObjectProperties(sceneSpecs);
+            UpdateSceneObjectProperties(visSpecs);
         }
 
-        private void InferAnchorProperties(ref JSONNode sceneSpecs)
+        private void InferAnchorProperties(ref JSONNode visSpecs)
         {
-            JSONNode anchorSpecs = sceneSpecs["anchor"];
+            JSONNode anchorSpecs = visSpecs["anchor"];
             if (anchorSpecs != null && anchorSpecs.Value.ToString() == "none") return;
             JSONObject anchorSpecsObj = (anchorSpecs == null) ? new JSONObject() : anchorSpecs.AsObject;
             
@@ -156,33 +185,33 @@ namespace DxR
                 anchorSpecsObj.Add("visibility", new JSONString("always"));
             }
 
-            sceneSpecs.Add("anchor", anchorSpecsObj);
+            visSpecs.Add("anchor", anchorSpecsObj);
         }
 
         // Construct (full JSON specs -> working Vis): 
-        private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        private void Construct(JSONNode visSpecs, ref GameObject sceneRoot)
         {
-            CreateChannelEncodingObjects(sceneSpecs, out channelEncodings);
+            CreateChannelEncodingObjects(visSpecs, out channelEncodings);
 
             ConstructMarks(sceneRoot);
 
-            ConstructAxes(sceneSpecs, ref channelEncodings, ref sceneRoot);
+            ConstructAxes(visSpecs, ref channelEncodings, ref sceneRoot);
 
-            ConstructLegends(sceneSpecs, ref channelEncodings, ref sceneRoot);
+            ConstructLegends(visSpecs, ref channelEncodings, ref sceneRoot);
 
-            ConstructAnchor(sceneSpecs, ref sceneRoot);
+            ConstructAnchor(visSpecs, ref sceneRoot);
 
-            ConstructPortals(sceneSpecs, ref sceneRoot);
+            ConstructPortals(visSpecs, ref sceneRoot);
         }
 
-        private void ConstructPortals(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        private void ConstructPortals(JSONNode visSpecs, ref GameObject sceneRoot)
         {
-            if (sceneSpecs["portals"] == null) return;
+            if (visSpecs["portals"] == null) return;
 
-            JSONArray values = (sceneSpecs["portals"]["values"] == null) ? new JSONArray() :
-                sceneSpecs["portals"]["values"].AsArray;
+            JSONArray values = (visSpecs["portals"]["values"] == null) ? new JSONArray() :
+                visSpecs["portals"]["values"].AsArray;
 
-            if(sceneSpecs["portals"]["scheme"] != null)
+            if(visSpecs["portals"]["scheme"] != null)
             {
                 // TODO: Load scheme contents (in local file Assets/DxR/Resources/PortalSchemes/ into values array.
             }
@@ -246,14 +275,14 @@ namespace DxR
             portalInstance.transform.localEulerAngles = localRot;
         }
 
-        private void ConstructAnchor(JSONNode sceneSpecs, ref GameObject sceneRoot)
+        private void ConstructAnchor(JSONNode visSpecs, ref GameObject sceneRoot)
         {
-            if (sceneSpecs["anchor"] == null) return;
+            if (visSpecs["anchor"] == null) return;
 
             Anchor anchor = sceneRoot.transform.GetComponentInChildren<Anchor>();
             if(anchor != null)
             {
-                anchor.UpdateSpecs(sceneSpecs["anchor"]);
+                anchor.UpdateSpecs(visSpecs["anchor"]);
             }
         }
 
@@ -277,31 +306,26 @@ namespace DxR
             tooltipInstance.SetActive(false);            
         }
 
-        private void UpdateSceneObjectProperties(JSONNode sceneSpecs)
+        private void UpdateSceneObjectProperties(JSONNode visSpecs)
         {
-            if (sceneSpecs["name"] != null)
+            if (visSpecs["title"] != null)
             {
-                sceneName = sceneSpecs["name"].Value;
+                title = visSpecs["title"].Value;
             }
 
-            if (sceneSpecs["title"] != null)
+            if (visSpecs["width"] != null)
             {
-                title = sceneSpecs["title"].Value;
-            }
-
-            if (sceneSpecs["width"] != null)
-            {
-                width = sceneSpecs["width"].AsFloat;
+                width = visSpecs["width"].AsFloat;
             } 
 
-            if (sceneSpecs["height"] != null)
+            if (visSpecs["height"] != null)
             {
-                height = sceneSpecs["height"].AsFloat;
+                height = visSpecs["height"].AsFloat;
             }
 
-            if (sceneSpecs["depth"] != null)
+            if (visSpecs["depth"] != null)
             {
-                depth = sceneSpecs["depth"].AsFloat;
+                depth = visSpecs["depth"].AsFloat;
             }
         }
 
@@ -407,12 +431,12 @@ namespace DxR
             markPrefab.GetComponent<Mark>().markName = markNameLowerCase;
         }
 
-        private void CreateChannelEncodingObjects(JSONNode sceneSpecs, out List<ChannelEncoding> channelEncodings)
+        private void CreateChannelEncodingObjects(JSONNode visSpecs, out List<ChannelEncoding> channelEncodings)
         {
             channelEncodings = new List<ChannelEncoding>();
 
             // Go through each channel and create ChannelEncoding for each:
-            foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
+            foreach (KeyValuePair<string, JSONNode> kvp in visSpecs["encoding"].AsObject)
             {
                 ChannelEncoding channelEncoding = new ChannelEncoding();
 
@@ -549,13 +573,13 @@ namespace DxR
             }
         }
 
-        private void ConstructAxes(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
+        private void ConstructAxes(JSONNode visSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
         {
             // Go through each channel and create axis for each spatial / position channel:
             for (int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
             {
                 ChannelEncoding channelEncoding = channelEncodings[channelIndex];
-                JSONNode axisSpecs = sceneSpecs["encoding"][channelEncoding.channel]["axis"];
+                JSONNode axisSpecs = visSpecs["encoding"][channelEncoding.channel]["axis"];
                 if (axisSpecs != null && axisSpecs.Value.ToString() != "none" && 
                     (channelEncoding.channel == "x" || channelEncoding.channel == "y" || 
                     channelEncoding.channel == "z" || 
@@ -644,13 +668,13 @@ namespace DxR
             }
         }
         
-        private void ConstructLegends(JSONNode sceneSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
+        private void ConstructLegends(JSONNode visSpecs, ref List<ChannelEncoding> channelEncodings, ref GameObject sceneRoot)
         {
             // Go through each channel and create legend for color, shape, or size channels:
             for (int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
             {
                 ChannelEncoding channelEncoding = channelEncodings[channelIndex];
-                JSONNode legendSpecs = sceneSpecs["encoding"][channelEncoding.channel]["legend"];
+                JSONNode legendSpecs = visSpecs["encoding"][channelEncoding.channel]["legend"];
                 if (legendSpecs != null && legendSpecs.Value.ToString() != "none")
                 {
                     if (verbose)

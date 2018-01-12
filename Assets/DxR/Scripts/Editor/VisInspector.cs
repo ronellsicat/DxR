@@ -4,17 +4,17 @@ using UnityEditor;
 
 namespace DxR
 {
-    [CustomEditor(typeof(DxR.Vis))]
+    [CustomEditor(typeof(Vis))]
     public class VisInspector : Editor
     {
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();
 
-            DxR.Vis visObject = (DxR.Vis)target;
+            Vis visObject = (Vis)target;
             if (GUILayout.Button("Update Vis"))
             {
-                //visObject.BuildObject();
+                visObject.UpdateVisFromTextSpecs();
                 Debug.Log("Update Vis");
             }
         }

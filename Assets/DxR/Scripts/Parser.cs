@@ -16,28 +16,28 @@ namespace DxR
         ///  well as data file (if needed) and expand to a JSONNode scene specs with the 
         ///  data represented as a JSON object.
         /// </summary>
-        public void Parse(string specsFilename, out JSONNode sceneSpecs)
+        public void Parse(string specsFilename, out JSONNode visSpecs)
         {
-           sceneSpecs = JSON.Parse(GetStringFromFile(specsFilename));
+           visSpecs = JSON.Parse(GetStringFromFile(specsFilename));
 
-           ExpandDataSpecs(ref sceneSpecs);
+           ExpandDataSpecs(ref visSpecs);
         }
 
-        private void ExpandDataSpecs(ref JSONNode sceneSpecs)
+        private void ExpandDataSpecs(ref JSONNode visSpecs)
         {
-            if (sceneSpecs["data"]["url"] != null)
+            if (visSpecs["data"]["url"] != null)
             {
-                string dataFilename = sceneSpecs["data"]["url"];
+                string dataFilename = visSpecs["data"]["url"];
 
                 string ext = Path.GetExtension(dataFilename);
                 if (ext == ".json")
                 {
                     JSONNode valuesJSONNode = JSON.Parse(GetStringFromFile(dataFilename));
-                    sceneSpecs["data"].AsObject.Add("values", valuesJSONNode);
+                    visSpecs["data"].AsObject.Add("values", valuesJSONNode);
                 } else if(ext == ".csv")
                 {
                     JSONNode valuesJSONNode = JSON.ParseCSV(GetStringFromFile(dataFilename));
-                    sceneSpecs["data"].AsObject.Add("values", valuesJSONNode);
+                    visSpecs["data"].AsObject.Add("values", valuesJSONNode);
 ;               } else
                 {
                     throw new Exception("Cannot load file type" + ext);

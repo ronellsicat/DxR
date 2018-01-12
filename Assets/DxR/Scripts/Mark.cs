@@ -103,10 +103,10 @@ namespace DxR
             }
         }
 
-        public void Infer(Data data, ref JSONNode sceneSpecs, string sceneSpecsFilename)
+        public void Infer(Data data, ref JSONNode visSpecs, string visSpecsFilename)
         {
             // Go through each channel and infer the missing specs.
-            foreach (KeyValuePair<string, JSONNode> kvp in sceneSpecs["encoding"].AsObject)
+            foreach (KeyValuePair<string, JSONNode> kvp in visSpecs["encoding"].AsObject)
             {
                 ChannelEncoding channelEncoding = new ChannelEncoding();
 
@@ -133,34 +133,34 @@ namespace DxR
                         }
                     }
                     
-                    InferScaleSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                    InferScaleSpecsForChannel(ref channelEncoding, ref visSpecs, data);
                     
                     if (channelEncoding.channel == "x" || channelEncoding.channel == "y" ||
                         channelEncoding.channel == "z" || channelEncoding.channel == "width" ||
                         channelEncoding.channel == "height" || channelEncoding.channel == "depth")
                     {
-                        InferAxisSpecsForChannel(ref channelEncoding, ref sceneSpecs, data);
+                        InferAxisSpecsForChannel(ref channelEncoding, ref visSpecs, data);
                     }
 
                     if(channelEncoding.channel == "color" || channelEncoding.channel == "size" ||
                         channelEncoding.channel == "shape" || channelEncoding.channel == "opacity")
                     {
-                        InferLegendSpecsForChannel(ref channelEncoding, ref sceneSpecs);
+                        InferLegendSpecsForChannel(ref channelEncoding, ref visSpecs);
                     }
                 }
             }
 
-            InferMarkSpecificSpecs(ref sceneSpecs);
+            InferMarkSpecificSpecs(ref visSpecs);
 
-            string inferResults = sceneSpecs.ToString();
-            string filename = "Assets/StreamingAssets/" + sceneSpecsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
+            string inferResults = visSpecs.ToString();
+            string filename = "Assets/StreamingAssets/" + visSpecsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
             WriteStringToFile(inferResults, filename);
         }
         
-        private void InferLegendSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs)
+        private void InferLegendSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode visSpecs)
         {
             string channel = channelEncoding.channel;
-            JSONNode channelSpecs = sceneSpecs["encoding"][channel];
+            JSONNode channelSpecs = visSpecs["encoding"][channel];
             JSONNode legendSpecs = channelSpecs["legend"];
             if (legendSpecs != null && legendSpecs.Value.ToString() == "none") return;
 
@@ -207,12 +207,12 @@ namespace DxR
 
             if (legendSpecsObj["x"] == null)
             {
-                legendSpecsObj.Add("x", new JSONNumber(float.Parse(sceneSpecs["width"].Value.ToString())));
+                legendSpecsObj.Add("x", new JSONNumber(float.Parse(visSpecs["width"].Value.ToString())));
             }
 
             if (legendSpecsObj["y"] == null)
             {
-                legendSpecsObj.Add("y", new JSONNumber(float.Parse(sceneSpecs["height"].Value.ToString())));
+                legendSpecsObj.Add("y", new JSONNumber(float.Parse(visSpecs["height"].Value.ToString())));
             }
 
             if (legendSpecsObj["z"] == null)
@@ -225,13 +225,13 @@ namespace DxR
                 legendSpecsObj.Add("title", new JSONString("Legend: " + channelSpecs["field"]));
             }
             
-            sceneSpecs["encoding"][channelEncoding.channel].Add("legend", legendSpecsObj);
+            visSpecs["encoding"][channelEncoding.channel].Add("legend", legendSpecsObj);
         }
 
-        private void InferAxisSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
+        private void InferAxisSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode visSpecs, Data data)
         {
             string channel = channelEncoding.channel;
-            JSONNode channelSpecs = sceneSpecs["encoding"][channel];
+            JSONNode channelSpecs = visSpecs["encoding"][channel];
             JSONNode axisSpecs = channelSpecs["axis"];
             if (axisSpecs != null && axisSpecs.Value.ToString() == "none") return;
 
@@ -278,7 +278,7 @@ namespace DxR
             if(axisSpecsObj["values"] == null)
             {
                 JSONArray tickValues = new JSONArray();
-                JSONNode domain = sceneSpecs["encoding"][channelEncoding.channel]["scale"]["domain"];
+                JSONNode domain = visSpecs["encoding"][channelEncoding.channel]["scale"]["domain"];
                 JSONNode values = channelEncoding.fieldDataType == "quantitative" ? new JSONArray() : domain;
 
                 if (channelEncoding.fieldDataType == "quantitative" && 
@@ -316,7 +316,7 @@ namespace DxR
                 axisSpecsObj.Add("labels", new JSONBool(true));
             }
 
-            sceneSpecs["encoding"][channelEncoding.channel].Add("axis", axisSpecsObj);
+            visSpecs["encoding"][channelEncoding.channel].Add("axis", axisSpecsObj);
         }
 
         private float RoundNice(float num)
@@ -341,69 +341,69 @@ namespace DxR
         }
 
         // TODO: Expose this so it is very easy to add mark-specific rules.
-        private void InferMarkSpecificSpecs(ref JSONNode sceneSpecs)
+        private void InferMarkSpecificSpecs(ref JSONNode visSpecs)
         {
             if(markName == "bar" || markName == "rect")
             {
                 // Set size of bar or rect along dimension for type band or point.
                 
                 
-                if (sceneSpecs["encoding"]["x"] != null && sceneSpecs["encoding"]["width"] == null &&
-                    sceneSpecs["encoding"]["x"]["scale"]["type"] == "band")
+                if (visSpecs["encoding"]["x"] != null && visSpecs["encoding"]["width"] == null &&
+                    visSpecs["encoding"]["x"]["scale"]["type"] == "band")
                 {
-                    float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["x"]["scale"]);
+                    float bandwidth = ScaleBand.ComputeBandSize(visSpecs["encoding"]["x"]["scale"]);
                     JSONObject forceSizeValueObj = new JSONObject();
                     forceSizeValueObj.Add("value", new JSONNumber(bandwidth.ToString()));
-                    sceneSpecs["encoding"].Add("width", forceSizeValueObj);
+                    visSpecs["encoding"].Add("width", forceSizeValueObj);
                 }
 
-                if (sceneSpecs["encoding"]["y"] != null && sceneSpecs["encoding"]["height"] == null &&
-                    sceneSpecs["encoding"]["y"]["scale"]["type"] == "band")
+                if (visSpecs["encoding"]["y"] != null && visSpecs["encoding"]["height"] == null &&
+                    visSpecs["encoding"]["y"]["scale"]["type"] == "band")
                 {
-                    float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["y"]["scale"]);
+                    float bandwidth = ScaleBand.ComputeBandSize(visSpecs["encoding"]["y"]["scale"]);
                     JSONObject forceSizeValueObj = new JSONObject();
                     forceSizeValueObj.Add("value", new JSONNumber(bandwidth.ToString()));
-                    sceneSpecs["encoding"].Add("height", forceSizeValueObj);
+                    visSpecs["encoding"].Add("height", forceSizeValueObj);
                 }
 
-                if (sceneSpecs["encoding"]["z"] != null && sceneSpecs["encoding"]["depth"] == null &&
-                    sceneSpecs["encoding"]["z"]["scale"]["type"] == "band")
+                if (visSpecs["encoding"]["z"] != null && visSpecs["encoding"]["depth"] == null &&
+                    visSpecs["encoding"]["z"]["scale"]["type"] == "band")
                 {
-                    float bandwidth = ScaleBand.ComputeBandSize(sceneSpecs["encoding"]["z"]["scale"]);
+                    float bandwidth = ScaleBand.ComputeBandSize(visSpecs["encoding"]["z"]["scale"]);
                     JSONObject forceSizeValueObj = new JSONObject();
                     forceSizeValueObj.Add("value", new JSONNumber(bandwidth.ToString()));
-                    sceneSpecs["encoding"].Add("depth", forceSizeValueObj);
+                    visSpecs["encoding"].Add("depth", forceSizeValueObj);
                 }
 
-                if (sceneSpecs["encoding"]["width"] != null && sceneSpecs["encoding"]["width"]["value"] == null &&
-                    sceneSpecs["encoding"]["width"]["type"] == "quantitative" && sceneSpecs["encoding"]["xoffsetpct"] == null)
+                if (visSpecs["encoding"]["width"] != null && visSpecs["encoding"]["width"]["value"] == null &&
+                    visSpecs["encoding"]["width"]["type"] == "quantitative" && visSpecs["encoding"]["xoffsetpct"] == null)
                 {
                     JSONObject forceSizeValueObj = new JSONObject();
                     forceSizeValueObj.Add("value", new JSONNumber("0.5"));
-                    sceneSpecs["encoding"].Add("xoffsetpct", forceSizeValueObj);
+                    visSpecs["encoding"].Add("xoffsetpct", forceSizeValueObj);
                 }
 
-                if (sceneSpecs["encoding"]["height"] != null && sceneSpecs["encoding"]["height"]["value"] == null &&
-                    sceneSpecs["encoding"]["height"]["type"] == "quantitative" && sceneSpecs["encoding"]["yoffsetpct"] == null)
+                if (visSpecs["encoding"]["height"] != null && visSpecs["encoding"]["height"]["value"] == null &&
+                    visSpecs["encoding"]["height"]["type"] == "quantitative" && visSpecs["encoding"]["yoffsetpct"] == null)
                 {
                     JSONObject forceSizeValueObj = new JSONObject();
                     forceSizeValueObj.Add("value", new JSONNumber("0.5"));
-                    sceneSpecs["encoding"].Add("yoffsetpct", forceSizeValueObj);
+                    visSpecs["encoding"].Add("yoffsetpct", forceSizeValueObj);
                 }
 
-                if (sceneSpecs["encoding"]["depth"] != null && sceneSpecs["encoding"]["depth"]["value"] == null &&
-                   sceneSpecs["encoding"]["depth"]["type"] == "quantitative" && sceneSpecs["encoding"]["zoffsetpct"] == null)
+                if (visSpecs["encoding"]["depth"] != null && visSpecs["encoding"]["depth"]["value"] == null &&
+                   visSpecs["encoding"]["depth"]["type"] == "quantitative" && visSpecs["encoding"]["zoffsetpct"] == null)
                 {
                     JSONObject forceSizeValueObj = new JSONObject();
                     forceSizeValueObj.Add("value", new JSONNumber("0.5"));
-                    sceneSpecs["encoding"].Add("zoffsetpct", forceSizeValueObj);
+                    visSpecs["encoding"].Add("zoffsetpct", forceSizeValueObj);
                 }
             }
         }
 
-        private void InferScaleSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode sceneSpecs, Data data)
+        private void InferScaleSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode visSpecs, Data data)
         {
-            JSONNode channelSpecs = sceneSpecs["encoding"][channelEncoding.channel];
+            JSONNode channelSpecs = visSpecs["encoding"][channelEncoding.channel];
             JSONNode scaleSpecs = channelSpecs["scale"];
             JSONObject scaleSpecsObj = (scaleSpecs == null) ? new JSONObject() : scaleSpecs.AsObject;
             
@@ -416,7 +416,7 @@ namespace DxR
             {
                 if (scaleSpecs["domain"] == null)
                 {
-                    InferDomain(channelEncoding, sceneSpecs, ref scaleSpecsObj, data);
+                    InferDomain(channelEncoding, visSpecs, ref scaleSpecsObj, data);
                 }
 
                 if (scaleSpecs["padding"] != null)
@@ -439,7 +439,7 @@ namespace DxR
 
                 if (scaleSpecs["range"] == null)
                 {
-                    InferRange(channelEncoding, sceneSpecs, ref scaleSpecsObj);
+                    InferRange(channelEncoding, visSpecs, ref scaleSpecsObj);
                 }
 
                 if (channelEncoding.channel == "color" && !scaleSpecsObj["range"].IsArray && scaleSpecsObj["scheme"] == null)
@@ -448,7 +448,7 @@ namespace DxR
                 }
             }
 
-            sceneSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
+            visSpecs["encoding"][channelEncoding.channel].Add("scale", scaleSpecsObj);
         }
 
         private void InferColorScheme(ChannelEncoding channelEncoding, ref JSONObject scaleSpecsObj)
@@ -479,7 +479,7 @@ namespace DxR
         }
 
         // TODO: Fix range computation to consider paddingOUter!!!
-        private void InferRange(ChannelEncoding channelEncoding, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj)
+        private void InferRange(ChannelEncoding channelEncoding, JSONNode visSpecs, ref JSONObject scaleSpecsObj)
         {
             JSONArray range = new JSONArray();
 
@@ -490,12 +490,12 @@ namespace DxR
 
                 if(scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(sceneSpecs["width"]));                    
+                    range.Add(new JSONString(visSpecs["width"]));                    
                 } else
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
-                    sceneSpecs["width"] = rangeSize;
+                    visSpecs["width"] = rangeSize;
                 }
                 
             } else if(channel == "y" || channel == "height")
@@ -503,26 +503,26 @@ namespace DxR
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(sceneSpecs["height"]));                   
+                    range.Add(new JSONString(visSpecs["height"]));                   
                 }
                 else
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
-                    sceneSpecs["height"] = rangeSize;
+                    visSpecs["height"] = rangeSize;
                 }
             } else if(channel == "z" || channel == "depth")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(sceneSpecs["depth"]));                   
+                    range.Add(new JSONString(visSpecs["depth"]));                   
                 }
                 else
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
-                    sceneSpecs["depth"] = rangeSize;
+                    visSpecs["depth"] = rangeSize;
                 }
             } else if(channel == "opacity")
             {
@@ -570,12 +570,12 @@ namespace DxR
             }
         }
 
-        private void InferDomain(ChannelEncoding channelEncoding, JSONNode sceneSpecs, ref JSONObject scaleSpecsObj, Data data)
+        private void InferDomain(ChannelEncoding channelEncoding, JSONNode visSpecs, ref JSONObject scaleSpecsObj, Data data)
         {
             string sortType = "ascending";
-            if(sceneSpecs["encoding"][channelEncoding.channel]["sort"] != null)
+            if(visSpecs["encoding"][channelEncoding.channel]["sort"] != null)
             {
-                sortType = sceneSpecs["encoding"][channelEncoding.channel]["sort"].Value.ToString();
+                sortType = visSpecs["encoding"][channelEncoding.channel]["sort"].Value.ToString();
             }
 
             string channel = channelEncoding.channel;
