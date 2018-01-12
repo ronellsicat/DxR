@@ -14,15 +14,15 @@ namespace DxR
     /// Each scene gets its own scene root (sceneRoot) GameObject that gets created 
     /// under the root GameObject on which this component is attached to.
      /// </summary>
-    public class SceneObject : MonoBehaviour
+    public class Vis : MonoBehaviour
     {
         private bool verbose = true;
         public static string UNDEFINED = "undefined";
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Each unit in the specs is 1 mm.
         public static float DEFAULT_VIS_DIMS = 500.0f;
 
-        public string specsFilename = "DxRData/example.json";
-        public JSONNode sceneSpecs;
+        public string specsFilename = "DxRSpecs/example.json";
+        public JSONNode visSpecs;
         public bool enableGUI = true;
 
         string sceneName;    // Name of scene.
@@ -46,15 +46,16 @@ namespace DxR
 
         void Start()
         {
+
             sceneRoot = gameObject;
 
-            Parse(specsFilename, out sceneSpecs);
-            
-            Initialize(ref sceneSpecs);
+            Parse(specsFilename, out visSpecs);
 
-            Infer(data, ref sceneSpecs);
+            Initialize(ref visSpecs);
+
+            Infer(data, ref visSpecs);
             
-            Construct(sceneSpecs, ref sceneRoot);
+            Construct(visSpecs, ref sceneRoot);
         }
         
         // Parse (JSON spec file (data file info in specs) -> expanded raw JSON specs): 
@@ -67,9 +68,14 @@ namespace DxR
         }
 
         // Create initial objects that are required for inferrence.
-        // The sceneSpecs should provide minimum required specs.
+        // The visSpecs should provide minimum required specs.
         private void Initialize(ref JSONNode sceneSpecs)
         {
+            if (enableGUI)
+            {
+                InitGUI();
+            }
+
             InferSceneObjectProperties(ref sceneSpecs);
 
             UpdateSceneObjectProperties(sceneSpecs);
@@ -79,6 +85,17 @@ namespace DxR
             CreateTooltipObject(out tooltipInstance, ref sceneRoot);
 
             CreateMarkObject(sceneSpecs["mark"].Value.ToString(), out markPrefab);
+        }
+
+        private void InitGUI()
+        {
+            GameObject[] GUIInstances = GameObject.FindGameObjectsWithTag("DxRGUI");
+            if (GUIInstances != null)
+            {
+                GameObject guiPrefab = Resources.Load("GUI/DxRGUI", typeof(GameObject)) as GameObject;
+                GameObject guiInstance = Instantiate(guiPrefab, sceneRoot.transform.position,
+                        sceneRoot.transform.rotation, sceneRoot.transform.parent);
+            }
         }
 
         private void InferSceneObjectProperties(ref JSONNode sceneSpecs)
@@ -142,7 +159,7 @@ namespace DxR
             sceneSpecs.Add("anchor", anchorSpecsObj);
         }
 
-        // Construct (full JSON specs -> working SceneObject): 
+        // Construct (full JSON specs -> working Vis): 
         private void Construct(JSONNode sceneSpecs, ref GameObject sceneRoot)
         {
             CreateChannelEncodingObjects(sceneSpecs, out channelEncodings);
@@ -198,17 +215,17 @@ namespace DxR
 
             if(portalSpec["x"] != null)
             {
-                localPos.x = portalSpec["x"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+                localPos.x = portalSpec["x"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             }
 
             if (portalSpec["y"] != null)
             {
-                localPos.y = portalSpec["y"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+                localPos.y = portalSpec["y"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             }
 
             if (portalSpec["z"] != null)
             {
-                localPos.z = portalSpec["z"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+                localPos.z = portalSpec["z"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             }
 
             if (portalSpec["xrot"] != null)
@@ -505,7 +522,7 @@ namespace DxR
 
             foreach (ChannelEncoding channelEncoding in channelEncodings)
             {
-                if (channelEncoding.value != DxR.SceneObject.UNDEFINED)
+                if (channelEncoding.value != DxR.Vis.UNDEFINED)
                 {
                     markComponent.SetChannelValue(channelEncoding.channel, channelEncoding.value);
                 }

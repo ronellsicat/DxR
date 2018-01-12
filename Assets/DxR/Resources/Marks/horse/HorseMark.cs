@@ -63,7 +63,7 @@ namespace DxR
         // Sets the diameter of the point to the value.
         private void SetSize(string value)
         {
-            float size = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float size = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             gameObject.transform.localScale = new Vector3(size, size, size);
         }
     }

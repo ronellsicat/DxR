@@ -27,7 +27,7 @@ public class Axis : MonoBehaviour {
 
     public void SetTitlePadding(string titlePadding)
     {
-        titleOffset = titleOffset + (float.Parse(titlePadding) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR);
+        titleOffset = titleOffset + (float.Parse(titlePadding) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR);
     }
 
     // TODO: Create ticks marks and tick labels using mark and channel metaphor, 
@@ -70,7 +70,7 @@ public class Axis : MonoBehaviour {
     
     internal void SetLength(float length)
     {
-        length = length * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+        length = length * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
 
         Transform lineTransform = gameObject.transform.Find("AxisLine");
 
@@ -133,7 +133,7 @@ public class Axis : MonoBehaviour {
         {
             string domainValue = axisSpecs["values"][i].Value;
 
-            float pos = float.Parse(scale.ApplyScale(domainValue)) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float pos = float.Parse(scale.ApplyScale(domainValue)) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
 
             string label = showTickLabels ? domainValue : "";
             AddTick(axisSpecs["face"], axisSpecs["orient"], pos, label, tickPrefab, parent);

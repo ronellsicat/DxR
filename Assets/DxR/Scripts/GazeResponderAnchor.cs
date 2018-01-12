@@ -16,14 +16,14 @@ namespace DxR
         bool isGazeToggleEnabled = false;
         bool visibility = true;
 
-        SceneObject sceneObject = null;
+        Vis sceneObject = null;
 
         private void Start()
         {
-            sceneObject = gameObject.transform.parent.GetComponent<SceneObject>();
+            sceneObject = gameObject.transform.parent.GetComponent<Vis>();
             if (sceneObject == null)
             {
-                throw new System.Exception("Cannot load SceneObject instance of GazeResponderAnchor.");
+                throw new System.Exception("Cannot load Vis instance of GazeResponderAnchor.");
             }
         }
 

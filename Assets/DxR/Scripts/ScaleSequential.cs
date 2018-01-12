@@ -7,7 +7,7 @@ namespace DxR
 {
     class ScaleSequential : Scale
     {
-        string rangeType = DxR.SceneObject.UNDEFINED;
+        string rangeType = DxR.Vis.UNDEFINED;
 
         public ScaleSequential(JSONNode scaleSpecs) : base(scaleSpecs)
         {

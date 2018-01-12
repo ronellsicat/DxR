@@ -12,15 +12,15 @@ namespace DxR
         float distanceToggleMinInMeters = 0.0f;
         float distanceToggleMaxInMeters = 0.0f;
 
-        SceneObject sceneObject = null;
+        Vis visObject = null;
 
         // Use this for initialization
         void Start()
         {
-            sceneObject = gameObject.transform.parent.GetComponent<SceneObject>();
-            if(sceneObject == null)
+            visObject = gameObject.transform.parent.GetComponent<Vis>();
+            if(visObject == null)
             {
-                throw new System.Exception("Cannot load SceneObject instance of anchor.");
+                throw new System.Exception("Cannot load Vis instance of anchor.");
             }
         }
 
@@ -48,9 +48,9 @@ namespace DxR
 
         private void SetSceneObjectVisibility(bool val)
         {
-            if(sceneObject)
+            if(visObject)
             {
-                sceneObject.SetDistanceVisibility(val);
+                visObject.SetDistanceVisibility(val);
             }
         }
 
@@ -95,7 +95,7 @@ namespace DxR
                     if(visSpecs["distanceToggleMin"] != null)
                     {
                         distToggleMinProvided = true;
-                        distanceToggleMinInMeters = visSpecs["distanceToggleMin"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+                        distanceToggleMinInMeters = visSpecs["distanceToggleMin"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
                         isDistanceToggleEnabled = true;
                     }
 
@@ -103,7 +103,7 @@ namespace DxR
                     if (visSpecs["distanceToggleMax"] != null)
                     {
                         distToggleMaxProvided = true;
-                        distanceToggleMaxInMeters = visSpecs["distanceToggleMax"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+                        distanceToggleMaxInMeters = visSpecs["distanceToggleMax"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
                         isDistanceToggleEnabled = true;
                     }
 

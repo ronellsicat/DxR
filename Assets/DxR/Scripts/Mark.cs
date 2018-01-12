@@ -13,10 +13,10 @@ namespace DxR
     /// </summary>
     public class Mark : MonoBehaviour
     {
-        public string markName = DxR.SceneObject.UNDEFINED;
+        public string markName = DxR.Vis.UNDEFINED;
         public Dictionary<string, string> datum = null;
         public GameObject tooltip = null;
-        private string tooltipDataField = DxR.SceneObject.UNDEFINED;
+        private string tooltipDataField = DxR.Vis.UNDEFINED;
 
         public Mark()
         {
@@ -755,7 +755,7 @@ namespace DxR
         private void SetLocalPos(string value, int dim)
         {
             // TODO: Do this more robustly.
-            float pos = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float pos = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
 
             Vector3 localPos = gameObject.transform.localPosition;
             localPos[dim] = pos;
@@ -764,7 +764,7 @@ namespace DxR
 
         private void SetSize(string value, int dim)
         {
-            float size = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float size = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
 
             Vector3 initPos = transform.localPosition;
 
@@ -780,7 +780,7 @@ namespace DxR
 
         private void SetOffset(string value, int dim)
         {
-            float offset = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float offset = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             Vector3 translateBy = transform.localPosition;
             translateBy[dim] = offset - translateBy[dim];
             transform.localPosition = translateBy;
@@ -805,7 +805,7 @@ namespace DxR
 
         public void SetMaxSize(string value)
         {
-            float size = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float size = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
 
             Vector3 renderSize = gameObject.transform.GetComponent<Renderer>().bounds.size;
             Vector3 localScale = gameObject.transform.localScale;

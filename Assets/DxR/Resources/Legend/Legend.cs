@@ -83,8 +83,8 @@ public class Legend : MonoBehaviour {
         float height = 0.05f;
         if (legendSpecs["gradientWidth"] == null || legendSpecs["gradientHeight"] == null)
         {
-            width = legendSpecs["gradientWidth"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
-            height = legendSpecs["gradientHeight"].AsFloat * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            width = legendSpecs["gradientWidth"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+            height = legendSpecs["gradientHeight"].AsFloat * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
         }
 
         List<Vector3> positionsList = new List<Vector3>();
@@ -188,6 +188,6 @@ public class Legend : MonoBehaviour {
     internal void SetOrientation(string orient, string face, float x, float y, float z)
     {
         gameObject.GetComponentInChildren<TextMesh>().anchor = TextAnchor.UpperLeft;
-        gameObject.transform.localPosition = new Vector3(x, y, z) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+        gameObject.transform.localPosition = new Vector3(x, y, z) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
     }  
 }

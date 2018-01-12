@@ -20,7 +20,7 @@ namespace DxR
 
         public ChannelEncoding()
         {
-            value = DxR.SceneObject.UNDEFINED;
+            value = DxR.Vis.UNDEFINED;
             scale = null;
             axis = null;
             legend = null;

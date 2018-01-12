@@ -7,7 +7,7 @@ namespace DxR
 {
     class ScaleOrdinal : Scale
     {
-        string rangeType = DxR.SceneObject.UNDEFINED;
+        string rangeType = DxR.Vis.UNDEFINED;
 
         public ScaleOrdinal(JSONNode scaleSpecs) : base(scaleSpecs)
         {

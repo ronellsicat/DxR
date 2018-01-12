@@ -65,13 +65,13 @@ namespace DxR
 
         private void SetLength(string value)
         {
-            float height = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float height = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshHeight(height);        
         }
 
         private void SetRadius(string value)
         {
-            float radius = float.Parse(value) * DxR.SceneObject.SIZE_UNIT_SCALE_FACTOR;
+            float radius = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             gameObject.GetComponent<ProceduralToolkit.Examples.Primitives.Pyramid>().UpdateMeshRadius(radius);
         }
     }
