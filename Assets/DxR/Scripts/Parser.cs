@@ -48,7 +48,7 @@ namespace DxR
             // TODO: Do some checks.
         }
 
-        private string GetStringFromFile(string filename)
+        public static string GetStringFromFile(string filename)
         {
             string filePath = Path.Combine(Application.streamingAssetsPath, filename);
             return File.ReadAllText(filePath);

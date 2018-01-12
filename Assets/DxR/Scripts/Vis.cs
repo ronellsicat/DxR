@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
+using System.IO;
 
 namespace DxR
 {
@@ -21,10 +22,15 @@ namespace DxR
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Each unit in the specs is 1 mm.
         public static float DEFAULT_VIS_DIMS = 500.0f;
 
+        public string dataRootPath = "Assets/StreamingAssets/DxRData/";
+        public string marksRootPath = "Assets/DxR/Resources/Marks/";
         public string visSpecsURL = "DxRSpecs/example.json";
         public JSONNode visSpecs;           // This is synced w/ GUI and text editor.
         public JSONNode visSpecsInferred;   // This is synced w/ actual vis and used for construction.
+
         public bool enableGUI = true;
+        GameObject guiObject = null;
+        GUI gui = null;
 
         string title;        // Title of scene displayed.
         float width;         // Width of scene in millimeters.
@@ -88,10 +94,7 @@ namespace DxR
         // The visSpecs should provide minimum required specs.
         private void Initialize(ref JSONNode visSpecs)
         {
-            if (enableGUI)
-            {
-                InitGUI();
-            }
+            InitGUI();
 
             InferSceneObjectProperties(ref visSpecs);
 
@@ -106,19 +109,59 @@ namespace DxR
 
         private void InitGUI()
         {
-            /*
-            GameObject[] GUIInstances = GameObject.FindGameObjectsWithTag("DxRGUI");
-            if (GUIInstances.Length == 0)
+            Transform guiTransform = sceneRoot.transform.Find("DxRGUI");
+            guiObject = guiTransform.gameObject;
+            gui = guiObject.GetComponent<GUI>();
+            gui.Init();
+
+            if (!enableGUI)
             {
-                GameObject guiPrefab = Resources.Load("GUI/DxRGUI", typeof(GameObject)) as GameObject;
-                GameObject guiInstance = Instantiate(guiPrefab, sceneRoot.transform.position,
-                        sceneRoot.transform.rotation, sceneRoot.transform);
+                if (guiObject != null)
+                {
+                    guiObject.SetActive(false);
+                }
+            } else {
 
-                guiInstance.GetComponent<GUI>().SetTargetVis(this);
+                GUIUpdateDataList();
+                GUIUpdateMarksList();
+
+                GUIUpdateGUISpecsFromTextSpecs();
             }
-            */
+        }
 
-            // TODO: Update specs in GUI
+        private void GUIUpdateGUISpecsFromTextSpecs()
+        {
+            JSONNode specsFromText = JSON.Parse(Parser.GetStringFromFile(visSpecsURL));
+
+            gui.UpdateDataValue(Path.GetFileName(specsFromText["data"]["url"].Value.ToString()));
+            gui.UpdateMarkValue(specsFromText["mark"].Value.ToString());
+        }
+
+        private void GUIUpdateDataList()
+        {
+            string[] dirs = Directory.GetFiles(dataRootPath);
+            List<string> dataList = new List<string>();
+            dataList.Add("inline");
+            for (int i = 0; i < dirs.Length; i++)
+            {
+                if(Path.GetExtension(dirs[i]) != ".meta")
+                {
+                    dataList.Add(Path.GetFileName(dirs[i]));
+                }
+            }
+            gui.UpdateDataList(dataList);
+        }
+
+        private void GUIUpdateMarksList()
+        {
+            string[] dirs = Directory.GetDirectories(marksRootPath);
+            List<string> marksList = new List<string>();
+            marksList.Add("none");
+            for(int i =0; i < dirs.Length; i++)
+            {
+                marksList.Add(Path.GetFileName(dirs[i]));
+            }
+            gui.UpdateMarksList(marksList);
         }
 
         private void InferSceneObjectProperties(ref JSONNode visSpecs)
@@ -141,13 +184,26 @@ namespace DxR
 
         public void UpdateVisFromTextSpecs()
         {
+            GUIUpdateGUISpecsFromTextSpecs();
             UpdateSpecs();
         }
-
+        
         public void UpdateVisFromGUISpecs()
         {
             Debug.Log("Update vis from GUI");
+            UpdateTextSpecsFromGUISpecs();
             UpdateSpecs();
+        }
+
+        private void UpdateTextSpecsFromGUISpecs()
+        {
+            JSONNode specsFromText = JSON.Parse(Parser.GetStringFromFile(visSpecsURL));
+
+            specsFromText["data"]["url"] = "DxRData/" + gui.GetCurrentDataValue();
+
+            specsFromText["mark"] = gui.GetCurrentMarkValue();
+            
+            System.IO.File.WriteAllText(Path.Combine(Application.streamingAssetsPath, visSpecsURL), specsFromText.ToString(2));
         }
 
         // Infer (raw JSON specs -> full JSON specs): 

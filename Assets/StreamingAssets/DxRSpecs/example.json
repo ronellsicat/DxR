@@ -1,18 +1,20 @@
 {
-  "data": { "url": "DxRData/cars.json" },
-  "mark": "rect",
-  "encoding": {
-    "x": {
-      "field": "Horsepower",
-      "type": "quantitative"
+  "data" : {
+    "url" : "DxRData/cars.json"
+  },
+  "mark" : "point",
+  "encoding" : {
+    "x" : {
+      "field" : "Horsepower",
+      "type" : "quantitative"
     },
-    "y": {
-      "field": "Displacement",
-      "type": "quantitative"
+    "y" : {
+      "field" : "Displacement",
+      "type" : "quantitative"
     },
-    "color": {
-      "field": "Origin",
-      "type": "nominal"
+    "color" : {
+      "field" : "Origin",
+      "type" : "nominal"
     }
   }
 }
