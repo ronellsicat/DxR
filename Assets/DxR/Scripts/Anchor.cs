@@ -50,7 +50,8 @@ namespace DxR
         {
             if(visObject)
             {
-                visObject.SetDistanceVisibility(val);
+                //TODO:
+                //visObject.SetDistanceVisibility(val);
             }
         }
 

@@ -9,6 +9,8 @@ namespace DxR
 {
     public class Parser
     {
+        static string specsBaseDir = "/DxRSpecs/";
+        static string dataBaseDir = "/DxRData/";
         private bool verbose = false;           // Set to true to display debugging info.
 
         /// <summary>
@@ -18,16 +20,21 @@ namespace DxR
         /// </summary>
         public void Parse(string specsFilename, out JSONNode visSpecs)
         {
-           visSpecs = JSON.Parse(GetStringFromFile(specsFilename));
+            visSpecs = JSON.Parse(GetStringFromFile(GetFullSpecsPath(specsFilename)));
 
-           ExpandDataSpecs(ref visSpecs);
+            ExpandDataSpecs(ref visSpecs);
         }
 
         private void ExpandDataSpecs(ref JSONNode visSpecs)
         {
             if (visSpecs["data"]["url"] != null)
             {
-                string dataFilename = visSpecs["data"]["url"];
+                if(visSpecs["data"]["url"].Value == "inline")
+                {
+                    return;
+                }
+
+                string dataFilename = GetFullDataPath(visSpecs["data"]["url"]);
 
                 string ext = Path.GetExtension(dataFilename);
                 if (ext == ".json")
@@ -41,17 +48,25 @@ namespace DxR
 ;               } else
                 {
                     throw new Exception("Cannot load file type" + ext);
-                }
-                
-            }
+                }  
+            } 
 
             // TODO: Do some checks.
         }
 
         public static string GetStringFromFile(string filename)
         {
-            string filePath = Path.Combine(Application.streamingAssetsPath, filename);
-            return File.ReadAllText(filePath);
+            return File.ReadAllText(filename);
+        }
+
+        public static string GetFullSpecsPath(string filename)
+        {
+            return Application.streamingAssetsPath + specsBaseDir + filename;
+        }
+
+        public static string GetFullDataPath(string filename)
+        {
+            return Application.streamingAssetsPath + dataBaseDir + filename;
         }
     }
 }

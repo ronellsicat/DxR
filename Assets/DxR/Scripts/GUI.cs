@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using SimpleJSON;
 using UnityEngine;
+using SimpleJSON;
 using UnityEngine.UI;
 
 namespace DxR
@@ -11,35 +10,40 @@ namespace DxR
     {
         Dropdown dataDropdown = null;
         Dropdown markDropdown = null;
+        Vis targetVis = null;
 
         // Use this for initialization
         void Start()
         {
-            Init();
+
         }
 
-        public void Init()
+        public void Init(Vis targetVisInstance)
         {
+            targetVis = targetVisInstance;
+
             Transform dataDropdownTransform = gameObject.transform.Find("DataDropdown");
             dataDropdown = dataDropdownTransform.gameObject.GetComponent<Dropdown>();
 
             Transform marksDropdownTransform = gameObject.transform.Find("MarkDropdown");
             markDropdown = marksDropdownTransform.gameObject.GetComponent<Dropdown>();
+
+            Button btn = gameObject.transform.Find("UpdateButton").GetComponent<Button>();
+            btn.onClick.AddListener(CallVisUpdate);
         }
 
-        // Update is called once per frame
-        void Update()
+        public void CallVisUpdate()
         {
-
+            targetVis.UpdateVisSpecsFromGUISpecs();
         }
-        
+
         public void UpdateMarksList(List<string> marksList)
         {
             markDropdown.ClearOptions();
             markDropdown.AddOptions(marksList);
         }
 
-        internal void UpdateDataList(List<string> dataList)
+        public void UpdateDataList(List<string> dataList)
         {
             dataDropdown.ClearOptions();
             dataDropdown.AddOptions(dataList);
@@ -47,9 +51,9 @@ namespace DxR
 
         private int GetOptionIndex(Dropdown dropdown, string value)
         {
-            for(int i = 0; i < dropdown.options.Count; i++)
+            for (int i = 0; i < dropdown.options.Count; i++)
             {
-                if(dropdown.options[i].text == value)
+                if (dropdown.options[i].text == value)
                 {
                     return i;
                 }
@@ -61,7 +65,7 @@ namespace DxR
         public void UpdateDataValue(string value)
         {
             int valueIndex = GetOptionIndex(dataDropdown, value);
-            if(valueIndex > 0 )
+            if (valueIndex > 0)
             {
                 dataDropdown.value = valueIndex;
             }
@@ -76,14 +80,20 @@ namespace DxR
             }
         }
 
-        internal string GetCurrentDataValue()
+        public string GetCurrentDataValue()
         {
             return dataDropdown.options[dataDropdown.value].text;
         }
 
-        internal JSONNode GetCurrentMarkValue()
+        public string GetCurrentMarkValue()
         {
             return markDropdown.options[markDropdown.value].text;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
         }
     }
 

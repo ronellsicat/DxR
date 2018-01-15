@@ -1,6 +1,6 @@
 {
   "data" : {
-    "url" : "DxRData/cars.json"
+    "url" : "cars.json"
   },
   "mark" : "point",
   "encoding" : {
@@ -12,9 +12,16 @@
       "field" : "Displacement",
       "type" : "quantitative"
     },
+    "z" : {
+      "field" : "Horsepower",
+      "type" : "quantitative"
+    },
     "color" : {
       "field" : "Origin",
       "type" : "nominal"
     }
-  }
+  },
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500
 }

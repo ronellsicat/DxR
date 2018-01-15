@@ -1418,7 +1418,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4330225958459428}
-  - component: {fileID: 114895370898967328}
+  - component: {fileID: 114296463438019874}
   m_Layer: 0
   m_Name: DxRVis
   m_TagString: DxRVis
@@ -3805,7 +3805,7 @@ GameObject:
   - component: {fileID: 114197473685785392}
   - component: {fileID: 114267912793951416}
   - component: {fileID: 114019993818706570}
-  - component: {fileID: 114962502520632444}
+  - component: {fileID: 114381369761681224}
   m_Layer: 5
   m_Name: DxRGUI
   m_TagString: DxRGUI
@@ -7513,6 +7513,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114296463438019874
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1346337909612740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff35d644245a9b345a83026044b042b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visSpecsURL: example.json
+  enableGUI: 1
+  verbose: 1
 --- !u!114 &114297588026220804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8211,6 +8225,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114381369761681224
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1801955434194712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f2a64a55e6b86c4a83c060bd41b2f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114386972238240266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11161,8 +11186,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114879119942345154}
   m_HandleRect: {fileID: 224153982033330952}
   m_Direction: 2
-  m_Value: 0.9912946
-  m_Size: 0.5495666
+  m_Value: 0
+  m_Size: 0
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12262,18 +12287,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114245059362571738}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114895370898967328}
-        m_MethodName: UpdateVisFromGUISpecs
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114777164187058448
@@ -13604,19 +13618,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114895370898967328
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1346337909612740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb2fdb4d6d809c44a8e4384015487013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visSpecsURL: DxRSpecs/example.json
-  enableGUI: 1
 --- !u!114 &114904562268383890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14027,17 +14028,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114962502520632444
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1801955434194712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c5168009afaf31459256f749665d7c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114971679956582012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15665,7 +15655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1.1763611}
+  m_AnchoredPosition: {x: 0, y: 135.42313}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!224 &224033675934937710

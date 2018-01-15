@@ -2,7 +2,7 @@
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/cfd.json" },
+  "data": { "url": "cfd.json" },
   "mark": "paperplane",
   "encoding": {
     "x": {

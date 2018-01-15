@@ -20,6 +20,41 @@ public class Axis : MonoBehaviour {
 		
 	}
 
+    public void UpdateSpecs(JSONNode axisSpecs, DxR.Scale scale)
+    {
+        if (axisSpecs["title"] != null)
+        {
+            SetTitle(axisSpecs["title"].Value);
+        }
+
+        if (axisSpecs["titlePadding"] != null)
+        {
+            SetTitlePadding(axisSpecs["titlePadding"].Value);
+        }
+
+        float axisLength = 0.0f;
+        if (axisSpecs["length"] != null)
+        {
+            axisLength = axisSpecs["length"].AsFloat;
+            SetLength(axisLength);
+        }
+
+        if (axisSpecs["orient"] != null && axisSpecs["face"] != null)
+        {
+            SetOrientation(axisSpecs["orient"].Value, axisSpecs["face"].Value);
+        }
+
+        if (axisSpecs["ticks"].AsBool && axisSpecs["values"] != null)
+        {
+            ConstructTicks(axisSpecs, scale);
+        }
+
+        if(axisSpecs["color"] != null)
+        {
+            SetColor(axisSpecs["color"].Value);
+        }
+    }
+
     public void SetTitle(string title)
     {
         gameObject.GetComponentInChildren<TextMesh>().text = title;
@@ -94,21 +129,15 @@ public class Axis : MonoBehaviour {
         return GetMeshLength() * Math.Max(scale.x, Math.Max(scale.y, scale.z));
     }
 
-    internal void EnableAxisColorCoding(string channelType)
+    internal void SetColor(string colorString)
     {
         Transform lineTransform = gameObject.transform.Find("AxisLine");
-
-        if (channelType == "x" || channelType == "width")
+        Color color;
+        bool colorParsed = ColorUtility.TryParseHtmlString(colorString, out color);
+        if(colorParsed)
         {
-            lineTransform.GetComponent<Renderer>().material.color = Color.red;
-        } else if(channelType == "y" || channelType == "height")
-        {
-            lineTransform.GetComponent<Renderer>().material.color = Color.green;
-        } else if(channelType == "z" || channelType == "depth")
-        {
-            lineTransform.GetComponent<Renderer>().material.color = Color.blue;
+            lineTransform.GetComponent<Renderer>().material.color = color;
         }
-        
     }
 
     public void ConstructTicks(JSONNode axisSpecs, DxR.Scale scale)

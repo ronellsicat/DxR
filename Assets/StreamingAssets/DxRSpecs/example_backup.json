@@ -1,6 +1,6 @@
 {
-  "data": { "url": "DxRData/cars.json" },
-  "mark": "rect",
+  "data": { "url": "cars.json" },
+  "mark": "cube",
   "encoding": {
     "x": {
       "field": "Horsepower",

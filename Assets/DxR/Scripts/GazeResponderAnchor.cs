@@ -56,7 +56,8 @@ namespace DxR
         {
              if (sceneObject != null)
             {
-                sceneObject.SetGazeVisibility(visib);
+                // TODO:
+                //sceneObject.SetGazeVisibility(visib);
             }
         }
 

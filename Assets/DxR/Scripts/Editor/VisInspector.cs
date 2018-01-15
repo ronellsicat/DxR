@@ -14,7 +14,7 @@ namespace DxR
             Vis visObject = (Vis)target;
             if (GUILayout.Button("Update Vis"))
             {
-                visObject.UpdateVisFromTextSpecs();
+                visObject.UpdateVisSpecsFromTextSpecs();
                 Debug.Log("Update Vis");
             }
         }
