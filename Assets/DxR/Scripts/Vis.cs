@@ -17,6 +17,7 @@ namespace DxR
     {
         public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
         public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
+        public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         public bool verbose = true;                                     // Switch for verbose log.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
@@ -29,7 +30,8 @@ namespace DxR
 
         Parser parser = null;                                           // Parser of JSON specs and data in text format to JSONNode object specs.
         GUI gui = null;                                                 // GUI object (class) attached to GUI game object.
-        
+        GameObject tooltip = null;                                      // Tooltip game object for displaying datum info, e.g., on-hover.
+
         string guiDataRootPath = "Assets/StreamingAssets/DxRData/";     // Root directory for data files used by GUI.
         string guiMarksRootPath = "Assets/DxR/Resources/Marks/";        // Root directory for marks folders used by GUI.
 
@@ -45,9 +47,7 @@ namespace DxR
         private GameObject parentObject = null;                         // Root game object for all generated objects associated to vis.
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
-
-        private GameObject tooltipInstance = null;                      // Tooltip game object for displaying datum info, e.g., on-hover.
-
+        
         // TODO: Move these to the anchor object.
         private bool distanceVisibility = true;                         // Switch for controlling visibility by user-vis distance.
         private bool gazeVisibility = true;                             // Switch for toggling visibility on-hover on the Anchor object.
@@ -64,9 +64,20 @@ namespace DxR
 
             // Initialize the GUI based on the initial vis specs.
             InitGUI();
+            InitTooltip();
 
             // Update vis based on the vis specs.
             UpdateVis();
+        }
+
+        private void InitTooltip()
+        {
+            GameObject tooltipPrefab = Resources.Load("Tooltip/Tooltip") as GameObject;
+            if(tooltipPrefab != null)
+            {
+                tooltip = Instantiate(tooltipPrefab, parentObject.transform);
+                tooltip.SetActive(false);
+            }
         }
 
         /// <summary>
@@ -178,6 +189,12 @@ namespace DxR
 
                 // Copy datum in mark:
                 markInstance.GetComponent<Mark>().datum = dataValue;
+
+                // Assign tooltip:
+                if(enableTooltip)
+                {
+                    markInstance.GetComponent<Mark>().InitTooltip(ref tooltip);
+                }
 
                 markInstances.Add(markInstance);
             }
@@ -411,7 +428,7 @@ namespace DxR
         {
             foreach (Transform child in parentObject.transform)
             {
-                if (child.tag != "Anchor" && child.tag != "DxRGUI")
+                if (child.tag != "Anchor" && child.tag != "DxRGUI" && child.tag != "Tooltip")
                 {
                     GameObject.Destroy(child.gameObject);
                 }

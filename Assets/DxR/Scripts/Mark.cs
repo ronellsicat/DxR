@@ -16,6 +16,7 @@ namespace DxR
         public string markName = DxR.Vis.UNDEFINED;
         public Dictionary<string, string> datum = null;
         bool hasRenderer = false;
+        GameObject tooltip = null;
         
         public Mark()
         {
@@ -24,12 +25,7 @@ namespace DxR
 
         public void Start()
         {
-            Renderer renderer = transform.GetComponent<Renderer>();
-            if (renderer != null)
-            {
-                hasRenderer = true;
-                DxR.GazeResponder sc = gameObject.AddComponent(typeof(DxR.GazeResponder)) as DxR.GazeResponder;
-            }
+            
         }
 
         public virtual void SetChannelValue(string channel, string value)
@@ -843,9 +839,15 @@ namespace DxR
             System.IO.File.WriteAllText(outputName, str);
         }
         
-        public void SetTooltipObject(ref GameObject tooltipObject)
+        public void InitTooltip(ref GameObject tooltipObject)
         {
-            //tooltip = tooltipObject;
+            Renderer renderer = transform.GetComponent<Renderer>();
+            if (renderer != null)
+            {
+                hasRenderer = true;
+                DxR.GazeResponder sc = gameObject.AddComponent(typeof(DxR.GazeResponder)) as DxR.GazeResponder;
+                tooltip = tooltipObject;
+            }
         }
 
         public void SetTooltipField(string dataField)
@@ -973,29 +975,39 @@ namespace DxR
 
         public void OnFocusEnter()
         {            
-            /*
             if(tooltip != null)
             {
                 tooltip.SetActive(true);
 
                 Vector3 markPos = gameObject.transform.localPosition;
-
-                tooltip.GetComponent<Tooltip>().SetText(tooltipDataField + ": " + datum[tooltipDataField]);
+                
+                string datumTooltipString = BuildTooltipString();
+                tooltip.GetComponent<Tooltip>().SetText(datumTooltipString);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.x, 0);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.y, 1);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.z, 2);
             }
-            */
+        }
+
+        private string BuildTooltipString()
+        {
+            string output = "";
+
+            foreach (KeyValuePair<string, string> entry in datum)
+            {
+                // do something with entry.Value or entry.Key
+                output = output + entry.Key + ": " + entry.Value + "\n";
+            }
+
+            return output;
         }
 
         public void OnFocusExit()
         {
-            /*
             if (tooltip != null)
             {
-               tooltip.SetActive(false);
+                tooltip.SetActive(false);
             }
-            */
         }
     }
 }

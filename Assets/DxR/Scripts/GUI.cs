@@ -189,7 +189,7 @@ namespace DxR
         // Update all channel GUI's channel list options
         private void UpdateAllChannelsListOptions()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public string GetCurrentDataValue()
@@ -204,6 +204,7 @@ namespace DxR
         
         internal void UpdateChannels(JSONNode encodingSpecs)
         {
+            /*
             JSONArray channelEncodings = encodingSpecs.AsArray;
 
             // Go through each channel encoding in the specs; for each encoding:
@@ -217,6 +218,7 @@ namespace DxR
             
             // Go through each channel in the GUI
             //      If the channel is not in the specs, remove it from the GUI.
+            */
         }
     }
 
