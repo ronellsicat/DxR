@@ -329,12 +329,18 @@ namespace DxR
 
         private void UpdateVisData()
         {
+            visSpecs["data"].Add("values", parser.CreateValuesSpecs(visSpecs["data"]["url"]));
             JSONNode valuesSpecs = visSpecs["data"]["values"];
+            /*
+            
             if(valuesSpecs == null)
             {
-                throw new Exception("Missing data values");
+                
             }
-            
+            */
+
+            Debug.Log("Data update " + visSpecs["data"]["values"].ToString());
+
             data = new Data();
 
             CreateDataFields(valuesSpecs, ref data);
@@ -465,32 +471,25 @@ namespace DxR
 
         public void UpdateVisSpecsFromGUISpecs()
         {
-            /*
             // For now, just reset the vis specs to empty and
             // copy the contents of the text to vis specs; starting
             // everything from scratch. Later on, the new specs will have
             // to be compared with the current specs to get a list of what 
             // needs to be updated and only this list will be acted on.
 
-            visSpecsUpdated = JSON.Parse(gui.GetGUIVisSpecs().ToString());
+            visSpecsUpdated = gui.GetGUIVisSpecs();
 
-            visSpecsUpdated = visSpecs;
-
-            if (visSpecsUpdated["data"]["url"] != null)
+            // Remove data values so that parsing can put them again. 
+            // TODO: Optimize this.
+            if (visSpecsUpdated["data"]["url"] != null && visSpecsUpdated["data"]["url"] != "inline")
             {
-                visSpecsUpdated["data"]["url"] = gui.GetCurrentDataValue();
+                visSpecsUpdated["data"].Remove("values");
             }
-
-            visSpecsUpdated["mark"] = gui.GetCurrentMarkValue();
-
-            Debug.Log("Updating vis specs from GUI");
-            // TODO: Update channels correctly.
 
             visSpecs = visSpecsUpdated;
 
             UpdateTextSpecsFromVisSpecs();
             UpdateVis();
-            */
         }
         
         public List<string> GetDataList()

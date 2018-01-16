@@ -25,13 +25,13 @@ namespace DxR
             // If the specs file is empty, provide the boiler plate data and marks specs.
             if(visSpecs == null)
             {
-                CreateEmptyTemplateSpecs(specsFilename);
+                CreateEmptyTemplateSpecs(specsFilename, ref visSpecs);
             }
 
             ExpandDataSpecs(ref visSpecs);
         }
 
-        private void CreateEmptyTemplateSpecs(string specsFilename)
+        private void CreateEmptyTemplateSpecs(string specsFilename, ref JSONNode visSpecs)
         {
             JSONNode emptySpecs = new JSONObject();
             JSONNode dataSpecs = new JSONObject();
@@ -39,12 +39,14 @@ namespace DxR
             emptySpecs.Add("data", dataSpecs);
             emptySpecs.Add("mark", new JSONString(DxR.Vis.UNDEFINED));
 
+            visSpecs = emptySpecs;
+
             System.IO.File.WriteAllText(GetFullSpecsPath(specsFilename), emptySpecs.ToString(2));
         }
 
         private void ExpandDataSpecs(ref JSONNode visSpecs)
         {
-            if (visSpecs["data"].Value == DxR.Vis.UNDEFINED) return;
+            if (visSpecs["data"].Value == DxR.Vis.UNDEFINED || visSpecs["data"]["url"].Value == DxR.Vis.UNDEFINED) return;
 
             if (visSpecs["data"]["url"] != null)
             {
@@ -53,24 +55,30 @@ namespace DxR
                     return;
                 }
 
-                string dataFilename = GetFullDataPath(visSpecs["data"]["url"]);
-
-                string ext = Path.GetExtension(dataFilename);
-                if (ext == ".json")
-                {
-                    JSONNode valuesJSONNode = JSON.Parse(GetStringFromFile(dataFilename));
-                    visSpecs["data"].AsObject.Add("values", valuesJSONNode);
-                } else if(ext == ".csv")
-                {
-                    JSONNode valuesJSONNode = JSON.ParseCSV(GetStringFromFile(dataFilename));
-                    visSpecs["data"].AsObject.Add("values", valuesJSONNode);
-;               } else
-                {
-                    throw new Exception("Cannot load file type" + ext);
-                }  
+                visSpecs["data"].Add("values", CreateValuesSpecs(visSpecs["data"]["url"]));
             } 
 
             // TODO: Do some checks.
+        }
+
+        public JSONNode CreateValuesSpecs(string dataURL)
+        {
+            string dataFilename = GetFullDataPath(dataURL);
+            string ext = Path.GetExtension(dataFilename);
+            if (ext == ".json")
+            {
+                JSONNode valuesJSONNode = JSON.Parse(GetStringFromFile(dataFilename));
+                return valuesJSONNode;
+            }
+            else if (ext == ".csv")
+            {
+                JSONNode valuesJSONNode = JSON.ParseCSV(GetStringFromFile(dataFilename));
+                return valuesJSONNode;
+            }
+            else
+            {
+                throw new Exception("Cannot load file type" + ext);
+            }
         }
 
         public static string GetStringFromFile(string filename)

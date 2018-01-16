@@ -45,9 +45,15 @@ namespace DxR
 
             Transform dataDropdownTransform = gameObject.transform.Find("DataDropdown");
             dataDropdown = dataDropdownTransform.gameObject.GetComponent<Dropdown>();
+            dataDropdown.onValueChanged.AddListener(delegate {
+                OnDataDropdownValueChanged(dataDropdown);
+            });
 
             Transform marksDropdownTransform = gameObject.transform.Find("MarkDropdown");
             markDropdown = marksDropdownTransform.gameObject.GetComponent<Dropdown>();
+            markDropdown.onValueChanged.AddListener(delegate {
+                OnMarkDropdownValueChanged(markDropdown);
+            });
 
             Button btn = gameObject.transform.Find("UpdateButton").GetComponent<Button>();
             btn.onClick.AddListener(CallUpdateVisSpecsFromGUISpecs);
@@ -57,7 +63,7 @@ namespace DxR
             addChannelButtonTransform = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent/AddChannelButton");
             Button addChannelBtn = addChannelButtonTransform.GetComponent<Button>();
             addChannelBtn.onClick.AddListener(CallAddEmptyChannelGUI);
-
+            
             UpdateGUISpecsFromVisSpecs();
         }
 
@@ -86,10 +92,7 @@ namespace DxR
             // Remove all channels;
             RemoveAllChannelGUIs();
 
-            // Go through each channel encoding in the specs; for each encoding:
-            //      If the encoding is new, add it.
-            //      If the encoding is not not new, but data types are the same, only change the field and domain;
-            //          otherwise delete previous content and add new specs.
+            // Go through each channel encoding in the specs and add GUI for each:
             JSONObject channelEncodings = guiVisSpecs["encoding"].AsObject;
             if(channelEncodings != null)
             {
@@ -97,12 +100,6 @@ namespace DxR
                 {
                     AddChannelGUI(kvp.Key, kvp.Value.AsObject);
                 }
-                /*
-                for (int i = 0; i < channelEncodings.Count; i++)
-                {
-                    AddChannelGUI(channelEncodings[i].Value, channelEncodings[i].AsObject);
-                }
-                */
             }
         }
 
@@ -156,14 +153,48 @@ namespace DxR
             Transform channelListContent = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent");
             for(int i = 0; i < channelListContent.childCount - 1; i++)
             {
-                GameObject.Destroy(channelListContent.GetChild(i));
+                GameObject.Destroy(channelListContent.GetChild(i).gameObject);
             }
         }
 
         // Call this to update the vis specs with the current GUI specs.
         public void UpdateVisSpecsFromGUISpecs()
         {
+            UpdateGUISpecsFromGUIValues();
+
             targetVis.UpdateVisSpecsFromGUISpecs();
+        }
+
+        private void UpdateGUISpecsFromGUIValues()
+        {
+            guiVisSpecs["data"]["url"] = dataDropdown.options[dataDropdown.value].text;
+            guiVisSpecs["mark"] = markDropdown.options[markDropdown.value].text;
+
+            guiVisSpecs["encoding"] = null;
+
+            JSONObject encodingObject = new JSONObject();
+            Transform channelListContent = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent");
+            for (int i = 0; i < channelListContent.childCount - 1; i++)
+            {
+                GameObject channelGUI = channelListContent.GetChild(i).gameObject;
+                JSONObject channelSpecs = new JSONObject();
+                
+                Dropdown dropdown = channelGUI.transform.Find("DataFieldDropdown").GetComponent<Dropdown>();
+                string dataField = dropdown.options[dropdown.value].text;
+                channelSpecs.Add("field", new JSONString(dataField));
+
+                dropdown = channelGUI.transform.Find("DataFieldTypeDropdown").GetComponent<Dropdown>();
+                string dataFieldType = dropdown.options[dropdown.value].text;
+                channelSpecs.Add("type", new JSONString(dataFieldType));
+
+                dropdown = channelGUI.transform.Find("ChannelDropdown").GetComponent<Dropdown>();
+                string channel = dropdown.options[dropdown.value].text;
+                encodingObject.Add(channel, channelSpecs);
+            }
+
+            guiVisSpecs["encoding"] = encodingObject;
+
+            Debug.Log("GUI SPECS: " + guiVisSpecs["encoding"].ToString());
         }
 
         public JSONNode GetGUIVisSpecs()
@@ -173,7 +204,87 @@ namespace DxR
 
         public void CallUpdateVisSpecsFromGUISpecs()
         {
-            targetVis.UpdateVisSpecsFromGUISpecs();
+            UpdateVisSpecsFromGUISpecs();
+        }
+
+        // TODO:
+        public void OnChannelGUIChannelDropdownValueChanged(Dropdown changed)
+        {
+            Debug.Log("New data " + changed.options[changed.value].text);
+            string prevValue = ""; // guiVisSpecs["data"]["url"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                Debug.Log("Updated specs " + curValue);
+
+//                UpdateGUIChannelsList(guiVisSpecs);
+            }
+        }
+
+        // TODO:
+        public void OnChannelGUIDataFieldDropdownValueChanged(Dropdown changed)
+        {
+            Debug.Log("New data " + changed.options[changed.value].text);
+            string prevValue = ""; // guiVisSpecs["data"]["url"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                Debug.Log("Updated specs " + curValue);
+
+                //                UpdateGUIChannelsList(guiVisSpecs);
+            }
+        }
+
+        // TODO:
+        public void OnChannelGUIDataFieldTypeDropdownValueChanged(Dropdown changed)
+        {
+            Debug.Log("New data " + changed.options[changed.value].text);
+            string prevValue = ""; // guiVisSpecs["data"]["url"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                Debug.Log("Updated specs " + curValue);
+
+                //                UpdateGUIChannelsList(guiVisSpecs);
+            }
+        }
+
+        public void OnDataDropdownValueChanged(Dropdown changed)
+        {
+            Debug.Log("New data " + changed.options[changed.value].text);
+            string prevValue = guiVisSpecs["data"]["url"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                guiVisSpecs["data"]["url"] = curValue;
+
+                // Reset channels!
+                // TODO: Only reset parts of the spec.
+                guiVisSpecs["encoding"] = null;
+
+                Debug.Log("Updated specs " + guiVisSpecs["encoding"].ToString());
+
+                UpdateGUIChannelsList(guiVisSpecs);
+            }
+        }
+
+        public void OnMarkDropdownValueChanged(Dropdown changed)
+        {
+            Debug.Log("New mark " + changed.options[changed.value].text);
+            string prevValue = guiVisSpecs["mark"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                guiVisSpecs["mark"] = curValue;
+/*
+                // Reset channels!
+                // TODO: Only reset parts of the spec.
+                guiVisSpecs["encoding"] = null;
+
+                Debug.Log("Updated specs " + guiVisSpecs["encoding"].ToString());
+                */
+                UpdateGUIChannelsList(guiVisSpecs);
+            }
         }
 
         public void CallAddEmptyChannelGUI()
@@ -190,9 +301,40 @@ namespace DxR
             UpdateDataFieldListOptions(ref channelGUI);
             UpdateDataFieldTypeOptions(ref channelGUI);
 
+            AddChannelGUIChannelCallback(ref channelGUI);
+            AddChannelGUIDataFieldCallback(ref channelGUI);
+            AddChannelGUIDataFieldTypeCallback(ref channelGUI);
+
             addChannelButtonTransform.SetAsLastSibling();
 
             return channelGUI;
+        }
+
+        private void AddChannelGUIChannelCallback(ref GameObject channelGUI)
+        {
+            Transform dropdownObject = channelGUI.transform.Find("ChannelDropdown");
+            Dropdown dropdown = dropdownObject.gameObject.GetComponent<Dropdown>();
+            dropdown.onValueChanged.AddListener(delegate {
+                OnChannelGUIChannelDropdownValueChanged(dropdown);
+            });
+        }
+
+        private void AddChannelGUIDataFieldCallback(ref GameObject channelGUI)
+        {
+            Transform dropdownObject = channelGUI.transform.Find("DataFieldDropdown");
+            Dropdown dropdown = dropdownObject.gameObject.GetComponent<Dropdown>();
+            dropdown.onValueChanged.AddListener(delegate {
+                OnChannelGUIDataFieldDropdownValueChanged(dropdown);
+            });
+        }
+
+        private void AddChannelGUIDataFieldTypeCallback(ref GameObject channelGUI)
+        {
+            Transform dropdownObject = channelGUI.transform.Find("DataFieldTypeDropdown");
+            Dropdown dropdown = dropdownObject.gameObject.GetComponent<Dropdown>();
+            dropdown.onValueChanged.AddListener(delegate {
+                OnChannelGUIDataFieldTypeDropdownValueChanged(dropdown);
+            });
         }
 
         private void UpdateChannelsListOptions(ref GameObject channelGUI)
@@ -276,31 +418,6 @@ namespace DxR
             Debug.Log("Updated GUI data value to " + value);
         }
 
-        /*
-        // Update all channel GUI's data field list options
-        // TODO:
-        private void UpdateAllDataFieldListOptions()
-        {
-            // Update the global list of options.
-            string curDataValue = dataDropdown.options[dataDropdown.value].text;
-            //dataFieldDropdownOptions = targetVis.GetDataFieldsList(curDataValue);
-
-            // Go through each channel GUI to update the dropdowns, keeping the values
-            // if available; if not available, set to UNDEFINED.
-            Transform channelListContent = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent");
-            for (int i = 0; i < channelListContent.childCount - 1; i++)
-            {
-                GameObject channelGUI = channelListContent.GetChild(i).gameObject;
-                Dropdown dropdown = channelGUI.transform.Find("DataFieldDropdown").GetComponent<Dropdown>();
-
-                string curValue = dropdown.options[dropdown.value].text;
-                UpdateDataFieldListOptions(ref channelGUI);
-
-                // TODO:
-            }
-        }
-        */
-
         public void UpdateMarkDropdownValue(string value)
         {
             int valueIndex = GetOptionIndex(markDropdown, value);
@@ -308,25 +425,6 @@ namespace DxR
             {
                 markDropdown.value = valueIndex;
             }
-        }
-        
-        internal void UpdateChannels(JSONNode encodingSpecs)
-        {
-            /*
-            JSONArray channelEncodings = encodingSpecs.AsArray;
-
-            // Go through each channel encoding in the specs; for each encoding:
-            //      If the encoding is new, add it.
-            //      If the encoding is not not new, but data types are the same, only change the field and domain;
-            //          otherwise delete previous content and add new specs.
-            for(int i = 0; i < channelEncodings.Count; i++)
-            {
-
-            }
-            
-            // Go through each channel in the GUI
-            //      If the channel is not in the specs, remove it from the GUI.
-            */
         }
     }
 }
