@@ -1,0 +1,204 @@
+{
+  "title" : "Field Data",
+  "description" : "This displays a 3D glyph plot.",
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
+  "data" : {
+    "url" : "field.json",
+    "values" : [
+      {
+        "x" : 1.5,
+        "y" : 1,
+        "z" : 0,
+        "u" : -1,
+        "v" : 0,
+        "w" : 0,
+        "mag" : 1
+      },
+      {
+        "x" : 1,
+        "y" : 1,
+        "z" : 0,
+        "u" : 1,
+        "v" : 1,
+        "w" : 1,
+        "mag" : 1
+      },
+      {
+        "x" : 2,
+        "y" : 2,
+        "z" : 0,
+        "u" : 1,
+        "v" : 0,
+        "w" : 0,
+        "mag" : 2
+      },
+      {
+        "x" : 3,
+        "y" : 3,
+        "z" : 2,
+        "u" : 0,
+        "v" : -1,
+        "w" : 0,
+        "mag" : 2
+      },
+      {
+        "x" : 4,
+        "y" : 4,
+        "z" : 2,
+        "u" : 0,
+        "v" : 0,
+        "w" : -1,
+        "mag" : 4
+      },
+      {
+        "x" : 5,
+        "y" : 5,
+        "z" : 2,
+        "u" : 0,
+        "v" : 0,
+        "w" : 1,
+        "mag" : 4
+      }
+    ]
+  },
+  "mark" : "paperplane",
+  "encoding" : {
+    "x" : {
+      "field" : "x",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          0,
+          5
+        ],
+        "range" : [
+          0,
+          500
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "bottom",
+        "title" : "x position",
+        "grid" : false,
+        "ticks" : true,
+        "tickCount" : 6,
+        "values" : [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "labels" : true
+      }
+    },
+    "y" : {
+      "field" : "y",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          0,
+          5
+        ],
+        "range" : [
+          0,
+          500
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "left",
+        "title" : "y position",
+        "grid" : false,
+        "ticks" : true,
+        "tickCount" : 6,
+        "values" : [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "labels" : true
+      }
+    },
+    "z" : {
+      "field" : "z",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          0,
+          5
+        ],
+        "range" : [
+          0,
+          500
+        ]
+      },
+      "axis" : {
+        "face" : "left",
+        "orient" : "bottom",
+        "title" : "z position",
+        "grid" : false,
+        "ticks" : true,
+        "tickCount" : 6,
+        "values" : [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "labels" : true
+      }
+    },
+    "length" : {
+      "field" : "mag",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          0,
+          4
+        ],
+        "range" : [
+          0,
+          100
+        ]
+      }
+    },
+    "xorient" : {
+      "field" : "u",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "custom"
+      }
+    },
+    "yorient" : {
+      "field" : "v",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "custom"
+      }
+    },
+    "zorient" : {
+      "field" : "w",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "custom"
+      }
+    },
+    "color" : {
+      "value" : "#ffffbf"
+    }
+  }
+}

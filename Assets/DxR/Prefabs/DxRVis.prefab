@@ -1870,7 +1870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visSpecsURL: example.json
-  enableGUI: 1
+  enableGUI: 0
   verbose: 1
 --- !u!114 &114309421020136066
 MonoBehaviour:

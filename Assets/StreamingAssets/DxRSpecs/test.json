@@ -1,6 +1,6 @@
 {
   "description": "Shows the relationship between horsepower and the numbver of cylinders using tick marks.",
-  "data": { "url": "DxRData/cars.json" },
+  "data": { "url": "cars.json" },
   "mark": "tick",
   "encoding": {
     "x": {

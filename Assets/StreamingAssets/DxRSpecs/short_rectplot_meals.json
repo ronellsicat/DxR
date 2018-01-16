@@ -1,7 +1,7 @@
 {
   "title": "Cars Data",
   "description": "Chart that uses rect marks.",
-  "data": { "url": "DxRData/headcount.json" },
+  "data": { "url": "headcount.json" },
   "mark": "rect",
   "encoding": {
     "x": {

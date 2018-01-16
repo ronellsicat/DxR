@@ -2,7 +2,7 @@
   "width": 500,
   "height": 500,
   "depth": 500,
-  "data": { "url": "DxRData/sectors.json"},
+  "data": { "url": "sectors.json"},
   "mark": "bar",
   "encoding": {
     "x": {

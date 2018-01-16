@@ -4,7 +4,7 @@
   "height": 500,
   "depth": 500,
   "data": {
-    "url": "DxRData/Examples/population_2000.json" 
+    "url": "Examples/population_2000.json" 
   },
   "mark": "newmark",
   "encoding": {

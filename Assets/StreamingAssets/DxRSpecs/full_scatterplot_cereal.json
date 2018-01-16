@@ -4,7 +4,7 @@
   "width": 500,
   "height": 500,
   "depth": 500,
-  "data": { "url": "DxRData/cereal_all.csv" },
+  "data": { "url": "cereal_all.csv" },
   "mark": "point",
   "encoding": {
     "x": {

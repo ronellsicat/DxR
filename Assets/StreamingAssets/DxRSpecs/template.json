@@ -1,6 +1,6 @@
 {
   "title": "Cars Data",
-  "data": { "url": "DxRData/cars.json" },
+  "data": { "url": "cars.json" },
   "mark": "point",
   "encoding": {
     "x": {

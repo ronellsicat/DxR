@@ -1,0 +1,68 @@
+{
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
+  "data" : {
+    "values" : [
+      {
+        "treetype" : "A",
+        "height" : 28
+      },
+      {
+        "treetype" : "B",
+        "height" : 55
+      },
+      {
+        "treetype" : "C",
+        "height" : 43
+      },
+      {
+        "treetype" : "D",
+        "height" : 91
+      },
+      {
+        "treetype" : "E",
+        "height" : 81
+      },
+      {
+        "treetype" : "F",
+        "height" : 53
+      },
+      {
+        "treetype" : "G",
+        "height" : 19
+      },
+      {
+        "treetype" : "H",
+        "height" : 87
+      },
+      {
+        "treetype" : "I",
+        "height" : 52
+      }
+    ]
+  },
+  "mark" : "pinetree",
+  "encoding" : {
+    "x" : {
+      "field" : "treetype",
+      "type" : "nominal",
+      "axis" : {
+        "title" : "Tree Type"
+      }
+    },
+    "height" : {
+      "field" : "height",
+      "type" : "quantitative",
+      "axis" : {
+        "title" : "Tree Height (feet)"
+      }
+    },
+    "width" : {
+      "value" : 50
+    },
+    "depth" : {
+      "value" : 50
+    }
+  }
+}

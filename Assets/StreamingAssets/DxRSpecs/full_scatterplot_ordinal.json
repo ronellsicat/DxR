@@ -4,7 +4,7 @@
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/cars.json" },
+  "data": { "url": "cars.json" },
   "mark": "point",
   "encoding": {
      "x": {

@@ -1,0 +1,85 @@
+{
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
+  "data" : {
+    "values" : [
+      {
+        "keyword" : "A",
+        "count" : 28
+      },
+      {
+        "keyword" : "B",
+        "count" : 55
+      },
+      {
+        "keyword" : "C",
+        "count" : 43
+      },
+      {
+        "keyword" : "D",
+        "count" : 91
+      },
+      {
+        "keyword" : "E",
+        "count" : 81
+      },
+      {
+        "keyword" : "F",
+        "count" : 53
+      },
+      {
+        "keyword" : "G",
+        "count" : 19
+      },
+      {
+        "keyword" : "H",
+        "count" : 87
+      },
+      {
+        "keyword" : "I",
+        "count" : 52
+      }
+    ]
+  },
+  "mark" : "horse",
+  "encoding" : {
+    "x" : {
+      "field" : "keyword",
+      "type" : "nominal",
+      "axis" : {
+        "title" : "Racehorse Name"
+      }
+    },
+    "y" : {
+      "field" : "count",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          0,
+          100
+        ]
+      },
+      "axis" : {
+        "title" : "Speed (mph)",
+        "ticks" : true,
+        "tickCount" : 6,
+        "values" : [
+          "0",
+          "20",
+          "40",
+          "60",
+          "80",
+          "100"
+        ],
+        "labels" : true
+      }
+    },
+    "size" : {
+      "value" : 30
+    },
+    "xrotation" : {
+      "value" : -90
+    }
+  }
+}

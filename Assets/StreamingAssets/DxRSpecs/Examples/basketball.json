@@ -4,7 +4,7 @@
   "width": 500,
   "height": 470,
   "depth": 500,
-  "data": { "url": "DxRData/lebron.json" },
+  "data": { "url": "lebron.json" },
   "mark": "point",
   "encoding": {
     "x": {

@@ -4473,7 +4473,7 @@
   "mark" : "point",
   "encoding" : {
     "x" : {
-      "field" : "Horsepower",
+      "field" : "Miles_per_Gallon",
       "type" : "quantitative"
     },
     "y" : {
@@ -4485,6 +4485,10 @@
       "type" : "quantitative"
     },
     "color" : {
+      "field" : "Origin",
+      "type" : "nominal"
+    },
+    "opacity" : {
       "field" : "Origin",
       "type" : "nominal"
     }

@@ -3,7 +3,7 @@
   "width": 500,
   "height": 500,
   "depth":  500,
-  "data": { "url": "DxRData/field.json" },
+  "data": { "url": "field.json" },
   "mark": "arrow",
   "encoding": {
     "x": {
