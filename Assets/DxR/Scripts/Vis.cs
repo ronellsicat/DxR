@@ -447,7 +447,7 @@ namespace DxR
             gui.UpdateMarkValue(visSpecs["mark"].Value);
 
             // Update channels:
-            // TODO: Update channels in GUI based on vis specs.
+            gui.UpdateChannels(visSpecs["encoding"]);
         }
 
         public void UpdateVisSpecsFromGUISpecs()
@@ -528,12 +528,18 @@ namespace DxR
             }
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
         }
-
-        // Update is called once per frame
-        void Update()
+        /*
+        public List<string> GetDataFieldsList(string dataURL)
         {
-
+            if(data != null)
+            {
+                //return parser.GetDataFieldsFromURL(dataURL);
+            } else
+            {
+                return new List<string>();
+            }
         }
+        */
     }
 
 }
