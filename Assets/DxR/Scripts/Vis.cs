@@ -70,6 +70,11 @@ namespace DxR
             UpdateVis();
         }
 
+        public JSONNode GetVisSpecs()
+        {
+            return visSpecs;
+        }
+
         private void InitTooltip()
         {
             GameObject tooltipPrefab = Resources.Load("Tooltip/Tooltip") as GameObject;
@@ -198,6 +203,11 @@ namespace DxR
 
                 markInstances.Add(markInstance);
             }
+        }
+
+        internal List<string> GetDataFieldsList(string dataURL)
+        {
+            return parser.GetDataFieldsList(dataURL);
         }
 
         private GameObject InstantiateMark(GameObject markPrefab, Transform parentTransform)
@@ -446,34 +456,23 @@ namespace DxR
             {
                 guiObject.SetActive(false);
             }
-            else
-            {
-                UpdateGUIDataList();
-                UpdateGUIMarksList();
-
-                UpdateGUISpecsFromVisSpecs();
-            }
         }
 
         private void UpdateGUISpecsFromVisSpecs()
         {
-            // Update data:
-            gui.UpdateDataValue(Path.GetFileName(visSpecs["data"]["url"].Value));
-
-            // Update mark:
-            gui.UpdateMarkValue(visSpecs["mark"].Value);
-
-            // Update channels:
-            gui.UpdateChannels(visSpecs["encoding"]);
+            gui.UpdateGUISpecsFromVisSpecs();
         }
 
         public void UpdateVisSpecsFromGUISpecs()
         {
+            /*
             // For now, just reset the vis specs to empty and
             // copy the contents of the text to vis specs; starting
             // everything from scratch. Later on, the new specs will have
             // to be compared with the current specs to get a list of what 
             // needs to be updated and only this list will be acted on.
+
+            visSpecsUpdated = JSON.Parse(gui.GetGUIVisSpecs().ToString());
 
             visSpecsUpdated = visSpecs;
 
@@ -491,13 +490,14 @@ namespace DxR
 
             UpdateTextSpecsFromVisSpecs();
             UpdateVis();
+            */
         }
-
-        private void UpdateGUIDataList()
+        
+        public List<string> GetDataList()
         {
             string[] dirs = Directory.GetFiles(guiDataRootPath);
             List<string> dataList = new List<string>();
-            dataList.Add("inline");
+            dataList.Add(DxR.Vis.UNDEFINED);
             for (int i = 0; i < dirs.Length; i++)
             {
                 if (Path.GetExtension(dirs[i]) != ".meta")
@@ -505,19 +505,19 @@ namespace DxR
                     dataList.Add(Path.GetFileName(dirs[i]));
                 }
             }
-            gui.UpdateDataList(dataList);
+            return dataList;
         }
 
-        private void UpdateGUIMarksList()
+        public List<string> GetMarksList()
         {
             string[] dirs = Directory.GetDirectories(guiMarksRootPath);
             List<string> marksList = new List<string>();
-            marksList.Add("none");
+            marksList.Add(DxR.Vis.UNDEFINED);
             for (int i = 0; i < dirs.Length; i++)
             {
                 marksList.Add(Path.GetFileName(dirs[i]));
             }
-            gui.UpdateMarksList(marksList);
+            return marksList;
         }
 
         public void UpdateVisSpecsFromTextSpecs()
@@ -532,7 +532,7 @@ namespace DxR
 
             visSpecs = visSpecsUpdated;
 
-            UpdateGUISpecsFromVisSpecs();
+            gui.UpdateGUISpecsFromVisSpecs();
             UpdateVis();
         }
 
@@ -545,18 +545,6 @@ namespace DxR
             }
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
         }
-        /*
-        public List<string> GetDataFieldsList(string dataURL)
-        {
-            if(data != null)
-            {
-                //return parser.GetDataFieldsFromURL(dataURL);
-            } else
-            {
-                return new List<string>();
-            }
-        }
-        */
     }
 
 }

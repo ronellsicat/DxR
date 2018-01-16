@@ -22,11 +22,30 @@ namespace DxR
         {
             visSpecs = JSON.Parse(GetStringFromFile(GetFullSpecsPath(specsFilename)));
 
+            // If the specs file is empty, provide the boiler plate data and marks specs.
+            if(visSpecs == null)
+            {
+                CreateEmptyTemplateSpecs(specsFilename);
+            }
+
             ExpandDataSpecs(ref visSpecs);
+        }
+
+        private void CreateEmptyTemplateSpecs(string specsFilename)
+        {
+            JSONNode emptySpecs = new JSONObject();
+            JSONNode dataSpecs = new JSONObject();
+            dataSpecs.Add("url", new JSONString(DxR.Vis.UNDEFINED));
+            emptySpecs.Add("data", dataSpecs);
+            emptySpecs.Add("mark", new JSONString(DxR.Vis.UNDEFINED));
+
+            System.IO.File.WriteAllText(GetFullSpecsPath(specsFilename), emptySpecs.ToString(2));
         }
 
         private void ExpandDataSpecs(ref JSONNode visSpecs)
         {
+            if (visSpecs["data"].Value == DxR.Vis.UNDEFINED) return;
+
             if (visSpecs["data"]["url"] != null)
             {
                 if(visSpecs["data"]["url"].Value == "inline")
@@ -67,6 +86,32 @@ namespace DxR
         public static string GetFullDataPath(string filename)
         {
             return Application.streamingAssetsPath + dataBaseDir + filename;
+        }
+
+        internal List<string> GetDataFieldsList(string dataURL)
+        {
+            List<string> fieldNames = new List<string>();
+            JSONNode dataSpecs = new JSONObject();
+            string filename = GetFullDataPath(dataURL);
+
+            string ext = Path.GetExtension(filename);
+            if (ext == ".json")
+            {
+                JSONNode valuesJSONNode = JSON.Parse(GetStringFromFile(filename));
+                dataSpecs.Add("values", valuesJSONNode);
+            }
+            else if (ext == ".csv")
+            {
+                JSONNode valuesJSONNode = JSON.ParseCSV(GetStringFromFile(filename));
+                dataSpecs.Add("values", valuesJSONNode);
+            }
+            
+            foreach (KeyValuePair<string, JSONNode> kvp in dataSpecs["values"][0].AsObject)
+            {
+                fieldNames.Add(kvp.Key);
+            }
+
+            return fieldNames;
         }
     }
 }

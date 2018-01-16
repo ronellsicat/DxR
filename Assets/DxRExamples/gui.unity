@@ -412,7 +412,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: cars
+  m_Text: undefined
 --- !u!222 &138088206
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: point
+  m_Text: undefined
 --- !u!222 &664624624
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2460,8 +2460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff35d644245a9b345a83026044b042b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visSpecsURL: example.json
+  visSpecsURL: example_empty.json
   enableGUI: 1
+  enableTooltip: 1
   verbose: 1
 --- !u!4 &1339941237
 Transform:
@@ -4252,11 +4253,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: point
-      m_Image: {fileID: 0}
-    - m_Text: bar
-      m_Image: {fileID: 0}
-    - m_Text: arrow
+    - m_Text: undefined
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5010,11 +5007,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: cars
-      m_Image: {fileID: 21300000, guid: 7c9f8445d801add438ad23264e36c802, type: 3}
-    - m_Text: keywords
-      m_Image: {fileID: 21300000, guid: 7c9f8445d801add438ad23264e36c802, type: 3}
-    - m_Text: cfd
+    - m_Text: undefined
       m_Image: {fileID: 21300000, guid: 7c9f8445d801add438ad23264e36c802, type: 3}
   m_OnValueChanged:
     m_PersistentCalls:
