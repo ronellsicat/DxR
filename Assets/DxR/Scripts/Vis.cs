@@ -331,13 +331,6 @@ namespace DxR
         {
             visSpecs["data"].Add("values", parser.CreateValuesSpecs(visSpecs["data"]["url"]));
             JSONNode valuesSpecs = visSpecs["data"]["values"];
-            /*
-            
-            if(valuesSpecs == null)
-            {
-                
-            }
-            */
 
             Debug.Log("Data update " + visSpecs["data"]["values"].ToString());
 

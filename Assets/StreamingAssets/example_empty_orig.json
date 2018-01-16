@@ -4483,10 +4483,6 @@
     "color" : {
       "field" : "Origin",
       "type" : "nominal"
-    },
-    "z" : {
-      "field" : "Displacement",
-      "type" : "quantitative"
     }
   },
   "width" : 500,
