@@ -4470,19 +4470,31 @@
       }
     ]
   },
-  "mark" : "cube",
+  "mark" : "baseball",
   "encoding" : {
-    "x" : {
-      "field" : "Miles_per_Gallon",
+    "y" : {
+      "field" : "Displacement",
       "type" : "quantitative"
     },
-    "y" : {
+    "z" : {
       "field" : "Horsepower",
       "type" : "quantitative"
+    },
+    "opacity" : {
+      "field" : "Origin",
+      "type" : "nominal"
+    },
+    "x" : {
+      "field" : "Cylinders",
+      "type" : "quantitative",
+      "axis" : "none"
     },
     "color" : {
       "field" : "Origin",
       "type" : "nominal"
+    },
+    "size" : {
+      "value" : 20
     }
   },
   "width" : 500,

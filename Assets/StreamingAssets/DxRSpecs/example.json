@@ -3,26 +3,22 @@
     "url" : "cars.json"
   },
   "mark" : "point",
-  "encoding": {
-    "x": {
-      "field": "Miles_per_Gallon",
-      "type": "quantitative"
+  "encoding" : {
+    "x" : {
+      "field" : "Miles_per_Gallon",
+      "type" : "quantitative"
     },
-    "y": {
-      "field": "Displacement",
-      "type": "quantitative"
+    "y" : {
+      "field" : "Displacement",
+      "type" : "quantitative"
     },
-    "z": {
-      "field": "Horsepower",
-      "type": "quantitative"
+    "z" : {
+      "field" : "Horsepower",
+      "type" : "quantitative"
     },
-    "color": {
-      "field": "Origin",
-      "type": "nominal"
-    },
-    "opacity": {
-      "field": "Origin",
-      "type": "nominal"
+    "color" : {
+      "field" : "Origin",
+      "type" : "nominal"
     }
   },
   "width" : 500,

@@ -4487,10 +4487,6 @@
     "color" : {
       "field" : "Origin",
       "type" : "nominal"
-    },
-    "opacity" : {
-      "field" : "Origin",
-      "type" : "nominal"
     }
   },
   "width" : 500,

@@ -470,16 +470,72 @@ namespace DxR
             // to be compared with the current specs to get a list of what 
             // needs to be updated and only this list will be acted on.
 
-            visSpecsUpdated = gui.GetGUIVisSpecs();
+            JSONNode guiSpecs = JSON.Parse(gui.GetGUIVisSpecs().ToString());
+
 
             // Remove data values so that parsing can put them again. 
             // TODO: Optimize this.
-            if (visSpecsUpdated["data"]["url"] != null && visSpecsUpdated["data"]["url"] != "inline")
+            if (guiSpecs["data"]["url"] != null)
             {
-                visSpecsUpdated["data"].Remove("values");
+                if(guiSpecs["data"]["url"] != "inline")
+                {
+                    guiSpecs["data"].Remove("values");
+                    visSpecs["data"].Remove("values");
+
+                    visSpecs["data"]["url"] = guiSpecs["data"]["url"];
+                }
             }
 
-            visSpecs = visSpecsUpdated;
+            visSpecs["mark"] = guiSpecs["mark"];
+
+            Debug.Log("GUI SPECS: " + guiSpecs.ToString());
+
+            // Go through vis specs and UPDATE fields and types of non-value channels
+            // that are in the gui specs.
+            List<string> channelsToUpdate = new List<string>();
+            foreach (KeyValuePair<string, JSONNode> kvp in visSpecs["encoding"].AsObject)
+            {
+                string channelName = kvp.Key;
+                if(visSpecs["encoding"][channelName]["value"] == null && guiSpecs["encoding"][channelName] != null)
+                {
+                    channelsToUpdate.Add(channelName);
+                }
+            }
+
+            foreach(string channelName in channelsToUpdate)
+            {
+                visSpecs["encoding"][channelName]["field"] = guiSpecs["encoding"][channelName]["field"];
+                visSpecs["encoding"][channelName]["type"] = guiSpecs["encoding"][channelName]["type"];
+            }
+
+            // Go through vis specs and DELETE non-field channels that are not in gui specs.
+            List<string> channelsToDelete = new List<string>();
+            foreach (KeyValuePair<string, JSONNode> kvp in visSpecs["encoding"].AsObject)
+            {
+                string channelName = kvp.Key;
+                if (visSpecs["encoding"][channelName]["value"] == null && guiSpecs["encoding"][channelName] == null)
+                {
+                    channelsToDelete.Add(channelName);
+                }
+            }
+
+            foreach (string channelName in channelsToDelete)
+            {
+                visSpecs["encoding"].Remove(channelName);
+            }
+
+            // Go through gui specs and ADD non-field channels in gui specs that are not in vis specs.
+            foreach (KeyValuePair<string, JSONNode> kvp in guiSpecs["encoding"].AsObject)
+            {
+                string channelName = kvp.Key;
+                Debug.Log("Testing channel " + channelName);
+                
+                if (guiSpecs["encoding"][channelName]["value"] == null && visSpecs["encoding"][channelName] == null)
+                {
+                    Debug.Log("Adding channel " + channelName);
+                    visSpecs["encoding"].Add(channelName, guiSpecs["encoding"][channelName]);
+                }
+            }
 
             UpdateTextSpecsFromVisSpecs();
             UpdateVis();

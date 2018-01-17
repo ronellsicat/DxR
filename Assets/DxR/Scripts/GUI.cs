@@ -4,6 +4,7 @@ using UnityEngine;
 using SimpleJSON;
 using UnityEngine.UI;
 using System;
+using UnityEngine.EventSystems;
 
 namespace DxR
 {
@@ -304,10 +305,18 @@ namespace DxR
             AddChannelGUIChannelCallback(ref channelGUI);
             AddChannelGUIDataFieldCallback(ref channelGUI);
             AddChannelGUIDataFieldTypeCallback(ref channelGUI);
+            AddChannelGUIDeleteCallback(ref channelGUI);
 
             addChannelButtonTransform.SetAsLastSibling();
 
             return channelGUI;
+        }
+
+        private void AddChannelGUIDeleteCallback(ref GameObject channelGUI)
+        {
+            Transform deleteChannelObject = channelGUI.transform.Find("DeleteChannelButton");
+            Button btn = deleteChannelObject.gameObject.GetComponent<Button>();
+            btn.onClick.AddListener(DeleteChannelGUICallback);
         }
 
         private void AddChannelGUIChannelCallback(ref GameObject channelGUI)
@@ -342,6 +351,13 @@ namespace DxR
             Dropdown dropdown = channelGUI.transform.Find("ChannelDropdown").GetComponent<Dropdown>();
             dropdown.ClearOptions();
             dropdown.AddOptions(GetChannelDropdownOptions());
+        }
+
+        private void DeleteChannelGUICallback()
+        {
+            Debug.Log("Clicked " + EventSystem.current.currentSelectedGameObject.transform.parent.name);
+            //
+            GameObject.Destroy(EventSystem.current.currentSelectedGameObject.transform.parent.gameObject);
         }
 
         public List<string> GetChannelDropdownOptions()
