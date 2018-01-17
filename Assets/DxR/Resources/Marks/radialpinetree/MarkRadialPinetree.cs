@@ -12,13 +12,13 @@ namespace DxR
     /// a function that takes in the "channel" name and value in string format
     /// and performs the necessary changes under the SetChannelValue function.
     /// </summary>
-    public class MarkRadialBar : Mark
+    public class MarkRadialPinetree : Mark
     {
         private float lng = 0.0f;
         private float lat = 0.0f;
         private float radius = 0.5f;
 
-        public MarkRadialBar() : base()
+        public MarkRadialPinetree() : base()
         {
             
         }
@@ -82,12 +82,13 @@ namespace DxR
             pos.z = radius * Mathf.Sin((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
 
             gameObject.transform.localPosition = pos;
-            gameObject.transform.LookAt(gameObject.transform.parent.position + (pos * 2), Vector3.left);
+            gameObject.transform.LookAt(gameObject.transform.parent.position + (pos * 100), base.origOrientation);
         }
 
         private void SetLength(string value)
         {
-            gameObject.transform.localScale = new Vector3(1, 1, Mathf.Max(0.001f, float.Parse(value)));
+            Vector3 origScale = gameObject.transform.localScale;
+            gameObject.transform.localScale = new Vector3(origScale.x, Mathf.Max(origScale.y, float.Parse(value)), origScale.z);
         }
     }
 }

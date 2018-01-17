@@ -6,7 +6,7 @@
   "data": {
     "url": "population_2000.json" 
   },
-  "mark": "radialbar",
+  "mark": "radialpinetree",
   "encoding": {
     "latitute": {
       "field": "lat",
