@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1098823816073558}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markName: 
+  origOrientation: {x: 0, y: 1, z: 0}
+  curOrientation: {x: 0, y: 1, z: 0}
 --- !u!136 &136414194595096302
 CapsuleCollider:
   m_ObjectHideFlags: 1
