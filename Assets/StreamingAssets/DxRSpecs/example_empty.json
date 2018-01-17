@@ -2,7 +2,7 @@
   "data" : {
     "url" : "cars.json"
   },
-  "mark" : "baseball",
+  "mark" : "point",
   "encoding" : {
     "y" : {
       "field" : "Displacement",

@@ -115,7 +115,40 @@ namespace DxR
 
             ConstructAxes(specs);
 
-            //ConstructLegends(specs);
+            ConstructLegends(specs);
+        }
+
+        private void ConstructLegends(JSONNode specs)
+        {
+            // Go through each channel and create legend for color, shape, or size channels:
+            for (int channelIndex = 0; channelIndex < channelEncodings.Count; channelIndex++)
+            {
+                ChannelEncoding channelEncoding = channelEncodings[channelIndex];
+                JSONNode legendSpecs = specs["encoding"][channelEncoding.channel]["legend"];
+                if (legendSpecs != null && legendSpecs.Value.ToString() != "none" && channelEncoding.channel == "color")
+                {
+                    if (verbose)
+                    {
+                        Debug.Log("Constructing legend for channel " + channelEncoding.channel);
+                    }
+
+                    ConstructLegendObject(legendSpecs, ref channelEncoding);
+                }
+            }
+        }
+
+        private void ConstructLegendObject(JSONNode legendSpecs, ref ChannelEncoding channelEncoding)
+        {
+            GameObject legendPrefab = Resources.Load("Legend/Legend", typeof(GameObject)) as GameObject;
+            if (legendPrefab != null && markPrefab != null)
+            {
+                channelEncoding.legend = Instantiate(legendPrefab, parentObject.transform);
+                channelEncoding.legend.GetComponent<Legend>().UpdateSpecs(legendSpecs, ref channelEncoding, markPrefab);
+            }
+            else
+            {
+                throw new Exception("Cannot find legend prefab.");
+            }
         }
 
         private void ConstructAxes(JSONNode specs)

@@ -151,6 +151,9 @@ public class Legend : MonoBehaviour {
                 Mark markComponent = markInstance.GetComponent<Mark>();
                 markComponent.SetChannelValue(channelEncoding.channel, channelValue);
 
+                // Set size:
+                markComponent.SetChannelValue("size", "20");
+
                 // Assign mark and label:
                 legendValueInstance.GetComponent<LegendValue>().SetTitle(domainValue);
                 legendValueInstance.GetComponent<LegendValue>().SetMark(markInstance);
