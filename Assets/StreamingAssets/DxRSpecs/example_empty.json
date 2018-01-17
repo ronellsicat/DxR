@@ -112,9 +112,6 @@
         "labels" : true
       }
     },
-    "size" : {
-      "value" : 20
-    },
     "color" : {
       "field" : "x",
       "type" : "quantitative"

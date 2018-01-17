@@ -12,25 +12,40 @@ namespace DxR
     /// a function that takes in the "channel" name and value in string format
     /// and performs the necessary changes under the SetChannelValue function.
     /// </summary>
-    public class MarkGlobesphere : Mark
+    public class MarkRadialBar : Mark
     {
         private float lng = 0.0f;
         private float lat = 0.0f;
+        private float radius = 0.5f;
 
-        public MarkGlobesphere() : base()
+        public MarkRadialBar() : base()
         {
             
         }
-        
+
+        public override List<string> GetChannelsList()
+        {
+            List<string> myChannels = new List<string>() { "radius", "latitude", "longitude", "length" };
+            myChannels.AddRange(base.GetChannelsList());
+
+            return myChannels;
+        }
+
+
         public override void SetChannelValue(string channel, string value)
         {
             switch (channel)
             {
+                case "latitute":
                 case "lat":
                     SetLatituteValue(value);
                     break;
+                case "longitude":
                 case "long":
                     SetLongitudeValue(value);
+                    break;
+                case "radius":
+                    SetRadius(value);
                     break;
                 case "length":
                     SetLength(value);
@@ -39,6 +54,12 @@ namespace DxR
                     base.SetChannelValue(channel, value);
                     break;
             }
+        }
+
+        private void SetRadius(string value)
+        {
+            radius = float.Parse(value);
+            UpdatePos();
         }
 
         private void SetLatituteValue(string value)
@@ -56,12 +77,12 @@ namespace DxR
         private void UpdatePos()
         {
             Vector3 pos;
-            pos.x = 0.5f * Mathf.Cos((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
-            pos.y = 0.5f * Mathf.Sin(lat * Mathf.Deg2Rad);
-            pos.z = 0.5f * Mathf.Sin((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
+            pos.x = radius * Mathf.Cos((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
+            pos.y = radius * Mathf.Sin(lat * Mathf.Deg2Rad);
+            pos.z = radius * Mathf.Sin((lng) * Mathf.Deg2Rad) * Mathf.Cos(lat * Mathf.Deg2Rad);
 
             gameObject.transform.localPosition = pos;
-            gameObject.transform.LookAt(gameObject.transform.parent.transform.position);
+            gameObject.transform.LookAt(gameObject.transform.parent.position + (pos * 2));
         }
 
         private void SetLength(string value)

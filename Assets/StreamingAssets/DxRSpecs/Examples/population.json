@@ -6,7 +6,7 @@
   "data": {
     "url": "Examples/population_2000.json" 
   },
-  "mark": "globebar",
+  "mark": "radialbar",
   "encoding": {
     "latitute": {
       "field": "lat",

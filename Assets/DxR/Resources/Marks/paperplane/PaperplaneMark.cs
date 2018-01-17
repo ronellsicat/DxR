@@ -14,9 +14,6 @@ namespace DxR
     /// </summary>
     public class PaperplaneMark : Mark
     {
-        public Vector3 origOrientation;
-        public Vector3 curOrientation;
-
         public PaperplaneMark() : base()
         {
             origOrientation = curOrientation = Vector3.left;
@@ -29,35 +26,10 @@ namespace DxR
                 case "length":
                     base.SetMaxSize(value);
                     break;
-                 case "xorient":
-                    SetOrientation(value, 0);
-                    break;
-                case "yorient":
-                    SetOrientation(value, 1);
-                    break;
-                case "zorient":
-                    SetOrientation(value, 2);
-                    break;
                 default:
                     base.SetChannelValue(channel, value);
                     break;
             }
-        }
-        
-        // vectorIndex = 0 for x, 1 for y, 2 for z
-        private void SetOrientation(string value, int vectorIndex)
-        {
-            // Set target direction dim to normalized size.
-            Vector3 targetOrient = Vector3.zero;
-            targetOrient[vectorIndex] = float.Parse(value);
-            targetOrient.Normalize();
-
-            // Copy coordinate to current orientation and normalize.
-            curOrientation[vectorIndex] = targetOrient[vectorIndex];
-            curOrientation.Normalize();
-
-            Quaternion rotation = Quaternion.FromToRotation(origOrientation, curOrientation);
-            transform.rotation = rotation;
         }
     }
 }
