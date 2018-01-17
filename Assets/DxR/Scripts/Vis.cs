@@ -23,8 +23,7 @@ namespace DxR
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Conversion factor to convert each Unity unit to 1 meter.
         public static float DEFAULT_VIS_DIMS = 500.0f;                  // Default dimensions of a visualization, if not specified.
-        
-        JSONNode visSpecsUpdated;                                       // Vis specs that is synced w/ GUI and text editor; used to update visSpecs.
+                
         JSONNode visSpecs;                                              // Vis specs that is synced w/ the inferred vis specs and vis.
         JSONNode visSpecsInferred;                                      // This is the inferred vis specs and is ultimately used for construction.
 
@@ -576,9 +575,10 @@ namespace DxR
             // to be compared with the current specs to get a list of what 
             // needs to be updated and only this list will be acted on.
 
-            parser.Parse(visSpecsURL, out visSpecsUpdated);
+            JSONNode textSpecs;
+            parser.Parse(visSpecsURL, out textSpecs);
 
-            visSpecs = visSpecsUpdated;
+            visSpecs = textSpecs;
 
             gui.UpdateGUISpecsFromVisSpecs();
             UpdateVis();

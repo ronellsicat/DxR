@@ -4485,13 +4485,12 @@
       "type" : "nominal"
     },
     "x" : {
-      "field" : "Cylinders",
-      "type" : "quantitative",
-      "axis" : "none"
+      "field" : "Miles_per_Gallon",
+      "type" : "quantitative"
     },
     "color" : {
-      "field" : "Origin",
-      "type" : "nominal"
+      "field" : "Horsepower",
+      "type" : "quantitative"
     },
     "size" : {
       "value" : 20
