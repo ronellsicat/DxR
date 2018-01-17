@@ -6,30 +6,152 @@
   "encoding" : {
     "y" : {
       "field" : "y",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "5"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "left",
+        "title" : "y",
+        "length" : 500,
+        "color" : "#00ff00",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "z" : {
       "field" : "z",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "5"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "left",
+        "orient" : "bottom",
+        "title" : "z",
+        "length" : 500,
+        "color" : "#0000ff",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "xdirection" : {
       "field" : "vx",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "none"
+      }
     },
     "x" : {
       "field" : "x",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "5"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "bottom",
+        "title" : "x",
+        "length" : 500,
+        "color" : "#ff0000",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "size" : {
       "value" : 20
     },
     "ydirection" : {
       "field" : "vy",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "none"
+      }
     },
     "zdirection" : {
       "field" : "vz",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "none"
+      }
+    },
+    "length" : {
+      "field" : "time",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "4"
+        ],
+        "range" : [
+          "0",
+          "50"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05"
+      }
     }
   },
   "width" : 500,

@@ -33,7 +33,7 @@ namespace DxR
 
         public virtual List<string> GetChannelsList()
         {
-            return new List<string> { "x", "y", "z", "color", "size", "width", "height", "depth", "opacity", "xrotation", "yrotation", "zrotation", "xdirection", "ydirection", "zdirection" };
+            return new List<string> { "x", "y", "z", "color", "size", "width", "height", "depth", "opacity", "xrotation", "yrotation", "zrotation", "length", "xdirection", "ydirection", "zdirection" };
         }
 
         public virtual void SetChannelValue(string channel, string value)
@@ -53,6 +53,7 @@ namespace DxR
                     SetSize(value, 0);
                     break;
                 case "height":
+                case "length":
                     SetSize(value, 1);
                     break;
                 case "depth":
@@ -95,13 +96,13 @@ namespace DxR
                     SetRotation(value, 2);
                     break;
                 case "xdirection":
-                    SetOrientation(value, 0);
+                    SetDirectionVector(value, 0);
                     break;
                 case "ydirection":
-                    SetOrientation(value, 1);
+                    SetDirectionVector(value, 1);
                     break;
                 case "zdirection":
-                    SetOrientation(value, 2);
+                    SetDirectionVector(value, 2);
                     break;
                 default:
                     throw new System.Exception("Cannot find channel: " + channel);
@@ -989,7 +990,7 @@ namespace DxR
         }
 
         // vectorIndex = 0 for x, 1 for y, 2 for z
-        private void SetOrientation(string value, int vectorIndex)
+        private void SetDirectionVector(string value, int vectorIndex)
         {
             // Set target direction dim to normalized size.
             Vector3 targetOrient = Vector3.zero;

@@ -21,7 +21,16 @@ namespace DxR
         {
             
         }
-        
+
+        public override List<string> GetChannelsList()
+        {
+            List<string> myChannels = new List<string>() { "latitude", "longitude", "length" };
+            myChannels.AddRange(base.GetChannelsList());
+
+            return myChannels;
+        }
+
+
         public override void SetChannelValue(string channel, string value)
         {
             switch (channel)
