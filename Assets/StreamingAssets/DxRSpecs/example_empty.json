@@ -2,7 +2,7 @@
   "data" : {
     "url" : "streamline.json"
   },
-  "mark" : "pinetree",
+  "mark" : "cone",
   "encoding" : {
     "y" : {
       "field" : "y",
@@ -76,13 +76,6 @@
         "labels" : true
       }
     },
-    "xdirection" : {
-      "field" : "vx",
-      "type" : "quantitative",
-      "scale" : {
-        "type" : "none"
-      }
-    },
     "x" : {
       "field" : "x",
       "type" : "quantitative",
@@ -122,36 +115,9 @@
     "size" : {
       "value" : 20
     },
-    "ydirection" : {
-      "field" : "vy",
-      "type" : "quantitative",
-      "scale" : {
-        "type" : "none"
-      }
-    },
-    "zdirection" : {
-      "field" : "vz",
-      "type" : "quantitative",
-      "scale" : {
-        "type" : "none"
-      }
-    },
-    "length" : {
-      "field" : "time",
-      "type" : "quantitative",
-      "scale" : {
-        "type" : "linear",
-        "domain" : [
-          "0",
-          "4"
-        ],
-        "range" : [
-          "0",
-          "50"
-        ],
-        "paddingInner" : "0.05",
-        "paddingOuter" : "0.05"
-      }
+    "color" : {
+      "field" : "x",
+      "type" : "quantitative"
     }
   },
   "width" : 500,

@@ -588,7 +588,8 @@ namespace DxR
                 }
             } else if(range == "ordinal" || range == "ramp")
             {
-                scheme = "blues";
+                //scheme = "blues";
+                scheme = "ramp";
             } else if(range == "heatmap")
             {
                 scheme = "viridis";

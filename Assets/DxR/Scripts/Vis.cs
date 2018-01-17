@@ -352,10 +352,15 @@ namespace DxR
         private void UpdateMarkPrefab()
         {
             string markType = visSpecs["mark"].Value;
-            string markNameLowerCase = markType.ToLower();
-            markPrefab = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+            markPrefab = LoadMarkPrefab(markType);
+        }
 
-            if (markPrefab == null)
+        private GameObject LoadMarkPrefab(string markName)
+        {
+            string markNameLowerCase = markName.ToLower();
+            GameObject markPrefabResult = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+
+            if (markPrefabResult == null)
             {
                 throw new Exception("Cannot load mark " + markNameLowerCase);
             }
@@ -365,11 +370,13 @@ namespace DxR
             }
 
             // If the prefab does not have a Mark script attached to it, attach the default base Mark script object, i.e., core mark.
-            if(markPrefab.GetComponent<Mark>() == null)
+            if (markPrefabResult.GetComponent<Mark>() == null)
             {
-                DxR.Mark markComponent = markPrefab.AddComponent(typeof(DxR.Mark)) as DxR.Mark;
+                DxR.Mark markComponent = markPrefabResult.AddComponent(typeof(DxR.Mark)) as DxR.Mark;
             }
-            markPrefab.GetComponent<Mark>().markName = markNameLowerCase;
+            markPrefabResult.GetComponent<Mark>().markName = markNameLowerCase;
+
+            return markPrefabResult;
         }
 
         private void UpdateVisData()
@@ -642,7 +649,7 @@ namespace DxR
 
         public List<string> GetChannelsList(string markName)
         {
-            GameObject markObject = Resources.Load("Marks/" + markName.ToLower() + "/" + markName.ToLower()) as GameObject;
+            GameObject markObject = LoadMarkPrefab(markName);
             return markObject.GetComponent<Mark>().GetChannelsList();
         }
     }
