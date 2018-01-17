@@ -99,7 +99,10 @@ namespace DxR
             {
                 foreach (KeyValuePair<string, JSONNode> kvp in channelEncodings.AsObject)
                 {
-                    AddChannelGUI(kvp.Key, kvp.Value.AsObject);
+                    if(guiVisSpecs["encoding"][kvp.Key]["value"] == null)
+                    {
+                        AddChannelGUI(kvp.Key, kvp.Value.AsObject);
+                    }
                 }
             }
         }
@@ -362,20 +365,7 @@ namespace DxR
 
         public List<string> GetChannelDropdownOptions()
         {
-            List<string> list = new List<string>();
-
-            // TODO:
-            list.Add("x");
-            list.Add("y");
-            list.Add("z");
-            list.Add("color");
-            list.Add("opacity");
-            list.Add("size");
-            list.Add("width");
-            list.Add("height");
-            list.Add("depth");
-
-            return list;
+            return targetVis.GetChannelsList(markDropdown.options[markDropdown.value].text);
         }
 
         private void UpdateDataFieldListOptions(ref GameObject channelGUI)

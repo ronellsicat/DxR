@@ -639,6 +639,12 @@ namespace DxR
             }
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
         }
+
+        public List<string> GetChannelsList(string markName)
+        {
+            GameObject markObject = Resources.Load("Marks/" + markName.ToLower() + "/" + markName.ToLower()) as GameObject;
+            return markObject.GetComponent<Mark>().GetChannelsList();
+        }
     }
 
 }
