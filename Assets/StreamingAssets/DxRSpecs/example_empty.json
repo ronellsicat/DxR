@@ -6,23 +6,138 @@
   "encoding" : {
     "y" : {
       "field" : "Displacement",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "500"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "left",
+        "title" : "Displacement",
+        "length" : 500,
+        "color" : "#00ff00",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          0,
+          100,
+          200,
+          300,
+          400,
+          500
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "z" : {
       "field" : "Horsepower",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "250"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "left",
+        "orient" : "bottom",
+        "title" : "Horsepower",
+        "length" : 500,
+        "color" : "#0000ff",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          0,
+          50,
+          100,
+          150,
+          200,
+          250
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
-    "opacity" : {
+    "color" : {
       "field" : "Origin",
-      "type" : "nominal"
+      "type" : "nominal",
+      "scale" : {
+        "type" : "ordinal",
+        "domain" : [
+          "Europe",
+          "Japan",
+          "USA"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : "category",
+        "scheme" : "tableau10"
+      },
+      "legend" : {
+        "type" : "symbol",
+        "gradientWidth" : 200,
+        "gradientHeight" : 50,
+        "face" : "front",
+        "orient" : "right",
+        "x" : 500,
+        "y" : 500,
+        "z" : 0,
+        "title" : "Legend: Origin"
+      }
     },
     "x" : {
       "field" : "Miles_per_Gallon",
-      "type" : "quantitative"
-    },
-    "color" : {
-      "field" : "Horsepower",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "50"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "bottom",
+        "title" : "Miles_per_Gallon",
+        "length" : 500,
+        "color" : "#ff0000",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "size" : {
       "value" : 20

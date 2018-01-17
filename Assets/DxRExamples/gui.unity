@@ -2462,6 +2462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visSpecsURL: example_empty.json
   enableGUI: 1
+  enableSpecsExpansion: 0
   enableTooltip: 1
   verbose: 1
 --- !u!4 &1339941237

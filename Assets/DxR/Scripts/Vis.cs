@@ -17,6 +17,7 @@ namespace DxR
     {
         public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
         public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
+        public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
         public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         public bool verbose = true;                                     // Switch for verbose log.
 
@@ -113,6 +114,8 @@ namespace DxR
             ApplyChannelEncodings();
 
             ConstructAxes(specs);
+
+            //ConstructLegends(specs);
         }
 
         private void ConstructAxes(JSONNode specs)
@@ -296,6 +299,16 @@ namespace DxR
             if (markPrefab != null)
             {
                 markPrefab.GetComponent<Mark>().Infer(data, visSpecs, out visSpecsInferred, visSpecsURL);
+
+                if(enableSpecsExpansion)
+                {
+                    JSONNode visSpecsToWrite = JSON.Parse(visSpecsInferred.ToString());
+                    if (visSpecs["data"]["url"] != null && visSpecs["data"]["url"] != "inline")
+                    {
+                        visSpecsToWrite["data"].Remove("values");
+                    }
+                    System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
+                }
             }
             else
             {

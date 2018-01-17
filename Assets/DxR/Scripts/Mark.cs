@@ -144,6 +144,7 @@ namespace DxR
                 }
             }
 
+            /*
             string inferResults = specs.ToString(2);
             string filename = "Assets/StreamingAssets/" + specsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
             WriteStringToFile(inferResults, filename);
@@ -154,6 +155,7 @@ namespace DxR
             string filenameOrig = "Assets/StreamingAssets/" + specsFilename.TrimEnd(".json".ToCharArray()) + "_orig.json";
             WriteStringToFile(origSpecsStringPrint, filenameOrig);
             Debug.Log("orig mark:" + specsOrig["mark"].Value);
+            */
         }
 
         //public void Infer(Data data, ref JSONNode specs, string specsFilename) { }
