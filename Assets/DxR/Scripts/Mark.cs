@@ -407,14 +407,12 @@ namespace DxR
                     (channel == "x" || channel == "y" || channel == "z"))
                 {
                     // Round domain into a nice number.
-                    // TODO: make robust rounding.
-                    // HACK:
-                    float maxDomain = RoundNice(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat);
+                    //float maxDomain = RoundNice(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat);
 
                     // Add number of ticks.
                     int defaultNumTicks = 6;
                     int numTicks = axisSpecsObj["tickCount"] == null ? defaultNumTicks : axisSpecsObj["tickCount"].AsInt;
-                    float intervals = maxDomain / (numTicks - 1.0f);
+                    float intervals = Math.Abs(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat) / (numTicks - 1.0f);
 
 
                     for (int i = 0; i < numTicks; i++)
@@ -707,6 +705,7 @@ namespace DxR
                 List<float> minMax = new List<float>();
                 GetExtent(data, channelEncoding.field, ref minMax);
 
+                /*
                 // For positive minimum values, set the baseline to zero.
                 // TODO: Handle logarithmic scale with undefined 0 value.
                 if(minMax[0] >= 0)
@@ -715,14 +714,15 @@ namespace DxR
                 }
 
                 float roundedMaxDomain = RoundNice(minMax[1] - minMax[0]);
+                */
 
                 if (sortType == "none" || sortType == "ascending")
                 {
                     domain.Add(new JSONString(minMax[0].ToString()));
-                    domain.Add(new JSONString(roundedMaxDomain.ToString()));
+                    domain.Add(new JSONString(minMax[1].ToString()));
                 } else
                 {
-                    domain.Add(new JSONString(roundedMaxDomain.ToString()));
+                    domain.Add(new JSONString(minMax[1].ToString()));
                     domain.Add(new JSONString(minMax[0].ToString()));
                 }
             } else
