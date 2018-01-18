@@ -65,9 +65,19 @@ namespace DxR
             // Initialize the GUI based on the initial vis specs.
             InitGUI();
             InitTooltip();
+            InitAnchor();
 
             // Update vis based on the vis specs.
             UpdateVis();
+        }
+
+        private void InitAnchor()
+        {
+            Anchor anchor = parentObject.transform.Find("Anchor").transform.GetComponent<Anchor>();
+            if(anchor != null)
+            {
+                anchor.EnableTapToPlace();
+            }
         }
 
         public JSONNode GetVisSpecs()

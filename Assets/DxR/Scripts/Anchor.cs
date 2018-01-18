@@ -121,7 +121,7 @@ namespace DxR
             }
         }
 
-        private void EnableTapToPlace()
+        public void EnableTapToPlace()
         {
             HoloToolkit.Unity.InputModule.TapToPlace tapToPlaceComponent = 
                 gameObject.AddComponent(typeof(HoloToolkit.Unity.InputModule.TapToPlace)) as HoloToolkit.Unity.InputModule.TapToPlace;

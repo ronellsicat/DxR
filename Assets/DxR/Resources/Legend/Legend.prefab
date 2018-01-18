@@ -67,6 +67,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4939929161588988}
   - component: {fileID: 120669225019068788}
+  - component: {fileID: 65464462063531344}
+  - component: {fileID: 114281318894941736}
+  - component: {fileID: 114665034541960832}
   m_Layer: 0
   m_Name: ColorLine
   m_TagString: Untagged
@@ -194,6 +197,18 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &65464462063531344
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905387721034384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.1, z: 1.1}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!102 &102360596624898848
 TextMesh:
   serializedVersion: 3
@@ -215,6 +230,26 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &114281318894941736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905387721034384}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb69de839bd015f4099b5bd2c45e53e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnscaledTime: 1
+  PositionPerSecond: 30
+  RotationDegreesPerSecond: 720
+  RotationSpeedScaler: 0
+  ScalePerSecond: 5
+  SmoothLerpToTarget: 0
+  SmoothPositionLerpRatio: 0.5
+  SmoothRotationLerpRatio: 0.5
+  SmoothScaleLerpRatio: 0.5
 --- !u!114 &114418041498366234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,6 +285,23 @@ MonoBehaviour:
   CellHeight: 0.05
   SphereMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   CylinderMesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114665034541960832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1905387721034384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbad991a9894486418e4988222483ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultGazeDistance: 2
+  PlaceParentOnTap: 1
+  ParentGameObjectToPlace: {fileID: 0}
+  IsBeingPlaced: 0
+  AllowMeshVisualizationControl: 1
+  UseColliderCenter: 0
 --- !u!114 &114677001911531170
 MonoBehaviour:
   m_ObjectHideFlags: 1

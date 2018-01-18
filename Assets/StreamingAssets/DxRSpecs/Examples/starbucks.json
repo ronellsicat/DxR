@@ -3,8 +3,8 @@
   "description": "This displays glyphs that can be manually placed on physical referrents.",
   "data": { "url": "starbucks-example.csv" },
   "mark": "sphere",
-  "width": 1200,
-  "height": 1400,
+  "width": 500,
+  "height": 500,
   "encoding": {
     "x": {
       "field": "PosX",

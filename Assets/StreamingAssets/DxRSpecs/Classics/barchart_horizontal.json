@@ -1,7 +1,6 @@
 {
   "width": 500,
   "height": 500,
-  "depth": 500,
   "data": {
     "values": [
      {"keyword": "A", "count": 28},
@@ -15,16 +14,22 @@
       {"keyword": "I", "count": 52}
     ]
   },
-  "mark": "bar",
+  "mark": "cube",
   "encoding": {
     "y": {
       "field": "keyword",
       "type": "nominal"
     },
+    "x": {
+      "field": "count",
+      "type": "quantitative"
+    },
     "width": {
       "field": "count",
       "type": "quantitative"
+    },
+    "xoffsetpct": {
+      "value":  -0.5
     }
   }
-}
-
+}      

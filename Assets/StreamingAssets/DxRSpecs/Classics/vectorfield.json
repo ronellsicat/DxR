@@ -1,11 +1,10 @@
 {
   "title": "Field Data",
-  "description": "This displays a 3D glyph plot.",
   "width": 500,
   "height": 500,
   "depth":  500,
   "data": { "url": "field.json" },
-  "mark": "paperplane",
+  "mark": "cone",
   "encoding": {
     "x": {
       "field": "x",
@@ -27,29 +26,30 @@
         "range": [ 0, 100 ]
       }
     },
-    "xorient": {
+    "color": {
+      "field": "mag",
+      "type": "quantitative",
+    },
+    "xdirection": {
       "field": "u",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
     },
-    "yorient": {
+    "ydirection": {
       "field": "v",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
     },
-    "zorient": {
+    "zdirection": {
       "field": "w",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
-    },
-    "color": {
-      "value": "#ffffbf"
     }
   }
 }

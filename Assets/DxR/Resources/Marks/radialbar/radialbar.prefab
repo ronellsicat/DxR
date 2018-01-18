@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33973613645577542}
   - component: {fileID: 23493595248041332}
   - component: {fileID: 114175835352162886}
+  - component: {fileID: 65203775805841700}
   m_Layer: 0
   m_Name: radialbar
   m_TagString: Untagged
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567350920240108}
   m_Mesh: {fileID: 4300000, guid: 034d58f9278038547b65644cba6ac138, type: 3}
+--- !u!65 &65203775805841700
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567350920240108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.002, y: 0.002, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.5}
 --- !u!114 &114175835352162886
 MonoBehaviour:
   m_ObjectHideFlags: 1

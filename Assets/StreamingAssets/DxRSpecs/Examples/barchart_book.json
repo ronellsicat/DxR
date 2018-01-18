@@ -1,7 +1,7 @@
 {
-  "width" : 400,
-  "height" : 400,
-  "depth" : 400,
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
   "data" : {
     "url" : "books.json"
   },
@@ -16,11 +16,17 @@
     },
     "y" : {
       "field" : "counts",
-      "type" : "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": ["0", "100"]
+      }
     },
-    "height" : {
-      "field" : "counts",
-      "type" : "quantitative"
+    "height": {
+      "field": "counts",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ "0", "100" ]
+      }
     },
     "yrotation" : {
       "value" : 180
@@ -28,8 +34,11 @@
     "zoffset" : {
       "value" : 80
     },
-    "yoffsetpct" : {
-      "value" : -1
+    "yoffsetpct": {
+      "value": -1
+    },
+    "width": {
+      "value": 40
     }
   }
 }

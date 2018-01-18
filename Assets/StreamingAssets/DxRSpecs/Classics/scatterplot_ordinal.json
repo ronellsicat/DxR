@@ -1,11 +1,11 @@
 {
   "width": 500,
   "height": 500,
-  "depth": 500,
+  "depth":  500,
   "data": { "url": "cars.json" },
-  "mark": "point",
+  "mark": "sphere",
   "encoding": {
-    "x": {
+     "x": {
       "field": "Horsepower",
       "type": "quantitative"
     },
@@ -14,12 +14,8 @@
       "type": "quantitative"
     },
     "color": {
-      "field": "Weight_in_lbs",
-      "type": "quantitative",
-      "scale": {
-        "domain": [ 1000, 2750, 4500 ],
-        "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
-      }
+      "field": "Cylinders",
+      "type": "ordinal"
     }
   }
 }
