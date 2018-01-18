@@ -59,21 +59,21 @@
         "labels": true
       }
     },
-    "xorient": {
+    "xdirection": {
       "field": "vx",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
     },
-    "yorient": {
+    "ydirection": {
       "field": "vy",
       "type": "quantitative",
       "scale": {
         "type": "none"
       }
     },
-    "zorient": {
+    "zdirection": {
       "field": "vz",
       "type": "quantitative",
       "scale": {

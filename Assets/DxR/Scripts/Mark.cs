@@ -706,6 +706,7 @@ namespace DxR
             {
                 List<float> minMax = new List<float>();
                 GetExtent(data, channelEncoding.field, ref minMax);
+
                 // For positive minimum values, set the baseline to zero.
                 // TODO: Handle logarithmic scale with undefined 0 value.
                 if(minMax[0] >= 0)

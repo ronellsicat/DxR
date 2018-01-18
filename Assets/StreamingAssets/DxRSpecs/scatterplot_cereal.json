@@ -2,7 +2,7 @@
   "title": "Cars Data",
   "description":  "This displays a scatterplot with the color channel mapped to Origin - a nominal data type.",
   "data": { "url": "cereals.csv" },
-  "mark": "point",
+  "mark": "sphere",
   "encoding": {
     "x": {
       "field": "Calories",

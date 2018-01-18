@@ -15,11 +15,19 @@
       {"keyword": "I", "count": 52}
     ]
   },
-  "mark": "bar",
+  "mark": "cube",
   "encoding": {
     "x": {
       "field": "keyword",
       "type": "nominal",
+      "axis": "none"
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      },
       "axis": "none"
     },
     "height": {
@@ -32,6 +40,12 @@
     },
     "color": {
       "value": "#2ca25f"
+    },
+    "yoffsetpct": {
+      "value": -0.5
+    },
+    "width": {
+      "value": 30
     }
   }
 }

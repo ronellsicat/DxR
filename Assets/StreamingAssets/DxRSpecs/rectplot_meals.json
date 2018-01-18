@@ -20,9 +20,8 @@
         "scheme": "blues"
       }
     },
-    "tooltip": {
-      "field": "headcount",
-      "type": "quantitative"
+    "size": {
+      "value":  50
     }
   }
 }
