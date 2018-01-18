@@ -2,7 +2,7 @@
   "data" : {
     "url" : "cars.json"
   },
-  "mark" : "sphere",
+  "mark" : "cube",
   "encoding" : {
     "x" : {
       "field" : "Horsepower",
@@ -102,6 +102,50 @@
         "y" : 500,
         "z" : 0,
         "title" : "Legend: Displacement"
+      }
+    },
+    "color" : {
+      "field" : "Origin",
+      "type" : "nominal",
+      "scale" : {
+        "type" : "ordinal",
+        "domain" : [
+          "Europe",
+          "Japan",
+          "USA"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : "category",
+        "scheme" : "tableau10"
+      },
+      "legend" : {
+        "type" : "symbol",
+        "gradientWidth" : 200,
+        "gradientHeight" : 50,
+        "face" : "front",
+        "orient" : "right",
+        "x" : 500,
+        "y" : 500,
+        "z" : 0,
+        "title" : "Legend: Origin"
+      }
+    },
+    "xrotation" : {
+      "field" : "Miles_per_Gallon",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "9",
+          "46.6"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "360"
+        ]
       }
     }
   },

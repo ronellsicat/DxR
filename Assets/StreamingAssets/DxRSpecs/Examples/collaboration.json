@@ -19,18 +19,24 @@
       "field" : "time",
       "type" : "ordinal"
     },
-    "color": {
-      "field": "weight",
-      "type": "quantitative",
-      "scale": {
-        "domain": [ "0", "14" ]
+    "color" : {
+      "field" : "weight",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          "0",
+          "14"
+        ]
       }
     },
     "size" : {
       "field" : "weight",
-      "type": "quantitative",
-      "scale": {
-        "domain": ["0", "14"]
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          "0",
+          "14"
+        ]
       }
     }
   }
