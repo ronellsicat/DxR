@@ -101,7 +101,7 @@ namespace DxR
 
         internal List<string> GetDataFieldsList(string dataURL)
         {
-            List<string> fieldNames = new List<string>() { DxR.Vis.UNDEFINED };
+            List<string> fieldNames = new List<string>();
             JSONNode dataSpecs = new JSONObject();
             string filename = GetFullDataPath(dataURL);
 
@@ -127,7 +127,7 @@ namespace DxR
 
         internal List<string> GetDataFieldsListFromValues(JSONNode valuesSpecs)
         {
-            List<string> fieldNames = new List<string>() { DxR.Vis.UNDEFINED };
+            List<string> fieldNames = new List<string>(); 
             foreach (KeyValuePair<string, JSONNode> kvp in valuesSpecs[0].AsObject)
             {
                 fieldNames.Add(kvp.Key);

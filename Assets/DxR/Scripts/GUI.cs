@@ -269,9 +269,24 @@ namespace DxR
             {
                 guiVisSpecs["data"]["url"] = curValue;
 
-                // Reset channels!
-                // TODO: Only reset parts of the spec.
-                guiVisSpecs["encoding"] = null;
+                // Keep channel field names if they exist in the data
+                // and set to undefined if not, so user can use specs as template for new data.
+                
+                List<string> newDataFields = GetDataFieldsList();
+                Transform channelListContent = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent");
+                for (int i = 0; i < channelListContent.childCount - 1; i++)
+                {
+                    GameObject channelGUI = channelListContent.GetChild(i).gameObject;
+                    
+                    Dropdown dropdown = dropdown = channelGUI.transform.Find("ChannelDropdown").GetComponent<Dropdown>();
+                    string channel = dropdown.options[dropdown.value].text;
+
+                    if(!newDataFields.Contains(channel))
+                    {
+                        dropdown = channelGUI.transform.Find("DataFieldDropdown").GetComponent<Dropdown>();
+                        UpdateChannelGUIDataFieldDropdownValue("undefined", ref channelGUI);
+                    }
+                }
 
                 Debug.Log("Updated specs " + guiVisSpecs["encoding"].ToString());
 
@@ -384,10 +399,25 @@ namespace DxR
 
         public List<string> GetDataFieldDropdownOptions()
         {
+            List<string> fieldsListOptions = new List<string> { DxR.Vis.UNDEFINED };
             if(guiVisSpecs["data"]["url"].Value == "inline")
             {
-                return targetVis.GetDataFieldsListFromValues(guiVisSpecs["data"]["values"]);
+                fieldsListOptions.AddRange(targetVis.GetDataFieldsListFromValues(guiVisSpecs["data"]["values"]));
             } else
+            {
+                fieldsListOptions.AddRange(targetVis.GetDataFieldsListFromURL(guiVisSpecs["data"]["url"].Value));
+            }
+
+            return fieldsListOptions;
+        }
+
+        public List<string> GetDataFieldsList()
+        {
+            if (guiVisSpecs["data"]["url"].Value == "inline")
+            {
+                return targetVis.GetDataFieldsListFromValues(guiVisSpecs["data"]["values"]);
+            }
+            else
             {
                 return targetVis.GetDataFieldsListFromURL(guiVisSpecs["data"]["url"].Value);
             }
