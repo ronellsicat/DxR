@@ -1,0 +1,31 @@
+{
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
+  "data" : {
+    "url" : "trade2.csv"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "n1",
+      "type" : "nominal"
+    },
+    "y" : {
+      "field" : "n2",
+      "type" : "nominal"
+    },
+    "z" : {
+      "field" : "time",
+      "type" : "ordinal"
+    },
+    "size" : {
+      "field" : "weight",
+      "type" : "quantitative"
+    },
+    "color" : {
+      "field" : "weight",
+      "type" : "quantitative"
+    }
+  }
+}

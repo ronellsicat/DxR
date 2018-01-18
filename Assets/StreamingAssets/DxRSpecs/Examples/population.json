@@ -10,25 +10,17 @@
   "encoding": {
     "latitute": {
       "field": "lat",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      },
-      "axis": "none"
+      "type": "quantitative"
     },
     "longitude": {
       "field": "lng",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      },
-      "axis": "none"
+      "type": "quantitative"
     },
     "length": {
       "field": "value",
       "type": "quantitative",
       "scale": {
-        "type": "none"
+        "range": ["0","1"]
       },
       "axis": "none"
     },
