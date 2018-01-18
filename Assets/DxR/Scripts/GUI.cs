@@ -99,12 +99,19 @@ namespace DxR
             {
                 foreach (KeyValuePair<string, JSONNode> kvp in channelEncodings.AsObject)
                 {
-                    if(guiVisSpecs["encoding"][kvp.Key]["value"] == null)
+                    string channelName = kvp.Key;
+                    if(guiVisSpecs["encoding"][channelName]["value"] == null && 
+                        IsChannelInMarksChannelList(guiVisSpecs["mark"].Value, channelName))
                     {
-                        AddChannelGUI(kvp.Key, kvp.Value.AsObject);
+                        AddChannelGUI(channelName, kvp.Value.AsObject);
                     }
                 }
             }
+        }
+
+        private bool IsChannelInMarksChannelList(string markName, string channelName)
+        {
+            return targetVis.GetChannelsList(markName).Contains(channelName);
         }
 
         private void AddChannelGUI(string channelName, JSONObject channelEncodingSpecs)
