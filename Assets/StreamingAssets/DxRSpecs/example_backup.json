@@ -1,18 +1,23 @@
 {
-  "data": { "url": "cars.json" },
-  "mark": "cube",
-  "encoding": {
-    "x": {
-      "field": "Horsepower",
-      "type": "quantitative"
+  "data" : {
+    "url" : "cars.json"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "Horsepower",
+      "type" : "quantitative"
     },
-    "y": {
-      "field": "Displacement",
-      "type": "quantitative"
+    "y" : {
+      "field" : "Displacement",
+      "type" : "quantitative"
     },
-    "color": {
-      "field": "Origin",
-      "type": "nominal"
+    "color" : {
+      "field" : "Origin",
+      "type" : "nominal"
     }
-  }
+  },
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500
 }
