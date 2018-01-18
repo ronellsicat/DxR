@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23506410879465182}
   - component: {fileID: 114343534456654250}
   m_Layer: 0
-  m_Name: point
+  m_Name: sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f59829da56c944459baa85cd9e5ab2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markName: point
+  markName: sphere
+  origOrientation: {x: 0, y: 1, z: 0}
+  curOrientation: {x: 0, y: 1, z: 0}
 --- !u!135 &135989116048471570
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -5,7 +5,7 @@
   "height": 470,
   "depth": 500,
   "data": { "url": "lebron.json" },
-  "mark": "point",
+  "mark": "sphere",
   "encoding": {
     "x": {
       "field": "x",
