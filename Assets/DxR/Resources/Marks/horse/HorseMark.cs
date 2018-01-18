@@ -14,9 +14,6 @@ namespace DxR
     /// </summary>
     public class HorseMark : Mark
     {
-        public Vector3 origOrientation;
-        public Vector3 curOrientation;
-
         public HorseMark() : base()
         {
             origOrientation = curOrientation = Vector3.left;
@@ -28,15 +25,6 @@ namespace DxR
             {
                 case "size":
                     SetSize(value);
-                    break;
-                case "xorient":
-                    SetOrientation(value, 0);
-                    break;
-                case "yorient":
-                    SetOrientation(value, 1);
-                    break;
-                case "zorient":
-                    SetOrientation(value, 2);
                     break;
                 default:
                     base.SetChannelValue(channel, value);
