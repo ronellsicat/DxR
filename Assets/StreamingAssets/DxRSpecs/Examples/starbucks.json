@@ -2,7 +2,7 @@
   "title": "Starbuck Food",
   "description": "This displays glyphs that can be manually placed on physical referrents.",
   "data": { "url": "starbucks-example.csv" },
-  "mark": "point",
+  "mark": "sphere",
   "width": 1200,
   "height": 1400,
   "encoding": {

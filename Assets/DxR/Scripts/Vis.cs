@@ -240,7 +240,7 @@ namespace DxR
             }
         }
 
-        internal List<string> GetDataFieldsList(string dataURL)
+        internal List<string> GetDataFieldsListFromURL(string dataURL)
         {
             return parser.GetDataFieldsList(dataURL);
         }
@@ -379,9 +379,18 @@ namespace DxR
             return markPrefabResult;
         }
 
+        internal List<string> GetDataFieldsListFromValues(JSONNode valuesSpecs)
+        {
+            return parser.GetDataFieldsListFromValues(valuesSpecs);
+        }
+
         private void UpdateVisData()
         {
-            visSpecs["data"].Add("values", parser.CreateValuesSpecs(visSpecs["data"]["url"]));
+            if(visSpecs["data"]["url"] != "inline")
+            {
+                visSpecs["data"].Add("values", parser.CreateValuesSpecs(visSpecs["data"]["url"]));
+            }
+            
             JSONNode valuesSpecs = visSpecs["data"]["values"];
 
             Debug.Log("Data update " + visSpecs["data"]["values"].ToString());
@@ -598,6 +607,7 @@ namespace DxR
             string[] dirs = Directory.GetFiles(guiDataRootPath);
             List<string> dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
+            dataList.Add("inline");
             for (int i = 0; i < dirs.Length; i++)
             {
                 if (Path.GetExtension(dirs[i]) != ".meta")

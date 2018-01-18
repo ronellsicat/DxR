@@ -56,7 +56,10 @@ namespace DxR
                 }
 
                 visSpecs["data"].Add("values", CreateValuesSpecs(visSpecs["data"]["url"]));
-            } 
+            } else if(visSpecs["data"]["values"] != null)
+            {
+                visSpecs["data"].Add("url", new JSONString("inline"));
+            }
 
             // TODO: Do some checks.
         }
@@ -98,7 +101,7 @@ namespace DxR
 
         internal List<string> GetDataFieldsList(string dataURL)
         {
-            List<string> fieldNames = new List<string>();
+            List<string> fieldNames = new List<string>() { DxR.Vis.UNDEFINED };
             JSONNode dataSpecs = new JSONObject();
             string filename = GetFullDataPath(dataURL);
 
@@ -115,6 +118,17 @@ namespace DxR
             }
             
             foreach (KeyValuePair<string, JSONNode> kvp in dataSpecs["values"][0].AsObject)
+            {
+                fieldNames.Add(kvp.Key);
+            }
+
+            return fieldNames;
+        }
+
+        internal List<string> GetDataFieldsListFromValues(JSONNode valuesSpecs)
+        {
+            List<string> fieldNames = new List<string>() { DxR.Vis.UNDEFINED };
+            foreach (KeyValuePair<string, JSONNode> kvp in valuesSpecs[0].AsObject)
             {
                 fieldNames.Add(kvp.Key);
             }

@@ -902,7 +902,7 @@ namespace DxR
         {
             float offset = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
             Vector3 translateBy = transform.localPosition;
-            translateBy[dim] = offset - translateBy[dim];
+            translateBy[dim] = offset + translateBy[dim];
             transform.localPosition = translateBy;
         }
 
@@ -912,7 +912,7 @@ namespace DxR
             float offset = float.Parse(value) * GetComponent<MeshFilter>().mesh.bounds.size[dim] *
                 gameObject.transform.localScale[dim];
             Vector3 translateBy = transform.localPosition;
-            translateBy[dim] = offset - translateBy[dim];
+            translateBy[dim] = offset + translateBy[dim];
             transform.localPosition = translateBy;
         }
 

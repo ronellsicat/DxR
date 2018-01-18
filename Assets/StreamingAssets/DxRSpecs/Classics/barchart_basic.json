@@ -14,15 +14,22 @@
       {"keyword": "I", "count": 52}
     ]
   },
-  "mark": "bar",
+  "mark": "cube",
   "encoding": {
     "x": {
       "field": "keyword",
       "type": "nominal"
     },
+    "y": {
+      "field": "count",
+      "type": "quantitative"
+    },
     "height": {
       "field": "count",
       "type": "quantitative"
+    },
+    "yoffsetpct": {
+      "value":  -0.5
     }
   }
 }      

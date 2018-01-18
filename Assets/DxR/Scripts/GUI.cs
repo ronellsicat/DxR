@@ -384,7 +384,13 @@ namespace DxR
 
         public List<string> GetDataFieldDropdownOptions()
         {
-             return targetVis.GetDataFieldsList(guiVisSpecs["data"]["url"].Value);
+            if(guiVisSpecs["data"]["url"].Value == "inline")
+            {
+                return targetVis.GetDataFieldsListFromValues(guiVisSpecs["data"]["values"]);
+            } else
+            {
+                return targetVis.GetDataFieldsListFromURL(guiVisSpecs["data"]["url"].Value);
+            }
         }
 
         private void UpdateDataFieldTypeOptions(ref GameObject channelGUI)
