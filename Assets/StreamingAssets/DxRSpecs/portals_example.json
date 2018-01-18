@@ -6,7 +6,7 @@
   "data": {
     "url": "cars.json" 
   },
-  "mark": "point",
+  "mark": "sphere",
   "encoding": {
     "x": {
       "field": "Horsepower",
@@ -22,10 +22,6 @@
     },
     "color": {
       "field": "Origin",
-      "type": "nominal"
-    },
-    "tooltip": {
-      "field": "Name",
       "type": "nominal"
     }
   },

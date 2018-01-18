@@ -304,6 +304,11 @@ namespace DxR
             specs["encoding"][channelEncoding.channel].Add("legend", legendSpecsObj);
         }
 
+        int GetNumDecimalPlaces(float val)
+        {
+            return val.ToString().Length - val.ToString().IndexOf(".") - 1;
+        }
+
         private void InferAxisSpecsForChannel(ref ChannelEncoding channelEncoding, ref JSONNode specs, Data data)
         {
             string channel = channelEncoding.channel;
@@ -396,7 +401,7 @@ namespace DxR
             {
                 axisSpecsObj.Add("ticks", new JSONBool(true));
             }
-
+            
             if(axisSpecsObj["values"] == null)
             {
                 JSONArray tickValues = new JSONArray();
@@ -409,6 +414,8 @@ namespace DxR
                     // Round domain into a nice number.
                     //float maxDomain = RoundNice(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat);
 
+                    int numDecimals = Math.Max(GetNumDecimalPlaces(domain.AsArray[0].AsFloat), GetNumDecimalPlaces(domain.AsArray[1].AsFloat));
+                    Debug.Log("NUM DEC " + numDecimals);
                     // Add number of ticks.
                     int defaultNumTicks = 6;
                     int numTicks = axisSpecsObj["tickCount"] == null ? defaultNumTicks : axisSpecsObj["tickCount"].AsInt;
@@ -417,8 +424,9 @@ namespace DxR
 
                     for (int i = 0; i < numTicks; i++)
                     {
-                        float tickVal = domain.AsArray[0].AsFloat + (intervals * (float)(i));
-                        values.Add(new JSONNumber(tickVal));
+                        float tickVal = (float)Math.Round(domain.AsArray[0].AsFloat + (intervals * (float)(i)), numDecimals);
+                        //Debug.Log(tickVal);
+                        values.Add(new JSONString(tickVal.ToString()));
                     }
                 }
                 
