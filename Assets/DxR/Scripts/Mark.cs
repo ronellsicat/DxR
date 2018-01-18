@@ -1016,10 +1016,12 @@ namespace DxR
                 Vector3 markPos = gameObject.transform.localPosition;
                 
                 string datumTooltipString = BuildTooltipString();
+                float tooltipXOffset = 0.05f;
+                float tooltipZOffset = -0.05f;
                 tooltip.GetComponent<Tooltip>().SetText(datumTooltipString);
-                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.x, 0);
+                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.x + tooltipXOffset, 0);
                 tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.y, 1);
-                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.z, 2);
+                tooltip.GetComponent<Tooltip>().SetLocalPos(markPos.z + tooltipZOffset, 2);
             }
         }
 
