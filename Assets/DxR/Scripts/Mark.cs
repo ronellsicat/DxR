@@ -614,7 +614,7 @@ namespace DxR
             JSONArray range = new JSONArray();
 
             string channel = channelEncoding.channel;
-            if (channel == "x" || channel == "width")
+            if (channel == "x")
             {
                 range.Add(new JSONString("0"));
 
@@ -628,7 +628,7 @@ namespace DxR
                     specs["width"] = rangeSize;
                 }
                 
-            } else if(channel == "y" || channel == "height")
+            } else if(channel == "y")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
@@ -641,7 +641,7 @@ namespace DxR
                     range.Add(new JSONString(rangeSize.ToString()));
                     specs["height"] = rangeSize;
                 }
-            } else if(channel == "z" || channel == "depth")
+            } else if(channel == "z")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
@@ -658,13 +658,14 @@ namespace DxR
             {
                 range.Add(new JSONString("0"));
                 range.Add(new JSONString("1"));
-            } else if(channel == "size")
+            } else if(channel == "width" || channel == "height" || channel == "depth" 
+                || channel == "length" || channel == "size")
             {
                 // TODO: Get min and max size of mark.
                 
                 // HACK: Hard code range
                 range.Add(new JSONString("0"));
-                range.Add(new JSONString("200"));
+                range.Add(new JSONString("40"));
 
             } else if(channel == "color")
             {
@@ -686,9 +687,18 @@ namespace DxR
             {
                 range.Add(new JSONString("symbol"));
                 throw new Exception("Not implemented yet.");
+            } else if(channel == "xrotation" || channel == "yrotation" || channel == "zrotation")
+            {
+                range.Add(new JSONString("0"));
+                range.Add(new JSONString("360"));
+            }
+            else if (channel == "xdirection" || channel == "ydirection" || channel == "zdirection")
+            {
+                range.Add(new JSONString("0"));
+                range.Add(new JSONString("1"));
             }
 
-            if(range.Count > 0)
+            if (range.Count > 0)
             {
                 scaleSpecsObj.Add("range", range);
             }
@@ -701,14 +711,15 @@ namespace DxR
             {
                 sortType = specs["encoding"][channelEncoding.channel]["sort"].Value.ToString();
             }
-
+          
             string channel = channelEncoding.channel;
             JSONArray domain = new JSONArray();
             if (channelEncoding.fieldDataType == "quantitative" &&
                 (channel == "x" || channel == "y" || channel == "z" ||
-                channel == "width" || channel == "height" || channel == "depth" || 
-                channel == "color" || channel == "xorient" || channel == "yorient" 
-                || channel == "zorient") )
+                channel == "width" || channel == "height" || channel == "depth" || channel == "length" ||
+                channel == "color" || channel == "xrotation" || channel == "yrotation" 
+                || channel == "zrotation" || channel == "size" || channel == "xdirection")
+                || channel == "ydirection" || channel == "zdirection" || channel == "opacity")
             {
                 List<float> minMax = new List<float>();
                 GetExtent(data, channelEncoding.field, ref minMax);
@@ -810,7 +821,9 @@ namespace DxR
                 {
                     throw new Exception("Invalid field data type: " + fieldDataType);
                 }
-            } else if (channel == "width" || channel == "height" || channel == "depth")
+            } else if (channel == "width" || channel == "height" || channel == "depth" || channel == "length"
+                || channel == "xrotation" || channel == "yrotation" || channel == "zrotation" 
+                || channel == "xdirection" || channel == "ydirection" || channel == "zdirection")
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {

@@ -1,15 +1,111 @@
 {
-  "description": "Shows the relationship between horsepower and the numbver of cylinders using tick marks.",
-  "data": { "url": "cars.json" },
-  "mark": "tick",
-  "encoding": {
-    "x": {
-      "field": "Horsepower",
-      "type": "quantitative"
+  "data" : {
+    "url" : "cars.json"
+  },
+  "mark" : "sphere",
+  "encoding" : {
+    "x" : {
+      "field" : "Horsepower",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "46",
+          "230"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "bottom",
+        "title" : "Horsepower",
+        "length" : 500,
+        "color" : "#ff0000",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          "46",
+          "82.8",
+          "119.6",
+          "156.4",
+          "193.2",
+          "230"
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
-    "y": {
-      "field": "Cylinders",
-      "type": "ordinal"
+    "y" : {
+      "field" : "Miles_per_Gallon",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "9",
+          "46.6"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "left",
+        "title" : "Miles_per_Gallon",
+        "length" : 500,
+        "color" : "#00ff00",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          "9",
+          "16.5",
+          "24",
+          "31.6",
+          "39.1",
+          "46.6"
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
+    },
+    "size" : {
+      "field" : "Displacement",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "68",
+          "455"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "50"
+        ]
+      },
+      "legend" : {
+        "type" : "gradient",
+        "gradientWidth" : 200,
+        "gradientHeight" : 50,
+        "face" : "front",
+        "orient" : "right",
+        "x" : 500,
+        "y" : 500,
+        "z" : 0,
+        "title" : "Legend: Displacement"
+      }
     }
-  }
+  },
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500
 }
