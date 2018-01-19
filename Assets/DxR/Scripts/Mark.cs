@@ -152,10 +152,7 @@ namespace DxR
                         InferAxisSpecsForChannel(ref channelEncoding, ref specs, data);
                     }
 
-                    if (channelEncoding.channel == "color" || channelEncoding.channel == "size" ||
-                        channelEncoding.channel == "width" ||
-                        channelEncoding.channel == "height" || channelEncoding.channel == "depth" ||
-                        channelEncoding.channel == "shape" || channelEncoding.channel == "opacity")
+                    if (channelEncoding.channel == "color" || channelEncoding.channel == "size")
                     {
                         InferLegendSpecsForChannel(ref channelEncoding, ref specs);
                     }
@@ -614,26 +611,26 @@ namespace DxR
             JSONArray range = new JSONArray();
 
             string channel = channelEncoding.channel;
-            if (channel == "x")
+            if (channel == "x" || channel == "width")
             {
                 range.Add(new JSONString("0"));
 
-                if(scaleSpecsObj["rangeStep"] == null)
+                if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(specs["width"]));                    
+                    range.Add(new JSONString(specs["width"]));
                 } else
                 {
                     float rangeSize = float.Parse(scaleSpecsObj["rangeStep"]) * (float)scaleSpecsObj["domain"].Count;
                     range.Add(new JSONString(rangeSize.ToString()));
                     specs["width"] = rangeSize;
                 }
-                
-            } else if(channel == "y")
+
+            } else if (channel == "y" || channel == "height" || channel == "length")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(specs["height"]));                   
+                    range.Add(new JSONString(specs["height"]));
                 }
                 else
                 {
@@ -641,12 +638,12 @@ namespace DxR
                     range.Add(new JSONString(rangeSize.ToString()));
                     specs["height"] = rangeSize;
                 }
-            } else if(channel == "z")
+            } else if (channel == "z" || channel == "depth")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
                 {
-                    range.Add(new JSONString(specs["depth"]));                   
+                    range.Add(new JSONString(specs["depth"]));
                 }
                 else
                 {
@@ -654,18 +651,17 @@ namespace DxR
                     range.Add(new JSONString(rangeSize.ToString()));
                     specs["depth"] = rangeSize;
                 }
-            } else if(channel == "opacity")
+            } else if (channel == "opacity")
             {
                 range.Add(new JSONString("0"));
                 range.Add(new JSONString("1"));
-            } else if(channel == "width" || channel == "height" || channel == "depth" 
-                || channel == "length" || channel == "size")
+            } else if (channel == "size")
             {
-                // TODO: Get min and max size of mark.
-                
-                // HACK: Hard code range
                 range.Add(new JSONString("0"));
-                range.Add(new JSONString("40"));
+                string maxDimSize = Math.Max(Math.Max(specs["width"].AsFloat, specs["height"].AsFloat),
+                    specs["depth"].AsFloat).ToString();
+
+                range.Add(new JSONString(maxDimSize));
 
             } else if(channel == "color")
             {
@@ -737,12 +733,14 @@ namespace DxR
 
                 if (sortType == "none" || sortType == "ascending")
                 {
-                    domain.Add(new JSONString(minMax[0].ToString()));
+                    //domain.Add(new JSONString(minMax[0].ToString()));
+                    domain.Add(new JSONString("0"));
                     domain.Add(new JSONString(minMax[1].ToString()));
                 } else
                 {
                     domain.Add(new JSONString(minMax[1].ToString()));
-                    domain.Add(new JSONString(minMax[0].ToString()));
+                    domain.Add(new JSONString("0"));
+                    //domain.Add(new JSONString(minMax[0].ToString()));
                 }
             } else
             {

@@ -9,24 +9,15 @@
   "encoding" : {
     "x" : {
       "field" : "keyword",
-      "type" : "nominal",
-      "axis" : {
-        "titlePadding" : 100
-      }
+      "type" : "nominal"
     },
     "y" : {
       "field" : "counts",
-      "type": "quantitative",
-      "scale": {
-        "domain": ["0", "100"]
-      }
+      "type" : "quantitative"
     },
-    "height": {
-      "field": "counts",
-      "type": "quantitative",
-      "scale": {
-        "domain": [ "0", "100" ]
-      }
+    "height" : {
+      "field" : "counts",
+      "type" : "quantitative"
     },
     "yrotation" : {
       "value" : 180
@@ -34,11 +25,11 @@
     "zoffset" : {
       "value" : 80
     },
-    "yoffsetpct": {
-      "value": -1
+    "yoffsetpct" : {
+      "value" : -1
     },
-    "width": {
-      "value": 40
+    "width" : {
+      "value" : 40
     }
   }
 }
