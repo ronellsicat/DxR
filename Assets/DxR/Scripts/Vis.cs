@@ -15,11 +15,11 @@ namespace DxR
     /// </summary>
     public class Vis : MonoBehaviour
     {
-        public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
-        public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
-        public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
-        public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
-        public bool verbose = true;                                     // Switch for verbose log.
+        string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
+        bool enableGUI = true;                                   // Switch for in-situ GUI editor.
+        bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
+        bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
+        bool verbose = true;                                     // Switch for verbose log.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Conversion factor to convert each Unity unit to 1 meter.
@@ -42,9 +42,12 @@ namespace DxR
         float depth;                                                    // Depth of scene in millimeters.
         string markType;                                                // Type or name of mark used in vis.
         public Data data;                                               // Object containing data.
+
         List<GameObject> markInstances;                                 // List of mark instances; each mark instance corresponds to a datum.
 
-        private GameObject parentObject = null;                         // Root game object for all generated objects associated to vis.
+        private GameObject parentObject = null;                         // Parent game object for all generated objects associated to vis.
+        private GameObject viewParentObject = null;                     // Parent game object for all view related objects - axis, legend, marks.
+        private GameObject marksParentObject = null;                    // Parent game object for all mark instances.
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
         
@@ -57,6 +60,14 @@ namespace DxR
         {
             // Initialize objects:
             parentObject = gameObject;
+            viewParentObject = gameObject.transform.Find("DxRView").gameObject;
+            marksParentObject = viewParentObject.transform.Find("DxRMarks").gameObject;
+
+            if(viewParentObject == null || marksParentObject == null)
+            {
+                throw new Exception("Unable to load DxRView and/or DxRMarks objects.");
+            }
+
             parser = new Parser();
 
             // Parse the vis specs URL into the vis specs object.
@@ -73,7 +84,7 @@ namespace DxR
 
         private void InitAnchor()
         {
-            Anchor anchor = parentObject.transform.Find("Anchor").transform.GetComponent<Anchor>();
+            Anchor anchor = parentObject.transform.Find("DxRAnchor").transform.GetComponent<Anchor>();
             if(anchor != null)
             {
                 anchor.EnableTapToPlace();
@@ -152,7 +163,7 @@ namespace DxR
             GameObject legendPrefab = Resources.Load("Legend/Legend", typeof(GameObject)) as GameObject;
             if (legendPrefab != null && markPrefab != null)
             {
-                channelEncoding.legend = Instantiate(legendPrefab, parentObject.transform);
+                channelEncoding.legend = Instantiate(legendPrefab, viewParentObject.transform);
                 channelEncoding.legend.GetComponent<Legend>().UpdateSpecs(legendSpecs, ref channelEncoding, markPrefab);
             }
             else
@@ -187,7 +198,7 @@ namespace DxR
             GameObject axisPrefab = Resources.Load("Axis/Axis", typeof(GameObject)) as GameObject;
             if (axisPrefab != null)
             {
-                channelEncoding.axis = Instantiate(axisPrefab, parentObject.transform);
+                channelEncoding.axis = Instantiate(axisPrefab, viewParentObject.transform);
                 channelEncoding.axis.GetComponent<Axis>().UpdateSpecs(axisSpecs, channelEncoding.scale);                
             }
             else
@@ -235,7 +246,7 @@ namespace DxR
             foreach (Dictionary<string, string> dataValue in data.values)
             {
                 // Instantiate mark prefab, copying parentObject's transform:
-                GameObject markInstance = InstantiateMark(markPrefab, parentObject.transform);
+                GameObject markInstance = InstantiateMark(markPrefab, marksParentObject.transform);
 
                 // Copy datum in mark:
                 markInstance.GetComponent<Mark>().datum = dataValue;
@@ -506,12 +517,17 @@ namespace DxR
 
         private void DeleteAll()
         {
-            foreach (Transform child in parentObject.transform)
+            foreach (Transform child in viewParentObject.transform)
             {
-                if (child.tag != "Anchor" && child.tag != "DxRGUI" && child.tag != "Tooltip")
+                if (child.tag != "DxRMarks")
                 {
                     GameObject.Destroy(child.gameObject);
                 }
+            }
+
+            foreach (Transform child in marksParentObject.transform)
+            {
+                GameObject.Destroy(child.gameObject);
             }
         }
 
@@ -671,6 +687,12 @@ namespace DxR
         {
             GameObject markObject = LoadMarkPrefab(markName);
             return markObject.GetComponent<Mark>().GetChannelsList();
+        }
+
+        public void Rescale(float scaleFactor)
+        {
+            viewParentObject.transform.localScale = Vector3.Scale(viewParentObject.transform.localScale, 
+                new Vector3(scaleFactor, scaleFactor, scaleFactor));
         }
     }
 

@@ -6,8 +6,10 @@ TagManager:
   tags:
   - DxRVis
   - DxRGUI
-  - Anchor
-  - Tooltip
+  - DxRAnchor
+  - DxRTooltip
+  - DxRView
+  - DxRMarks
   layers:
   - Default
   - TransparentFX

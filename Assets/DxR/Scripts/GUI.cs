@@ -38,6 +38,11 @@ namespace DxR
 
         }
 
+        public Vis GetTargetVis()
+        {
+            return targetVis;
+        }
+
         public void Init(Vis targetVisInstance)
         {
             targetVis = targetVisInstance;
@@ -64,8 +69,35 @@ namespace DxR
             addChannelButtonTransform = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent/AddChannelButton");
             Button addChannelBtn = addChannelButtonTransform.GetComponent<Button>();
             addChannelBtn.onClick.AddListener(CallAddEmptyChannelGUI);
-            
+
+            InitInteractiveButtons();
+
             UpdateGUISpecsFromVisSpecs();
+        }
+
+        private void InitInteractiveButtons()
+        {
+            Button zoomInBtn = gameObject.transform.Find("ZoomInButton").GetComponent<Button>();
+            zoomInBtn.onClick.AddListener(ZoomInCallback);
+
+            Button zoomOutBtn = gameObject.transform.Find("ZoomOutButton").GetComponent<Button>();
+            zoomOutBtn.onClick.AddListener(ZoomOutCallback);
+        }
+
+        public void ZoomInCallback()
+        {
+            if(targetVis != null)
+            {
+                targetVis.Rescale(1.10f);
+            }
+        }
+
+        public void ZoomOutCallback()
+        {
+            if (targetVis != null)
+            {
+                targetVis.Rescale(0.9f);
+            }
         }
 
         // Call this to update the GUI and its specs when the vis specs of 
