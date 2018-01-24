@@ -15,10 +15,10 @@ namespace DxR
     /// </summary>
     public class Vis : MonoBehaviour
     {
-        string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
-        bool enableGUI = true;                                   // Switch for in-situ GUI editor.
-        bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
-        bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
+        public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
+        public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
+        public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
+        public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         bool verbose = true;                                     // Switch for verbose log.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
@@ -46,8 +46,10 @@ namespace DxR
         List<GameObject> markInstances;                                 // List of mark instances; each mark instance corresponds to a datum.
 
         private GameObject parentObject = null;                         // Parent game object for all generated objects associated to vis.
+
         private GameObject viewParentObject = null;                     // Parent game object for all view related objects - axis, legend, marks.
         private GameObject marksParentObject = null;                    // Parent game object for all mark instances.
+        private GameObject guidesParentObject = null;                   // Parent game object for all guies (axes/legends) instances.
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
         
@@ -62,8 +64,9 @@ namespace DxR
             parentObject = gameObject;
             viewParentObject = gameObject.transform.Find("DxRView").gameObject;
             marksParentObject = viewParentObject.transform.Find("DxRMarks").gameObject;
+            guidesParentObject = viewParentObject.transform.Find("DxRGuides").gameObject;
 
-            if(viewParentObject == null || marksParentObject == null)
+            if (viewParentObject == null || marksParentObject == null)
             {
                 throw new Exception("Unable to load DxRView and/or DxRMarks objects.");
             }
@@ -163,7 +166,7 @@ namespace DxR
             GameObject legendPrefab = Resources.Load("Legend/Legend", typeof(GameObject)) as GameObject;
             if (legendPrefab != null && markPrefab != null)
             {
-                channelEncoding.legend = Instantiate(legendPrefab, viewParentObject.transform);
+                channelEncoding.legend = Instantiate(legendPrefab, guidesParentObject.transform);
                 channelEncoding.legend.GetComponent<Legend>().UpdateSpecs(legendSpecs, ref channelEncoding, markPrefab);
             }
             else
@@ -198,7 +201,7 @@ namespace DxR
             GameObject axisPrefab = Resources.Load("Axis/Axis", typeof(GameObject)) as GameObject;
             if (axisPrefab != null)
             {
-                channelEncoding.axis = Instantiate(axisPrefab, viewParentObject.transform);
+                channelEncoding.axis = Instantiate(axisPrefab, guidesParentObject.transform);
                 channelEncoding.axis.GetComponent<Axis>().UpdateSpecs(axisSpecs, channelEncoding.scale);                
             }
             else
@@ -500,11 +503,18 @@ namespace DxR
             {
                 visSpecs.Add("width", new JSONNumber(DEFAULT_VIS_DIMS));
                 width = visSpecs["width"].AsFloat;
+            } else
+            {
+                width = visSpecs["width"].AsFloat;
             }
 
             if (visSpecs["height"] == null)
             {
                 visSpecs.Add("height", new JSONNumber(DEFAULT_VIS_DIMS));
+                height = visSpecs["height"].AsFloat;
+            }
+            else
+            {
                 height = visSpecs["height"].AsFloat;
             }
 
@@ -513,16 +523,17 @@ namespace DxR
                 visSpecs.Add("depth", new JSONNumber(DEFAULT_VIS_DIMS));
                 depth = visSpecs["depth"].AsFloat;
             }
+            else
+            {
+                depth = visSpecs["depth"].AsFloat;
+            }
         }
 
         private void DeleteAll()
         {
-            foreach (Transform child in viewParentObject.transform)
+            foreach (Transform child in guidesParentObject.transform)
             {
-                if (child.tag != "DxRMarks")
-                {
-                    GameObject.Destroy(child.gameObject);
-                }
+                GameObject.Destroy(child.gameObject);
             }
 
             foreach (Transform child in marksParentObject.transform)
@@ -693,6 +704,21 @@ namespace DxR
         {
             viewParentObject.transform.localScale = Vector3.Scale(viewParentObject.transform.localScale, 
                 new Vector3(scaleFactor, scaleFactor, scaleFactor));
+        }
+
+        public void ResetView()
+        {
+            viewParentObject.transform.localScale = new Vector3(1, 1, 1);
+            viewParentObject.transform.localEulerAngles = new Vector3(0, 0, 0);
+            viewParentObject.transform.localPosition = new Vector3(0, 0, 0);
+        }
+
+        public void RotateAroundCenter(Vector3 rotationAxis, float angleDegrees)
+        {
+            Vector3 center = viewParentObject.transform.parent.transform.position + 
+                new Vector3(width * SIZE_UNIT_SCALE_FACTOR / 2.0f, height * SIZE_UNIT_SCALE_FACTOR / 2.0f, 
+                depth * SIZE_UNIT_SCALE_FACTOR / 2.0f);
+            viewParentObject.transform.RotateAround(center, rotationAxis, angleDegrees);
         }
     }
 

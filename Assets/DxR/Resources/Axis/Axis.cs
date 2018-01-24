@@ -179,9 +179,10 @@ public class Axis : MonoBehaviour {
     private void AddTick(string face, string orient, float pos, string label, GameObject prefab, Transform parent)
     {
         GameObject instance = Instantiate(prefab, parent.position, parent.rotation, parent);
-        
-        instance.transform.Translate(pos - GetLength() / 2.0f, 0, 0);
-        
+
+        //instance.transform.Translate(pos - GetLength() / 2.0f, 0, 0);
+        instance.transform.localPosition = new Vector3(pos - (GetLength() / 2.0f), 0, 0);
+
         // Adjust label
         // TODO: Adjust label angle.
         Transform tickLabelTransform = instance.transform.Find("TickLabel");

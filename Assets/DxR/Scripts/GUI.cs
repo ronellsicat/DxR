@@ -77,11 +77,55 @@ namespace DxR
 
         private void InitInteractiveButtons()
         {
+            Button resetBtn = gameObject.transform.Find("ResetButton").GetComponent<Button>();
+            resetBtn.onClick.AddListener(ResetCallback);
+
             Button zoomInBtn = gameObject.transform.Find("ZoomInButton").GetComponent<Button>();
             zoomInBtn.onClick.AddListener(ZoomInCallback);
 
             Button zoomOutBtn = gameObject.transform.Find("ZoomOutButton").GetComponent<Button>();
             zoomOutBtn.onClick.AddListener(ZoomOutCallback);
+
+            Button rotateXBtn = gameObject.transform.Find("RotateXButton").GetComponent<Button>();
+            rotateXBtn.onClick.AddListener(RotateXCallback);
+
+            Button rotateYBtn = gameObject.transform.Find("RotateYButton").GetComponent<Button>();
+            rotateYBtn.onClick.AddListener(RotateYCallback);
+
+            Button rotateZBtn = gameObject.transform.Find("RotateZButton").GetComponent<Button>();
+            rotateZBtn.onClick.AddListener(RotateZCallback);
+        }
+
+        public void RotateXCallback()
+        {
+            if (targetVis != null)
+            {
+                targetVis.RotateAroundCenter(Vector3.right, -15);
+            }
+        }
+
+        public void RotateYCallback()
+        {
+            if (targetVis != null)
+            {
+                targetVis.RotateAroundCenter(Vector3.up, -15);
+            }
+        }
+
+        public void RotateZCallback()
+        {
+            if (targetVis != null)
+            {
+                targetVis.RotateAroundCenter(Vector3.forward, -15);
+            }
+        }
+
+        public void ResetCallback()
+        {
+            if (targetVis != null)
+            {
+                targetVis.ResetView();
+            }
         }
 
         public void ZoomInCallback()

@@ -1006,7 +1006,7 @@ GameObject:
   - component: {fileID: 4886009512967482}
   m_Layer: 0
   m_Name: DxRMarks
-  m_TagString: Untagged
+  m_TagString: DxRMarks
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1039,7 +1039,22 @@ GameObject:
   - component: {fileID: 4675086221664746}
   m_Layer: 0
   m_Name: DxRView
-  m_TagString: Untagged
+  m_TagString: DxRView
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1836562182150574
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4104624631448758}
+  m_Layer: 0
+  m_Name: DxRGuides
+  m_TagString: DxRGuides
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1156,6 +1171,19 @@ Transform:
   m_Father: {fileID: 4330225958459428}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4104624631448758
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1836562182150574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4675086221664746}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4330225958459428
 Transform:
   m_ObjectHideFlags: 1
@@ -1183,6 +1211,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4886009512967482}
+  - {fileID: 4104624631448758}
   m_Father: {fileID: 4330225958459428}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1283,7 +1312,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 057058a7b45cba34e8101753e0680fdf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1391,7 +1420,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d532b00c1f70a4b4795bfaed3ad67831, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1790,7 +1819,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Z
+  m_Text: 
 --- !u!114 &114274148789677504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1908,7 +1937,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 56047d08db93de34eb1179289568d477, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1954,6 +1983,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff35d644245a9b345a83026044b042b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visSpecsURL: example.json
+  enableGUI: 1
+  enableSpecsExpansion: 0
+  enableTooltip: 1
 --- !u!114 &114302616305426950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2059,7 +2092,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 320a92fef8bf7a14ca25d69409ce4597, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2194,7 +2227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: +
+  m_Text: 
 --- !u!114 &114394792356777152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2952,7 +2985,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Y
+  m_Text: 
 --- !u!114 &114624408209521204
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3214,7 +3247,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3e15528461f6a194bbf73fe401d494ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3254,7 +3287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-'
+  m_Text: 
 --- !u!114 &114808949336374154
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3287,7 +3320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: R
+  m_Text: 
 --- !u!114 &114813404077618022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3375,7 +3408,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1f6c0c36636d5f24d9d81a4af91829d0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3704,7 +3737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: X
+  m_Text: 
 --- !u!114 &114933556627527896
 MonoBehaviour:
   m_ObjectHideFlags: 1
