@@ -54,7 +54,7 @@ namespace HoloToolkit.Unity.InputModule
             bool spawnControllers = false;
 
 #if UNITY_2017_2_OR_NEWER
-            spawnControllers = !XRDevice.isPresent && XRSettings.enabled && simulateHandsInEditor;
+            spawnControllers = !XRDevice.isPresent && !XRSettings.isDeviceActive && simulateHandsInEditor;
 #else
             spawnControllers = simulateHandsInEditor;
 #endif
