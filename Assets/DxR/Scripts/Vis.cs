@@ -15,10 +15,10 @@ namespace DxR
     /// </summary>
     public class Vis : MonoBehaviour
     {
-        public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
-        public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
-        public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
-        public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
+        string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
+        bool enableGUI = true;                                   // Switch for in-situ GUI editor.
+        bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
+        bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         bool verbose = true;                                     // Switch for verbose log.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.

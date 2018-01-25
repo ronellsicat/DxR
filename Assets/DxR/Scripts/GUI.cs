@@ -8,6 +8,11 @@ using UnityEngine.EventSystems;
 
 namespace DxR
 {
+    /// <summary>
+    /// Whenever a GUI action is performed, button clicked, dropdown clicked, etc., the guiVisSpecs is automatically updated so it 
+    /// should be in sync all the time. The visSpecs of the targetVis is only updated when calling UpdateVisSpecsFromGUISpecs, and 
+    /// for the other way around, the guiVisSpecs is updated from the targetVis specs when calling UpdateGUISpecsFromVisSpecs.
+    /// </summary>
     public class GUI : MonoBehaviour
     {
         Vis targetVis = null;
@@ -17,21 +22,12 @@ namespace DxR
         
         Transform addChannelButtonTransform = null;
         GameObject channelGUIPrefab = null;
-        
+
+        Transform addInteractionButtonTransform = null;
+        GameObject interactionGUIPrefab = null;
+
         List<string> dataFieldTypeDropdownOptions;
-
-        /// <summary>
-        /// Whenever a GUI action is performed, button clicked, dropdown clicked, etc., the guiVisSpecs is automatically updated so it 
-        /// should be in sync all the time. The visSpecs of the targetVis is only updated when calling UpdateVisSpecsFromGUISpecs, and 
-        /// for the other way around, the guiVisSpecs is updated from the targetVis specs when calling UpdateGUISpecsFromVisSpecs.
-        /// </summary>
-        public struct GUIChannelParams
-        {
-            string channel;
-            string dataField;
-            string dataType;
-        }
-
+        
         // Use this for initialization
         void Start()
         {
@@ -68,7 +64,13 @@ namespace DxR
 
             addChannelButtonTransform = gameObject.transform.Find("ChannelList/Viewport/ChannelListContent/AddChannelButton");
             Button addChannelBtn = addChannelButtonTransform.GetComponent<Button>();
-            addChannelBtn.onClick.AddListener(CallAddEmptyChannelGUI);
+            addChannelBtn.onClick.AddListener(AddEmptyChannelGUICallback);
+
+            interactionGUIPrefab = Resources.Load("GUI/InteractionGUI") as GameObject;
+
+            addInteractionButtonTransform = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent/AddInteractionButton");
+            Button addInteractionBtn = addInteractionButtonTransform.GetComponent<Button>();
+            addInteractionBtn.onClick.AddListener(AddEmptyInteractionGUICallback);
 
             InitInteractiveButtons();
 
@@ -322,6 +324,43 @@ namespace DxR
             }
         }
 
+        public void OnInteractionGUIDataFieldDropdownValueChanged(Dropdown changed, GameObject interactionGUI)
+        {
+            Debug.Log("New data " + changed.options[changed.value].text);
+            string prevValue = ""; // guiVisSpecs["data"]["url"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                Debug.Log("Updated specs " + curValue);
+
+                //                UpdateGUIChannelsList(guiVisSpecs);
+            }
+
+            Debug.Log("Object name " + interactionGUI.name);
+
+            UpdateInteraction(interactionGUI);
+        }
+
+        private void UpdateInteraction(GameObject interactionGUI)
+        {
+            
+        }
+
+        public void OnInteractionGUIInteractionTypeDropdownValueChanged(Dropdown changed, GameObject interactionGUI)
+        {
+            Debug.Log("New data " + changed.options[changed.value].text);
+            string prevValue = ""; // guiVisSpecs["data"]["url"].Value;
+            string curValue = changed.options[changed.value].text;
+            if (prevValue != curValue)
+            {
+                Debug.Log("Updated specs " + curValue);
+
+                //                UpdateGUIChannelsList(guiVisSpecs);
+            }
+
+            Debug.Log("Object name " + interactionGUI.name);
+        }
+
         // TODO:
         public void OnChannelGUIDataFieldTypeDropdownValueChanged(Dropdown changed)
         {
@@ -389,9 +428,14 @@ namespace DxR
             }
         }
 
-        public void CallAddEmptyChannelGUI()
+        public void AddEmptyChannelGUICallback()
         {
             AddEmptyChannelGUI();
+        }
+
+        public void AddEmptyInteractionGUICallback()
+        {
+            AddEmptyInteractionGUI();
         }
 
         private GameObject AddEmptyChannelGUI()
@@ -413,11 +457,34 @@ namespace DxR
             return channelGUI;
         }
 
+        private GameObject AddEmptyInteractionGUI()
+        {
+            Transform interactionListContent = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent");
+            GameObject interactionGUI = Instantiate(interactionGUIPrefab, interactionListContent);
+
+            UpdateDataFieldListOptions(ref interactionGUI);
+
+            AddInteractionGUIDataFieldCallback(interactionGUI);
+            AddInteractionGUIInteractionTypeCallback(interactionGUI);
+            AddInteractionGUIDeleteCallback(ref interactionGUI);
+
+            addInteractionButtonTransform.SetAsLastSibling();
+
+            return interactionGUI;
+        }
+
         private void AddChannelGUIDeleteCallback(ref GameObject channelGUI)
         {
             Transform deleteChannelObject = channelGUI.transform.Find("DeleteChannelButton");
             Button btn = deleteChannelObject.gameObject.GetComponent<Button>();
-            btn.onClick.AddListener(DeleteChannelGUICallback);
+            btn.onClick.AddListener(DeleteParentOfClickedObjectCallback);
+        }
+
+        private void AddInteractionGUIDeleteCallback(ref GameObject interactionGUI)
+        {
+            Transform deleteInteractionObject = interactionGUI.transform.Find("DeleteInteractionButton");
+            Button btn = deleteInteractionObject.gameObject.GetComponent<Button>();
+            btn.onClick.AddListener(DeleteParentOfClickedObjectCallback);
         }
 
         private void AddChannelGUIChannelCallback(ref GameObject channelGUI)
@@ -438,6 +505,24 @@ namespace DxR
             });
         }
 
+        private void AddInteractionGUIDataFieldCallback(GameObject interactionGUI)
+        {
+            Transform dropdownObject = interactionGUI.transform.Find("DataFieldDropdown");
+            Dropdown dropdown = dropdownObject.gameObject.GetComponent<Dropdown>();
+            dropdown.onValueChanged.AddListener(delegate {
+                OnInteractionGUIDataFieldDropdownValueChanged(dropdown, interactionGUI);
+            });
+        }
+
+        private void AddInteractionGUIInteractionTypeCallback(GameObject interactionGUI)
+        {
+            Transform dropdownObject = interactionGUI.transform.Find("InteractionTypeDropdown");
+            Dropdown dropdown = dropdownObject.gameObject.GetComponent<Dropdown>();
+            dropdown.onValueChanged.AddListener(delegate {
+                OnInteractionGUIInteractionTypeDropdownValueChanged(dropdown, interactionGUI);
+            });
+        }
+
         private void AddChannelGUIDataFieldTypeCallback(ref GameObject channelGUI)
         {
             Transform dropdownObject = channelGUI.transform.Find("DataFieldTypeDropdown");
@@ -454,13 +539,13 @@ namespace DxR
             dropdown.AddOptions(GetChannelDropdownOptions());
         }
 
-        private void DeleteChannelGUICallback()
+        private void DeleteParentOfClickedObjectCallback()
         {
             Debug.Log("Clicked " + EventSystem.current.currentSelectedGameObject.transform.parent.name);
             //
             GameObject.Destroy(EventSystem.current.currentSelectedGameObject.transform.parent.gameObject);
         }
-
+        
         public List<string> GetChannelDropdownOptions()
         {
             return targetVis.GetChannelsList(markDropdown.options[markDropdown.value].text);
