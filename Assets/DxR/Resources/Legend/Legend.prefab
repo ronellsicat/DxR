@@ -279,7 +279,7 @@ MonoBehaviour:
   OrientType: 3
   LayoutType: 1
   IgnoreInactiveTransforms: 1
-  Radius: 2
+  Radius: 1.77
   Rows: 3
   CellWidth: 0.5
   CellHeight: 0.05

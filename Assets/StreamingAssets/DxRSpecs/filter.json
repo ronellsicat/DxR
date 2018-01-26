@@ -1,0 +1,42 @@
+{
+  "data" : {
+    "url" : "cars.json"
+  },
+  "mark" : "sphere",
+  "encoding" : {
+    "x" : {
+      "field" : "Horsepower",
+      "type" : "quantitative"
+    },
+    "y" : {
+      "field" : "Displacement",
+      "type" : "quantitative"
+    },
+    "color" : {
+      "field" : "Cylinder",
+      "type" : "ordinal"
+    }
+  },
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
+  "interaction" : [
+    {
+      "type" : "thresholdFilter",
+      "field" : "Horsepower",
+      "domain" : [
+        "0",
+        "100"
+      ]
+    },
+    {
+      "type" : "toggleFilter",
+      "field" : "Origin",
+      "domain" : [
+        "Europe",
+        "Japan",
+        "USA"
+      ]
+    }
+  ]
+}

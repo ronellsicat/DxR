@@ -1199,9 +1199,9 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: rangeFilter
-      m_Image: {fileID: 0}
     - m_Text: toggleFilter
+      m_Image: {fileID: 0}
+    - m_Text: thresholdFilter
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1446,7 +1446,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'filter: range'
+  m_Text: toggleFilter
 --- !u!114 &114917226953973268
 MonoBehaviour:
   m_ObjectHideFlags: 1

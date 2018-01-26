@@ -25,12 +25,12 @@ namespace HoloToolkit.Examples.InteractiveElements
         public List<InteractiveToggle> Interactives;
 
         [Tooltip("Currently selected indices or default starting indices")]
-        public List<int> SelectedIndices = new List<int>() { 0 };
+        public List<int> SelectedIndices = new List<int>();
 
         [Tooltip("exposed selection changed event")]
         public UnityEvent OnSelectionEvents;
 
-        private bool mHasInit = false;
+        private bool mHasInit = true;
 
         private void Start()
         {
@@ -51,6 +51,21 @@ namespace HoloToolkit.Examples.InteractiveElements
                 Interactives[i].HasSelection = SelectedIndices.Contains(i);
             }
             OnSelectionEvents.Invoke();
+        }
+
+        public void InitInteractives()
+        {
+            for (int i = 0; i < Interactives.Count; ++i)
+            {
+                int itemIndex = i;
+                // add selection event handler to each button
+                Interactives[i].OnSelectEvents.AddListener(() => HandleOnSelection(itemIndex));
+                if (Type == SelectionType.single)
+                {
+                    Interactives[i].AllowDeselect = false;
+                }
+                Interactives[i].HasSelection = SelectedIndices.Contains(i);
+            }
         }
 
         public void RemoveInteractive(int itemIndex)
@@ -102,6 +117,8 @@ namespace HoloToolkit.Examples.InteractiveElements
             else
             {
                 Interactives[index].HasSelection = !Interactives[index].HasSelection;
+
+                /*
                 if (SelectedIndices.Contains(index))
                 {
                     SelectedIndices.Remove(index);
@@ -109,6 +126,15 @@ namespace HoloToolkit.Examples.InteractiveElements
                 else
                 {
                     SelectedIndices.Add(index);
+                }
+                */
+                SelectedIndices.Clear();
+                for (int i = 0; i < Interactives.Count; ++i)
+                {
+                    if (Interactives[i].HasSelection)
+                    {
+                        SelectedIndices.Add(i);
+                    }
                 }
             }
             OnSelectionEvents.Invoke();

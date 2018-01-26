@@ -1,30 +1,142 @@
 {
   "data" : {
-    "url" : "field.json"
+    "url" : "cars.json"
   },
-  "mark" : "fire",
+  "mark" : "sphere",
   "encoding" : {
     "x" : {
-      "field" : "x",
-      "type" : "quantitative"
+      "field" : "Horsepower",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "230"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "bottom",
+        "title" : "Horsepower",
+        "length" : 500,
+        "color" : "#ff0000",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          "0",
+          "46",
+          "92",
+          "138",
+          "184",
+          "230"
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "y" : {
-      "field" : "y",
-      "type" : "quantitative"
+      "field" : "Displacement",
+      "type" : "quantitative",
+      "scale" : {
+        "type" : "linear",
+        "domain" : [
+          "0",
+          "455"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ]
+      },
+      "axis" : {
+        "face" : "front",
+        "orient" : "left",
+        "title" : "Displacement",
+        "length" : 500,
+        "color" : "#00ff00",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          "0",
+          "91",
+          "182",
+          "273",
+          "364",
+          "455"
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
-    "z" : {
-      "field" : "z",
-      "type" : "quantitative"
-    },
-    "size" : {
-      "field" : "mag",
-      "type": "quantitative",
-      "scale": {
-        "range": [0,0.5]
+    "color" : {
+      "field" : "Cylinders",
+      "type" : "ordinal",
+      "scale" : {
+        "type" : "ordinal",
+        "domain" : [
+          "3",
+          "4",
+          "5",
+          "6",
+          "8"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05",
+        "range" : "ordinal",
+        "scheme" : "ramp"
+      },
+      "legend" : {
+        "type" : "symbol",
+        "gradientWidth" : 200,
+        "gradientHeight" : 50,
+        "face" : "front",
+        "orient" : "right",
+        "x" : 500,
+        "y" : 500,
+        "z" : 0,
+        "title" : "Legend: Cylinders"
       }
     }
   },
-  "width" : 1000,
-  "height" : 1000,
-  "depth" : 1000
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500,
+  "interaction" : [
+    {
+      "type" : "rangeFilter",
+      "field" : "Horsepower",
+      "domain" : [
+        "0",
+        "100"
+      ]
+    },
+    {
+      "type" : "toggleFilter",
+      "field" : "Origin",
+      "domain" : [
+        "Europe",
+        "Japan",
+        "USA"
+      ]
+    },
+    {
+      "type" : "toggleFilter",
+      "field" : "Cylinders",
+      "domain" : [
+        "3",
+        "4",
+        "5",
+        "6",
+        "8"
+      ]
+    }
+  ]
 }

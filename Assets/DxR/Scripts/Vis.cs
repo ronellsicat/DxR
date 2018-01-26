@@ -15,10 +15,10 @@ namespace DxR
     /// </summary>
     public class Vis : MonoBehaviour
     {
-        public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
-        public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
-        public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
-        public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
+        string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
+        bool enableGUI = true;                                   // Switch for in-situ GUI editor.
+        bool enableSpecsExpansion = true;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
+        bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         bool verbose = true;                                     // Switch for verbose log.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
@@ -43,13 +43,15 @@ namespace DxR
         string markType;                                                // Type or name of mark used in vis.
         public Data data;                                               // Object containing data.
 
-        List<GameObject> markInstances;                                 // List of mark instances; each mark instance corresponds to a datum.
+        public List<GameObject> markInstances;                                 // List of mark instances; each mark instance corresponds to a datum.
 
         private GameObject parentObject = null;                         // Parent game object for all generated objects associated to vis.
 
         private GameObject viewParentObject = null;                     // Parent game object for all view related objects - axis, legend, marks.
         private GameObject marksParentObject = null;                    // Parent game object for all mark instances.
+
         private GameObject guidesParentObject = null;                   // Parent game object for all guies (axes/legends) instances.
+        private GameObject interactionsParentObject = null;             // Parent game object for all interactions, e.g., filters.
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
         
@@ -65,6 +67,7 @@ namespace DxR
             viewParentObject = gameObject.transform.Find("DxRView").gameObject;
             marksParentObject = viewParentObject.transform.Find("DxRMarks").gameObject;
             guidesParentObject = viewParentObject.transform.Find("DxRGuides").gameObject;
+            interactionsParentObject = gameObject.transform.Find("DxRInteractions").gameObject;
 
             if (viewParentObject == null || marksParentObject == null)
             {
@@ -97,6 +100,11 @@ namespace DxR
         public JSONNode GetVisSpecs()
         {
             return visSpecs;
+        }
+
+        public int GetNumMarkInstances()
+        {
+            return markInstances.Count;
         }
 
         private void InitTooltip()
@@ -140,6 +148,49 @@ namespace DxR
             ConstructAxes(specs);
 
             ConstructLegends(specs);
+
+            ConstructInteractions(specs);
+        }
+
+        private void ConstructInteractions(JSONNode specs)
+        {
+            if (specs["interaction"] == null) return;
+
+            interactionsParentObject.GetComponent<Interactions>().Init(this);
+
+            foreach (JSONObject interactionSpecs in specs["interaction"].AsArray)
+            {
+                if(interactionSpecs["type"] != null && interactionSpecs["field"] != null && interactionSpecs["domain"] != null)
+                {
+                    switch(interactionSpecs["type"].Value)
+                    {
+                        case "rangeFilter":
+                            break;
+
+                        case "toggleFilter":
+                            AddToggleFilterInteraction(interactionSpecs);
+                            break;
+
+                        default:
+                            return;
+                    }
+
+                    Debug.Log("Constructed interaction: " + interactionSpecs["type"].Value +
+                        " for data field " + interactionSpecs["field"].Value);
+                } else
+                {
+                    throw new System.Exception("Make sure interaction object has type, field, and domain specs.");
+                }
+
+            }
+        }
+
+        private void AddToggleFilterInteraction(JSONObject interactionSpecs)
+        {
+            if(interactionsParentObject != null)
+            {
+                interactionsParentObject.GetComponent<Interactions>().AddToggleFilter(interactionSpecs);
+            }            
         }
 
         private void ConstructLegends(JSONNode specs)
@@ -719,6 +770,32 @@ namespace DxR
                 new Vector3(width * SIZE_UNIT_SCALE_FACTOR / 2.0f, height * SIZE_UNIT_SCALE_FACTOR / 2.0f, 
                 depth * SIZE_UNIT_SCALE_FACTOR / 2.0f);
             viewParentObject.transform.RotateAround(center, rotationAxis, angleDegrees);
+        }
+
+        // Update the visibility of each mark according to the filters results:
+        internal void FiltersUpdated()
+        {
+            if(interactionsParentObject != null)
+            {
+                ShowAllMarks();
+
+                foreach (KeyValuePair<string,List<bool>> filterResult in interactionsParentObject.GetComponent<Interactions>().filterResults)
+                {
+                    List<bool> visib = filterResult.Value;
+                    for (int m = 0; m < markInstances.Count; m++)
+                    {
+                        markInstances[m].SetActive(visib[m] && markInstances[m].activeSelf);
+                    }
+                }
+            }
+        }
+
+        void ShowAllMarks()
+        {
+            for (int m = 0; m < markInstances.Count; m++)
+            {
+                markInstances[m].SetActive(true);
+            }
         }
     }
 

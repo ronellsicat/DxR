@@ -159,20 +159,56 @@ namespace DxR
                 }
             }
 
-            /*
-            string inferResults = specs.ToString(2);
-            string filename = "Assets/StreamingAssets/" + specsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
-            WriteStringToFile(inferResults, filename);
+            for(int n = 0; n < specs["interaction"].AsArray.Count; n++)
+            {
+                JSONObject node = specs["interaction"].AsArray[n].AsObject;
+                if (node["type"] == null || node["field"] == null)
+                {
+                    throw new Exception("Missing type and/or field for interaction specs.");
+                } else
+                {
+                    if(node["domain"] == null)
+                    {
+                        ChannelEncoding ch = new ChannelEncoding();
+                        ch.field = node["field"].Value;
+                        ch.channel = "color";
 
-            Debug.Log("inferred mark:" + specs["mark"].Value);
 
-            string origSpecsStringPrint = specsOrig.ToString(2);
-            string filenameOrig = "Assets/StreamingAssets/" + specsFilename.TrimEnd(".json".ToCharArray()) + "_orig.json";
-            WriteStringToFile(origSpecsStringPrint, filenameOrig);
-            Debug.Log("orig mark:" + specsOrig["mark"].Value);
-            */
+                        switch (node["type"].Value)
+                        {
+                            case "toggleFilter":
+                                ch.fieldDataType = "nominal";
+                                break;
+                            case "thresholdFilter":
+                            case "rangeFilter":
+                                ch.fieldDataType = "quantitative";
+                                break;
+                            default:
+                                break;
+                        }
+
+                        JSONNode temp = null;
+                        InferDomain(ch, temp, ref node, data);
+
+
+                    }
+                }
+            }
+
+                /*
+                string inferResults = specs.ToString(2);
+                string filename = "Assets/StreamingAssets/" + specsFilename.TrimEnd(".json".ToCharArray()) + "_inferred.json";
+                WriteStringToFile(inferResults, filename);
+
+                Debug.Log("inferred mark:" + specs["mark"].Value);
+
+                string origSpecsStringPrint = specsOrig.ToString(2);
+                string filenameOrig = "Assets/StreamingAssets/" + specsFilename.TrimEnd(".json".ToCharArray()) + "_orig.json";
+                WriteStringToFile(origSpecsStringPrint, filenameOrig);
+                Debug.Log("orig mark:" + specsOrig["mark"].Value);
+                */
         }
-
+        
         //public void Infer(Data data, ref JSONNode specs, string specsFilename) { }
         /*
         public void Infer(Data data, ref JSONNode specs, string specsFilename)
@@ -703,7 +739,7 @@ namespace DxR
         private void InferDomain(ChannelEncoding channelEncoding, JSONNode specs, ref JSONObject scaleSpecsObj, Data data)
         {
             string sortType = "ascending";
-            if(specs["encoding"][channelEncoding.channel]["sort"] != null)
+            if(specs != null && specs["encoding"][channelEncoding.channel]["sort"] != null)
             {
                 sortType = specs["encoding"][channelEncoding.channel]["sort"].Value.ToString();
             }
