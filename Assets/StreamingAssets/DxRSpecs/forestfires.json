@@ -1,23 +1,19 @@
 {
   "data" : {
-    "url" : "field.json"
+    "url" : "forestfires.csv"
   },
   "mark" : "fire",
   "encoding" : {
     "x" : {
-      "field" : "x",
+      "field" : "X",
       "type" : "quantitative"
     },
     "y" : {
-      "field" : "y",
-      "type" : "quantitative"
-    },
-    "z" : {
-      "field" : "z",
+      "field" : "Y",
       "type" : "quantitative"
     },
     "size" : {
-      "field" : "mag",
+      "field" : "area",
       "type": "quantitative",
       "scale": {
         "range": [0,0.5]
