@@ -34,8 +34,9 @@ namespace DxR
         public void Init(Vis vis)
         {
             targetVis = vis;
-
-            if(targetVis != null)
+            curYOffset = 0;
+            
+            if (targetVis != null)
             {
                 filterResults = new Dictionary<string, List<bool>>();
                 domains = new Dictionary<string, List<string>>();
@@ -44,11 +45,13 @@ namespace DxR
 
         internal void AddToggleFilter(JSONObject interactionSpecs)
         {
+            /*
             if(gameObject.transform.Find(interactionSpecs["field"].Value) != null)
             {
                 Debug.Log("Will not duplicate existing filter for field " + interactionSpecs["field"].Value);
                 return;
             }
+            */
 
             GameObject toggleFilterPrefab = Resources.Load("GUI/ToggleFilter", typeof(GameObject)) as GameObject;
             if (toggleFilterPrefab == null) return;
@@ -115,6 +118,11 @@ namespace DxR
 
         void ToggleFilterUpdated()
         {
+            if (EventSystem.current.currentSelectedGameObject == null) return;
+
+            // If the selected object is not a check box, ignore.
+            if (EventSystem.current.currentSelectedGameObject.transform.Find("CheckBoxOutline") == null) return;
+
             GameObject selectedCheckBox = EventSystem.current.currentSelectedGameObject;
             if (selectedCheckBox != null && targetVis != null)
             {

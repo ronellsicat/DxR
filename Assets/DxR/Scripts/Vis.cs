@@ -15,7 +15,7 @@ namespace DxR
     /// </summary>
     public class Vis : MonoBehaviour
     {
-        public string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
+        string visSpecsURL = "example.json";                     // URL of vis specs; relative to specsRootPath directory.
         public bool enableGUI = true;                                   // Switch for in-situ GUI editor.
         public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
         public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
@@ -591,6 +591,12 @@ namespace DxR
             {
                 GameObject.Destroy(child.gameObject);
             }
+
+            // TODO: Do not delete, but only update:
+            foreach (Transform child in interactionsParentObject.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
 
         private void InitGUI()
@@ -639,6 +645,8 @@ namespace DxR
 
             Debug.Log("GUI SPECS: " + guiSpecs.ToString());
 
+            // UPDATE CHANNELS:
+
             // Go through vis specs and UPDATE fields and types of non-value channels
             // that are in the gui specs.
             List<string> channelsToUpdate = new List<string>();
@@ -686,10 +694,88 @@ namespace DxR
                 }
             }
 
+            // UPDATE INTERACTIONS:
+            // Go through vis specs and UPDATE fields and types of interactions
+            // that are in the gui specs.
+            List<string> fieldsToUpdate = new List<string>();
+            foreach(JSONObject interactionSpecs in visSpecs["interaction"].AsArray)
+            {
+                string fieldName = interactionSpecs["field"];
+                // If the field is in gui, it needs update:
+                if(FieldIsInInteractionSpecs(guiSpecs["interaction"], fieldName))
+                {
+                    fieldsToUpdate.Add(fieldName);
+                }
+            }
+
+            // Do the update:
+            foreach (string fieldName in fieldsToUpdate)
+            {
+                visSpecs["interaction"][GetFieldIndexInInteractionSpecs(visSpecs["interaction"], fieldName)]["type"] = 
+                    guiSpecs["interaction"][GetFieldIndexInInteractionSpecs(visSpecs["interaction"], fieldName)]["type"];
+            }
+
+            // Go through vis specs and DELETE interactions for fields that are not in gui specs.
+            List<string> fieldsToDelete = new List<string>();
+            foreach (JSONObject interactionSpecs in visSpecs["interaction"].AsArray)
+            {
+                string fieldName = interactionSpecs["field"];
+                if (!FieldIsInInteractionSpecs(guiSpecs["interaction"], fieldName))
+                {
+                    fieldsToDelete.Add(fieldName);
+                }
+            }
+
+            foreach (string fieldName in fieldsToDelete)
+            {
+                visSpecs["interaction"].Remove(GetFieldIndexInInteractionSpecs(visSpecs["interaction"], fieldName));
+            }
+
+            // Go through gui specs and ADD interaction for fields in gui specs that are not in vis specs.
+            foreach (JSONObject interactionSpecs in guiSpecs["interaction"].AsArray)
+            {
+                string fieldName = interactionSpecs["field"].Value;
+
+                if (!FieldIsInInteractionSpecs(visSpecs["interaction"], fieldName))
+                {
+                    Debug.Log("Adding interaction for field " + fieldName);
+                    visSpecs["interaction"].Add(guiSpecs["interaction"][GetFieldIndexInInteractionSpecs(guiSpecs["interaction"], fieldName)]);
+                }
+            }
+
             UpdateTextSpecsFromVisSpecs();
             UpdateVis();
         }
-        
+
+        private int GetFieldIndexInInteractionSpecs(JSONNode interactionSpecs, string searchFieldName)
+        {
+            int index = 0;
+            foreach (JSONObject interactionObject in interactionSpecs.AsArray)
+            {
+                string fieldName = interactionObject["field"];
+                if (fieldName == searchFieldName)
+                {
+                    return index;
+                }
+                index++;
+            }
+            return -1;
+        }
+
+        private bool FieldIsInInteractionSpecs(JSONNode interactionSpecs, string searchFieldName)
+        {
+            foreach (JSONObject interactionObject in interactionSpecs.AsArray)
+            {
+                string fieldName = interactionObject["field"];
+                if(fieldName == searchFieldName)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
         public List<string> GetDataList()
         {
             string[] dirs = Directory.GetFiles(guiDataRootPath);
@@ -741,6 +827,11 @@ namespace DxR
             if(visSpecs["data"]["url"] != null && visSpecs["data"]["url"] != "inline")
             {
                 visSpecsToWrite["data"].Remove("values");
+            }
+
+            if(visSpecs["interaction"].AsArray.Count == 0)
+            {
+                visSpecsToWrite.Remove("interaction");
             }
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
         }

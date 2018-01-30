@@ -163,6 +163,9 @@ namespace DxR
 
             // Update GUI for channels:
             UpdateGUIChannelsList(guiVisSpecs);
+
+            // Update GUI for interactions:
+            UpdateGUIInteractionsList(guiVisSpecs);
         }
 
         // Adds or removes channel GUIs according to specs and updates the dropdowns.
@@ -184,6 +187,52 @@ namespace DxR
                         AddChannelGUI(channelName, kvp.Value.AsObject);
                     }
                 }
+            }
+        }
+
+        // Adds or removes interaction GUIs according to specs and updates the dropdowns.
+        private void UpdateGUIInteractionsList(JSONNode guiVisSpecs)
+        {
+            // Remove all interactions;
+            RemoveAllInteractionGUIs();
+
+            // Go through each interaction in the specs and add GUI for each:
+            JSONArray interactionSpecsArray = guiVisSpecs["interaction"].AsArray;
+            if (interactionSpecsArray != null)
+            {
+                foreach (JSONObject interactionSpecs in interactionSpecsArray)
+                {
+                    AddInteractionGUI(interactionSpecs);
+                }
+            }
+        }
+
+        private void AddInteractionGUI(JSONObject interactionSpecs)
+        {
+            GameObject interactionGUI = AddEmptyInteractionGUI();
+
+            UpdateInteractionGUIInteractionTypeDropdownValue(interactionSpecs["type"].Value, ref interactionGUI);
+            UpdateInteractionGUIDataFieldDropdownValue(interactionSpecs["field"].Value, ref interactionGUI);
+        }
+
+        private void UpdateInteractionGUIInteractionTypeDropdownValue(string value, ref GameObject interactionGUI)
+        {
+            Dropdown dropdown = interactionGUI.transform.Find("InteractionTypeDropdown").GetComponent<Dropdown>();
+            int valueIndex = GetOptionIndex(dropdown, value);
+            if (valueIndex > 0)
+            {
+                dropdown.value = valueIndex;
+            }
+        }
+
+        private void UpdateInteractionGUIDataFieldDropdownValue(string value, ref GameObject interactionGUI)
+        {
+            Dropdown dropdown = interactionGUI.transform.Find("DataFieldDropdown").GetComponent<Dropdown>();
+            //string prevValue = dropdown.options[dropdown.value].text;
+            int valueIndex = GetOptionIndex(dropdown, value);
+            if (valueIndex > 0)
+            {
+                dropdown.value = valueIndex;
             }
         }
 
@@ -246,6 +295,15 @@ namespace DxR
             }
         }
 
+        private void RemoveAllInteractionGUIs()
+        {
+            Transform interactionListContent = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent");
+            for (int i = 0; i < interactionListContent.childCount - 1; i++)
+            {
+                GameObject.Destroy(interactionListContent.GetChild(i).gameObject);
+            }
+        }
+
         // Call this to update the vis specs with the current GUI specs.
         public void UpdateVisSpecsFromGUISpecs()
         {
@@ -282,8 +340,30 @@ namespace DxR
             }
 
             guiVisSpecs["encoding"] = encodingObject;
+            Debug.Log("GUI CHANNEL SPECS: " + guiVisSpecs["encoding"].ToString());
 
-            Debug.Log("GUI SPECS: " + guiVisSpecs["encoding"].ToString());
+            // Update interaction specs:
+            guiVisSpecs["interaction"] = null;
+            JSONArray interactionArrayObject = new JSONArray();
+            Transform interactionListContent = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent");
+            for (int i = 0; i < interactionListContent.childCount - 1; i++)
+            {
+                GameObject interactionGUI = interactionListContent.GetChild(i).gameObject;
+                JSONObject interactionSpecs = new JSONObject();
+
+                Dropdown dropdown = interactionGUI.transform.Find("DataFieldDropdown").GetComponent<Dropdown>();
+                string dataField = dropdown.options[dropdown.value].text;
+                interactionSpecs.Add("field", new JSONString(dataField));
+
+                dropdown = interactionGUI.transform.Find("InteractionTypeDropdown").GetComponent<Dropdown>();
+                string interactionType = dropdown.options[dropdown.value].text;
+                interactionSpecs.Add("type", new JSONString(interactionType));
+
+                interactionArrayObject.Add(interactionSpecs);
+            }
+
+            guiVisSpecs["interaction"] = interactionArrayObject;
+            Debug.Log("GUI INTERACTION SPECS: " + guiVisSpecs["interaction"].ToString());
         }
 
         public JSONNode GetGUIVisSpecs()
