@@ -302,7 +302,12 @@ Prefab:
     - target: {fileID: 114296463438019874, guid: 97b500477ed08a34f9f03d9810eb65eb,
         type: 2}
       propertyPath: enableSpecsExpansion
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114296463438019874, guid: 97b500477ed08a34f9f03d9810eb65eb,
+        type: 2}
+      propertyPath: visSpecsURL
+      value: forestfires.json
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 2}
