@@ -46,7 +46,7 @@ namespace DxR
         internal void AddToggleFilter(JSONObject interactionSpecs)
         {
             /*
-            if(gameObject.transform.Find(interactionSpecs["field"].Value) != null)
+            if (gameObject.transform.Find(interactionSpecs["field"].Value) != null)
             {
                 Debug.Log("Will not duplicate existing filter for field " + interactionSpecs["field"].Value);
                 return;
@@ -59,7 +59,7 @@ namespace DxR
             GameObject toggleFilterInstance = Instantiate(toggleFilterPrefab, gameObject.transform);
 
             toggleFilterInstance.transform.Find("ToggleFilterLabel").gameObject.GetComponent<TextMesh>().text =
-                "Toggle " + interactionSpecs["field"].Value + ":";
+                interactionSpecs["field"].Value + ":";
 
             toggleFilterInstance.name = interactionSpecs["field"];
 
@@ -112,8 +112,8 @@ namespace DxR
             }
             filterResults.Add(interactionSpecs["field"], results);
 
-            toggleFilterInstance.transform.Translate(0, -curYOffset, 0);
-            curYOffset = curYOffset + (0.08f * numRows); 
+            toggleFilterInstance.transform.Translate(0, -curYOffset / 2.0f, 0);
+            curYOffset = curYOffset + (0.085f * numRows); 
         }
 
         void ToggleFilterUpdated()
@@ -160,6 +160,91 @@ namespace DxR
                 {
                     res[b] = true;
                 } else
+                {
+                    res[b] = false;
+                }
+            }
+
+            filterResults[field] = res;
+        }
+
+        internal void AddThresholdFilter(JSONObject interactionSpecs)
+        {
+            GameObject thresholdFilterPrefab = Resources.Load("GUI/ThresholdFilter", typeof(GameObject)) as GameObject;
+            if (thresholdFilterPrefab == null) return;
+
+            GameObject thresholdFilterInstance = Instantiate(thresholdFilterPrefab, gameObject.transform);
+            thresholdFilterInstance.transform.Find("ThresholdFilterLabel").gameObject.GetComponent<TextMesh>().text =
+                interactionSpecs["field"].Value + ":";
+            thresholdFilterInstance.name = interactionSpecs["field"];
+
+            thresholdFilterInstance.transform.Find("ThresholdFilterMinLabel").gameObject.GetComponent<TextMesh>().text =
+                interactionSpecs["domain"][0].Value;
+            thresholdFilterInstance.transform.Find("ThresholdFilterMaxLabel").gameObject.GetComponent<TextMesh>().text =
+                interactionSpecs["domain"][1].Value;
+
+            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
+                thresholdFilterInstance.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+            if (sliderControl == null) return;
+
+            float domainMin = float.Parse(interactionSpecs["domain"][0].Value);
+            float domainMax = float.Parse(interactionSpecs["domain"][1].Value);
+
+            // TODO: Check validity of specs.
+
+            sliderControl.SetSpan(domainMin, domainMax);
+            sliderControl.SetSliderValue(domainMax);
+
+            sliderControl.OnUpdateEvent.AddListener(ThresholdFilterUpdated);
+            
+            // Update the results vector
+            int numMarks = targetVis.markInstances.Count;
+            List<bool> results = new List<bool>(new bool[numMarks]);
+            for (int j = 0; j < results.Count; j++)
+            {
+                results[j] = true;
+            }
+            filterResults.Add(interactionSpecs["field"], results);
+          
+            int numRows = 2;
+            thresholdFilterInstance.transform.Translate(0, -curYOffset / 2.0f, 0);
+            curYOffset = curYOffset + (0.085f * numRows);
+        }
+
+        void ThresholdFilterUpdated()
+        {
+            GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
+            if (selectedObject == null) return;
+
+            Debug.Log("Threshold updated");
+            
+            // If the selected object is not a check box, ignore.
+            if (selectedObject.transform.Find("SliderBar") == null) return;
+
+            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
+               selectedObject.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+            
+            if (sliderControl != null && targetVis != null)
+            {
+                // Update filter results for thresholded data field category.
+                UpdateFilterResultsForThreshold(selectedObject.name, sliderControl.SliderValue);
+
+                targetVis.FiltersUpdated();
+                Debug.Log("Filter updated! " + selectedObject.transform.parent.name);
+            }
+        }
+
+        private void UpdateFilterResultsForThreshold(string field, float thresholdValue)
+        {
+            Debug.Log("Updating filter results for field, threshold " + field + ", " + thresholdValue.ToString());
+            List<bool> res = filterResults[field];
+            for (int b = 0; b < res.Count; b++)
+            {
+                if (float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) <= thresholdValue)
+                {
+                    res[b] = true;
+                }
+                else
                 {
                     res[b] = false;
                 }

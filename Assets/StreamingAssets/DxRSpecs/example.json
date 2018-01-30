@@ -156,6 +156,14 @@
         "6",
         "8"
       ]
+    },
+    {
+      "field" : "Miles_per_Gallon",
+      "type" : "thresholdFilter",
+      "domain" : [
+        "0",
+        "46.6"
+      ]
     }
   ]
 }

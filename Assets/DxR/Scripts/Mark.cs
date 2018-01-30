@@ -164,7 +164,8 @@ namespace DxR
                 JSONObject node = specs["interaction"].AsArray[n].AsObject;
                 if (node["type"] == null || node["field"] == null)
                 {
-                    throw new Exception("Missing type and/or field for interaction specs.");
+                    continue;
+                    //throw new Exception("Missing type and/or field for interaction specs.");
                 } else
                 {
                     if(node["domain"] == null)
@@ -189,8 +190,6 @@ namespace DxR
 
                         JSONNode temp = null;
                         InferDomain(ch, temp, ref node, data);
-
-
                     }
                 }
             }

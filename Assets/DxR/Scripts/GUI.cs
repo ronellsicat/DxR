@@ -256,7 +256,6 @@ namespace DxR
         private void UpdateChannelGUIDataFieldTypeDropdownValue(string value, ref GameObject channelGUI)
         {
             Dropdown dropdown = channelGUI.transform.Find("DataFieldTypeDropdown").GetComponent<Dropdown>();
-            //string prevValue = dropdown.options[dropdown.value].text;
             int valueIndex = GetOptionIndex(dropdown, value);
             if (valueIndex > 0)
             {
@@ -267,7 +266,6 @@ namespace DxR
         private void UpdateChannelGUIDataFieldDropdownValue(string value, ref GameObject channelGUI)
         {
             Dropdown dropdown = channelGUI.transform.Find("DataFieldDropdown").GetComponent<Dropdown>();
-            //string prevValue = dropdown.options[dropdown.value].text;
             int valueIndex = GetOptionIndex(dropdown, value);
             if (valueIndex > 0)
             {
@@ -278,7 +276,6 @@ namespace DxR
         private void UpdateChannelGUIChannelDropdownValue(string value, ref GameObject channelGUI)
         {
             Dropdown dropdown = channelGUI.transform.Find("ChannelDropdown").GetComponent<Dropdown>();
-            //string prevValue = dropdown.options[dropdown.value].text;
             int valueIndex = GetOptionIndex(dropdown, value);
             if (valueIndex > 0)
             {

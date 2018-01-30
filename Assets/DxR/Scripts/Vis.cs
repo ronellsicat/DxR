@@ -164,7 +164,8 @@ namespace DxR
                 {
                     switch(interactionSpecs["type"].Value)
                     {
-                        case "rangeFilter":
+                        case "thresholdFilter":
+                            AddThresholdFilterInteraction(interactionSpecs);
                             break;
 
                         case "toggleFilter":
@@ -179,9 +180,18 @@ namespace DxR
                         " for data field " + interactionSpecs["field"].Value);
                 } else
                 {
-                    throw new System.Exception("Make sure interaction object has type, field, and domain specs.");
+                    Debug.Log("Make sure interaction object has type, field, and domain specs.");
+//                    throw new System.Exception("Make sure interaction object has type, field, and domain specs.");
                 }
 
+            }
+        }
+
+        private void AddThresholdFilterInteraction(JSONObject interactionSpecs)
+        {
+            if (interactionsParentObject != null)
+            {
+                interactionsParentObject.GetComponent<Interactions>().AddThresholdFilter(interactionSpecs);
             }
         }
 
@@ -414,6 +424,11 @@ namespace DxR
                     if (visSpecs["data"]["url"] != null && visSpecs["data"]["url"] != "inline")
                     {
                         visSpecsToWrite["data"].Remove("values");
+                    }
+
+                    if (visSpecs["interaction"].AsArray.Count == 0)
+                    {
+                        visSpecsToWrite.Remove("interaction");
                     }
                     System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
                 }
