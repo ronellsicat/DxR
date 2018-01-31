@@ -1,19 +1,14 @@
-### DxR Toolkit for Fast Authoring of Immersive Visualizations
-DxR is a [Unity](https://unity3d.com/unity) package that makes it easy to create interactive data-driven graphics in augmented reality (AR) and virtual reality (VR) or XR for short, i.e., immersive visualizations. Inspired by [Vega-Lite](https://vega.github.io/vega-lite/), DxR uses a concise declarative JSON specification to rapidly generate immersive visualizations. To learn more, check out the example and gallery previews below, as well as the following links:
+### DXR: An Immersive Visualization Toolkit
+DXR is a Unity package that makes it easy to create immersive data visualizations in XR (Augmented/Mixed/Virtual Reality). A visualization in DXR is a collection of Unity game objects whose visual properties (position, color, size, etc.) can be mapped to data attributes. The designer can specify this mapping interactively at runtime via a graphical user interface (GUI) or via a high-level programming interface, inspired by [Polestar](http://vega.github.io/polestar/) and [Vega-Lite](http://vega.github.io/vega-lite/), respectively. DXR is extensible, allowing visual marks and channels customization via low-level programming using Unity scripting. To learn more, check out the example and gallery previews below, as well as the project website:
 
-### [Project Website](https://sites.google.com/view/dxr-vis) (has all other links below)
-* [Quick Start Guide](https://sites.google.com/view/dxr-vis/tutorials/quick-start-guide)
-* [Tutorials](https://sites.google.com/view/dxr-vis/tutorials)
-* [Grammar Documentation](https://sites.google.com/view/dxr-vis/grammar-docs)
-* [Examples Gallery](https://sites.google.com/view/dxr-vis/examples)
-* [Downloads](https://sites.google.com/view/dxr-vis/download)
+### [Project Website](https://sites.google.com/view/dxr-vis)
 
-As a simple example, below, given a concise JSON specification (left) from the user, DxR generates an interactive visualization (right) in Unity. 
+As a simple example, below, given a concise JSON specification (left) from the user, DXR generates an interactive visualization (right) in Unity.
 
 <img src="docs/assets/img/example_template3D.png">
 
-Below are some 2D and 3D visualization examples generated using DxR, which can be placed in both AR and VR applications.
+Below are some 2D and 3D visualization examples generated using DXR, which can be placed in AR/MR/VR applications.
 
 <img src="docs/assets/img/gallery_overview.png">
 
-DxR is mainly developed by [Ronell Sicat](www.ronellsicat.com), and [Jiabao Li](https://www.jiabaoli.org/), in collaboration with Hanspeter Pfister, Benjamin Bach, and Maxime Cordeil.
+DXR is work-in-progress and is currently under preparation for a research paper submission.  DXR is mainly developed by [Ronell Sicat](www.ronellsicat.com), and [Jiabao Li](https://www.jiabaoli.org/), in collaboration with Hanspeter Pfister, Won-Ki Jeong, Benjamin Bach, and Maxime Cordeil.
