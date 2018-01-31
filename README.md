@@ -1,7 +1,7 @@
 ### DXR: An Immersive Visualization Toolkit
-DXR is a Unity package that makes it easy to create immersive data visualizations in XR (Augmented/Mixed/Virtual Reality). A visualization in DXR is a collection of Unity game objects whose visual properties (position, color, size, etc.) can be mapped to data attributes. The designer can specify this mapping interactively at runtime via a graphical user interface (GUI) or via a high-level programming interface, inspired by [Polestar](http://vega.github.io/polestar/) and [Vega-Lite](http://vega.github.io/vega-lite/), respectively. DXR is extensible, allowing visual marks and channels customization via low-level programming using Unity scripting. To learn more, check out the example and gallery previews below, as well as the project website:
+DXR is a Unity package that makes it easy to create immersive data visualizations in XR (Augmented/Mixed/Virtual Reality). A visualization in DXR is a collection of Unity game objects whose visual properties (position, color, size, etc.) can be mapped to data attributes. The designer can specify this mapping interactively at runtime via a graphical user interface (GUI) or via a high-level programming interface, inspired by [Polestar](http://vega.github.io/polestar/) and [Vega-Lite](http://vega.github.io/vega-lite/), respectively. DXR is extensible, allowing visual marks and channels customization via low-level programming using Unity scripting. To learn more, check out the example and gallery previews below, as well as the DXR website:
 
-### [Project Website](https://sites.google.com/view/dxr-vis)
+### [DXR Website: https://sites.google.com/view/dxr-vis](https://sites.google.com/view/dxr-vis)
 
 As a simple example, below, given a concise JSON specification (left) from the user, DXR generates an interactive visualization (right) in Unity.
 
