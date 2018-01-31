@@ -151,7 +151,6 @@ public class Axis : MonoBehaviour {
 
         Transform parent = gameObject.transform.Find("Ticks");
         GameObject tickPrefab = Resources.Load("Axis/Tick") as GameObject;
-        GameObject labelPrefab = Resources.Load("Axis/Label") as GameObject;
         
         if (tickPrefab == null)
         {

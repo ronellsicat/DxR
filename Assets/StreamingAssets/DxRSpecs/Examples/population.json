@@ -8,7 +8,7 @@
   },
   "mark": "radialbar",
   "encoding": {
-    "latitute": {
+    "latitude": {
       "field": "lat",
       "type": "quantitative"
     },
@@ -21,8 +21,7 @@
       "type": "quantitative",
       "scale": {
         "range": ["0","1"]
-      },
-      "axis": "none"
+      }
     },
     "color": {
       "field": "value",

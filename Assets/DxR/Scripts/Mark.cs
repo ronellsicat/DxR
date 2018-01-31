@@ -15,7 +15,6 @@ namespace DxR
     {
         public string markName = DxR.Vis.UNDEFINED;
         public Dictionary<string, string> datum = null;
-        bool hasRenderer = false;
         GameObject tooltip = null;
 
         public Vector3 origOrientation;
@@ -572,7 +571,7 @@ namespace DxR
                 InferScaleType(channelEncoding.channel, channelEncoding.fieldDataType, ref scaleSpecsObj);
             }
 
-            if(!(scaleSpecsObj["type"].Value.ToString() == "none" || scaleSpecsObj["type"].Value.ToString() == "custom"))
+            if(!(scaleSpecsObj["type"].Value.ToString() == "none"))
             {
                 if (scaleSpecs["domain"] == null)
                 {
@@ -916,7 +915,6 @@ namespace DxR
             Renderer renderer = transform.GetComponent<Renderer>();
             if (renderer != null)
             {
-                hasRenderer = true;
                 DxR.GazeResponder sc = gameObject.AddComponent(typeof(DxR.GazeResponder)) as DxR.GazeResponder;
                 tooltip = tooltipObject;
             }
@@ -1007,6 +1005,8 @@ namespace DxR
         {
             Color color;
             bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+            if (!colorParsed) return;
+
             Renderer renderer = transform.GetComponent<Renderer>();
             if(renderer != null)
             {

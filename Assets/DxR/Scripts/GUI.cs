@@ -470,7 +470,7 @@ namespace DxR
                 {
                     GameObject channelGUI = channelListContent.GetChild(i).gameObject;
                     
-                    Dropdown dropdown = dropdown = channelGUI.transform.Find("ChannelDropdown").GetComponent<Dropdown>();
+                    Dropdown dropdown = channelGUI.transform.Find("ChannelDropdown").GetComponent<Dropdown>();
                     string channel = dropdown.options[dropdown.value].text;
 
                     if(!newDataFields.Contains(channel))

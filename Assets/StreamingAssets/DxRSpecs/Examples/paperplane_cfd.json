@@ -1,0 +1,48 @@
+{
+  "width": 500,
+  "height": 500,
+  "depth":  500,
+  "data": { "url": "cfd.json" },
+  "mark": "paperplane",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain":  ["20", "25"]
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ "20", "25" ]
+      }
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ "0", "5" ]
+      }
+    },
+    "xdirection": {
+      "field": "vx",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "vy",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "vz",
+      "type": "quantitative"
+    },
+    "size": {
+      "value":  10
+    }
+  }
+}

@@ -23,7 +23,7 @@
       "field" : "weight",
       "type" : "quantitative",
       "scale" : {
-        "domain" : [
+        "domain": [
           "0",
           "14"
         ]
@@ -32,11 +32,12 @@
     "size" : {
       "field" : "weight",
       "type" : "quantitative",
-      "scale" : {
-        "domain" : [
+      "scale": {
+        "domain": [
           "0",
           "14"
-        ]
+        ],
+        "range": [ 0, 50 ]
       }
     }
   }

@@ -1,0 +1,39 @@
+{
+  "width": 500,
+  "height": 500,
+  "depth": 500,
+  "data": { "url": "x_cars_subsampled.json" },
+  "mark": "text",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "Acceleration",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Weight_in_lbs",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 1000, 2750, 4500 ],
+        "range": [ "#ff7f0e", "#e7ba52", "#17becf" ]
+      }
+    },
+    "size": {
+      "value": 30
+    },
+    "text": {
+      "field": "Name",
+      "type": "nominal"
+    },
+    "following": {
+      "value":  true
+    }
+  }
+}

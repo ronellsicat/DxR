@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4565155986894136}
   - component: {fileID: 33785491929731162}
   - component: {fileID: 23784630184244478}
+  - component: {fileID: 114703390599186772}
   m_Layer: 0
   m_Name: cone
   m_TagString: Untagged
@@ -82,3 +83,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316576140212808}
   m_Mesh: {fileID: 4300000, guid: 75f5e24ad75ce894cb8d0d799818db28, type: 3}
+--- !u!114 &114703390599186772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316576140212808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18387d24c564de14b8a69c8c27a10db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  markName: cone
+  origOrientation: {x: 0, y: 1, z: 0}
+  curOrientation: {x: 0, y: 1, z: 0}

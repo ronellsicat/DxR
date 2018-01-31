@@ -1,0 +1,24 @@
+{
+  "data": { "url": "cereals.csv" },
+  "mark": "sphere",
+  "encoding": {
+    "x": {
+      "field": "Calories",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Protein (g)",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ "0", "8" ],
+        "axis": {
+          "values": [0, 2, 4, 6, 8]
+        }
+      }
+    },
+    "color": {
+      "field": "Cereal Name",
+      "type": "nominal"
+    }
+  }
+}

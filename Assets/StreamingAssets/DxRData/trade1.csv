@@ -1,981 +1,981 @@
-time,n1,n2,weight
-1995,France,India,288.0
-1995,France,Malawi,157.0
-1995,India,Netherlands,180.0
-1995,France,United States,163.0
-1995,Sudan,United States,196.0
-1995,United States,Netherlands,89.0
-1995,Sudan,France,218.0
-1995,Netherlands,Malawi,284.0
-1995,United States,India,161.0
-1995,India,France,288.0
-1995,Sudan,India,239.0
-1995,Netherlands,Sudan,270.0
-1995,France,Netherlands,61.0
-1995,Netherlands,China,204.0
-1995,Germany,China,183.0
-1995,India,Sudan,239.0
-1995,United States,Germany,137.0
-1995,Sudan,Netherlands,270.0
-1995,United States,China,140.0
-1995,Malawi,Netherlands,284.0
-1995,Malawi,France,157.0
-1995,China,Sudan,300.0
-1995,United States,France,163.0
-1995,United States,Sudan,196.0
-1995,India,Malawi,316.0
-1995,India,United States,161.0
-1995,China,India,279.0
-1995,Netherlands,India,180.0
-1995,United States,Malawi,140.0
-1995,Germany,United States,137.0
-1995,Germany,India,231.0
-1995,China,Netherlands,204.0
-1995,China,France,183.0
-1995,Netherlands,Germany,45.0
-1995,Sudan,Germany,178.0
-1995,Netherlands,France,61.0
-1995,Malawi,Germany,267.0
-1995,Germany,France,88.0
-1995,Malawi,United States,140.0
-1995,China,United States,140.0
-1995,France,Germany,88.0
-1995,Malawi,India,316.0
-1995,India,China,279.0
-1995,India,Germany,231.0
-1995,China,Germany,183.0
-1995,France,China,183.0
-1995,France,Sudan,218.0
-1995,Germany,Sudan,178.0
-1995,Germany,Malawi,267.0
-1995,Germany,Netherlands,45.0
-1995,Netherlands,United States,89.0
-1995,Sudan,China,300.0
-1996,Netherlands,Germany,44.0
-1996,China,Sudan,287.0
-1996,United States,Sudan,236.0
-1996,France,Malawi,191.0
-1996,Netherlands,China,168.0
-1996,Netherlands,France,59.0
-1996,Russian Federation,China,176.0
-1996,France,United States,160.0
-1996,France,Russian Federation,203.0
-1996,Netherlands,Sudan,235.0
-1996,China,Germany,217.0
-1996,France,India,288.0
-1996,Germany,Sudan,329.0
-1996,Netherlands,Russian Federation,112.0
-1996,Sudan,India,397.0
-1996,India,China,275.0
-1996,China,Russian Federation,176.0
-1996,Netherlands,India,172.0
-1996,Sudan,China,287.0
-1996,France,Germany,85.0
-1996,India,Netherlands,172.0
-1996,United States,Netherlands,91.0
-1996,India,Sudan,397.0
-1996,Malawi,France,191.0
-1996,France,China,237.0
-1996,United States,France,160.0
-1996,China,India,275.0
-1996,China,Netherlands,168.0
-1996,United States,Russian Federation,194.0
-1996,Germany,Netherlands,44.0
-1996,Sudan,Germany,329.0
-1996,Netherlands,Malawi,275.0
-1996,United States,Malawi,227.0
-1996,Germany,United States,135.0
-1996,Malawi,Germany,161.0
-1996,Sudan,United States,236.0
-1996,Germany,India,236.0
-1996,China,France,237.0
-1996,Russian Federation,India,266.0
-1996,China,United States,145.0
-1996,India,United States,180.0
-1996,Russian Federation,France,203.0
-1996,Germany,France,85.0
-1996,India,Germany,236.0
-1996,Germany,Malawi,161.0
-1996,Russian Federation,Germany,159.0
-1996,Germany,Russian Federation,159.0
-1996,India,France,288.0
-1996,Sudan,Netherlands,235.0
-1996,Malawi,United States,227.0
-1996,United States,China,145.0
-1996,Russian Federation,Netherlands,112.0
-1996,Malawi,Netherlands,275.0
-1996,United States,India,180.0
-1996,United States,Germany,135.0
-1996,France,Netherlands,59.0
-1996,Russian Federation,United States,194.0
-1996,Malawi,India,354.0
-1996,Netherlands,United States,91.0
-1996,Germany,China,217.0
-1996,France,Sudan,223.0
-1996,Sudan,France,223.0
-1996,India,Malawi,354.0
-1996,India,Russian Federation,266.0
-1997,United States,Russian Federation,215.0
-1997,India,France,268.0
-1997,Russian Federation,China,166.0
-1997,Germany,Russian Federation,164.0
-1997,Russian Federation,India,265.0
-1997,Sudan,France,230.0
-1997,India,China,268.0
-1997,France,Germany,84.0
-1997,Netherlands,France,63.0
-1997,Netherlands,Malawi,266.0
-1997,United States,France,160.0
-1997,Russian Federation,Netherlands,110.0
-1997,United States,India,168.0
-1997,China,Germany,231.0
-1997,United States,Malawi,231.0
-1997,United States,Germany,131.0
-1997,Germany,Sudan,282.0
-1997,China,France,230.0
-1997,Malawi,Netherlands,266.0
-1997,Netherlands,United States,90.0
-1997,Netherlands,Russian Federation,110.0
-1997,India,Malawi,404.0
-1997,China,Netherlands,211.0
-1997,China,United States,153.0
-1997,Sudan,Netherlands,230.0
-1997,Netherlands,Germany,45.0
-1997,Sudan,India,309.0
-1997,Germany,Netherlands,45.0
-1997,China,Sudan,310.0
-1997,India,United States,168.0
-1997,Malawi,India,404.0
-1997,Germany,India,232.0
-1997,Sudan,China,310.0
-1997,Sudan,Germany,282.0
-1997,Malawi,United States,231.0
-1997,Netherlands,Sudan,230.0
-1997,Germany,China,231.0
-1997,India,Netherlands,180.0
-1997,India,Russian Federation,265.0
-1997,Germany,United States,131.0
-1997,Germany,France,84.0
-1997,Russian Federation,France,216.0
-1997,China,Russian Federation,166.0
-1997,Netherlands,China,211.0
-1997,France,Malawi,243.0
-1997,Russian Federation,United States,215.0
-1997,France,United States,160.0
-1997,France,Russian Federation,216.0
-1997,United States,China,153.0
-1997,India,Sudan,309.0
-1997,France,Netherlands,63.0
-1997,France,India,268.0
-1997,Sudan,United States,251.0
-1997,China,India,268.0
-1997,United States,Netherlands,90.0
-1997,Malawi,Germany,278.0
-1997,France,China,230.0
-1997,France,Sudan,230.0
-1997,India,Germany,232.0
-1997,Malawi,France,243.0
-1997,Netherlands,India,180.0
-1997,United States,Sudan,251.0
-1997,Germany,Malawi,278.0
-1997,Russian Federation,Germany,164.0
-1998,Sudan,Germany,259.0
-1998,United States,Netherlands,90.0
-1998,United States,France,156.0
-1998,Sudan,Netherlands,203.0
-1998,China,Germany,183.0
-1998,Sudan,United States,252.0
-1998,France,Malawi,296.0
-1998,Germany,India,235.0
-1998,United States,Germany,125.0
-1998,France,Russian Federation,209.0
-1998,China,France,198.0
-1998,France,China,198.0
-1998,Netherlands,France,62.0
-1998,Netherlands,Malawi,257.0
-1998,China,Netherlands,208.0
-1998,United States,India,162.0
-1998,India,Malawi,388.0
-1998,China,Russian Federation,154.0
-1998,United States,Malawi,234.0
-1998,India,Russian Federation,277.0
-1998,Germany,Sudan,259.0
-1998,Netherlands,Russian Federation,103.0
-1998,France,India,264.0
-1998,Netherlands,China,208.0
-1998,Netherlands,Sudan,203.0
-1998,France,Sudan,231.0
-1998,India,Germany,235.0
-1998,Russian Federation,Netherlands,103.0
-1998,United States,Sudan,252.0
-1998,Germany,Netherlands,42.0
-1998,Germany,China,183.0
-1998,India,France,264.0
-1998,France,United States,156.0
-1998,Russian Federation,India,277.0
-1998,Sudan,France,231.0
-1998,Germany,United States,125.0
-1998,France,Netherlands,62.0
-1998,Malawi,France,296.0
-1998,Germany,France,83.0
-1998,China,Sudan,408.0
-1998,Russian Federation,France,209.0
-1998,Netherlands,India,185.0
-1998,Russian Federation,China,154.0
-1998,United States,China,162.0
-1998,Malawi,United States,234.0
-1998,India,Netherlands,185.0
-1998,Sudan,India,218.0
-1998,Sudan,China,408.0
-1998,India,Sudan,218.0
-1998,India,China,273.0
-1998,Netherlands,United States,90.0
-1998,China,United States,162.0
-1998,China,India,273.0
-1998,Malawi,Germany,232.0
-1998,Russian Federation,United States,237.0
-1998,Germany,Malawi,232.0
-1998,Russian Federation,Germany,165.0
-1998,Germany,Russian Federation,165.0
-1998,France,Germany,83.0
-1998,Netherlands,Germany,42.0
-1998,India,United States,162.0
-1998,United States,Russian Federation,237.0
-1998,Malawi,India,388.0
-1998,Malawi,Netherlands,257.0
-1999,Malawi,United States,238.0
-1999,Germany,Netherlands,42.0
-1999,France,Netherlands,60.0
-1999,France,United States,158.0
-1999,Netherlands,United States,87.0
-1999,India,China,229.0
-1999,Russian Federation,China,147.0
-1999,India,Russian Federation,393.0
-1999,France,China,198.0
-1999,Malawi,Netherlands,248.0
-1999,Russian Federation,France,206.0
-1999,Germany,China,172.0
-1999,France,India,202.0
-1999,Malawi,France,348.0
-1999,Netherlands,Malawi,248.0
-1999,Sudan,China,510.0
-1999,Netherlands,Russian Federation,137.0
-1999,Netherlands,Sudan,234.0
-1999,Germany,France,85.0
-1999,Germany,Sudan,237.0
-1999,Netherlands,France,60.0
-1999,United States,Netherlands,87.0
-1999,United States,Russian Federation,218.0
-1999,India,Malawi,350.0
-1999,Malawi,Germany,245.0
-1999,India,United States,160.0
-1999,Malawi,India,350.0
-1999,United States,India,160.0
-1999,India,Netherlands,175.0
-1999,Russian Federation,United States,218.0
-1999,China,Germany,172.0
-1999,China,United States,163.0
-1999,India,France,202.0
-1999,Sudan,United States,254.0
-1999,Germany,United States,132.0
-1999,Sudan,France,269.0
-1999,France,Malawi,348.0
-1999,Netherlands,India,175.0
-1999,China,Sudan,510.0
-1999,United States,China,163.0
-1999,India,Germany,228.0
-1999,Russian Federation,India,393.0
-1999,Germany,India,228.0
-1999,France,Sudan,269.0
-1999,China,France,198.0
-1999,United States,Germany,132.0
-1999,France,Germany,85.0
-1999,Russian Federation,Netherlands,137.0
-1999,Sudan,Germany,237.0
-1999,China,Russian Federation,147.0
-1999,Sudan,India,266.0
-1999,China,Netherlands,192.0
-1999,Germany,Russian Federation,143.0
-1999,Germany,Malawi,245.0
-1999,United States,Sudan,254.0
-1999,Netherlands,Germany,42.0
-1999,Sudan,Netherlands,234.0
-1999,China,India,229.0
-1999,France,Russian Federation,206.0
-1999,United States,Malawi,238.0
-1999,India,Sudan,266.0
-1999,Netherlands,China,192.0
-1999,Russian Federation,Germany,143.0
-1999,United States,France,158.0
-2000,Malawi,Netherlands,143.0
-2000,China,United States,149.0
-2000,Malawi,France,400.0
-2000,India,Russian Federation,400.0
-2000,Malawi,India,361.0
-2000,United States,Sudan,255.0
-2000,India,United States,153.0
-2000,China,Netherlands,177.0
-2000,Malawi,Germany,237.0
-2000,Russian Federation,Germany,144.0
-2000,Germany,Sudan,215.0
-2000,Netherlands,United States,85.0
-2000,China,India,244.0
-2000,India,China,244.0
-2000,France,China,203.0
-2000,France,United States,158.0
-2000,China,Russian Federation,146.0
-2000,United States,France,158.0
-2000,Germany,Malawi,237.0
-2000,Germany,China,176.0
-2000,United States,China,149.0
-2000,Netherlands,Russian Federation,113.0
-2000,Netherlands,Sudan,214.0
-2000,United States,India,153.0
-2000,Netherlands,France,59.0
-2000,France,Germany,85.0
-2000,Germany,France,85.0
-2000,France,Sudan,339.0
-2000,Russian Federation,Netherlands,113.0
-2000,Sudan,Germany,215.0
-2000,Russian Federation,China,146.0
-2000,Sudan,United States,255.0
-2000,India,Sudan,228.0
-2000,Netherlands,India,172.0
-2000,France,Malawi,400.0
-2000,China,Germany,176.0
-2000,India,Germany,233.0
-2000,Sudan,France,339.0
-2000,India,France,244.0
-2000,Netherlands,Malawi,143.0
-2000,United States,Malawi,188.0
-2000,India,Malawi,361.0
-2000,China,Sudan,515.0
-2000,Netherlands,Germany,43.0
-2000,Russian Federation,France,229.0
-2000,United States,Germany,131.0
-2000,Germany,Netherlands,43.0
-2000,United States,Russian Federation,213.0
-2000,United States,Netherlands,85.0
-2000,Sudan,China,515.0
-2000,Germany,India,233.0
-2000,Netherlands,China,177.0
-2000,Russian Federation,United States,213.0
-2000,Sudan,India,228.0
-2000,Sudan,Netherlands,214.0
-2000,France,Netherlands,59.0
-2000,France,India,244.0
-2000,Germany,United States,131.0
-2000,India,Netherlands,172.0
-2000,Russian Federation,India,400.0
-2000,France,Russian Federation,229.0
-2000,Malawi,United States,188.0
-2000,Germany,Russian Federation,144.0
-2000,China,France,203.0
-2001,Germany,India,222.0
-2001,Germany,Netherlands,41.0
-2001,Netherlands,United States,88.0
-2001,China,Netherlands,170.0
-2001,Germany,China,175.0
-2001,Netherlands,China,170.0
-2001,France,United States,156.0
-2001,Sudan,China,456.0
-2001,Germany,Malawi,228.0
-2001,Netherlands,Malawi,289.0
-2001,Russian Federation,France,248.0
-2001,Malawi,Germany,228.0
-2001,United States,India,141.0
-2001,Netherlands,Germany,41.0
-2001,India,China,269.0
-2001,India,Germany,222.0
-2001,France,Malawi,400.0
-2001,Malawi,France,400.0
-2001,China,India,269.0
-2001,Malawi,United States,217.0
-2001,France,India,209.0
-2001,India,Russian Federation,230.0
-2001,Netherlands,Sudan,208.0
-2001,Russian Federation,Netherlands,129.0
-2001,India,Sudan,237.0
-2001,United States,Netherlands,88.0
-2001,France,Russian Federation,248.0
-2001,United States,Russian Federation,234.0
-2001,Sudan,Germany,193.0
-2001,Russian Federation,Germany,149.0
-2001,Germany,Russian Federation,149.0
-2001,France,China,213.0
-2001,Russian Federation,India,230.0
-2001,Netherlands,India,183.0
-2001,Netherlands,Russian Federation,129.0
-2001,United States,Malawi,217.0
-2001,Germany,France,86.0
-2001,Germany,United States,134.0
-2001,Sudan,United States,270.0
-2001,Sudan,France,257.0
-2001,India,United States,141.0
-2001,Russian Federation,United States,234.0
-2001,France,Sudan,257.0
-2001,India,Netherlands,183.0
-2001,China,Germany,175.0
-2001,United States,China,150.0
-2001,China,United States,150.0
-2001,Netherlands,France,61.0
-2001,United States,Germany,134.0
-2001,Germany,Sudan,193.0
-2001,United States,France,156.0
-2001,China,France,213.0
-2001,United States,Sudan,270.0
-2001,China,Russian Federation,142.0
-2001,China,Sudan,456.0
-2001,Russian Federation,China,142.0
-2001,France,Netherlands,61.0
-2001,India,France,209.0
-2001,India,Malawi,378.0
-2001,Malawi,India,378.0
-2001,Malawi,Netherlands,289.0
-2001,Sudan,Netherlands,208.0
-2001,France,Germany,86.0
-2001,Sudan,India,237.0
-2002,Germany,China,186.0
-2002,Malawi,India,293.0
-2002,China,India,231.0
-2002,Sudan,India,246.0
-2002,United States,Russian Federation,252.0
-2002,France,Malawi,400.0
-2002,Sudan,Russian Federation,331.0
-2002,United States,China,147.0
-2002,Germany,Malawi,262.0
-2002,Germany,India,192.0
-2002,Malawi,France,400.0
-2002,Germany,Russian Federation,151.0
-2002,Netherlands,China,170.0
-2002,Russian Federation,Netherlands,131.0
-2002,India,Germany,192.0
-2002,Malawi,Germany,262.0
-2002,India,United States,146.0
-2002,Russian Federation,China,132.0
-2002,Sudan,China,389.0
-2002,Netherlands,Russian Federation,131.0
-2002,United States,Netherlands,88.0
-2002,Sudan,France,313.0
-2002,Netherlands,France,60.0
-2002,China,Netherlands,170.0
-2002,India,China,231.0
-2002,Netherlands,India,185.0
-2002,India,Netherlands,185.0
-2002,Sudan,Germany,194.0
-2002,Germany,United States,131.0
-2002,France,United States,153.0
-2002,India,Russian Federation,214.0
-2002,Russian Federation,Sudan,331.0
-2002,Russian Federation,India,214.0
-2002,France,China,223.0
-2002,China,Germany,186.0
-2002,Netherlands,Sudan,291.0
-2002,China,Sudan,389.0
-2002,France,Germany,83.0
-2002,Sudan,United States,317.0
-2002,France,Sudan,313.0
-2002,Germany,Netherlands,39.0
-2002,China,United States,147.0
-2002,France,India,191.0
-2002,Netherlands,United States,88.0
-2002,Germany,France,83.0
-2002,France,Russian Federation,213.0
-2002,China,France,223.0
-2002,Russian Federation,France,213.0
-2002,China,Malawi,640.0
-2002,United States,India,146.0
-2002,India,Malawi,293.0
-2002,France,Netherlands,60.0
-2002,India,Sudan,246.0
-2002,Malawi,Netherlands,222.0
-2002,Malawi,China,640.0
-2002,United States,Germany,131.0
-2002,Germany,Sudan,194.0
-2002,China,Russian Federation,132.0
-2002,Netherlands,Malawi,222.0
-2002,India,France,191.0
-2002,Sudan,Netherlands,291.0
-2002,United States,Sudan,317.0
-2002,United States,Malawi,176.0
-2002,Netherlands,Germany,39.0
-2002,Russian Federation,United States,252.0
-2002,Russian Federation,Germany,151.0
-2002,Malawi,United States,176.0
-2002,United States,France,153.0
-2003,India,Russian Federation,233.0
-2003,India,United States,148.0
-2003,Malawi,India,337.0
-2003,China,Malawi,451.0
-2003,China,Russian Federation,129.0
-2003,France,Russian Federation,232.0
-2003,Russian Federation,China,129.0
-2003,Netherlands,Malawi,256.0
-2003,United States,Netherlands,91.0
-2003,France,Germany,84.0
-2003,Germany,China,190.0
-2003,Russian Federation,Netherlands,140.0
-2003,United States,China,125.0
-2003,Malawi,Germany,260.0
-2003,Russian Federation,Sudan,310.0
-2003,China,France,211.0
-2003,Sudan,Germany,273.0
-2003,Sudan,India,223.0
-2003,India,Malawi,337.0
-2003,China,Netherlands,164.0
-2003,United States,Russian Federation,253.0
-2003,Russian Federation,France,232.0
-2003,Sudan,Russian Federation,310.0
-2003,Russian Federation,Germany,161.0
-2003,Germany,United States,128.0
-2003,Germany,India,219.0
-2003,China,India,230.0
-2003,Russian Federation,United States,253.0
-2003,France,Sudan,311.0
-2003,Germany,France,84.0
-2003,United States,Sudan,265.0
-2003,India,China,230.0
-2003,Germany,Malawi,260.0
-2003,India,France,215.0
-2003,China,Germany,190.0
-2003,United States,France,154.0
-2003,Russian Federation,India,233.0
-2003,India,Germany,219.0
-2003,Malawi,Netherlands,256.0
-2003,Netherlands,Russian Federation,140.0
-2003,China,Sudan,279.0
-2003,France,India,215.0
-2003,Sudan,United States,265.0
-2003,Germany,Russian Federation,161.0
-2003,Netherlands,United States,91.0
-2003,Netherlands,Germany,38.0
-2003,Sudan,France,311.0
-2003,France,United States,154.0
-2003,Malawi,China,451.0
-2003,France,Netherlands,58.0
-2003,France,China,211.0
-2003,Germany,Sudan,273.0
-2003,Netherlands,France,58.0
-2003,United States,India,148.0
-2003,Germany,Netherlands,38.0
-2003,Sudan,Netherlands,272.0
-2003,Netherlands,Sudan,272.0
-2003,Netherlands,China,164.0
-2003,Sudan,China,279.0
-2003,India,Netherlands,188.0
-2003,India,Sudan,223.0
-2003,Malawi,United States,248.0
-2003,China,United States,125.0
-2003,Netherlands,India,188.0
-2003,United States,Germany,128.0
-2003,United States,Malawi,248.0
-2004,Russian Federation,Netherlands,154.0
-2004,Malawi,India,352.0
-2004,China,Netherlands,167.0
-2004,India,Russian Federation,248.0
-2004,United States,Germany,129.0
-2004,Sudan,Germany,262.0
-2004,France,Sudan,298.0
-2004,United States,Malawi,221.0
-2004,United States,Netherlands,95.0
-2004,China,United States,125.0
-2004,Germany,Russian Federation,163.0
-2004,Malawi,China,515.0
-2004,Sudan,India,215.0
-2004,United States,Sudan,267.0
-2004,Germany,Sudan,262.0
-2004,India,United States,153.0
-2004,Netherlands,Sudan,256.0
-2004,China,Germany,196.0
-2004,Russian Federation,Germany,163.0
-2004,China,Russian Federation,132.0
-2004,China,France,210.0
-2004,France,Germany,84.0
-2004,Netherlands,United States,95.0
-2004,Germany,Malawi,218.0
-2004,Netherlands,China,167.0
-2004,United States,India,153.0
-2004,France,China,210.0
-2004,India,China,232.0
-2004,United States,France,158.0
-2004,France,United States,158.0
-2004,India,Sudan,215.0
-2004,Sudan,Netherlands,256.0
-2004,Russian Federation,France,248.0
-2004,United States,China,125.0
-2004,Sudan,China,256.0
-2004,France,Netherlands,58.0
-2004,Germany,China,196.0
-2004,France,Russian Federation,248.0
-2004,China,Sudan,256.0
-2004,Netherlands,Germany,38.0
-2004,Sudan,Russian Federation,279.0
-2004,Sudan,United States,267.0
-2004,Germany,United States,129.0
-2004,Malawi,United States,221.0
-2004,Netherlands,France,58.0
-2004,France,India,235.0
-2004,Germany,France,84.0
-2004,Malawi,Netherlands,244.0
-2004,China,India,232.0
-2004,Germany,India,214.0
-2004,India,Germany,214.0
-2004,Malawi,Germany,218.0
-2004,Netherlands,Russian Federation,154.0
-2004,India,France,235.0
-2004,Sudan,France,298.0
-2004,China,Malawi,515.0
-2004,Netherlands,India,179.0
-2004,Russian Federation,Sudan,279.0
-2004,India,Netherlands,179.0
-2004,United States,Russian Federation,223.0
-2004,Netherlands,Malawi,244.0
-2004,Russian Federation,India,248.0
-2004,Germany,Netherlands,38.0
-2004,Russian Federation,China,132.0
-2004,India,Malawi,352.0
-2004,Russian Federation,United States,223.0
-2005,Malawi,Germany,176.0
-2005,France,Netherlands,58.0
-2005,Germany,Netherlands,34.0
-2005,China,India,214.0
-2005,Russian Federation,Germany,160.0
-2005,Malawi,United States,184.0
-2005,China,Sudan,234.0
-2005,Malawi,Netherlands,230.0
-2005,United States,China,125.0
-2005,China,France,204.0
-2005,India,China,214.0
-2005,Russian Federation,China,125.0
-2005,Sudan,India,202.0
-2005,France,United States,158.0
-2005,Germany,United States,126.0
-2005,Sudan,Netherlands,252.0
-2005,Sudan,Russian Federation,301.0
-2005,Netherlands,United States,91.0
-2005,Germany,India,212.0
-2005,India,Malawi,359.0
-2005,France,China,204.0
-2005,India,Russian Federation,253.0
-2005,India,France,237.0
-2005,Russian Federation,United States,219.0
-2005,Malawi,India,359.0
-2005,France,Russian Federation,249.0
-2005,China,Russian Federation,125.0
-2005,United States,Netherlands,91.0
-2005,Russian Federation,Sudan,301.0
-2005,Russian Federation,Netherlands,132.0
-2005,India,United States,150.0
-2005,China,Malawi,579.0
-2005,Malawi,China,579.0
-2005,Germany,Sudan,181.0
-2005,India,Sudan,202.0
-2005,Netherlands,India,170.0
-2005,Sudan,United States,194.0
-2005,France,Sudan,292.0
-2005,Russian Federation,India,253.0
-2005,Sudan,China,234.0
-2005,India,Germany,212.0
-2005,Netherlands,Malawi,230.0
-2005,United States,Germany,126.0
-2005,China,Germany,186.0
-2005,United States,Malawi,184.0
-2005,France,Germany,81.0
-2005,United States,France,158.0
-2005,Sudan,France,292.0
-2005,Russian Federation,France,249.0
-2005,China,Netherlands,161.0
-2005,United States,India,150.0
-2005,Sudan,Germany,181.0
-2005,Netherlands,Russian Federation,132.0
-2005,India,Netherlands,170.0
-2005,Netherlands,China,161.0
-2005,Germany,Malawi,176.0
-2005,France,India,237.0
-2005,Germany,Russian Federation,160.0
-2005,China,United States,125.0
-2005,Netherlands,Sudan,252.0
-2005,Netherlands,France,58.0
-2005,United States,Russian Federation,219.0
-2005,Germany,China,186.0
-2005,United States,Sudan,194.0
-2005,Germany,France,81.0
-2005,Netherlands,Germany,34.0
-2006,France,Germany,80.0
-2006,Russian Federation,India,153.0
-2006,India,United States,146.0
-2006,Germany,Malawi,127.0
-2006,India,Netherlands,168.0
-2006,Netherlands,Germany,35.0
-2006,Sudan,China,251.0
-2006,Netherlands,Malawi,235.0
-2006,Netherlands,Sudan,228.0
-2006,Germany,United States,125.0
-2006,China,France,226.0
-2006,Sudan,France,250.0
-2006,Malawi,United States,171.0
-2006,United States,Netherlands,83.0
-2006,Netherlands,India,168.0
-2006,United States,France,159.0
-2006,Russian Federation,United States,219.0
-2006,Germany,Netherlands,35.0
-2006,Malawi,China,643.0
-2006,China,India,187.0
-2006,Germany,India,197.0
-2006,Germany,Russian Federation,151.0
-2006,Russian Federation,Germany,151.0
-2006,Netherlands,Russian Federation,142.0
-2006,Germany,China,178.0
-2006,United States,Germany,125.0
-2006,China,Netherlands,159.0
-2006,Russian Federation,Sudan,298.0
-2006,France,Sudan,250.0
-2006,China,United States,119.0
-2006,China,Malawi,643.0
-2006,United States,Russian Federation,219.0
-2006,India,Malawi,407.0
-2006,Netherlands,France,57.0
-2006,France,India,195.0
-2006,India,Russian Federation,153.0
-2006,United States,Sudan,226.0
-2006,Sudan,Russian Federation,298.0
-2006,France,Russian Federation,225.0
-2006,United States,India,146.0
-2006,United States,China,119.0
-2006,Germany,Sudan,190.0
-2006,Germany,France,80.0
-2006,India,Sudan,227.0
-2006,Sudan,Netherlands,228.0
-2006,Netherlands,China,159.0
-2006,India,Germany,197.0
-2006,France,United States,159.0
-2006,Russian Federation,France,225.0
-2006,Netherlands,United States,83.0
-2006,Russian Federation,China,126.0
-2006,India,China,187.0
-2006,France,China,226.0
-2006,Sudan,United States,226.0
-2006,China,Russian Federation,126.0
-2006,Sudan,India,227.0
-2006,United States,Malawi,171.0
-2006,Malawi,India,407.0
-2006,China,Germany,178.0
-2006,Sudan,Germany,190.0
-2006,Malawi,Netherlands,235.0
-2006,China,Sudan,251.0
-2006,India,France,195.0
-2006,France,Netherlands,57.0
-2006,Malawi,Germany,127.0
-2006,Russian Federation,Netherlands,142.0
-2007,Netherlands,India,168.0
-2007,India,Malawi,376.0
-2007,Sudan,China,277.0
-2007,Russian Federation,India,156.0
-2007,Russian Federation,France,213.0
-2007,India,China,189.0
-2007,Sudan,Russian Federation,294.0
-2007,France,Netherlands,55.0
-2007,India,France,221.0
-2007,Netherlands,France,55.0
-2007,United States,India,147.0
-2007,India,Sudan,254.0
-2007,United States,Germany,124.0
-2007,Sudan,India,254.0
-2007,France,India,221.0
-2007,United States,France,163.0
-2007,Germany,Sudan,190.0
-2007,Sudan,United States,231.0
-2007,Netherlands,China,157.0
-2007,Germany,France,81.0
-2007,Malawi,United States,187.0
-2007,India,Germany,196.0
-2007,Russian Federation,Germany,150.0
-2007,China,Malawi,535.0
-2007,Netherlands,Russian Federation,133.0
-2007,Malawi,Germany,150.0
-2007,Germany,United States,124.0
-2007,Russian Federation,Netherlands,133.0
-2007,Germany,Netherlands,35.0
-2007,China,Germany,176.0
-2007,United States,Netherlands,87.0
-2007,Germany,India,196.0
-2007,China,United States,121.0
-2007,China,India,189.0
-2007,Germany,China,176.0
-2007,Germany,Malawi,150.0
-2007,United States,China,121.0
-2007,India,Netherlands,168.0
-2007,Sudan,Germany,190.0
-2007,France,United States,163.0
-2007,Netherlands,Germany,35.0
-2007,United States,Sudan,231.0
-2007,Netherlands,Malawi,241.0
-2007,United States,Russian Federation,225.0
-2007,Sudan,France,236.0
-2007,China,Russian Federation,121.0
-2007,Malawi,China,535.0
-2007,France,China,215.0
-2007,India,Russian Federation,156.0
-2007,France,Germany,81.0
-2007,China,France,215.0
-2007,China,Sudan,277.0
-2007,Netherlands,United States,87.0
-2007,Russian Federation,China,121.0
-2007,Germany,Russian Federation,150.0
-2007,Malawi,Netherlands,241.0
-2007,India,United States,147.0
-2007,France,Sudan,236.0
-2007,United States,Malawi,187.0
-2007,Russian Federation,Sudan,294.0
-2007,Russian Federation,United States,225.0
-2007,Sudan,Netherlands,229.0
-2007,France,Russian Federation,213.0
-2007,China,Netherlands,157.0
-2007,Malawi,India,376.0
-2007,Netherlands,Sudan,229.0
-2008,India,Germany,195.0
-2008,France,Sudan,222.0
-2008,China,Russian Federation,128.0
-2008,Germany,India,195.0
-2008,Germany,Netherlands,33.0
-2008,Germany,United States,120.0
-2008,India,Malawi,398.0
-2008,Russian Federation,Sudan,291.0
-2008,United States,China,117.0
-2008,Sudan,India,281.0
-2008,France,China,216.0
-2008,France,India,217.0
-2008,United States,Germany,120.0
-2008,Germany,Sudan,189.0
-2008,Germany,Malawi,173.0
-2008,India,France,217.0
-2008,Sudan,Netherlands,230.0
-2008,Russian Federation,United States,225.0
-2008,Netherlands,Sudan,230.0
-2008,United States,Russian Federation,225.0
-2008,United States,Sudan,236.0
-2008,Malawi,Russian Federation,159.0
-2008,Netherlands,France,52.0
-2008,Netherlands,Russian Federation,137.0
-2008,China,France,216.0
-2008,Netherlands,Germany,33.0
-2008,Russian Federation,Netherlands,137.0
-2008,Russian Federation,Germany,157.0
-2008,Russian Federation,France,220.0
-2008,United States,Netherlands,88.0
-2008,Sudan,Russian Federation,291.0
-2008,France,United States,163.0
-2008,Malawi,United States,175.0
-2008,Germany,China,182.0
-2008,India,United States,142.0
-2008,Germany,Russian Federation,157.0
-2008,China,Netherlands,159.0
-2008,India,Russian Federation,193.0
-2008,Netherlands,China,159.0
-2008,Sudan,China,302.0
-2008,France,Russian Federation,220.0
-2008,United States,France,163.0
-2008,Sudan,Germany,189.0
-2008,India,Netherlands,162.0
-2008,China,Germany,182.0
-2008,Malawi,Netherlands,206.0
-2008,China,United States,117.0
-2008,Russian Federation,Malawi,159.0
-2008,Netherlands,Malawi,206.0
-2008,Russian Federation,China,128.0
-2008,China,Malawi,427.0
-2008,China,Sudan,302.0
-2008,Malawi,China,427.0
-2008,Malawi,India,398.0
-2008,Malawi,Germany,173.0
-2008,Sudan,United States,236.0
-2008,Germany,France,79.0
-2008,France,Germany,79.0
-2008,India,Sudan,281.0
-2008,Netherlands,United States,88.0
-2008,Sudan,France,222.0
-2008,United States,India,142.0
-2008,Russian Federation,India,193.0
-2008,China,India,187.0
-2008,United States,Malawi,175.0
-2008,India,China,187.0
-2008,Netherlands,India,162.0
-2008,France,Netherlands,52.0
-2009,Germany,Malawi,161.0
-2009,United States,France,152.0
-2009,Sudan,India,276.0
-2009,India,Russian Federation,212.0
-2009,Germany,China,175.0
-2009,Russian Federation,India,212.0
-2009,Malawi,United States,161.0
-2009,Russian Federation,United States,222.0
-2009,France,United States,152.0
-2009,India,France,227.0
-2009,Sudan,Germany,170.0
-2009,Sudan,United States,218.0
-2009,Malawi,India,307.0
-2009,Germany,Russian Federation,156.0
-2009,United States,Germany,109.0
-2009,Russian Federation,China,132.0
-2009,United States,Sudan,218.0
-2009,China,Malawi,319.0
-2009,Germany,United States,109.0
-2009,India,Malawi,307.0
-2009,China,Sudan,267.0
-2009,Russian Federation,Germany,156.0
-2009,Russian Federation,France,243.0
-2009,France,Russian Federation,243.0
-2009,India,Sudan,276.0
-2009,Malawi,China,319.0
-2009,China,India,180.0
-2009,China,Germany,175.0
-2009,United States,China,108.0
-2009,India,China,180.0
-2009,United States,India,138.0
-2009,Sudan,China,267.0
-2009,Sudan,Russian Federation,299.0
-2009,Sudan,France,248.0
-2009,France,Sudan,248.0
-2009,France,Germany,67.0
-2009,Germany,India,188.0
-2009,Germany,Sudan,170.0
-2009,Russian Federation,Sudan,299.0
-2009,India,Germany,188.0
-2009,China,Russian Federation,132.0
-2009,Malawi,Germany,161.0
-2009,France,China,197.0
-2009,United States,Malawi,161.0
-2009,India,United States,138.0
-2009,United States,Russian Federation,222.0
-2009,France,India,227.0
-2009,Germany,France,67.0
-2009,China,United States,108.0
-2009,China,France,197.0
-2010,United States,Russian Federation,223.0
-2010,Malawi,United States,175.0
-2010,Malawi,Germany,148.0
-2010,Germany,Malawi,148.0
-2010,Germany,China,172.0
-2010,India,Russian Federation,242.0
-2010,United States,Malawi,175.0
-2010,India,China,175.0
-2010,Russian Federation,Germany,150.0
-2010,China,Malawi,444.0
-2010,India,Malawi,349.0
-2010,Russian Federation,United States,223.0
-2010,Malawi,India,349.0
-2010,United States,China,105.0
-2010,India,Germany,196.0
-2010,Russian Federation,India,242.0
-2010,United States,India,145.0
-2010,China,India,175.0
-2010,United States,Germany,110.0
-2010,Malawi,China,444.0
-2010,Germany,Russian Federation,150.0
-2010,China,Germany,172.0
-2010,China,United States,105.0
-2010,Germany,United States,110.0
-2010,Russian Federation,China,131.0
-2010,Germany,India,196.0
-2010,China,Russian Federation,131.0
-2010,India,United States,145.0
+time,country1,country2,weight
+1995,France,India,288
+1995,France,Malawi,157
+1995,India,Netherlands,180
+1995,France,United States,163
+1995,Sudan,United States,196
+1995,United States,Netherlands,89
+1995,Sudan,France,218
+1995,Netherlands,Malawi,284
+1995,United States,India,161
+1995,India,France,288
+1995,Sudan,India,239
+1995,Netherlands,Sudan,270
+1995,France,Netherlands,61
+1995,Netherlands,China,204
+1995,Germany,China,183
+1995,India,Sudan,239
+1995,United States,Germany,137
+1995,Sudan,Netherlands,270
+1995,United States,China,140
+1995,Malawi,Netherlands,284
+1995,Malawi,France,157
+1995,China,Sudan,300
+1995,United States,France,163
+1995,United States,Sudan,196
+1995,India,Malawi,316
+1995,India,United States,161
+1995,China,India,279
+1995,Netherlands,India,180
+1995,United States,Malawi,140
+1995,Germany,United States,137
+1995,Germany,India,231
+1995,China,Netherlands,204
+1995,China,France,183
+1995,Netherlands,Germany,45
+1995,Sudan,Germany,178
+1995,Netherlands,France,61
+1995,Malawi,Germany,267
+1995,Germany,France,88
+1995,Malawi,United States,140
+1995,China,United States,140
+1995,France,Germany,88
+1995,Malawi,India,316
+1995,India,China,279
+1995,India,Germany,231
+1995,China,Germany,183
+1995,France,China,183
+1995,France,Sudan,218
+1995,Germany,Sudan,178
+1995,Germany,Malawi,267
+1995,Germany,Netherlands,45
+1995,Netherlands,United States,89
+1995,Sudan,China,300
+1996,Netherlands,Germany,44
+1996,China,Sudan,287
+1996,United States,Sudan,236
+1996,France,Malawi,191
+1996,Netherlands,China,168
+1996,Netherlands,France,59
+1996,Russian Federation,China,176
+1996,France,United States,160
+1996,France,Russian Federation,203
+1996,Netherlands,Sudan,235
+1996,China,Germany,217
+1996,France,India,288
+1996,Germany,Sudan,329
+1996,Netherlands,Russian Federation,112
+1996,Sudan,India,397
+1996,India,China,275
+1996,China,Russian Federation,176
+1996,Netherlands,India,172
+1996,Sudan,China,287
+1996,France,Germany,85
+1996,India,Netherlands,172
+1996,United States,Netherlands,91
+1996,India,Sudan,397
+1996,Malawi,France,191
+1996,France,China,237
+1996,United States,France,160
+1996,China,India,275
+1996,China,Netherlands,168
+1996,United States,Russian Federation,194
+1996,Germany,Netherlands,44
+1996,Sudan,Germany,329
+1996,Netherlands,Malawi,275
+1996,United States,Malawi,227
+1996,Germany,United States,135
+1996,Malawi,Germany,161
+1996,Sudan,United States,236
+1996,Germany,India,236
+1996,China,France,237
+1996,Russian Federation,India,266
+1996,China,United States,145
+1996,India,United States,180
+1996,Russian Federation,France,203
+1996,Germany,France,85
+1996,India,Germany,236
+1996,Germany,Malawi,161
+1996,Russian Federation,Germany,159
+1996,Germany,Russian Federation,159
+1996,India,France,288
+1996,Sudan,Netherlands,235
+1996,Malawi,United States,227
+1996,United States,China,145
+1996,Russian Federation,Netherlands,112
+1996,Malawi,Netherlands,275
+1996,United States,India,180
+1996,United States,Germany,135
+1996,France,Netherlands,59
+1996,Russian Federation,United States,194
+1996,Malawi,India,354
+1996,Netherlands,United States,91
+1996,Germany,China,217
+1996,France,Sudan,223
+1996,Sudan,France,223
+1996,India,Malawi,354
+1996,India,Russian Federation,266
+1997,United States,Russian Federation,215
+1997,India,France,268
+1997,Russian Federation,China,166
+1997,Germany,Russian Federation,164
+1997,Russian Federation,India,265
+1997,Sudan,France,230
+1997,India,China,268
+1997,France,Germany,84
+1997,Netherlands,France,63
+1997,Netherlands,Malawi,266
+1997,United States,France,160
+1997,Russian Federation,Netherlands,110
+1997,United States,India,168
+1997,China,Germany,231
+1997,United States,Malawi,231
+1997,United States,Germany,131
+1997,Germany,Sudan,282
+1997,China,France,230
+1997,Malawi,Netherlands,266
+1997,Netherlands,United States,90
+1997,Netherlands,Russian Federation,110
+1997,India,Malawi,404
+1997,China,Netherlands,211
+1997,China,United States,153
+1997,Sudan,Netherlands,230
+1997,Netherlands,Germany,45
+1997,Sudan,India,309
+1997,Germany,Netherlands,45
+1997,China,Sudan,310
+1997,India,United States,168
+1997,Malawi,India,404
+1997,Germany,India,232
+1997,Sudan,China,310
+1997,Sudan,Germany,282
+1997,Malawi,United States,231
+1997,Netherlands,Sudan,230
+1997,Germany,China,231
+1997,India,Netherlands,180
+1997,India,Russian Federation,265
+1997,Germany,United States,131
+1997,Germany,France,84
+1997,Russian Federation,France,216
+1997,China,Russian Federation,166
+1997,Netherlands,China,211
+1997,France,Malawi,243
+1997,Russian Federation,United States,215
+1997,France,United States,160
+1997,France,Russian Federation,216
+1997,United States,China,153
+1997,India,Sudan,309
+1997,France,Netherlands,63
+1997,France,India,268
+1997,Sudan,United States,251
+1997,China,India,268
+1997,United States,Netherlands,90
+1997,Malawi,Germany,278
+1997,France,China,230
+1997,France,Sudan,230
+1997,India,Germany,232
+1997,Malawi,France,243
+1997,Netherlands,India,180
+1997,United States,Sudan,251
+1997,Germany,Malawi,278
+1997,Russian Federation,Germany,164
+1998,Sudan,Germany,259
+1998,United States,Netherlands,90
+1998,United States,France,156
+1998,Sudan,Netherlands,203
+1998,China,Germany,183
+1998,Sudan,United States,252
+1998,France,Malawi,296
+1998,Germany,India,235
+1998,United States,Germany,125
+1998,France,Russian Federation,209
+1998,China,France,198
+1998,France,China,198
+1998,Netherlands,France,62
+1998,Netherlands,Malawi,257
+1998,China,Netherlands,208
+1998,United States,India,162
+1998,India,Malawi,388
+1998,China,Russian Federation,154
+1998,United States,Malawi,234
+1998,India,Russian Federation,277
+1998,Germany,Sudan,259
+1998,Netherlands,Russian Federation,103
+1998,France,India,264
+1998,Netherlands,China,208
+1998,Netherlands,Sudan,203
+1998,France,Sudan,231
+1998,India,Germany,235
+1998,Russian Federation,Netherlands,103
+1998,United States,Sudan,252
+1998,Germany,Netherlands,42
+1998,Germany,China,183
+1998,India,France,264
+1998,France,United States,156
+1998,Russian Federation,India,277
+1998,Sudan,France,231
+1998,Germany,United States,125
+1998,France,Netherlands,62
+1998,Malawi,France,296
+1998,Germany,France,83
+1998,China,Sudan,408
+1998,Russian Federation,France,209
+1998,Netherlands,India,185
+1998,Russian Federation,China,154
+1998,United States,China,162
+1998,Malawi,United States,234
+1998,India,Netherlands,185
+1998,Sudan,India,218
+1998,Sudan,China,408
+1998,India,Sudan,218
+1998,India,China,273
+1998,Netherlands,United States,90
+1998,China,United States,162
+1998,China,India,273
+1998,Malawi,Germany,232
+1998,Russian Federation,United States,237
+1998,Germany,Malawi,232
+1998,Russian Federation,Germany,165
+1998,Germany,Russian Federation,165
+1998,France,Germany,83
+1998,Netherlands,Germany,42
+1998,India,United States,162
+1998,United States,Russian Federation,237
+1998,Malawi,India,388
+1998,Malawi,Netherlands,257
+1999,Malawi,United States,238
+1999,Germany,Netherlands,42
+1999,France,Netherlands,60
+1999,France,United States,158
+1999,Netherlands,United States,87
+1999,India,China,229
+1999,Russian Federation,China,147
+1999,India,Russian Federation,393
+1999,France,China,198
+1999,Malawi,Netherlands,248
+1999,Russian Federation,France,206
+1999,Germany,China,172
+1999,France,India,202
+1999,Malawi,France,348
+1999,Netherlands,Malawi,248
+1999,Sudan,China,510
+1999,Netherlands,Russian Federation,137
+1999,Netherlands,Sudan,234
+1999,Germany,France,85
+1999,Germany,Sudan,237
+1999,Netherlands,France,60
+1999,United States,Netherlands,87
+1999,United States,Russian Federation,218
+1999,India,Malawi,350
+1999,Malawi,Germany,245
+1999,India,United States,160
+1999,Malawi,India,350
+1999,United States,India,160
+1999,India,Netherlands,175
+1999,Russian Federation,United States,218
+1999,China,Germany,172
+1999,China,United States,163
+1999,India,France,202
+1999,Sudan,United States,254
+1999,Germany,United States,132
+1999,Sudan,France,269
+1999,France,Malawi,348
+1999,Netherlands,India,175
+1999,China,Sudan,510
+1999,United States,China,163
+1999,India,Germany,228
+1999,Russian Federation,India,393
+1999,Germany,India,228
+1999,France,Sudan,269
+1999,China,France,198
+1999,United States,Germany,132
+1999,France,Germany,85
+1999,Russian Federation,Netherlands,137
+1999,Sudan,Germany,237
+1999,China,Russian Federation,147
+1999,Sudan,India,266
+1999,China,Netherlands,192
+1999,Germany,Russian Federation,143
+1999,Germany,Malawi,245
+1999,United States,Sudan,254
+1999,Netherlands,Germany,42
+1999,Sudan,Netherlands,234
+1999,China,India,229
+1999,France,Russian Federation,206
+1999,United States,Malawi,238
+1999,India,Sudan,266
+1999,Netherlands,China,192
+1999,Russian Federation,Germany,143
+1999,United States,France,158
+2000,Malawi,Netherlands,143
+2000,China,United States,149
+2000,Malawi,France,400
+2000,India,Russian Federation,400
+2000,Malawi,India,361
+2000,United States,Sudan,255
+2000,India,United States,153
+2000,China,Netherlands,177
+2000,Malawi,Germany,237
+2000,Russian Federation,Germany,144
+2000,Germany,Sudan,215
+2000,Netherlands,United States,85
+2000,China,India,244
+2000,India,China,244
+2000,France,China,203
+2000,France,United States,158
+2000,China,Russian Federation,146
+2000,United States,France,158
+2000,Germany,Malawi,237
+2000,Germany,China,176
+2000,United States,China,149
+2000,Netherlands,Russian Federation,113
+2000,Netherlands,Sudan,214
+2000,United States,India,153
+2000,Netherlands,France,59
+2000,France,Germany,85
+2000,Germany,France,85
+2000,France,Sudan,339
+2000,Russian Federation,Netherlands,113
+2000,Sudan,Germany,215
+2000,Russian Federation,China,146
+2000,Sudan,United States,255
+2000,India,Sudan,228
+2000,Netherlands,India,172
+2000,France,Malawi,400
+2000,China,Germany,176
+2000,India,Germany,233
+2000,Sudan,France,339
+2000,India,France,244
+2000,Netherlands,Malawi,143
+2000,United States,Malawi,188
+2000,India,Malawi,361
+2000,China,Sudan,515
+2000,Netherlands,Germany,43
+2000,Russian Federation,France,229
+2000,United States,Germany,131
+2000,Germany,Netherlands,43
+2000,United States,Russian Federation,213
+2000,United States,Netherlands,85
+2000,Sudan,China,515
+2000,Germany,India,233
+2000,Netherlands,China,177
+2000,Russian Federation,United States,213
+2000,Sudan,India,228
+2000,Sudan,Netherlands,214
+2000,France,Netherlands,59
+2000,France,India,244
+2000,Germany,United States,131
+2000,India,Netherlands,172
+2000,Russian Federation,India,400
+2000,France,Russian Federation,229
+2000,Malawi,United States,188
+2000,Germany,Russian Federation,144
+2000,China,France,203
+2001,Germany,India,222
+2001,Germany,Netherlands,41
+2001,Netherlands,United States,88
+2001,China,Netherlands,170
+2001,Germany,China,175
+2001,Netherlands,China,170
+2001,France,United States,156
+2001,Sudan,China,456
+2001,Germany,Malawi,228
+2001,Netherlands,Malawi,289
+2001,Russian Federation,France,248
+2001,Malawi,Germany,228
+2001,United States,India,141
+2001,Netherlands,Germany,41
+2001,India,China,269
+2001,India,Germany,222
+2001,France,Malawi,400
+2001,Malawi,France,400
+2001,China,India,269
+2001,Malawi,United States,217
+2001,France,India,209
+2001,India,Russian Federation,230
+2001,Netherlands,Sudan,208
+2001,Russian Federation,Netherlands,129
+2001,India,Sudan,237
+2001,United States,Netherlands,88
+2001,France,Russian Federation,248
+2001,United States,Russian Federation,234
+2001,Sudan,Germany,193
+2001,Russian Federation,Germany,149
+2001,Germany,Russian Federation,149
+2001,France,China,213
+2001,Russian Federation,India,230
+2001,Netherlands,India,183
+2001,Netherlands,Russian Federation,129
+2001,United States,Malawi,217
+2001,Germany,France,86
+2001,Germany,United States,134
+2001,Sudan,United States,270
+2001,Sudan,France,257
+2001,India,United States,141
+2001,Russian Federation,United States,234
+2001,France,Sudan,257
+2001,India,Netherlands,183
+2001,China,Germany,175
+2001,United States,China,150
+2001,China,United States,150
+2001,Netherlands,France,61
+2001,United States,Germany,134
+2001,Germany,Sudan,193
+2001,United States,France,156
+2001,China,France,213
+2001,United States,Sudan,270
+2001,China,Russian Federation,142
+2001,China,Sudan,456
+2001,Russian Federation,China,142
+2001,France,Netherlands,61
+2001,India,France,209
+2001,India,Malawi,378
+2001,Malawi,India,378
+2001,Malawi,Netherlands,289
+2001,Sudan,Netherlands,208
+2001,France,Germany,86
+2001,Sudan,India,237
+2002,Germany,China,186
+2002,Malawi,India,293
+2002,China,India,231
+2002,Sudan,India,246
+2002,United States,Russian Federation,252
+2002,France,Malawi,400
+2002,Sudan,Russian Federation,331
+2002,United States,China,147
+2002,Germany,Malawi,262
+2002,Germany,India,192
+2002,Malawi,France,400
+2002,Germany,Russian Federation,151
+2002,Netherlands,China,170
+2002,Russian Federation,Netherlands,131
+2002,India,Germany,192
+2002,Malawi,Germany,262
+2002,India,United States,146
+2002,Russian Federation,China,132
+2002,Sudan,China,389
+2002,Netherlands,Russian Federation,131
+2002,United States,Netherlands,88
+2002,Sudan,France,313
+2002,Netherlands,France,60
+2002,China,Netherlands,170
+2002,India,China,231
+2002,Netherlands,India,185
+2002,India,Netherlands,185
+2002,Sudan,Germany,194
+2002,Germany,United States,131
+2002,France,United States,153
+2002,India,Russian Federation,214
+2002,Russian Federation,Sudan,331
+2002,Russian Federation,India,214
+2002,France,China,223
+2002,China,Germany,186
+2002,Netherlands,Sudan,291
+2002,China,Sudan,389
+2002,France,Germany,83
+2002,Sudan,United States,317
+2002,France,Sudan,313
+2002,Germany,Netherlands,39
+2002,China,United States,147
+2002,France,India,191
+2002,Netherlands,United States,88
+2002,Germany,France,83
+2002,France,Russian Federation,213
+2002,China,France,223
+2002,Russian Federation,France,213
+2002,China,Malawi,640
+2002,United States,India,146
+2002,India,Malawi,293
+2002,France,Netherlands,60
+2002,India,Sudan,246
+2002,Malawi,Netherlands,222
+2002,Malawi,China,640
+2002,United States,Germany,131
+2002,Germany,Sudan,194
+2002,China,Russian Federation,132
+2002,Netherlands,Malawi,222
+2002,India,France,191
+2002,Sudan,Netherlands,291
+2002,United States,Sudan,317
+2002,United States,Malawi,176
+2002,Netherlands,Germany,39
+2002,Russian Federation,United States,252
+2002,Russian Federation,Germany,151
+2002,Malawi,United States,176
+2002,United States,France,153
+2003,India,Russian Federation,233
+2003,India,United States,148
+2003,Malawi,India,337
+2003,China,Malawi,451
+2003,China,Russian Federation,129
+2003,France,Russian Federation,232
+2003,Russian Federation,China,129
+2003,Netherlands,Malawi,256
+2003,United States,Netherlands,91
+2003,France,Germany,84
+2003,Germany,China,190
+2003,Russian Federation,Netherlands,140
+2003,United States,China,125
+2003,Malawi,Germany,260
+2003,Russian Federation,Sudan,310
+2003,China,France,211
+2003,Sudan,Germany,273
+2003,Sudan,India,223
+2003,India,Malawi,337
+2003,China,Netherlands,164
+2003,United States,Russian Federation,253
+2003,Russian Federation,France,232
+2003,Sudan,Russian Federation,310
+2003,Russian Federation,Germany,161
+2003,Germany,United States,128
+2003,Germany,India,219
+2003,China,India,230
+2003,Russian Federation,United States,253
+2003,France,Sudan,311
+2003,Germany,France,84
+2003,United States,Sudan,265
+2003,India,China,230
+2003,Germany,Malawi,260
+2003,India,France,215
+2003,China,Germany,190
+2003,United States,France,154
+2003,Russian Federation,India,233
+2003,India,Germany,219
+2003,Malawi,Netherlands,256
+2003,Netherlands,Russian Federation,140
+2003,China,Sudan,279
+2003,France,India,215
+2003,Sudan,United States,265
+2003,Germany,Russian Federation,161
+2003,Netherlands,United States,91
+2003,Netherlands,Germany,38
+2003,Sudan,France,311
+2003,France,United States,154
+2003,Malawi,China,451
+2003,France,Netherlands,58
+2003,France,China,211
+2003,Germany,Sudan,273
+2003,Netherlands,France,58
+2003,United States,India,148
+2003,Germany,Netherlands,38
+2003,Sudan,Netherlands,272
+2003,Netherlands,Sudan,272
+2003,Netherlands,China,164
+2003,Sudan,China,279
+2003,India,Netherlands,188
+2003,India,Sudan,223
+2003,Malawi,United States,248
+2003,China,United States,125
+2003,Netherlands,India,188
+2003,United States,Germany,128
+2003,United States,Malawi,248
+2004,Russian Federation,Netherlands,154
+2004,Malawi,India,352
+2004,China,Netherlands,167
+2004,India,Russian Federation,248
+2004,United States,Germany,129
+2004,Sudan,Germany,262
+2004,France,Sudan,298
+2004,United States,Malawi,221
+2004,United States,Netherlands,95
+2004,China,United States,125
+2004,Germany,Russian Federation,163
+2004,Malawi,China,515
+2004,Sudan,India,215
+2004,United States,Sudan,267
+2004,Germany,Sudan,262
+2004,India,United States,153
+2004,Netherlands,Sudan,256
+2004,China,Germany,196
+2004,Russian Federation,Germany,163
+2004,China,Russian Federation,132
+2004,China,France,210
+2004,France,Germany,84
+2004,Netherlands,United States,95
+2004,Germany,Malawi,218
+2004,Netherlands,China,167
+2004,United States,India,153
+2004,France,China,210
+2004,India,China,232
+2004,United States,France,158
+2004,France,United States,158
+2004,India,Sudan,215
+2004,Sudan,Netherlands,256
+2004,Russian Federation,France,248
+2004,United States,China,125
+2004,Sudan,China,256
+2004,France,Netherlands,58
+2004,Germany,China,196
+2004,France,Russian Federation,248
+2004,China,Sudan,256
+2004,Netherlands,Germany,38
+2004,Sudan,Russian Federation,279
+2004,Sudan,United States,267
+2004,Germany,United States,129
+2004,Malawi,United States,221
+2004,Netherlands,France,58
+2004,France,India,235
+2004,Germany,France,84
+2004,Malawi,Netherlands,244
+2004,China,India,232
+2004,Germany,India,214
+2004,India,Germany,214
+2004,Malawi,Germany,218
+2004,Netherlands,Russian Federation,154
+2004,India,France,235
+2004,Sudan,France,298
+2004,China,Malawi,515
+2004,Netherlands,India,179
+2004,Russian Federation,Sudan,279
+2004,India,Netherlands,179
+2004,United States,Russian Federation,223
+2004,Netherlands,Malawi,244
+2004,Russian Federation,India,248
+2004,Germany,Netherlands,38
+2004,Russian Federation,China,132
+2004,India,Malawi,352
+2004,Russian Federation,United States,223
+2005,Malawi,Germany,176
+2005,France,Netherlands,58
+2005,Germany,Netherlands,34
+2005,China,India,214
+2005,Russian Federation,Germany,160
+2005,Malawi,United States,184
+2005,China,Sudan,234
+2005,Malawi,Netherlands,230
+2005,United States,China,125
+2005,China,France,204
+2005,India,China,214
+2005,Russian Federation,China,125
+2005,Sudan,India,202
+2005,France,United States,158
+2005,Germany,United States,126
+2005,Sudan,Netherlands,252
+2005,Sudan,Russian Federation,301
+2005,Netherlands,United States,91
+2005,Germany,India,212
+2005,India,Malawi,359
+2005,France,China,204
+2005,India,Russian Federation,253
+2005,India,France,237
+2005,Russian Federation,United States,219
+2005,Malawi,India,359
+2005,France,Russian Federation,249
+2005,China,Russian Federation,125
+2005,United States,Netherlands,91
+2005,Russian Federation,Sudan,301
+2005,Russian Federation,Netherlands,132
+2005,India,United States,150
+2005,China,Malawi,579
+2005,Malawi,China,579
+2005,Germany,Sudan,181
+2005,India,Sudan,202
+2005,Netherlands,India,170
+2005,Sudan,United States,194
+2005,France,Sudan,292
+2005,Russian Federation,India,253
+2005,Sudan,China,234
+2005,India,Germany,212
+2005,Netherlands,Malawi,230
+2005,United States,Germany,126
+2005,China,Germany,186
+2005,United States,Malawi,184
+2005,France,Germany,81
+2005,United States,France,158
+2005,Sudan,France,292
+2005,Russian Federation,France,249
+2005,China,Netherlands,161
+2005,United States,India,150
+2005,Sudan,Germany,181
+2005,Netherlands,Russian Federation,132
+2005,India,Netherlands,170
+2005,Netherlands,China,161
+2005,Germany,Malawi,176
+2005,France,India,237
+2005,Germany,Russian Federation,160
+2005,China,United States,125
+2005,Netherlands,Sudan,252
+2005,Netherlands,France,58
+2005,United States,Russian Federation,219
+2005,Germany,China,186
+2005,United States,Sudan,194
+2005,Germany,France,81
+2005,Netherlands,Germany,34
+2006,France,Germany,80
+2006,Russian Federation,India,153
+2006,India,United States,146
+2006,Germany,Malawi,127
+2006,India,Netherlands,168
+2006,Netherlands,Germany,35
+2006,Sudan,China,251
+2006,Netherlands,Malawi,235
+2006,Netherlands,Sudan,228
+2006,Germany,United States,125
+2006,China,France,226
+2006,Sudan,France,250
+2006,Malawi,United States,171
+2006,United States,Netherlands,83
+2006,Netherlands,India,168
+2006,United States,France,159
+2006,Russian Federation,United States,219
+2006,Germany,Netherlands,35
+2006,Malawi,China,643
+2006,China,India,187
+2006,Germany,India,197
+2006,Germany,Russian Federation,151
+2006,Russian Federation,Germany,151
+2006,Netherlands,Russian Federation,142
+2006,Germany,China,178
+2006,United States,Germany,125
+2006,China,Netherlands,159
+2006,Russian Federation,Sudan,298
+2006,France,Sudan,250
+2006,China,United States,119
+2006,China,Malawi,643
+2006,United States,Russian Federation,219
+2006,India,Malawi,407
+2006,Netherlands,France,57
+2006,France,India,195
+2006,India,Russian Federation,153
+2006,United States,Sudan,226
+2006,Sudan,Russian Federation,298
+2006,France,Russian Federation,225
+2006,United States,India,146
+2006,United States,China,119
+2006,Germany,Sudan,190
+2006,Germany,France,80
+2006,India,Sudan,227
+2006,Sudan,Netherlands,228
+2006,Netherlands,China,159
+2006,India,Germany,197
+2006,France,United States,159
+2006,Russian Federation,France,225
+2006,Netherlands,United States,83
+2006,Russian Federation,China,126
+2006,India,China,187
+2006,France,China,226
+2006,Sudan,United States,226
+2006,China,Russian Federation,126
+2006,Sudan,India,227
+2006,United States,Malawi,171
+2006,Malawi,India,407
+2006,China,Germany,178
+2006,Sudan,Germany,190
+2006,Malawi,Netherlands,235
+2006,China,Sudan,251
+2006,India,France,195
+2006,France,Netherlands,57
+2006,Malawi,Germany,127
+2006,Russian Federation,Netherlands,142
+2007,Netherlands,India,168
+2007,India,Malawi,376
+2007,Sudan,China,277
+2007,Russian Federation,India,156
+2007,Russian Federation,France,213
+2007,India,China,189
+2007,Sudan,Russian Federation,294
+2007,France,Netherlands,55
+2007,India,France,221
+2007,Netherlands,France,55
+2007,United States,India,147
+2007,India,Sudan,254
+2007,United States,Germany,124
+2007,Sudan,India,254
+2007,France,India,221
+2007,United States,France,163
+2007,Germany,Sudan,190
+2007,Sudan,United States,231
+2007,Netherlands,China,157
+2007,Germany,France,81
+2007,Malawi,United States,187
+2007,India,Germany,196
+2007,Russian Federation,Germany,150
+2007,China,Malawi,535
+2007,Netherlands,Russian Federation,133
+2007,Malawi,Germany,150
+2007,Germany,United States,124
+2007,Russian Federation,Netherlands,133
+2007,Germany,Netherlands,35
+2007,China,Germany,176
+2007,United States,Netherlands,87
+2007,Germany,India,196
+2007,China,United States,121
+2007,China,India,189
+2007,Germany,China,176
+2007,Germany,Malawi,150
+2007,United States,China,121
+2007,India,Netherlands,168
+2007,Sudan,Germany,190
+2007,France,United States,163
+2007,Netherlands,Germany,35
+2007,United States,Sudan,231
+2007,Netherlands,Malawi,241
+2007,United States,Russian Federation,225
+2007,Sudan,France,236
+2007,China,Russian Federation,121
+2007,Malawi,China,535
+2007,France,China,215
+2007,India,Russian Federation,156
+2007,France,Germany,81
+2007,China,France,215
+2007,China,Sudan,277
+2007,Netherlands,United States,87
+2007,Russian Federation,China,121
+2007,Germany,Russian Federation,150
+2007,Malawi,Netherlands,241
+2007,India,United States,147
+2007,France,Sudan,236
+2007,United States,Malawi,187
+2007,Russian Federation,Sudan,294
+2007,Russian Federation,United States,225
+2007,Sudan,Netherlands,229
+2007,France,Russian Federation,213
+2007,China,Netherlands,157
+2007,Malawi,India,376
+2007,Netherlands,Sudan,229
+2008,India,Germany,195
+2008,France,Sudan,222
+2008,China,Russian Federation,128
+2008,Germany,India,195
+2008,Germany,Netherlands,33
+2008,Germany,United States,120
+2008,India,Malawi,398
+2008,Russian Federation,Sudan,291
+2008,United States,China,117
+2008,Sudan,India,281
+2008,France,China,216
+2008,France,India,217
+2008,United States,Germany,120
+2008,Germany,Sudan,189
+2008,Germany,Malawi,173
+2008,India,France,217
+2008,Sudan,Netherlands,230
+2008,Russian Federation,United States,225
+2008,Netherlands,Sudan,230
+2008,United States,Russian Federation,225
+2008,United States,Sudan,236
+2008,Malawi,Russian Federation,159
+2008,Netherlands,France,52
+2008,Netherlands,Russian Federation,137
+2008,China,France,216
+2008,Netherlands,Germany,33
+2008,Russian Federation,Netherlands,137
+2008,Russian Federation,Germany,157
+2008,Russian Federation,France,220
+2008,United States,Netherlands,88
+2008,Sudan,Russian Federation,291
+2008,France,United States,163
+2008,Malawi,United States,175
+2008,Germany,China,182
+2008,India,United States,142
+2008,Germany,Russian Federation,157
+2008,China,Netherlands,159
+2008,India,Russian Federation,193
+2008,Netherlands,China,159
+2008,Sudan,China,302
+2008,France,Russian Federation,220
+2008,United States,France,163
+2008,Sudan,Germany,189
+2008,India,Netherlands,162
+2008,China,Germany,182
+2008,Malawi,Netherlands,206
+2008,China,United States,117
+2008,Russian Federation,Malawi,159
+2008,Netherlands,Malawi,206
+2008,Russian Federation,China,128
+2008,China,Malawi,427
+2008,China,Sudan,302
+2008,Malawi,China,427
+2008,Malawi,India,398
+2008,Malawi,Germany,173
+2008,Sudan,United States,236
+2008,Germany,France,79
+2008,France,Germany,79
+2008,India,Sudan,281
+2008,Netherlands,United States,88
+2008,Sudan,France,222
+2008,United States,India,142
+2008,Russian Federation,India,193
+2008,China,India,187
+2008,United States,Malawi,175
+2008,India,China,187
+2008,Netherlands,India,162
+2008,France,Netherlands,52
+2009,Germany,Malawi,161
+2009,United States,France,152
+2009,Sudan,India,276
+2009,India,Russian Federation,212
+2009,Germany,China,175
+2009,Russian Federation,India,212
+2009,Malawi,United States,161
+2009,Russian Federation,United States,222
+2009,France,United States,152
+2009,India,France,227
+2009,Sudan,Germany,170
+2009,Sudan,United States,218
+2009,Malawi,India,307
+2009,Germany,Russian Federation,156
+2009,United States,Germany,109
+2009,Russian Federation,China,132
+2009,United States,Sudan,218
+2009,China,Malawi,319
+2009,Germany,United States,109
+2009,India,Malawi,307
+2009,China,Sudan,267
+2009,Russian Federation,Germany,156
+2009,Russian Federation,France,243
+2009,France,Russian Federation,243
+2009,India,Sudan,276
+2009,Malawi,China,319
+2009,China,India,180
+2009,China,Germany,175
+2009,United States,China,108
+2009,India,China,180
+2009,United States,India,138
+2009,Sudan,China,267
+2009,Sudan,Russian Federation,299
+2009,Sudan,France,248
+2009,France,Sudan,248
+2009,France,Germany,67
+2009,Germany,India,188
+2009,Germany,Sudan,170
+2009,Russian Federation,Sudan,299
+2009,India,Germany,188
+2009,China,Russian Federation,132
+2009,Malawi,Germany,161
+2009,France,China,197
+2009,United States,Malawi,161
+2009,India,United States,138
+2009,United States,Russian Federation,222
+2009,France,India,227
+2009,Germany,France,67
+2009,China,United States,108
+2009,China,France,197
+2010,United States,Russian Federation,223
+2010,Malawi,United States,175
+2010,Malawi,Germany,148
+2010,Germany,Malawi,148
+2010,Germany,China,172
+2010,India,Russian Federation,242
+2010,United States,Malawi,175
+2010,India,China,175
+2010,Russian Federation,Germany,150
+2010,China,Malawi,444
+2010,India,Malawi,349
+2010,Russian Federation,United States,223
+2010,Malawi,India,349
+2010,United States,China,105
+2010,India,Germany,196
+2010,Russian Federation,India,242
+2010,United States,India,145
+2010,China,India,175
+2010,United States,Germany,110
+2010,Malawi,China,444
+2010,Germany,Russian Federation,150
+2010,China,Germany,172
+2010,China,United States,105
+2010,Germany,United States,110
+2010,Russian Federation,China,131
+2010,Germany,India,196
+2010,China,Russian Federation,131
+2010,India,United States,145

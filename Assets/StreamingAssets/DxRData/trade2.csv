@@ -1,2447 +1,2447 @@
-time,n1,n2,weight
-1980,Brazil,Spain,240.0
-1980,United Stat,Italy,4688.0
-1980,Italy,United Stat,6924.0
-1980,Italy,China,437.0
-1980,India,Italy,311.0
-1980,Spain,China,118.0
-1980,Russia,United Stat,1515.0
-1980,France,Japan,2767.0
-1980,Spain,Russia,444.0
-1980,Japan,Russia,1873.0
-1980,France,Russia,3556.0
-1980,France,Spain,3892.0
-1980,India,United Stat,1865.0
-1980,France,China,467.0
-1980,Spain,Italy,1686.0
-1980,Spain,France,2823.0
-1980,Brazil,Japan,1312.0
-1980,China,Russia,264.0
-1980,Spain,Brazil,596.0
-1980,India,France,330.0
-1980,China,France,315.0
-1980,Japan,France,1306.0
-1980,Spain,India,34.0
-1980,Brazil,China,290.0
-1980,Italy,India,266.0
-1980,Italy,Brazil,974.0
-1980,India,Japan,815.0
-1980,Russia,Italy,1267.0
-1980,France,United Stat,10730.0
-1980,Japan,Italy,943.0
-1980,France,India,354.0
-1980,Italy,Japan,1296.0
-1980,Italy,Russia,3063.0
-1980,India,Spain,83.0
-1980,France,Brazil,1192.0
-1980,Russia,Spain,259.0
-1980,India,China,83.0
-1980,Brazil,Italy,457.0
-1980,United Stat,Brazil,4000.0
-1980,India,Brazil,248.0
-1980,Italy,Spain,1581.0
-1980,United Stat,France,5549.0
-1980,China,Japan,5169.0
-1980,Japan,Spain,391.0
-1980,China,Italy,249.0
-1980,China,United Stat,3830.0
-1980,China,Spain,70.0
-1980,India,Russia,1233.0
-1980,Spain,Japan,839.0
-1980,Japan,China,4346.0
-1980,Japan,India,1020.0
-1980,Brazil,United Stat,5097.0
-1980,Brazil,India,3.0
-1980,Russia,France,2465.0
-1980,Japan,Brazil,1572.0
-1980,Brazil,Russia,40.0
-1980,United Stat,China,1164.0
-1980,China,Brazil,63.0
-1980,United Stat,Spain,1342.0
-1980,Russia,China,228.0
-1980,Russia,Brazil,370.0
-1980,United Stat,India,1210.0
-1980,Brazil,France,791.0
-1980,Spain,United Stat,4464.0
-1980,United Stat,Russia,486.0
-1980,Japan,United Stat,24567.0
-1980,Russia,India,1410.0
-1980,Russia,Japan,2796.0
-1980,United Stat,Japan,32973.0
-1980,France,Italy,12684.0
-1980,Italy,France,13822.0
-1981,Japan,United Stat,25275.0
-1981,China,Japan,6183.0
-1981,United Stat,Japan,39904.0
-1981,China,United Stat,4682.0
-1981,France,Japan,2744.0
-1981,Spain,Brazil,437.0
-1981,Russia,Japan,3578.0
-1981,India,Russia,1357.0
-1981,Spain,India,37.0
-1981,France,Brazil,1258.0
-1981,France,India,259.0
-1981,Japan,France,1172.0
-1981,Italy,Spain,1119.0
-1981,Japan,Russia,2020.0
-1981,Spain,Italy,1284.0
-1981,Brazil,France,713.0
-1981,Brazil,India,4.0
-1981,China,India,81.0
-1981,United Stat,India,1325.0
-1981,Russia,Spain,402.0
-1981,United Stat,France,6139.0
-1981,China,Brazil,118.0
-1981,France,China,510.0
-1981,Spain,Japan,858.0
-1981,United Stat,Spain,1665.0
-1981,United Stat,Italy,5549.0
-1981,France,Italy,10813.0
-1981,China,France,395.0
-1981,Japan,Brazil,1574.0
-1981,China,Russia,154.0
-1981,India,United Stat,1370.0
-1981,China,Spain,74.0
-1981,Russia,France,2052.0
-1981,India,Italy,240.0
-1981,Italy,United Stat,6137.0
-1981,France,Spain,3327.0
-1981,Brazil,Russia,25.0
-1981,Spain,United Stat,4456.0
-1981,Brazil,Italy,728.0
-1981,India,China,79.0
-1981,Japan,Italy,853.0
-1981,United Stat,Brazil,4852.0
-1981,Japan,India,1053.0
-1981,Russia,India,1726.0
-1981,Italy,India,226.0
-1981,Spain,China,110.0
-1981,Italy,Brazil,964.0
-1981,Italy,Russia,3073.0
-1981,India,Brazil,239.0
-1981,Italy,Japan,1269.0
-1981,Italy,China,401.0
-1981,United Stat,China,2062.0
-1981,Russia,Brazil,684.0
-1981,Spain,France,2578.0
-1981,India,Japan,880.0
-1981,Russia,United Stat,2675.0
-1981,Russia,Italy,1413.0
-1981,India,Spain,97.0
-1981,France,Russia,3360.0
-1981,Italy,France,11398.0
-1981,Spain,Russia,465.0
-1981,Japan,Spain,455.0
-1981,Brazil,China,436.0
-1981,China,Italy,344.0
-1981,United Stat,Russia,377.0
-1981,Brazil,Spain,118.0
-1981,Japan,China,5283.0
-1981,India,France,252.0
-1981,Brazil,United Stat,4327.0
-1981,Brazil,Japan,1518.0
-1981,Russia,China,135.0
-1981,France,United Stat,9852.0
-1982,India,Brazil,244.0
-1982,France,China,437.0
-1982,China,United Stat,4305.0
-1982,Russia,Spain,241.0
-1982,United Stat,India,1522.0
-1982,France,Russia,2884.0
-1982,Italy,Russia,3529.0
-1982,Italy,France,10784.0
-1982,Brazil,Spain,112.0
-1982,China,Spain,91.0
-1982,Russia,France,1715.0
-1982,Spain,Italy,1412.0
-1982,United Stat,Spain,1639.0
-1982,Italy,United Stat,5855.0
-1982,Brazil,China,403.0
-1982,France,Japan,3046.0
-1982,India,United Stat,1562.0
-1982,Brazil,Japan,1071.0
-1982,Japan,Brazil,1639.0
-1982,China,Russia,243.0
-1982,China,Brazil,133.0
-1982,Japan,France,1211.0
-1982,Japan,Russia,1668.0
-1982,Brazil,United Stat,3480.0
-1982,United Stat,China,2502.0
-1982,United Stat,Russia,247.0
-1982,Italy,Japan,1098.0
-1982,France,Italy,11099.0
-1982,India,Japan,1179.0
-1982,Spain,Russia,488.0
-1982,Russia,China,157.0
-1982,Spain,Japan,1005.0
-1982,Spain,France,2510.0
-1982,Italy,Brazil,1109.0
-1982,Spain,United Stat,4360.0
-1982,Italy,China,428.0
-1982,Brazil,Italy,569.0
-1982,India,Italy,283.0
-1982,Spain,India,160.0
-1982,Japan,Spain,367.0
-1982,United Stat,Brazil,4643.0
-1982,Japan,Italy,939.0
-1982,Spain,China,100.0
-1982,China,Japan,3902.0
-1982,France,Brazil,1159.0
-1982,India,Spain,99.0
-1982,France,India,662.0
-1982,Spain,Brazil,376.0
-1982,United Stat,France,5815.0
-1982,Japan,India,1120.0
-1982,Russia,Japan,4283.0
-1982,Russia,United Stat,2852.0
-1982,Russia,India,2059.0
-1982,United Stat,Japan,39931.0
-1982,Italy,India,221.0
-1982,France,United Stat,9109.0
-1982,India,France,341.0
-1982,Brazil,France,657.0
-1982,Russia,Brazil,560.0
-1982,China,France,231.0
-1982,Japan,China,5338.0
-1982,Russia,Italy,1649.0
-1982,China,Italy,320.0
-1982,Italy,Spain,1218.0
-1982,Brazil,Russia,235.0
-1982,India,Russia,1243.0
-1982,Brazil,India,2.0
-1982,China,India,75.0
-1982,United Stat,Italy,5656.0
-1982,France,Spain,3534.0
-1982,India,China,120.0
-1982,Japan,United Stat,24185.0
-1983,United Stat,Japan,43559.0
-1983,Russia,Japan,3104.0
-1983,Italy,Brazil,1007.0
-1983,France,Brazil,1191.0
-1983,United Stat,India,2334.0
-1983,Spain,China,84.0
-1983,France,Japan,2744.0
-1983,India,France,343.0
-1983,Japan,India,1131.0
-1983,India,Japan,1265.0
-1983,Spain,India,58.0
-1983,India,United Stat,1704.0
-1983,China,Italy,303.0
-1983,France,Russia,2801.0
-1983,Brazil,Spain,84.0
-1983,United Stat,Brazil,5381.0
-1983,China,Russia,441.0
-1983,China,Brazil,271.0
-1983,Spain,Italy,1267.0
-1983,Spain,Brazil,647.0
-1983,Brazil,China,655.0
-1983,Japan,China,5089.0
-1983,Italy,India,184.0
-1983,France,China,433.0
-1983,China,India,15.0
-1983,Brazil,Italy,252.0
-1983,India,China,70.0
-1983,Brazil,Japan,680.0
-1983,Italy,Spain,1123.0
-1983,Brazil,United Stat,2889.0
-1983,United Stat,France,6308.0
-1983,Russia,India,1423.0
-1983,Spain,Japan,975.0
-1983,United Stat,Russia,375.0
-1983,Russia,Brazil,738.0
-1983,Russia,Italy,2072.0
-1983,India,Italy,211.0
-1983,Russia,China,351.0
-1983,Japan,Italy,985.0
-1983,Italy,United Stat,4784.0
-1983,Italy,China,414.0
-1983,India,Spain,103.0
-1983,China,United Stat,2753.0
-1983,Brazil,India,1.0
-1983,Italy,France,10122.0
-1983,Spain,United Stat,3455.0
-1983,United Stat,Spain,1689.0
-1983,Japan,Spain,398.0
-1983,Brazil,France,538.0
-1983,China,France,639.0
-1983,China,Japan,5495.0
-1983,France,Italy,10461.0
-1983,Italy,Russia,3582.0
-1983,Japan,United Stat,24795.0
-1983,United Stat,China,2477.0
-1983,France,India,228.0
-1983,Spain,Russia,494.0
-1983,France,United Stat,8147.0
-1983,Japan,Brazil,1671.0
-1983,Russia,France,2464.0
-1983,Russia,United Stat,2203.0
-1983,United Stat,Italy,5820.0
-1983,Spain,France,2408.0
-1983,France,Spain,3585.0
-1983,China,Spain,157.0
-1983,Russia,Spain,368.0
-1983,India,Russia,1610.0
-1983,Brazil,Russia,209.0
-1983,India,Brazil,207.0
-1983,Japan,France,1302.0
-1983,Japan,Russia,1458.0
-1983,Italy,Japan,1114.0
-1984,Russia,Italy,1739.0
-1984,China,Brazil,417.0
-1984,Spain,India,39.0
-1984,China,Spain,201.0
-1984,Italy,Russia,4019.0
-1984,Japan,Spain,419.0
-1984,Brazil,Russia,185.0
-1984,India,Russia,1587.0
-1984,India,Spain,108.0
-1984,France,India,229.0
-1984,Russia,Japan,2766.0
-1984,Italy,Brazil,1221.0
-1984,Spain,Italy,1219.0
-1984,Brazil,Japan,670.0
-1984,Russia,Brazil,443.0
-1984,Italy,France,10454.0
-1984,China,France,357.0
-1984,France,Russia,2550.0
-1984,United Stat,France,8516.0
-1984,Russia,China,644.0
-1984,China,Russia,670.0
-1984,Italy,Japan,1348.0
-1984,Japan,Brazil,1988.0
-1984,Russia,France,2145.0
-1984,Japan,United Stat,26887.0
-1984,United Stat,India,2737.0
-1984,Brazil,Spain,49.0
-1984,France,Italy,10241.0
-1984,Japan,China,5943.0
-1984,India,Japan,1085.0
-1984,Japan,Russia,1388.0
-1984,Spain,Japan,881.0
-1984,China,United Stat,3837.0
-1984,Italy,India,250.0
-1984,Brazil,United Stat,2778.0
-1984,India,Brazil,314.0
-1984,Brazil,Italy,238.0
-1984,Italy,United Stat,5137.0
-1984,Spain,Russia,537.0
-1984,Japan,India,1133.0
-1984,Italy,Spain,1383.0
-1984,India,Italy,293.0
-1984,Brazil,France,437.0
-1984,France,United Stat,7990.0
-1984,Russia,Spain,394.0
-1984,Brazil,China,477.0
-1984,United Stat,Russia,600.0
-1984,Russia,India,1628.0
-1984,Japan,Italy,1046.0
-1984,United Stat,China,3381.0
-1984,France,Japan,2736.0
-1984,India,China,66.0
-1984,France,China,440.0
-1984,China,Italy,433.0
-1984,United Stat,Brazil,8273.0
-1984,United Stat,Spain,2628.0
-1984,China,India,25.0
-1984,Spain,United Stat,3250.0
-1984,France,Spain,3525.0
-1984,Brazil,India,1.0
-1984,France,Brazil,1132.0
-1984,India,France,321.0
-1984,India,United Stat,1482.0
-1984,Spain,China,114.0
-1984,United Stat,Italy,8504.0
-1984,China,Japan,8057.0
-1984,Italy,China,431.0
-1984,United Stat,Japan,60371.0
-1984,Spain,France,2483.0
-1984,Japan,France,1232.0
-1984,Spain,Brazil,560.0
-1984,Russia,United Stat,3612.0
-1985,Brazil,India,2.0
-1985,France,Spain,4122.0
-1985,Italy,China,593.0
-1985,United Stat,India,2479.0
-1985,Italy,United Stat,5396.0
-1985,Brazil,Japan,674.0
-1985,China,Spain,546.0
-1985,China,Brazil,972.0
-1985,China,Russia,1017.0
-1985,Italy,Japan,1492.0
-1985,India,Spain,129.0
-1985,India,Brazil,322.0
-1985,Brazil,United Stat,3108.0
-1985,Italy,Spain,1769.0
-1985,Japan,India,1197.0
-1985,United Stat,Brazil,8147.0
-1985,Japan,Spain,353.0
-1985,United Stat,China,4224.0
-1985,France,Russia,2494.0
-1985,France,China,499.0
-1985,Italy,Brazil,1407.0
-1985,Spain,Italy,1375.0
-1985,Japan,United Stat,26099.0
-1985,Spain,China,136.0
-1985,France,United Stat,8161.0
-1985,Brazil,Italy,221.0
-1985,Japan,France,1335.0
-1985,Russia,Italy,1697.0
-1985,India,Italy,265.0
-1985,France,India,360.0
-1985,Russia,Brazil,495.0
-1985,Japan,Russia,1438.0
-1985,Japan,Italy,1058.0
-1985,Spain,France,2790.0
-1985,Russia,United Stat,2665.0
-1985,Brazil,Spain,67.0
-1985,Italy,India,227.0
-1985,Spain,India,220.0
-1985,United Stat,Spain,2773.0
-1985,Italy,Russia,3011.0
-1985,India,Japan,1364.0
-1985,United Stat,Russia,443.0
-1985,Japan,Brazil,1864.0
-1985,Italy,France,11369.0
-1985,China,Japan,15178.0
-1985,Russia,Japan,3049.0
-1985,United Stat,France,9960.0
-1985,India,France,459.0
-1985,Russia,China,1141.0
-1985,Brazil,China,552.0
-1985,France,Japan,3028.0
-1985,United Stat,Japan,72380.0
-1985,Japan,China,6534.0
-1985,United Stat,Italy,10381.0
-1985,Spain,United Stat,3265.0
-1985,France,Brazil,1128.0
-1985,Spain,Japan,1025.0
-1985,India,China,104.0
-1985,France,Italy,10861.0
-1985,China,India,39.0
-1985,China,United Stat,5199.0
-1985,India,United Stat,1770.0
-1985,China,Italy,903.0
-1985,Brazil,France,359.0
-1985,Brazil,Russia,82.0
-1985,Russia,France,2070.0
-1985,China,France,718.0
-1985,Spain,Russia,382.0
-1985,Russia,Spain,483.0
-1985,India,Russia,1574.0
-1985,Spain,Brazil,626.0
-1985,Russia,India,1863.0
-1986,Brazil,Spain,103.0
-1986,China,France,742.0
-1986,United Stat,Spain,2956.0
-1986,Italy,India,249.0
-1986,China,India,39.0
-1986,Japan,United Stat,29410.0
-1986,Russia,China,1353.0
-1986,Russia,Japan,3496.0
-1986,Italy,Brazil,1140.0
-1986,Brazil,Italy,418.0
-1986,Russia,France,1677.0
-1986,Russia,Brazil,292.0
-1986,France,India,277.0
-1986,Italy,Russia,2322.0
-1986,Brazil,India,4.0
-1986,United Stat,Brazil,7340.0
-1986,France,China,710.0
-1986,Italy,France,14584.0
-1986,Spain,Japan,1729.0
-1986,China,Italy,1141.0
-1986,Russia,Spain,259.0
-1986,India,Japan,1931.0
-1986,Japan,China,5727.0
-1986,Italy,Japan,2099.0
-1986,India,France,516.0
-1986,United Stat,Italy,11312.0
-1986,Brazil,Japan,1077.0
-1986,Italy,Spain,1972.0
-1986,France,Spain,5345.0
-1986,Japan,Italy,1507.0
-1986,France,Brazil,1211.0
-1986,China,Brazil,710.0
-1986,Spain,France,4113.0
-1986,Russia,Italy,1795.0
-1986,India,Spain,153.0
-1986,United Stat,China,5241.0
-1986,France,United Stat,9676.0
-1986,Spain,China,241.0
-1986,Brazil,United Stat,3837.0
-1986,United Stat,Russia,606.0
-1986,China,United Stat,4718.0
-1986,China,Russia,1472.0
-1986,Brazil,France,681.0
-1986,Brazil,Russia,58.0
-1986,Russia,United Stat,1372.0
-1986,United Stat,Japan,85457.0
-1986,China,Spain,389.0
-1986,Spain,Brazil,625.0
-1986,India,United Stat,1430.0
-1986,United Stat,France,10586.0
-1986,Japan,Spain,384.0
-1986,Spain,United Stat,3445.0
-1986,India,Russia,698.0
-1986,Japan,India,1309.0
-1986,India,Brazil,212.0
-1986,United Stat,India,2465.0
-1986,France,Italy,14961.0
-1986,France,Japan,4666.0
-1986,France,Russia,2640.0
-1986,Russia,India,1715.0
-1986,Italy,United Stat,5669.0
-1986,Brazil,China,434.0
-1986,Spain,Russia,299.0
-1986,Japan,Brazil,1894.0
-1986,India,Italy,311.0
-1986,India,China,143.0
-1986,China,Japan,12463.0
-1986,Spain,Italy,2564.0
-1986,Italy,China,683.0
-1986,Spain,India,48.0
-1986,Japan,France,1870.0
-1986,Japan,Russia,1988.0
-1987,Brazil,Japan,1033.0
-1987,Brazil,India,3.0
-1987,Spain,France,6300.0
-1987,India,Japan,1742.0
-1987,Brazil,United Stat,3771.0
-1987,France,United Stat,11296.0
-1987,United Stat,China,6910.0
-1987,Spain,Italy,4336.0
-1987,France,Japan,6022.0
-1987,China,Russia,1291.0
-1987,Italy,United Stat,6659.0
-1987,Japan,United Stat,31957.0
-1987,Spain,China,328.0
-1987,Italy,Japan,2677.0
-1987,France,Spain,6905.0
-1987,China,India,30.0
-1987,China,Spain,336.0
-1987,India,Spain,155.0
-1987,Italy,Russia,2847.0
-1987,Japan,China,7478.0
-1987,Brazil,China,426.0
-1987,United Stat,France,11177.0
-1987,Russia,Japan,2845.0
-1987,Italy,Spain,2799.0
-1987,Italy,China,1024.0
-1987,Spain,Russia,839.0
-1987,Brazil,Italy,398.0
-1987,India,United Stat,1503.0
-1987,India,Russia,1211.0
-1987,United Stat,Brazil,8433.0
-1987,Spain,Japan,2209.0
-1987,China,Japan,10087.0
-1987,China,United Stat,4836.0
-1987,Russia,India,1518.0
-1987,United Stat,India,2725.0
-1987,Japan,Russia,2368.0
-1987,Brazil,Russia,96.0
-1987,Italy,Brazil,1450.0
-1987,Brazil,France,718.0
-1987,Japan,Italy,2154.0
-1987,Russia,Spain,278.0
-1987,Russia,Brazil,417.0
-1987,France,Italy,18487.0
-1987,Japan,France,2899.0
-1987,India,China,110.0
-1987,United Stat,Spain,3101.0
-1987,United Stat,Russia,470.0
-1987,China,Italy,1248.0
-1987,Brazil,Spain,132.0
-1987,India,France,585.0
-1987,Japan,India,1546.0
-1987,France,China,1099.0
-1987,Spain,India,77.0
-1987,United Stat,Japan,88074.0
-1987,India,Brazil,278.0
-1987,Russia,United Stat,1628.0
-1987,United Stat,Italy,11698.0
-1987,Spain,Brazil,598.0
-1987,Russia,France,1928.0
-1987,India,Italy,423.0
-1987,France,Brazil,1251.0
-1987,Russia,Italy,2428.0
-1987,France,India,374.0
-1987,France,Russia,2548.0
-1987,Japan,Spain,456.0
-1987,China,Brazil,453.0
-1987,Japan,Brazil,2052.0
-1987,Italy,France,18266.0
-1987,Spain,United Stat,4067.0
-1987,China,France,899.0
-1987,Italy,India,408.0
-1987,Russia,China,1372.0
-1988,Brazil,Japan,1164.0
-1988,India,France,631.0
-1988,Russia,India,1883.0
-1988,Italy,Brazil,1665.0
-1988,Russia,Italy,2323.0
-1988,Spain,China,384.0
-1988,United Stat,Italy,12300.0
-1988,China,Italy,1552.0
-1988,Italy,Japan,3498.0
-1988,China,India,98.0
-1988,Japan,United Stat,42267.0
-1988,Brazil,China,104.0
-1988,China,Spain,319.0
-1988,Russia,Japan,3444.0
-1988,Italy,India,462.0
-1988,United Stat,India,3153.0
-1988,Russia,Brazil,257.0
-1988,Russia,France,2132.0
-1988,Japan,France,4313.0
-1988,Japan,India,1806.0
-1988,United Stat,France,12839.0
-1988,China,Russia,1802.0
-1988,France,China,1441.0
-1988,China,United Stat,6633.0
-1988,India,Brazil,281.0
-1988,Italy,China,1428.0
-1988,United Stat,Brazil,9960.0
-1988,Brazil,France,676.0
-1988,Italy,Russia,3135.0
-1988,Brazil,Russia,35.0
-1988,Italy,United Stat,7715.0
-1988,Spain,Japan,3103.0
-1988,France,Japan,7388.0
-1988,Japan,China,9861.0
-1988,India,Spain,147.0
-1988,Spain,Russia,1108.0
-1988,United Stat,Spain,3476.0
-1988,Spain,United Stat,5404.0
-1988,United Stat,Russia,651.0
-1988,Spain,France,8179.0
-1988,Japan,Spain,632.0
-1988,India,Russia,1229.0
-1988,Spain,India,127.0
-1988,India,United Stat,1856.0
-1988,Brazil,India,12.0
-1988,France,Spain,7458.0
-1988,France,United Stat,13671.0
-1988,Russia,United Stat,3033.0
-1988,Brazil,United Stat,3681.0
-1988,Russia,China,1623.0
-1988,Japan,Brazil,2953.0
-1988,Japan,Russia,2772.0
-1988,India,Japan,1874.0
-1988,Brazil,Spain,108.0
-1988,United Stat,China,9261.0
-1988,China,Brazil,797.0
-1988,France,Russia,2810.0
-1988,China,Japan,11062.0
-1988,France,Brazil,1600.0
-1988,Russia,Spain,295.0
-1988,France,Italy,20585.0
-1988,Spain,Italy,5816.0
-1988,India,China,123.0
-1988,Brazil,Italy,344.0
-1988,Japan,Italy,2893.0
-1988,Italy,France,20618.0
-1988,France,India,421.0
-1988,India,Italy,422.0
-1988,United Stat,Japan,93128.0
-1988,China,France,987.0
-1988,Spain,Brazil,939.0
-1988,Italy,Spain,3373.0
-1989,Brazil,Spain,140.0
-1989,Spain,United Stat,6443.0
-1989,Russia,India,2574.0
-1989,France,Italy,21911.0
-1989,Italy,Brazil,2102.0
-1989,China,Italy,1835.0
-1989,Brazil,Italy,515.0
-1989,Spain,Russia,1292.0
-1989,Russia,United Stat,4698.0
-1989,France,Spain,8403.0
-1989,United Stat,Brazil,9001.0
-1989,France,India,470.0
-1989,United Stat,Russia,785.0
-1989,India,France,490.0
-1989,Spain,Italy,7054.0
-1989,India,Brazil,216.0
-1989,United Stat,Japan,97110.0
-1989,France,United Stat,14641.0
-1989,United Stat,India,3551.0
-1989,Japan,Italy,3786.0
-1989,United Stat,China,12901.0
-1989,Spain,Brazil,940.0
-1989,France,China,1720.0
-1989,Russia,Italy,2842.0
-1989,Japan,India,1963.0
-1989,India,Italy,563.0
-1989,Italy,China,1683.0
-1989,China,India,102.0
-1989,Japan,Spain,684.0
-1989,Russia,France,1893.0
-1989,Russia,Japan,3376.0
-1989,Brazil,France,623.0
-1989,France,Russia,2621.0
-1989,Italy,India,524.0
-1989,France,Brazil,1704.0
-1989,India,United Stat,2310.0
-1989,Italy,United Stat,8332.0
-1989,China,Brazil,940.0
-1989,Italy,Spain,3714.0
-1989,Italy,France,22495.0
-1989,Italy,Russia,3601.0
-1989,India,Russia,1157.0
-1989,Japan,China,11083.0
-1989,China,United Stat,7864.0
-1989,China,France,1420.0
-1989,Brazil,Japan,1455.0
-1989,Spain,China,528.0
-1989,Spain,Japan,3392.0
-1989,Russia,Spain,467.0
-1989,India,Japan,1494.0
-1989,France,Japan,7849.0
-1989,Spain,France,9775.0
-1989,China,Spain,340.0
-1989,India,China,39.0
-1989,Japan,Brazil,2978.0
-1989,Japan,France,5526.0
-1989,Brazil,Russia,46.0
-1989,Japan,United Stat,48253.0
-1989,United Stat,Spain,3586.0
-1989,Japan,Russia,2990.0
-1989,United Stat,Italy,12725.0
-1989,Brazil,India,33.0
-1989,Russia,China,1869.0
-1989,Russia,Brazil,335.0
-1989,Spain,India,186.0
-1989,Brazil,United Stat,4605.0
-1989,Italy,Japan,3526.0
-1989,India,Spain,117.0
-1989,United Stat,France,13512.0
-1989,Brazil,China,134.0
-1989,China,Russia,2147.0
-1989,China,Japan,10534.0
-1990,Brazil,Japan,1773.0
-1990,Russia,United Stat,3396.0
-1990,India,Japan,1801.0
-1990,France,Brazil,1736.0
-1990,United Stat,Italy,13395.0
-1990,India,Italy,569.0
-1990,Spain,Brazil,967.0
-1990,France,Spain,10967.0
-1990,Italy,Brazil,1993.0
-1990,United Stat,France,13594.0
-1990,Spain,France,12854.0
-1990,United Stat,India,3421.0
-1990,Italy,India,666.0
-1990,India,China,31.0
-1990,Brazil,Spain,264.0
-1990,Spain,Italy,8891.0
-1990,France,Japan,9338.0
-1990,Russia,India,3154.0
-1990,India,Brazil,227.0
-1990,India,Spain,111.0
-1990,United Stat,China,16296.0
-1990,United Stat,Brazil,8586.0
-1990,China,Brazil,514.0
-1990,Brazil,Italy,805.0
-1990,Spain,China,745.0
-1990,Japan,India,2075.0
-1990,Japan,France,7613.0
-1990,Japan,China,12057.0
-1990,Japan,Spain,907.0
-1990,Brazil,India,20.0
-1990,India,Russia,1322.0
-1990,China,Italy,1087.0
-1990,Spain,India,298.0
-1990,Japan,Russia,3370.0
-1990,China,Japan,7656.0
-1990,Russia,Spain,414.0
-1990,Russia,Japan,2819.0
-1990,Italy,Spain,5585.0
-1990,Brazil,France,699.0
-1990,Italy,United Stat,9254.0
-1990,Spain,Russia,1322.0
-1990,Russia,France,1645.0
-1990,France,India,661.0
-1990,China,France,1674.0
-1990,Brazil,United Stat,4956.0
-1990,United Stat,Russia,1168.0
-1990,France,Russia,3370.0
-1990,Russia,Italy,2921.0
-1990,Italy,Japan,4231.0
-1990,India,United Stat,2635.0
-1990,Spain,United Stat,7269.0
-1990,Japan,Italy,5024.0
-1990,Brazil,China,224.0
-1990,Brazil,Russia,142.0
-1990,Spain,Japan,3890.0
-1990,Russia,Brazil,229.0
-1990,France,United Stat,18956.0
-1990,Italy,China,1830.0
-1990,France,China,2213.0
-1990,China,India,97.0
-1990,Italy,France,25859.0
-1990,United Stat,Japan,93070.0
-1990,India,France,718.0
-1990,China,Russia,2213.0
-1990,China,Spain,325.0
-1990,Japan,United Stat,52842.0
-1990,France,Italy,26894.0
-1990,Russia,China,2253.0
-1990,Italy,Russia,4122.0
-1990,United Stat,Spain,3546.0
-1990,China,United Stat,6591.0
-1990,Japan,Brazil,3187.0
-1991,India,Germany,1551.0
-1991,United Stat,China,20305.0
-1991,Japan,Spain,815.0
-1991,Germany,Spain,10541.0
-1991,Italy,Germany,38180.0
-1991,Brazil,Spain,267.0
-1991,Brazil,Italy,930.0
-1991,Brazil,France,717.0
-1991,Russia,Germany,12179.0
-1991,China,Brazil,346.0
-1991,United Stat,Russia,915.0
-1991,Germany,Japan,23895.0
-1991,Italy,Russia,4510.0
-1991,France,Spain,11880.0
-1991,United Stat,France,13811.0
-1991,Spain,China,1149.0
-1991,Spain,Russia,746.0
-1991,Russia,Brazil,95.0
-1991,India,Brazil,195.0
-1991,China,Germany,3049.0
-1991,Germany,Russia,8819.0
-1991,Brazil,India,26.0
-1991,Brazil,Japan,1485.0
-1991,Germany,India,1681.0
-1991,India,China,21.0
-1991,Italy,United Stat,10196.0
-1991,United Stat,Italy,12341.0
-1991,France,Brazil,1686.0
-1991,Russia,India,1806.0
-1991,China,Russia,2081.0
-1991,China,India,120.0
-1991,France,Japan,9494.0
-1991,United Stat,Japan,95010.0
-1991,India,Russia,520.0
-1991,Spain,United Stat,7409.0
-1991,Spain,India,298.0
-1991,Russia,Japan,2329.0
-1991,Italy,Japan,4462.0
-1991,India,Spain,66.0
-1991,Germany,China,6986.0
-1991,Italy,China,2275.0
-1991,Spain,Germany,15112.0
-1991,Spain,Brazil,903.0
-1991,Japan,Russia,3318.0
-1991,France,Germany,41045.0
-1991,Spain,Japan,4372.0
-1991,Japan,Brazil,3189.0
-1991,United Stat,Brazil,7232.0
-1991,Brazil,Russia,158.0
-1991,Russia,Italy,2656.0
-1991,Russia,United Stat,3935.0
-1991,Japan,France,5816.0
-1991,Russia,China,2006.0
-1991,Russia,France,1604.0
-1991,Italy,Spain,6419.0
-1991,France,Italy,25207.0
-1991,China,United Stat,8010.0
-1991,Japan,China,14248.0
-1991,Germany,France,47674.0
-1991,India,Japan,1364.0
-1991,Italy,Brazil,1836.0
-1991,India,France,580.0
-1991,United Stat,Spain,3037.0
-1991,Spain,Italy,9285.0
-1991,China,France,1572.0
-1991,Brazil,United Stat,5935.0
-1991,France,China,3005.0
-1991,India,Italy,404.0
-1991,Japan,Italy,4538.0
-1991,France,Russia,3056.0
-1991,Italy,India,663.0
-1991,United Stat,India,3429.0
-1991,India,United Stat,1891.0
-1991,Germany,Italy,36213.0
-1991,Russia,Spain,335.0
-1991,Germany,United Stat,25897.0
-1991,France,United Stat,22079.0
-1991,Japan,India,2186.0
-1991,China,Italy,1458.0
-1991,Spain,France,14089.0
-1991,Brazil,Germany,2233.0
-1991,Germany,Brazil,3290.0
-1991,Brazil,China,83.0
-1991,France,India,630.0
-1991,United Stat,Germany,26985.0
-1991,Japan,Germany,10746.0
-1991,Italy,France,25902.0
-1991,China,Japan,10032.0
-1991,China,Spain,373.0
-1991,Japan,United Stat,53634.0
-1992,United Stat,India,4066.0
-1992,China,United Stat,8903.0
-1992,India,Spain,96.0
-1992,Germany,Italy,37532.0
-1992,China,India,181.0
-1992,Italy,France,27199.0
-1992,Russia,China,1669.0
-1992,India,Germany,1907.0
-1992,Spain,Russia,526.0
-1992,France,India,721.0
-1992,France,Italy,25403.0
-1992,India,Italy,519.0
-1992,France,United Stat,20103.0
-1992,Brazil,Italy,908.0
-1992,Spain,United Stat,7357.0
-1992,Germany,Spain,11008.0
-1992,Italy,India,767.0
-1992,Germany,France,48886.0
-1992,United Stat,Germany,29596.0
-1992,Germany,United Stat,27096.0
-1992,Spain,China,1620.0
-1992,Brazil,United Stat,5545.0
-1992,China,Japan,13686.0
-1992,Japan,Spain,769.0
-1992,Russia,India,822.0
-1992,Japan,United Stat,52693.0
-1992,China,Germany,4023.0
-1992,India,China,94.0
-1992,Germany,India,1723.0
-1992,Russia,Japan,1680.0
-1992,Russia,France,1286.0
-1992,Italy,Japan,4401.0
-1992,Italy,Brazil,1847.0
-1992,United Stat,France,15262.0
-1992,Brazil,Japan,1266.0
-1992,France,Brazil,1664.0
-1992,China,Brazil,519.0
-1992,France,Russia,1492.0
-1992,Japan,Germany,10746.0
-1992,Russia,Spain,420.0
-1992,China,Spain,354.0
-1992,France,Japan,9766.0
-1992,United Stat,Italy,12843.0
-1992,Italy,Germany,40655.0
-1992,Spain,India,312.0
-1992,France,China,3501.0
-1992,India,Brazil,213.0
-1992,Brazil,Germany,2091.0
-1992,United Stat,Spain,3188.0
-1992,Japan,Brazil,2849.0
-1992,Italy,Russia,2951.0
-1992,United Stat,Russia,511.0
-1992,Italy,China,2786.0
-1992,France,Germany,44594.0
-1992,United Stat,China,27413.0
-1992,Brazil,China,55.0
-1992,Spain,Germany,16374.0
-1992,United Stat,Japan,99481.0
-1992,China,France,1499.0
-1992,India,United Stat,2258.0
-1992,Spain,Brazil,984.0
-1992,India,Japan,1504.0
-1992,Germany,China,7493.0
-1992,India,France,636.0
-1992,Japan,Russia,2402.0
-1992,Italy,Spain,6330.0
-1992,Germany,Japan,24377.0
-1992,Japan,China,16972.0
-1992,China,Russia,3512.0
-1992,Spain,Japan,4655.0
-1992,Russia,Brazil,96.0
-1992,Brazil,France,643.0
-1992,Russia,United Stat,2885.0
-1992,Spain,Italy,9807.0
-1992,Germany,Russia,5873.0
-1992,China,Italy,1748.0
-1992,India,Russia,200.0
-1992,Russia,Italy,3052.0
-1992,Italy,United Stat,9892.0
-1992,France,Spain,12906.0
-1992,Japan,Italy,4161.0
-1992,United Stat,Brazil,8145.0
-1992,Brazil,Spain,172.0
-1992,Spain,France,15838.0
-1992,Japan,India,2035.0
-1992,Russia,Germany,6725.0
-1992,Germany,Brazil,3454.0
-1992,Japan,France,5416.0
-1992,Brazil,India,14.0
-1993,Germany,Italy,26724.0
-1993,France,Japan,8295.0
-1993,Russia,Brazil,114.0
-1993,India,Japan,1376.0
-1993,China,United Stat,10633.0
-1993,Brazil,France,814.0
-1993,United Stat,Italy,13829.0
-1993,Russia,France,899.0
-1993,Russia,Japan,1367.0
-1993,Italy,Spain,4942.0
-1993,France,Italy,20208.0
-1993,China,France,1645.0
-1993,India,Italy,538.0
-1993,Italy,Russia,3885.0
-1993,Germany,Japan,20655.0
-1993,Brazil,China,188.0
-1993,United Stat,France,15694.0
-1993,India,China,259.0
-1993,United Stat,Spain,3205.0
-1993,Russia,Spain,175.0
-1993,Spain,France,13950.0
-1993,Germany,India,1954.0
-1993,Russia,United Stat,2304.0
-1993,Japan,Germany,9824.0
-1993,Italy,India,819.0
-1993,United Stat,Brazil,8021.0
-1993,India,Russia,474.0
-1993,Brazil,India,72.0
-1993,Germany,Spain,8485.0
-1993,Russia,India,633.0
-1993,Italy,France,20100.0
-1993,United Stat,Russia,1847.0
-1993,India,United Stat,2171.0
-1993,France,China,3769.0
-1993,Russia,Italy,1106.0
-1993,Japan,Russia,2777.0
-1993,Italy,Germany,28527.0
-1993,Japan,United Stat,55943.0
-1993,France,United Stat,17606.0
-1993,Brazil,Italy,1106.0
-1993,China,Brazil,863.0
-1993,India,Germany,1587.0
-1993,Italy,China,2597.0
-1993,United Stat,Japan,110418.0
-1993,Japan,Spain,734.0
-1993,China,India,416.0
-1993,Germany,China,8326.0
-1993,Brazil,Spain,282.0
-1993,United Stat,India,4794.0
-1993,France,Spain,11076.0
-1993,Brazil,United Stat,7281.0
-1993,Germany,United Stat,24236.0
-1993,France,Brazil,1487.0
-1993,Russia,China,2335.0
-1993,India,Brazil,114.0
-1993,Spain,China,1341.0
-1993,Spain,United Stat,5625.0
-1993,Russia,Germany,5142.0
-1993,Brazil,Germany,2660.0
-1993,Brazil,Japan,1831.0
-1993,Spain,Japan,3189.0
-1993,Spain,Brazil,856.0
-1993,Spain,India,291.0
-1993,China,Germany,6056.0
-1993,China,Spain,475.0
-1993,Brazil,Russia,204.0
-1993,France,Russia,2685.0
-1993,China,Japan,23303.0
-1993,Japan,France,5148.0
-1993,Japan,Brazil,2867.0
-1993,India,France,613.0
-1993,Spain,Russia,990.0
-1993,China,Italy,2738.0
-1993,Germany,Brazil,2689.0
-1993,Italy,United Stat,7874.0
-1993,Germany,France,36992.0
-1993,United Stat,Germany,29462.0
-1993,China,Russia,4986.0
-1993,Germany,Russia,6478.0
-1993,United Stat,China,33513.0
-1993,Japan,China,20652.0
-1993,Italy,Japan,3819.0
-1993,Spain,Germany,12865.0
-1993,Japan,India,2287.0
-1993,France,India,762.0
-1993,Japan,Italy,3845.0
-1993,Spain,Italy,7434.0
-1993,Italy,Brazil,1529.0
-1993,India,Spain,95.0
-1993,France,Germany,35791.0
-1994,India,Japan,1840.0
-1994,Germany,France,40740.0
-1994,India,China,622.0
-1994,France,Spain,13938.0
-1994,Italy,Germany,32269.0
-1994,Spain,Russia,1015.0
-1994,Germany,Italy,30844.0
-1994,China,Japan,26319.0
-1994,United Stat,Japan,122470.0
-1994,India,Russia,389.0
-1994,United Stat,Germany,32690.0
-1994,United Stat,Russia,3437.0
-1994,Japan,Russia,3481.0
-1994,Italy,Russia,4802.0
-1994,Italy,Japan,3952.0
-1994,China,Brazil,1059.0
-1994,Japan,India,2650.0
-1994,China,India,321.0
-1994,Italy,China,3123.0
-1994,Japan,Spain,1147.0
-1994,Germany,Brazil,3147.0
-1994,Spain,Japan,3284.0
-1994,China,France,1940.0
-1994,Germany,Japan,21027.0
-1994,India,United Stat,2432.0
-1994,Brazil,China,510.0
-1994,Russia,France,1004.0
-1994,Brazil,Italy,2268.0
-1994,France,Italy,23031.0
-1994,Russia,India,587.0
-1994,France,Russia,2777.0
-1994,France,Japan,8498.0
-1994,Germany,Spain,10257.0
-1994,United Stat,Brazil,9307.0
-1994,Brazil,Russia,480.0
-1994,Spain,Germany,13465.0
-1994,Brazil,United Stat,7485.0
-1994,Italy,India,1006.0
-1994,Spain,China,1794.0
-1994,Spain,France,16093.0
-1994,Spain,India,333.0
-1994,Brazil,India,97.0
-1994,United Stat,France,17417.0
-1994,India,Brazil,541.0
-1994,Spain,United Stat,6727.0
-1994,France,India,902.0
-1994,Spain,Italy,8246.0
-1994,Russia,China,952.0
-1994,India,Spain,173.0
-1994,Brazil,France,950.0
-1994,China,United Stat,13977.0
-1994,Italy,France,22733.0
-1994,Japan,Italy,4937.0
-1994,France,United Stat,19480.0
-1994,United Stat,Spain,3810.0
-1994,China,Germany,7136.0
-1994,Germany,Russia,8158.0
-1994,Germany,United Stat,27453.0
-1994,United Stat,Italy,15442.0
-1994,Russia,United Stat,2071.0
-1994,India,France,489.0
-1994,Russia,Spain,245.0
-1994,Italy,Brazil,1849.0
-1994,Japan,United Stat,63067.0
-1994,Russia,Japan,1114.0
-1994,Brazil,Germany,3730.0
-1994,China,Spain,902.0
-1994,India,Italy,606.0
-1994,Japan,Brazil,3265.0
-1994,India,Germany,1899.0
-1994,Germany,India,2148.0
-1994,Brazil,Spain,352.0
-1994,Germany,China,9478.0
-1994,Russia,Germany,5682.0
-1994,United Stat,China,41362.0
-1994,France,China,4038.0
-1994,France,Brazil,1887.0
-1994,China,Russia,3466.0
-1994,United Stat,India,5663.0
-1994,China,Italy,3068.0
-1994,Spain,Brazil,924.0
-1994,Brazil,Japan,2653.0
-1994,Japan,China,27569.0
-1994,Italy,Spain,6509.0
-1994,Russia,Italy,1589.0
-1994,Russia,Brazil,193.0
-1994,France,Germany,40642.0
-1994,Japan,France,5685.0
-1994,Italy,United Stat,7779.0
-1994,Japan,Germany,11130.0
-1995,Japan,Russia,4752.0
-1995,India,France,696.0
-1995,Spain,Italy,10511.0
-1995,China,Spain,909.0
-1995,Brazil,Spain,895.0
-1995,Japan,Brazil,3948.0
-1995,Brazil,India,183.0
-1995,Germany,Brazil,3487.0
-1995,India,Japan,2234.0
-1995,Japan,Germany,13703.0
-1995,France,Japan,9584.0
-1995,Russia,Japan,763.0
-1995,Germany,Spain,13809.0
-1995,India,Italy,888.0
-1995,China,Japan,29007.0
-1995,China,India,398.0
-1995,Japan,China,35922.0
-1995,Germany,China,11107.0
-1995,Italy,Germany,39617.0
-1995,Spain,Germany,17560.0
-1995,Spain,Japan,3791.0
-1995,Brazil,Italy,3144.0
-1995,China,United Stat,16123.0
-1995,France,Russia,3484.0
-1995,France,United Stat,20899.0
-1995,Spain,India,481.0
-1995,France,Brazil,1996.0
-1995,India,China,811.0
-1995,Russia,India,614.0
-1995,United Stat,Russia,4270.0
-1995,Russia,Spain,241.0
-1995,China,Italy,3116.0
-1995,China,Brazil,1228.0
-1995,France,China,5140.0
-1995,Japan,Spain,1518.0
-1995,France,India,1107.0
-1995,Russia,Brazil,360.0
-1995,Brazil,United Stat,11499.0
-1995,India,Brazil,220.0
-1995,India,Russia,826.0
-1995,United Stat,Japan,127195.0
-1995,France,Italy,27269.0
-1995,Italy,China,3920.0
-1995,Russia,Germany,6537.0
-1995,Spain,France,19688.0
-1995,United Stat,China,48521.0
-1995,Germany,India,2515.0
-1995,Brazil,Russia,434.0
-1995,China,France,2649.0
-1995,Spain,Russia,1438.0
-1995,Japan,Italy,6364.0
-1995,United Stat,France,17770.0
-1995,Spain,United Stat,7372.0
-1995,Germany,United Stat,31365.0
-1995,Japan,France,6693.0
-1995,Russia,China,865.0
-1995,Brazil,China,1143.0
-1995,Italy,Japan,4491.0
-1995,United Stat,Brazil,9428.0
-1995,France,Germany,50523.0
-1995,Italy,Brazil,2040.0
-1995,Japan,United Stat,75880.0
-1995,Brazil,France,1520.0
-1995,Italy,France,28670.0
-1995,Italy,India,1341.0
-1995,Germany,Russia,9477.0
-1995,Germany,Italy,36964.0
-1995,India,Germany,2713.0
-1995,Spain,Brazil,1135.0
-1995,India,Spain,170.0
-1995,Italy,Spain,8149.0
-1995,France,Spain,17803.0
-1995,Brazil,Japan,3607.0
-1995,United Stat,Spain,4161.0
-1995,Germany,France,47580.0
-1995,Italy,United Stat,9887.0
-1995,Brazil,Germany,5192.0
-1995,Russia,United Stat,2651.0
-1995,Spain,China,2341.0
-1995,China,Russia,3799.0
-1995,Germany,Japan,24590.0
-1995,Russia,Italy,1851.0
-1995,Italy,Russia,5306.0
-1995,United Stat,Germany,38043.0
-1995,China,Germany,8035.0
-1995,Russia,France,1074.0
-1995,United Stat,India,6091.0
-1995,United Stat,Italy,17305.0
-1995,India,United Stat,3344.0
-1995,Japan,India,2917.0
-1996,United Stat,India,6528.0
-1996,United Stat,Brazil,9297.0
-1996,United Stat,Italy,19001.0
-1996,Brazil,Japan,3032.0
-1996,Japan,China,40405.0
-1996,Russia,China,996.0
-1996,India,Spain,196.0
-1996,United Stat,France,19196.0
-1996,Italy,Russia,4700.0
-1996,France,China,5928.0
-1996,United Stat,Russia,3745.0
-1996,Russia,Italy,2316.0
-1996,India,Germany,2738.0
-1996,France,Brazil,1757.0
-1996,India,Russia,632.0
-1996,Russia,United Stat,2896.0
-1996,United Stat,Spain,4563.0
-1996,Brazil,Italy,3202.0
-1996,France,Spain,18672.0
-1996,Italy,India,1329.0
-1996,Germany,United Stat,32551.0
-1996,India,Japan,2134.0
-1996,Japan,France,6268.0
-1996,United Stat,Japan,117963.0
-1996,Brazil,United Stat,13016.0
-1996,India,France,782.0
-1996,Brazil,Germany,5253.0
-1996,United Stat,China,54409.0
-1996,China,United Stat,16179.0
-1996,India,Brazil,168.0
-1996,Spain,Japan,3445.0
-1996,Spain,China,2412.0
-1996,Germany,Brazil,3240.0
-1996,United Stat,Germany,39989.0
-1996,India,China,702.0
-1996,Spain,Italy,11625.0
-1996,Brazil,China,1242.0
-1996,Italy,Germany,38233.0
-1996,Brazil,Russia,422.0
-1996,France,United Stat,21455.0
-1996,Russia,Brazil,204.0
-1996,China,Brazil,1484.0
-1996,China,Russia,5156.0
-1996,China,Germany,7325.0
-1996,Spain,Brazil,1160.0
-1996,China,India,719.0
-1996,Brazil,Spain,992.0
-1996,Russia,Japan,968.0
-1996,China,Spain,518.0
-1996,Japan,Italy,6777.0
-1996,Japan,United Stat,79897.0
-1996,Japan,Spain,1556.0
-1996,Japan,India,2852.0
-1996,Germany,France,47204.0
-1996,Japan,Germany,14189.0
-1996,France,India,1132.0
-1996,Germany,Italy,36553.0
-1996,Brazil,France,1475.0
-1996,Italy,China,4031.0
-1996,Russia,France,1267.0
-1996,France,Italy,26897.0
-1996,India,United Stat,3187.0
-1996,Brazil,India,200.0
-1996,France,Japan,8781.0
-1996,China,Japan,29190.0
-1996,Germany,Russia,10220.0
-1996,China,Italy,3247.0
-1996,Spain,France,21748.0
-1996,France,Germany,46979.0
-1996,Italy,France,27985.0
-1996,Germany,India,2633.0
-1996,Spain,Russia,1288.0
-1996,Italy,United Stat,10161.0
-1996,Italy,Brazil,1887.0
-1996,Germany,Spain,14627.0
-1996,Russia,Spain,357.0
-1996,France,Russia,4021.0
-1996,Russia,India,602.0
-1996,Italy,Spain,8559.0
-1996,Italy,Japan,3970.0
-1996,Germany,Japan,22677.0
-1996,Spain,India,557.0
-1996,Japan,Russia,3922.0
-1996,Russia,Germany,5158.0
-1996,China,France,2240.0
-1996,Spain,Germany,18038.0
-1996,India,Italy,1074.0
-1996,Germany,China,11915.0
-1996,Spain,United Stat,7720.0
-1996,Japan,Brazil,3754.0
-1997,Russia,United Stat,4061.0
-1997,Spain,Japan,3387.0
-1997,Brazil,Spain,1270.0
-1997,Spain,United Stat,7772.0
-1997,India,Japan,2156.0
-1997,India,Spain,174.0
-1997,France,United Stat,23329.0
-1997,Germany,Italy,34009.0
-1997,Brazil,China,1307.0
-1997,Italy,India,1335.0
-1997,United Stat,Italy,20184.0
-1997,France,Spain,17705.0
-1997,Japan,India,2658.0
-1997,France,China,6629.0
-1997,India,United Stat,3709.0
-1997,India,China,1029.0
-1997,France,India,1095.0
-1997,United Stat,Russia,4524.0
-1997,Spain,Brazil,1249.0
-1997,Germany,Spain,14715.0
-1997,Italy,Japan,4221.0
-1997,China,Japan,28990.0
-1997,India,Italy,938.0
-1997,Germany,Japan,21254.0
-1997,China,Spain,563.0
-1997,Japan,Brazil,3743.0
-1997,Germany,India,2397.0
-1997,Brazil,France,1828.0
-1997,Spain,India,554.0
-1997,Italy,United Stat,10382.0
-1997,Japan,Italy,5934.0
-1997,Germany,Russia,9897.0
-1997,United Stat,Brazil,10149.0
-1997,France,Brazil,1973.0
-1997,United Stat,Spain,4911.0
-1997,China,Germany,6184.0
-1997,Brazil,Russia,378.0
-1997,Russia,Brazil,467.0
-1997,Spain,Russia,1257.0
-1997,Japan,Spain,1349.0
-1997,China,India,897.0
-1997,Brazil,United Stat,15778.0
-1997,Italy,France,27469.0
-1997,China,France,3239.0
-1997,China,Brazil,1486.0
-1997,France,Germany,44061.0
-1997,France,Italy,26038.0
-1997,Russia,India,800.0
-1997,Italy,Germany,37409.0
-1997,India,Russia,666.0
-1997,Brazil,Germany,5644.0
-1997,Japan,China,41828.0
-1997,Japan,Russia,3988.0
-1997,Japan,Germany,12380.0
-1997,United Stat,France,21346.0
-1997,Russia,Spain,528.0
-1997,Italy,Russia,4288.0
-1997,United Stat,China,65832.0
-1997,India,Brazil,188.0
-1997,Germany,France,45773.0
-1997,Spain,Germany,18158.0
-1997,India,Germany,2604.0
-1997,Brazil,Japan,3959.0
-1997,United Stat,Germany,44193.0
-1997,Italy,Brazil,1900.0
-1997,United Stat,India,7712.0
-1997,Japan,United Stat,75975.0
-1997,Spain,France,21428.0
-1997,Russia,Italy,2651.0
-1997,Germany,Brazil,3677.0
-1997,France,Japan,8917.0
-1997,China,United Stat,16290.0
-1997,France,Russia,3480.0
-1997,Brazil,India,253.0
-1997,Russia,China,1261.0
-1997,Spain,Italy,11549.0
-1997,India,France,791.0
-1997,Japan,France,5809.0
-1997,China,Italy,2453.0
-1997,United Stat,Japan,124266.0
-1997,Italy,China,4429.0
-1997,Italy,Spain,9831.0
-1997,Germany,United Stat,33784.0
-1997,China,Russia,4084.0
-1997,Spain,China,2888.0
-1997,Brazil,Italy,3817.0
-1997,Russia,France,1592.0
-1997,Russia,Japan,985.0
-1997,Russia,Germany,6640.0
-1997,Germany,China,12363.0
-1998,Italy,China,4845.0
-1998,India,United Stat,3660.0
-1998,Russia,India,660.0
-1998,Italy,India,1414.0
-1998,United Stat,Japan,125091.0
-1998,Russia,United Stat,4052.0
-1998,China,Russia,3627.0
-1998,Spain,Japan,3732.0
-1998,Germany,Brazil,3833.0
-1998,India,China,1102.0
-1998,Brazil,United Stat,14918.0
-1998,Brazil,Germany,5763.0
-1998,Germany,United Stat,38335.0
-1998,France,Germany,49254.0
-1998,United Stat,Italy,21915.0
-1998,Germany,Italy,36030.0
-1998,Spain,Germany,20247.0
-1998,Italy,Japan,4742.0
-1998,Japan,India,2177.0
-1998,India,Germany,2238.0
-1998,Spain,Brazil,1256.0
-1998,Japan,Germany,10686.0
-1998,India,Brazil,197.0
-1998,Russia,China,1146.0
-1998,Russia,Brazil,621.0
-1998,Germany,Japan,23131.0
-1998,Spain,India,594.0
-1998,Germany,China,13089.0
-1998,Brazil,France,2186.0
-1998,Brazil,Italy,3516.0
-1998,India,Japan,2386.0
-1998,Spain,China,3093.0
-1998,France,Russia,2782.0
-1998,Russia,Spain,408.0
-1998,United Stat,Germany,51283.0
-1998,United Stat,India,8659.0
-1998,Italy,Germany,40653.0
-1998,China,United Stat,16997.0
-1998,Italy,Spain,9799.0
-1998,China,Spain,480.0
-1998,Italy,Russia,3720.0
-1998,Germany,France,51272.0
-1998,China,India,908.0
-1998,Italy,France,28442.0
-1998,Spain,Italy,12287.0
-1998,United Stat,Brazil,10642.0
-1998,Germany,India,2403.0
-1998,Japan,China,37079.0
-1998,Brazil,India,222.0
-1998,Germany,Russia,8386.0
-1998,Germany,Spain,16066.0
-1998,Russia,Japan,810.0
-1998,Japan,Brazil,2908.0
-1998,China,Japan,28307.0
-1998,France,Italy,28355.0
-1998,Japan,United Stat,67518.0
-1998,United Stat,France,24746.0
-1998,Italy,United Stat,10877.0
-1998,Spain,United Stat,7305.0
-1998,Spain,France,23865.0
-1998,France,Japan,9500.0
-1998,France,Brazil,1969.0
-1998,Brazil,Russia,327.0
-1998,India,Russia,579.0
-1998,Japan,Russia,2906.0
-1998,Russia,France,1578.0
-1998,China,France,3206.0
-1998,United Stat,Russia,6008.0
-1998,Japan,France,5737.0
-1998,India,Italy,1047.0
-1998,United Stat,Spain,5112.0
-1998,France,Spain,20299.0
-1998,France,United Stat,25304.0
-1998,France,China,7206.0
-1998,China,Italy,2283.0
-1998,Spain,Russia,1081.0
-1998,India,Spain,201.0
-1998,China,Brazil,1133.0
-1998,Brazil,Japan,3578.0
-1998,Brazil,Spain,1315.0
-1998,France,India,1170.0
-1998,Japan,Spain,1192.0
-1998,Italy,Brazil,2131.0
-1998,India,France,740.0
-1998,Japan,Italy,5100.0
-1998,United Stat,China,75109.0
-1998,Russia,Italy,1787.0
-1998,Russia,Germany,5404.0
-1998,China,Germany,6998.0
-1998,Brazil,China,1125.0
-1999,Russia,India,674.0
-1999,United Stat,France,26656.0
-1999,Brazil,Russia,347.0
-1999,Germany,Japan,22859.0
-1999,Spain,China,3588.0
-1999,Japan,Spain,1414.0
-1999,Spain,Italy,11902.0
-1999,Germany,India,2263.0
-1999,India,United Stat,3583.0
-1999,China,France,5778.0
-1999,China,Spain,979.0
-1999,Germany,Brazil,3478.0
-1999,Germany,United Stat,38756.0
-1999,Italy,France,28182.0
-1999,France,Brazil,1881.0
-1999,United Stat,Germany,55826.0
-1999,Italy,India,1303.0
-1999,Germany,Russia,8868.0
-1999,Germany,Spain,15160.0
-1999,India,Russia,604.0
-1999,United Stat,Spain,5432.0
-1999,Russia,Japan,455.0
-1999,India,Japan,2518.0
-1999,China,Russia,4348.0
-1999,India,Italy,823.0
-1999,United Stat,Japan,134009.0
-1999,China,Brazil,1412.0
-1999,Brazil,Italy,2860.0
-1999,Spain,Germany,21826.0
-1999,Italy,Russia,4469.0
-1999,Spain,India,609.0
-1999,Russia,Italy,1157.0
-1999,Russia,Germany,4195.0
-1999,France,Russia,2914.0
-1999,China,Germany,11958.0
-1999,Japan,France,6154.0
-1999,Italy,Japan,5502.0
-1999,Germany,Italy,34505.0
-1999,United Stat,China,98678.0
-1999,Brazil,United Stat,13056.0
-1999,Japan,Russia,3767.0
-1999,Brazil,Germany,5184.0
-1999,Russia,Brazil,712.0
-1999,Japan,Brazil,2689.0
-1999,Brazil,France,2191.0
-1999,Italy,Brazil,1954.0
-1999,Russia,United Stat,2387.0
-1999,Brazil,Japan,2833.0
-1999,India,Spain,159.0
-1999,Germany,China,16951.0
-1999,France,Italy,29430.0
-1999,Japan,India,2246.0
-1999,United Stat,Italy,23161.0
-1999,Spain,Brazil,1295.0
-1999,Italy,United Stat,10697.0
-1999,Spain,France,24820.0
-1999,Japan,China,44877.0
-1999,Italy,Spain,9607.0
-1999,India,China,1966.0
-1999,Russia,Spain,246.0
-1999,Italy,Germany,42208.0
-1999,Spain,Russia,1272.0
-1999,France,Japan,7041.0
-1999,Japan,Germany,11513.0
-1999,United Stat,India,9598.0
-1999,China,India,3185.0
-1999,India,France,720.0
-1999,United Stat,Brazil,11832.0
-1999,Brazil,China,1262.0
-1999,Brazil,Spain,1297.0
-1999,China,Italy,5426.0
-1999,France,India,1128.0
-1999,Italy,China,5663.0
-1999,India,Germany,1916.0
-1999,Germany,France,48875.0
-1999,India,Brazil,297.0
-1999,United Stat,Russia,6094.0
-1999,China,United Stat,32318.0
-1999,France,Germany,59493.0
-1999,Japan,United Stat,67529.0
-1999,Spain,United Stat,6529.0
-1999,Russia,France,1181.0
-1999,Russia,China,893.0
-1999,France,United Stat,25059.0
-1999,China,Japan,56051.0
-1999,Brazil,India,401.0
-1999,France,Spain,21092.0
-1999,Japan,Italy,5037.0
-1999,France,China,6997.0
-1999,Spain,Japan,3691.0
-2000,Italy,Russia,7639.0
-2000,Brazil,India,378.0
-2000,United Stat,Spain,6048.0
-2000,United Stat,India,11034.0
-2000,Japan,India,2637.0
-2000,Japan,Spain,1363.0
-2000,Spain,India,684.0
-2000,Russia,China,951.0
-2000,China,France,6207.0
-2000,Italy,China,6862.0
-2000,Spain,France,25581.0
-2000,France,Brazil,2525.0
-2000,India,Russia,544.0
-2000,Russia,Italy,1211.0
-2000,United Stat,Japan,149520.0
-2000,United Stat,Italy,26001.0
-2000,Spain,Germany,21675.0
-2000,Brazil,Spain,1225.0
-2000,France,Russia,4155.0
-2000,China,Russia,5905.0
-2000,Russia,Germany,3896.0
-2000,Italy,United Stat,12453.0
-2000,Italy,India,1500.0
-2000,Italy,Germany,41164.0
-2000,Russia,Spain,313.0
-2000,United Stat,Russia,7830.0
-2000,China,Italy,6127.0
-2000,France,China,8155.0
-2000,India,France,661.0
-2000,Germany,Brazil,3573.0
-2000,Russia,United Stat,2703.0
-2000,Brazil,China,1737.0
-2000,France,Japan,7786.0
-2000,United Stat,Germany,59481.0
-2000,India,Japan,2016.0
-2000,Brazil,Russia,628.0
-2000,Russia,India,556.0
-2000,Japan,Brazil,3001.0
-2000,Brazil,Japan,3255.0
-2000,France,Spain,22083.0
-2000,Spain,Italy,12315.0
-2000,Spain,United Stat,6607.0
-2000,Germany,Japan,24533.0
-2000,Germany,China,19430.0
-2000,Germany,Spain,14517.0
-2000,Brazil,United Stat,14303.0
-2000,China,Brazil,2100.0
-2000,United Stat,Brazil,14393.0
-2000,China,India,3963.0
-2000,Brazil,Germany,4863.0
-2000,Italy,Japan,5934.0
-2000,Germany,Russia,13365.0
-2000,Spain,Russia,2202.0
-2000,Brazil,Italy,2387.0
-2000,Japan,Germany,12733.0
-2000,Germany,Italy,33453.0
-2000,China,Spain,1120.0
-2000,Italy,Spain,9694.0
-2000,Japan,Russia,4554.0
-2000,France,India,1169.0
-2000,Russia,Japan,572.0
-2000,Russia,France,1188.0
-2000,Italy,France,26828.0
-2000,France,Italy,28737.0
-2000,India,United Stat,3152.0
-2000,India,Italy,726.0
-2000,India,Brazil,192.0
-2000,France,Germany,55122.0
-2000,China,United Stat,37045.0
-2000,France,United Stat,24557.0
-2000,India,Spain,142.0
-2000,Japan,France,6410.0
-2000,China,Germany,14276.0
-2000,United Stat,China,119417.0
-2000,Spain,Brazil,1149.0
-2000,Spain,Japan,3348.0
-2000,Russia,Brazil,388.0
-2000,Germany,France,47915.0
-2000,India,China,2292.0
-2000,Brazil,France,2075.0
-2000,Germany,United Stat,42791.0
-2000,Japan,Italy,5313.0
-2000,India,Germany,1780.0
-2000,Spain,China,4052.0
-2000,Italy,Brazil,2373.0
-2000,China,Japan,68849.0
-2000,Japan,United Stat,72514.0
-2000,United Stat,France,30084.0
-2000,Japan,China,56847.0
-2000,Germany,India,2236.0
-2001,Spain,Italy,11964.0
-2001,Italy,Russia,7646.0
-2001,Italy,United Stat,11465.0
-2001,India,Spain,220.0
-2001,Spain,China,4202.0
-2001,Russia,China,1625.0
-2001,Russia,Brazil,918.0
-2001,Japan,France,6183.0
-2001,Italy,Germany,41313.0
-2001,Italy,Brazil,2055.0
-2001,Spain,France,24255.0
-2001,India,Russia,765.0
-2001,Japan,Russia,3854.0
-2001,Japan,United Stat,63713.0
-2001,Germany,United Stat,40710.0
-2001,France,Russia,4470.0
-2001,Germany,Italy,31938.0
-2001,India,United Stat,4141.0
-2001,India,Brazil,314.0
-2001,Japan,Spain,1295.0
-2001,China,Italy,6740.0
-2001,Japan,Brazil,2542.0
-2001,China,Spain,1172.0
-2001,United Stat,Spain,5582.0
-2001,Brazil,India,597.0
-2001,China,India,3790.0
-2001,Japan,Italy,5388.0
-2001,India,Japan,2134.0
-2001,Russia,Italy,1341.0
-2001,Japan,Germany,12391.0
-2001,Germany,Russia,13007.0
-2001,Russia,Spain,486.0
-2001,Spain,United Stat,5990.0
-2001,Germany,France,46260.0
-2001,United Stat,Japan,129708.0
-2001,United Stat,Germany,60492.0
-2001,Russia,India,541.0
-2001,Germany,Japan,20251.0
-2001,Germany,Brazil,3653.0
-2001,Spain,India,770.0
-2001,Brazil,United Stat,14342.0
-2001,Japan,India,2212.0
-2001,Brazil,China,1846.0
-2001,France,China,8055.0
-2001,India,Germany,2272.0
-2001,China,Brazil,2819.0
-2001,France,Brazil,2617.0
-2001,France,India,1151.0
-2001,Brazil,Japan,3370.0
-2001,Spain,Japan,3062.0
-2001,United Stat,Brazil,15259.0
-2001,Russia,United Stat,3199.0
-2001,Russia,Japan,813.0
-2001,Spain,Russia,1764.0
-2001,India,China,3416.0
-2001,Brazil,Italy,2404.0
-2001,France,Germany,61466.0
-2001,United Stat,France,30984.0
-2001,Italy,India,1492.0
-2001,China,Germany,17532.0
-2001,India,Italy,1017.0
-2001,Germany,India,2240.0
-2001,Russia,Germany,5716.0
-2001,United Stat,Russia,6532.0
-2001,Italy,Japan,5618.0
-2001,India,France,1077.0
-2001,Brazil,Russia,511.0
-2001,Germany,China,20077.0
-2001,China,Russia,8085.0
-2001,Italy,Spain,9763.0
-2001,France,Italy,28379.0
-2001,Japan,China,59260.0
-2001,China,United Stat,40392.0
-2001,Italy,China,7088.0
-2001,Spain,Germany,22774.0
-2001,United Stat,India,10291.0
-2001,United Stat,China,120747.0
-2001,France,Japan,6562.0
-2001,Brazil,Spain,1349.0
-2001,China,France,7900.0
-2001,United Stat,Italy,24954.0
-2001,China,Japan,66192.0
-2001,Germany,Spain,13986.0
-2001,Brazil,France,2291.0
-2001,France,Spain,21045.0
-2001,Russia,France,1516.0
-2001,Italy,France,25954.0
-2001,France,United Stat,24174.0
-2001,Brazil,Germany,5293.0
-2001,Spain,Brazil,1232.0
-2002,Russia,India,515.0
-2002,France,Brazil,2174.0
-2002,Russia,Brazil,949.0
-2002,China,Spain,1357.0
-2002,Germany,India,2380.0
-2002,Russia,France,1880.0
-2002,Italy,Russia,7493.0
-2002,Spain,Italy,13266.0
-2002,Spain,Japan,3166.0
-2002,Germany,Italy,31795.0
-2002,United Stat,Italy,25419.0
-2002,United Stat,Russia,7146.0
-2002,Spain,Russia,2486.0
-2002,Japan,Italy,5432.0
-2002,Spain,United Stat,5653.0
-2002,France,Japan,6314.0
-2002,Brazil,Spain,1073.0
-2002,Brazil,Russia,470.0
-2002,United Stat,France,29031.0
-2002,France,Spain,22133.0
-2002,France,Germany,63642.0
-2002,France,India,1200.0
-2002,China,India,4827.0
-2002,Brazil,United Stat,11482.0
-2002,Japan,Brazil,2668.0
-2002,Japan,Russia,3276.0
-2002,United Stat,India,12450.0
-2002,Spain,Brazil,1264.0
-2002,Brazil,Italy,1938.0
-2002,Germany,Spain,14880.0
-2002,United Stat,China,144573.0
-2002,United Stat,Germany,63884.0
-2002,India,Germany,2310.0
-2002,India,France,1032.0
-2002,Spain,India,885.0
-2002,India,Spain,175.0
-2002,China,Germany,20491.0
-2002,France,United Stat,22277.0
-2002,China,Brazil,3534.0
-2002,Japan,France,6533.0
-2002,Germany,China,22287.0
-2002,Japan,China,63231.0
-2002,Italy,China,8290.0
-2002,Germany,Russia,12362.0
-2002,India,Japan,1914.0
-2002,India,China,3525.0
-2002,United Stat,Brazil,16722.0
-2002,Russia,China,2392.0
-2002,Italy,Japan,5009.0
-2002,Russia,Italy,2205.0
-2002,Brazil,France,1922.0
-2002,India,United Stat,4129.0
-2002,Spain,China,4748.0
-2002,Spain,Germany,25528.0
-2002,Italy,Brazil,2041.0
-2002,Germany,United Stat,37803.0
-2002,China,Italy,7275.0
-2002,Italy,Germany,43208.0
-2002,Germany,France,46543.0
-2002,Japan,Spain,1129.0
-2002,Brazil,Germany,4838.0
-2002,Brazil,Japan,2582.0
-2002,Japan,United Stat,58589.0
-2002,China,Russia,8590.0
-2002,Japan,Germany,12437.0
-2002,Brazil,India,631.0
-2002,China,Japan,79092.0
-2002,United Stat,Japan,124633.0
-2002,France,China,8618.0
-2002,France,Russia,4789.0
-2002,Germany,Japan,18083.0
-2002,Italy,India,1493.0
-2002,Russia,Germany,6508.0
-2002,Russia,Spain,572.0
-2002,Brazil,China,2038.0
-2002,Italy,United Stat,11819.0
-2002,Germany,Brazil,3579.0
-2002,Italy,Spain,11146.0
-2002,India,Brazil,315.0
-2002,Japan,India,2090.0
-2002,India,Russia,578.0
-2002,India,Italy,785.0
-2002,China,United Stat,39968.0
-2002,Russia,United Stat,2923.0
-2002,Italy,France,27478.0
-2002,United Stat,Spain,6063.0
-2002,Spain,France,26232.0
-2002,China,France,7040.0
-2002,Russia,Japan,974.0
-2002,France,Italy,28969.0
-2003,France,Italy,36389.0
-2003,India,Russia,868.0
-2003,Germany,Spain,18430.0
-2003,France,Germany,78101.0
-2003,United Stat,Italy,26665.0
-2003,India,Japan,2460.0
-2003,United Stat,India,13752.0
-2003,China,United Stat,47588.0
-2003,Japan,France,7235.0
-2003,Brazil,France,1945.0
-2003,Japan,Russia,4235.0
-2003,Japan,Spain,1385.0
-2003,China,Brazil,6542.0
-2003,India,United Stat,4890.0
-2003,India,Germany,2790.0
-2003,Spain,Russia,3210.0
-2003,Germany,Japan,21455.0
-2003,Italy,Russia,9285.0
-2003,Spain,Germany,34959.0
-2003,Spain,Brazil,1856.0
-2003,France,Brazil,2614.0
-2003,Japan,United Stat,59892.0
-2003,Italy,Brazil,2443.0
-2003,Germany,China,30635.0
-2003,Germany,United Stat,43626.0
-2003,Brazil,Russia,611.0
-2003,United Stat,China,173973.0
-2003,Germany,India,2924.0
-2003,Japan,Italy,6100.0
-2003,France,Russia,6763.0
-2003,Japan,Germany,14227.0
-2003,France,India,1406.0
-2003,India,China,5106.0
-2003,Russia,India,579.0
-2003,China,Germany,28861.0
-2003,United Stat,Germany,69618.0
-2003,Spain,Italy,19050.0
-2003,Germany,France,54764.0
-2003,Italy,United Stat,11583.0
-2003,Brazil,Germany,4626.0
-2003,Spain,China,6697.0
-2003,United Stat,Japan,121233.0
-2003,Spain,United Stat,6254.0
-2003,India,Brazil,314.0
-2003,Spain,India,1142.0
-2003,Brazil,Spain,1071.0
-2003,United Stat,Spain,7141.0
-2003,Italy,Japan,5967.0
-2003,Russia,Spain,749.0
-2003,India,France,1092.0
-2003,India,Italy,1006.0
-2003,France,China,11355.0
-2003,Russia,France,2312.0
-2003,France,United Stat,21026.0
-2003,France,Spain,29397.0
-2003,Spain,Japan,4294.0
-2003,Italy,Spain,14462.0
-2003,Italy,China,11414.0
-2003,United Stat,Brazil,18965.0
-2003,Brazil,Italy,1933.0
-2003,Brazil,United Stat,10699.0
-2003,Russia,United Stat,2931.0
-2003,India,Spain,238.0
-2003,Brazil,China,2645.0
-2003,United Stat,France,29902.0
-2003,China,Italy,8173.0
-2003,Russia,Germany,7956.0
-2003,Germany,Russia,15019.0
-2003,France,Japan,7433.0
-2003,Germany,Brazil,4317.0
-2003,Russia,China,3278.0
-2003,Russia,Brazil,1473.0
-2003,Japan,India,2174.0
-2003,Italy,India,1896.0
-2003,Russia,Italy,2369.0
-2003,Italy,Germany,53933.0
-2003,United Stat,Russia,9085.0
-2003,China,France,8717.0
-2003,Brazil,Japan,2773.0
-2003,Germany,Italy,37795.0
-2003,Brazil,India,535.0
-2003,Italy,France,33982.0
-2003,China,India,7353.0
-2003,Russia,Japan,1816.0
-2003,China,Russia,10054.0
-2003,China,Spain,1805.0
-2003,Japan,Brazil,2884.0
-2003,Japan,China,76933.0
-2003,China,Japan,104309.0
-2003,Spain,France,35085.0
-2004,Italy,United Stat,12437.0
-2004,China,India,11235.0
-2004,China,Germany,35520.0
-2004,France,Japan,8520.0
-2004,Italy,China,15503.0
-2004,India,United Stat,5981.0
-2004,United Stat,India,16437.0
-2004,Italy,Russia,12065.0
-2004,China,Russia,12451.0
-2004,Germany,India,3647.0
-2004,Italy,India,2521.0
-2004,Japan,Spain,1747.0
-2004,Japan,Brazil,3650.0
-2004,Germany,Italy,43492.0
-2004,France,Brazil,2810.0
-2004,Germany,Brazil,5695.0
-2004,United Stat,Russia,12560.0
-2004,Russia,India,643.0
-2004,United Stat,Brazil,22734.0
-2004,Brazil,Germany,5579.0
-2004,Italy,Japan,6854.0
-2004,United Stat,China,221882.0
-2004,Germany,France,64901.0
-2004,Spain,China,9207.0
-2004,Spain,Japan,5734.0
-2004,China,United Stat,60723.0
-2004,France,Russia,9016.0
-2004,Spain,Italy,23618.0
-2004,Germany,United Stat,50017.0
-2004,India,Spain,344.0
-2004,United Stat,France,32619.0
-2004,Brazil,Japan,3155.0
-2004,Russia,United Stat,3205.0
-2004,Japan,United Stat,63605.0
-2004,Japan,Italy,6897.0
-2004,Italy,France,38923.0
-2004,Brazil,China,4462.0
-2004,Japan,Germany,17086.0
-2004,Brazil,Spain,1293.0
-2004,China,Italy,10157.0
-2004,United Stat,Japan,133339.0
-2004,China,Japan,130121.0
-2004,Germany,China,43231.0
-2004,Brazil,France,2517.0
-2004,India,China,7730.0
-2004,China,Brazil,9464.0
-2004,Spain,United Stat,7416.0
-2004,India,Brazil,650.0
-2004,France,Spain,34724.0
-2004,Russia,Spain,878.0
-2004,Brazil,Russia,889.0
-2004,France,India,1807.0
-2004,Italy,Spain,16554.0
-2004,Russia,Italy,3197.0
-2004,Spain,Russia,4436.0
-2004,United Stat,Italy,29408.0
-2004,China,Spain,2257.0
-2004,Brazil,India,612.0
-2004,Russia,Japan,3937.0
-2004,India,Japan,2921.0
-2004,Russia,Germany,10571.0
-2004,France,China,15049.0
-2004,Germany,Russia,20243.0
-2004,Russia,Brazil,1370.0
-2004,Brazil,United Stat,12671.0
-2004,Germany,Japan,26233.0
-2004,Spain,India,1505.0
-2004,Germany,Spain,21539.0
-2004,United Stat,Spain,7931.0
-2004,India,France,1311.0
-2004,France,Germany,90443.0
-2004,India,Italy,1260.0
-2004,Brazil,Italy,2258.0
-2004,China,France,10479.0
-2004,Spain,France,41113.0
-2004,Russia,France,3061.0
-2004,Japan,China,95987.0
-2004,Russia,China,4744.0
-2004,France,Italy,41487.0
-2004,Italy,Germany,63823.0
-2004,France,United Stat,23747.0
-2004,India,Russia,1189.0
-2004,India,Germany,3631.0
-2004,Spain,Brazil,2293.0
-2004,Italy,Brazil,3313.0
-2004,Japan,France,8359.0
-2004,Japan,Russia,5693.0
-2004,United Stat,Germany,79117.0
-2004,Japan,India,2611.0
-2004,Spain,Germany,43238.0
-2005,United Stat,Italy,32419.0
-2005,Italy,China,18259.0
-2005,Spain,Japan,5919.0
-2005,Spain,Brazil,2532.0
-2005,Italy,Germany,66706.0
-2005,Brazil,United Stat,14138.0
-2005,Spain,China,12582.0
-2005,China,Italy,10729.0
-2005,Spain,France,42582.0
-2005,Italy,United Stat,13360.0
-2005,United Stat,Russia,16150.0
-2005,China,India,14053.0
-2005,India,Italy,1715.0
-2005,China,Germany,35903.0
-2005,Russia,Brazil,2342.0
-2005,Japan,Spain,1765.0
-2005,India,France,1801.0
-2005,United Stat,China,270461.0
-2005,India,Russia,1825.0
-2005,France,Spain,35231.0
-2005,China,Spain,2716.0
-2005,United Stat,Brazil,26221.0
-2005,India,Brazil,846.0
-2005,Russia,India,784.0
-2005,Russia,China,7258.0
-2005,Germany,India,4218.0
-2005,France,Brazil,3110.0
-2005,India,Spain,530.0
-2005,Brazil,Italy,2508.0
-2005,United Stat,Germany,86938.0
-2005,Italy,India,2746.0
-2005,France,Italy,41789.0
-2005,Germany,Brazil,7091.0
-2005,India,Germany,5368.0
-2005,Brazil,India,1323.0
-2005,China,France,12576.0
-2005,Japan,Italy,6888.0
-2005,China,Japan,136913.0
-2005,United Stat,France,34774.0
-2005,Germany,Spain,22405.0
-2005,Italy,Brazil,3586.0
-2005,India,Japan,3473.0
-2005,Spain,Russia,6369.0
-2005,Spain,Italy,24710.0
-2005,Italy,France,38413.0
-2005,Italy,Russia,14543.0
-2005,France,China,18521.0
-2005,Italy,Spain,16392.0
-2005,Russia,Japan,5841.0
-2005,Brazil,Japan,3748.0
-2005,France,India,2245.0
-2005,China,Brazil,10877.0
-2005,Spain,United Stat,7638.0
-2005,France,United Stat,25489.0
-2005,France,Japan,7919.0
-2005,China,United Stat,65476.0
-2005,Russia,France,3671.0
-2005,France,Russia,9932.0
-2005,Japan,Germany,17870.0
-2005,United Stat,India,19875.0
-2005,Russia,Germany,13226.0
-2005,Japan,Russia,6165.0
-2005,Germany,Italy,44280.0
-2005,United Stat,Spain,9128.0
-2005,Japan,France,8507.0
-2005,France,Germany,95346.0
-2005,United Stat,Japan,141950.0
-2005,Brazil,China,6322.0
-2005,Brazil,Russia,794.0
-2005,Germany,China,52052.0
-2005,Germany,United Stat,51367.0
-2005,Russia,United Stat,4571.0
-2005,Germany,Japan,26606.0
-2005,Russia,Spain,1224.0
-2005,Germany,Russia,26872.0
-2005,Spain,Germany,44107.0
-2005,Japan,China,110040.0
-2005,Russia,Italy,4436.0
-2005,Japan,India,3194.0
-2005,China,Russia,16241.0
-2005,Italy,Japan,6208.0
-2005,Brazil,Spain,1465.0
-2005,Brazil,France,2974.0
-2005,Japan,Brazil,4404.0
-2005,Germany,France,67876.0
-2005,Spain,India,1801.0
-2005,India,United Stat,7591.0
-2005,Japan,United Stat,65447.0
-2005,Brazil,Germany,6758.0
-2005,India,China,11887.0
-2006,Germany,France,79481.0
-2006,United Stat,Spain,10402.0
-2006,France,Germany,101318.0
-2006,China,United Stat,77354.0
-2006,Germany,Italy,49936.0
-2006,China,India,14787.0
-2006,Japan,Russia,6675.0
-2006,China,Russia,17892.0
-2006,Italy,Spain,18029.0
-2006,Russia,United Stat,6417.0
-2006,Spain,China,15700.0
-2006,Spain,United Stat,8751.0
-2006,Spain,India,2135.0
-2006,Italy,Germany,73041.0
-2006,United Stat,China,315362.0
-2006,Germany,China,56604.0
-2006,Spain,Russia,8996.0
-2006,Germany,Russia,36412.0
-2006,Spain,Germany,46489.0
-2006,France,Brazil,3215.0
-2006,Spain,Japan,5881.0
-2006,China,France,14841.0
-2006,France,India,2260.0
-2006,United Stat,Japan,152244.0
-2006,France,Spain,37316.0
-2006,Spain,Brazil,2607.0
-2006,Russia,Brazil,2985.0
-2006,India,Russia,3198.0
-2006,United Stat,Germany,91222.0
-2006,India,Brazil,1046.0
-2006,China,Italy,12693.0
-2006,China,Germany,43958.0
-2006,Brazil,China,9415.0
-2006,China,Japan,152629.0
-2006,India,Italy,3011.0
-2006,Brazil,Russia,798.0
-2006,Japan,Germany,18311.0
-2006,Germany,Spain,23782.0
-2006,Italy,United Stat,13529.0
-2006,Brazil,Germany,7767.0
-2006,Russia,Japan,7785.0
-2006,Brazil,United Stat,21150.0
-2006,India,France,3496.0
-2006,Russia,Germany,18428.0
-2006,Japan,Brazil,5048.0
-2006,India,China,19301.0
-2006,Japan,France,8972.0
-2006,Brazil,Italy,3090.0
-2006,Italy,India,3747.0
-2006,Italy,Japan,6836.0
-2006,India,Spain,729.0
-2006,France,Japan,7821.0
-2006,United Stat,Italy,34107.0
-2006,France,China,20536.0
-2006,Brazil,Spain,1501.0
-2006,Russia,Spain,1950.0
-2006,United Stat,Brazil,28031.0
-2006,France,United Stat,24650.0
-2006,Brazil,Japan,3352.0
-2006,Russia,France,5863.0
-2006,China,Spain,3635.0
-2006,Japan,India,4117.0
-2006,Italy,Russia,17041.0
-2006,Spain,France,41682.0
-2006,Russia,Italy,5724.0
-2006,Germany,Japan,21779.0
-2006,Germany,Brazil,6473.0
-2006,China,Brazil,13900.0
-2006,Italy,Brazil,4328.0
-2006,United Stat,India,22993.0
-2006,Japan,Italy,7052.0
-2006,France,Italy,44287.0
-2006,Germany,United Stat,45957.0
-2006,Italy,France,40092.0
-2006,Japan,United Stat,69329.0
-2006,France,Russia,11826.0
-2006,India,United Stat,11100.0
-2006,Spain,Italy,25495.0
-2006,Japan,Spain,1871.0
-2006,United Stat,Russia,20731.0
-2006,Japan,China,120028.0
-2006,United Stat,France,38089.0
-2006,Russia,India,967.0
-2006,Italy,China,23368.0
-2006,India,Japan,4935.0
-2006,Brazil,France,3495.0
-2006,India,Germany,8460.0
-2006,Russia,China,12976.0
-2006,Germany,India,4671.0
-2006,Brazil,India,1635.0
-2007,United Stat,France,42498.0
-2007,Italy,China,30463.0
-2007,Japan,France,10028.0
-2007,Spain,United Stat,11565.0
-2007,Russia,India,1317.0
-2007,Brazil,Russia,1880.0
-2007,Russia,United Stat,9502.0
-2007,Japan,China,129244.0
-2007,China,Russia,20348.0
-2007,United Stat,India,25114.0
-2007,Italy,Brazil,5185.0
-2007,United Stat,Italy,36471.0
-2007,Italy,Japan,7316.0
-2007,Italy,United Stat,14957.0
-2007,China,India,26689.0
-2007,France,China,25602.0
-2007,Japan,United Stat,72264.0
-2007,Italy,Spain,22208.0
-2007,India,France,5756.0
-2007,Spain,Russia,10585.0
-2007,Spain,Brazil,4138.0
-2007,United Stat,Russia,20221.0
-2007,Spain,China,22206.0
-2007,Brazil,France,3884.0
-2007,United Stat,Japan,149423.0
-2007,China,Brazil,21108.0
-2007,Russia,Brazil,4108.0
-2007,Brazil,Spain,2028.0
-2007,United Stat,China,348583.0
-2007,Japan,Brazil,6018.0
-2007,Russia,Spain,3197.0
-2007,Japan,India,4159.0
-2007,India,Italy,3592.0
-2007,Japan,Italy,7249.0
-2007,Brazil,India,2381.0
-2007,Japan,Russia,10560.0
-2007,India,Japan,5891.0
-2007,India,China,27338.0
-2007,Brazil,China,14548.0
-2007,France,India,3211.0
-2007,India,Russia,2454.0
-2007,Brazil,Italy,3682.0
-2007,Spain,Italy,33954.0
-2007,France,Brazil,4202.0
-2007,Russia,Japan,12717.0
-2007,China,Italy,18868.0
-2007,Spain,India,2839.0
-2007,Japan,Spain,1976.0
-2007,Spain,Japan,6482.0
-2007,China,Spain,5785.0
-2007,Italy,Russia,20023.0
-2007,Italy,France,46671.0
-2007,France,United Stat,27390.0
-2007,France,Russia,14664.0
-2007,Russia,Italy,8536.0
-2007,Brazil,United Stat,20791.0
-2007,Brazil,Japan,5071.0
-2007,India,Brazil,959.0
-2007,China,France,19580.0
-2007,Russia,China,24521.0
-2007,India,United Stat,18708.0
-2007,United Stat,Spain,11075.0
-2007,China,United Stat,108071.0
-2007,India,Spain,902.0
-2007,France,Italy,53259.0
-2007,France,Spain,44756.0
-2007,Russia,France,7769.0
-2007,United Stat,Brazil,27193.0
-2007,China,Japan,209705.0
-2007,Spain,France,50033.0
-2007,Italy,India,4634.0
-2007,France,Japan,8427.0
-2008,Japan,Spain,2516.0
-2008,France,Italy,58253.0
-2008,Italy,France,47663.0
-2008,France,Russia,19541.0
-2008,United Stat,Russia,27932.0
-2008,India,France,5031.0
-2008,Japan,France,10670.0
-2008,France,India,4289.0
-2008,United Stat,India,26932.0
-2008,United Stat,China,363990.0
-2008,Brazil,China,27666.0
-2008,Italy,China,35261.0
-2008,China,Spain,7085.0
-2008,France,United Stat,30377.0
-2008,Brazil,France,6349.0
-2008,Spain,United Stat,14194.0
-2008,Italy,Spain,21851.0
-2008,China,Japan,229358.0
-2008,France,Spain,48467.0
-2008,Spain,France,50582.0
-2008,France,China,28698.0
-2008,Spain,Russia,10994.0
-2008,India,United Stat,18889.0
-2008,Italy,United Stat,17355.0
-2008,Spain,Brazil,4531.0
-2008,China,Brazil,33706.0
-2008,China,United Stat,122897.0
-2008,Japan,United Stat,78975.0
-2008,Brazil,India,4577.0
-2008,China,France,22644.0
-2008,Brazil,Italy,6170.0
-2008,Spain,India,3192.0
-2008,India,China,35759.0
-2008,Russia,France,10058.0
-2008,United Stat,France,44905.0
-2008,Japan,Brazil,9157.0
-2008,Brazil,United Stat,34233.0
-2008,Spain,China,25799.0
-2008,Russia,Japan,18573.0
-2008,India,Brazil,1124.0
-2008,China,Italy,20821.0
-2008,India,Japan,7286.0
-2008,Italy,Brazil,5675.0
-2008,Italy,Russia,23725.0
-2008,Brazil,Spain,3292.0
-2008,Russia,India,1708.0
-2008,China,Russia,24724.0
-2008,France,Japan,8461.0
-2008,Russia,Brazil,4668.0
-2008,India,Italy,4206.0
-2008,Brazil,Russia,4372.0
-2008,Russia,Spain,4313.0
-2008,Japan,Italy,7969.0
-2008,Japan,China,145284.0
-2008,India,Russia,3835.0
-2008,United Stat,Italy,37496.0
-2008,Japan,India,5270.0
-2008,Brazil,Japan,9160.0
-2008,Spain,Japan,5792.0
-2008,Italy,Japan,7403.0
-2008,United Stat,Japan,143352.0
-2008,Japan,Russia,13377.0
-2008,Russia,China,34781.0
-2008,Italy,India,5066.0
-2008,Spain,Italy,33755.0
-2008,France,Brazil,5133.0
-2008,Russia,United Stat,13805.0
-2008,India,Spain,994.0
-2008,United Stat,Spain,11573.0
-2008,China,India,34391.0
-2008,United Stat,Brazil,32073.0
-2008,Russia,Italy,10989.0
-2009,India,France,4113.0
-2009,China,India,27457.0
-2009,United Stat,Russia,18994.0
-2009,Brazil,China,18066.0
-2009,Japan,Russia,8855.0
-2009,India,United Stat,16644.0
-2009,China,United Stat,117441.0
-2009,Russia,United Stat,8645.0
-2009,Italy,India,4035.0
-2009,Japan,United Stat,60487.0
-2009,Spain,India,2261.0
-2009,Brazil,France,3951.0
-2009,United Stat,China,313489.0
-2009,Italy,China,27340.0
-2009,Russia,Italy,7870.0
-2009,India,Japan,6386.0
-2009,China,Russia,22581.0
-2009,United Stat,France,34671.0
-2009,India,China,33811.0
-2009,Russia,France,6199.0
-2009,Brazil,Russia,1534.0
-2009,United Stat,Japan,98402.0
-2009,Brazil,Spain,2103.0
-2009,Japan,India,3729.0
-2009,France,Brazil,3427.0
-2009,France,United Stat,26502.0
-2009,China,Spain,5703.0
-2009,Russia,India,1522.0
-2009,Italy,Russia,16951.0
-2009,India,Italy,3574.0
-2009,Japan,China,123663.0
-2009,Spain,Italy,21642.0
-2009,Spain,Russia,6371.0
-2009,United Stat,Brazil,21018.0
-2009,France,Japan,6342.0
-2009,France,Italy,44559.0
-2009,Brazil,Italy,3902.0
-2009,Spain,China,16930.0
-2009,Japan,Spain,2349.0
-2009,Russia,Brazil,3503.0
-2009,France,Russia,12680.0
-2009,India,Russia,3472.0
-2009,Japan,France,9139.0
-2009,Spain,France,37596.0
-2009,China,Italy,18423.0
-2009,United Stat,India,22043.0
-2009,United Stat,Italy,27280.0
-2009,Russia,China,22926.0
-2009,France,India,3270.0
-2009,Russia,Spain,2277.0
-2009,Brazil,India,2442.0
-2009,Russia,Japan,7259.0
-2009,Spain,Brazil,3077.0
-2009,India,Spain,1028.0
-2009,Spain,United Stat,9296.0
-2009,Brazil,United Stat,22341.0
-2009,Italy,Spain,18352.0
-2009,China,Japan,193325.0
-2009,Italy,Japan,5410.0
-2009,Japan,Brazil,6365.0
-2009,Italy,France,36773.0
-2009,United Stat,Spain,8192.0
-2009,France,China,25204.0
-2009,China,France,19406.0
-2009,Japan,Italy,6364.0
-2009,Spain,Japan,3386.0
-2009,Italy,United Stat,13186.0
-2009,India,Brazil,3007.0
-2009,France,Spain,37398.0
-2009,China,Brazil,32108.0
-2009,Brazil,Japan,5955.0
-2009,Italy,Brazil,3351.0
+time,country1,country2,weight
+1980,Brazil,Spain,240
+1980,United Stat,Italy,4688
+1980,Italy,United Stat,6924
+1980,Italy,China,437
+1980,India,Italy,311
+1980,Spain,China,118
+1980,Russia,United Stat,1515
+1980,France,Japan,2767
+1980,Spain,Russia,444
+1980,Japan,Russia,1873
+1980,France,Russia,3556
+1980,France,Spain,3892
+1980,India,United Stat,1865
+1980,France,China,467
+1980,Spain,Italy,1686
+1980,Spain,France,2823
+1980,Brazil,Japan,1312
+1980,China,Russia,264
+1980,Spain,Brazil,596
+1980,India,France,330
+1980,China,France,315
+1980,Japan,France,1306
+1980,Spain,India,34
+1980,Brazil,China,290
+1980,Italy,India,266
+1980,Italy,Brazil,974
+1980,India,Japan,815
+1980,Russia,Italy,1267
+1980,France,United Stat,10730
+1980,Japan,Italy,943
+1980,France,India,354
+1980,Italy,Japan,1296
+1980,Italy,Russia,3063
+1980,India,Spain,83
+1980,France,Brazil,1192
+1980,Russia,Spain,259
+1980,India,China,83
+1980,Brazil,Italy,457
+1980,United Stat,Brazil,4000
+1980,India,Brazil,248
+1980,Italy,Spain,1581
+1980,United Stat,France,5549
+1980,China,Japan,5169
+1980,Japan,Spain,391
+1980,China,Italy,249
+1980,China,United Stat,3830
+1980,China,Spain,70
+1980,India,Russia,1233
+1980,Spain,Japan,839
+1980,Japan,China,4346
+1980,Japan,India,1020
+1980,Brazil,United Stat,5097
+1980,Brazil,India,3
+1980,Russia,France,2465
+1980,Japan,Brazil,1572
+1980,Brazil,Russia,40
+1980,United Stat,China,1164
+1980,China,Brazil,63
+1980,United Stat,Spain,1342
+1980,Russia,China,228
+1980,Russia,Brazil,370
+1980,United Stat,India,1210
+1980,Brazil,France,791
+1980,Spain,United Stat,4464
+1980,United Stat,Russia,486
+1980,Japan,United Stat,24567
+1980,Russia,India,1410
+1980,Russia,Japan,2796
+1980,United Stat,Japan,32973
+1980,France,Italy,12684
+1980,Italy,France,13822
+1981,Japan,United Stat,25275
+1981,China,Japan,6183
+1981,United Stat,Japan,39904
+1981,China,United Stat,4682
+1981,France,Japan,2744
+1981,Spain,Brazil,437
+1981,Russia,Japan,3578
+1981,India,Russia,1357
+1981,Spain,India,37
+1981,France,Brazil,1258
+1981,France,India,259
+1981,Japan,France,1172
+1981,Italy,Spain,1119
+1981,Japan,Russia,2020
+1981,Spain,Italy,1284
+1981,Brazil,France,713
+1981,Brazil,India,4
+1981,China,India,81
+1981,United Stat,India,1325
+1981,Russia,Spain,402
+1981,United Stat,France,6139
+1981,China,Brazil,118
+1981,France,China,510
+1981,Spain,Japan,858
+1981,United Stat,Spain,1665
+1981,United Stat,Italy,5549
+1981,France,Italy,10813
+1981,China,France,395
+1981,Japan,Brazil,1574
+1981,China,Russia,154
+1981,India,United Stat,1370
+1981,China,Spain,74
+1981,Russia,France,2052
+1981,India,Italy,240
+1981,Italy,United Stat,6137
+1981,France,Spain,3327
+1981,Brazil,Russia,25
+1981,Spain,United Stat,4456
+1981,Brazil,Italy,728
+1981,India,China,79
+1981,Japan,Italy,853
+1981,United Stat,Brazil,4852
+1981,Japan,India,1053
+1981,Russia,India,1726
+1981,Italy,India,226
+1981,Spain,China,110
+1981,Italy,Brazil,964
+1981,Italy,Russia,3073
+1981,India,Brazil,239
+1981,Italy,Japan,1269
+1981,Italy,China,401
+1981,United Stat,China,2062
+1981,Russia,Brazil,684
+1981,Spain,France,2578
+1981,India,Japan,880
+1981,Russia,United Stat,2675
+1981,Russia,Italy,1413
+1981,India,Spain,97
+1981,France,Russia,3360
+1981,Italy,France,11398
+1981,Spain,Russia,465
+1981,Japan,Spain,455
+1981,Brazil,China,436
+1981,China,Italy,344
+1981,United Stat,Russia,377
+1981,Brazil,Spain,118
+1981,Japan,China,5283
+1981,India,France,252
+1981,Brazil,United Stat,4327
+1981,Brazil,Japan,1518
+1981,Russia,China,135
+1981,France,United Stat,9852
+1982,India,Brazil,244
+1982,France,China,437
+1982,China,United Stat,4305
+1982,Russia,Spain,241
+1982,United Stat,India,1522
+1982,France,Russia,2884
+1982,Italy,Russia,3529
+1982,Italy,France,10784
+1982,Brazil,Spain,112
+1982,China,Spain,91
+1982,Russia,France,1715
+1982,Spain,Italy,1412
+1982,United Stat,Spain,1639
+1982,Italy,United Stat,5855
+1982,Brazil,China,403
+1982,France,Japan,3046
+1982,India,United Stat,1562
+1982,Brazil,Japan,1071
+1982,Japan,Brazil,1639
+1982,China,Russia,243
+1982,China,Brazil,133
+1982,Japan,France,1211
+1982,Japan,Russia,1668
+1982,Brazil,United Stat,3480
+1982,United Stat,China,2502
+1982,United Stat,Russia,247
+1982,Italy,Japan,1098
+1982,France,Italy,11099
+1982,India,Japan,1179
+1982,Spain,Russia,488
+1982,Russia,China,157
+1982,Spain,Japan,1005
+1982,Spain,France,2510
+1982,Italy,Brazil,1109
+1982,Spain,United Stat,4360
+1982,Italy,China,428
+1982,Brazil,Italy,569
+1982,India,Italy,283
+1982,Spain,India,160
+1982,Japan,Spain,367
+1982,United Stat,Brazil,4643
+1982,Japan,Italy,939
+1982,Spain,China,100
+1982,China,Japan,3902
+1982,France,Brazil,1159
+1982,India,Spain,99
+1982,France,India,662
+1982,Spain,Brazil,376
+1982,United Stat,France,5815
+1982,Japan,India,1120
+1982,Russia,Japan,4283
+1982,Russia,United Stat,2852
+1982,Russia,India,2059
+1982,United Stat,Japan,39931
+1982,Italy,India,221
+1982,France,United Stat,9109
+1982,India,France,341
+1982,Brazil,France,657
+1982,Russia,Brazil,560
+1982,China,France,231
+1982,Japan,China,5338
+1982,Russia,Italy,1649
+1982,China,Italy,320
+1982,Italy,Spain,1218
+1982,Brazil,Russia,235
+1982,India,Russia,1243
+1982,Brazil,India,2
+1982,China,India,75
+1982,United Stat,Italy,5656
+1982,France,Spain,3534
+1982,India,China,120
+1982,Japan,United Stat,24185
+1983,United Stat,Japan,43559
+1983,Russia,Japan,3104
+1983,Italy,Brazil,1007
+1983,France,Brazil,1191
+1983,United Stat,India,2334
+1983,Spain,China,84
+1983,France,Japan,2744
+1983,India,France,343
+1983,Japan,India,1131
+1983,India,Japan,1265
+1983,Spain,India,58
+1983,India,United Stat,1704
+1983,China,Italy,303
+1983,France,Russia,2801
+1983,Brazil,Spain,84
+1983,United Stat,Brazil,5381
+1983,China,Russia,441
+1983,China,Brazil,271
+1983,Spain,Italy,1267
+1983,Spain,Brazil,647
+1983,Brazil,China,655
+1983,Japan,China,5089
+1983,Italy,India,184
+1983,France,China,433
+1983,China,India,15
+1983,Brazil,Italy,252
+1983,India,China,70
+1983,Brazil,Japan,680
+1983,Italy,Spain,1123
+1983,Brazil,United Stat,2889
+1983,United Stat,France,6308
+1983,Russia,India,1423
+1983,Spain,Japan,975
+1983,United Stat,Russia,375
+1983,Russia,Brazil,738
+1983,Russia,Italy,2072
+1983,India,Italy,211
+1983,Russia,China,351
+1983,Japan,Italy,985
+1983,Italy,United Stat,4784
+1983,Italy,China,414
+1983,India,Spain,103
+1983,China,United Stat,2753
+1983,Brazil,India,1
+1983,Italy,France,10122
+1983,Spain,United Stat,3455
+1983,United Stat,Spain,1689
+1983,Japan,Spain,398
+1983,Brazil,France,538
+1983,China,France,639
+1983,China,Japan,5495
+1983,France,Italy,10461
+1983,Italy,Russia,3582
+1983,Japan,United Stat,24795
+1983,United Stat,China,2477
+1983,France,India,228
+1983,Spain,Russia,494
+1983,France,United Stat,8147
+1983,Japan,Brazil,1671
+1983,Russia,France,2464
+1983,Russia,United Stat,2203
+1983,United Stat,Italy,5820
+1983,Spain,France,2408
+1983,France,Spain,3585
+1983,China,Spain,157
+1983,Russia,Spain,368
+1983,India,Russia,1610
+1983,Brazil,Russia,209
+1983,India,Brazil,207
+1983,Japan,France,1302
+1983,Japan,Russia,1458
+1983,Italy,Japan,1114
+1984,Russia,Italy,1739
+1984,China,Brazil,417
+1984,Spain,India,39
+1984,China,Spain,201
+1984,Italy,Russia,4019
+1984,Japan,Spain,419
+1984,Brazil,Russia,185
+1984,India,Russia,1587
+1984,India,Spain,108
+1984,France,India,229
+1984,Russia,Japan,2766
+1984,Italy,Brazil,1221
+1984,Spain,Italy,1219
+1984,Brazil,Japan,670
+1984,Russia,Brazil,443
+1984,Italy,France,10454
+1984,China,France,357
+1984,France,Russia,2550
+1984,United Stat,France,8516
+1984,Russia,China,644
+1984,China,Russia,670
+1984,Italy,Japan,1348
+1984,Japan,Brazil,1988
+1984,Russia,France,2145
+1984,Japan,United Stat,26887
+1984,United Stat,India,2737
+1984,Brazil,Spain,49
+1984,France,Italy,10241
+1984,Japan,China,5943
+1984,India,Japan,1085
+1984,Japan,Russia,1388
+1984,Spain,Japan,881
+1984,China,United Stat,3837
+1984,Italy,India,250
+1984,Brazil,United Stat,2778
+1984,India,Brazil,314
+1984,Brazil,Italy,238
+1984,Italy,United Stat,5137
+1984,Spain,Russia,537
+1984,Japan,India,1133
+1984,Italy,Spain,1383
+1984,India,Italy,293
+1984,Brazil,France,437
+1984,France,United Stat,7990
+1984,Russia,Spain,394
+1984,Brazil,China,477
+1984,United Stat,Russia,600
+1984,Russia,India,1628
+1984,Japan,Italy,1046
+1984,United Stat,China,3381
+1984,France,Japan,2736
+1984,India,China,66
+1984,France,China,440
+1984,China,Italy,433
+1984,United Stat,Brazil,8273
+1984,United Stat,Spain,2628
+1984,China,India,25
+1984,Spain,United Stat,3250
+1984,France,Spain,3525
+1984,Brazil,India,1
+1984,France,Brazil,1132
+1984,India,France,321
+1984,India,United Stat,1482
+1984,Spain,China,114
+1984,United Stat,Italy,8504
+1984,China,Japan,8057
+1984,Italy,China,431
+1984,United Stat,Japan,60371
+1984,Spain,France,2483
+1984,Japan,France,1232
+1984,Spain,Brazil,560
+1984,Russia,United Stat,3612
+1985,Brazil,India,2
+1985,France,Spain,4122
+1985,Italy,China,593
+1985,United Stat,India,2479
+1985,Italy,United Stat,5396
+1985,Brazil,Japan,674
+1985,China,Spain,546
+1985,China,Brazil,972
+1985,China,Russia,1017
+1985,Italy,Japan,1492
+1985,India,Spain,129
+1985,India,Brazil,322
+1985,Brazil,United Stat,3108
+1985,Italy,Spain,1769
+1985,Japan,India,1197
+1985,United Stat,Brazil,8147
+1985,Japan,Spain,353
+1985,United Stat,China,4224
+1985,France,Russia,2494
+1985,France,China,499
+1985,Italy,Brazil,1407
+1985,Spain,Italy,1375
+1985,Japan,United Stat,26099
+1985,Spain,China,136
+1985,France,United Stat,8161
+1985,Brazil,Italy,221
+1985,Japan,France,1335
+1985,Russia,Italy,1697
+1985,India,Italy,265
+1985,France,India,360
+1985,Russia,Brazil,495
+1985,Japan,Russia,1438
+1985,Japan,Italy,1058
+1985,Spain,France,2790
+1985,Russia,United Stat,2665
+1985,Brazil,Spain,67
+1985,Italy,India,227
+1985,Spain,India,220
+1985,United Stat,Spain,2773
+1985,Italy,Russia,3011
+1985,India,Japan,1364
+1985,United Stat,Russia,443
+1985,Japan,Brazil,1864
+1985,Italy,France,11369
+1985,China,Japan,15178
+1985,Russia,Japan,3049
+1985,United Stat,France,9960
+1985,India,France,459
+1985,Russia,China,1141
+1985,Brazil,China,552
+1985,France,Japan,3028
+1985,United Stat,Japan,72380
+1985,Japan,China,6534
+1985,United Stat,Italy,10381
+1985,Spain,United Stat,3265
+1985,France,Brazil,1128
+1985,Spain,Japan,1025
+1985,India,China,104
+1985,France,Italy,10861
+1985,China,India,39
+1985,China,United Stat,5199
+1985,India,United Stat,1770
+1985,China,Italy,903
+1985,Brazil,France,359
+1985,Brazil,Russia,82
+1985,Russia,France,2070
+1985,China,France,718
+1985,Spain,Russia,382
+1985,Russia,Spain,483
+1985,India,Russia,1574
+1985,Spain,Brazil,626
+1985,Russia,India,1863
+1986,Brazil,Spain,103
+1986,China,France,742
+1986,United Stat,Spain,2956
+1986,Italy,India,249
+1986,China,India,39
+1986,Japan,United Stat,29410
+1986,Russia,China,1353
+1986,Russia,Japan,3496
+1986,Italy,Brazil,1140
+1986,Brazil,Italy,418
+1986,Russia,France,1677
+1986,Russia,Brazil,292
+1986,France,India,277
+1986,Italy,Russia,2322
+1986,Brazil,India,4
+1986,United Stat,Brazil,7340
+1986,France,China,710
+1986,Italy,France,14584
+1986,Spain,Japan,1729
+1986,China,Italy,1141
+1986,Russia,Spain,259
+1986,India,Japan,1931
+1986,Japan,China,5727
+1986,Italy,Japan,2099
+1986,India,France,516
+1986,United Stat,Italy,11312
+1986,Brazil,Japan,1077
+1986,Italy,Spain,1972
+1986,France,Spain,5345
+1986,Japan,Italy,1507
+1986,France,Brazil,1211
+1986,China,Brazil,710
+1986,Spain,France,4113
+1986,Russia,Italy,1795
+1986,India,Spain,153
+1986,United Stat,China,5241
+1986,France,United Stat,9676
+1986,Spain,China,241
+1986,Brazil,United Stat,3837
+1986,United Stat,Russia,606
+1986,China,United Stat,4718
+1986,China,Russia,1472
+1986,Brazil,France,681
+1986,Brazil,Russia,58
+1986,Russia,United Stat,1372
+1986,United Stat,Japan,85457
+1986,China,Spain,389
+1986,Spain,Brazil,625
+1986,India,United Stat,1430
+1986,United Stat,France,10586
+1986,Japan,Spain,384
+1986,Spain,United Stat,3445
+1986,India,Russia,698
+1986,Japan,India,1309
+1986,India,Brazil,212
+1986,United Stat,India,2465
+1986,France,Italy,14961
+1986,France,Japan,4666
+1986,France,Russia,2640
+1986,Russia,India,1715
+1986,Italy,United Stat,5669
+1986,Brazil,China,434
+1986,Spain,Russia,299
+1986,Japan,Brazil,1894
+1986,India,Italy,311
+1986,India,China,143
+1986,China,Japan,12463
+1986,Spain,Italy,2564
+1986,Italy,China,683
+1986,Spain,India,48
+1986,Japan,France,1870
+1986,Japan,Russia,1988
+1987,Brazil,Japan,1033
+1987,Brazil,India,3
+1987,Spain,France,6300
+1987,India,Japan,1742
+1987,Brazil,United Stat,3771
+1987,France,United Stat,11296
+1987,United Stat,China,6910
+1987,Spain,Italy,4336
+1987,France,Japan,6022
+1987,China,Russia,1291
+1987,Italy,United Stat,6659
+1987,Japan,United Stat,31957
+1987,Spain,China,328
+1987,Italy,Japan,2677
+1987,France,Spain,6905
+1987,China,India,30
+1987,China,Spain,336
+1987,India,Spain,155
+1987,Italy,Russia,2847
+1987,Japan,China,7478
+1987,Brazil,China,426
+1987,United Stat,France,11177
+1987,Russia,Japan,2845
+1987,Italy,Spain,2799
+1987,Italy,China,1024
+1987,Spain,Russia,839
+1987,Brazil,Italy,398
+1987,India,United Stat,1503
+1987,India,Russia,1211
+1987,United Stat,Brazil,8433
+1987,Spain,Japan,2209
+1987,China,Japan,10087
+1987,China,United Stat,4836
+1987,Russia,India,1518
+1987,United Stat,India,2725
+1987,Japan,Russia,2368
+1987,Brazil,Russia,96
+1987,Italy,Brazil,1450
+1987,Brazil,France,718
+1987,Japan,Italy,2154
+1987,Russia,Spain,278
+1987,Russia,Brazil,417
+1987,France,Italy,18487
+1987,Japan,France,2899
+1987,India,China,110
+1987,United Stat,Spain,3101
+1987,United Stat,Russia,470
+1987,China,Italy,1248
+1987,Brazil,Spain,132
+1987,India,France,585
+1987,Japan,India,1546
+1987,France,China,1099
+1987,Spain,India,77
+1987,United Stat,Japan,88074
+1987,India,Brazil,278
+1987,Russia,United Stat,1628
+1987,United Stat,Italy,11698
+1987,Spain,Brazil,598
+1987,Russia,France,1928
+1987,India,Italy,423
+1987,France,Brazil,1251
+1987,Russia,Italy,2428
+1987,France,India,374
+1987,France,Russia,2548
+1987,Japan,Spain,456
+1987,China,Brazil,453
+1987,Japan,Brazil,2052
+1987,Italy,France,18266
+1987,Spain,United Stat,4067
+1987,China,France,899
+1987,Italy,India,408
+1987,Russia,China,1372
+1988,Brazil,Japan,1164
+1988,India,France,631
+1988,Russia,India,1883
+1988,Italy,Brazil,1665
+1988,Russia,Italy,2323
+1988,Spain,China,384
+1988,United Stat,Italy,12300
+1988,China,Italy,1552
+1988,Italy,Japan,3498
+1988,China,India,98
+1988,Japan,United Stat,42267
+1988,Brazil,China,104
+1988,China,Spain,319
+1988,Russia,Japan,3444
+1988,Italy,India,462
+1988,United Stat,India,3153
+1988,Russia,Brazil,257
+1988,Russia,France,2132
+1988,Japan,France,4313
+1988,Japan,India,1806
+1988,United Stat,France,12839
+1988,China,Russia,1802
+1988,France,China,1441
+1988,China,United Stat,6633
+1988,India,Brazil,281
+1988,Italy,China,1428
+1988,United Stat,Brazil,9960
+1988,Brazil,France,676
+1988,Italy,Russia,3135
+1988,Brazil,Russia,35
+1988,Italy,United Stat,7715
+1988,Spain,Japan,3103
+1988,France,Japan,7388
+1988,Japan,China,9861
+1988,India,Spain,147
+1988,Spain,Russia,1108
+1988,United Stat,Spain,3476
+1988,Spain,United Stat,5404
+1988,United Stat,Russia,651
+1988,Spain,France,8179
+1988,Japan,Spain,632
+1988,India,Russia,1229
+1988,Spain,India,127
+1988,India,United Stat,1856
+1988,Brazil,India,12
+1988,France,Spain,7458
+1988,France,United Stat,13671
+1988,Russia,United Stat,3033
+1988,Brazil,United Stat,3681
+1988,Russia,China,1623
+1988,Japan,Brazil,2953
+1988,Japan,Russia,2772
+1988,India,Japan,1874
+1988,Brazil,Spain,108
+1988,United Stat,China,9261
+1988,China,Brazil,797
+1988,France,Russia,2810
+1988,China,Japan,11062
+1988,France,Brazil,1600
+1988,Russia,Spain,295
+1988,France,Italy,20585
+1988,Spain,Italy,5816
+1988,India,China,123
+1988,Brazil,Italy,344
+1988,Japan,Italy,2893
+1988,Italy,France,20618
+1988,France,India,421
+1988,India,Italy,422
+1988,United Stat,Japan,93128
+1988,China,France,987
+1988,Spain,Brazil,939
+1988,Italy,Spain,3373
+1989,Brazil,Spain,140
+1989,Spain,United Stat,6443
+1989,Russia,India,2574
+1989,France,Italy,21911
+1989,Italy,Brazil,2102
+1989,China,Italy,1835
+1989,Brazil,Italy,515
+1989,Spain,Russia,1292
+1989,Russia,United Stat,4698
+1989,France,Spain,8403
+1989,United Stat,Brazil,9001
+1989,France,India,470
+1989,United Stat,Russia,785
+1989,India,France,490
+1989,Spain,Italy,7054
+1989,India,Brazil,216
+1989,United Stat,Japan,97110
+1989,France,United Stat,14641
+1989,United Stat,India,3551
+1989,Japan,Italy,3786
+1989,United Stat,China,12901
+1989,Spain,Brazil,940
+1989,France,China,1720
+1989,Russia,Italy,2842
+1989,Japan,India,1963
+1989,India,Italy,563
+1989,Italy,China,1683
+1989,China,India,102
+1989,Japan,Spain,684
+1989,Russia,France,1893
+1989,Russia,Japan,3376
+1989,Brazil,France,623
+1989,France,Russia,2621
+1989,Italy,India,524
+1989,France,Brazil,1704
+1989,India,United Stat,2310
+1989,Italy,United Stat,8332
+1989,China,Brazil,940
+1989,Italy,Spain,3714
+1989,Italy,France,22495
+1989,Italy,Russia,3601
+1989,India,Russia,1157
+1989,Japan,China,11083
+1989,China,United Stat,7864
+1989,China,France,1420
+1989,Brazil,Japan,1455
+1989,Spain,China,528
+1989,Spain,Japan,3392
+1989,Russia,Spain,467
+1989,India,Japan,1494
+1989,France,Japan,7849
+1989,Spain,France,9775
+1989,China,Spain,340
+1989,India,China,39
+1989,Japan,Brazil,2978
+1989,Japan,France,5526
+1989,Brazil,Russia,46
+1989,Japan,United Stat,48253
+1989,United Stat,Spain,3586
+1989,Japan,Russia,2990
+1989,United Stat,Italy,12725
+1989,Brazil,India,33
+1989,Russia,China,1869
+1989,Russia,Brazil,335
+1989,Spain,India,186
+1989,Brazil,United Stat,4605
+1989,Italy,Japan,3526
+1989,India,Spain,117
+1989,United Stat,France,13512
+1989,Brazil,China,134
+1989,China,Russia,2147
+1989,China,Japan,10534
+1990,Brazil,Japan,1773
+1990,Russia,United Stat,3396
+1990,India,Japan,1801
+1990,France,Brazil,1736
+1990,United Stat,Italy,13395
+1990,India,Italy,569
+1990,Spain,Brazil,967
+1990,France,Spain,10967
+1990,Italy,Brazil,1993
+1990,United Stat,France,13594
+1990,Spain,France,12854
+1990,United Stat,India,3421
+1990,Italy,India,666
+1990,India,China,31
+1990,Brazil,Spain,264
+1990,Spain,Italy,8891
+1990,France,Japan,9338
+1990,Russia,India,3154
+1990,India,Brazil,227
+1990,India,Spain,111
+1990,United Stat,China,16296
+1990,United Stat,Brazil,8586
+1990,China,Brazil,514
+1990,Brazil,Italy,805
+1990,Spain,China,745
+1990,Japan,India,2075
+1990,Japan,France,7613
+1990,Japan,China,12057
+1990,Japan,Spain,907
+1990,Brazil,India,20
+1990,India,Russia,1322
+1990,China,Italy,1087
+1990,Spain,India,298
+1990,Japan,Russia,3370
+1990,China,Japan,7656
+1990,Russia,Spain,414
+1990,Russia,Japan,2819
+1990,Italy,Spain,5585
+1990,Brazil,France,699
+1990,Italy,United Stat,9254
+1990,Spain,Russia,1322
+1990,Russia,France,1645
+1990,France,India,661
+1990,China,France,1674
+1990,Brazil,United Stat,4956
+1990,United Stat,Russia,1168
+1990,France,Russia,3370
+1990,Russia,Italy,2921
+1990,Italy,Japan,4231
+1990,India,United Stat,2635
+1990,Spain,United Stat,7269
+1990,Japan,Italy,5024
+1990,Brazil,China,224
+1990,Brazil,Russia,142
+1990,Spain,Japan,3890
+1990,Russia,Brazil,229
+1990,France,United Stat,18956
+1990,Italy,China,1830
+1990,France,China,2213
+1990,China,India,97
+1990,Italy,France,25859
+1990,United Stat,Japan,93070
+1990,India,France,718
+1990,China,Russia,2213
+1990,China,Spain,325
+1990,Japan,United Stat,52842
+1990,France,Italy,26894
+1990,Russia,China,2253
+1990,Italy,Russia,4122
+1990,United Stat,Spain,3546
+1990,China,United Stat,6591
+1990,Japan,Brazil,3187
+1991,India,Germany,1551
+1991,United Stat,China,20305
+1991,Japan,Spain,815
+1991,Germany,Spain,10541
+1991,Italy,Germany,38180
+1991,Brazil,Spain,267
+1991,Brazil,Italy,930
+1991,Brazil,France,717
+1991,Russia,Germany,12179
+1991,China,Brazil,346
+1991,United Stat,Russia,915
+1991,Germany,Japan,23895
+1991,Italy,Russia,4510
+1991,France,Spain,11880
+1991,United Stat,France,13811
+1991,Spain,China,1149
+1991,Spain,Russia,746
+1991,Russia,Brazil,95
+1991,India,Brazil,195
+1991,China,Germany,3049
+1991,Germany,Russia,8819
+1991,Brazil,India,26
+1991,Brazil,Japan,1485
+1991,Germany,India,1681
+1991,India,China,21
+1991,Italy,United Stat,10196
+1991,United Stat,Italy,12341
+1991,France,Brazil,1686
+1991,Russia,India,1806
+1991,China,Russia,2081
+1991,China,India,120
+1991,France,Japan,9494
+1991,United Stat,Japan,95010
+1991,India,Russia,520
+1991,Spain,United Stat,7409
+1991,Spain,India,298
+1991,Russia,Japan,2329
+1991,Italy,Japan,4462
+1991,India,Spain,66
+1991,Germany,China,6986
+1991,Italy,China,2275
+1991,Spain,Germany,15112
+1991,Spain,Brazil,903
+1991,Japan,Russia,3318
+1991,France,Germany,41045
+1991,Spain,Japan,4372
+1991,Japan,Brazil,3189
+1991,United Stat,Brazil,7232
+1991,Brazil,Russia,158
+1991,Russia,Italy,2656
+1991,Russia,United Stat,3935
+1991,Japan,France,5816
+1991,Russia,China,2006
+1991,Russia,France,1604
+1991,Italy,Spain,6419
+1991,France,Italy,25207
+1991,China,United Stat,8010
+1991,Japan,China,14248
+1991,Germany,France,47674
+1991,India,Japan,1364
+1991,Italy,Brazil,1836
+1991,India,France,580
+1991,United Stat,Spain,3037
+1991,Spain,Italy,9285
+1991,China,France,1572
+1991,Brazil,United Stat,5935
+1991,France,China,3005
+1991,India,Italy,404
+1991,Japan,Italy,4538
+1991,France,Russia,3056
+1991,Italy,India,663
+1991,United Stat,India,3429
+1991,India,United Stat,1891
+1991,Germany,Italy,36213
+1991,Russia,Spain,335
+1991,Germany,United Stat,25897
+1991,France,United Stat,22079
+1991,Japan,India,2186
+1991,China,Italy,1458
+1991,Spain,France,14089
+1991,Brazil,Germany,2233
+1991,Germany,Brazil,3290
+1991,Brazil,China,83
+1991,France,India,630
+1991,United Stat,Germany,26985
+1991,Japan,Germany,10746
+1991,Italy,France,25902
+1991,China,Japan,10032
+1991,China,Spain,373
+1991,Japan,United Stat,53634
+1992,United Stat,India,4066
+1992,China,United Stat,8903
+1992,India,Spain,96
+1992,Germany,Italy,37532
+1992,China,India,181
+1992,Italy,France,27199
+1992,Russia,China,1669
+1992,India,Germany,1907
+1992,Spain,Russia,526
+1992,France,India,721
+1992,France,Italy,25403
+1992,India,Italy,519
+1992,France,United Stat,20103
+1992,Brazil,Italy,908
+1992,Spain,United Stat,7357
+1992,Germany,Spain,11008
+1992,Italy,India,767
+1992,Germany,France,48886
+1992,United Stat,Germany,29596
+1992,Germany,United Stat,27096
+1992,Spain,China,1620
+1992,Brazil,United Stat,5545
+1992,China,Japan,13686
+1992,Japan,Spain,769
+1992,Russia,India,822
+1992,Japan,United Stat,52693
+1992,China,Germany,4023
+1992,India,China,94
+1992,Germany,India,1723
+1992,Russia,Japan,1680
+1992,Russia,France,1286
+1992,Italy,Japan,4401
+1992,Italy,Brazil,1847
+1992,United Stat,France,15262
+1992,Brazil,Japan,1266
+1992,France,Brazil,1664
+1992,China,Brazil,519
+1992,France,Russia,1492
+1992,Japan,Germany,10746
+1992,Russia,Spain,420
+1992,China,Spain,354
+1992,France,Japan,9766
+1992,United Stat,Italy,12843
+1992,Italy,Germany,40655
+1992,Spain,India,312
+1992,France,China,3501
+1992,India,Brazil,213
+1992,Brazil,Germany,2091
+1992,United Stat,Spain,3188
+1992,Japan,Brazil,2849
+1992,Italy,Russia,2951
+1992,United Stat,Russia,511
+1992,Italy,China,2786
+1992,France,Germany,44594
+1992,United Stat,China,27413
+1992,Brazil,China,55
+1992,Spain,Germany,16374
+1992,United Stat,Japan,99481
+1992,China,France,1499
+1992,India,United Stat,2258
+1992,Spain,Brazil,984
+1992,India,Japan,1504
+1992,Germany,China,7493
+1992,India,France,636
+1992,Japan,Russia,2402
+1992,Italy,Spain,6330
+1992,Germany,Japan,24377
+1992,Japan,China,16972
+1992,China,Russia,3512
+1992,Spain,Japan,4655
+1992,Russia,Brazil,96
+1992,Brazil,France,643
+1992,Russia,United Stat,2885
+1992,Spain,Italy,9807
+1992,Germany,Russia,5873
+1992,China,Italy,1748
+1992,India,Russia,200
+1992,Russia,Italy,3052
+1992,Italy,United Stat,9892
+1992,France,Spain,12906
+1992,Japan,Italy,4161
+1992,United Stat,Brazil,8145
+1992,Brazil,Spain,172
+1992,Spain,France,15838
+1992,Japan,India,2035
+1992,Russia,Germany,6725
+1992,Germany,Brazil,3454
+1992,Japan,France,5416
+1992,Brazil,India,14
+1993,Germany,Italy,26724
+1993,France,Japan,8295
+1993,Russia,Brazil,114
+1993,India,Japan,1376
+1993,China,United Stat,10633
+1993,Brazil,France,814
+1993,United Stat,Italy,13829
+1993,Russia,France,899
+1993,Russia,Japan,1367
+1993,Italy,Spain,4942
+1993,France,Italy,20208
+1993,China,France,1645
+1993,India,Italy,538
+1993,Italy,Russia,3885
+1993,Germany,Japan,20655
+1993,Brazil,China,188
+1993,United Stat,France,15694
+1993,India,China,259
+1993,United Stat,Spain,3205
+1993,Russia,Spain,175
+1993,Spain,France,13950
+1993,Germany,India,1954
+1993,Russia,United Stat,2304
+1993,Japan,Germany,9824
+1993,Italy,India,819
+1993,United Stat,Brazil,8021
+1993,India,Russia,474
+1993,Brazil,India,72
+1993,Germany,Spain,8485
+1993,Russia,India,633
+1993,Italy,France,20100
+1993,United Stat,Russia,1847
+1993,India,United Stat,2171
+1993,France,China,3769
+1993,Russia,Italy,1106
+1993,Japan,Russia,2777
+1993,Italy,Germany,28527
+1993,Japan,United Stat,55943
+1993,France,United Stat,17606
+1993,Brazil,Italy,1106
+1993,China,Brazil,863
+1993,India,Germany,1587
+1993,Italy,China,2597
+1993,United Stat,Japan,110418
+1993,Japan,Spain,734
+1993,China,India,416
+1993,Germany,China,8326
+1993,Brazil,Spain,282
+1993,United Stat,India,4794
+1993,France,Spain,11076
+1993,Brazil,United Stat,7281
+1993,Germany,United Stat,24236
+1993,France,Brazil,1487
+1993,Russia,China,2335
+1993,India,Brazil,114
+1993,Spain,China,1341
+1993,Spain,United Stat,5625
+1993,Russia,Germany,5142
+1993,Brazil,Germany,2660
+1993,Brazil,Japan,1831
+1993,Spain,Japan,3189
+1993,Spain,Brazil,856
+1993,Spain,India,291
+1993,China,Germany,6056
+1993,China,Spain,475
+1993,Brazil,Russia,204
+1993,France,Russia,2685
+1993,China,Japan,23303
+1993,Japan,France,5148
+1993,Japan,Brazil,2867
+1993,India,France,613
+1993,Spain,Russia,990
+1993,China,Italy,2738
+1993,Germany,Brazil,2689
+1993,Italy,United Stat,7874
+1993,Germany,France,36992
+1993,United Stat,Germany,29462
+1993,China,Russia,4986
+1993,Germany,Russia,6478
+1993,United Stat,China,33513
+1993,Japan,China,20652
+1993,Italy,Japan,3819
+1993,Spain,Germany,12865
+1993,Japan,India,2287
+1993,France,India,762
+1993,Japan,Italy,3845
+1993,Spain,Italy,7434
+1993,Italy,Brazil,1529
+1993,India,Spain,95
+1993,France,Germany,35791
+1994,India,Japan,1840
+1994,Germany,France,40740
+1994,India,China,622
+1994,France,Spain,13938
+1994,Italy,Germany,32269
+1994,Spain,Russia,1015
+1994,Germany,Italy,30844
+1994,China,Japan,26319
+1994,United Stat,Japan,122470
+1994,India,Russia,389
+1994,United Stat,Germany,32690
+1994,United Stat,Russia,3437
+1994,Japan,Russia,3481
+1994,Italy,Russia,4802
+1994,Italy,Japan,3952
+1994,China,Brazil,1059
+1994,Japan,India,2650
+1994,China,India,321
+1994,Italy,China,3123
+1994,Japan,Spain,1147
+1994,Germany,Brazil,3147
+1994,Spain,Japan,3284
+1994,China,France,1940
+1994,Germany,Japan,21027
+1994,India,United Stat,2432
+1994,Brazil,China,510
+1994,Russia,France,1004
+1994,Brazil,Italy,2268
+1994,France,Italy,23031
+1994,Russia,India,587
+1994,France,Russia,2777
+1994,France,Japan,8498
+1994,Germany,Spain,10257
+1994,United Stat,Brazil,9307
+1994,Brazil,Russia,480
+1994,Spain,Germany,13465
+1994,Brazil,United Stat,7485
+1994,Italy,India,1006
+1994,Spain,China,1794
+1994,Spain,France,16093
+1994,Spain,India,333
+1994,Brazil,India,97
+1994,United Stat,France,17417
+1994,India,Brazil,541
+1994,Spain,United Stat,6727
+1994,France,India,902
+1994,Spain,Italy,8246
+1994,Russia,China,952
+1994,India,Spain,173
+1994,Brazil,France,950
+1994,China,United Stat,13977
+1994,Italy,France,22733
+1994,Japan,Italy,4937
+1994,France,United Stat,19480
+1994,United Stat,Spain,3810
+1994,China,Germany,7136
+1994,Germany,Russia,8158
+1994,Germany,United Stat,27453
+1994,United Stat,Italy,15442
+1994,Russia,United Stat,2071
+1994,India,France,489
+1994,Russia,Spain,245
+1994,Italy,Brazil,1849
+1994,Japan,United Stat,63067
+1994,Russia,Japan,1114
+1994,Brazil,Germany,3730
+1994,China,Spain,902
+1994,India,Italy,606
+1994,Japan,Brazil,3265
+1994,India,Germany,1899
+1994,Germany,India,2148
+1994,Brazil,Spain,352
+1994,Germany,China,9478
+1994,Russia,Germany,5682
+1994,United Stat,China,41362
+1994,France,China,4038
+1994,France,Brazil,1887
+1994,China,Russia,3466
+1994,United Stat,India,5663
+1994,China,Italy,3068
+1994,Spain,Brazil,924
+1994,Brazil,Japan,2653
+1994,Japan,China,27569
+1994,Italy,Spain,6509
+1994,Russia,Italy,1589
+1994,Russia,Brazil,193
+1994,France,Germany,40642
+1994,Japan,France,5685
+1994,Italy,United Stat,7779
+1994,Japan,Germany,11130
+1995,Japan,Russia,4752
+1995,India,France,696
+1995,Spain,Italy,10511
+1995,China,Spain,909
+1995,Brazil,Spain,895
+1995,Japan,Brazil,3948
+1995,Brazil,India,183
+1995,Germany,Brazil,3487
+1995,India,Japan,2234
+1995,Japan,Germany,13703
+1995,France,Japan,9584
+1995,Russia,Japan,763
+1995,Germany,Spain,13809
+1995,India,Italy,888
+1995,China,Japan,29007
+1995,China,India,398
+1995,Japan,China,35922
+1995,Germany,China,11107
+1995,Italy,Germany,39617
+1995,Spain,Germany,17560
+1995,Spain,Japan,3791
+1995,Brazil,Italy,3144
+1995,China,United Stat,16123
+1995,France,Russia,3484
+1995,France,United Stat,20899
+1995,Spain,India,481
+1995,France,Brazil,1996
+1995,India,China,811
+1995,Russia,India,614
+1995,United Stat,Russia,4270
+1995,Russia,Spain,241
+1995,China,Italy,3116
+1995,China,Brazil,1228
+1995,France,China,5140
+1995,Japan,Spain,1518
+1995,France,India,1107
+1995,Russia,Brazil,360
+1995,Brazil,United Stat,11499
+1995,India,Brazil,220
+1995,India,Russia,826
+1995,United Stat,Japan,127195
+1995,France,Italy,27269
+1995,Italy,China,3920
+1995,Russia,Germany,6537
+1995,Spain,France,19688
+1995,United Stat,China,48521
+1995,Germany,India,2515
+1995,Brazil,Russia,434
+1995,China,France,2649
+1995,Spain,Russia,1438
+1995,Japan,Italy,6364
+1995,United Stat,France,17770
+1995,Spain,United Stat,7372
+1995,Germany,United Stat,31365
+1995,Japan,France,6693
+1995,Russia,China,865
+1995,Brazil,China,1143
+1995,Italy,Japan,4491
+1995,United Stat,Brazil,9428
+1995,France,Germany,50523
+1995,Italy,Brazil,2040
+1995,Japan,United Stat,75880
+1995,Brazil,France,1520
+1995,Italy,France,28670
+1995,Italy,India,1341
+1995,Germany,Russia,9477
+1995,Germany,Italy,36964
+1995,India,Germany,2713
+1995,Spain,Brazil,1135
+1995,India,Spain,170
+1995,Italy,Spain,8149
+1995,France,Spain,17803
+1995,Brazil,Japan,3607
+1995,United Stat,Spain,4161
+1995,Germany,France,47580
+1995,Italy,United Stat,9887
+1995,Brazil,Germany,5192
+1995,Russia,United Stat,2651
+1995,Spain,China,2341
+1995,China,Russia,3799
+1995,Germany,Japan,24590
+1995,Russia,Italy,1851
+1995,Italy,Russia,5306
+1995,United Stat,Germany,38043
+1995,China,Germany,8035
+1995,Russia,France,1074
+1995,United Stat,India,6091
+1995,United Stat,Italy,17305
+1995,India,United Stat,3344
+1995,Japan,India,2917
+1996,United Stat,India,6528
+1996,United Stat,Brazil,9297
+1996,United Stat,Italy,19001
+1996,Brazil,Japan,3032
+1996,Japan,China,40405
+1996,Russia,China,996
+1996,India,Spain,196
+1996,United Stat,France,19196
+1996,Italy,Russia,4700
+1996,France,China,5928
+1996,United Stat,Russia,3745
+1996,Russia,Italy,2316
+1996,India,Germany,2738
+1996,France,Brazil,1757
+1996,India,Russia,632
+1996,Russia,United Stat,2896
+1996,United Stat,Spain,4563
+1996,Brazil,Italy,3202
+1996,France,Spain,18672
+1996,Italy,India,1329
+1996,Germany,United Stat,32551
+1996,India,Japan,2134
+1996,Japan,France,6268
+1996,United Stat,Japan,117963
+1996,Brazil,United Stat,13016
+1996,India,France,782
+1996,Brazil,Germany,5253
+1996,United Stat,China,54409
+1996,China,United Stat,16179
+1996,India,Brazil,168
+1996,Spain,Japan,3445
+1996,Spain,China,2412
+1996,Germany,Brazil,3240
+1996,United Stat,Germany,39989
+1996,India,China,702
+1996,Spain,Italy,11625
+1996,Brazil,China,1242
+1996,Italy,Germany,38233
+1996,Brazil,Russia,422
+1996,France,United Stat,21455
+1996,Russia,Brazil,204
+1996,China,Brazil,1484
+1996,China,Russia,5156
+1996,China,Germany,7325
+1996,Spain,Brazil,1160
+1996,China,India,719
+1996,Brazil,Spain,992
+1996,Russia,Japan,968
+1996,China,Spain,518
+1996,Japan,Italy,6777
+1996,Japan,United Stat,79897
+1996,Japan,Spain,1556
+1996,Japan,India,2852
+1996,Germany,France,47204
+1996,Japan,Germany,14189
+1996,France,India,1132
+1996,Germany,Italy,36553
+1996,Brazil,France,1475
+1996,Italy,China,4031
+1996,Russia,France,1267
+1996,France,Italy,26897
+1996,India,United Stat,3187
+1996,Brazil,India,200
+1996,France,Japan,8781
+1996,China,Japan,29190
+1996,Germany,Russia,10220
+1996,China,Italy,3247
+1996,Spain,France,21748
+1996,France,Germany,46979
+1996,Italy,France,27985
+1996,Germany,India,2633
+1996,Spain,Russia,1288
+1996,Italy,United Stat,10161
+1996,Italy,Brazil,1887
+1996,Germany,Spain,14627
+1996,Russia,Spain,357
+1996,France,Russia,4021
+1996,Russia,India,602
+1996,Italy,Spain,8559
+1996,Italy,Japan,3970
+1996,Germany,Japan,22677
+1996,Spain,India,557
+1996,Japan,Russia,3922
+1996,Russia,Germany,5158
+1996,China,France,2240
+1996,Spain,Germany,18038
+1996,India,Italy,1074
+1996,Germany,China,11915
+1996,Spain,United Stat,7720
+1996,Japan,Brazil,3754
+1997,Russia,United Stat,4061
+1997,Spain,Japan,3387
+1997,Brazil,Spain,1270
+1997,Spain,United Stat,7772
+1997,India,Japan,2156
+1997,India,Spain,174
+1997,France,United Stat,23329
+1997,Germany,Italy,34009
+1997,Brazil,China,1307
+1997,Italy,India,1335
+1997,United Stat,Italy,20184
+1997,France,Spain,17705
+1997,Japan,India,2658
+1997,France,China,6629
+1997,India,United Stat,3709
+1997,India,China,1029
+1997,France,India,1095
+1997,United Stat,Russia,4524
+1997,Spain,Brazil,1249
+1997,Germany,Spain,14715
+1997,Italy,Japan,4221
+1997,China,Japan,28990
+1997,India,Italy,938
+1997,Germany,Japan,21254
+1997,China,Spain,563
+1997,Japan,Brazil,3743
+1997,Germany,India,2397
+1997,Brazil,France,1828
+1997,Spain,India,554
+1997,Italy,United Stat,10382
+1997,Japan,Italy,5934
+1997,Germany,Russia,9897
+1997,United Stat,Brazil,10149
+1997,France,Brazil,1973
+1997,United Stat,Spain,4911
+1997,China,Germany,6184
+1997,Brazil,Russia,378
+1997,Russia,Brazil,467
+1997,Spain,Russia,1257
+1997,Japan,Spain,1349
+1997,China,India,897
+1997,Brazil,United Stat,15778
+1997,Italy,France,27469
+1997,China,France,3239
+1997,China,Brazil,1486
+1997,France,Germany,44061
+1997,France,Italy,26038
+1997,Russia,India,800
+1997,Italy,Germany,37409
+1997,India,Russia,666
+1997,Brazil,Germany,5644
+1997,Japan,China,41828
+1997,Japan,Russia,3988
+1997,Japan,Germany,12380
+1997,United Stat,France,21346
+1997,Russia,Spain,528
+1997,Italy,Russia,4288
+1997,United Stat,China,65832
+1997,India,Brazil,188
+1997,Germany,France,45773
+1997,Spain,Germany,18158
+1997,India,Germany,2604
+1997,Brazil,Japan,3959
+1997,United Stat,Germany,44193
+1997,Italy,Brazil,1900
+1997,United Stat,India,7712
+1997,Japan,United Stat,75975
+1997,Spain,France,21428
+1997,Russia,Italy,2651
+1997,Germany,Brazil,3677
+1997,France,Japan,8917
+1997,China,United Stat,16290
+1997,France,Russia,3480
+1997,Brazil,India,253
+1997,Russia,China,1261
+1997,Spain,Italy,11549
+1997,India,France,791
+1997,Japan,France,5809
+1997,China,Italy,2453
+1997,United Stat,Japan,124266
+1997,Italy,China,4429
+1997,Italy,Spain,9831
+1997,Germany,United Stat,33784
+1997,China,Russia,4084
+1997,Spain,China,2888
+1997,Brazil,Italy,3817
+1997,Russia,France,1592
+1997,Russia,Japan,985
+1997,Russia,Germany,6640
+1997,Germany,China,12363
+1998,Italy,China,4845
+1998,India,United Stat,3660
+1998,Russia,India,660
+1998,Italy,India,1414
+1998,United Stat,Japan,125091
+1998,Russia,United Stat,4052
+1998,China,Russia,3627
+1998,Spain,Japan,3732
+1998,Germany,Brazil,3833
+1998,India,China,1102
+1998,Brazil,United Stat,14918
+1998,Brazil,Germany,5763
+1998,Germany,United Stat,38335
+1998,France,Germany,49254
+1998,United Stat,Italy,21915
+1998,Germany,Italy,36030
+1998,Spain,Germany,20247
+1998,Italy,Japan,4742
+1998,Japan,India,2177
+1998,India,Germany,2238
+1998,Spain,Brazil,1256
+1998,Japan,Germany,10686
+1998,India,Brazil,197
+1998,Russia,China,1146
+1998,Russia,Brazil,621
+1998,Germany,Japan,23131
+1998,Spain,India,594
+1998,Germany,China,13089
+1998,Brazil,France,2186
+1998,Brazil,Italy,3516
+1998,India,Japan,2386
+1998,Spain,China,3093
+1998,France,Russia,2782
+1998,Russia,Spain,408
+1998,United Stat,Germany,51283
+1998,United Stat,India,8659
+1998,Italy,Germany,40653
+1998,China,United Stat,16997
+1998,Italy,Spain,9799
+1998,China,Spain,480
+1998,Italy,Russia,3720
+1998,Germany,France,51272
+1998,China,India,908
+1998,Italy,France,28442
+1998,Spain,Italy,12287
+1998,United Stat,Brazil,10642
+1998,Germany,India,2403
+1998,Japan,China,37079
+1998,Brazil,India,222
+1998,Germany,Russia,8386
+1998,Germany,Spain,16066
+1998,Russia,Japan,810
+1998,Japan,Brazil,2908
+1998,China,Japan,28307
+1998,France,Italy,28355
+1998,Japan,United Stat,67518
+1998,United Stat,France,24746
+1998,Italy,United Stat,10877
+1998,Spain,United Stat,7305
+1998,Spain,France,23865
+1998,France,Japan,9500
+1998,France,Brazil,1969
+1998,Brazil,Russia,327
+1998,India,Russia,579
+1998,Japan,Russia,2906
+1998,Russia,France,1578
+1998,China,France,3206
+1998,United Stat,Russia,6008
+1998,Japan,France,5737
+1998,India,Italy,1047
+1998,United Stat,Spain,5112
+1998,France,Spain,20299
+1998,France,United Stat,25304
+1998,France,China,7206
+1998,China,Italy,2283
+1998,Spain,Russia,1081
+1998,India,Spain,201
+1998,China,Brazil,1133
+1998,Brazil,Japan,3578
+1998,Brazil,Spain,1315
+1998,France,India,1170
+1998,Japan,Spain,1192
+1998,Italy,Brazil,2131
+1998,India,France,740
+1998,Japan,Italy,5100
+1998,United Stat,China,75109
+1998,Russia,Italy,1787
+1998,Russia,Germany,5404
+1998,China,Germany,6998
+1998,Brazil,China,1125
+1999,Russia,India,674
+1999,United Stat,France,26656
+1999,Brazil,Russia,347
+1999,Germany,Japan,22859
+1999,Spain,China,3588
+1999,Japan,Spain,1414
+1999,Spain,Italy,11902
+1999,Germany,India,2263
+1999,India,United Stat,3583
+1999,China,France,5778
+1999,China,Spain,979
+1999,Germany,Brazil,3478
+1999,Germany,United Stat,38756
+1999,Italy,France,28182
+1999,France,Brazil,1881
+1999,United Stat,Germany,55826
+1999,Italy,India,1303
+1999,Germany,Russia,8868
+1999,Germany,Spain,15160
+1999,India,Russia,604
+1999,United Stat,Spain,5432
+1999,Russia,Japan,455
+1999,India,Japan,2518
+1999,China,Russia,4348
+1999,India,Italy,823
+1999,United Stat,Japan,134009
+1999,China,Brazil,1412
+1999,Brazil,Italy,2860
+1999,Spain,Germany,21826
+1999,Italy,Russia,4469
+1999,Spain,India,609
+1999,Russia,Italy,1157
+1999,Russia,Germany,4195
+1999,France,Russia,2914
+1999,China,Germany,11958
+1999,Japan,France,6154
+1999,Italy,Japan,5502
+1999,Germany,Italy,34505
+1999,United Stat,China,98678
+1999,Brazil,United Stat,13056
+1999,Japan,Russia,3767
+1999,Brazil,Germany,5184
+1999,Russia,Brazil,712
+1999,Japan,Brazil,2689
+1999,Brazil,France,2191
+1999,Italy,Brazil,1954
+1999,Russia,United Stat,2387
+1999,Brazil,Japan,2833
+1999,India,Spain,159
+1999,Germany,China,16951
+1999,France,Italy,29430
+1999,Japan,India,2246
+1999,United Stat,Italy,23161
+1999,Spain,Brazil,1295
+1999,Italy,United Stat,10697
+1999,Spain,France,24820
+1999,Japan,China,44877
+1999,Italy,Spain,9607
+1999,India,China,1966
+1999,Russia,Spain,246
+1999,Italy,Germany,42208
+1999,Spain,Russia,1272
+1999,France,Japan,7041
+1999,Japan,Germany,11513
+1999,United Stat,India,9598
+1999,China,India,3185
+1999,India,France,720
+1999,United Stat,Brazil,11832
+1999,Brazil,China,1262
+1999,Brazil,Spain,1297
+1999,China,Italy,5426
+1999,France,India,1128
+1999,Italy,China,5663
+1999,India,Germany,1916
+1999,Germany,France,48875
+1999,India,Brazil,297
+1999,United Stat,Russia,6094
+1999,China,United Stat,32318
+1999,France,Germany,59493
+1999,Japan,United Stat,67529
+1999,Spain,United Stat,6529
+1999,Russia,France,1181
+1999,Russia,China,893
+1999,France,United Stat,25059
+1999,China,Japan,56051
+1999,Brazil,India,401
+1999,France,Spain,21092
+1999,Japan,Italy,5037
+1999,France,China,6997
+1999,Spain,Japan,3691
+2000,Italy,Russia,7639
+2000,Brazil,India,378
+2000,United Stat,Spain,6048
+2000,United Stat,India,11034
+2000,Japan,India,2637
+2000,Japan,Spain,1363
+2000,Spain,India,684
+2000,Russia,China,951
+2000,China,France,6207
+2000,Italy,China,6862
+2000,Spain,France,25581
+2000,France,Brazil,2525
+2000,India,Russia,544
+2000,Russia,Italy,1211
+2000,United Stat,Japan,149520
+2000,United Stat,Italy,26001
+2000,Spain,Germany,21675
+2000,Brazil,Spain,1225
+2000,France,Russia,4155
+2000,China,Russia,5905
+2000,Russia,Germany,3896
+2000,Italy,United Stat,12453
+2000,Italy,India,1500
+2000,Italy,Germany,41164
+2000,Russia,Spain,313
+2000,United Stat,Russia,7830
+2000,China,Italy,6127
+2000,France,China,8155
+2000,India,France,661
+2000,Germany,Brazil,3573
+2000,Russia,United Stat,2703
+2000,Brazil,China,1737
+2000,France,Japan,7786
+2000,United Stat,Germany,59481
+2000,India,Japan,2016
+2000,Brazil,Russia,628
+2000,Russia,India,556
+2000,Japan,Brazil,3001
+2000,Brazil,Japan,3255
+2000,France,Spain,22083
+2000,Spain,Italy,12315
+2000,Spain,United Stat,6607
+2000,Germany,Japan,24533
+2000,Germany,China,19430
+2000,Germany,Spain,14517
+2000,Brazil,United Stat,14303
+2000,China,Brazil,2100
+2000,United Stat,Brazil,14393
+2000,China,India,3963
+2000,Brazil,Germany,4863
+2000,Italy,Japan,5934
+2000,Germany,Russia,13365
+2000,Spain,Russia,2202
+2000,Brazil,Italy,2387
+2000,Japan,Germany,12733
+2000,Germany,Italy,33453
+2000,China,Spain,1120
+2000,Italy,Spain,9694
+2000,Japan,Russia,4554
+2000,France,India,1169
+2000,Russia,Japan,572
+2000,Russia,France,1188
+2000,Italy,France,26828
+2000,France,Italy,28737
+2000,India,United Stat,3152
+2000,India,Italy,726
+2000,India,Brazil,192
+2000,France,Germany,55122
+2000,China,United Stat,37045
+2000,France,United Stat,24557
+2000,India,Spain,142
+2000,Japan,France,6410
+2000,China,Germany,14276
+2000,United Stat,China,119417
+2000,Spain,Brazil,1149
+2000,Spain,Japan,3348
+2000,Russia,Brazil,388
+2000,Germany,France,47915
+2000,India,China,2292
+2000,Brazil,France,2075
+2000,Germany,United Stat,42791
+2000,Japan,Italy,5313
+2000,India,Germany,1780
+2000,Spain,China,4052
+2000,Italy,Brazil,2373
+2000,China,Japan,68849
+2000,Japan,United Stat,72514
+2000,United Stat,France,30084
+2000,Japan,China,56847
+2000,Germany,India,2236
+2001,Spain,Italy,11964
+2001,Italy,Russia,7646
+2001,Italy,United Stat,11465
+2001,India,Spain,220
+2001,Spain,China,4202
+2001,Russia,China,1625
+2001,Russia,Brazil,918
+2001,Japan,France,6183
+2001,Italy,Germany,41313
+2001,Italy,Brazil,2055
+2001,Spain,France,24255
+2001,India,Russia,765
+2001,Japan,Russia,3854
+2001,Japan,United Stat,63713
+2001,Germany,United Stat,40710
+2001,France,Russia,4470
+2001,Germany,Italy,31938
+2001,India,United Stat,4141
+2001,India,Brazil,314
+2001,Japan,Spain,1295
+2001,China,Italy,6740
+2001,Japan,Brazil,2542
+2001,China,Spain,1172
+2001,United Stat,Spain,5582
+2001,Brazil,India,597
+2001,China,India,3790
+2001,Japan,Italy,5388
+2001,India,Japan,2134
+2001,Russia,Italy,1341
+2001,Japan,Germany,12391
+2001,Germany,Russia,13007
+2001,Russia,Spain,486
+2001,Spain,United Stat,5990
+2001,Germany,France,46260
+2001,United Stat,Japan,129708
+2001,United Stat,Germany,60492
+2001,Russia,India,541
+2001,Germany,Japan,20251
+2001,Germany,Brazil,3653
+2001,Spain,India,770
+2001,Brazil,United Stat,14342
+2001,Japan,India,2212
+2001,Brazil,China,1846
+2001,France,China,8055
+2001,India,Germany,2272
+2001,China,Brazil,2819
+2001,France,Brazil,2617
+2001,France,India,1151
+2001,Brazil,Japan,3370
+2001,Spain,Japan,3062
+2001,United Stat,Brazil,15259
+2001,Russia,United Stat,3199
+2001,Russia,Japan,813
+2001,Spain,Russia,1764
+2001,India,China,3416
+2001,Brazil,Italy,2404
+2001,France,Germany,61466
+2001,United Stat,France,30984
+2001,Italy,India,1492
+2001,China,Germany,17532
+2001,India,Italy,1017
+2001,Germany,India,2240
+2001,Russia,Germany,5716
+2001,United Stat,Russia,6532
+2001,Italy,Japan,5618
+2001,India,France,1077
+2001,Brazil,Russia,511
+2001,Germany,China,20077
+2001,China,Russia,8085
+2001,Italy,Spain,9763
+2001,France,Italy,28379
+2001,Japan,China,59260
+2001,China,United Stat,40392
+2001,Italy,China,7088
+2001,Spain,Germany,22774
+2001,United Stat,India,10291
+2001,United Stat,China,120747
+2001,France,Japan,6562
+2001,Brazil,Spain,1349
+2001,China,France,7900
+2001,United Stat,Italy,24954
+2001,China,Japan,66192
+2001,Germany,Spain,13986
+2001,Brazil,France,2291
+2001,France,Spain,21045
+2001,Russia,France,1516
+2001,Italy,France,25954
+2001,France,United Stat,24174
+2001,Brazil,Germany,5293
+2001,Spain,Brazil,1232
+2002,Russia,India,515
+2002,France,Brazil,2174
+2002,Russia,Brazil,949
+2002,China,Spain,1357
+2002,Germany,India,2380
+2002,Russia,France,1880
+2002,Italy,Russia,7493
+2002,Spain,Italy,13266
+2002,Spain,Japan,3166
+2002,Germany,Italy,31795
+2002,United Stat,Italy,25419
+2002,United Stat,Russia,7146
+2002,Spain,Russia,2486
+2002,Japan,Italy,5432
+2002,Spain,United Stat,5653
+2002,France,Japan,6314
+2002,Brazil,Spain,1073
+2002,Brazil,Russia,470
+2002,United Stat,France,29031
+2002,France,Spain,22133
+2002,France,Germany,63642
+2002,France,India,1200
+2002,China,India,4827
+2002,Brazil,United Stat,11482
+2002,Japan,Brazil,2668
+2002,Japan,Russia,3276
+2002,United Stat,India,12450
+2002,Spain,Brazil,1264
+2002,Brazil,Italy,1938
+2002,Germany,Spain,14880
+2002,United Stat,China,144573
+2002,United Stat,Germany,63884
+2002,India,Germany,2310
+2002,India,France,1032
+2002,Spain,India,885
+2002,India,Spain,175
+2002,China,Germany,20491
+2002,France,United Stat,22277
+2002,China,Brazil,3534
+2002,Japan,France,6533
+2002,Germany,China,22287
+2002,Japan,China,63231
+2002,Italy,China,8290
+2002,Germany,Russia,12362
+2002,India,Japan,1914
+2002,India,China,3525
+2002,United Stat,Brazil,16722
+2002,Russia,China,2392
+2002,Italy,Japan,5009
+2002,Russia,Italy,2205
+2002,Brazil,France,1922
+2002,India,United Stat,4129
+2002,Spain,China,4748
+2002,Spain,Germany,25528
+2002,Italy,Brazil,2041
+2002,Germany,United Stat,37803
+2002,China,Italy,7275
+2002,Italy,Germany,43208
+2002,Germany,France,46543
+2002,Japan,Spain,1129
+2002,Brazil,Germany,4838
+2002,Brazil,Japan,2582
+2002,Japan,United Stat,58589
+2002,China,Russia,8590
+2002,Japan,Germany,12437
+2002,Brazil,India,631
+2002,China,Japan,79092
+2002,United Stat,Japan,124633
+2002,France,China,8618
+2002,France,Russia,4789
+2002,Germany,Japan,18083
+2002,Italy,India,1493
+2002,Russia,Germany,6508
+2002,Russia,Spain,572
+2002,Brazil,China,2038
+2002,Italy,United Stat,11819
+2002,Germany,Brazil,3579
+2002,Italy,Spain,11146
+2002,India,Brazil,315
+2002,Japan,India,2090
+2002,India,Russia,578
+2002,India,Italy,785
+2002,China,United Stat,39968
+2002,Russia,United Stat,2923
+2002,Italy,France,27478
+2002,United Stat,Spain,6063
+2002,Spain,France,26232
+2002,China,France,7040
+2002,Russia,Japan,974
+2002,France,Italy,28969
+2003,France,Italy,36389
+2003,India,Russia,868
+2003,Germany,Spain,18430
+2003,France,Germany,78101
+2003,United Stat,Italy,26665
+2003,India,Japan,2460
+2003,United Stat,India,13752
+2003,China,United Stat,47588
+2003,Japan,France,7235
+2003,Brazil,France,1945
+2003,Japan,Russia,4235
+2003,Japan,Spain,1385
+2003,China,Brazil,6542
+2003,India,United Stat,4890
+2003,India,Germany,2790
+2003,Spain,Russia,3210
+2003,Germany,Japan,21455
+2003,Italy,Russia,9285
+2003,Spain,Germany,34959
+2003,Spain,Brazil,1856
+2003,France,Brazil,2614
+2003,Japan,United Stat,59892
+2003,Italy,Brazil,2443
+2003,Germany,China,30635
+2003,Germany,United Stat,43626
+2003,Brazil,Russia,611
+2003,United Stat,China,173973
+2003,Germany,India,2924
+2003,Japan,Italy,6100
+2003,France,Russia,6763
+2003,Japan,Germany,14227
+2003,France,India,1406
+2003,India,China,5106
+2003,Russia,India,579
+2003,China,Germany,28861
+2003,United Stat,Germany,69618
+2003,Spain,Italy,19050
+2003,Germany,France,54764
+2003,Italy,United Stat,11583
+2003,Brazil,Germany,4626
+2003,Spain,China,6697
+2003,United Stat,Japan,121233
+2003,Spain,United Stat,6254
+2003,India,Brazil,314
+2003,Spain,India,1142
+2003,Brazil,Spain,1071
+2003,United Stat,Spain,7141
+2003,Italy,Japan,5967
+2003,Russia,Spain,749
+2003,India,France,1092
+2003,India,Italy,1006
+2003,France,China,11355
+2003,Russia,France,2312
+2003,France,United Stat,21026
+2003,France,Spain,29397
+2003,Spain,Japan,4294
+2003,Italy,Spain,14462
+2003,Italy,China,11414
+2003,United Stat,Brazil,18965
+2003,Brazil,Italy,1933
+2003,Brazil,United Stat,10699
+2003,Russia,United Stat,2931
+2003,India,Spain,238
+2003,Brazil,China,2645
+2003,United Stat,France,29902
+2003,China,Italy,8173
+2003,Russia,Germany,7956
+2003,Germany,Russia,15019
+2003,France,Japan,7433
+2003,Germany,Brazil,4317
+2003,Russia,China,3278
+2003,Russia,Brazil,1473
+2003,Japan,India,2174
+2003,Italy,India,1896
+2003,Russia,Italy,2369
+2003,Italy,Germany,53933
+2003,United Stat,Russia,9085
+2003,China,France,8717
+2003,Brazil,Japan,2773
+2003,Germany,Italy,37795
+2003,Brazil,India,535
+2003,Italy,France,33982
+2003,China,India,7353
+2003,Russia,Japan,1816
+2003,China,Russia,10054
+2003,China,Spain,1805
+2003,Japan,Brazil,2884
+2003,Japan,China,76933
+2003,China,Japan,104309
+2003,Spain,France,35085
+2004,Italy,United Stat,12437
+2004,China,India,11235
+2004,China,Germany,35520
+2004,France,Japan,8520
+2004,Italy,China,15503
+2004,India,United Stat,5981
+2004,United Stat,India,16437
+2004,Italy,Russia,12065
+2004,China,Russia,12451
+2004,Germany,India,3647
+2004,Italy,India,2521
+2004,Japan,Spain,1747
+2004,Japan,Brazil,3650
+2004,Germany,Italy,43492
+2004,France,Brazil,2810
+2004,Germany,Brazil,5695
+2004,United Stat,Russia,12560
+2004,Russia,India,643
+2004,United Stat,Brazil,22734
+2004,Brazil,Germany,5579
+2004,Italy,Japan,6854
+2004,United Stat,China,221882
+2004,Germany,France,64901
+2004,Spain,China,9207
+2004,Spain,Japan,5734
+2004,China,United Stat,60723
+2004,France,Russia,9016
+2004,Spain,Italy,23618
+2004,Germany,United Stat,50017
+2004,India,Spain,344
+2004,United Stat,France,32619
+2004,Brazil,Japan,3155
+2004,Russia,United Stat,3205
+2004,Japan,United Stat,63605
+2004,Japan,Italy,6897
+2004,Italy,France,38923
+2004,Brazil,China,4462
+2004,Japan,Germany,17086
+2004,Brazil,Spain,1293
+2004,China,Italy,10157
+2004,United Stat,Japan,133339
+2004,China,Japan,130121
+2004,Germany,China,43231
+2004,Brazil,France,2517
+2004,India,China,7730
+2004,China,Brazil,9464
+2004,Spain,United Stat,7416
+2004,India,Brazil,650
+2004,France,Spain,34724
+2004,Russia,Spain,878
+2004,Brazil,Russia,889
+2004,France,India,1807
+2004,Italy,Spain,16554
+2004,Russia,Italy,3197
+2004,Spain,Russia,4436
+2004,United Stat,Italy,29408
+2004,China,Spain,2257
+2004,Brazil,India,612
+2004,Russia,Japan,3937
+2004,India,Japan,2921
+2004,Russia,Germany,10571
+2004,France,China,15049
+2004,Germany,Russia,20243
+2004,Russia,Brazil,1370
+2004,Brazil,United Stat,12671
+2004,Germany,Japan,26233
+2004,Spain,India,1505
+2004,Germany,Spain,21539
+2004,United Stat,Spain,7931
+2004,India,France,1311
+2004,France,Germany,90443
+2004,India,Italy,1260
+2004,Brazil,Italy,2258
+2004,China,France,10479
+2004,Spain,France,41113
+2004,Russia,France,3061
+2004,Japan,China,95987
+2004,Russia,China,4744
+2004,France,Italy,41487
+2004,Italy,Germany,63823
+2004,France,United Stat,23747
+2004,India,Russia,1189
+2004,India,Germany,3631
+2004,Spain,Brazil,2293
+2004,Italy,Brazil,3313
+2004,Japan,France,8359
+2004,Japan,Russia,5693
+2004,United Stat,Germany,79117
+2004,Japan,India,2611
+2004,Spain,Germany,43238
+2005,United Stat,Italy,32419
+2005,Italy,China,18259
+2005,Spain,Japan,5919
+2005,Spain,Brazil,2532
+2005,Italy,Germany,66706
+2005,Brazil,United Stat,14138
+2005,Spain,China,12582
+2005,China,Italy,10729
+2005,Spain,France,42582
+2005,Italy,United Stat,13360
+2005,United Stat,Russia,16150
+2005,China,India,14053
+2005,India,Italy,1715
+2005,China,Germany,35903
+2005,Russia,Brazil,2342
+2005,Japan,Spain,1765
+2005,India,France,1801
+2005,United Stat,China,270461
+2005,India,Russia,1825
+2005,France,Spain,35231
+2005,China,Spain,2716
+2005,United Stat,Brazil,26221
+2005,India,Brazil,846
+2005,Russia,India,784
+2005,Russia,China,7258
+2005,Germany,India,4218
+2005,France,Brazil,3110
+2005,India,Spain,530
+2005,Brazil,Italy,2508
+2005,United Stat,Germany,86938
+2005,Italy,India,2746
+2005,France,Italy,41789
+2005,Germany,Brazil,7091
+2005,India,Germany,5368
+2005,Brazil,India,1323
+2005,China,France,12576
+2005,Japan,Italy,6888
+2005,China,Japan,136913
+2005,United Stat,France,34774
+2005,Germany,Spain,22405
+2005,Italy,Brazil,3586
+2005,India,Japan,3473
+2005,Spain,Russia,6369
+2005,Spain,Italy,24710
+2005,Italy,France,38413
+2005,Italy,Russia,14543
+2005,France,China,18521
+2005,Italy,Spain,16392
+2005,Russia,Japan,5841
+2005,Brazil,Japan,3748
+2005,France,India,2245
+2005,China,Brazil,10877
+2005,Spain,United Stat,7638
+2005,France,United Stat,25489
+2005,France,Japan,7919
+2005,China,United Stat,65476
+2005,Russia,France,3671
+2005,France,Russia,9932
+2005,Japan,Germany,17870
+2005,United Stat,India,19875
+2005,Russia,Germany,13226
+2005,Japan,Russia,6165
+2005,Germany,Italy,44280
+2005,United Stat,Spain,9128
+2005,Japan,France,8507
+2005,France,Germany,95346
+2005,United Stat,Japan,141950
+2005,Brazil,China,6322
+2005,Brazil,Russia,794
+2005,Germany,China,52052
+2005,Germany,United Stat,51367
+2005,Russia,United Stat,4571
+2005,Germany,Japan,26606
+2005,Russia,Spain,1224
+2005,Germany,Russia,26872
+2005,Spain,Germany,44107
+2005,Japan,China,110040
+2005,Russia,Italy,4436
+2005,Japan,India,3194
+2005,China,Russia,16241
+2005,Italy,Japan,6208
+2005,Brazil,Spain,1465
+2005,Brazil,France,2974
+2005,Japan,Brazil,4404
+2005,Germany,France,67876
+2005,Spain,India,1801
+2005,India,United Stat,7591
+2005,Japan,United Stat,65447
+2005,Brazil,Germany,6758
+2005,India,China,11887
+2006,Germany,France,79481
+2006,United Stat,Spain,10402
+2006,France,Germany,101318
+2006,China,United Stat,77354
+2006,Germany,Italy,49936
+2006,China,India,14787
+2006,Japan,Russia,6675
+2006,China,Russia,17892
+2006,Italy,Spain,18029
+2006,Russia,United Stat,6417
+2006,Spain,China,15700
+2006,Spain,United Stat,8751
+2006,Spain,India,2135
+2006,Italy,Germany,73041
+2006,United Stat,China,315362
+2006,Germany,China,56604
+2006,Spain,Russia,8996
+2006,Germany,Russia,36412
+2006,Spain,Germany,46489
+2006,France,Brazil,3215
+2006,Spain,Japan,5881
+2006,China,France,14841
+2006,France,India,2260
+2006,United Stat,Japan,152244
+2006,France,Spain,37316
+2006,Spain,Brazil,2607
+2006,Russia,Brazil,2985
+2006,India,Russia,3198
+2006,United Stat,Germany,91222
+2006,India,Brazil,1046
+2006,China,Italy,12693
+2006,China,Germany,43958
+2006,Brazil,China,9415
+2006,China,Japan,152629
+2006,India,Italy,3011
+2006,Brazil,Russia,798
+2006,Japan,Germany,18311
+2006,Germany,Spain,23782
+2006,Italy,United Stat,13529
+2006,Brazil,Germany,7767
+2006,Russia,Japan,7785
+2006,Brazil,United Stat,21150
+2006,India,France,3496
+2006,Russia,Germany,18428
+2006,Japan,Brazil,5048
+2006,India,China,19301
+2006,Japan,France,8972
+2006,Brazil,Italy,3090
+2006,Italy,India,3747
+2006,Italy,Japan,6836
+2006,India,Spain,729
+2006,France,Japan,7821
+2006,United Stat,Italy,34107
+2006,France,China,20536
+2006,Brazil,Spain,1501
+2006,Russia,Spain,1950
+2006,United Stat,Brazil,28031
+2006,France,United Stat,24650
+2006,Brazil,Japan,3352
+2006,Russia,France,5863
+2006,China,Spain,3635
+2006,Japan,India,4117
+2006,Italy,Russia,17041
+2006,Spain,France,41682
+2006,Russia,Italy,5724
+2006,Germany,Japan,21779
+2006,Germany,Brazil,6473
+2006,China,Brazil,13900
+2006,Italy,Brazil,4328
+2006,United Stat,India,22993
+2006,Japan,Italy,7052
+2006,France,Italy,44287
+2006,Germany,United Stat,45957
+2006,Italy,France,40092
+2006,Japan,United Stat,69329
+2006,France,Russia,11826
+2006,India,United Stat,11100
+2006,Spain,Italy,25495
+2006,Japan,Spain,1871
+2006,United Stat,Russia,20731
+2006,Japan,China,120028
+2006,United Stat,France,38089
+2006,Russia,India,967
+2006,Italy,China,23368
+2006,India,Japan,4935
+2006,Brazil,France,3495
+2006,India,Germany,8460
+2006,Russia,China,12976
+2006,Germany,India,4671
+2006,Brazil,India,1635
+2007,United Stat,France,42498
+2007,Italy,China,30463
+2007,Japan,France,10028
+2007,Spain,United Stat,11565
+2007,Russia,India,1317
+2007,Brazil,Russia,1880
+2007,Russia,United Stat,9502
+2007,Japan,China,129244
+2007,China,Russia,20348
+2007,United Stat,India,25114
+2007,Italy,Brazil,5185
+2007,United Stat,Italy,36471
+2007,Italy,Japan,7316
+2007,Italy,United Stat,14957
+2007,China,India,26689
+2007,France,China,25602
+2007,Japan,United Stat,72264
+2007,Italy,Spain,22208
+2007,India,France,5756
+2007,Spain,Russia,10585
+2007,Spain,Brazil,4138
+2007,United Stat,Russia,20221
+2007,Spain,China,22206
+2007,Brazil,France,3884
+2007,United Stat,Japan,149423
+2007,China,Brazil,21108
+2007,Russia,Brazil,4108
+2007,Brazil,Spain,2028
+2007,United Stat,China,348583
+2007,Japan,Brazil,6018
+2007,Russia,Spain,3197
+2007,Japan,India,4159
+2007,India,Italy,3592
+2007,Japan,Italy,7249
+2007,Brazil,India,2381
+2007,Japan,Russia,10560
+2007,India,Japan,5891
+2007,India,China,27338
+2007,Brazil,China,14548
+2007,France,India,3211
+2007,India,Russia,2454
+2007,Brazil,Italy,3682
+2007,Spain,Italy,33954
+2007,France,Brazil,4202
+2007,Russia,Japan,12717
+2007,China,Italy,18868
+2007,Spain,India,2839
+2007,Japan,Spain,1976
+2007,Spain,Japan,6482
+2007,China,Spain,5785
+2007,Italy,Russia,20023
+2007,Italy,France,46671
+2007,France,United Stat,27390
+2007,France,Russia,14664
+2007,Russia,Italy,8536
+2007,Brazil,United Stat,20791
+2007,Brazil,Japan,5071
+2007,India,Brazil,959
+2007,China,France,19580
+2007,Russia,China,24521
+2007,India,United Stat,18708
+2007,United Stat,Spain,11075
+2007,China,United Stat,108071
+2007,India,Spain,902
+2007,France,Italy,53259
+2007,France,Spain,44756
+2007,Russia,France,7769
+2007,United Stat,Brazil,27193
+2007,China,Japan,209705
+2007,Spain,France,50033
+2007,Italy,India,4634
+2007,France,Japan,8427
+2008,Japan,Spain,2516
+2008,France,Italy,58253
+2008,Italy,France,47663
+2008,France,Russia,19541
+2008,United Stat,Russia,27932
+2008,India,France,5031
+2008,Japan,France,10670
+2008,France,India,4289
+2008,United Stat,India,26932
+2008,United Stat,China,363990
+2008,Brazil,China,27666
+2008,Italy,China,35261
+2008,China,Spain,7085
+2008,France,United Stat,30377
+2008,Brazil,France,6349
+2008,Spain,United Stat,14194
+2008,Italy,Spain,21851
+2008,China,Japan,229358
+2008,France,Spain,48467
+2008,Spain,France,50582
+2008,France,China,28698
+2008,Spain,Russia,10994
+2008,India,United Stat,18889
+2008,Italy,United Stat,17355
+2008,Spain,Brazil,4531
+2008,China,Brazil,33706
+2008,China,United Stat,122897
+2008,Japan,United Stat,78975
+2008,Brazil,India,4577
+2008,China,France,22644
+2008,Brazil,Italy,6170
+2008,Spain,India,3192
+2008,India,China,35759
+2008,Russia,France,10058
+2008,United Stat,France,44905
+2008,Japan,Brazil,9157
+2008,Brazil,United Stat,34233
+2008,Spain,China,25799
+2008,Russia,Japan,18573
+2008,India,Brazil,1124
+2008,China,Italy,20821
+2008,India,Japan,7286
+2008,Italy,Brazil,5675
+2008,Italy,Russia,23725
+2008,Brazil,Spain,3292
+2008,Russia,India,1708
+2008,China,Russia,24724
+2008,France,Japan,8461
+2008,Russia,Brazil,4668
+2008,India,Italy,4206
+2008,Brazil,Russia,4372
+2008,Russia,Spain,4313
+2008,Japan,Italy,7969
+2008,Japan,China,145284
+2008,India,Russia,3835
+2008,United Stat,Italy,37496
+2008,Japan,India,5270
+2008,Brazil,Japan,9160
+2008,Spain,Japan,5792
+2008,Italy,Japan,7403
+2008,United Stat,Japan,143352
+2008,Japan,Russia,13377
+2008,Russia,China,34781
+2008,Italy,India,5066
+2008,Spain,Italy,33755
+2008,France,Brazil,5133
+2008,Russia,United Stat,13805
+2008,India,Spain,994
+2008,United Stat,Spain,11573
+2008,China,India,34391
+2008,United Stat,Brazil,32073
+2008,Russia,Italy,10989
+2009,India,France,4113
+2009,China,India,27457
+2009,United Stat,Russia,18994
+2009,Brazil,China,18066
+2009,Japan,Russia,8855
+2009,India,United Stat,16644
+2009,China,United Stat,117441
+2009,Russia,United Stat,8645
+2009,Italy,India,4035
+2009,Japan,United Stat,60487
+2009,Spain,India,2261
+2009,Brazil,France,3951
+2009,United Stat,China,313489
+2009,Italy,China,27340
+2009,Russia,Italy,7870
+2009,India,Japan,6386
+2009,China,Russia,22581
+2009,United Stat,France,34671
+2009,India,China,33811
+2009,Russia,France,6199
+2009,Brazil,Russia,1534
+2009,United Stat,Japan,98402
+2009,Brazil,Spain,2103
+2009,Japan,India,3729
+2009,France,Brazil,3427
+2009,France,United Stat,26502
+2009,China,Spain,5703
+2009,Russia,India,1522
+2009,Italy,Russia,16951
+2009,India,Italy,3574
+2009,Japan,China,123663
+2009,Spain,Italy,21642
+2009,Spain,Russia,6371
+2009,United Stat,Brazil,21018
+2009,France,Japan,6342
+2009,France,Italy,44559
+2009,Brazil,Italy,3902
+2009,Spain,China,16930
+2009,Japan,Spain,2349
+2009,Russia,Brazil,3503
+2009,France,Russia,12680
+2009,India,Russia,3472
+2009,Japan,France,9139
+2009,Spain,France,37596
+2009,China,Italy,18423
+2009,United Stat,India,22043
+2009,United Stat,Italy,27280
+2009,Russia,China,22926
+2009,France,India,3270
+2009,Russia,Spain,2277
+2009,Brazil,India,2442
+2009,Russia,Japan,7259
+2009,Spain,Brazil,3077
+2009,India,Spain,1028
+2009,Spain,United Stat,9296
+2009,Brazil,United Stat,22341
+2009,Italy,Spain,18352
+2009,China,Japan,193325
+2009,Italy,Japan,5410
+2009,Japan,Brazil,6365
+2009,Italy,France,36773
+2009,United Stat,Spain,8192
+2009,France,China,25204
+2009,China,France,19406
+2009,Japan,Italy,6364
+2009,Spain,Japan,3386
+2009,Italy,United Stat,13186
+2009,India,Brazil,3007
+2009,France,Spain,37398
+2009,China,Brazil,32108
+2009,Brazil,Japan,5955
+2009,Italy,Brazil,3351

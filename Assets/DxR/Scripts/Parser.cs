@@ -11,7 +11,6 @@ namespace DxR
     {
         static string specsBaseDir = "/DxRSpecs/";
         static string dataBaseDir = "/DxRData/";
-        private bool verbose = false;           // Set to true to display debugging info.
 
         /// <summary>
         ///  Read specifications in JSON file specified by specsFilename as 

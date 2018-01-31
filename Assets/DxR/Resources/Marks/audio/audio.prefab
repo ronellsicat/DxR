@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 135866279731294818}
   - component: {fileID: 23301690636361252}
   - component: {fileID: 82883781074200278}
-  - component: {fileID: 114416733339903568}
   - component: {fileID: 114257073002079306}
+  - component: {fileID: 114770188380853078}
   m_Layer: 0
   m_Name: audio
   m_TagString: Untagged
@@ -177,9 +177,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18387d24c564de14b8a69c8c27a10db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  markName: undefined
-  tooltip: {fileID: 0}
---- !u!114 &114416733339903568
+  markName: audio
+  origOrientation: {x: 0, y: 1, z: 0}
+  curOrientation: {x: 0, y: 1, z: 0}
+--- !u!114 &114770188380853078
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -190,8 +191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1cd0912d363c34d9f0f46711913c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minY: 0.15
-  maxY: 0.45
+  minY: 0
+  maxY: 0
 --- !u!135 &135866279731294818
 SphereCollider:
   m_ObjectHideFlags: 1

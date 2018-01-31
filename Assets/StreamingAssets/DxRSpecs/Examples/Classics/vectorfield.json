@@ -1,0 +1,46 @@
+{
+  "title": "Field Data",
+  "width": 500,
+  "height": 500,
+  "depth":  500,
+  "data": { "url": "x_field.json" },
+  "mark": "cone",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative"
+    },
+    "length": {
+      "field": "mag",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "range": [ 0, 100 ]
+      }
+    },
+    "color": {
+      "field": "mag",
+      "type": "quantitative"
+    },
+    "xdirection": {
+      "field": "u",
+      "type": "quantitative"      
+    },
+    "ydirection": {
+      "field": "v",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "w",
+      "type": "quantitative"
+    }
+  }
+}

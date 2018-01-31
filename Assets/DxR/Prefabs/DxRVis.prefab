@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 65321017788168688}
   - component: {fileID: 23448514900370824}
   - component: {fileID: 114394792356777152}
-  - component: {fileID: 114995008290460860}
+  - component: {fileID: 114325867720429156}
   m_Layer: 0
   m_Name: DxRAnchor
   m_TagString: DxRAnchor
@@ -2167,9 +2167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff35d644245a9b345a83026044b042b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visSpecsURL: example.json
   enableGUI: 1
   enableSpecsExpansion: 0
   enableTooltip: 1
+  verbose: 1
   markInstances: []
 --- !u!114 &114302616305426950
 MonoBehaviour:
@@ -2317,6 +2319,23 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Option A
+--- !u!114 &114325867720429156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1182403086455224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbad991a9894486418e4988222483ef8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultGazeDistance: 2
+  PlaceParentOnTap: 1
+  ParentGameObjectToPlace: {fileID: 0}
+  IsBeingPlaced: 0
+  AllowMeshVisualizationControl: 1
+  UseColliderCenter: 0
 --- !u!114 &114356177821553980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4124,17 +4143,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!114 &114995008290460860
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1182403086455224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16003f8fe59d6e34ba75aa35b6a3496a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &222007435993920494
 CanvasRenderer:
   m_ObjectHideFlags: 1

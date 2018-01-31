@@ -36,7 +36,7 @@ namespace DxR
         {
             switch (channel)
             {
-                case "latitute":
+                case "latitude":
                 case "lat":
                     SetLatituteValue(value);
                     break;
