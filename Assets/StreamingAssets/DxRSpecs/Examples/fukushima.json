@@ -1,0 +1,41 @@
+{
+  "width": 500,
+  "height": 500,
+  "depth": 10000,
+  "data": {
+    "url": "fukushima.csv" 
+  },
+  "mark": "sphere",
+  "encoding": {
+    "x": {
+      "field": "Longitude",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 139, 142 ]
+      }
+    },
+    "y": {
+      "field": "Latitude",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 35, 38 ]
+      }
+    },
+    "z": {
+      "field": "Collection Date",
+      "type": "ordinal"
+
+    },
+    "size": {
+      "field": "Result",
+      "type": "quantitative",
+      "scale": {
+        "range": [ 10, 40 ]
+      }
+    },
+    "color": {
+      "field": "Result",
+      "type": "quantitative"
+    }
+  }
+}
