@@ -1,17 +1,20 @@
 {
-  "width": 500,
-  "height": 500,
-  "depth": 500,
   "data": { "url": "x_cars_subsampled.json" },
   "mark": "text",
   "encoding": {
     "x": {
       "field": "Horsepower",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 250 ]
+      }
     },
     "y": {
       "field": "Miles_per_Gallon",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 50 ]
+      }
     },
     "z": {
       "field": "Acceleration",

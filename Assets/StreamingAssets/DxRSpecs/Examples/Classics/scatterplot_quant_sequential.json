@@ -1,17 +1,22 @@
 {
-  "width": 500,
-  "height": 500,
-  "depth": 500,
-  "data": { "url": "cars.json" },
+  "data": {
+    "url": "cars.json" 
+  },
   "mark": "sphere",
   "encoding": {
     "x": {
       "field": "Horsepower",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 250]
+      }
     },
     "y": {
       "field": "Miles_per_Gallon",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 50 ]
+      }
     },
     "color": {
       "field": "Weight_in_lbs",

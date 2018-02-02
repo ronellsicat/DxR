@@ -1,7 +1,4 @@
 {
-  "width" : 500,
-  "height" : 500,
-  "depth" : 500,
   "data" : {
     "url" : "collaboration.csv"
   },
@@ -23,20 +20,14 @@
       "field" : "weight",
       "type" : "quantitative",
       "scale" : {
-        "domain": [
-          "0",
-          "14"
-        ]
+        "domain": [ 0, 14 ]
       }
     },
     "size" : {
       "field" : "weight",
       "type" : "quantitative",
       "scale": {
-        "domain": [
-          "0",
-          "14"
-        ],
+        "domain": [ 0, 14 ],
         "range": [ 0, 50 ]
       }
     }

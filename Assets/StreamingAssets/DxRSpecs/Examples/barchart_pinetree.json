@@ -1,7 +1,4 @@
 {
-  "width" : 500,
-  "height" : 500,
-  "depth" : 500,
   "data": {
     "values": [
       {
@@ -43,7 +40,7 @@
     ]
   },
   "mark" : "pinetree",
-  "encoding" : {
+  "encoding": {
     "x": {
       "field": "treename",
       "type": "nominal",
@@ -55,7 +52,7 @@
       "field": "count",
       "type": "quantitative",
       "scale": {
-        "domain": [ "0", "100" ]
+        "domain": [ 0, 100 ]
       },
       "axis": {
         "title": "Tree Height (m)"
@@ -65,11 +62,17 @@
       "field": "count",
       "type": "quantitative",
       "scale": {
-        "domain": [ "0", "100" ]
+        "domain": [ 0, 100 ]
       }
     },
     "yoffsetpct": {
       "value": -1
+    },
+    "width": {
+      "value": 50
+    },
+    "depth": {
+      "value": 50
     }
   }
 }

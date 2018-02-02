@@ -1,8 +1,7 @@
 {
-  "width": 500,
-  "height": 500,
-  "depth": 500,
-  "data": { "url": "cars.json" },
+  "data": {
+    "url": "cars.json" 
+  },
   "mark": "tick",
   "encoding": {
     "x": {

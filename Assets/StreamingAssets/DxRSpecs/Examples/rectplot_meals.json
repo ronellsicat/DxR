@@ -6,11 +6,17 @@
   "encoding": {
     "x": {
       "field": "day",
-      "type": "ordinal"
+      "type": "ordinal",
+      "axis": {
+        "titlePadding": 40
+      }
     },
     "y": {
       "field": "meal",
-      "type": "ordinal"
+      "type": "ordinal",
+      "axis": {
+        "titlePadding": 60
+      }
     },
     "color": {
       "field": "headcount",
@@ -21,7 +27,7 @@
       }
     },
     "size": {
-      "value":  50
+      "value": 50
     }
   }
 }
