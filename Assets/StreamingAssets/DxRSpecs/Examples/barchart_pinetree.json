@@ -1,42 +1,15 @@
 {
   "data": {
     "values": [
-      {
-        "treename": "A",
-        "count": 28
-      },
-      {
-        "treename": "B",
-        "count": 55
-      },
-      {
-        "treename": "C",
-        "count": 43
-      },
-      {
-        "treename": "D",
-        "count": 91
-      },
-      {
-        "treename": "E",
-        "count": 81
-      },
-      {
-        "treename": "F",
-        "count": 53
-      },
-      {
-        "treename": "G",
-        "count": 19
-      },
-      {
-        "treename": "H",
-        "count": 87
-      },
-      {
-        "treename": "I",
-        "count": 52
-      }
+      { "treename": "A", "count": 28 },
+      { "treename": "B", "count": 55 },
+      { "treename": "C", "count": 43 },
+      { "treename": "D", "count": 91 },
+      { "treename": "E", "count": 81 },
+      { "treename": "F", "count": 53 },
+      { "treename": "G", "count": 19 },
+      { "treename": "H", "count": 87 },
+      { "treename": "I", "count": 52 }
     ]
   },
   "mark" : "pinetree",
