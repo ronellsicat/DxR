@@ -613,10 +613,7 @@ namespace DxR
                     {
                         scaleSpecsObj.Add("paddingOuter", new JSONString(ScaleBand.PADDING_OUTER_DEFAULT.ToString()));
                     }*/
-                    if (scaleSpecs["padding"] == null)
-                    {
-                        scaleSpecsObj.Add("padding", new JSONString(ScalePoint.PADDING_DEFAULT.ToString()));
-                    }
+                    scaleSpecsObj.Add("padding", new JSONString(ScalePoint.PADDING_DEFAULT.ToString()));
                 }
 
                 if (scaleSpecs["range"] == null)
@@ -682,7 +679,7 @@ namespace DxR
                     specs["width"] = rangeSize;
                 }
 
-            } else if (channel == "y" || channel == "height" || channel == "length")
+            } else if (channel == "y" || channel == "height")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
@@ -712,7 +709,7 @@ namespace DxR
             {
                 range.Add(new JSONString("0"));
                 range.Add(new JSONString("1"));
-            } else if (channel == "size")
+            } else if (channel == "size" || channel == "length")
             {
                 range.Add(new JSONString("0"));
                 string maxDimSize = Math.Max(Math.Max(specs["width"].AsFloat, specs["height"].AsFloat),
