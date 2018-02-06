@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//#define USE_INTERACTION_GUI
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
@@ -66,6 +68,8 @@ namespace DxR
             Button addChannelBtn = addChannelButtonTransform.GetComponent<Button>();
             addChannelBtn.onClick.AddListener(AddEmptyChannelGUICallback);
 
+#if USE_INTERACTION_GUI
+            
             interactionGUIPrefab = Resources.Load("GUI/InteractionGUI") as GameObject;
 
             addInteractionButtonTransform = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent/AddInteractionButton");
@@ -73,6 +77,8 @@ namespace DxR
             addInteractionBtn.onClick.AddListener(AddEmptyInteractionGUICallback);
 
             InitInteractiveButtons();
+
+#endif
 
             UpdateGUISpecsFromVisSpecs();
         }
@@ -164,8 +170,10 @@ namespace DxR
             // Update GUI for channels:
             UpdateGUIChannelsList(guiVisSpecs);
 
+#if USE_INTERACTION_GUI
             // Update GUI for interactions:
-            UpdateGUIInteractionsList(guiVisSpecs);
+            //UpdateGUIInteractionsList(guiVisSpecs);
+#endif 
         }
 
         // Adds or removes channel GUIs according to specs and updates the dropdowns.
@@ -339,6 +347,7 @@ namespace DxR
             guiVisSpecs["encoding"] = encodingObject;
             Debug.Log("GUI CHANNEL SPECS: " + guiVisSpecs["encoding"].ToString());
 
+#if USE_INTERACTION_GUI
             // Update interaction specs:
             guiVisSpecs["interaction"] = null;
             JSONArray interactionArrayObject = new JSONArray();
@@ -361,6 +370,7 @@ namespace DxR
 
             guiVisSpecs["interaction"] = interactionArrayObject;
             Debug.Log("GUI INTERACTION SPECS: " + guiVisSpecs["interaction"].ToString());
+#endif
         }
 
         public JSONNode GetGUIVisSpecs()

@@ -1,37 +1,24 @@
 {
-  "width": 500,
-  "height": 500,
-  "depth": 500,
-  "data": {
-    "url": "cars.json"
+  "data" : {
+    "url" : "cars.json"
   },
-  "mark": "sphere",
-  "encoding": {
-    "x": {
-      "field": "Horsepower",
-      "type": "quantitative"
+  "mark" : "sphere",
+  "encoding" : {
+    "x" : {
+      "field" : "Horsepower",
+      "type" : "quantitative"
     },
-    "y": {
-      "field": "Miles_per_Gallon",
-      "type": "quantitative"
+    "y" : {
+      "field" : "Displacement",
+      "type" : "quantitative"
     },
-    "z": {
-      "field": "Displacement",
-      "type": "quantitative"
-    },
-    "color": {
-      "field": "Origin",
-      "type": "nominal"
+    "color" : {
+      "field" : "Cylinders",
+      "type": "ordinal",
+      "filter": "none"
     }
   },
-  "interaction": [
-    {
-      "field": "Origin",
-      "type": "toggleFilter"
-    },
-    {
-      "field": "Horsepower",
-      "type": "thresholdFilter"
-    }
-  ]
+  "width" : 500,
+  "height" : 500,
+  "depth" : 500
 }

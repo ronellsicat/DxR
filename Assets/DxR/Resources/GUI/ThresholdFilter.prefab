@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 65000010555128124}
   - component: {fileID: 114000013549609426}
   - component: {fileID: 114000013369595812}
-  - component: {fileID: 114854604571829066}
   m_Layer: 0
   m_Name: ThresholdFilter
   m_TagString: Untagged
@@ -1231,19 +1230,6 @@ MonoBehaviour:
   ColorBlender: {fileID: 114000013916789966}
   MovePosition: {fileID: 0}
   ScaleSize: {fileID: 0}
---- !u!114 &114854604571829066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011713906408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PivotAxis: 1
-  TargetTransform: {fileID: 0}
 --- !u!114 &114922840319301710
 MonoBehaviour:
   m_ObjectHideFlags: 1
