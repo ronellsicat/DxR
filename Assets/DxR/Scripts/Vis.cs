@@ -384,8 +384,11 @@ namespace DxR
                     break;
 
                 case "band":
-                case "point":
                     scale = new ScaleBand(scaleSpecs);
+                    break;
+
+                case "point":
+                    scale = new ScalePoint(scaleSpecs);
                     break;
 
                 case "ordinal":

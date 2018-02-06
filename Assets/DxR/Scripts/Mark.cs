@@ -603,6 +603,7 @@ namespace DxR
                 }
                 else
                 {
+                    /*
                     if (scaleSpecs["paddingInner"] == null)
                     {
                         scaleSpecsObj.Add("paddingInner", new JSONString(ScaleBand.PADDING_INNER_DEFAULT.ToString()));
@@ -611,6 +612,10 @@ namespace DxR
                     if (scaleSpecs["paddingOuter"] == null)
                     {
                         scaleSpecsObj.Add("paddingOuter", new JSONString(ScaleBand.PADDING_OUTER_DEFAULT.ToString()));
+                    }*/
+                    if (scaleSpecs["padding"] == null)
+                    {
+                        scaleSpecsObj.Add("padding", new JSONString(ScalePoint.PADDING_DEFAULT.ToString()));
                     }
                 }
 
@@ -860,7 +865,7 @@ namespace DxR
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
-                    type = "band";
+                    type = "point";
                 } else if (fieldDataType == "quantitative")
                 {
                     type = "linear";
@@ -877,7 +882,7 @@ namespace DxR
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
-                    type = "band";
+                    type = "point";
                 }
                 else if (fieldDataType == "quantitative")
                 {
