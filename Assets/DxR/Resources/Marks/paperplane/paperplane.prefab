@@ -95,4 +95,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markName: paperplane
-  origDirection: {x: -1, y: 0, z: 0}
+  forwardDirection: {x: -1, y: 0, z: 0}

@@ -17,7 +17,7 @@ namespace DxR
         public Dictionary<string, string> datum = null;
         GameObject tooltip = null;
 
-        public Vector3 origDirection = Vector3.up;
+        public Vector3 forwardDirection = Vector3.up;
         Vector3 curDirection;
 
         public Mark()
@@ -27,7 +27,7 @@ namespace DxR
 
         public void Start()
         {
-            curDirection = origDirection;
+            curDirection = forwardDirection;
         }
 
         public virtual List<string> GetChannelsList()
@@ -55,7 +55,7 @@ namespace DxR
                     SetSize(value, 1);
                     break;
                 case "length":
-                    SetSize(value, GetMaxSizeDimension(origDirection));
+                    SetSize(value, GetMaxSizeDimension(forwardDirection));
                     break;
                 case "depth":
                     SetSize(value, 2);
@@ -110,15 +110,15 @@ namespace DxR
             }
         }
 
-        private int GetMaxSizeDimension(Vector3 origDirection)
+        private int GetMaxSizeDimension(Vector3 direction)
         {
-            if( Math.Abs(origDirection.x) > Math.Abs(origDirection.y) &&
-                Math.Abs(origDirection.x) > Math.Abs(origDirection.z) )
+            if( Math.Abs(direction.x) > Math.Abs(direction.y) &&
+                Math.Abs(direction.x) > Math.Abs(direction.z) )
             {
                 return 0;
 
-            } else if(  Math.Abs(origDirection.y) > Math.Abs(origDirection.x) &&
-                        Math.Abs(origDirection.y) > Math.Abs(origDirection.z)) 
+            } else if(  Math.Abs(direction.y) > Math.Abs(direction.x) &&
+                        Math.Abs(direction.y) > Math.Abs(direction.z)) 
             {
                 return 1;
             }
@@ -1089,7 +1089,7 @@ namespace DxR
             curDirection[vectorIndex] = targetOrient[vectorIndex];
             curDirection.Normalize();
 
-            Quaternion rotation = Quaternion.FromToRotation(origDirection, curDirection);
+            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
             transform.rotation = rotation;
         }
 

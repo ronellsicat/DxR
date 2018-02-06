@@ -18,7 +18,7 @@ namespace DxR
 
         public HorseMark() : base()
         {
-            origDirection = Vector3.left;
+            forwardDirection = Vector3.left;
         }
 
         public override void SetChannelValue(string channel, string value)
@@ -46,7 +46,7 @@ namespace DxR
             curDirection[vectorIndex] = targetOrient[vectorIndex];
             curDirection.Normalize();
 
-            Quaternion rotation = Quaternion.FromToRotation(origDirection, curDirection);
+            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
             transform.rotation = rotation;
         }
 
