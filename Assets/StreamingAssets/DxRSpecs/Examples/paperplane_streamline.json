@@ -1,8 +1,7 @@
 {
-  "width": 500,
-  "height": 500,
-  "depth":  500,
-  "data": { "url": "streamline.json" },
+  "data": {
+    "url": "streamline.json"
+  },
   "mark": "paperplane",
   "encoding": {
     "x": {
@@ -19,39 +18,29 @@
     },
     "xdirection": {
       "field": "vx",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      }
+      "type": "quantitative"
     },
     "ydirection": {
       "field": "vy",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      }
+      "type": "quantitative"
     },
     "zdirection": {
       "field": "vz",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      }
+      "type": "quantitative"
     },
     "color": {
       "field": "time",
       "type": "quantitative",
       "scale": {
         "type": "sequential",
-        "domain": ["0", "5"],
-        "range": [ "#fef0d9", "#b30000" ]
+        "domain": [ 0, 5 ]
       },
       "legend": {
         "title": "Color Legend: Time"
       }
     },
     "size": {
-      "value":  15
+      "value": 15
     }
   }
 }

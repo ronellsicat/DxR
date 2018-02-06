@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4788768853636638}
   - component: {fileID: 33911890681523182}
   - component: {fileID: 23279306241133912}
-  - component: {fileID: 114037535015340984}
+  - component: {fileID: 114189992681850670}
   m_Layer: 0
   m_Name: paperplane
   m_TagString: Untagged
@@ -83,7 +83,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1498593754427558}
   m_Mesh: {fileID: 4300000, guid: ff3c5de3509fa1941968761f576e07db, type: 3}
---- !u!114 &114037535015340984
+--- !u!114 &114189992681850670
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -91,9 +91,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1498593754427558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19eeb6480560c9479aa615641edf129, type: 3}
+  m_Script: {fileID: 11500000, guid: 18387d24c564de14b8a69c8c27a10db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   markName: paperplane
-  origOrientation: {x: -1, y: 0, z: 0}
-  curOrientation: {x: -1, y: 0, z: 0}
+  origDirection: {x: -1, y: 0, z: 0}

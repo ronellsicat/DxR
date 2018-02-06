@@ -17,17 +17,17 @@ namespace DxR
         public Dictionary<string, string> datum = null;
         GameObject tooltip = null;
 
-        public Vector3 origOrientation;
-        public Vector3 curOrientation;
+        public Vector3 origDirection = Vector3.up;
+        Vector3 curDirection;
 
         public Mark()
         {
-            origOrientation = curOrientation = Vector3.up;
+
         }
 
         public void Start()
         {
-            
+            curDirection = origDirection;
         }
 
         public virtual List<string> GetChannelsList()
@@ -52,8 +52,10 @@ namespace DxR
                     SetSize(value, 0);
                     break;
                 case "height":
-                case "length":
                     SetSize(value, 1);
+                    break;
+                case "length":
+                    SetSize(value, GetMaxSizeDimension(origDirection));
                     break;
                 case "depth":
                     SetSize(value, 2);
@@ -106,6 +108,22 @@ namespace DxR
                 default:
                     throw new System.Exception("Cannot find channel: " + channel);
             }
+        }
+
+        private int GetMaxSizeDimension(Vector3 origDirection)
+        {
+            if( Math.Abs(origDirection.x) > Math.Abs(origDirection.y) &&
+                Math.Abs(origDirection.x) > Math.Abs(origDirection.z) )
+            {
+                return 0;
+
+            } else if(  Math.Abs(origDirection.y) > Math.Abs(origDirection.x) &&
+                        Math.Abs(origDirection.y) > Math.Abs(origDirection.z)) 
+            {
+                return 1;
+            }
+
+            return 2;
         }
 
         public void Infer(Data data, JSONNode specsOrig, out JSONNode specs, 
@@ -1001,6 +1019,20 @@ namespace DxR
                 newLocalScale, newLocalScale);
         }
 
+        private void ScaleToMaxDim(string value, int maxDim)
+        {
+            float size = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+
+            Vector3 renderSize = gameObject.transform.GetComponent<Renderer>().bounds.size;
+            Vector3 localScale = gameObject.transform.localScale;
+
+            float origMaxSize = renderSize[maxDim] / localScale[maxDim];
+            float newLocalScale = (size / origMaxSize);
+
+            gameObject.transform.localScale = new Vector3(newLocalScale,
+                newLocalScale, newLocalScale);
+        }
+
         private void SetColor(string value)
         {
             Color color;
@@ -1054,10 +1086,10 @@ namespace DxR
             targetOrient.Normalize();
 
             // Copy coordinate to current orientation and normalize.
-            curOrientation[vectorIndex] = targetOrient[vectorIndex];
-            curOrientation.Normalize();
+            curDirection[vectorIndex] = targetOrient[vectorIndex];
+            curDirection.Normalize();
 
-            Quaternion rotation = Quaternion.FromToRotation(origOrientation, curOrientation);
+            Quaternion rotation = Quaternion.FromToRotation(origDirection, curDirection);
             transform.rotation = rotation;
         }
 
