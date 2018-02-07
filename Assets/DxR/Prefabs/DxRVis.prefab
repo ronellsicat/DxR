@@ -364,7 +364,7 @@ GameObject:
   - component: {fileID: 4330225958459428}
   - component: {fileID: 114296463438019874}
   m_Layer: 0
-  m_Name: DXRVis
+  m_Name: DxRVis
   m_TagString: DxRVis
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1294,7 +1294,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 50dc5196d89890e499204d3216b88e1a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 47faedb52e9b81c4ebbf1df8c5ef63b7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
