@@ -303,9 +303,14 @@ namespace DxR
                 }
             }
 
+            if (legendSpecsObj["filter"] == null)
+            {
+                legendSpecsObj.Add("filter", new JSONBool(false));
+            }
+
             // TODO: Add proper inference. 
             // HACK: For now, always use hard coded options.
-            if(legendSpecsObj["gradientWidth"] == null)
+            if (legendSpecsObj["gradientWidth"] == null)
             {
                 legendSpecsObj.Add("gradientWidth", new JSONNumber(200));
             }
@@ -366,8 +371,13 @@ namespace DxR
             if (axisSpecs != null && axisSpecs.Value.ToString() == "none") return;
 
             JSONObject axisSpecsObj = (axisSpecs == null) ? new JSONObject() : axisSpecs.AsObject;
-            
-            if(axisSpecsObj["face"] == null)
+
+            if (axisSpecsObj["filter"] == null)
+            {
+                axisSpecsObj.Add("filter", new JSONBool(false));
+            }
+
+            if (axisSpecsObj["face"] == null)
             {
                 if(channel == "x" || channel == "y")
                 {

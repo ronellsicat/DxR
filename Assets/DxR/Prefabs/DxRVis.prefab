@@ -2061,6 +2061,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff35d644245a9b345a83026044b042b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visSpecsURL: example.json
+  enableGUI: 1
+  enableSpecsExpansion: 0
+  enableTooltip: 1
+  verbose: 1
+  enableLeapMotion: 0
   markInstances: []
 --- !u!114 &114306281318335800
 MonoBehaviour:

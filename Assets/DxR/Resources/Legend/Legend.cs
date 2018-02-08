@@ -8,9 +8,10 @@ using UnityEngine;
 public class Legend : MonoBehaviour {
 
     LineRenderer colorLine = null;
+    private Interactions interactionsObject = null;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 
 	}
 	
@@ -31,6 +32,12 @@ public class Legend : MonoBehaviour {
         {
             // Create symbols:
             ConstructSymbols(legendSpecs, ref channelEncoding, markPrefab);
+
+            if(legendSpecs["filter"].AsBool && interactionsObject != null)
+            {
+                interactionsObject.EnableLegendToggleFilter(gameObject);
+            }
+
         } else if(legendSpecs["type"] == "gradient")
         {
             ConstructGradient(legendSpecs, ref channelEncoding);
@@ -155,6 +162,7 @@ public class Legend : MonoBehaviour {
                 markComponent.SetChannelValue("size", "20");
 
                 // Assign mark and label:
+                legendValueInstance.GetComponent<LegendValue>().SetDataFieldName(channelEncoding.field);
                 legendValueInstance.GetComponent<LegendValue>().SetTitle(domainValue);
                 legendValueInstance.GetComponent<LegendValue>().SetMark(markInstance);
 
@@ -192,5 +200,10 @@ public class Legend : MonoBehaviour {
     {
         gameObject.GetComponentInChildren<TextMesh>().anchor = TextAnchor.UpperLeft;
         gameObject.transform.localPosition = new Vector3(x, y, z) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
-    }  
+    }
+
+    internal void Init(Interactions interactions)
+    {
+        interactionsObject = interactions;
+    }
 }
