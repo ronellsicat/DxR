@@ -113,7 +113,7 @@ namespace DxR
             filterResults.Add(interactionSpecs["field"], results);
 
             toggleFilterInstance.transform.Translate(0, -curYOffset / 2.0f, 0);
-            curYOffset = curYOffset + (0.085f * numRows); 
+            curYOffset = curYOffset + (0.085f * numRows) + 0.1f; 
         }
 
         void ToggleFilterUpdated()
@@ -206,9 +206,8 @@ namespace DxR
             }
             filterResults.Add(interactionSpecs["field"], results);
           
-            int numRows = 2;
             thresholdFilterInstance.transform.Translate(0, -curYOffset / 2.0f, 0);
-            curYOffset = curYOffset + (0.085f * numRows);
+            curYOffset = curYOffset + (0.25f);
         }
 
         void ThresholdFilterUpdated()
