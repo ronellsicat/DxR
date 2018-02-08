@@ -75,11 +75,8 @@ namespace DxR
             addInteractionButtonTransform = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent/AddInteractionButton");
             Button addInteractionBtn = addInteractionButtonTransform.GetComponent<Button>();
             addInteractionBtn.onClick.AddListener(AddEmptyInteractionGUICallback);
-
-            InitInteractiveButtons();
-
 #endif
-
+            InitInteractiveButtons();
             UpdateGUISpecsFromVisSpecs();
         }
 
