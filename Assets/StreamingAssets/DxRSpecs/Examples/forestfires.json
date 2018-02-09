@@ -8,15 +8,18 @@
       "field" : "X",
       "type" : "quantitative"
     },
-    "y" : {
+    "z" : {
       "field" : "Y",
       "type" : "quantitative"
     },
     "size" : {
       "field" : "area",
-      "type": "quantitative",
-      "scale": {
-        "range": [0,0.5]
+      "type" : "quantitative",
+      "scale" : {
+        "range" : [
+          0,
+          0.5
+        ]
       }
     }
   },

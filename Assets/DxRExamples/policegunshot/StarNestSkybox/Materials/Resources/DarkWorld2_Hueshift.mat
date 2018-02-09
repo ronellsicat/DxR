@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DarkWorld2_Hueshift
+  m_Shader: {fileID: 4800000, guid: 27dad6e6a6c1988439ea192ad22a1a2c, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 1000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - _Brightness: -3.9
+    - _CLAMPOUT: 0
+    - _CamScroll: 55
+    - _Darkmatter: 179.6
+    - _Distfading: -70
+    - _Formuparam: 484.4
+    - _HueShift: 0.77
+    - _Iterations: 15
+    - _PostSat: 1
+    - _Saturation: 55.9
+    - _StepSize: 335
+    - _Tile: 565.85
+    - _Volsteps: 8
+    m_Colors:
+    - _Center: {r: -0.1, g: 0.1, b: -0.3, a: -3000}
+    - _Color: {r: 0.25490198, g: 0.17254902, b: 0.5803922, a: 1}
+    - _Rotation: {r: 0, g: 3, b: 0, a: 0.01}
+    - _Scroll: {r: 0.1, g: 0.1, b: -0.3, a: 0}

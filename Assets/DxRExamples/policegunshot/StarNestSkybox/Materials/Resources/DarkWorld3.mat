@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: DarkWorld3
+  m_Shader: {fileID: 4800000, guid: 100c9f6ec37b01644b7a5f7feac179d6, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - _Brightness: -20.5
+    - _CLAMPOUT: 0
+    - _CamScroll: 55
+    - _Darkmatter: 535.88
+    - _Distfading: -37.9
+    - _Formuparam: 543.6
+    - _Iterations: 15
+    - _Saturation: 55.9
+    - _StepSize: 407.6
+    - _Tile: 609.4
+    - _Volsteps: 8
+    m_Colors:
+    - _Center: {r: -0.1, g: 0.1, b: -0.3, a: -3000}
+    - _Color: {r: 0.25627172, g: 0.17511892, b: 0.5808823, a: 1}
+    - _Rotation: {r: 0, g: 3, b: 0, a: 0.01}
+    - _Scroll: {r: 0.1, g: 0.1, b: -0.3, a: 0}

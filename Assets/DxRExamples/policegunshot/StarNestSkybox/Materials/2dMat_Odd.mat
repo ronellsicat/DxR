@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 2dMat_Odd
+  m_Shader: {fileID: 4800000, guid: 6c6c06ff6a8d9a544806d8937d2ee96d, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Brightness: 0.5
+    - _CamScroll: -831
+    - _Darkmatter: 221.4
+    - _Distfading: -73.7
+    - _Formuparam: 444
+    - _Iterations: 15
+    - _Saturation: 62
+    - _StepSize: -300
+    - _Tile: 850
+    - _Volsteps: 10
+    - _Zoom: 810.4
+    m_Colors:
+    - _Center: {r: 1.15, g: 1, b: -0.02, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Rotation: {r: 51, g: 15, b: 11, a: 1}
+    - _Scroll: {r: 3, g: 5, b: 0.1, a: 0.1}
