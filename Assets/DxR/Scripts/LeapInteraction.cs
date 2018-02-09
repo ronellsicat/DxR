@@ -165,56 +165,60 @@ namespace Leap.Unity
 
             bool finish_control = false;
 
-            ////Select object based on real world coordinate
-            ////Two hand pinch control
-            //if (_pinchDetectorA != null && _pinchDetectorA.IsActive &&
-            //    _pinchDetectorB != null && _pinchDetectorB.IsActive)
-            //{
-            //    for (int i = 0; i < num_vis; i++)
-            //    {
-            //        if ((DxRViewObject[i].transform.position - (_pinchDetectorA.Position + _pinchDetectorB.Position) / 2).magnitude
-            //            < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
-            //        {
-            //            Two_hand_interaction(i);
-            //            finish_control = true;
-            //            break;
-            //        }
-            //    }
-            //    previous_L_position = _pinchDetectorA.Position;
-            //    previous_R_position = _pinchDetectorB.Position;
-            //}
+            //Select object based on real world coordinate
+            //Two hand pinch control
+            if (_pinchDetectorA != null && _pinchDetectorA.IsActive &&
+                _pinchDetectorB != null && _pinchDetectorB.IsActive)
+            {
+                for (int i = 0; i < num_vis; i++)
+                {
+                    if ((DxRViewObject[i].transform.position - (_pinchDetectorA.Position + _pinchDetectorB.Position) / 2).magnitude
+                        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+                    {
+                        Two_hand_interaction(i);
+                        finish_control = true;
+
+                        previous_L_position = _pinchDetectorA.Position;
+                        previous_R_position = _pinchDetectorB.Position;
+                        break;
+                    }
+                }
+            }
 
 
-            ////Left hand pinch control
-            //else if (_pinchDetectorA != null && _pinchDetectorA.IsActive)
-            //{
-            //    for (int i = 0; i < num_vis; i++)
-            //    {
-            //        if ((Vis_center[i] - _pinchDetectorA.Position).magnitude
-            //        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
-            //        {
-            //            Left_hand_interaction(i);
-            //            finish_control = true;
-            //            break;
-            //        }
-            //    }
-            //    previous_L_position = _pinchDetectorA.Position;
-            //}
-            ////Right hand pinch control
-            //else if (_pinchDetectorB != null && _pinchDetectorB.IsActive)
-            //{
-            //    for (int i = 0; i < num_vis; i++)
-            //    {
-            //        if ((Vis_center[i] - _pinchDetectorB.Position).magnitude
-            //        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
-            //        {
-            //            Right_hand_interaction(i);
-            //            finish_control = true;
-            //            break;
-            //        }
-            //    }
-            //    previous_R_position = _pinchDetectorB.Position;
-            //}
+            //Left hand pinch control
+            else if (_pinchDetectorA != null && _pinchDetectorA.IsActive)
+            {
+                for (int i = 0; i < num_vis; i++)
+                {
+                    if ((Vis_center[i] - _pinchDetectorA.Position).magnitude
+                    < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+                    {
+                        Left_hand_interaction(i);
+                        finish_control = true;
+                        previous_L_position = _pinchDetectorA.Position;
+                        break;
+                    }
+                }
+                
+            }
+            //Right hand pinch control
+            else if (_pinchDetectorB != null && _pinchDetectorB.IsActive)
+            {
+                for (int i = 0; i < num_vis; i++)
+                {
+                    if ((Vis_center[i] - _pinchDetectorB.Position).magnitude
+                    < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+                    {
+                        Right_hand_interaction(i);
+                        finish_control = true;
+                        previous_R_position = _pinchDetectorB.Position;
+                        break;
+                    }
+                }
+                
+            }
+
 
             if (!finish_control)
             {
