@@ -430,30 +430,34 @@ namespace DxR
                 axisSpecsObj.Add("length", new JSONNumber(axisLength));
             }
 
-            /*
-            if(axisSpecs["color"] == null)
+            if (axisSpecs["color"] == null)
             {
-                string color = "";
-                switch (channelEncoding.channel)
-                {
-                    case "x":
-                        color = "#ff0000";
-                        break;
-                    case "y":
-                        color = "#00ff00";
-                        break;
-                    case "z":
-                        color = "#0000ff";
-                        break;
-                    default:
-                        break;
-                }
-                
-                axisSpecsObj.Add("color", new JSONString(color));
+                axisSpecsObj.Add("color", new JSONString("#bebebe"));
             }
-            */
+                /*
+                if(axisSpecs["color"] == null)
+                {
+                    string color = "";
+                    switch (channelEncoding.channel)
+                    {
+                        case "x":
+                            color = "#ff0000";
+                            break;
+                        case "y":
+                            color = "#00ff00";
+                            break;
+                        case "z":
+                            color = "#0000ff";
+                            break;
+                        default:
+                            break;
+                    }
 
-            if(axisSpecsObj["grid"] == null)
+                    axisSpecsObj.Add("color", new JSONString(color));
+                }
+                */
+
+                if (axisSpecsObj["grid"] == null)
             {
                 axisSpecsObj.Add("grid", new JSONBool(false));
             }
