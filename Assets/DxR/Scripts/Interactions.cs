@@ -45,10 +45,16 @@ namespace DxR
 
         public void EnableLegendToggleFilter(GameObject legendGameObject)
         {
+            HoloToolkit.Examples.InteractiveElements.InteractiveSet checkBoxSet =
+               legendGameObject.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveSet>();
+            if (checkBoxSet == null) return;
+            checkBoxSet.SelectedIndices.Clear();
+            
             string fieldName = "";
             List<string> domain = new List<string>();
 
             // Go through each checkbox and set them to active:
+            int checkBoxIndex = 0;
             for (int i = 0; i < legendGameObject.transform.childCount; i++)
             {
                 Transform child = legendGameObject.transform.GetChild(i);
@@ -66,12 +72,16 @@ namespace DxR
 
                         if(toggle != null)
                         {
-                            toggle.HasSelection = true;
-                            toggle.OnSelectEvents.AddListener(LegendToggleFilterUpdated);
+                            checkBoxSet.Interactives.Add(toggle);
+                            checkBoxSet.SelectedIndices.Add(checkBoxIndex);
+                            checkBoxIndex++;
                         }
                     }
                 }
             }
+
+            // Add the call back function to update marks visibility when any checkbox is updated.
+            checkBoxSet.OnSelectionEvents.AddListener(LegendToggleFilterUpdated);
 
             domains.Add(fieldName, domain);
 
@@ -84,7 +94,7 @@ namespace DxR
             }
             filterResults.Add(fieldName, results);
         }
-
+        
         void LegendToggleFilterUpdated()
         {
             if (EventSystem.current.currentSelectedGameObject == null) return;
