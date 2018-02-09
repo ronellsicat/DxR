@@ -282,6 +282,17 @@ namespace DxR
             filterResults[field] = res;
         }
 
+        internal void EnableAxisThresholdFilter(string field)
+        {
+            int numMarks = targetVis.markInstances.Count;
+            List<bool> results = new List<bool>(new bool[numMarks]);
+            for (int j = 0; j < results.Count; j++)
+            {
+                results[j] = true;
+            }
+            filterResults.Add(field, results);
+        }
+
         internal void AddThresholdFilter(JSONObject interactionSpecs)
         {
             GameObject thresholdFilterPrefab = Resources.Load("GUI/ThresholdFilter", typeof(GameObject)) as GameObject;
@@ -324,15 +335,26 @@ namespace DxR
             curYOffset = curYOffset + (0.25f);
         }
 
-        void ThresholdFilterUpdated()
+        public void ThresholdFilterUpdated()
         {
             GameObject selectedObject = EventSystem.current.currentSelectedGameObject;
             if (selectedObject == null) return;
 
             Debug.Log("Threshold updated");
-            
-            // If the selected object is not a check box, ignore.
-            if (selectedObject.transform.Find("SliderBar") == null) return;
+
+            string fieldName = "";
+            // If the selected object is not a slider, ignore.
+            if (selectedObject.transform.Find("SliderBar") != null)
+            {
+                fieldName = selectedObject.name;
+            } else if(selectedObject.name == "SliderBar")
+            {
+                fieldName = selectedObject.transform.parent.name;
+                selectedObject = selectedObject.transform.parent.transform.gameObject;
+            } else
+            {
+                return;
+            }
 
             HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
                selectedObject.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
@@ -340,10 +362,10 @@ namespace DxR
             if (sliderControl != null && targetVis != null)
             {
                 // Update filter results for thresholded data field category.
-                UpdateFilterResultsForThreshold(selectedObject.name, sliderControl.SliderValue);
+                UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue);
 
                 targetVis.FiltersUpdated();
-                Debug.Log("Filter updated! " + selectedObject.transform.parent.name);
+                Debug.Log("Filter updated! " + fieldName);
             }
         }
 

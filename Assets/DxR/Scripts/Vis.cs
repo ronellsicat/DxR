@@ -257,6 +257,8 @@ namespace DxR
             if (axisPrefab != null)
             {
                 channelEncoding.axis = Instantiate(axisPrefab, guidesParentObject.transform);
+                channelEncoding.axis.GetComponent<Axis>().Init(interactionsParentObject.GetComponent<Interactions>(), 
+                    channelEncoding.field);
                 channelEncoding.axis.GetComponent<Axis>().UpdateSpecs(axisSpecs, channelEncoding.scale);                
             }
             else
