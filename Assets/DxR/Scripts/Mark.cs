@@ -430,6 +430,7 @@ namespace DxR
                 axisSpecsObj.Add("length", new JSONNumber(axisLength));
             }
 
+            /*
             if(axisSpecs["color"] == null)
             {
                 string color = "";
@@ -450,6 +451,7 @@ namespace DxR
                 
                 axisSpecsObj.Add("color", new JSONString(color));
             }
+            */
 
             if(axisSpecsObj["grid"] == null)
             {
