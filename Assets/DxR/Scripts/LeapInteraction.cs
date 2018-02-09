@@ -38,7 +38,7 @@ namespace Leap.Unity
                 _pinchDetectorB = value;
             }
         }
-         
+
 
         public bool enableLeapMotion = false;                           // Switch for enabling leap motion based interactions.
 
@@ -50,7 +50,7 @@ namespace Leap.Unity
         private GameObject[] DxRViewObject = null;
         private GameObject[] DxRInteractionsObject = null;
         private GameObject[] DxRAnchorObject = null;
-        
+
         private Vector3 previous_L_position;                        //Record previous frame's pinch position of left hand 
         private Vector3 previous_R_position;                        //Record previous frame's pinch position of right hand
 
@@ -60,6 +60,8 @@ namespace Leap.Unity
 
         private GameObject L_index_finger_end;
         private GameObject L_index_finger_c;
+
+        private GameObject GazeObject;
 
         private int num_vis;
 
@@ -81,6 +83,7 @@ namespace Leap.Unity
                 DxRViewObject = GameObject.FindGameObjectsWithTag("DxRView");
                 DxRInteractionsObject = GameObject.FindGameObjectsWithTag("DxRInteractions");
                 DxRAnchorObject = GameObject.FindGameObjectsWithTag("DxRAnchor");
+                GazeObject = GameObject.Find("DefaultCursor");
 
             }
         }
@@ -122,7 +125,7 @@ namespace Leap.Unity
             {
                 transform.Translate(Vector3.down * stepSize);
             }
-            
+
 
 
             //Interact with buttons and slider using left hand's index finger.
@@ -146,8 +149,6 @@ namespace Leap.Unity
 
             }
 
-
-
             //Reset previous position when pinch sitiuation is changed
             if (_pinchDetectorA != null && _pinchDetectorA.DidChangeFromLastFrame)
             {
@@ -159,55 +160,83 @@ namespace Leap.Unity
                 previous_R_position = _pinchDetectorB.Position;
             }
 
-            //Two hand pinch control
-            if (_pinchDetectorA != null && _pinchDetectorA.IsActive &&
-                _pinchDetectorB != null && _pinchDetectorB.IsActive)
-            {
-                for (int i = 0; i < num_vis; i++)
-                {
-                    if ((DxRViewObject[i].transform.position - ( (_pinchDetectorA.Position + _pinchDetectorB.Position) / 2 + Camera.main.transform.forward * 0.5f)).magnitude
-                        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR/2
-                        || (DxRViewObject[i].transform.position - (_pinchDetectorA.Position + _pinchDetectorB.Position) / 2 ).magnitude
-                        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2
-                        )
-                    {
-                        Two_hand_interaction(i);
-                        //break;
-                    }
-                }
-                previous_L_position = _pinchDetectorA.Position;
-                previous_R_position = _pinchDetectorB.Position;
-            }
 
 
-            //Left hand pinch control
-            else if (_pinchDetectorA != null && _pinchDetectorA.IsActive)
-            {
-                for (int i = 0; i < num_vis; i++)
-                {
-                    Left_hand_interaction(i);
-                }
-                previous_L_position = _pinchDetectorA.Position;
-            }
-            //Right hand pinch control
-            else if (_pinchDetectorB != null && _pinchDetectorB.IsActive)
-            {
-                for (int i = 0; i < num_vis; i++)
-                {
-                    if ((Vis_center[i] - (_pinchDetectorB.Position + Camera.main.transform.forward * 0.5f)).magnitude
-                    < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR/2
-                    ||
-                    (Vis_center[i] - _pinchDetectorB.Position).magnitude
-                    < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2
-                    )
-                    {
-                        Right_hand_interaction(i);
-                        //break;
-                    }
-                }
-                previous_R_position = _pinchDetectorB.Position;
-            }
 
+            bool finish_control = false;
+
+            ////Select object based on real world coordinate
+            ////Two hand pinch control
+            //if (_pinchDetectorA != null && _pinchDetectorA.IsActive &&
+            //    _pinchDetectorB != null && _pinchDetectorB.IsActive)
+            //{
+            //    for (int i = 0; i < num_vis; i++)
+            //    {
+            //        if ((DxRViewObject[i].transform.position - (_pinchDetectorA.Position + _pinchDetectorB.Position) / 2).magnitude
+            //            < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+            //        {
+            //            Two_hand_interaction(i);
+            //            finish_control = true;
+            //            break;
+            //        }
+            //    }
+            //    previous_L_position = _pinchDetectorA.Position;
+            //    previous_R_position = _pinchDetectorB.Position;
+            //}
+
+
+            ////Left hand pinch control
+            //else if (_pinchDetectorA != null && _pinchDetectorA.IsActive)
+            //{
+            //    for (int i = 0; i < num_vis; i++)
+            //    {
+            //        if ((Vis_center[i] - _pinchDetectorA.Position).magnitude
+            //        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+            //        {
+            //            Left_hand_interaction(i);
+            //            finish_control = true;
+            //            break;
+            //        }
+            //    }
+            //    previous_L_position = _pinchDetectorA.Position;
+            //}
+            ////Right hand pinch control
+            //else if (_pinchDetectorB != null && _pinchDetectorB.IsActive)
+            //{
+            //    for (int i = 0; i < num_vis; i++)
+            //    {
+            //        if ((Vis_center[i] - _pinchDetectorB.Position).magnitude
+            //        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+            //        {
+            //            Right_hand_interaction(i);
+            //            finish_control = true;
+            //            break;
+            //        }
+            //    }
+            //    previous_R_position = _pinchDetectorB.Position;
+            //}
+
+            if (!finish_control)
+            {
+                //Select object based on gaze
+                //Two hand pinch control
+                if (_pinchDetectorA != null && _pinchDetectorA.IsActive &&
+                    _pinchDetectorB != null && _pinchDetectorB.IsActive)
+                {
+                    Interaction_based_on_raycating(0);
+                }
+                //Left hand pinch control
+                else if (_pinchDetectorA != null && _pinchDetectorA.IsActive)
+                {
+
+                    Interaction_based_on_raycating(1);
+                }
+                //Right hand pinch control
+                else if (_pinchDetectorB != null && _pinchDetectorB.IsActive)
+                {
+                    Interaction_based_on_raycating(2);
+                }
+            }
         }
 
         void Two_hand_interaction(int which_vis)
@@ -227,10 +256,10 @@ namespace Leap.Unity
 
         void Left_hand_interaction(int which_vis)
         {
-            DxRViewObject[which_vis].transform.position += (_pinchDetectorA.Position - previous_L_position)*2;
-            DxRInteractionsObject[which_vis].transform.position += (_pinchDetectorA.Position - previous_L_position)*2;
-            DxRAnchorObject[which_vis].transform.position += (_pinchDetectorA.Position - previous_L_position)*2;
-            Vis_center[which_vis] += (_pinchDetectorA.Position - previous_L_position)*2;
+            DxRViewObject[which_vis].transform.position += (_pinchDetectorA.Position - previous_L_position) * 2;
+            DxRInteractionsObject[which_vis].transform.position += (_pinchDetectorA.Position - previous_L_position) * 2;
+            DxRAnchorObject[which_vis].transform.position += (_pinchDetectorA.Position - previous_L_position) * 2;
+            Vis_center[which_vis] += (_pinchDetectorA.Position - previous_L_position) * 2;
         }
 
         void Right_hand_interaction(int which_vis)
@@ -240,6 +269,53 @@ namespace Leap.Unity
             DxRAnchorObject[which_vis].transform.position += (_pinchDetectorB.Position - previous_R_position);
             Vis_center[which_vis] += (_pinchDetectorB.Position - previous_R_position);
 
+        }
+
+        void Interaction_based_on_raycating(int interaction_type)
+        {
+            //Select object based on gaze
+            //Find gazed object
+
+            Vector3 Ray_moving = (GazeObject.transform.position - Camera.main.transform.position).normalized * 0.01f;
+            Vector3 Current_ray_position = Camera.main.transform.position;
+            Vector3 Start_position = Camera.main.transform.position;
+            while (true)
+            {
+                if ((Current_ray_position - Start_position).magnitude > 20)
+                {
+                    return;
+                }
+                Current_ray_position += Ray_moving;
+                for (int i = 0; i < num_vis; i++)
+                {
+                    if ((DxRViewObject[i].transform.position - Current_ray_position).magnitude
+                        < (VisSize[i].CompMul(DxRViewObject[i].transform.localScale)).magnitude * DxR.Vis.SIZE_UNIT_SCALE_FACTOR / 2)
+                    {
+
+                        if (interaction_type == 0)
+                        {
+                            //Two hand pinch control
+                            Two_hand_interaction(i);
+                            previous_L_position = _pinchDetectorA.Position;
+                            previous_R_position = _pinchDetectorB.Position;
+                        }
+                        else if (interaction_type == 1)
+                        {
+                            //Left hand pinch control
+                            Left_hand_interaction(i);
+                            previous_L_position = _pinchDetectorA.Position;
+                        }
+                        else if (interaction_type == 2)
+                        {
+                            //Right hand pinch control
+                            Right_hand_interaction(i);
+                            previous_R_position = _pinchDetectorB.Position;
+                        }
+
+                        return;
+                    }
+                }
+            }
         }
 
     }
