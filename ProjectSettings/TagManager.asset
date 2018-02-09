@@ -11,6 +11,8 @@ TagManager:
   - DxRView
   - DxRMarks
   - DxRGuides
+  - Tip
+  - DxRInteractions
   layers:
   - Default
   - TransparentFX
