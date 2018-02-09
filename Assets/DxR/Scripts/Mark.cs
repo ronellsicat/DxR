@@ -480,7 +480,7 @@ namespace DxR
                     //float maxDomain = RoundNice(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat);
 
                     int numDecimals = Math.Max(GetNumDecimalPlaces(domain.AsArray[0].AsFloat), GetNumDecimalPlaces(domain.AsArray[1].AsFloat));
-                    Debug.Log("NUM DEC " + numDecimals);
+                    //Debug.Log("NUM DEC " + numDecimals);
                     // Add number of ticks.
                     int defaultNumTicks = 6;
                     int numTicks = axisSpecsObj["tickCount"] == null ? defaultNumTicks : axisSpecsObj["tickCount"].AsInt;

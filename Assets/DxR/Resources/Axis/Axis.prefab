@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 4495314412519960}
   - component: {fileID: 114932990743159348}
   m_Layer: 0
-  m_Name: AxisFilter
+  m_Name: Axis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
