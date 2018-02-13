@@ -33,9 +33,6 @@ namespace DxR
         GUI gui = null;                                                 // GUI object (class) attached to GUI game object.
         GameObject tooltip = null;                                      // Tooltip game object for displaying datum info, e.g., on-hover.
 
-        string guiDataRootPath = "Assets/StreamingAssets/DxRData/";     // Root directory for data files used by GUI.
-        string guiMarksRootPath = "Assets/DxR/Resources/Marks/";        // Root directory for marks folders used by GUI.
-
         // Vis Properties:
         string title;                                                   // Title of vis displayed.
         float width;                                                    // Width of scene in millimeters.
@@ -56,11 +53,6 @@ namespace DxR
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
         
-        // TODO: Move these to the anchor object.
-        private bool distanceVisibility = true;                         // Switch for controlling visibility by user-vis distance.
-        private bool gazeVisibility = true;                             // Switch for toggling visibility on-hover on the Anchor object.
-        private bool currentVisibility = true;                          // Status of vis visibility.
-
         private void Awake()
         {
             // Initialize objects:
@@ -791,7 +783,7 @@ namespace DxR
 
         public List<string> GetDataList()
         {
-            string[] dirs = Directory.GetFiles(guiDataRootPath);
+            string[] dirs = Directory.GetFiles(Application.dataPath + "/StreamingAssets/DxRData");
             List<string> dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
             dataList.Add("inline");
@@ -807,13 +799,49 @@ namespace DxR
 
         public List<string> GetMarksList()
         {
-            string[] dirs = Directory.GetDirectories(guiMarksRootPath);
+            /*
             List<string> marksList = new List<string>();
             marksList.Add(DxR.Vis.UNDEFINED);
-            for (int i = 0; i < dirs.Length; i++)
+            JSONNode marksListObject = JSON.Parse(File.ReadAllText(Application.streamingAssetsPath + "/DxRMarks.json"));
+            if(marksListObject != null)
             {
-                marksList.Add(Path.GetFileName(dirs[i]));
+                for (int i = 0; i < marksListObject["marks"].AsArray.Count; i++)
+                {
+                    string markNameLowerCase = marksListObject["marks"][i].Value.ToString().ToLower();
+                    GameObject markPrefabResult = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+
+                    if (markPrefabResult != null)
+                    {
+                        marksList.Add(markNameLowerCase);
+                    }
+                }
+            } else
+            {
+                throw new System.Exception("Cannot find file: " + Application.streamingAssetsPath + "/DxRMarks.json");
             }
+            */
+
+            List<string> marksList = new List<string>();
+            marksList.Add(DxR.Vis.UNDEFINED);
+            TextAsset marksListTextAsset = (TextAsset)Resources.Load("Marks/marks", typeof(TextAsset));
+            if(marksListTextAsset != null)
+            {
+                JSONNode marksListObject = JSON.Parse(marksListTextAsset.text);
+                for(int i = 0; i < marksListObject["marks"].AsArray.Count; i++)
+                {
+                    string markNameLowerCase = marksListObject["marks"][i].Value.ToString().ToLower();
+                    GameObject markPrefabResult = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+
+                    if (markPrefabResult != null)
+                    {
+                        marksList.Add(markNameLowerCase);
+                    }
+                }
+            } else
+            {
+                throw new System.Exception("Cannot find marks.json file in Assets/DxR/Resources/Marks/ directory");
+            }
+            
             return marksList;
         }
 
