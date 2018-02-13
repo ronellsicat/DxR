@@ -20,7 +20,7 @@ namespace DxR
         public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
         public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         public bool verbose = true;                                     // Switch for verbose log.
-        public bool enableLeapMotion = false;                           // Switch for enabling leap motion based interactions.
+        //public bool enableLeapMotion = false;                           // Switch for enabling leap motion based interactions.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Conversion factor to convert each Unity unit to 1 meter.
@@ -61,7 +61,7 @@ namespace DxR
         private bool gazeVisibility = true;                             // Switch for toggling visibility on-hover on the Anchor object.
         private bool currentVisibility = true;                          // Status of vis visibility.
 
-        void Start()
+        private void Awake()
         {
             // Initialize objects:
             parentObject = gameObject;
@@ -900,6 +900,11 @@ namespace DxR
             {
                 markInstances[m].SetActive(true);
             }
+        }
+
+        public Vector3 GetVisSize()
+        {
+            return new Vector3(width, height, depth);
         }
     }
 
