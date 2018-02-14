@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 114809374629318548}
   - component: {fileID: 114324571816726404}
   - component: {fileID: 114520727242381646}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: DxRGUI
   m_TagString: DxRGUI
   m_Icon: {fileID: 0}
@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 114202200565362748}
   m_Layer: 0
   m_Name: DxRInteractions
-  m_TagString: Untagged
+  m_TagString: DxRInteractions
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2061,12 +2061,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff35d644245a9b345a83026044b042b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  visSpecsURL: example.json
-  enableGUI: 1
-  enableSpecsExpansion: 0
-  enableTooltip: 1
-  verbose: 1
-  enableLeapMotion: 0
   markInstances: []
 --- !u!114 &114306281318335800
 MonoBehaviour:

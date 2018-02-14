@@ -20,7 +20,6 @@ namespace DxR
         public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
         public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         public bool verbose = true;                                     // Switch for verbose log.
-        //public bool enableLeapMotion = false;                           // Switch for enabling leap motion based interactions.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Conversion factor to convert each Unity unit to 1 meter.
@@ -874,7 +873,13 @@ namespace DxR
             {
                 visSpecsToWrite.Remove("interaction");
             }
+            /*
+#if UNITY_EDITOR
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
+#endif
+*/
+            UnityEngine.Windows.File.WriteAllBytes(Parser.GetFullSpecsPath(visSpecsURL),
+                System.Text.Encoding.UTF8.GetBytes(visSpecsToWrite.ToString(2)));
         }
 
         public List<string> GetChannelsList(string markName)
