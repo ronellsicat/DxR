@@ -1,0 +1,46 @@
+{
+  "data": {
+    "url": "streamline.json"
+  },
+  "mark": "paperplane",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative"
+    },
+    "xdirection": {
+      "field": "vx",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "vy",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "vz",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "time",
+      "type": "quantitative",
+      "scale": {
+        "type": "sequential",
+        "domain": [ 0, 5 ]
+      },
+      "legend": {
+        "title": "Color Legend: Time"
+      }
+    },
+    "size": {
+      "value": 15
+    }
+  }
+}

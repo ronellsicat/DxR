@@ -1,0 +1,51 @@
+{
+  "data": {
+    "values": [
+      { "treename": "A", "count": 28 },
+      { "treename": "B", "count": 55 },
+      { "treename": "C", "count": 43 },
+      { "treename": "D", "count": 91 },
+      { "treename": "E", "count": 81 },
+      { "treename": "F", "count": 53 },
+      { "treename": "G", "count": 19 },
+      { "treename": "H", "count": 87 },
+      { "treename": "I", "count": 52 }
+    ]
+  },
+  "mark" : "pinetree",
+  "encoding": {
+    "x": {
+      "field": "treename",
+      "type": "nominal",
+      "axis": {
+        "title": "Tree Type"
+      }
+    },
+    "y": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      },
+      "axis": {
+        "title": "Tree Height (m)"
+      }
+    },
+    "height": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "yoffsetpct": {
+      "value": -1
+    },
+    "width": {
+      "value": 50
+    },
+    "depth": {
+      "value": 50
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "data": {
+    "url": "population_2000.json"
+  },
+  "mark": "radialbar",
+  "encoding": {
+    "latitude": {
+      "field": "lat",
+      "type": "quantitative"
+    },
+    "longitude": {
+      "field": "lng",
+      "type": "quantitative"
+    },
+    "length": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {
+        "range": [ 0, 1 ]
+      }
+    },
+    "color": {
+      "field": "value",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 0.25, 0.6, 1 ],
+        "range": [ "#00FFB5", "#04C3F4", "#F1FF00", "#FF6F00" ]
+      }
+    }
+  },
+  "interaction": [
+    {
+      "type": "thresholdFilter",
+      "field": "value"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "data" : {
-    "url" : "forestfires.csv"
+    "url" : "forestfires_subset.csv"
   },
   "mark" : "fire",
   "encoding" : {
@@ -23,7 +23,7 @@
       }
     }
   },
-  "width" : 1000,
-  "height" : 1000,
-  "depth" : 1000
+  "width" : 5000,
+  "height" : 5000,
+  "depth" : 5000
 }

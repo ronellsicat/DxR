@@ -1,0 +1,29 @@
+{
+  "data" : {
+    "url" : "decay.csv"
+  },
+  "mark" : "blueflame",
+  "encoding" : {
+    "x" : {
+      "field" : "X",
+      "type" : "quantitative"
+    },
+    "y" : {
+      "field" : "Y",
+      "type" : "quantitative"
+    },
+    "size" : {
+      "field" : "area",
+      "type" : "quantitative",
+      "scale" : {
+        "range" : [
+          0,
+          0.5
+        ]
+      }
+    }
+  },
+  "width" : 5000,
+  "height" : 5000,
+  "depth" : 5000
+}

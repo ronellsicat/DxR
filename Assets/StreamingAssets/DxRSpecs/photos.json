@@ -1,0 +1,51 @@
+{
+  "width" : 1000,
+  "height" : 330,
+  "depth" : 600,
+  "data" : {
+    "url" : "photos.csv"
+  },
+  "mark" : "cone",
+  "encoding": {
+    "x": {
+      "field": "Camera_x",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 6 ]
+      }
+    },
+    "y": {
+      "field": "Camera_y",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1.9 ]
+      }
+    },
+    "z": {
+      "field": "Camera_z",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 3.6 ]
+      }
+    },
+    "xdirection": {
+      "field": "Dx",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "Dy",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "Dz",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Camera_type",
+      "type": "nominal"
+    },
+    "size": {
+      "value": 15
+    }
+  }
+}

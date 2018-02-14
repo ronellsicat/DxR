@@ -1,0 +1,16 @@
+{
+  "data": {
+    "url": "cars.json" 
+  },
+  "mark": "tick",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "Cylinders",
+      "type": "ordinal"
+    }
+  }
+}
