@@ -12,14 +12,16 @@
       "type": "quantitative",
       "scale": {
         "domain": [ 0, 1.525 ]
-      }
+      },
+      "axis": "none"
     },
     "z": {
       "field": "Position_y",
       "type": "quantitative",
       "scale": {
         "domain": [ 0, 2.74 ]
-      }
+      },
+      "axis": "none"
     },
     "color": {
       "field": "Set",

@@ -3,47 +3,50 @@
   "height" : 500,
   "depth" : 800,
   "data" : {
-    "url" : "trade1.csv"
+    "url" : "collaboration.csv"
   },
   "mark" : "cube",
-  "encoding": {
-    "x": {
-      "field": "country1",
-      "type": "nominal",
-      "axis": {
-        "titlePadding": 100
+  "encoding" : {
+    "x" : {
+      "field" : "name1",
+      "type" : "nominal",
+      "axis" : {
+        "titlePadding" : 100
       }
     },
-    "y": {
-      "field": "country2",
-      "type": "nominal",
-      "axis": {
-        "titlePadding": 100
+    "y" : {
+      "field" : "name2",
+      "type" : "nominal",
+      "axis" : {
+        "titlePadding" : 100
       }
     },
-    "z": {
-      "field": "time",
-      "type": "ordinal",
-      "axis": {
-        "titlePadding": 80
+    "z" : {
+      "field" : "time",
+      "type" : "ordinal",
+      "axis" : {
+        "titlePadding" : 80
       }
     },
-    "size": {
-      "field": "weight",
-      "type": "quantitative",
-      "scale": {
-        "range": [ 0, 50 ]
+    "size" : {
+      "field" : "weight",
+      "type" : "quantitative",
+      "scale" : {
+        "range" : [
+          0,
+          50
+        ]
       }
     },
-    "color": {
-      "field": "weight",
-      "type": "quantitative"
+    "color" : {
+      "field" : "weight",
+      "type" : "quantitative"
     }
   },
-  "interaction": [
+  "interaction" : [
     {
-      "field": "weight",
-      "type": "thresholdFilter"
+      "field" : "weight",
+      "type" : "thresholdFilter"
     }
   ]
 }

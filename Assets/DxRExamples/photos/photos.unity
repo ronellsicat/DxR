@@ -170,7 +170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &385028731
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -272,6 +272,11 @@ Prefab:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1094627341}
+    - target: {fileID: 114708646396671696, guid: 3eddd1c29199313478dd3f912bfab2ab,
+        type: 2}
+      propertyPath: uiRaycastCamera
+      value: 
+      objectReference: {fileID: 951262427}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 2}
   m_IsPrefabParent: 0
@@ -317,6 +322,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d29bc40b7f3df26479d6a0aac211c355, type: 2}
   m_IsPrefabParent: 0
+--- !u!20 &951262427 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20770519707920992, guid: d29bc40b7f3df26479d6a0aac211c355,
+    type: 2}
+  m_PrefabInternal: {fileID: 824092061}
 --- !u!114 &1094627341 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114611684728110934, guid: a611e772ef8ddf64d8106a9cbb70f31c,
@@ -481,6 +491,16 @@ Prefab:
         type: 2}
       propertyPath: visSpecsURL
       value: photos.json
+      objectReference: {fileID: 0}
+    - target: {fileID: 223710077413158306, guid: 97b500477ed08a34f9f03d9810eb65eb,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 951262427}
+    - target: {fileID: 223710077413158306, guid: 97b500477ed08a34f9f03d9810eb65eb,
+        type: 2}
+      propertyPath: m_ReceivesEvents
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 2}

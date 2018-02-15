@@ -6,46 +6,58 @@
     "url" : "photos.csv"
   },
   "mark" : "cone",
-  "encoding": {
-    "x": {
-      "field": "Camera_x",
-      "type": "quantitative",
-      "scale": {
-        "domain": [ 0, 6 ]
-      }
+  "encoding" : {
+    "x" : {
+      "field" : "x",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          0,
+          6
+        ]
+      },
+      "axis" : "none"
     },
-    "y": {
-      "field": "Camera_y",
-      "type": "quantitative",
-      "scale": {
-        "domain": [ 0, 1.9 ]
-      }
+    "y" : {
+      "field" : "y",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          0,
+          1.9
+        ]
+      },
+      "axis" : "none"
     },
-    "z": {
-      "field": "Camera_z",
-      "type": "quantitative",
-      "scale": {
-        "domain": [ 0, 3.6 ]
-      }
+    "z" : {
+      "field" : "z",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          0,
+          3.6
+        ]
+      },
+      "axis" : "none"
     },
-    "xdirection": {
-      "field": "Dx",
-      "type": "quantitative"
+    "xdirection" : {
+      "field" : "dx",
+      "type" : "quantitative"
     },
-    "ydirection": {
-      "field": "Dy",
-      "type": "quantitative"
+    "ydirection" : {
+      "field" : "dy",
+      "type" : "quantitative"
     },
-    "zdirection": {
-      "field": "Dz",
-      "type": "quantitative"
+    "zdirection" : {
+      "field" : "dz",
+      "type" : "quantitative"
     },
-    "color": {
-      "field": "Camera_type",
-      "type": "nominal"
+    "size" : {
+      "value" : 20
     },
-    "size": {
-      "value": 15
+    "color" : {
+      "field" : "type",
+      "type" : "nominal"
     }
   }
 }

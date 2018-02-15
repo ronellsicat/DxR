@@ -5,15 +5,17 @@
   "mark" : "blueflame",
   "encoding" : {
     "x" : {
-      "field" : "X",
-      "type" : "quantitative"
+      "field" : "x",
+      "type": "quantitative",
+      "axis": "none"
     },
     "y" : {
-      "field" : "Y",
-      "type" : "quantitative"
+      "field" : "y",
+      "type": "quantitative",
+      "axis": "none"
     },
     "size" : {
-      "field" : "area",
+      "field" : "decay",
       "type" : "quantitative",
       "scale" : {
         "range" : [
@@ -23,7 +25,7 @@
       }
     }
   },
-  "width" : 5000,
-  "height" : 5000,
-  "depth" : 5000
+  "width" : 4700,
+  "height" : 3000,
+  "depth" : 100
 }

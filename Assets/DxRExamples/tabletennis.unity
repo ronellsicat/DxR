@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &193402458 stripped
+Camera:
+  m_PrefabParentObject: {fileID: 20770519707920992, guid: d29bc40b7f3df26479d6a0aac211c355,
+    type: 2}
+  m_PrefabInternal: {fileID: 824092061}
 --- !u!1001 &245003118
 Prefab:
   m_ObjectHideFlags: 0
@@ -199,6 +204,11 @@ Prefab:
       propertyPath: Cursor
       value: 
       objectReference: {fileID: 1094627341}
+    - target: {fileID: 114708646396671696, guid: 3eddd1c29199313478dd3f912bfab2ab,
+        type: 2}
+      propertyPath: uiRaycastCamera
+      value: 
+      objectReference: {fileID: 193402458}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3eddd1c29199313478dd3f912bfab2ab, type: 2}
   m_IsPrefabParent: 0
@@ -408,6 +418,16 @@ Prefab:
         type: 2}
       propertyPath: visSpecsURL
       value: tabletennis.json
+      objectReference: {fileID: 0}
+    - target: {fileID: 223710077413158306, guid: 97b500477ed08a34f9f03d9810eb65eb,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 193402458}
+    - target: {fileID: 223710077413158306, guid: 97b500477ed08a34f9f03d9810eb65eb,
+        type: 2}
+      propertyPath: m_ReceivesEvents
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97b500477ed08a34f9f03d9810eb65eb, type: 2}

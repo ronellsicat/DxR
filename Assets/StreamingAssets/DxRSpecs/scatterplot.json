@@ -8,7 +8,7 @@
       "field": "Horsepower",
       "type": "quantitative",
       "scale": {
-        "domain": [ 0, 250 ]
+        "domain": [0, 250]
       }
     },
     "y": {
@@ -20,7 +20,14 @@
     },
     "color": {
       "field": "Origin",
-      "type": "nominal"
+      "type": "nominal",
+      "legend": {
+        "filter": true
+      }
+    },
+    "z": {
+      "field": "Displacement",
+      "type": "quantitative"
     }
   }
 }
