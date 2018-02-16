@@ -1,31 +1,31 @@
 {
-  "data" : {
-    "url" : "decay.csv"
+  "data": {
+    "url": "decay.csv"
   },
-  "mark" : "blueflame",
-  "encoding" : {
-    "x" : {
-      "field" : "x",
+  "mark": "blueflame",
+  "encoding": {
+    "x": {
+      "field": "x",
       "type": "quantitative",
       "axis": "none"
     },
-    "y" : {
-      "field" : "y",
+    "y": {
+      "field": "y",
       "type": "quantitative",
       "axis": "none"
     },
-    "size" : {
-      "field" : "decay",
-      "type" : "quantitative",
-      "scale" : {
-        "range" : [
+    "size": {
+      "field": "decay",
+      "type": "quantitative",
+      "scale": {
+        "range": [
           0,
           0.5
         ]
       }
     }
   },
-  "width" : 4700,
-  "height" : 3000,
-  "depth" : 100
+  "width": 4700,
+  "height": 3000,
+  "depth": 100
 }

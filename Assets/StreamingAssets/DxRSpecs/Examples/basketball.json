@@ -1,10 +1,10 @@
 {
-  "title": "Basketball",
-  "description": "This displays a scatterplot with the color channel mapped to Weight_in_lbs - a quantitative data type.",
   "width": 500,
   "height": 470,
   "depth": 500,
-  "data": { "url": "lebron.json" },
+  "data": {
+    "url": "lebron.json" 
+  },
   "mark": "sphere",
   "encoding": {
     "x": {
@@ -12,8 +12,7 @@
       "type": "quantitative",
       "scale": {
         "type": "linear",
-        "domain": [ 0, 50 ],
-        "range": [ 0, 500 ]
+        "domain": [ 0, 50 ]
       },
       "axis": "none"
     },
@@ -22,8 +21,7 @@
       "type": "quantitative",
       "scale": {
         "type": "linear",
-        "domain": [ 0, 47 ],
-        "range": [ 0, 470 ]
+        "domain": [ 0, 47 ]
       },
       "axis": "none"
     },
@@ -44,14 +42,7 @@
         "z": 0,
         "gradientWidth": 200,
         "gradientHeight": 50,
-        "title": "Shot Made"
-      }
-    },
-    "tooltip": {
-      "field": "made",
-      "type": "quantitative",
-      "scale": {
-        "type":  "none"
+        "title": "Shots Made"
       }
     }
   }
