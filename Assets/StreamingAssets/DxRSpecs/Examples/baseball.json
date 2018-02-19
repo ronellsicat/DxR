@@ -1,33 +1,37 @@
 {
   "width": 500,
   "height": 500,
-  "depth": 500,
+  "depth": 100,
   "data": {
-    "url": "cars.json" 
+    "url": "baseball.csv" 
   },
   "mark": "baseball",
   "encoding": {
     "x": {
-      "field": "Horsepower",
+      "field": "x",
       "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1 ]
+      },
       "axis": "none"
     },
     "y": {
-      "field": "Miles_per_Gallon",
+      "field": "y",
       "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1 ]
+      },
       "axis": "none"
     },
-    "z": {
-      "field": "Displacement",
-      "type": "quantitative",
-      "axis": "none"
+    "color": {
+      "field": "Call",
+      "type": "nominal",
+      "scale": {
+        "scheme": [ "#ffffff", "#bdbdbd", "#636363" ]
+      }
     },
     "size": {
       "value": 20
-    },
-    "tooltip": {
-      "field": "Name",
-      "type": "nominal"
     }
   }
 }
