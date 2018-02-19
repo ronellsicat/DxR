@@ -140,6 +140,10 @@ namespace DxR
 
                 // Get minimum required values:
                 channelEncoding.channel = kvp.Key;
+
+                // Check validity of channel
+                // TODO:
+
                 JSONNode channelSpecs = kvp.Value;
                 if (channelSpecs["value"] == null)
                 {
@@ -150,6 +154,12 @@ namespace DxR
                     else
                     {
                         channelEncoding.field = channelSpecs["field"];
+
+                        // Check validity of data field
+                        if (!data.fieldNames.Contains(channelEncoding.field))
+                        {
+                            throw new Exception("Cannot find data field " + channelEncoding.field + " in data. Please check your spelling (case sensitive).");
+                        }
 
                         if (channelSpecs["type"] != null)
                         {
@@ -189,9 +199,15 @@ namespace DxR
                     {
                         ChannelEncoding ch = new ChannelEncoding();
                         ch.field = node["field"].Value;
+
+                        // Check validity of data field
+                        if (!data.fieldNames.Contains(ch.field))
+                        {
+                            throw new Exception("Cannot find data field " + ch.field + " in data (check your interaction specs). Please check your spelling (case sensitive).");
+                        }
+
                         ch.channel = "color";
-
-
+                        
                         switch (node["type"].Value)
                         {
                             case "toggleFilter":
