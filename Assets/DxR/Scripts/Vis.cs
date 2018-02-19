@@ -51,7 +51,11 @@ namespace DxR
         private GameObject interactionsParentObject = null;             // Parent game object for all interactions, e.g., filters.
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
-        
+
+        List<string> marksList;                                         // List of mark prefabs that can be used at runtime.
+        List<string> dataList;                                          // List of local data that can be used at runtime.
+
+
         private void Awake()
         {
             // Initialize objects:
@@ -70,6 +74,9 @@ namespace DxR
 
             // Parse the vis specs URL into the vis specs object.
             parser.Parse(visSpecsURL, out visSpecs);
+
+            InitDataList();
+            InitMarksList();
 
             // Initialize the GUI based on the initial vis specs.
             InitGUI();
@@ -346,6 +353,12 @@ namespace DxR
                 else
                 {
                     channelEncoding.field = channelSpecs["field"];
+
+                    // Check validity of data field
+                    if(!data.fieldNames.Contains(channelEncoding.field))
+                    {
+                        throw new Exception("Cannot find data field " + channelEncoding.field + " in data. Please check your spelling (case sensitive).");
+                    }
 
                     if (channelSpecs["type"] != null)
                     {
@@ -779,11 +792,10 @@ namespace DxR
             return false;
         }
 
-
-        public List<string> GetDataList()
+        private void InitDataList()
         {
             string[] dirs = Directory.GetFiles(Application.dataPath + "/StreamingAssets/DxRData");
-            List<string> dataList = new List<string>();
+            dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
             dataList.Add("inline");
             for (int i = 0; i < dirs.Length; i++)
@@ -793,17 +805,22 @@ namespace DxR
                     dataList.Add(Path.GetFileName(dirs[i]));
                 }
             }
+        }
+
+        public List<string> GetDataList()
+        {
             return dataList;
         }
 
-        public List<string> GetMarksList()
+        private void InitMarksList()
         {
-            /*
-            List<string> marksList = new List<string>();
+            marksList = new List<string>();
             marksList.Add(DxR.Vis.UNDEFINED);
-            JSONNode marksListObject = JSON.Parse(File.ReadAllText(Application.streamingAssetsPath + "/DxRMarks.json"));
-            if(marksListObject != null)
+            
+            TextAsset marksListTextAsset = (TextAsset)Resources.Load("Marks/marks", typeof(TextAsset));
+            if (marksListTextAsset != null)
             {
+                JSONNode marksListObject = JSON.Parse(marksListTextAsset.text);
                 for (int i = 0; i < marksListObject["marks"].AsArray.Count; i++)
                 {
                     string markNameLowerCase = marksListObject["marks"][i].Value.ToString().ToLower();
@@ -814,33 +831,30 @@ namespace DxR
                         marksList.Add(markNameLowerCase);
                     }
                 }
-            } else
-            {
-                throw new System.Exception("Cannot find file: " + Application.streamingAssetsPath + "/DxRMarks.json");
             }
-            */
-
-            List<string> marksList = new List<string>();
-            marksList.Add(DxR.Vis.UNDEFINED);
-            TextAsset marksListTextAsset = (TextAsset)Resources.Load("Marks/marks", typeof(TextAsset));
-            if(marksListTextAsset != null)
-            {
-                JSONNode marksListObject = JSON.Parse(marksListTextAsset.text);
-                for(int i = 0; i < marksListObject["marks"].AsArray.Count; i++)
-                {
-                    string markNameLowerCase = marksListObject["marks"][i].Value.ToString().ToLower();
-                    GameObject markPrefabResult = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
-
-                    if (markPrefabResult != null)
-                    {
-                        marksList.Add(markNameLowerCase);
-                    }
-                }
-            } else
+            else
             {
                 throw new System.Exception("Cannot find marks.json file in Assets/DxR/Resources/Marks/ directory");
             }
-            
+
+            string[] dirs = Directory.GetFiles("Assets/DxR/Resources/Marks");
+            for (int i = 0; i < dirs.Length; i++)
+            {
+                if (Path.GetExtension(dirs[i]) != ".meta" && Path.GetExtension(dirs[i]) != ".json" 
+                    && !marksList.Contains(Path.GetFileName(dirs[i])))
+                {
+                    marksList.Add(Path.GetFileName(dirs[i]));
+                }
+            }
+
+            if (!marksList.Contains(visSpecs["mark"].Value.ToString()))
+            {
+                marksList.Add(visSpecs["mark"].Value.ToString());
+            }
+        }
+
+        public List<string> GetMarksList()
+        {
             return marksList;
         }
 

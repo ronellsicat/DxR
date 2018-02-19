@@ -156,13 +156,21 @@ namespace DxR
             // Update the JSONNOde specs:
             guiVisSpecs = JSON.Parse(targetVis.GetVisSpecs().ToString());
 
+
+            List<string> marksList = targetVis.GetMarksList();
+
             // Update the dropdown options:
             UpdateGUIDataDropdownList(targetVis.GetDataList());
-            UpdateGUIMarksDropdownList(targetVis.GetMarksList());
-            
+            UpdateGUIMarksDropdownList(marksList);
+
+            if(!marksList.Contains(guiVisSpecs["mark"].Value.ToString()))
+            {
+                throw new Exception("Cannot find mark name in DxR/Resources/Marks/marks.json");
+            }
+
             // Update the dropdown values:
             UpdateDataDropdownValue(guiVisSpecs["data"]["url"].Value);
-            UpdateMarkDropdownValue(guiVisSpecs["mark"].Value);
+UpdateMarkDropdownValue(guiVisSpecs["mark"].Value);
 
             // Update GUI for channels:
             UpdateGUIChannelsList(guiVisSpecs);
