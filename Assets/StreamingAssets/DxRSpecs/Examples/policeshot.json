@@ -1,0 +1,20 @@
+{
+  "data": {
+    "url": "policeshot.csv"
+  },
+  "mark": "star",
+  "encoding": {
+    "x": {
+      "field": "long",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "lat",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "raceethnicity",
+      "type": "nominal"
+    }
+  }
+}

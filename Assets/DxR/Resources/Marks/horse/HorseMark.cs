@@ -14,11 +14,13 @@ namespace DxR
     /// </summary>
     public class HorseMark : Mark
     {
+        Vector3 curDirection;
+
         public HorseMark() : base()
         {
-            origOrientation = curOrientation = Vector3.left;
+            forwardDirection = Vector3.left;
         }
-        
+
         public override void SetChannelValue(string channel, string value)
         {
             switch (channel)
@@ -41,10 +43,10 @@ namespace DxR
             targetOrient.Normalize();
 
             // Copy coordinate to current orientation and normalize.
-            curOrientation[vectorIndex] = targetOrient[vectorIndex];
-            curOrientation.Normalize();
+            curDirection[vectorIndex] = targetOrient[vectorIndex];
+            curDirection.Normalize();
 
-            Quaternion rotation = Quaternion.FromToRotation(origOrientation, curOrientation);
+            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
             transform.rotation = rotation;
         }
 

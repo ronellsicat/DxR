@@ -99,7 +99,6 @@ GameObject:
   - component: {fileID: 65000010555128124}
   - component: {fileID: 114000013549609426}
   - component: {fileID: 114000013369595812}
-  - component: {fileID: 114854604571829066}
   m_Layer: 0
   m_Name: ThresholdFilter
   m_TagString: Untagged
@@ -135,7 +134,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4038079255161038}
-  - component: {fileID: 114724013658626500}
   m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
@@ -175,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1430815934634814
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +267,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.010159969}
   m_LocalScale: {x: 1, y: 1, z: 1.5}
-  m_Children: []
+  m_Children:
+  - {fileID: 4000012298272130}
   m_Father: {fileID: 4000010675212776}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -286,7 +285,6 @@ Transform:
   - {fileID: 4000014133338102}
   - {fileID: 4000012498519616}
   - {fileID: 4000010414788424}
-  - {fileID: 4000012298272130}
   m_Father: {fileID: 4000011864058216}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -302,9 +300,9 @@ Transform:
   m_Children:
   - {fileID: 4384348759388260}
   - {fileID: 4000010675212776}
-  - {fileID: 4419550589043952}
   - {fileID: 4633890879316520}
   - {fileID: 4984588785767286}
+  - {fileID: 4419550589043952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -315,11 +313,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011061344986}
   m_LocalRotation: {x: 0.00000008146034, y: -0, z: -0, w: -1}
-  m_LocalPosition: {x: 0, y: 0.159, z: -0}
-  m_LocalScale: {x: 0.02, y: 0.020000014, z: 0.02000001}
+  m_LocalPosition: {x: 0, y: 0.13, z: -0.007}
+  m_LocalScale: {x: 0.02, y: 0.020000014, z: 0.013333341}
   m_Children: []
-  m_Father: {fileID: 4000010675212776}
-  m_RootOrder: 3
+  m_Father: {fileID: 4000010414788424}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4000012498519616
 Transform:
@@ -397,11 +395,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696105059646474}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0653, y: 0.0379, z: 0}
+  m_LocalPosition: {x: 0, y: 0.0578, z: 0}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children: []
   m_Father: {fileID: 4000011864058216}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4455063696493408
 Transform:
@@ -440,7 +438,7 @@ Transform:
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children: []
   m_Father: {fileID: 4000011864058216}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4984588785767286
 Transform:
@@ -453,7 +451,7 @@ Transform:
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children: []
   m_Father: {fileID: 4000011864058216}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23000010337410676
 MeshRenderer:
@@ -849,13 +847,11 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696105059646474}
-  m_Text: 'Threshold Filter
-
-'
+  m_Text: Threshold Filter
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
-  m_Anchor: 5
+  m_Anchor: 4
   m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 48
@@ -1014,7 +1010,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012031565074}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c6c86add047f7e498462872cc4a1979, type: 3}
   m_Name: 
@@ -1141,15 +1137,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: sliderKnobColor
-  Default: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
-  Focus: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  Press: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
-  Selected: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
-  FocusSelected: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  PressSelected: {r: 0.9019608, g: 0.9019608, b: 0.9019608, a: 1}
-  Disabled: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
-  DisabledSelected: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
-  CurrentValue: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+  Default: {r: 0.7294118, g: 0.16078432, b: 0.16078432, a: 1}
+  Focus: {r: 0.7294118, g: 0.19607843, b: 0.19607843, a: 1}
+  Press: {r: 0.7294118, g: 0.27450982, b: 0.27450982, a: 1}
+  Selected: {r: 0.7294118, g: 0.16078432, b: 0.16078432, a: 1}
+  FocusSelected: {r: 0.7294118, g: 0.19607843, b: 0.19607843, a: 1}
+  PressSelected: {r: 0.7294118, g: 0.27450982, b: 0.27450982, a: 1}
+  Disabled: {r: 0.7294118, g: 0.16078432, b: 0.16078432, a: 1}
+  DisabledSelected: {r: 0.7294118, g: 0.16078432, b: 0.16078432, a: 1}
+  CurrentValue: {r: 0.7294118, g: 0.16078432, b: 0.16078432, a: 1}
   Button: {fileID: 0}
 --- !u!114 &114623199245567628
 MonoBehaviour:
@@ -1191,28 +1187,6 @@ MonoBehaviour:
   ColorBlender: {fileID: 114000010601737356}
   MovePosition: {fileID: 0}
   ScaleSize: {fileID: 0}
---- !u!114 &114724013658626500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1011959923585164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bd20823c70902f4a9d1d7a7daaf96f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tag: sliderFillColor
-  Default: {r: 0.14509805, g: 0.5058824, b: 0.68235296, a: 1}
-  Focus: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
-  Press: {r: 0.29411766, g: 0.7607843, b: 0.9843137, a: 1}
-  Selected: {r: 0.14509805, g: 0.5058824, b: 0.68235296, a: 1}
-  FocusSelected: {r: 0.06666667, g: 0.6117647, b: 0.8745098, a: 1}
-  PressSelected: {r: 0.29411766, g: 0.7607843, b: 0.9843137, a: 1}
-  Disabled: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-  DisabledSelected: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
-  CurrentValue: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  Button: {fileID: 0}
 --- !u!114 &114769760815125994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1231,19 +1205,6 @@ MonoBehaviour:
   ColorBlender: {fileID: 114000013916789966}
   MovePosition: {fileID: 0}
   ScaleSize: {fileID: 0}
---- !u!114 &114854604571829066
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011713906408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac8d5b128a1d8204fb76c86f47b75912, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PivotAxis: 1
-  TargetTransform: {fileID: 0}
 --- !u!114 &114922840319301710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1256,7 +1217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tag: sliderBarColor
-  Default: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
+  Default: {r: 0.3529412, g: 0.3529412, b: 0.3529412, a: 1}
   Focus: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
   Press: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
   Selected: {r: 0.50980395, g: 0.50980395, b: 0.50980395, a: 1}
@@ -1272,7 +1233,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011042864930}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c6c86add047f7e498462872cc4a1979, type: 3}
   m_Name: 

@@ -29,7 +29,10 @@
       "type": "quantitative"
     },
     "yoffsetpct": {
-      "value":  -0.5
+      "value": -0.5
+    },
+    "width": {
+      "value": 40
     }
   }
 }      

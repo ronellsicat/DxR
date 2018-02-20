@@ -41,7 +41,14 @@ namespace DxR
         {
             if(scaleSpecs["scheme"] != null)
             {
-                LoadColorScheme(scaleSpecs["scheme"].Value.ToString(), ref base.range);
+                if (scaleSpecs["scheme"].IsArray)
+                {
+                    CopyNodeToList(scaleSpecs["scheme"], ref range);
+                }
+                else
+                {
+                    LoadColorScheme(scaleSpecs["scheme"].Value.ToString(), ref base.range);
+                }
             } else
             {
                 throw new System.Exception("Missing scheme spec in ordinal scale spec.");
@@ -52,7 +59,13 @@ namespace DxR
         {
             if (scaleSpecs["scheme"] != null)
             {
-                LoadColorScheme(scaleSpecs["scheme"].Value.ToString(), ref base.range);
+                if(scaleSpecs["scheme"].IsArray)
+                {
+                    CopyNodeToList(scaleSpecs["scheme"], ref range);
+                } else
+                {
+                    LoadColorScheme(scaleSpecs["scheme"].Value.ToString(), ref base.range);
+                }
             }
             else
             {

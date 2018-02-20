@@ -1,0 +1,34 @@
+{
+  "width" : 508,
+  "height" : 500,
+  "depth" : 913,
+  "data" : {
+    "url" : "tabletennis.csv"
+  },
+  "mark" : "sphere",
+  "encoding": {
+    "x": {
+      "field": "Position_x",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1.525 ]
+      },
+      "axis": "none"
+    },
+    "z": {
+      "field": "Position_y",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 2.74 ]
+      },
+      "axis": "none"
+    },
+    "color": {
+      "field": "Set",
+      "type": "nominal",
+      "legend": {
+        "filter": true
+      }
+    }
+  }
+}

@@ -6,9 +6,12 @@ using SimpleJSON;
 using UnityEngine;
 
 public class LegendValue : MonoBehaviour {
-    
-	// Use this for initialization
-	void Start () {
+
+    public string dataFieldName = "";
+    public string categoryName = "";
+
+    // Use this for initialization
+    void Start () {
 
 	}
 	
@@ -20,11 +23,17 @@ public class LegendValue : MonoBehaviour {
     public void SetTitle(string title)
     {
         gameObject.GetComponentInChildren<TextMesh>().text = title;
+        categoryName = title;
     } 
 
     public void SetMark(GameObject mark)
     {
         mark.name = "Mark";
         mark.transform.parent = gameObject.transform;
+    }
+
+    public void SetDataFieldName(string fieldName)
+    {
+        dataFieldName = fieldName;
     }
 }

@@ -1,6 +1,4 @@
 {
-  "width": 500,
-  "height": 500,
   "data": {
     "values": [
      {"keyword": "A", "count": 28},
@@ -22,14 +20,23 @@
     },
     "x": {
       "field": "count",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100]
+      }
     },
     "width": {
       "field": "count",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
     },
     "xoffsetpct": {
-      "value":  -0.5
+      "value": -0.5
+    },
+    "height": {
+      "value": 40
     }
   }
 }      

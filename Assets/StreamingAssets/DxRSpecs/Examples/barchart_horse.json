@@ -1,29 +1,26 @@
 {
-  "width": 500,
-  "height": 500,
-  "depth": 500,
   "data": {
     "values": [
-     {"keyword": "A", "count": 28},
-      {"keyword": "B", "count": 55},
-      {"keyword": "C", "count": 43},
-      {"keyword": "D", "count": 91},
-      {"keyword": "E", "count": 81},
-      {"keyword": "F", "count": 53},
-      {"keyword": "G", "count": 19},
-      {"keyword": "H", "count": 87},
-      {"keyword": "I", "count": 52}
+     {"horsename": "A", "speed": 28},
+      {"horsename": "B", "speed": 55},
+      {"horsename": "C", "speed": 43},
+      {"horsename": "D", "speed": 91},
+      {"horsename": "E", "speed": 81},
+      {"horsename": "F", "speed": 53},
+      {"horsename": "G", "speed": 19},
+      {"horsename": "H", "speed": 87},
+      {"horsename": "I", "speed": 52}
     ]
   },
   "mark": "cube",
   "encoding": {
     "x": {
-      "field": "keyword",
+      "field": "horsename",
       "type": "nominal",
       "axis": "none"
     },
     "y": {
-      "field": "count",
+      "field": "speed",
       "type": "quantitative",
       "scale": {
         "domain": [ 0, 100 ]
@@ -31,7 +28,7 @@
       "axis": "none"
     },
     "height": {
-      "field": "count",
+      "field": "speed",
       "type": "quantitative",
       "scale": {
         "domain": [ 0, 100 ]
@@ -49,4 +46,3 @@
     }
   }
 }
-

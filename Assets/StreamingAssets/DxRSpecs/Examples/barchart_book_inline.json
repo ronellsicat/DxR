@@ -1,7 +1,4 @@
-{
-  "width": 400,
-  "height": 400,
-  "depth": 400,
+{ "width": 550,
   "data": {
      "values": [
         {"keyword": "Algorithms", "count": 28},
@@ -26,11 +23,17 @@
     },
     "y": {
       "field": "count",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100]
+      }
     },
     "height": {
       "field": "count",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
     },
     "yrotation": {
       "value": 180

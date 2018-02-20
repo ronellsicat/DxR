@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿//#define USE_INTERACTION_GUI
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SimpleJSON;
@@ -66,14 +68,15 @@ namespace DxR
             Button addChannelBtn = addChannelButtonTransform.GetComponent<Button>();
             addChannelBtn.onClick.AddListener(AddEmptyChannelGUICallback);
 
+#if USE_INTERACTION_GUI
+            
             interactionGUIPrefab = Resources.Load("GUI/InteractionGUI") as GameObject;
 
             addInteractionButtonTransform = gameObject.transform.Find("InteractionList/Viewport/InteractionListContent/AddInteractionButton");
             Button addInteractionBtn = addInteractionButtonTransform.GetComponent<Button>();
             addInteractionBtn.onClick.AddListener(AddEmptyInteractionGUICallback);
-
+#endif
             InitInteractiveButtons();
-
             UpdateGUISpecsFromVisSpecs();
         }
 
@@ -153,19 +156,29 @@ namespace DxR
             // Update the JSONNOde specs:
             guiVisSpecs = JSON.Parse(targetVis.GetVisSpecs().ToString());
 
+
+            List<string> marksList = targetVis.GetMarksList();
+
             // Update the dropdown options:
             UpdateGUIDataDropdownList(targetVis.GetDataList());
-            UpdateGUIMarksDropdownList(targetVis.GetMarksList());
-            
+            UpdateGUIMarksDropdownList(marksList);
+
+            if(!marksList.Contains(guiVisSpecs["mark"].Value.ToString()))
+            {
+                throw new Exception("Cannot find mark name in DxR/Resources/Marks/marks.json");
+            }
+
             // Update the dropdown values:
             UpdateDataDropdownValue(guiVisSpecs["data"]["url"].Value);
-            UpdateMarkDropdownValue(guiVisSpecs["mark"].Value);
+UpdateMarkDropdownValue(guiVisSpecs["mark"].Value);
 
             // Update GUI for channels:
             UpdateGUIChannelsList(guiVisSpecs);
 
+#if USE_INTERACTION_GUI
             // Update GUI for interactions:
-            UpdateGUIInteractionsList(guiVisSpecs);
+            //UpdateGUIInteractionsList(guiVisSpecs);
+#endif 
         }
 
         // Adds or removes channel GUIs according to specs and updates the dropdowns.
@@ -339,6 +352,7 @@ namespace DxR
             guiVisSpecs["encoding"] = encodingObject;
             Debug.Log("GUI CHANNEL SPECS: " + guiVisSpecs["encoding"].ToString());
 
+#if USE_INTERACTION_GUI
             // Update interaction specs:
             guiVisSpecs["interaction"] = null;
             JSONArray interactionArrayObject = new JSONArray();
@@ -361,6 +375,7 @@ namespace DxR
 
             guiVisSpecs["interaction"] = interactionArrayObject;
             Debug.Log("GUI INTERACTION SPECS: " + guiVisSpecs["interaction"].ToString());
+#endif
         }
 
         public JSONNode GetGUIVisSpecs()

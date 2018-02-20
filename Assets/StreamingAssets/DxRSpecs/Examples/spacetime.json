@@ -1,0 +1,52 @@
+{
+  "width" : 500,
+  "height" : 500,
+  "depth" : 800,
+  "data" : {
+    "url" : "collaboration.csv"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "name1",
+      "type" : "nominal",
+      "axis" : {
+        "titlePadding" : 100
+      }
+    },
+    "y" : {
+      "field" : "name2",
+      "type" : "nominal",
+      "axis" : {
+        "titlePadding" : 100
+      }
+    },
+    "z" : {
+      "field" : "time",
+      "type" : "ordinal",
+      "axis" : {
+        "titlePadding" : 80
+      }
+    },
+    "size" : {
+      "field" : "weight",
+      "type" : "quantitative",
+      "scale" : {
+        "range" : [
+          0,
+          50
+        ]
+      }
+    },
+    "color" : {
+      "field" : "weight",
+      "type" : "quantitative"
+    }
+  },
+  "interaction" : [
+    {
+      "field" : "weight",
+      "type" : "thresholdFilter"
+    }
+  ]
+}

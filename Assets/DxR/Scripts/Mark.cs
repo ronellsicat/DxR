@@ -17,17 +17,17 @@ namespace DxR
         public Dictionary<string, string> datum = null;
         GameObject tooltip = null;
 
-        public Vector3 origOrientation;
-        public Vector3 curOrientation;
+        public Vector3 forwardDirection = Vector3.up;
+        Vector3 curDirection;
 
         public Mark()
         {
-            origOrientation = curOrientation = Vector3.up;
+
         }
 
         public void Start()
         {
-            
+            curDirection = forwardDirection;
         }
 
         public virtual List<string> GetChannelsList()
@@ -52,8 +52,10 @@ namespace DxR
                     SetSize(value, 0);
                     break;
                 case "height":
-                case "length":
                     SetSize(value, 1);
+                    break;
+                case "length":
+                    SetSize(value, GetMaxSizeDimension(forwardDirection));
                     break;
                 case "depth":
                     SetSize(value, 2);
@@ -108,6 +110,22 @@ namespace DxR
             }
         }
 
+        private int GetMaxSizeDimension(Vector3 direction)
+        {
+            if( Math.Abs(direction.x) > Math.Abs(direction.y) &&
+                Math.Abs(direction.x) > Math.Abs(direction.z) )
+            {
+                return 0;
+
+            } else if(  Math.Abs(direction.y) > Math.Abs(direction.x) &&
+                        Math.Abs(direction.y) > Math.Abs(direction.z)) 
+            {
+                return 1;
+            }
+
+            return 2;
+        }
+
         public void Infer(Data data, JSONNode specsOrig, out JSONNode specs, 
             string specsFilename)
         {
@@ -122,6 +140,10 @@ namespace DxR
 
                 // Get minimum required values:
                 channelEncoding.channel = kvp.Key;
+
+                // Check validity of channel
+                // TODO:
+
                 JSONNode channelSpecs = kvp.Value;
                 if (channelSpecs["value"] == null)
                 {
@@ -132,6 +154,12 @@ namespace DxR
                     else
                     {
                         channelEncoding.field = channelSpecs["field"];
+
+                        // Check validity of data field
+                        if (!data.fieldNames.Contains(channelEncoding.field))
+                        {
+                            throw new Exception("Cannot find data field " + channelEncoding.field + " in data. Please check your spelling (case sensitive).");
+                        }
 
                         if (channelSpecs["type"] != null)
                         {
@@ -171,9 +199,15 @@ namespace DxR
                     {
                         ChannelEncoding ch = new ChannelEncoding();
                         ch.field = node["field"].Value;
+
+                        // Check validity of data field
+                        if (!data.fieldNames.Contains(ch.field))
+                        {
+                            throw new Exception("Cannot find data field " + ch.field + " in data (check your interaction specs). Please check your spelling (case sensitive).");
+                        }
+
                         ch.channel = "color";
-
-
+                        
                         switch (node["type"].Value)
                         {
                             case "toggleFilter":
@@ -285,9 +319,14 @@ namespace DxR
                 }
             }
 
+            if (legendSpecsObj["filter"] == null)
+            {
+                legendSpecsObj.Add("filter", new JSONBool(false));
+            }
+
             // TODO: Add proper inference. 
             // HACK: For now, always use hard coded options.
-            if(legendSpecsObj["gradientWidth"] == null)
+            if (legendSpecsObj["gradientWidth"] == null)
             {
                 legendSpecsObj.Add("gradientWidth", new JSONNumber(200));
             }
@@ -348,8 +387,13 @@ namespace DxR
             if (axisSpecs != null && axisSpecs.Value.ToString() == "none") return;
 
             JSONObject axisSpecsObj = (axisSpecs == null) ? new JSONObject() : axisSpecs.AsObject;
-            
-            if(axisSpecsObj["face"] == null)
+
+            if (axisSpecsObj["filter"] == null)
+            {
+                axisSpecsObj.Add("filter", new JSONBool(false));
+            }
+
+            if (axisSpecsObj["face"] == null)
             {
                 if(channel == "x" || channel == "y")
                 {
@@ -402,28 +446,34 @@ namespace DxR
                 axisSpecsObj.Add("length", new JSONNumber(axisLength));
             }
 
-            if(axisSpecs["color"] == null)
+            if (axisSpecs["color"] == null)
             {
-                string color = "";
-                switch (channelEncoding.channel)
-                {
-                    case "x":
-                        color = "#ff0000";
-                        break;
-                    case "y":
-                        color = "#00ff00";
-                        break;
-                    case "z":
-                        color = "#0000ff";
-                        break;
-                    default:
-                        break;
-                }
-                
-                axisSpecsObj.Add("color", new JSONString(color));
+                axisSpecsObj.Add("color", new JSONString("#bebebe"));
             }
+                /*
+                if(axisSpecs["color"] == null)
+                {
+                    string color = "";
+                    switch (channelEncoding.channel)
+                    {
+                        case "x":
+                            color = "#ff0000";
+                            break;
+                        case "y":
+                            color = "#00ff00";
+                            break;
+                        case "z":
+                            color = "#0000ff";
+                            break;
+                        default:
+                            break;
+                    }
 
-            if(axisSpecsObj["grid"] == null)
+                    axisSpecsObj.Add("color", new JSONString(color));
+                }
+                */
+
+                if (axisSpecsObj["grid"] == null)
             {
                 axisSpecsObj.Add("grid", new JSONBool(false));
             }
@@ -446,7 +496,7 @@ namespace DxR
                     //float maxDomain = RoundNice(domain.AsArray[1].AsFloat - domain.AsArray[0].AsFloat);
 
                     int numDecimals = Math.Max(GetNumDecimalPlaces(domain.AsArray[0].AsFloat), GetNumDecimalPlaces(domain.AsArray[1].AsFloat));
-                    Debug.Log("NUM DEC " + numDecimals);
+                    //Debug.Log("NUM DEC " + numDecimals);
                     // Add number of ticks.
                     int defaultNumTicks = 6;
                     int numTicks = axisSpecsObj["tickCount"] == null ? defaultNumTicks : axisSpecsObj["tickCount"].AsInt;
@@ -585,6 +635,7 @@ namespace DxR
                 }
                 else
                 {
+                    /*
                     if (scaleSpecs["paddingInner"] == null)
                     {
                         scaleSpecsObj.Add("paddingInner", new JSONString(ScaleBand.PADDING_INNER_DEFAULT.ToString()));
@@ -593,7 +644,8 @@ namespace DxR
                     if (scaleSpecs["paddingOuter"] == null)
                     {
                         scaleSpecsObj.Add("paddingOuter", new JSONString(ScaleBand.PADDING_OUTER_DEFAULT.ToString()));
-                    }
+                    }*/
+                    scaleSpecsObj.Add("padding", new JSONString(ScalePoint.PADDING_DEFAULT.ToString()));
                 }
 
                 if (scaleSpecs["range"] == null)
@@ -659,7 +711,7 @@ namespace DxR
                     specs["width"] = rangeSize;
                 }
 
-            } else if (channel == "y" || channel == "height" || channel == "length")
+            } else if (channel == "y" || channel == "height")
             {
                 range.Add(new JSONString("0"));
                 if (scaleSpecsObj["rangeStep"] == null)
@@ -689,7 +741,7 @@ namespace DxR
             {
                 range.Add(new JSONString("0"));
                 range.Add(new JSONString("1"));
-            } else if (channel == "size")
+            } else if (channel == "size" || channel == "length")
             {
                 range.Add(new JSONString("0"));
                 string maxDimSize = Math.Max(Math.Max(specs["width"].AsFloat, specs["height"].AsFloat),
@@ -842,7 +894,7 @@ namespace DxR
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
-                    type = "band";
+                    type = "point";
                 } else if (fieldDataType == "quantitative")
                 {
                     type = "linear";
@@ -859,7 +911,7 @@ namespace DxR
             {
                 if (fieldDataType == "nominal" || fieldDataType == "ordinal")
                 {
-                    type = "band";
+                    type = "point";
                 }
                 else if (fieldDataType == "quantitative")
                 {
@@ -1001,6 +1053,20 @@ namespace DxR
                 newLocalScale, newLocalScale);
         }
 
+        private void ScaleToMaxDim(string value, int maxDim)
+        {
+            float size = float.Parse(value) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+
+            Vector3 renderSize = gameObject.transform.GetComponent<Renderer>().bounds.size;
+            Vector3 localScale = gameObject.transform.localScale;
+
+            float origMaxSize = renderSize[maxDim] / localScale[maxDim];
+            float newLocalScale = (size / origMaxSize);
+
+            gameObject.transform.localScale = new Vector3(newLocalScale,
+                newLocalScale, newLocalScale);
+        }
+
         private void SetColor(string value)
         {
             Color color;
@@ -1054,10 +1120,10 @@ namespace DxR
             targetOrient.Normalize();
 
             // Copy coordinate to current orientation and normalize.
-            curOrientation[vectorIndex] = targetOrient[vectorIndex];
-            curOrientation.Normalize();
+            curDirection[vectorIndex] = targetOrient[vectorIndex];
+            curDirection.Normalize();
 
-            Quaternion rotation = Quaternion.FromToRotation(origOrientation, curOrientation);
+            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
             transform.rotation = rotation;
         }
 

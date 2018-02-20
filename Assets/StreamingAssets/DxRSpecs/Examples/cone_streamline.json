@@ -1,8 +1,4 @@
 {
-  "title": "Field Data",
-  "width": 500,
-  "height": 500,
-  "depth":  500,
   "data": { "url": "streamline.json" },
   "mark": "cone",
   "encoding": {
@@ -20,24 +16,15 @@
     },
     "xdirection": {
       "field": "vx",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      }
+      "type": "quantitative"
     },
     "ydirection": {
       "field": "vy",
-      "type": "quantitative",
-      "scale": {
-        "type":  "none"
-      }
+      "type": "quantitative"
     },
     "zdirection": {
       "field": "vz",
-      "type": "quantitative",
-      "scale": {
-        "type": "none"
-      }
+      "type": "quantitative"
     },
     "color": {
       "field": "time",

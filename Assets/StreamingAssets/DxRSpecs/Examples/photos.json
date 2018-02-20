@@ -1,0 +1,54 @@
+{
+  "width" : 1000,
+  "height" : 330,
+  "depth" : 600,
+  "data" : {
+    "url" : "photos.csv"
+  },
+  "mark" : "cone",
+  "encoding" : {
+    "x" : {
+      "field" : "x",
+      "type" : "quantitative",
+      "scale" : {
+        "domain": [ 0, 6 ]
+      },
+      "axis" : "none"
+    },
+    "y" : {
+      "field" : "y",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [ 0, 1.9 ]
+      },
+      "axis" : "none"
+    },
+    "z" : {
+      "field" : "z",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [ 0, 3.6 ]
+      },
+      "axis" : "none"
+    },
+    "xdirection" : {
+      "field" : "dx",
+      "type" : "quantitative"
+    },
+    "ydirection" : {
+      "field" : "dy",
+      "type" : "quantitative"
+    },
+    "zdirection" : {
+      "field" : "dz",
+      "type" : "quantitative"
+    },
+    "size" : {
+      "value" : 20
+    },
+    "color" : {
+      "field" : "type",
+      "type" : "nominal"
+    }
+  }
+}

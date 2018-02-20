@@ -20,7 +20,6 @@ namespace DxR
         public bool enableSpecsExpansion = false;                       // Switch for automatically replacing the vis specs text file on disk with inferrence result.
         public bool enableTooltip = true;                               // Switch for tooltip that shows datum attributes on-hover of mark instance.
         public bool verbose = true;                                     // Switch for verbose log.
-        //public bool enableLeapMotion = false;                           // Switch for enabling leap motion based interactions.
 
         public static string UNDEFINED = "undefined";                   // Value used for undefined objects in the JSON vis specs.
         public static float SIZE_UNIT_SCALE_FACTOR = 1.0f / 1000.0f;    // Conversion factor to convert each Unity unit to 1 meter.
@@ -32,9 +31,6 @@ namespace DxR
         Parser parser = null;                                           // Parser of JSON specs and data in text format to JSONNode object specs.
         GUI gui = null;                                                 // GUI object (class) attached to GUI game object.
         GameObject tooltip = null;                                      // Tooltip game object for displaying datum info, e.g., on-hover.
-
-        string guiDataRootPath = "Assets/StreamingAssets/DxRData/";     // Root directory for data files used by GUI.
-        string guiMarksRootPath = "Assets/DxR/Resources/Marks/";        // Root directory for marks folders used by GUI.
 
         // Vis Properties:
         string title;                                                   // Title of vis displayed.
@@ -55,11 +51,10 @@ namespace DxR
         private GameObject interactionsParentObject = null;             // Parent game object for all interactions, e.g., filters.
         private GameObject markPrefab = null;                           // Prefab game object for instantiating marks.
         private List<ChannelEncoding> channelEncodings = null;          // List of channel encodings.
-        
-        // TODO: Move these to the anchor object.
-        private bool distanceVisibility = true;                         // Switch for controlling visibility by user-vis distance.
-        private bool gazeVisibility = true;                             // Switch for toggling visibility on-hover on the Anchor object.
-        private bool currentVisibility = true;                          // Status of vis visibility.
+
+        List<string> marksList;                                         // List of mark prefabs that can be used at runtime.
+        List<string> dataList;                                          // List of local data that can be used at runtime.
+
 
         private void Awake()
         {
@@ -79,6 +74,9 @@ namespace DxR
 
             // Parse the vis specs URL into the vis specs object.
             parser.Parse(visSpecsURL, out visSpecs);
+
+            InitDataList();
+            InitMarksList();
 
             // Initialize the GUI based on the initial vis specs.
             InitGUI();
@@ -136,11 +134,13 @@ namespace DxR
 
             ApplyChannelEncodings();
 
+            // Interactions need to be constructed 
+            // before axes and legends
+            ConstructInteractions(specs);
+
             ConstructAxes(specs);
 
             ConstructLegends(specs);
-
-            ConstructInteractions(specs);
         }
 
         private void ConstructInteractions(JSONNode specs)
@@ -219,6 +219,7 @@ namespace DxR
             if (legendPrefab != null && markPrefab != null)
             {
                 channelEncoding.legend = Instantiate(legendPrefab, guidesParentObject.transform);
+                channelEncoding.legend.GetComponent<Legend>().Init(interactionsParentObject.GetComponent<Interactions>());
                 channelEncoding.legend.GetComponent<Legend>().UpdateSpecs(legendSpecs, ref channelEncoding, markPrefab);
             }
             else
@@ -254,6 +255,8 @@ namespace DxR
             if (axisPrefab != null)
             {
                 channelEncoding.axis = Instantiate(axisPrefab, guidesParentObject.transform);
+                channelEncoding.axis.GetComponent<Axis>().Init(interactionsParentObject.GetComponent<Interactions>(), 
+                    channelEncoding.field);
                 channelEncoding.axis.GetComponent<Axis>().UpdateSpecs(axisSpecs, channelEncoding.scale);                
             }
             else
@@ -351,6 +354,12 @@ namespace DxR
                 {
                     channelEncoding.field = channelSpecs["field"];
 
+                    // Check validity of data field
+                    if(!data.fieldNames.Contains(channelEncoding.field))
+                    {
+                        throw new Exception("Cannot find data field " + channelEncoding.field + " in data. Please check your spelling (case sensitive).");
+                    }
+
                     if (channelSpecs["type"] != null)
                     {
                         channelEncoding.fieldDataType = channelSpecs["type"];
@@ -384,8 +393,11 @@ namespace DxR
                     break;
 
                 case "band":
-                case "point":
                     scale = new ScaleBand(scaleSpecs);
+                    break;
+
+                case "point":
+                    scale = new ScalePoint(scaleSpecs);
                     break;
 
                 case "ordinal":
@@ -780,11 +792,10 @@ namespace DxR
             return false;
         }
 
-
-        public List<string> GetDataList()
+        private void InitDataList()
         {
-            string[] dirs = Directory.GetFiles(guiDataRootPath);
-            List<string> dataList = new List<string>();
+            string[] dirs = Directory.GetFiles(Application.dataPath + "/StreamingAssets/DxRData");
+            dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
             dataList.Add("inline");
             for (int i = 0; i < dirs.Length; i++)
@@ -794,18 +805,56 @@ namespace DxR
                     dataList.Add(Path.GetFileName(dirs[i]));
                 }
             }
+        }
+
+        public List<string> GetDataList()
+        {
             return dataList;
+        }
+
+        private void InitMarksList()
+        {
+            marksList = new List<string>();
+            marksList.Add(DxR.Vis.UNDEFINED);
+            
+            TextAsset marksListTextAsset = (TextAsset)Resources.Load("Marks/marks", typeof(TextAsset));
+            if (marksListTextAsset != null)
+            {
+                JSONNode marksListObject = JSON.Parse(marksListTextAsset.text);
+                for (int i = 0; i < marksListObject["marks"].AsArray.Count; i++)
+                {
+                    string markNameLowerCase = marksListObject["marks"][i].Value.ToString().ToLower();
+                    GameObject markPrefabResult = Resources.Load("Marks/" + markNameLowerCase + "/" + markNameLowerCase) as GameObject;
+
+                    if (markPrefabResult != null)
+                    {
+                        marksList.Add(markNameLowerCase);
+                    }
+                }
+            }
+            else
+            {
+                throw new System.Exception("Cannot find marks.json file in Assets/DxR/Resources/Marks/ directory");
+            }
+
+            string[] dirs = Directory.GetFiles("Assets/DxR/Resources/Marks");
+            for (int i = 0; i < dirs.Length; i++)
+            {
+                if (Path.GetExtension(dirs[i]) != ".meta" && Path.GetExtension(dirs[i]) != ".json" 
+                    && !marksList.Contains(Path.GetFileName(dirs[i])))
+                {
+                    marksList.Add(Path.GetFileName(dirs[i]));
+                }
+            }
+
+            if (!marksList.Contains(visSpecs["mark"].Value.ToString()))
+            {
+                marksList.Add(visSpecs["mark"].Value.ToString());
+            }
         }
 
         public List<string> GetMarksList()
         {
-            string[] dirs = Directory.GetDirectories(guiMarksRootPath);
-            List<string> marksList = new List<string>();
-            marksList.Add(DxR.Vis.UNDEFINED);
-            for (int i = 0; i < dirs.Length; i++)
-            {
-                marksList.Add(Path.GetFileName(dirs[i]));
-            }
             return marksList;
         }
 
@@ -838,7 +887,13 @@ namespace DxR
             {
                 visSpecsToWrite.Remove("interaction");
             }
+            /*
+#if UNITY_EDITOR
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
+#endif
+*/
+            UnityEngine.Windows.File.WriteAllBytes(Parser.GetFullSpecsPath(visSpecsURL),
+                System.Text.Encoding.UTF8.GetBytes(visSpecsToWrite.ToString(2)));
         }
 
         public List<string> GetChannelsList(string markName)

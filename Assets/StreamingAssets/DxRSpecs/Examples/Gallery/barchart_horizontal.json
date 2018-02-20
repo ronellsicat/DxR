@@ -1,0 +1,45 @@
+{
+  "data": {
+    "values": [
+     {"keyword": "A", "count": 28},
+      {"keyword": "B", "count": 55},
+      {"keyword": "C", "count": 43},
+      {"keyword": "D", "count": 91},
+      {"keyword": "E", "count": 81},
+      {"keyword": "F", "count": 53},
+      {"keyword": "G", "count": 19},
+      {"keyword": "H", "count": 87},
+      {"keyword": "I", "count": 52}
+    ]
+  },
+  "mark": "cube",
+  "encoding": {
+    "y": {
+      "field": "keyword",
+      "type": "nominal"
+    },
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 100]
+      }
+    },
+    "width": {
+      "field": "count",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "xoffsetpct": {
+      "value": -0.5
+    },
+    "height": {
+      "value": 40
+    },
+    "color": {
+      "value": "#d95f0e"
+    }
+  }
+}      
