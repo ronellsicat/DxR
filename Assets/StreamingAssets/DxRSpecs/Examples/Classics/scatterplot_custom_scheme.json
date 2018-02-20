@@ -1,0 +1,31 @@
+{
+  "width": 500,
+  "height": 500,
+  "data": {
+    "url": "cars.json"
+  },
+  "mark": "sphere",
+  "encoding": {
+    "color": {
+      "field": "Origin",
+      "type": "nominal",
+      "scale": {
+        "scheme": [ "#e41a1c", "#377eb8", "#4daf4a" ]
+      }
+    },
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 250 ]
+      }
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 50 ]
+      }
+    }
+  }
+}
