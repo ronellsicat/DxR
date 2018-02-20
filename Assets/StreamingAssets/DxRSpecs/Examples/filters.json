@@ -6,15 +6,108 @@
   "encoding" : {
     "x" : {
       "field" : "Horsepower",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          0,
+          250
+        ],
+        "type" : "linear",
+        "padding" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05"
+      },
+      "axis" : {
+        "filter" : true,
+        "face" : "front",
+        "orient" : "bottom",
+        "title" : "Horsepower",
+        "length" : 500,
+        "color" : "#bebebe",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          "0",
+          "50",
+          "100",
+          "150",
+          "200",
+          "250"
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "y" : {
       "field" : "Displacement",
-      "type" : "quantitative"
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [
+          0,
+          500
+        ],
+        "type" : "linear",
+        "padding" : "0.05",
+        "range" : [
+          "0",
+          "500"
+        ],
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05"
+      },
+      "axis" : {
+        "filter" : true,
+        "face" : "front",
+        "orient" : "left",
+        "title" : "Displacement",
+        "length" : 500,
+        "color" : "#bebebe",
+        "grid" : false,
+        "ticks" : true,
+        "values" : [
+          "0",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500"
+        ],
+        "tickCount" : 6,
+        "labels" : true
+      }
     },
     "color" : {
-      "field" : "Cylinders",
-      "type" : "ordinal"
+      "field" : "Origin",
+      "type" : "ordinal",
+      "legend" : {
+        "filter" : true,
+        "type" : "symbol",
+        "gradientWidth" : 200,
+        "gradientHeight" : 50,
+        "face" : "front",
+        "orient" : "right",
+        "x" : 500,
+        "y" : 500,
+        "z" : 0,
+        "title" : "Legend: Origin"
+      },
+      "scale" : {
+        "type" : "ordinal",
+        "domain" : [
+          "Europe",
+          "Japan",
+          "USA"
+        ],
+        "padding" : "0.05",
+        "range" : "ordinal",
+        "scheme" : "ramp",
+        "paddingInner" : "0.05",
+        "paddingOuter" : "0.05"
+      }
     }
   },
   "width" : 500,
@@ -22,20 +115,22 @@
   "depth" : 500,
   "interaction" : [
     {
-      "type" : "thresholdFilter",
-      "field" : "Horsepower",
+      "type" : "toggleFilter",
+      "field" : "Cylinders",
       "domain" : [
-        "0",
-        "100"
+        "3",
+        "4",
+        "5",
+        "6",
+        "8"
       ]
     },
     {
-      "type" : "toggleFilter",
-      "field" : "Origin",
+      "type" : "thresholdFilter",
+      "field" : "Weight_in_lbs",
       "domain" : [
-        "Europe",
-        "Japan",
-        "USA"
+        "0",
+        "5140"
       ]
     }
   ]
