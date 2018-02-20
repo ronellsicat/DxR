@@ -432,7 +432,15 @@ namespace DxR
                     {
                         visSpecsToWrite.Remove("interaction");
                     }
-                    System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
+#if UNITY_EDITOR
+            System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
+#else
+
+                    UnityEngine.Windows.File.WriteAllBytes(Parser.GetFullSpecsPath(visSpecsURL),
+                        System.Text.Encoding.UTF8.GetBytes(visSpecsToWrite.ToString(2)));
+#endif
+
+                    
                 }
             }
             else
@@ -837,6 +845,7 @@ namespace DxR
                 throw new System.Exception("Cannot find marks.json file in Assets/DxR/Resources/Marks/ directory");
             }
 
+#if UNITY_EDITOR
             string[] dirs = Directory.GetFiles("Assets/DxR/Resources/Marks");
             for (int i = 0; i < dirs.Length; i++)
             {
@@ -846,6 +855,7 @@ namespace DxR
                     marksList.Add(Path.GetFileName(dirs[i]));
                 }
             }
+#endif
 
             if (!marksList.Contains(visSpecs["mark"].Value.ToString()))
             {
@@ -887,13 +897,14 @@ namespace DxR
             {
                 visSpecsToWrite.Remove("interaction");
             }
-            /*
+
 #if UNITY_EDITOR
             System.IO.File.WriteAllText(Parser.GetFullSpecsPath(visSpecsURL), visSpecsToWrite.ToString(2));
-#endif
-*/
+#else
+
             UnityEngine.Windows.File.WriteAllBytes(Parser.GetFullSpecsPath(visSpecsURL),
                 System.Text.Encoding.UTF8.GetBytes(visSpecsToWrite.ToString(2)));
+#endif
         }
 
         public List<string> GetChannelsList(string markName)
