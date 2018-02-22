@@ -1117,11 +1117,11 @@ namespace DxR
             // Set target direction dim to normalized size.
             Vector3 targetOrient = Vector3.zero;
             targetOrient[vectorIndex] = float.Parse(value);
-            targetOrient.Normalize();
+            //targetOrient.Normalize();
 
             // Copy coordinate to current orientation and normalize.
             curDirection[vectorIndex] = targetOrient[vectorIndex];
-            curDirection.Normalize();
+            //curDirection.Normalize();
 
             Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
             transform.rotation = rotation;
