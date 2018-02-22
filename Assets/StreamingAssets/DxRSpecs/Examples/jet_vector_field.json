@@ -1,0 +1,76 @@
+{
+  "width": 1500,
+  "height": 500,
+  "depth": 500,
+  "data": {
+    "url": "jet_vector_field.csv"
+  },
+  "mark": "arrow",
+  "encoding": {
+    "x": {
+      "field": "Position_x",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 90 ]
+      }
+    },
+    "y": {
+      "field": "Position_y",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 30 ]
+      },
+      "axis": {
+        "filter": true
+      }
+    },
+    "z": {
+      "field": "Position_z",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 30 ]
+      },
+      "axis": {
+        "filter": true
+      }
+    },
+    "height": {
+      "field": "Velocity_length",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 30 ],
+        "range": [0, 120]
+      }
+    },
+    "color": {
+      "field": "Velocity_length",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 10, 20, 30],
+        "range": [ "#00FFB5", "#04C3F4", "#F1FF00", "#FF6F00" ]
+      }
+    },
+    "xdirection": {
+      "field": "Velocity_x",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "Velocity_y",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "Velocity_z",
+      "type": "quantitative"
+    }
+  },
+  "interaction": [
+    {
+      "field": "Velocity_length",
+      "type": "thresholdFilter"
+    },
+    {
+      "field": "skip",
+      "type": "toggleFilter"
+    }
+  ]
+}

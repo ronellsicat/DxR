@@ -1,0 +1,62 @@
+{
+  "width": 1000,
+  "height": 1000,
+  "depth": 200,
+  "data": {
+    "url": "hurricane.csv"
+  },
+  "mark": "arrow",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 500 ]
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 500 ]
+      },
+      "axis": {
+        "filter": true
+      }
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      },
+      "axis": {
+        "filter": true
+      }
+    },
+    "height": {
+      "field": "Velocity",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ],
+        "range": [0, 100]
+      }
+    },
+    "color": {
+      "field": "Velocity",
+      "type": "quantitative"
+    },
+    "xdirection": {
+      "field": "U",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "V",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "W",
+      "type": "quantitative"
+    }
+  }
+}
