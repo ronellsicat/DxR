@@ -39,15 +39,15 @@
       "type": "quantitative",
       "scale": {
         "domain": [ 0, 30 ],
-        "range": [0, 120]
+        "range": [ 0, 120 ]
       }
     },
     "color": {
       "field": "Velocity_length",
       "type": "quantitative",
       "scale": {
-        "domain": [0, 10, 20, 30],
-        "range": [ "#00FFB5", "#04C3F4", "#F1FF00", "#FF6F00" ]
+        "domain": [ 0,  10, 15 , 20 ],
+        "range": [ "#FFFFFF", "#FFFA00", "#FF6F00", "#FF0000" ]
       }
     },
     "xdirection": {
@@ -61,6 +61,14 @@
     "zdirection": {
       "field": "Velocity_z",
       "type": "quantitative"
+    },
+    "opacity": {
+      "field": "Velocity_length",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 10, 15, 30 ],
+        "range": [ 0,0.5,0.8, 1 ]
+      }
     }
   },
   "interaction": [
