@@ -39,12 +39,16 @@
       "type": "quantitative",
       "scale": {
         "domain": [ 0, 100 ],
-        "range": [0, 100]
+        "range": [ 0, 100 ]
       }
     },
     "color": {
       "field": "Velocity",
-      "type": "quantitative"
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0,  80 ],
+        "range": [ "#0019FF", "#FF0000" ]
+      }
     },
     "xdirection": {
       "field": "U",
@@ -57,6 +61,14 @@
     "zdirection": {
       "field": "W",
       "type": "quantitative"
+    },
+    "opacity": {
+      "field": "Velocity",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 80 ],
+        "range": [ 0,  1 ]
+      }
     }
   }
 }
