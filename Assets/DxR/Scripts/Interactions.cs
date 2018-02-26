@@ -308,8 +308,8 @@ namespace DxR
             thresholdFilterInstance.transform.Find("ThresholdFilterMaxLabel").gameObject.GetComponent<TextMesh>().text =
                 interactionSpecs["domain"][1].Value;
 
-            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
-                thresholdFilterInstance.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+            DxR.SliderGestureControlBothSide sliderControl =
+                thresholdFilterInstance.GetComponent<DxR.SliderGestureControlBothSide>();
             if (sliderControl == null) return;
 
             float domainMin = float.Parse(interactionSpecs["domain"][0].Value);
@@ -318,7 +318,8 @@ namespace DxR
             // TODO: Check validity of specs.
 
             sliderControl.SetSpan(domainMin, domainMax);
-            sliderControl.SetSliderValue(domainMax);
+            sliderControl.SetSliderValue1(domainMin);
+            sliderControl.SetSliderValue2(domainMax);
 
             sliderControl.OnUpdateEvent.AddListener(ThresholdFilterUpdated);
             
@@ -356,26 +357,29 @@ namespace DxR
                 return;
             }
 
-            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
-               selectedObject.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+            DxR.SliderGestureControlBothSide sliderControl =
+               selectedObject.GetComponent<DxR.SliderGestureControlBothSide>();
             
             if (sliderControl != null && targetVis != null)
             {
                 // Update filter results for thresholded data field category.
-                UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue);
+                if(sliderControl.SliderValue1< sliderControl.SliderValue2)
+                    UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue1, sliderControl.SliderValue2);
+                else
+                    UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue2, sliderControl.SliderValue1);
 
                 targetVis.FiltersUpdated();
                 Debug.Log("Filter updated! " + fieldName);
             }
         }
 
-        private void UpdateFilterResultsForThreshold(string field, float thresholdValue)
+        private void UpdateFilterResultsForThreshold(string field, float thresholdMinValue, float thresholdMaxValue)
         {
-            Debug.Log("Updating filter results for field, threshold " + field + ", " + thresholdValue.ToString());
+            Debug.Log("Updating filter results for field, threshold " + field + ", " + thresholdMinValue.ToString() +"<"+ thresholdMaxValue.ToString());
             List<bool> res = filterResults[field];
             for (int b = 0; b < res.Count; b++)
             {
-                if (float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) <= thresholdValue)
+                if (float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) >= thresholdMinValue && float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) <= thresholdMaxValue)
                 {
                     res[b] = true;
                 }
