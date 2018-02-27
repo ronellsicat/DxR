@@ -1078,12 +1078,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParentObject: {fileID: 0}
-  IsEnabled: 1
+  IsEnabled: 0
   DetectHold: 0
   HoldTime: 0.5
   RollOffTime: 0.02
-  Keyword: Min,Center,Max
-  KeywordRequiresGaze: 1
+  Keyword: 
+  KeywordRequiresGaze: 0
   OnSelectEvents:
     m_PersistentCalls:
       m_Calls: []

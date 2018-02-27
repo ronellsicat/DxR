@@ -39,6 +39,8 @@ namespace DxR
         float depth;                                                    // Depth of scene in millimeters.
         string markType;                                                // Type or name of mark used in vis.
         public Data data;                                               // Object containing data.
+        bool IsLinked = false;                                          // Link to other vis object for interaction.
+        string data_name=null;
 
         public List<GameObject> markInstances;                                 // List of mark instances; each mark instance corresponds to a datum.
 
@@ -94,6 +96,11 @@ namespace DxR
         public int GetNumMarkInstances()
         {
             return markInstances.Count;
+        }
+
+        public bool GetIsLinked()
+        {
+            return IsLinked;
         }
 
         private void InitTooltip()
@@ -489,6 +496,7 @@ namespace DxR
             if(visSpecs["data"]["url"] != "inline")
             {
                 visSpecs["data"].Add("values", parser.CreateValuesSpecs(visSpecs["data"]["url"]));
+                data_name = visSpecs["data"]["url"];
             }
             
             JSONNode valuesSpecs = visSpecs["data"]["values"];
@@ -535,7 +543,19 @@ namespace DxR
                 }
             }
 
+            if (visSpecs["data"]["linked"] != null)
+            {
+                if (visSpecs["data"]["linked"] == "true")
+                {
+                    IsLinked = true;
+                }
+            }
             //            SubsampleData(valuesSpecs, 8, "Assets/DxR/Resources/cars_subsampled.json");
+        }
+
+        public string GetDataName()
+        {
+            return data_name;
         }
 
         private void SubsampleData(JSONNode data, int samplingRate, string outputName)

@@ -282,7 +282,7 @@ namespace DxR
             }
 
             mSliderValue1 = Mathf.Clamp(value, MinSliderValue, MaxSliderValue);
-            mDeltaValue1 = SliderValue1 / MaxSliderValue;
+            mDeltaValue1 = (SliderValue1-MinSliderValue) / (MaxSliderValue-MinSliderValue);
             UpdateVisuals();
             mCachedValue1 = mDeltaValue1;
 
@@ -296,7 +296,7 @@ namespace DxR
 			}
 			
 			mSliderValue2 = Mathf.Clamp(value, MinSliderValue, MaxSliderValue);
-			mDeltaValue2 = SliderValue2 / MaxSliderValue;
+			mDeltaValue2 = (SliderValue2-MinSliderValue) / (MaxSliderValue-MinSliderValue);
 			UpdateVisuals();
             mCachedValue2 = mDeltaValue2;
 
@@ -393,6 +393,7 @@ namespace DxR
                     Label2.text = Mathf.Round(displayValue).ToString(LabelFormat);
                 }
             }
+            OnUpdateEvent.Invoke();
         }
 
         /// <summary>
@@ -435,11 +436,11 @@ namespace DxR
 
                 if (!Centered)
                 {
-                    SliderValue1 = mDeltaValue1 * mValueSpan;
+                    SliderValue1 = mDeltaValue1 * mValueSpan+MinSliderValue;
                 }
                 else
                 {
-                    SliderValue1 = mDeltaValue1 * mValueSpan * 2 - mValueSpan;
+                    SliderValue1 = mDeltaValue1 * mValueSpan * 2 - mValueSpan + MinSliderValue;
                 }
 
 
@@ -454,16 +455,15 @@ namespace DxR
 
                 if (!Centered)
                 {
-                    SliderValue2 = mDeltaValue2 * mValueSpan;
+                    SliderValue2 = mDeltaValue2 * mValueSpan + MinSliderValue;
                 }
                 else
                 {
-                    SliderValue2 = mDeltaValue2 * mValueSpan * 2 - mValueSpan;
+                    SliderValue2 = mDeltaValue2 * mValueSpan * 2 - mValueSpan + MinSliderValue;
                 }
 
 
                 UpdateVisuals();
-
             }
         }
     }
