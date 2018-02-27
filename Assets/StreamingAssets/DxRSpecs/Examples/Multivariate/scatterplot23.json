@@ -1,0 +1,34 @@
+{
+  "data": {
+    "url": "cars.json",
+    "linked": "true"
+  },
+  "mark": "sphere",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 250 ]
+      },
+      "axis": {
+        "filter": true
+      }
+    },
+    "y": {
+      "field": "Acceleration",
+      "type": "quantitative",
+      "axis": {
+        "title": "Acceleration"
+      }
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    "size": {
+      "value": 15
+    }
+  }
+}
+ 
