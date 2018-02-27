@@ -210,13 +210,13 @@ namespace DxR
 
             if (!Centered)
             {
-                if(current_selection==1)SliderValue1 = mDeltaValue1 * mValueSpan;
-                else SliderValue2 = mDeltaValue2 * mValueSpan;
+                if(current_selection==1)SliderValue1 = mDeltaValue1 * mValueSpan + MinSliderValue;
+                else SliderValue2 = mDeltaValue2 * mValueSpan + +MinSliderValue;
             }
             else
             {
-                if(current_selection==1)SliderValue1 = mDeltaValue1 * mValueSpan * 2 - mValueSpan;
-                else SliderValue2 = mDeltaValue2 * mValueSpan * 2 - mValueSpan;
+                if(current_selection==1)SliderValue1 = mDeltaValue1 * mValueSpan * 2 - mValueSpan + MinSliderValue;
+                else SliderValue2 = mDeltaValue2 * mValueSpan * 2 - mValueSpan + MinSliderValue;
             }
 
             UpdateVisuals();
@@ -436,7 +436,7 @@ namespace DxR
 
                 if (!Centered)
                 {
-                    SliderValue1 = mDeltaValue1 * mValueSpan+MinSliderValue;
+                    SliderValue1 = mDeltaValue1 * mValueSpan + MinSliderValue;
                 }
                 else
                 {
