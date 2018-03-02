@@ -1,0 +1,39 @@
+{
+  "data": {
+    "url": "iris.csv",
+    "linked": "true"
+  },
+  "mark": "sphere",
+  "encoding": {
+    "y": {
+      "field": "Sepal_width",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 2, 4.4 ]
+      },
+      "axis": {
+        "title": "Sepal width",
+        "filter": true
+      }
+    },
+    "x": {
+      "field": "Petal_width",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0.1, 2.5 ]
+      },
+      "axis": {
+        "title": "Petal width",
+        "filter": true
+      }
+    },
+    "color": {
+      "field": "Class",
+      "type": "nominal"
+    },
+    "size": {
+      "value": 15
+    }
+  }
+}
+ 

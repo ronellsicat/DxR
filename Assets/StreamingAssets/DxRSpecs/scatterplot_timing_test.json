@@ -1,0 +1,30 @@
+{
+  "data": {
+    "url": "cars.json"
+  },
+  "mark": "cube",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1 ]
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1 ]
+      }
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 1 ]
+      }
+    }
+  }
+}
+ 

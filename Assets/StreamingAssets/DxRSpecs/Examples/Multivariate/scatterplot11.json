@@ -1,0 +1,38 @@
+{
+  "data": {
+    "url": "cars.json",
+    "linked": "true"
+  },
+  "mark": "sphere",
+  "encoding": {
+    "x": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 50 ]
+      },
+      "axis": {
+        "filter": true,
+        "title": "Miles per Gallon"
+      }
+    },
+    "y": {
+      "field": "Miles_per_Gallon",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 50 ]
+      },
+      "axis": {
+        "title": "Miles per Gallon"
+      }
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    },
+    "size": {
+      "value": 15
+    }
+  }
+}
+ 

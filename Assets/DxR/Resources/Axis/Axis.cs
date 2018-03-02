@@ -83,9 +83,9 @@ namespace DxR
             slider.gameObject.SetActive(true);
 
             SetFilterLength(axisSpecs["length"].AsFloat);
-            
-            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
-                    slider.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+
+            DxR.SliderGestureControlBothSide sliderControl =
+                    slider.GetComponent<DxR.SliderGestureControlBothSide>();
             if (sliderControl == null) return;
 
             float domainMin = float.Parse(scale.domain[0]);
@@ -94,7 +94,8 @@ namespace DxR
             // TODO: Check validity of specs.
 
             sliderControl.SetSpan(domainMin, domainMax);
-            sliderControl.SetSliderValue(domainMax);
+            sliderControl.SetSliderValue1(domainMin);
+            sliderControl.SetSliderValue2(domainMax);
 
             slider.gameObject.name = dataField;
 
@@ -178,16 +179,22 @@ namespace DxR
             Transform sliderBar = gameObject.transform.Find("AxisLine/Slider/SliderBar");
             if (sliderBar != null)
             {
-                Transform knob = sliderBar.Find("SliderKnob");
-                Vector3 knobOrigScale = knob.localScale;
+                Transform knob1 = sliderBar.Find("SliderKnob1");
+                Transform knob2 = sliderBar.Find("SliderKnob2");
+                Vector3 knobOrigScale1 = knob1.localScale;
+                Vector3 knobOrigScale2 = knob2.localScale;
 
                 float newLocalScale = length / 0.2127f; // sliderBar.GetComponent<MeshFilter>().mesh.bounds.size.x;
                 sliderBar.transform.localScale = new Vector3(newLocalScale, sliderBar.transform.localScale.y,
                     sliderBar.transform.localScale.z);
 
-                if (knob != null)
+                if (knob1 != null)
                 {
-                    knob.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
+                    knob1.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
+                }
+                if (knob2 != null)
+                {
+                    knob2.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
                 }
             }
         }

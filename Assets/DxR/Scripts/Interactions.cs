@@ -19,10 +19,12 @@ namespace DxR
 
         Dictionary<string, List<string>> domains = null;
 
+        private GameObject[] DxRVisObjects=null; 
+
         // Use this for initialization
         void Start()
         {
-           
+
         }
 
         // Update is called once per frame
@@ -38,6 +40,10 @@ namespace DxR
             
             if (targetVis != null)
             {
+                if (targetVis.GetIsLinked())
+                {
+                    DxRVisObjects = GameObject.FindGameObjectsWithTag("DxRVis");         //Collect vis objects
+                }
                 filterResults = new Dictionary<string, List<bool>>();
                 domains = new Dictionary<string, List<string>>();
             }
@@ -155,6 +161,40 @@ namespace DxR
             }
 
             filterResults[field] = res;
+
+            if (targetVis.GetIsLinked())
+            {
+                for (int i = 0; i < DxRVisObjects.Length; i++)
+                {
+                    if (DxRVisObjects[i].GetComponent<Vis>().GetIsLinked())
+                    {
+                        if (DxRVisObjects[i].GetComponent<Vis>().GetDataName() == targetVis.GetDataName())
+                        {
+                            GameObject DxRInteraction = DxRVisObjects[i].transform.Find("DxRInteractions").gameObject;
+                            List<bool> t_res = new List<bool>(new bool[res.Count]);
+                            if (!DxRInteraction.GetComponent<Interactions>().filterResults.ContainsKey(field))
+                            {
+                                DxRInteraction.GetComponent<Interactions>().filterResults.Add(field, t_res);
+                            }
+                            for (int b = 0; b < t_res.Count; b++)
+                            {
+                                if (visibleCategories.Contains(DxRVisObjects[i].GetComponent<Vis>().markInstances[b].GetComponent<Mark>().datum[field]))
+                                {
+                                    t_res[b] = true;
+                                }
+                                else
+                                {
+                                    t_res[b] = false;
+                                }
+                            }
+                            DxRInteraction.GetComponent<Interactions>().filterResults[field] = t_res;
+                            DxRVisObjects[i].GetComponent<Vis>().FiltersUpdated();
+                        }
+                    }
+                }
+            }
+
+//            if (targetVis.GetIsLinked()) Synchronize(field);
         }
 
         internal void AddToggleFilter(JSONObject interactionSpecs)
@@ -280,6 +320,41 @@ namespace DxR
             }
 
             filterResults[field] = res;
+
+            if (targetVis.GetIsLinked())
+            {
+                for (int i = 0; i < DxRVisObjects.Length; i++)
+                {
+                    if (DxRVisObjects[i].GetComponent<Vis>().GetIsLinked())
+                    {
+                        if (DxRVisObjects[i].GetComponent<Vis>().GetDataName() == targetVis.GetDataName())
+                        {
+                            GameObject DxRInteraction = DxRVisObjects[i].transform.Find("DxRInteractions").gameObject;
+                            List<bool> t_res = new List<bool>(new bool[res.Count]);
+                            if (!DxRInteraction.GetComponent<Interactions>().filterResults.ContainsKey(field))
+                            {
+                                DxRInteraction.GetComponent<Interactions>().filterResults.Add(field, t_res);
+                            }
+                            for (int b = 0; b < t_res.Count; b++)
+                            {
+                                if (visibleCategories.Contains(DxRVisObjects[i].GetComponent<Vis>().markInstances[b].GetComponent<Mark>().datum[field]))
+                                {
+                                    t_res[b] = true;
+                                }
+                                else
+                                {
+                                    t_res[b] = false;
+                                }
+                            }
+                            DxRInteraction.GetComponent<Interactions>().filterResults[field] = t_res;
+                            DxRVisObjects[i].GetComponent<Vis>().FiltersUpdated();
+                        }
+                    }
+                }
+            }
+
+
+            //            if (targetVis.GetIsLinked()) Synchronize(field);
         }
 
         internal void EnableAxisThresholdFilter(string field)
@@ -308,8 +383,8 @@ namespace DxR
             thresholdFilterInstance.transform.Find("ThresholdFilterMaxLabel").gameObject.GetComponent<TextMesh>().text =
                 interactionSpecs["domain"][1].Value;
 
-            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
-                thresholdFilterInstance.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+            DxR.SliderGestureControlBothSide sliderControl =
+                thresholdFilterInstance.GetComponent<DxR.SliderGestureControlBothSide>();
             if (sliderControl == null) return;
 
             float domainMin = float.Parse(interactionSpecs["domain"][0].Value);
@@ -318,7 +393,8 @@ namespace DxR
             // TODO: Check validity of specs.
 
             sliderControl.SetSpan(domainMin, domainMax);
-            sliderControl.SetSliderValue(domainMax);
+            sliderControl.SetSliderValue1(domainMin);
+            sliderControl.SetSliderValue2(domainMax);
 
             sliderControl.OnUpdateEvent.AddListener(ThresholdFilterUpdated);
             
@@ -356,26 +432,29 @@ namespace DxR
                 return;
             }
 
-            HoloToolkit.Examples.InteractiveElements.SliderGestureControl sliderControl =
-               selectedObject.GetComponent<HoloToolkit.Examples.InteractiveElements.SliderGestureControl>();
+            DxR.SliderGestureControlBothSide sliderControl =
+               selectedObject.GetComponent<DxR.SliderGestureControlBothSide>();
             
             if (sliderControl != null && targetVis != null)
             {
                 // Update filter results for thresholded data field category.
-                UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue);
+                if(sliderControl.SliderValue1< sliderControl.SliderValue2)
+                    UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue1, sliderControl.SliderValue2);
+                else
+                    UpdateFilterResultsForThreshold(fieldName, sliderControl.SliderValue2, sliderControl.SliderValue1);
 
                 targetVis.FiltersUpdated();
                 Debug.Log("Filter updated! " + fieldName);
             }
         }
 
-        private void UpdateFilterResultsForThreshold(string field, float thresholdValue)
+        private void UpdateFilterResultsForThreshold(string field, float thresholdMinValue, float thresholdMaxValue)
         {
-            Debug.Log("Updating filter results for field, threshold " + field + ", " + thresholdValue.ToString());
+            Debug.Log("Updating filter results for field, threshold " + field + ", " + thresholdMinValue.ToString() +"<"+ thresholdMaxValue.ToString());
             List<bool> res = filterResults[field];
             for (int b = 0; b < res.Count; b++)
             {
-                if (float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) <= thresholdValue)
+                if (float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) >= thresholdMinValue && float.Parse(targetVis.markInstances[b].GetComponent<Mark>().datum[field]) <= thresholdMaxValue)
                 {
                     res[b] = true;
                 }
@@ -386,6 +465,61 @@ namespace DxR
             }
 
             filterResults[field] = res;
+            if (targetVis.GetIsLinked())
+            {
+                for (int i = 0; i < DxRVisObjects.Length; i++)
+                {
+                    if (DxRVisObjects[i].GetComponent<Vis>().GetIsLinked())
+                    {
+                        if (DxRVisObjects[i].GetComponent<Vis>().GetDataName() == targetVis.GetDataName())
+                        {
+                            GameObject DxRInteraction = DxRVisObjects[i].transform.Find("DxRInteractions").gameObject;
+                            List<bool> t_res= new List<bool>(new bool[res.Count]);
+                            if (!DxRInteraction.GetComponent<Interactions>().filterResults.ContainsKey(field))
+                            {
+                                DxRInteraction.GetComponent<Interactions>().filterResults.Add(field, t_res);
+                            }
+                            for (int b = 0; b < t_res.Count; b++)
+                            {
+                                if (float.Parse(DxRVisObjects[i].GetComponent<Vis>().markInstances[b].GetComponent<Mark>().datum[field]) >= thresholdMinValue && float.Parse(DxRVisObjects[i].GetComponent<Vis>().markInstances[b].GetComponent<Mark>().datum[field]) <= thresholdMaxValue)
+                                {
+                                    t_res[b] = true;
+                                }
+                                else
+                                {
+                                    t_res[b] = false;
+                                }
+                            }
+
+                            DxRInteraction.GetComponent<Interactions>().filterResults[field] = t_res;
+                            DxRVisObjects[i].GetComponent<Vis>().FiltersUpdated();
+                        }
+                    }
+                }
+            }
+//            Synchronize(field);
+        }
+
+        private void Synchronize(string field)
+        {
+            for(int i = 0; i < DxRVisObjects.Length; i++)
+            {
+                if (DxRVisObjects[i].GetComponent<Vis>().GetIsLinked())
+                {
+                    if(DxRVisObjects[i].GetComponent<Vis>().GetDataName() == targetVis.GetDataName())
+                    {
+                        GameObject DxRInteraction=DxRVisObjects[i].transform.Find("DxRInteractions").gameObject;
+                        if (DxRInteraction != null)
+                        {
+                            if (DxRInteraction.GetComponent<Interactions>().filterResults.ContainsKey(field))
+                            {
+                                DxRInteraction.GetComponent<Interactions>().filterResults[field] = filterResults[field];
+                                DxRVisObjects[i].GetComponent<Vis>().FiltersUpdated();
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
