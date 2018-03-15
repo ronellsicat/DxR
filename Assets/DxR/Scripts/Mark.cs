@@ -1111,6 +1111,12 @@ namespace DxR
             m.renderQueue = 3000;
         }
 
+        public void SetRotation()
+        {
+            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
+            transform.rotation = rotation;
+
+        }
         // vectorIndex = 0 for x, 1 for y, 2 for z
         private void SetDirectionVector(string value, int vectorIndex)
         {
@@ -1123,8 +1129,8 @@ namespace DxR
             curDirection[vectorIndex] = targetOrient[vectorIndex];
             //curDirection.Normalize();
 
-            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
-            transform.rotation = rotation;
+//            Quaternion rotation = Quaternion.FromToRotation(forwardDirection, curDirection);
+//            transform.rotation = rotation;
         }
 
         public void OnFocusEnter()

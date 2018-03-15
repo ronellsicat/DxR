@@ -286,9 +286,25 @@ namespace DxR
 
         private void ApplyChannelEncodings()
         {
+            bool isDirectionChanged = false;
             foreach(ChannelEncoding ch in channelEncodings)
             {
                 ApplyChannelEncoding(ch, ref markInstances);
+
+                if(ch.channel == "xdirection" || ch.channel == "ydirection" || ch.channel == "zdirection")
+                {
+                    isDirectionChanged = true;
+                }
+            }
+
+            if(isDirectionChanged)
+            {
+                for (int i = 0; i < markInstances.Count; i++)
+                {
+                    Mark markComponent = markInstances[i].GetComponent<Mark>();
+  
+                    markComponent.SetRotation();
+                }
             }
         }
 
