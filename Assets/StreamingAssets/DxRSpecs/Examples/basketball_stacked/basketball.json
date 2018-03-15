@@ -1,0 +1,67 @@
+{
+  "width": 500,
+  "height": 470,
+  "depth": 500,
+  "data": {
+    "url": "basketball.csv" 
+  },
+  "mark": "hexagon",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 50 ]
+      },
+      "axis": "none"
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 47 ]
+      },
+      "axis": "none"
+    },
+    "size": {
+      "field": "shoots",
+      "type": "nominal",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 8 ],
+        "range": [ 3, 30 ]
+      }
+    },
+    "height": {
+      "value": 2
+    },
+    "yrotation": {
+      "value": -90
+    },
+    "zrotation": {
+      "value": 90
+    },
+    "color": {
+      "field": "percentage",
+      "type": "nominal",
+      "scale": {
+        "type": "sequential",
+        "domain": [ 35, 40, 45, 50, 55, 60, 65 ],
+        "range": [ "#5b82bb", "#5b82bb", "#a9d592", "#e7f897", "#f3e48a", "#e1925b", "#b84951" ]
+      },
+      "legend": {
+        "type": "gradient",
+        "face": "front",
+        "orient": "right",
+        "x": 500,
+        "y": 500,
+        "z": 0,
+        "gradientWidth": 200,
+        "gradientHeight": 50,
+        "title": "Goals Percentage"
+      }
+    }
+  }
+}

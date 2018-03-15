@@ -1,0 +1,38 @@
+{
+  "width": 500,
+  "height": 344,
+  "depth": 500,
+  "data": {
+    "url": "basketball_sum_y.csv"
+  },
+  "mark": "cube",
+  "encoding": {
+    "x": {
+      "field": "y",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "sum_of_attempts",
+      "type": "quantitative",
+      "axis": {
+        "title": ""
+      }
+    },
+    "height": {
+      "field": "sum_of_attempts",
+      "type": "quantitative"
+    },
+    "yoffsetpct": {
+      "value": -0.5
+    },
+    "width": {
+      "value": 5.5
+    },
+    "depth": {
+      "value": 2
+    },
+    "color": {
+      "value": "#30cca0"
+    }
+  }
+}

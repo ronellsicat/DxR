@@ -1,0 +1,36 @@
+{
+  "width": 500,
+  "height": 192,
+  "depth": 500,
+  "data": {
+    "url": "basketball_sum_x.csv"
+  },
+  "mark": "cube",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "sum_of_made",
+      "type": "quantitative",
+      "axis": "none"
+    },
+    "height": {
+      "field": "sum_of_made",
+      "type": "quantitative"
+    },
+    "yoffsetpct": {
+      "value": -0.5
+    },
+    "width": {
+      "value": 6
+    },
+    "depth": {
+      "value": 3
+    },
+    "color": {
+      "value": "#ff816b"
+    }
+  }
+}
