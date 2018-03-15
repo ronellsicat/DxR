@@ -57,6 +57,12 @@ namespace DxR
         List<string> marksList;                                         // List of mark prefabs that can be used at runtime.
         List<string> dataList;                                          // List of local data that can be used at runtime.
 
+        private bool isReady = false;
+        public bool IsReady { get { return isReady; } }
+
+        private int frameCount = 0;
+        public int FrameCount { get { return frameCount; } set { frameCount = value; } }
+
 
         private void Awake()
         {
@@ -86,6 +92,12 @@ namespace DxR
             
             // Update vis based on the vis specs.
             UpdateVis();
+            isReady = true;
+        }
+
+        private void Update()
+        {
+            FrameCount++;
         }
 
         public JSONNode GetVisSpecs()
