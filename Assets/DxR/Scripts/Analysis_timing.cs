@@ -77,29 +77,27 @@ namespace DxR
             {
                 if (!measureFPSinit)
                 {
-                    if (frame == 180)
+                    if (frame == 60)
                     {
                         frame = 0;
                         cur_time = System.Environment.TickCount;
-
+                        measureFPSinit = true;
                     }
-                    measureFPSinit = true;
                 }
                 else
                 {
-                    if (frame == 300)
+                    if (frame == 180)
                     {
                         float fps = frame * 1000.0f / (System.Environment.TickCount - cur_time);
                         output.WriteLine("{0}", fps.ToString());
 
                         Destroy(vis);
-//                        vis.SetActive(false);
 
                         i++;
                         frame = 0;
                         if (i == TryNum)
                         {
-                            frame = 100;
+                            frame = 9999;
                             output.Close();
                         }
                         measureFPS = false;
@@ -124,6 +122,7 @@ namespace DxR
                     Read_data(vis.GetComponent<Vis>());
                     output.Write("{0},", data.values.Count.ToString());
                     measureFPS = true;
+                    frame = 0;
 
                 }
             }
