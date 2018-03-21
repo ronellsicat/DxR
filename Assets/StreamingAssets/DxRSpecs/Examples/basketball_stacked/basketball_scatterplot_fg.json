@@ -1,0 +1,33 @@
+{
+  "width": 300,
+  "height": 300,
+  "depth": 100,
+  "data": {
+    "url": "fieldgoals.csv",
+    "linked": "true"
+  },
+  "mark": "sphere",
+  "encoding": {
+    "x": {
+      "field": "FGA",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "y": {
+      "field": "FGM",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "color": {
+      "field": "FG%-bin",
+      "type": "ordinal",
+      "legend": {
+        "filter": true
+      }
+    }
+  }
+}

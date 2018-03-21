@@ -1,0 +1,40 @@
+{
+  "width": 500,
+  "height": 500,
+  "depth": 470,
+  "data": {
+    "url": "fieldgoals.csv"
+  },
+  "mark": "cube",
+  "encoding": {
+    "x": {
+      "field": "X",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 50 ]
+      },
+      "axis": "none"
+    },
+    "z": {
+      "field": "Y",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 47 ]
+      },
+      "axis": "none"
+    },
+    "y": {
+      "field": "FGA",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "FG%",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    }
+  }
+}
