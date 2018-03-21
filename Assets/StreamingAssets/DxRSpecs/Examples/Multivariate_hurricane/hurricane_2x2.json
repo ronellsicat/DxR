@@ -1,0 +1,45 @@
+{
+  "width": 500,
+  "height": 500,
+  "data": {
+    "url": "hurricane_downsize30.csv",
+    "linked": "true"
+  },
+  "mark": "cube",
+  "encoding": {
+    "y": {
+      "field": "P",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ -4818, 2564 ]
+      },
+      "axis": {
+        "title": "Pressure",
+        "filter": true,
+        "titlePadding": 70
+      }
+    },
+    "x": {
+      "field": "z",
+      "type": "nominal",
+      "scale": {
+        "domain": [ 0, 10, 20, 30, 40, 50, 60, 70, 80, 90 ],
+        "range": [ 0, 500 ]
+      },
+      "axis": {
+        "title": "Depth of hurricane",
+        "filter": true,
+        "titlePadding": 20
+      }
+    },
+    "color": {
+      "field": "Velocity",
+      "type": "quantitative",
+      "scale": {
+        "type": "sequential",
+        "domain": [ 5, 10, 15, 20, 25, 30, 35 ],
+        "range": [ "#5b82bb", "#5b82bb", "#a9d592", "#e7f897", "#f3e48a", "#e1925b", "#b84951" ]
+      }
+    }
+  }
+}

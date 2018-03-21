@@ -1,0 +1,81 @@
+{
+  "width": 1300,
+  "height": 1300,
+  "depth": 800,
+  "data": {
+    "url": "hurricane_downsize30.csv",
+    "linked": "true"
+  },
+  "mark": "arrow",
+  "encoding": {
+    "size": {
+      "value": 15
+    },
+    "x": {
+      "field": "x",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 500 ]
+      }
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 500 ]
+      }
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "height": {
+      "field": "Velocity",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 80 ],
+        "range": [ 0, 100 ]
+      }
+    },
+    "color": {
+      "field": "Velocity",
+      "type": "quantitative",
+      "scale": {
+        "type": "sequential",
+        "domain": [ 5, 10, 15, 20, 25, 30, 35 ],
+        "range": [ "#5b82bb", "#5b82bb", "#a9d592", "#e7f897", "#f3e48a", "#e1925b", "#b84951" ]
+      }
+
+    },
+    "xdirection": {
+      "field": "U",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "V",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "W",
+      "type": "quantitative"
+    },
+    "opacity": {
+      "field": "Velocity",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 80 ],
+        "range": [ 0, 1 ]
+      }
+    }
+  },
+  "interaction": [
+    {
+      "type": "thresholdFilter",
+      "field": "Velocity",
+      "xoffset": 500
+    }
+  ]
+}
