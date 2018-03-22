@@ -1,0 +1,54 @@
+{
+  "width": 500,
+  "height": 200,
+  "depth": 470,
+  "data": {
+    "url": "fieldgoals.csv",
+    "linked": "true"
+  },
+  "mark": "cube",
+  "encoding": {
+    "x": {
+      "field": "X",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 50 ]
+      },
+      "axis": "none"
+    },
+    "z": {
+      "field": "Y",
+      "type": "quantitative",
+      "scale": {
+        "type": "linear",
+        "domain": [ 0, 47 ]
+      },
+      "axis": "none"
+    },
+    "y": {
+      "field": "FGA",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0,100]
+      }
+    },
+    "height": {
+      "field": "FGA",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "color": {
+      "field": "FG%",
+      "type": "quantitative",
+      "scale": {
+        "domain": [ 0, 100 ]
+      }
+    },
+    "yoffsetpct": {
+      "value": -0.5
+    }
+  }
+}
