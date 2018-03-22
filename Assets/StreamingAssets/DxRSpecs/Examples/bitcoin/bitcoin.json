@@ -1,0 +1,44 @@
+{
+  "width" : 1200,
+  "height" : 1000,
+  "depth" : 500,
+  "data" : {
+    "url" : "bitcoin.csv"
+  },
+  "mark": "coin",
+  "encoding" : {
+    "x" : {
+      "field" : "time",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [0,7]
+      },
+      "axis" : "none"
+    },
+    "y" : {
+      "field" : "open",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [0,2500]
+      },
+	  "axis" : {
+	    "title": "Price",
+        "titlePadding" : -100
+      }
+    },
+    "yrotation" : {
+      "value" : 180
+    },
+	"xoffset":{
+	  "value" : -1300
+	},
+	"size":{
+	  "field" : "open",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [0,2300],
+		"range":[40,100]
+      }
+	}
+  }
+}
