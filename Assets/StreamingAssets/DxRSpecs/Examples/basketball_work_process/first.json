@@ -5,7 +5,7 @@
   "data" : {
     "url" : "basketball_new.csv"
   },
-  "mark" : "cube",
+  "mark" : "sphere",
   "encoding" : {
     "x" : {
       "field" : "X",
