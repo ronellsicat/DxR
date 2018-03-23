@@ -1,0 +1,38 @@
+{
+  "data": {
+    "url": "cars.json",
+    "linked": "true"
+  },
+  "mark": "sphere",
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "ordinal",
+      "axis": {
+        "titlePadding":90
+      }
+    },
+    "y": {
+      "field": "Displacement",
+      "type": "quantitative",
+      "axis": {
+        "titlePadding": 30
+      }
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal"
+    }
+  },
+  "interaction" : [
+    {
+      "type" : "toggleFilter",
+      "field" : "Cylinders"
+    },
+    {
+      "type" : "thresholdFilter",
+      "field" : "Weight_in_lbs"
+    }
+  ]
+}
+ 
