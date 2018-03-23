@@ -1,0 +1,29 @@
+{
+  "width" : 500,
+  "height" : 500,
+  "depth" : 470,
+  "data" : {
+    "url" : "basketball_new.csv"
+  },
+  "mark" : "cube",
+  "encoding" : {
+    "x" : {
+      "field" : "X",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [0,50]
+      }
+    },
+    "z" : {
+      "field" : "Y",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [0,47]
+      }
+    },
+    "color" : {
+      "field" : "FG%",
+      "type" : "quantitative"
+    }
+  }
+}
