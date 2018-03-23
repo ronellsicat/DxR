@@ -9,7 +9,7 @@
       "field": "Year",
       "type": "ordinal",
       "axis": {
-        "titlePadding":90
+        "titlePadding":20
       }
     },
     "y": {
