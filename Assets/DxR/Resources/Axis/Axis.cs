@@ -184,7 +184,8 @@ namespace DxR
                 Vector3 knobOrigScale1 = knob1.localScale;
                 Vector3 knobOrigScale2 = knob2.localScale;
 
-                float newLocalScale = length / 0.2127f; // sliderBar.GetComponent<MeshFilter>().mesh.bounds.size.x;
+                float newLocalScale = 0.5f / 0.2127f;
+                //                float newLocalScale = length / 0.2127f; // sliderBar.GetComponent<MeshFilter>().mesh.bounds.size.x;
                 sliderBar.transform.localScale = new Vector3(newLocalScale, sliderBar.transform.localScale.y,
                     sliderBar.transform.localScale.z);
 
