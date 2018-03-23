@@ -35,9 +35,58 @@ namespace DxR
                 case "size":
                     SetSize(value);
                     break;
+                case "color":
+                    SetColor(value);
+                    break;
                 default:
                     base.SetChannelValue(channel, value);
                     break;
+            }
+        }
+
+        private void SetColor(string value)
+        {
+            ParticleSystem ps1 = gameObject.transform.Find("Fire_Orange_FireBall").gameObject.GetComponent<ParticleSystem>();
+            if (ps1 != null)
+            {
+                Color color;
+                bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+                if (!colorParsed) return;
+
+                var main = ps1.main;
+                main.startColor = color;
+            }
+
+            ParticleSystem ps2 = gameObject.transform.Find("Fire_Orange_Living").gameObject.GetComponent<ParticleSystem>();
+            if (ps2 != null)
+            {
+                Color color;
+                bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+                if (!colorParsed) return;
+
+                var main = ps2.main;
+                main.startColor = color;
+            }
+
+            ParticleSystem ps3 = gameObject.transform.Find("Smoke_CampFire").gameObject.GetComponent<ParticleSystem>();
+            if (ps3 != null)
+            {
+                Color color;
+                bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+                if (!colorParsed) return;
+
+                var main = ps3.main;
+                main.startColor = color;
+            }
+            ParticleSystem ps4 = gameObject.transform.Find("Fire_Orange_Embers").gameObject.GetComponent<ParticleSystem>();
+            if (ps4 != null)
+            {
+                Color color;
+                bool colorParsed = ColorUtility.TryParseHtmlString(value, out color);
+                if (!colorParsed) return;
+
+                var main = ps4.main;
+                main.startColor = color;
             }
         }
 
