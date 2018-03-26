@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: b77331f740bbafa4e9abe25358f8ead6
+timeCreated: 1522085926
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: complet_roadmake:roadplane:pCube1
+    100002: hurders_onroad
+    100004: l_hurders
+    100006: middle_hurders
+    100008: r_hurders
+    100010: //RootNode
+    400000: complet_roadmake:roadplane:pCube1
+    400002: hurders_onroad
+    400004: l_hurders
+    400006: middle_hurders
+    400008: r_hurders
+    400010: //RootNode
+    2300000: complet_roadmake:roadplane:pCube1
+    2300002: hurders_onroad
+    2300004: l_hurders
+    2300006: middle_hurders
+    2300008: r_hurders
+    3300000: complet_roadmake:roadplane:pCube1
+    3300002: hurders_onroad
+    3300004: l_hurders
+    3300006: middle_hurders
+    3300008: r_hurders
+    4300000: complet_roadmake:roadplane:pCube1
+    4300002: r_hurders
+    4300004: l_hurders
+    4300006: hurders_onroad
+    4300008: middle_hurders
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: complet_roadmake_lambert_hurdelbody
+    second: {fileID: 2100000, guid: 236480a65f4ef144091a5fb74c12fb07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: complet_roadmake_lambert_red
+    second: {fileID: 2100000, guid: 384e03aaf15da8a47859fa517d56c335, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: complet_roadmake_lambert_white
+    second: {fileID: 2100000, guid: 76b7661ec8f295b45a70e2b5c662c64d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: complet_roadmake_roadplane_lambert5
+    second: {fileID: 2100000, guid: c1a6c03368619af4e9634d1c16e6c622, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: complet_roadmake_roadplane_lambert_broad
+    second: {fileID: 2100000, guid: 236480a65f4ef144091a5fb74c12fb07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: 3d172546da8409f4eabc6a74a864eea6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: road_hurdles02_lambert_hurdelbody
+    second: {fileID: 2100000, guid: 236480a65f4ef144091a5fb74c12fb07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: road_hurdles02_lambert_red
+    second: {fileID: 2100000, guid: b24bfde05e62025458aac7a346d4a075, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: road_hurdles02_lambert_white
+    second: {fileID: 2100000, guid: fa1388e9bd4fd7a4aa66be79a7ceada9, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

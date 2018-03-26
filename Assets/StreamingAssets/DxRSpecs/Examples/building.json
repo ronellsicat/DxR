@@ -1,0 +1,53 @@
+{
+  "width" : 3000,
+  "height" : 350,
+  "depth" : 3000,
+  "data" : {
+    "url" : "building_new.csv"
+  },
+  "mark" : "building",
+  "encoding" : {
+    "x" : {
+      "field" : "XCoord",
+      "type" : "quantitative",
+      "scale" : {
+        "domain" : [980000,985000]
+      },
+	  "axis":none
+    },
+    "z" : {
+      "field" : "YCoord",
+      "type": "quantitative",
+      "scale" : {
+        "domain" : [200000,205000]
+      },
+	  "axis":none
+    },
+	"size":{
+	  "field" : "BldgArea",
+	  "type" :"quantitative",
+	  "scale":{
+	    "range":[100,500]
+	  }
+	},
+	"y":{
+      "field" : "NumFloors",
+      "type" : "quantitative"
+	},
+    "height" : {
+      "field" : "NumFloors",
+      "type" : "quantitative"
+    },
+	"yrotation":{
+	  "value":31
+	},
+	"color":{
+	  "field":"YearBuilt",
+	  "type":"quantitative",
+	  "scale":{
+		"domain":[1805,2014],
+		"range":["#010101","#ffffff"]
+	  }
+	}
+  }
+}
