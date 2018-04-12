@@ -1,0 +1,41 @@
+{
+  "width" : 960,
+  "height" : 700,
+  "depth" : 500,
+  "data" : {
+    "url" : "milk.csv"
+  },
+  "mark" : "milk",
+  "encoding" : {
+    "x" : {
+      "field" : "x",
+      "type" : "quantitative",
+	  "axis":none
+    },
+    "y" : {
+      "field" : "y",
+      "type" : "quantitative",
+	  "axis":none
+    },
+    "size" : {
+      "field" : "milk_amount",
+      "type" : "quantitative",
+      "scale" : {
+	    "domain" : [4,10],
+        "range" : [0.2,2.3]
+      }
+    },
+	"color":{
+	  "field" :"date_left",
+	  "type":"quantitative",
+	  "scale":{
+		"domain": [ 2, 21 ],
+        "range": [ "#442300", "#ffffff"]
+	  }
+	},
+	"sugar":{
+	  "field" :"sugar",
+	  "type":"quantitative"
+	}
+  }
+}

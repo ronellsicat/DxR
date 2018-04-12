@@ -1,0 +1,35 @@
+{
+  "width" : 5000,
+  "height" : 100,
+  "depth" : 2500,
+  "data" : {
+    "url" : "forestfires.csv",
+	"linked" :"true"
+  },
+  "mark" : "fire",
+  "encoding" : {
+    "x" : {
+      "field" : "X",
+      "type" : "quantitative"
+    },
+    "z" : {
+      "field" : "Y",
+      "type" : "quantitative"
+    },
+    "size" : {
+      "field" : "area",
+      "type" : "quantitative",
+      "scale" : {
+        "range" : [0.04,0.6]
+      }
+    },
+	"color":{
+	  "field" :"temp",
+	  "type":"quantitative",
+	  "scale":{
+		"domain": [ 0, 33 ],
+        "range": [ "#00ffff", "#ff0000"]
+	  }
+	}
+  }
+}
