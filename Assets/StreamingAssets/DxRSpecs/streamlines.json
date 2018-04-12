@@ -1,0 +1,37 @@
+{
+  "data": { "url": "streamline.json" },
+  "mark": "cone",
+  "encoding": {
+    "x": {
+      "field": "x",
+      "type": "quantitative"
+    },
+    "y": {
+      "field": "y",
+      "type": "quantitative"
+    },
+    "z": {
+      "field": "z",
+      "type": "quantitative"
+    },
+    "xdirection": {
+      "field": "vx",
+      "type": "quantitative"
+    },
+    "ydirection": {
+      "field": "vy",
+      "type": "quantitative"
+    },
+    "zdirection": {
+      "field": "vz",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "time",
+      "type": "quantitative"
+    },
+    "length": {
+      "value": 15
+    }
+  }
+}

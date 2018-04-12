@@ -1,0 +1,23 @@
+{
+  "data": {
+    "url": "books.json"
+  },
+  "mark": "cube",
+  "encoding": {
+    "y": {
+      "field": "keyword",
+      "type": "nominal"
+    },
+    "x": {
+      "field": "counts",
+      "type": "quantitative"
+    },
+    "width": {
+      "field": "counts",
+      "type": "quantitative"
+    },
+    "xoffsetpct": {
+      "value": -0.5
+    }
+  }
+}      

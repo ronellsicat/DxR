@@ -1,0 +1,35 @@
+{
+  "data" : {
+    "url" : "photos.csv"
+  },
+  "mark" : "cone",
+  "encoding" : {
+    "x" : {
+      "field" : "x",
+      "type" : "quantitative"
+    },
+    "y" : {
+      "field" : "y",
+      "type" : "quantitative"
+    },
+    "z" : {
+      "field" : "z",
+      "type" : "quantitative"
+    },
+    "xdirection" : {
+      "field" : "dx",
+      "type" : "quantitative"
+    },
+    "ydirection" : {
+      "field" : "dy",
+      "type" : "quantitative"
+    },
+    "zdirection" : {
+      "field" : "dz",
+      "type" : "quantitative"
+    },
+    "size" : {
+      "value" : 20
+    }
+  }
+}
