@@ -3,7 +3,6 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using HoloToolkit.Unity;
 using DxR;
 #if UNITY_2017_2_OR_NEWER
 using UnityEngine.XR;
@@ -42,7 +41,7 @@ public class EyeRaycaster : MonoBehaviour
         m_eventSystem = EventSystem.current;
         m_pointerEvent = new PointerEventData(m_eventSystem);
         m_pointerEvent.button = PointerEventData.InputButton.Left;
-        cam = CameraCache.Main; // transform.GetComponentInParent<Canvas>().worldCamera;
+        cam = transform.GetComponentInParent<Canvas>().worldCamera;
     }
 
     void Update()
