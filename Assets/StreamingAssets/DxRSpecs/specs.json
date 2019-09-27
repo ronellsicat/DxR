@@ -5,7 +5,7 @@
   "data" : {
     "url" : "cars.json"
   },
-  "mark" : "sphere",
+  "mark" : "cube",
   "encoding" : {
     "x" : {
       "field" : "Horsepower",

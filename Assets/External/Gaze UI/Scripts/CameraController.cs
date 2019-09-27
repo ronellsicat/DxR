@@ -6,8 +6,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
  
-[AddComponentMenu("Camera-Control/Smooth Mouse Look")]
-public class SmoothMouseLook : MonoBehaviour {
+[AddComponentMenu("Camera-Control/Camera Controller")]
+public class CameraController : MonoBehaviour {
 
     /*
     Writen by Windexglow 11-13-10.  Use it, edit it, steal it I don't care.  

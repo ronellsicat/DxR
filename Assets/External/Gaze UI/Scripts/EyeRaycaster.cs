@@ -3,6 +3,8 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using HoloToolkit.Unity;
+using DxR;
 #if UNITY_2017_2_OR_NEWER
 using UnityEngine.XR;
 #else
@@ -32,11 +34,15 @@ public class EyeRaycaster : MonoBehaviour
     EventSystem m_eventSystem;
     PointerEventData m_pointerEvent;
 
+    Camera cam;
+    Mark mark = null;
+
     private void Start()
     {
         m_eventSystem = EventSystem.current;
         m_pointerEvent = new PointerEventData(m_eventSystem);
         m_pointerEvent.button = PointerEventData.InputButton.Left;
+        cam = CameraCache.Main; // transform.GetComponentInParent<Canvas>().worldCamera;
     }
 
     void Update()
@@ -55,7 +61,7 @@ public class EyeRaycaster : MonoBehaviour
         // Detect selectable
         if (raycastResults.Count > 0)
         {
-            foreach(var result in raycastResults)
+            foreach (var result in raycastResults)
             {
                 var newSelectable = result.gameObject.GetComponentInParent<Selectable>();
 
@@ -78,7 +84,7 @@ public class EyeRaycaster : MonoBehaviour
             }
         }
 
-        // Target is being activating
+        // Target is being activated
         if (m_currentSelectable)
         {
             m_elapsedTime += Time.deltaTime;
@@ -97,6 +103,27 @@ public class EyeRaycaster : MonoBehaviour
                     m_dragHandler.OnDrag(m_pointerEvent);
                 }
             }
+        }
+
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            //print("I'm looking at " + hit.transform.name);
+            Mark m = hit.transform.GetComponent<Mark>();
+            if (m != null && m != mark)
+            {
+                mark = m;
+                mark.OnFocusEnter();
+            }
+        } else
+        {
+            if(mark != null)
+            {
+                mark.OnFocusExit();
+                mark = null;
+            }
+            //print("I'm looking at nothing!");
         }
     }
 
@@ -119,4 +146,6 @@ public class EyeRaycaster : MonoBehaviour
         m_elapsedTime = 0;
         m_onLoad.Invoke(m_elapsedTime / m_loadingTime);
     }
+
+    
 }

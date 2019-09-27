@@ -118,7 +118,7 @@ namespace DxR
                 rangeValue = base.range[domainValueIndex % base.range.Count];
             }
 
-            Debug.Log("Scaling " + domainValue + " to " + rangeValue);
+            //Debug.Log("Scaling " + domainValue + " to " + rangeValue);
 
             return rangeValue;
         }

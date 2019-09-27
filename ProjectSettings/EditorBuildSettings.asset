@@ -6,5 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/DxRExamples/filters.unity
-    guid: ab2bada548536e94d896b1e5264ecfa0
+    path: Assets/DxRExamples/test.unity
+    guid: b1117bd1262fdf545b8567579375f63a
+  m_configObjects: {}
