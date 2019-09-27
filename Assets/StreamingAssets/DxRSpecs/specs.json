@@ -21,20 +21,7 @@
     },
     "color": {
       "field": "Origin",
-      "type": "nominal",
-      "legend": {
-        "filter": true
-      }
+      "type": "nominal"
     }
-  },
-  "interaction": [
-    {
-      "field": "Cylinders",
-      "type": "toggleFilter"
-    },
-    {
-      "field": "Acceleration",
-      "type": "thresholdFilter"
-    }
-  ]
+  }
 }
