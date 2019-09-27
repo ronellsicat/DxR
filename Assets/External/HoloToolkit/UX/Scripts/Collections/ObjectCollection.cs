@@ -9,6 +9,50 @@ using System;
 namespace HoloToolkit.Unity.Collections
 {
     /// <summary>
+    /// The type of surface to map the collect to.
+    /// </summary>
+    public enum SurfaceTypeEnum
+    {
+        Cylinder,
+        Plane,
+        Sphere,
+        Scatter,
+        Radial
+    }
+
+    /// <summary>
+    /// Sorting type for collections
+    /// </summary>
+    public enum SortTypeEnum
+    {
+        None,                   // Don't sort, just display in order received
+        Transform,              // Sort by transform order
+        Alphabetical,           // Sort by transform name
+        TransformReversed,      // Sort by transform order reversed
+        AlphabeticalReversed,   // Sort by transform name reversed
+    }
+
+    /// <summary>
+    /// Orientation type enum for collections
+    /// </summary>
+    public enum OrientTypeEnum
+    {
+        None,                   // Don't rotate at all
+        FaceOrigin,             // Rotate towards the origin
+        FaceOriginReversed,     // Rotate towards the origin + 180 degrees
+        FaceFoward,             // Zero rotation
+        FaceForwardReversed,    // Zero rotation + 180 degrees
+    }
+
+    /// <summary>
+    /// Collection layout type enum
+    /// </summary>
+    public enum LayoutTypeEnum
+    {
+        ColumnThenRow,          // Sort by column, then by row
+        RowThenColumn,          // Sort by row, then by column
+    }
+    /// <summary>
     /// An Object Collection is simply a set of child objects organized with some
     /// layout parameters.  The object collection can be used to quickly create 
     /// control panels or sets of prefab/objects.
@@ -152,7 +196,7 @@ namespace HoloToolkit.Unity.Collections
                     NodeList.Add(node);
                 }
             }
-
+            
             switch (SortType)
             {
                 case SortTypeEnum.None:
@@ -176,7 +220,7 @@ namespace HoloToolkit.Unity.Collections
                     NodeList.Reverse();
                     break;
             }
-
+            
             _columns = Mathf.CeilToInt(NodeList.Count / Rows);
             _width = _columns * CellWidth;
             _height = Rows * CellHeight;
