@@ -83,16 +83,16 @@ namespace DxR
             slider.gameObject.SetActive(true);
 
             SetFilterLength(axisSpecs["length"].AsFloat);
-
+/*
             DxR.SliderGestureControlBothSide sliderControl =
                     slider.GetComponent<DxR.SliderGestureControlBothSide>();
             if (sliderControl == null) return;
-
+*/
             float domainMin = float.Parse(scale.domain[0]);
             float domainMax = float.Parse(scale.domain[1]);
 
             // TODO: Check validity of specs.
-
+/*
             sliderControl.SetSpan(domainMin, domainMax);
             sliderControl.SetSliderValue1(domainMin);
             sliderControl.SetSliderValue2(domainMax);
@@ -105,6 +105,7 @@ namespace DxR
             {
                 sliderControl.OnUpdateEvent.AddListener(interactionsObject.ThresholdFilterUpdated);
             }
+*/
         }
 
         public void SetTitle(string title)
