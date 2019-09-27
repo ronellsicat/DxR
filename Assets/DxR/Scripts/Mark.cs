@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 namespace DxR
