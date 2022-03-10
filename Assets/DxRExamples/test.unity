@@ -331,6 +331,11 @@ PrefabInstance:
       propertyPath: visSpecsURL
       value: specs.json
       objectReference: {fileID: 0}
+    - target: {fileID: 114781596875636906, guid: 97b500477ed08a34f9f03d9810eb65eb,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 223710077413158306, guid: 97b500477ed08a34f9f03d9810eb65eb,
         type: 3}
       propertyPath: m_Camera

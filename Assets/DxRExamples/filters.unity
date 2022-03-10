@@ -453,25 +453,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4735044786857196964, guid: 9c2a73c66cced6347906ce96a1fa01d4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735044786857215226, guid: 9c2a73c66cced6347906ce96a1fa01d4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4735044786857222714, guid: 9c2a73c66cced6347906ce96a1fa01d4,
         type: 3}
       propertyPath: m_Name
       value: Gaze UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735044786857222714, guid: 9c2a73c66cced6347906ce96a1fa01d4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4735044786877425264, guid: 9c2a73c66cced6347906ce96a1fa01d4,
         type: 3}
@@ -577,11 +562,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4735044786877547708, guid: 9c2a73c66cced6347906ce96a1fa01d4,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c2a73c66cced6347906ce96a1fa01d4, type: 3}

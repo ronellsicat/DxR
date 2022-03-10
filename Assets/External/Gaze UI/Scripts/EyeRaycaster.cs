@@ -36,6 +36,8 @@ public class EyeRaycaster : MonoBehaviour
     Camera cam;
     Mark mark = null;
 
+    public GameObject reticle;
+
     private void Start()
     {
         m_eventSystem = EventSystem.current;
@@ -108,6 +110,10 @@ public class EyeRaycaster : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
+            if (reticle != null) {
+               reticle?.SetActive(true);
+               reticle.transform.position = hit.point;
+            }
             //print("I'm looking at " + hit.transform.name);
             Mark m = hit.transform.GetComponent<Mark>();
             if (m != null && m != mark)
@@ -117,6 +123,7 @@ public class EyeRaycaster : MonoBehaviour
             }
         } else
         {
+            if (reticle != null) reticle?.SetActive(false);
             if(mark != null)
             {
                 mark.OnFocusExit();
