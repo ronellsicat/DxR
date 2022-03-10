@@ -1024,6 +1024,7 @@ GameObject:
   - component: {fileID: 33217852208339010}
   - component: {fileID: 23448514900370824}
   - component: {fileID: 865042525289693463}
+  - component: {fileID: 6925180834308187394}
   m_Layer: 0
   m_Name: DxRAnchor
   m_TagString: DxRAnchor
@@ -1109,6 +1110,90 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6925180834308187394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182403086455224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d863396d1dbf9da4d8d1150cf2c11320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_SelectMode: 0
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  rotationSmoothing: 0.6
+  enableRotation: {x: 1, y: 1, z: 1}
+  enableRotation2H: {x: 0, y: 1, z: 0}
+  enableScaling: {x: 1, y: 1, z: 1}
+  enableMoving: {x: 1, y: 1, z: 1}
+  debugEvents: 0
 --- !u!1 &1197173626675864
 GameObject:
   m_ObjectHideFlags: 0
@@ -4931,8 +5016,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114969770258781042}
   m_HandleRect: {fileID: 224652723588071570}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.27478334
+  m_Value: 1.0000001
+  m_Size: 0.2747834
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

@@ -5,6 +5,7 @@ using SimpleJSON;
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace DxR
 {
@@ -12,7 +13,7 @@ namespace DxR
     /// Base class for Mark classes (e.g., MarkPoint for point mark).
     /// Contains methods for setting common mark channels such as position and size.
     /// </summary>
-    public class Mark : MonoBehaviour
+    public class Mark : XRBaseInteractable
     {
         public string markName = DxR.Vis.UNDEFINED;
         public Dictionary<string, string> datum = null;
@@ -28,6 +29,8 @@ namespace DxR
 
         public void Start()
         {
+            firstHoverEntered.AddListener(a => OnFocusEnter());
+            lastHoverExited.AddListener(a => OnFocusExit());
             curDirection = forwardDirection;
         }
 
