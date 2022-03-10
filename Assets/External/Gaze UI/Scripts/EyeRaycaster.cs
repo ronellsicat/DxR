@@ -41,7 +41,7 @@ public class EyeRaycaster : MonoBehaviour
         m_eventSystem = EventSystem.current;
         m_pointerEvent = new PointerEventData(m_eventSystem);
         m_pointerEvent.button = PointerEventData.InputButton.Left;
-        cam = transform.GetComponentInParent<Canvas>().worldCamera;
+        cam = Camera.main;
     }
 
     void Update()
