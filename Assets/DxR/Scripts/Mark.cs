@@ -823,14 +823,14 @@ namespace DxR
 
                 if (sortType == "none" || sortType == "ascending")
                 {
-                    //domain.Add(new JSONString(minMax[0].ToString()));
-                    domain.Add(new JSONString("0"));
+                    domain.Add(new JSONString(Math.Min(0, minMax[0]).ToString()));
+                    //domain.Add(new JSONString("0"));
                     domain.Add(new JSONString(minMax[1].ToString()));
                 } else
                 {
                     domain.Add(new JSONString(minMax[1].ToString()));
-                    domain.Add(new JSONString("0"));
-                    //domain.Add(new JSONString(minMax[0].ToString()));
+                    //domain.Add(new JSONString("0"));
+                    domain.Add(new JSONString(Math.Min(0, minMax[0]).ToString()));
                 }
             } else
             {
