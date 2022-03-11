@@ -851,7 +851,8 @@ namespace DxR
 
         private void InitDataList()
         {
-            string[] dirs = Directory.GetFiles(Application.dataPath + "/StreamingAssets/DxRData");
+            string dxrDataPath = Application.dataPath + "/StreamingAssets/DxRData";
+            string[] dirs = Directory.GetFiles(dxrDataPath, "*.*", SearchOption.AllDirectories);
             dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
             dataList.Add("inline");
@@ -859,7 +860,7 @@ namespace DxR
             {
                 if (Path.GetExtension(dirs[i]) != ".meta")
                 {
-                    dataList.Add(Path.GetFileName(dirs[i]));
+                    dataList.Add(Path.GetRelativePath(dxrDataPath, dirs[i]).Replace("\\", "/"));
                 }
             }
         }
