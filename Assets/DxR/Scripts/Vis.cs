@@ -851,7 +851,7 @@ namespace DxR
 
         private void InitDataList()
         {
-            string dxrDataPath = Application.dataPath + "/StreamingAssets/DxRData";
+            string dxrDataPath = Application.streamingAssetsPath + Parser.dataBaseDir;
             string[] dirs = Directory.GetFiles(dxrDataPath, "*.*", SearchOption.AllDirectories);
             dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
