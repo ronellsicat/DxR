@@ -1075,7 +1075,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8d2d5000e01d3aa429091935191e9408, type: 2}
+  - {fileID: 2100000, guid: 0a85fa82b6a29bc498481f624b73903a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1190,10 +1190,7 @@ MonoBehaviour:
       m_Calls: []
   rotationSmoothing: 0.6
   enableRotation: {x: 1, y: 1, z: 1}
-  enableRotation2H: {x: 0, y: 1, z: 0}
-  enableScaling: {x: 1, y: 1, z: 1}
   enableMoving: {x: 1, y: 1, z: 1}
-  debugEvents: 0
 --- !u!1 &1197173626675864
 GameObject:
   m_ObjectHideFlags: 0
@@ -5016,8 +5013,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114969770258781042}
   m_HandleRect: {fileID: 224652723588071570}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.2747834
+  m_Value: 1
+  m_Size: 0.27478334
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

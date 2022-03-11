@@ -90,7 +90,6 @@ public class CameraController : MonoBehaviour {
 
 
 		//Keyboard commands
-		float f = 0.0f;
 		Vector3 p = GetBaseInput();
 		if (run.action.IsPressed()) {
 			totalRun += Time.deltaTime;

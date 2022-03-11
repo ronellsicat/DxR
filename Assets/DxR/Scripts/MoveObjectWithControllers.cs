@@ -15,8 +15,6 @@ public class MoveObjectWithControllers : XRBaseInteractable {
 	public float rotationSmoothing = 0.6f;
 	public Vector3 enableRotation = Vector3.one;
 	public Vector3 enableMoving = Vector3.one;
-	[SerializeField] bool debugEvents = false;
-
 
 	RaycastHit initialRaycastHit;
 	Quaternion initialRotation, parentInitialRotation;

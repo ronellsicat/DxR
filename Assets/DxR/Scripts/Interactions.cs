@@ -61,7 +61,6 @@ namespace DxR
             List<string> domain = new List<string>();
 
             // Go through each checkbox and set them to active:
-            int checkBoxIndex = 0;
             for (int i = 0; i < legendGameObject.transform.childCount; i++)
             {
                 Transform child = legendGameObject.transform.GetChild(i);
