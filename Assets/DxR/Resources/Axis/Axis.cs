@@ -8,30 +8,33 @@ namespace DxR
 {
     public class Axis : MonoBehaviour
     {
-
-        private float meshLength = 2.0f;    // This is the initial length of the cylinder used for the axis.
+        private readonly float meshLength = 2.0f;    // This is the initial length of the cylinder used for the axis.
         private float titleOffset = 0.075f;
         private float tickLabelOffset = 0.03f;
-        private bool enableFilter = false;
+
         private Interactions interactionsObject = null;
         private string dataField = "";
+        private char facingDirection;
 
-        // Use this for initialization
-        void Start()
-        {
+        private GameObject title;
+        private GameObject axisLine;
+        private GameObject sliderBar;
+        private GameObject ticksHolder;
+        private GameObject tickPrefab;
+        private TextMesh titleTextMesh;
+        private List<GameObject> ticks = new List<GameObject>();
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
-        internal void Init(Interactions interactions, string field)
+        public void Init(Interactions interactions, string field)
         {
             interactionsObject = interactions;
             dataField = field;
+
+            title = gameObject.transform.Find("Title").gameObject;
+            axisLine = gameObject.transform.Find("AxisLine").gameObject;
+            sliderBar = gameObject.transform.Find("AxisLine/Slider/SliderBar").gameObject;
+            ticksHolder = gameObject.transform.Find("Ticks").gameObject;
+            tickPrefab = Resources.Load("Axis/Tick") as GameObject;
+            titleTextMesh = gameObject.transform.Find("Title/Text").GetComponent<TextMesh>();
         }
 
         public void UpdateSpecs(JSONNode axisSpecs, DxR.Scale scale)
@@ -43,7 +46,11 @@ namespace DxR
 
             if (axisSpecs["titlePadding"] != null)
             {
-                SetTitlePadding(axisSpecs["titlePadding"].Value);
+                SetTitlePadding(axisSpecs["titlePadding"].AsFloat);
+            }
+            else
+            {
+                titleOffset = 0.075f;
             }
 
             float axisLength = 0.0f;
@@ -60,7 +67,7 @@ namespace DxR
 
             if (axisSpecs["ticks"].AsBool && axisSpecs["values"] != null)
             {
-                ConstructTicks(axisSpecs, scale);
+                ConstructOrUpdateTicks(axisSpecs, scale);
             }
 
             if (axisSpecs["color"] != null)
@@ -77,50 +84,20 @@ namespace DxR
             }
         }
 
-        private void EnableThresholdFilter(JSONNode axisSpecs, DxR.Scale scale)
+        private void SetTitle(string title)
         {
-            Transform slider = gameObject.transform.Find("AxisLine/Slider");
-            slider.gameObject.SetActive(true);
-
-            SetFilterLength(axisSpecs["length"].AsFloat);
-
-            DxR.SliderGestureControlBothSide sliderControl =
-                    slider.GetComponent<DxR.SliderGestureControlBothSide>();
-            if (sliderControl == null) return;
-
-            float domainMin = float.Parse(scale.domain[0]);
-            float domainMax = float.Parse(scale.domain[1]);
-
-            // TODO: Check validity of specs.
-
-            sliderControl.SetSpan(domainMin, domainMax);
-            sliderControl.SetSliderValue1(domainMin);
-            sliderControl.SetSliderValue2(domainMax);
-
-            slider.gameObject.name = dataField;
-
-            interactionsObject.EnableAxisThresholdFilter(dataField);
-
-            if (interactionsObject != null)
-            {
-                sliderControl.OnUpdateEvent.AddListener(interactionsObject.ThresholdFilterUpdated);
-            }
+            titleTextMesh.text = title;
         }
 
-        public void SetTitle(string title)
+        private void SetTitlePadding(float titlePadding)
         {
-            gameObject.GetComponentInChildren<TextMesh>().text = title;
+            titleOffset = 0.075f + titlePadding * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
         }
 
-        public void SetTitlePadding(string titlePadding)
-        {
-            titleOffset = titleOffset + (float.Parse(titlePadding) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR);
-        }
-
-        // TODO: Create ticks marks and tick labels using mark and channel metaphor, 
+        // TODO: Create ticks marks and tick labels using mark and channel metaphor,
         // i.e., create them using the tick values as data and set orientation channels
         // according to orient and face params.
-        internal void SetOrientation(string orient, string face)
+        private void SetOrientation(string orient, string face)
         {
             if (orient == "bottom" && face == "front")
             {
@@ -138,141 +115,205 @@ namespace DxR
 
         private void OrientAlongPositiveX()
         {
-            gameObject.transform.localPosition = new Vector3(GetLength() / 2.0f, 0.0f, 0.0f);
-            gameObject.transform.Find("Title").Translate(0, -titleOffset, 0);
+            facingDirection = 'x';
+            gameObject.transform.localPosition = GetAxisPosition(facingDirection, GetLength());
+            title.transform.localPosition = new Vector3(0, -titleOffset, 0);
         }
 
         private void OrientAlongPositiveY()
         {
-            gameObject.transform.Rotate(0, 0, 90.0f);
-            gameObject.transform.Find("Title").Translate(0, titleOffset, 0);
-            gameObject.transform.localPosition = new Vector3(0.0f, GetLength() / 2.0f, 0.0f);
+            facingDirection = 'y';
+            gameObject.transform.localPosition = GetAxisPosition(facingDirection, GetLength());
+            gameObject.transform.localRotation = GetAxisRotation(facingDirection);
+            title.transform.localPosition = new Vector3(0, titleOffset, 0);
         }
 
         private void OrientAlongPositiveZ()
         {
-            gameObject.transform.Rotate(0, -90.0f, 0);
-            gameObject.transform.Find("Title").Translate(0, -titleOffset, 0);
-            gameObject.transform.Find("Title").Rotate(0, 180, 0);
-            gameObject.transform.localPosition = new Vector3(0.0f, 0.0f, GetLength() / 2.0f);
+            facingDirection = 'z';
+            gameObject.transform.localPosition = GetAxisPosition(facingDirection, GetLength());
+            gameObject.transform.localRotation = GetAxisRotation(facingDirection);
+            title.transform.localPosition = new Vector3(0, -titleOffset, 0);
+            title.transform.localEulerAngles = new Vector3(0, 180, 0);
         }
 
-        internal void SetLength(float length)
+        private Vector3 GetAxisPosition(char dim, float length)
         {
-            length = length * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
-
-            Transform lineTransform = gameObject.transform.Find("AxisLine");
-
-            if (lineTransform != null)
+            switch (dim)
             {
-                float newLocalScale = length / GetMeshLength();
-                lineTransform.localScale = new Vector3(lineTransform.localScale.x,
-                    newLocalScale, lineTransform.localScale.z);
+                default:
+                case 'x':
+                    return new Vector3(length / 2.0f, 0.0f, 0.0f);
+                case 'y':
+                    return new Vector3(0.0f, length / 2.0f, 0.0f);
+                case 'z':
+                    return new Vector3(0.0f, 0.0f, length / 2.0f);
             }
         }
 
-        private void SetFilterLength(float length)
+        private Quaternion GetAxisRotation(char dim)
         {
-            length = length * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
-
-            Debug.Log("Setting filter length");
-            Transform sliderBar = gameObject.transform.Find("AxisLine/Slider/SliderBar");
-            if (sliderBar != null)
+            switch (dim)
             {
-                Transform knob1 = sliderBar.Find("SliderKnob1");
-                Transform knob2 = sliderBar.Find("SliderKnob2");
-                Vector3 knobOrigScale1 = knob1.localScale;
-                Vector3 knobOrigScale2 = knob2.localScale;
-
-                float newLocalScale = 0.5f / 0.2127f;
-                //                float newLocalScale = length / 0.2127f; // sliderBar.GetComponent<MeshFilter>().mesh.bounds.size.x;
-                sliderBar.transform.localScale = new Vector3(newLocalScale, sliderBar.transform.localScale.y,
-                    sliderBar.transform.localScale.z);
-
-                if (knob1 != null)
-                {
-                    knob1.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
-                }
-                if (knob2 != null)
-                {
-                    knob2.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
-                }
+                default:
+                case 'x':
+                    return Quaternion.identity;
+                case 'y':
+                    return Quaternion.Euler(0, 0, 90);
+                case 'z':
+                    return Quaternion.Euler(0, -90, 0);
             }
         }
 
-        private float GetMeshLength()
+        private void CentreTitle()
         {
-            return meshLength;
+            switch (facingDirection)
+            {
+                case 'x':
+                    title.transform.localPosition = new Vector3(0, -titleOffset, 0);
+                    return;
+
+                case 'y':
+                    title.transform.localPosition = new Vector3(0, titleOffset, 0);
+                    return;
+
+                case 'z':
+                    title.transform.localPosition = new Vector3(0, -titleOffset, 0);
+                    title.transform.localEulerAngles = new Vector3(0, 180, 0);
+                    return;
+            }
+        }
+
+        /// <summary>
+        /// Translates the axes along a spatial direction. To be used AFTER the orient functions
+        /// </summary>
+        public void SetTranslation(float value, int dim)
+        {
+            float offset = value * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+            Vector3 translateBy = transform.localPosition;
+            translateBy[dim] = offset + translateBy[dim];
+            transform.localPosition = translateBy;
+        }
+
+        public void SetTranslation(Vector3 translation)
+        {
+            translation *= DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+            Vector3 translateBy = transform.localPosition;
+            translateBy += translation;
+            transform.localPosition = translateBy;
+        }
+
+        public void SetRotate(Quaternion rotate)
+        {
+            Vector3 targetPosition = rotate * GetAxisPosition(facingDirection, GetLength());
+            Quaternion targetRotation = rotate * GetAxisRotation(facingDirection);
+            transform.localPosition = targetPosition;
+            transform.localRotation = targetRotation;
+        }
+
+        private void SetLength(float length)
+        {
+            length = length * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+            float newLocalScale = length / meshLength;
+            axisLine.transform.localScale = new Vector3(axisLine.transform.localScale.x, newLocalScale, axisLine.transform.localScale.z);
         }
 
         private float GetLength()
         {
-            Transform lineTransform = gameObject.transform.Find("AxisLine");
-            Vector3 scale = lineTransform.localScale;
-            return GetMeshLength() * Math.Max(scale.x, Math.Max(scale.y, scale.z));
-        }
+            Vector3 scale = axisLine.transform.localScale;
 
-        internal void SetColor(string colorString)
-        {
-            Transform lineTransform = gameObject.transform.Find("AxisLine");
-            Color color;
-            bool colorParsed = ColorUtility.TryParseHtmlString(colorString, out color);
-            if (colorParsed)
+            // If any of the dimensions in the scale Vector3 are negative, we assume that the size of the View is negative as well,
+            // meaning this axis should also move towards the negative direction
+            if (scale.x < 0 || scale.y < 0 || scale.z < 0)
             {
-                lineTransform.GetComponent<Renderer>().material.color = color;
+                return meshLength * Mathf.Min(scale.x, scale.y, scale.z);
+            }
+            else
+            {
+                return meshLength * Mathf.Max(scale.x, scale.y, scale.z);
             }
         }
 
-        public void ConstructTicks(JSONNode axisSpecs, DxR.Scale scale)
+        private void SetColor(string colorString)
         {
-            bool showTickLabels = false;
-
-            if (axisSpecs["labels"] != null)
+            if (ColorUtility.TryParseHtmlString(colorString, out Color color))
             {
-                showTickLabels = axisSpecs["labels"].AsBool;
+                axisLine.GetComponent<Renderer>().material.color = color;
             }
+        }
 
-            Transform parent = gameObject.transform.Find("Ticks");
-            GameObject tickPrefab = Resources.Load("Axis/Tick") as GameObject;
+        private void SetColor(Color color)
+        {
+            axisLine.GetComponent<Renderer>().material.color = color;
+        }
 
-            if (tickPrefab == null)
-            {
-                throw new Exception("Cannot find tick prefab.");
-            }
+        /// <summary>
+        /// Updates the ticks along these axes with new values, creating new ticks if necessary. Will automatically hide unneeded ticks
+        /// </summary>
+        private void ConstructOrUpdateTicks(JSONNode axisSpecs, DxR.Scale scale)
+        {
+            bool showTickLabels = axisSpecs["labels"] != null ? showTickLabels = axisSpecs["labels"].AsBool : false;
+            int tickCount = axisSpecs["values"].Count;
 
-            for (int i = 0; i < axisSpecs["values"].Count; i++)
+            for (int i = 0; i < tickCount; i++)
             {
                 string domainValue = axisSpecs["values"][i].Value;
-
-                float pos = float.Parse(scale.ApplyScale(domainValue)) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
-
+                float position = float.Parse(scale.ApplyScale(domainValue)) * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
                 string label = showTickLabels ? domainValue : "";
-                AddTick(axisSpecs["face"], axisSpecs["orient"], pos, label, tickPrefab, parent);
+                string face = axisSpecs["face"];
+                string orient = axisSpecs["orient"];
+
+                // If there is a tick already for us to use, take it, otherwise instantiate a new one
+                GameObject tick;
+                if (i < ticks.Count)
+                {
+                    tick = ticks[i];
+                    if (!tick.activeSelf)
+                        tick.SetActive(true);
+                }
+                else
+                {
+                    tick = Instantiate(tickPrefab, ticksHolder.transform.position, ticksHolder.transform.rotation, ticksHolder.transform);
+                    ticks.Add(tick);
+                }
+
+                UpdateTick(tick, position, label, face, orient, GetLength());
+            }
+
+            // Hide all leftover ticks
+            for (int i = tickCount; i < ticks.Count; i++)
+            {
+                GameObject tick = ticks[i];
+                if (tick.activeSelf)
+                {
+                    tick.SetActive(false);
+                }
             }
         }
 
-        private void AddTickLabel(float pos, string label, GameObject prefab, Transform parent)
+        private void SetTickVisibility(bool visible)
         {
-            GameObject instance = Instantiate(prefab, parent.position, Quaternion.identity, parent);
-            instance.transform.Translate(0, pos - GetLength() / 2.0f, 0);
-            instance.GetComponent<TextMesh>().text = label;
+            foreach (GameObject tick in ticks)
+            {
+                tick.SetActive(visible);
+            }
         }
 
-        private void AddTick(string face, string orient, float pos, string label, GameObject prefab, Transform parent)
+        private void UpdateTick(GameObject tick, float position, string label, string face, string orient, float axisLength)
         {
-            GameObject instance = Instantiate(prefab, parent.position, parent.rotation, parent);
+            tick.transform.localPosition = new Vector3(position - (axisLength / 2f), 0, 0);
 
-            //instance.transform.Translate(pos - GetLength() / 2.0f, 0, 0);
-            instance.transform.localPosition = new Vector3(pos - (GetLength() / 2.0f), 0, 0);
+            // Adjust label
+            Transform tickLabelTransform = tick.transform.Find("TickLabel");
+
+            float yoffset = 0.0f;
+            float xoffset = 0.0f;
+            float zrot = 0;
+            float yrot = 0;
+            float xrot = 0;
 
             // Adjust label
             // TODO: Adjust label angle.
-            Transform tickLabelTransform = instance.transform.Find("TickLabel");
-            float yoffset = 0.0f;
-            float xoffset = 0.0f;
-            float zrot = tickLabelTransform.localEulerAngles.z;
-            float yrot = tickLabelTransform.localEulerAngles.y;
-            float xrot = tickLabelTransform.localEulerAngles.x;
             if (face == "front" && orient == "bottom")
             {
                 float labelAngle = 0.0f;
@@ -281,7 +322,7 @@ namespace DxR
             }
             else if (face == "front" && orient == "left")
             {
-                instance.transform.localRotation = Quaternion.Euler(0, 0, 180.0f);
+                tick.transform.localRotation = Quaternion.Euler(0, 0, 180.0f);
                 float labelAngle = 0.0f;
                 yoffset = -tickLabelOffset;
                 zrot = zrot + labelAngle + 90.0f;
@@ -296,7 +337,62 @@ namespace DxR
 
             tickLabelTransform.localPosition = new Vector3(xoffset, yoffset, 0);
             tickLabelTransform.localEulerAngles = new Vector3(xrot, yrot, zrot);
+
             tickLabelTransform.GetComponent<TextMesh>().text = label;
+        }
+
+        private void EnableThresholdFilter(JSONNode axisSpecs, DxR.Scale scale)
+        {
+            Transform slider = gameObject.transform.Find("AxisLine/Slider");
+            slider.gameObject.SetActive(true);
+
+            SetFilterLength(axisSpecs["length"].AsFloat);
+
+            // DxR.SliderGestureControlBothSide sliderControl =
+            //         slider.GetComponent<DxR.SliderGestureControlBothSide>();
+            // if (sliderControl == null) return;
+
+            float domainMin = float.Parse(scale.domain[0]);
+            float domainMax = float.Parse(scale.domain[1]);
+
+            // // TODO: Check validity of specs.
+            // sliderControl.SetSpan(domainMin, domainMax);
+            // sliderControl.SetSliderValue1(domainMin);
+            // sliderControl.SetSliderValue2(domainMax);
+
+            // slider.gameObject.name = dataField;
+
+            // interactionsObject.EnableAxisThresholdFilter(dataField);
+
+            // if (interactionsObject != null)
+            // {
+            //     sliderControl.OnUpdateEvent.AddListener(interactionsObject.ThresholdFilterUpdated);
+            // }
+        }
+
+        private void SetFilterLength(float length)
+        {
+            length = length * DxR.Vis.SIZE_UNIT_SCALE_FACTOR;
+
+            Debug.Log("Setting filter length");
+
+            Transform knob1 = sliderBar.transform.Find("SliderKnob1");
+            Transform knob2 = sliderBar.transform.Find("SliderKnob2");
+            // Vector3 knobOrigScale1 = knob1.localScale;
+            // Vector3 knobOrigScale2 = knob2.localScale;
+
+            float newLocalScale = 0.5f / 0.2127f;
+            // float newLocalScale = length / 0.2127f; // sliderBar.GetComponent<MeshFilter>().mesh.bounds.size.x;
+            sliderBar.transform.localScale = new Vector3(newLocalScale, sliderBar.transform.localScale.y, sliderBar.transform.localScale.z);
+
+            if (knob1 != null)
+            {
+                knob1.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
+            }
+            if (knob2 != null)
+            {
+                knob2.transform.localScale = new Vector3(0.4f, 2.0f, 1.5f);
+            }
         }
     }
 }

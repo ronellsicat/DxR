@@ -7,7 +7,7 @@ namespace DxR
 {
     /// <summary>
     /// This is the class for point mark which enables setting of channel
-    /// values which may involve calling custom scripts. The idea is that 
+    /// values which may involve calling custom scripts. The idea is that
     /// in order to add a custom channel, the developer simply has to implement
     /// a function that takes in the "channel" name and value in string format
     /// and performs the necessary changes under the SetChannelValue function.
@@ -16,9 +16,9 @@ namespace DxR
     {
         public MarkText() : base()
         {
-            
+
         }
-        
+
         public override void SetChannelValue(string channel, string value)
         {
             switch (channel)
@@ -48,10 +48,10 @@ namespace DxR
         {
             if(value == "True")
             {
-                gameObject.GetComponent<HoloToolkit.Unity.Billboard>().enabled = true;
+                // gameObject.GetComponent<HoloToolkit.Unity.Billboard>().enabled = true;
             } else
             {
-                gameObject.GetComponent<HoloToolkit.Unity.Billboard>().enabled = false;
+                // gameObject.GetComponent<HoloToolkit.Unity.Billboard>().enabled = false;
             }
         }
 
@@ -59,9 +59,9 @@ namespace DxR
         {
             gameObject.GetComponent<TextMesh>().text = value;
         }
-        
+
         private void SetFontSize(string value)
-        {       
+        {
             gameObject.GetComponent<TextMesh>().fontSize = int.Parse(value);
         }
 

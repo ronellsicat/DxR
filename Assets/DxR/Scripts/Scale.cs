@@ -10,7 +10,7 @@ namespace DxR
     {
         public List<string> domain;
         public List<string> range;
-        
+
         public Scale(JSONNode scaleSpecs)
         {
             domain = new List<string>();
