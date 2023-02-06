@@ -13,13 +13,13 @@ namespace DxR
         float curYOffset = 0;
 
         Vis targetVis = null;
-        // Each data field's filter result. Each list is the same as the number of 
+        // Each data field's filter result. Each list is the same as the number of
         // mark instances.
         public Dictionary<string, List<bool>> filterResults = null;
 
         Dictionary<string, List<string>> domains = null;
 
-        private GameObject[] DxRVisObjects=null; 
+        private GameObject[] DxRVisObjects=null;
 
         // Use this for initialization
         void Start()
@@ -37,7 +37,7 @@ namespace DxR
         {
             targetVis = vis;
             curYOffset = 0;
-            
+
             if (targetVis != null)
             {
                 if (targetVis.GetIsLinked())
@@ -51,11 +51,12 @@ namespace DxR
 
         public void EnableLegendToggleFilter(GameObject legendGameObject)
         {
+            /*
             HoloToolkit.Examples.InteractiveElements.InteractiveSet checkBoxSet =
                legendGameObject.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveSet>();
             if (checkBoxSet == null) return;
             checkBoxSet.SelectedIndices.Clear();
-            
+            */
             string fieldName = "";
             List<string> domain = new List<string>();
 
@@ -73,21 +74,23 @@ namespace DxR
                     if(box != null)
                     {
                         box.gameObject.SetActive(true);
-                        HoloToolkit.Examples.InteractiveElements.InteractiveToggle toggle = 
+                        /*
+                        HoloToolkit.Examples.InteractiveElements.InteractiveToggle toggle =
                             box.gameObject.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveToggle>();
 
                         if(toggle != null)
                         {
-                            checkBoxSet.Interactives.Add(toggle);
-                            checkBoxSet.SelectedIndices.Add(checkBoxIndex);
+                            //checkBoxSet.Interactives.Add(toggle);
+                            //checkBoxSet.SelectedIndices.Add(checkBoxIndex);
                             checkBoxIndex++;
                         }
+                        */
                     }
                 }
             }
 
             // Add the call back function to update marks visibility when any checkbox is updated.
-            checkBoxSet.OnSelectionEvents.AddListener(LegendToggleFilterUpdated);
+//            checkBoxSet.OnSelectionEvents.AddListener(LegendToggleFilterUpdated);
 
             domains.Add(fieldName, domain);
 
@@ -100,7 +103,7 @@ namespace DxR
             }
             filterResults.Add(fieldName, results);
         }
-        
+
         void LegendToggleFilterUpdated()
         {
             if (EventSystem.current.currentSelectedGameObject == null) return;
@@ -127,7 +130,7 @@ namespace DxR
         private void UpdateFilterResultsForCategoryFromLegend(GameObject legendObject, string field, string category)
         {
             if (legendObject == null) return;
-            
+
             List<string> visibleCategories = new List<string>();
             for(int i = 0; i < legendObject.transform.childCount; i++)
             {
@@ -135,6 +138,7 @@ namespace DxR
                 if (legendValue != null)
                 {
                     Transform box = legendObject.transform.GetChild(i).Find("Title/CheckBox");
+                    /*
                     HoloToolkit.Examples.InteractiveElements.InteractiveToggle toggle =
                             box.gameObject.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveToggle>();
 
@@ -143,6 +147,7 @@ namespace DxR
                     {
                         visibleCategories.Add(legendValue.categoryName);
                     }
+                    */
                 }
             }
 
@@ -216,23 +221,23 @@ namespace DxR
                 interactionSpecs["field"].Value + ":";
 
             toggleFilterInstance.name = interactionSpecs["field"];
-
+            /*
             HoloToolkit.Unity.Collections.ObjectCollection collection = toggleFilterInstance.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>();
             if (collection == null) return;
-
+            */
             // Use the provided domain of the data field to create check boxes.
             // For each checkbox, add it to the interactiveset object, and add it to the object
             // collection object and update the layout.
             GameObject checkBoxPrefab = Resources.Load("GUI/CheckBox", typeof(GameObject)) as GameObject;
             if (checkBoxPrefab == null) return;
-
+            /*
             HoloToolkit.Examples.InteractiveElements.InteractiveSet checkBoxSet =
                 toggleFilterInstance.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveSet>();
             if (checkBoxSet == null) return;
-
+            */
             List<string> domain = new List<string>();
 
-            checkBoxSet.SelectedIndices.Clear();
+            //checkBoxSet.SelectedIndices.Clear();
             int i = 0;
             foreach (JSONNode category in interactionSpecs["domain"].AsArray)
             {
@@ -243,19 +248,19 @@ namespace DxR
 
                 domain.Add(category.Value);
 
-                checkBoxSet.Interactives.Add(checkBoxInstance.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveToggle>());
-                checkBoxSet.SelectedIndices.Add(i);
+                //checkBoxSet.Interactives.Add(checkBoxInstance.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveToggle>());
+                //checkBoxSet.SelectedIndices.Add(i);
                 i++;
             }
 
             domains.Add(interactionSpecs["field"].Value, domain);
 
             int numRows = interactionSpecs["domain"].AsArray.Count + 1;
-            collection.Rows = numRows;
-            collection.UpdateCollection();
+            //collection.Rows = numRows;
+            //collection.UpdateCollection();
 
             // Add the call back function to update marks visibility when any checkbox is updated.
-            checkBoxSet.OnSelectionEvents.AddListener(ToggleFilterUpdated);
+            //checkBoxSet.OnSelectionEvents.AddListener(ToggleFilterUpdated);
 
             // Update the results vector
             int numMarks = targetVis.markInstances.Count;
@@ -267,7 +272,7 @@ namespace DxR
             filterResults.Add(interactionSpecs["field"], results);
 
             toggleFilterInstance.transform.Translate(0, -curYOffset / 2.0f, 0);
-            curYOffset = curYOffset + (0.085f * numRows) + 0.1f; 
+            curYOffset = curYOffset + (0.085f * numRows) + 0.1f;
         }
 
         void ToggleFilterUpdated()
@@ -293,7 +298,7 @@ namespace DxR
         {
             GameObject toggleFilter = gameObject.transform.Find(field).gameObject;
             if (toggleFilter == null) return;
-
+            /*
             HoloToolkit.Examples.InteractiveElements.InteractiveSet checkBoxSet =
                 toggleFilter.GetComponent<HoloToolkit.Examples.InteractiveElements.InteractiveSet>();
             if (checkBoxSet == null) return;
@@ -353,7 +358,7 @@ namespace DxR
                 }
             }
 
-
+    */
             //            if (targetVis.GetIsLinked()) Synchronize(field);
         }
 
@@ -382,22 +387,22 @@ namespace DxR
                 interactionSpecs["domain"][0].Value;
             thresholdFilterInstance.transform.Find("ThresholdFilterMaxLabel").gameObject.GetComponent<TextMesh>().text =
                 interactionSpecs["domain"][1].Value;
-
+            /*
             DxR.SliderGestureControlBothSide sliderControl =
                 thresholdFilterInstance.GetComponent<DxR.SliderGestureControlBothSide>();
             if (sliderControl == null) return;
-
+            */
             float domainMin = float.Parse(interactionSpecs["domain"][0].Value);
             float domainMax = float.Parse(interactionSpecs["domain"][1].Value);
 
             // TODO: Check validity of specs.
-
+            /*
             sliderControl.SetSpan(domainMin, domainMax);
             sliderControl.SetSliderValue1(domainMin);
             sliderControl.SetSliderValue2(domainMax);
 
             sliderControl.OnUpdateEvent.AddListener(ThresholdFilterUpdated);
-            
+            */
             // Update the results vector
             int numMarks = targetVis.markInstances.Count;
             List<bool> results = new List<bool>(new bool[numMarks]);
@@ -406,7 +411,7 @@ namespace DxR
                 results[j] = true;
             }
             filterResults.Add(interactionSpecs["field"], results);
-          
+
             thresholdFilterInstance.transform.Translate(0, -curYOffset / 2.0f, 0);
             curYOffset = curYOffset + (0.25f);
         }
@@ -431,10 +436,10 @@ namespace DxR
             {
                 return;
             }
-
+            /*
             DxR.SliderGestureControlBothSide sliderControl =
                selectedObject.GetComponent<DxR.SliderGestureControlBothSide>();
-            
+
             if (sliderControl != null && targetVis != null)
             {
                 // Update filter results for thresholded data field category.
@@ -446,6 +451,7 @@ namespace DxR
                 targetVis.FiltersUpdated();
                 Debug.Log("Filter updated! " + fieldName);
             }
+            */
         }
 
         private void UpdateFilterResultsForThreshold(string field, float thresholdMinValue, float thresholdMaxValue)

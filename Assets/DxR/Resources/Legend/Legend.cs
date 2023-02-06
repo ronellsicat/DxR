@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DxR;
 using SimpleJSON;
+using TMPro;
 using UnityEngine;
 
 public class Legend : MonoBehaviour {
@@ -14,10 +15,10 @@ public class Legend : MonoBehaviour {
     void Start () {
 
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     public void UpdateSpecs(JSONNode legendSpecs, ref DxR.ChannelEncoding channelEncoding, GameObject markPrefab)
@@ -48,7 +49,7 @@ public class Legend : MonoBehaviour {
         {
             if(legendSpecs["x"] != null && legendSpecs["x"] != null && legendSpecs["x"] != null)
             {
-                gameObject.GetComponent<Legend>().SetOrientation(legendSpecs["orient"].Value, legendSpecs["face"].Value, 
+                gameObject.GetComponent<Legend>().SetOrientation(legendSpecs["orient"].Value, legendSpecs["face"].Value,
                     legendSpecs["x"].AsFloat, legendSpecs["y"].AsFloat, legendSpecs["z"].AsFloat);
             }
             else
@@ -70,7 +71,7 @@ public class Legend : MonoBehaviour {
 
         bool addTicks = false;
         Transform ticks = gameObject.transform.Find("Ticks");
-        GameObject tickPrefab = null; 
+        GameObject tickPrefab = null;
         if(ticks != null)
         {
             addTicks = true;
@@ -128,14 +129,15 @@ public class Legend : MonoBehaviour {
         colorLine.endWidth = height;
 
         Gradient gradient = new Gradient();
-        gradient.SetKeys(colorKeyList.ToArray(), alphaKeyList.ToArray());    
+        gradient.SetKeys(colorKeyList.ToArray(), alphaKeyList.ToArray());
         colorLine.colorGradient = gradient;
 
         colorLine.transform.parent = gameObject.transform;
 
-        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = 3;             // TODO: Update this if no ticks are shown.
-        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.08f;
-        gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
+        // gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = 3;             // TODO: Update this if no ticks are shown.
+        // gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.08f;
+        // gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
+
     }
 
     private void ConstructSymbols(JSONNode legendSpecs, ref ChannelEncoding channelEncoding, GameObject markPrefab)
@@ -167,12 +169,13 @@ public class Legend : MonoBehaviour {
                 legendValueInstance.GetComponent<LegendValue>().SetMark(markInstance);
 
                 // Update the collection.
-                legendValueInstance.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
+                //legendValueInstance.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
             }
 
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().Rows = channelEncoding.scale.domain.Count + 1;
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().CellHeight = 0.05f;   // TODO: Set to height of each legendValue.
             gameObject.GetComponent<HoloToolkit.Unity.Collections.ObjectCollection>().UpdateCollection();
+
         } else if(channelEncoding.channel == "opacity")
         {
             // TODO:

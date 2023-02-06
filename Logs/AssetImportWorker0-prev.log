@@ -1,0 +1,166 @@
+Using pre-set license
+Built from '2020.3/release' branch; Version is '2020.3.44f1 (7f159b6136da) revision 8328603'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Education' Language: 'en' Physical Memory: 31992 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.44f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/leebn/Documents/GitHub/DxR
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+62134
+Successfully changed project path to: C:/Users/leebn/Documents/GitHub/DxR
+C:/Users/leebn/Documents/GitHub/DxR
+Using Asset Import Pipeline V2.
+Player connection [26924] Host "[IP] 129.69.205.100 [Port] 0 [Flags] 2 [Guid] 1134186956 [EditorId] 1134186956 [Version] 1048832 [Id] WindowsEditor(7,blackmetal) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [26924] Host "[IP] 129.69.205.100 [Port] 0 [Flags] 2 [Guid] 1134186956 [EditorId] 1134186956 [Version] 1048832 [Id] WindowsEditor(7,blackmetal) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 79.93 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.44f1 (7f159b6136da)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/leebn/Documents/GitHub/DxR/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 Ti Laptop GPU (ID=0x24a0)
+    Vendor:   
+    VRAM:     8032 MB
+    Driver:   31.0.15.2824
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56204
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.44f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001200 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 61.58 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.464 seconds
+Domain Reload Profiling:
+	ReloadAssembly (464ms)
+		BeginReloadAssembly (41ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (369ms)
+			LoadAssemblies (39ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (102ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (162ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (62ms)
+				BeforeProcessingInitializeOnLoad (11ms)
+				ProcessInitializeOnLoadAttributes (63ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005833 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.06 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.605 seconds
+Domain Reload Profiling:
+	ReloadAssembly (605ms)
+		BeginReloadAssembly (99ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (463ms)
+			LoadAssemblies (61ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (165ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (23ms)
+			SetupLoadedEditorAssemblies (158ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (80ms)
+				ProcessInitializeOnLoadAttributes (62ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (3ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (1ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 2.43 ms, found 8 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3255 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 134.7 MB.
+System memory in use after: 134.9 MB.
+
+Unloading 77 unused Assets to reduce memory usage. Loaded Objects now: 3625.
+Total: 2.186700 ms (FindLiveObjects: 0.249500 ms CreateObjectMapping: 0.072300 ms MarkObjects: 1.784500 ms  DeleteObjects: 0.079600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet
+  artifactKey: Guid(1e66973c2da6728459a5a0e4749d24a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins/JsonNet using Guid(1e66973c2da6728459a5a0e4749d24a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a5efe0387ded3dae06cc2678f1159eb') in 0.010126 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins
+  artifactKey: Guid(7b47c6a5170f0884684998dd64a18ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HoloToolkit/Utilities/Scripts/GLTF/Plugins using Guid(7b47c6a5170f0884684998dd64a18ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f090f66f3d003389c22017a250665d0') in 0.005346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 92.111080 seconds.
+  path: Assets/HoloToolkit/SharingWithUNET/Scripts
+  artifactKey: Guid(597b79476c355da40af289b35fa75582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HoloToolkit/SharingWithUNET/Scripts using Guid(597b79476c355da40af289b35fa75582) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4690d441bab309f0856639c087bbf2d') in 0.006359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.383876 seconds.
+  path: Assets/HoloToolkit/SharingWithUNET/Scripts/NetworkDiscoveryWithAnchors.cs
+  artifactKey: Guid(567e2a1ea65534040ac33441ec4bc34b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HoloToolkit/SharingWithUNET/Scripts/NetworkDiscoveryWithAnchors.cs using Guid(567e2a1ea65534040ac33441ec4bc34b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5763023559f98ebee5b45e6bc8f0776') in 0.033482 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 172.672733 seconds.
+  path: Packages/com.unity.nuget.newtonsoft-json/package.json
+  artifactKey: Guid(f8d4e5c2f2df25449ae8c391afbe5114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.nuget.newtonsoft-json/package.json using Guid(f8d4e5c2f2df25449ae8c391afbe5114) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db25b98fb22e0397e0617eaa692e079f') in 0.015879 seconds 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

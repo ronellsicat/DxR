@@ -4,6 +4,7 @@ using UnityEngine;
 using SimpleJSON;
 using System;
 using System.IO;
+using System.Linq;
 
 namespace DxR
 {
@@ -13,21 +14,17 @@ namespace DxR
         static string dataBaseDir = "/DxRData/";
 
         /// <summary>
-        ///  Read specifications in JSON file specified by specsFilename as 
-        ///  well as data file (if needed) and expand to a JSONNode scene specs with the 
-        ///  data represented as a JSON object.
+        ///  Read specifications in JSON file specified by specsFilename without any further changes.
         /// </summary>
         public void Parse(string specsFilename, out JSONNode visSpecs)
         {
             visSpecs = JSON.Parse(GetStringFromFile(GetFullSpecsPath(specsFilename)));
 
             // If the specs file is empty, provide the boiler plate data and marks specs.
-            if(visSpecs == null)
+            if (visSpecs == null || visSpecs.ToString() == "\"\"")
             {
                 CreateEmptyTemplateSpecs(specsFilename, ref visSpecs);
             }
-
-            ExpandDataSpecs(ref visSpecs);
         }
 
         private void CreateEmptyTemplateSpecs(string specsFilename, ref JSONNode visSpecs)
@@ -43,21 +40,54 @@ namespace DxR
             System.IO.File.WriteAllText(GetFullSpecsPath(specsFilename), emptySpecs.ToString(2));
         }
 
-        private void ExpandDataSpecs(ref JSONNode visSpecs)
+        /// <summary>
+        /// Reads specifications from a JSON string specified by specs instead of a file.
+        /// Otherwise functions identically to the Parse function
+        /// </summary>
+        public void ParseString(string specs, out JSONNode visSpecs)
+        {
+            visSpecs = JSON.Parse(specs);
+
+            // If the specs file is empty, provide the boiler plate data and marks specs.
+            if(visSpecs == null || visSpecs.ToString() == "\"\"")
+            {
+                CreateEmptyTemplateSpecs(ref visSpecs);
+            }
+        }
+
+        private void CreateEmptyTemplateSpecs(ref JSONNode visSpecs)
+        {
+            JSONNode emptySpecs = new JSONObject();
+            JSONNode dataSpecs = new JSONObject();
+            dataSpecs.Add("url", new JSONString(DxR.Vis.UNDEFINED));
+            emptySpecs.Add("data", dataSpecs);
+            emptySpecs.Add("mark", new JSONString(DxR.Vis.UNDEFINED));
+
+            visSpecs = emptySpecs;
+        }
+
+        /// <summary>
+        /// Expands a given vis specs to include its data values in-line.
+        /// </summary>
+        public void ExpandDataSpecs(ref JSONNode visSpecs)
         {
             if (visSpecs["data"].Value == DxR.Vis.UNDEFINED || visSpecs["data"]["url"].Value == DxR.Vis.UNDEFINED) return;
 
             if (visSpecs["data"]["url"] != null)
             {
-                if(visSpecs["data"]["url"].Value == "inline")
+                if (visSpecs["data"]["url"].Value == "inline")
                 {
                     return;
                 }
 
                 visSpecs["data"].Add("values", CreateValuesSpecs(visSpecs["data"]["url"]));
-            } else if(visSpecs["data"]["values"] != null)
+            }
+            else if (visSpecs["data"]["values"] != null)
             {
-                visSpecs["data"].Add("url", new JSONString("inline"));
+                if (visSpecs["data"]["url"] == null)
+                {
+                    visSpecs["data"].Add("url", new JSONString("inline"));
+                }
             }
 
             // TODO: Do some checks.
@@ -115,10 +145,24 @@ namespace DxR
                 JSONNode valuesJSONNode = JSON.ParseCSV(GetStringFromFile(filename));
                 dataSpecs.Add("values", valuesJSONNode);
             }
-            
-            foreach (KeyValuePair<string, JSONNode> kvp in dataSpecs["values"][0].AsObject)
+
+            // Check special condition if the data is a geoJSON file
+            if (dataSpecs["values"]["type"] != null && dataSpecs["values"]["type"] == "FeatureCollection")
             {
-                fieldNames.Add(kvp.Key);
+                fieldNames.Add("Longitude");
+                fieldNames.Add("Latitude");
+                var featureCollection = Newtonsoft.Json.JsonConvert.DeserializeObject<GeoJSON.Net.Feature.FeatureCollection>(dataSpecs["values"].ToString());
+                foreach (var kvp in featureCollection.Features.First().Properties)
+                {
+                    fieldNames.Add(kvp.Key);
+                }
+            }
+            else
+            {
+                foreach (KeyValuePair<string, JSONNode> kvp in dataSpecs["values"][0].AsObject)
+                {
+                    fieldNames.Add(kvp.Key);
+                }
             }
 
             return fieldNames;
@@ -126,7 +170,7 @@ namespace DxR
 
         internal List<string> GetDataFieldsListFromValues(JSONNode valuesSpecs)
         {
-            List<string> fieldNames = new List<string>(); 
+            List<string> fieldNames = new List<string>();
             foreach (KeyValuePair<string, JSONNode> kvp in valuesSpecs[0].AsObject)
             {
                 fieldNames.Add(kvp.Key);

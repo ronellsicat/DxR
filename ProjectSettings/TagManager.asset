@@ -13,6 +13,8 @@ TagManager:
   - DxRGuides
   - Tip
   - DxRInteractions
+  - FixedMarkPart
+  - DxRMark
   layers:
   - Default
   - TransparentFX

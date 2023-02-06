@@ -11,22 +11,22 @@ namespace DxR
     /// This class implements IFocusable to respond to gaze changes.
     /// It highlights the object being gazed at.
     /// </summary>
-    public class GazeResponderButtons : MonoBehaviour, HoloToolkit.Unity.InputModule.IFocusable
+    public class GazeResponderButtons : MonoBehaviour//, HoloToolkit.Unity.InputModule.IFocusable
     {
-       
+
         private void Start()
         {
-           
+
         }
 
         private void Update()
         {
-            
+
         }
-        
+
         public void OnFocusEnter()
         {
-           
+
         }
 
         private void SetvisObjectVisibility(bool visib)
@@ -40,7 +40,7 @@ namespace DxR
 
         private void OnDestroy()
         {
-            
+
         }
     }
 }
