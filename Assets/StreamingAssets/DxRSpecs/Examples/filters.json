@@ -5,7 +5,7 @@
   "mark" : "sphere",
   "encoding" : {
     "x" : {
-      "field" : "Horsepower",
+      "field" : "Displacement",
       "type" : "quantitative",
       "scale" : {
         "domain" : [

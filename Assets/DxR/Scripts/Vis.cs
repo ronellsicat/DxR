@@ -504,10 +504,11 @@ namespace DxR
                 Debug.Log("Loaded mark " + markNameLowerCase);
             }
 
-            // If the prefab does not have a Mark script attached to it, attach the default base Mark script object, i.e., core mark.
+            // Check whether the prefab has a Mark script attached to it
             if (markPrefabResult.GetComponent<Mark>() == null)
             {
-                DxR.Mark markComponent = markPrefabResult.AddComponent(typeof(DxR.Mark)) as DxR.Mark;
+                throw new Exception($"Loaded {markNameLowerCase} is not a mark! (Missing component {typeof(Mark)}, which cannot be added to the prefab at runtime)\n" +
+                   $"NB: Ensure there are not multiple files with the name Resources/{markNameLowerCase}/{markNameLowerCase}");
             }
             markPrefabResult.GetComponent<Mark>().markName = markNameLowerCase;
 
@@ -850,7 +851,8 @@ namespace DxR
 
         private void InitDataList()
         {
-            string[] dirs = Directory.GetFiles(Application.dataPath + "/StreamingAssets/DxRData");
+            string dxrDataPath = Application.streamingAssetsPath + Parser.dataBaseDir;
+            string[] dirs = Directory.GetFiles(dxrDataPath, "*.*", SearchOption.AllDirectories);
             dataList = new List<string>();
             dataList.Add(DxR.Vis.UNDEFINED);
             dataList.Add("inline");
@@ -858,7 +860,7 @@ namespace DxR
             {
                 if (Path.GetExtension(dirs[i]) != ".meta")
                 {
-                    dataList.Add(Path.GetFileName(dirs[i]));
+                    dataList.Add(Path.GetRelativePath(dxrDataPath, dirs[i]).Replace("\\", "/"));
                 }
             }
         }

@@ -12,7 +12,6 @@ namespace DxR
         private float meshLength = 2.0f;    // This is the initial length of the cylinder used for the axis.
         private float titleOffset = 0.075f;
         private float tickLabelOffset = 0.03f;
-        private bool enableFilter = false;
         private Interactions interactionsObject = null;
         private string dataField = "";
 

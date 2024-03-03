@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DxRExamples/test.unity
     guid: b1117bd1262fdf545b8567579375f63a
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5212a27151439004c9e78612e5665bd1,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 8e291c1ae440b0f4281f854ef6d53d78,
+      type: 2}

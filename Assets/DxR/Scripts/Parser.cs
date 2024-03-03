@@ -9,8 +9,8 @@ namespace DxR
 {
     public class Parser
     {
-        static string specsBaseDir = "/DxRSpecs/";
-        static string dataBaseDir = "/DxRData/";
+        internal static string specsBaseDir = "/DxRSpecs/";
+        internal static string dataBaseDir = "/DxRData/";
 
         /// <summary>
         ///  Read specifications in JSON file specified by specsFilename as 

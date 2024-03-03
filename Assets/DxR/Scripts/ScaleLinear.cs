@@ -23,6 +23,10 @@ namespace DxR
             rangeMin = float.Parse(base.range[0]);
             rangeMax = float.Parse(base.range[1]);
 
+            var padding = (rangeMax - rangeMin) * scaleSpecs["paddingOuter"].AsFloat / 2;
+            rangeMin += padding;
+            rangeMax -= padding;
+
             if (verbose)
             {
                 Debug.Log("Created ScaleLinear object with domain [" +
